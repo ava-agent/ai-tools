@@ -1,0 +1,95 @@
+<template>
+  <div
+    v-if="error"
+    class="min-h-[400px] flex items-center justify-center"
+  >
+    <div class="text-center max-w-md mx-auto p-8">
+      <div class="w-20 h-20 mx-auto mb-6 bg-red-500/10 rounded-full flex items-center justify-center">
+        <AlertTriangle class="w-10 h-10 text-red-500" />
+      </div>
+      <h2 class="text-2xl font-bold text-white mb-4">
+        出错了
+      </h2>
+      <p class="text-white/60 mb-6">
+        {{ errorMessage }}
+      </p>
+      <div class="flex gap-4 justify-center">
+        <button
+          class="btn-primary"
+          @click="retry"
+        >
+          <RefreshCw class="w-4 h-4 mr-2 inline" />
+          重试
+        </button>
+        <button
+          class="btn-secondary"
+          @click="goHome"
+        >
+          <Home class="w-4 h-4 mr-2 inline" />
+          返回首页
+        </button>
+      </div>
+    </div>
+  </div>
+  <slot v-else />
+</template>
+
+<script setup>
+import { ref, onErrorCaptured, onMounted } from 'vue'
+import { useRouter } from 'vue-router'
+import { AlertTriangle, RefreshCw, Home } from 'lucide-vue-next'
+
+const router = useRouter()
+const error = ref(null)
+const errorMessage = ref('')
+
+onErrorCaptured((err, instance, info) => {
+  error.value = err
+  errorMessage.value = err.message || '页面加载失败，请稍后重试'
+  
+  // 上报错误到监控服务
+  reportError(err, instance, info)
+  
+  return false
+})
+
+onMounted(() => {
+  // 全局错误监听
+  window.addEventListener('error', handleGlobalError)
+  window.addEventListener('unhandledrejection', handleUnhandledRejection)
+})
+
+const handleGlobalError = (event) => {
+  error.value = event.error
+  errorMessage.value = event.message || '发生未知错误'
+  reportError(event.error, null, 'global')
+}
+
+const handleUnhandledRejection = (event) => {
+  error.value = event.reason
+  errorMessage.value = event.reason?.message || '异步操作失败'
+  reportError(event.reason, null, 'unhandledrejection')
+}
+
+const reportError = (err, instance, info) => {
+  // 这里可以集成错误监控服务，如 Sentry
+  console.error('Error captured:', {
+    error: err,
+    component: instance?.$options?.name,
+    info,
+    timestamp: new Date().toISOString(),
+    url: window.location.href
+  })
+}
+
+const retry = () => {
+  error.value = null
+  errorMessage.value = ''
+  window.location.reload()
+}
+
+const goHome = () => {
+  error.value = null
+  router.push('/')
+}
+</script>

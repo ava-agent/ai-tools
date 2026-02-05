@@ -1,0 +1,143 @@
+export function formatDate(date) {
+  return new Intl.DateTimeFormat('zh-CN', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric'
+  }).format(new Date(date))
+}
+
+export function debounce(func, wait) {
+  let timeout
+  return function executedFunction(...args) {
+    const later = () => {
+      clearTimeout(timeout)
+      func(...args)
+    }
+    clearTimeout(timeout)
+    timeout = setTimeout(later, wait)
+  }
+}
+
+export function throttle(func, limit) {
+  let inThrottle
+  return function executedFunction(...args) {
+    if (!inThrottle) {
+      func(...args)
+      inThrottle = true
+      setTimeout(() => (inThrottle = false), limit)
+    }
+  }
+}
+
+export function getRatingStars(rating) {
+  return '夯'.repeat(rating)
+}
+
+// 类别标签映射
+const categoryLabels = {
+  ide: 'AI IDE',
+  cli: 'AI CLI',
+  llm: 'AI 模型',
+  multimodal: '多模态',
+  agent: 'Agent',
+  // 兼容旧格式
+  IDE: 'AI IDE',
+  LLM: 'AI 模型',
+  'IDE插件': 'IDE 插件'
+}
+
+export function getCategoryLabel(category) {
+  return categoryLabels[category] || category
+}
+
+// 类别颜色映射
+const categoryColors = {
+  ide: 'bg-blue-500',
+  cli: 'bg-green-500',
+  llm: 'bg-purple-500',
+  multimodal: 'bg-pink-500',
+  agent: 'bg-orange-500'
+}
+
+export function getCategoryColor(category) {
+  return categoryColors[category] || 'bg-gray-500'
+}
+
+export function getTagColor(tag) {
+  const colors = {
+    // 通用标签
+    推荐: 'bg-green-500',
+    国产: 'bg-red-500',
+    免费: 'bg-blue-500',
+    开源: 'bg-purple-500',
+    低价: 'bg-yellow-500',
+    推理: 'bg-cyan-500',
+    // 品牌标签
+    DeepSeek: 'bg-orange-500',
+    Google: 'bg-blue-600',
+    OpenAI: 'bg-emerald-600',
+    Claude: 'bg-orange-600',
+    Qwen: 'bg-violet-600',
+    GitHub: 'bg-gray-700',
+    Amazon: 'bg-amber-600',
+    腾讯: 'bg-blue-500',
+    字节: 'bg-cyan-600',
+    阿里: 'bg-orange-500',
+    // 功能标签
+    LLM: 'bg-pink-500',
+    CLI: 'bg-green-600',
+    代码: 'bg-indigo-500',
+    代码理解: 'bg-indigo-500',
+    长上下文: 'bg-teal-500',
+    插件: 'bg-slate-600',
+    生态: 'bg-emerald-600',
+    多模型: 'bg-violet-600',
+    中文: 'bg-red-600',
+    // IDE 相关
+    'VS Code系': 'bg-blue-600',
+    'VS Code': 'bg-blue-600',
+    Agentic: 'bg-rose-600',
+    行业标杆: 'bg-amber-600',
+    性价比: 'bg-green-600',
+    Cascade: 'bg-purple-600',
+    后端: 'bg-slate-600',
+    Spec: 'bg-indigo-600',
+    规范: 'bg-indigo-500',
+    新品: 'bg-cyan-500',
+    Gemini: 'bg-blue-500',
+    Rust: 'bg-orange-600',
+    性能: 'bg-green-500',
+    云端: 'bg-sky-500',
+    教学: 'bg-violet-500',
+    部署: 'bg-emerald-500',
+    BYOK: 'bg-gray-600',
+    最强: 'bg-yellow-500',
+    Git: 'bg-orange-600',
+    多IDE: 'bg-purple-500',
+    // 多模态
+    图像: 'bg-pink-500',
+    视频: 'bg-rose-500',
+    '3D': 'bg-violet-500',
+    艺术: 'bg-pink-600',
+    Discord: 'bg-indigo-500',
+    集成: 'bg-blue-500',
+    本地: 'bg-green-600',
+    电影级: 'bg-amber-500',
+    连贯: 'bg-teal-500',
+    快速: 'bg-cyan-500',
+    汇报: 'bg-purple-500',
+    // Agent
+    无代码: 'bg-blue-500',
+    自托管: 'bg-green-600',
+    自主: 'bg-orange-500',
+    框架: 'bg-indigo-500',
+    开发者: 'bg-gray-600',
+    图表: 'bg-purple-500',
+    // 搜索
+    搜索: 'bg-blue-500',
+    调研: 'bg-teal-500',
+    引用: 'bg-cyan-500'
+  }
+  return colors[tag] || 'bg-gray-500'
+}
+
