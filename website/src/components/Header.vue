@@ -1,72 +1,49 @@
 <template>
-  <header
-    class="sticky top-0 z-50 transition-all duration-300"
-    style="background: rgba(15, 23, 42, 0.85); backdrop-filter: blur(16px); border-bottom: 1px solid rgba(255, 255, 255, 0.08);"
-  >
+  <header class="sticky top-0 z-50 transition-all duration-300 glass-effect">
     <nav class="container mx-auto px-4 py-4">
       <div class="flex items-center justify-between">
         <!-- Logo -->
-        <div class="flex items-center space-x-3 group cursor-pointer">
+        <router-link
+          to="/"
+          class="flex items-center space-x-3 group cursor-pointer"
+          aria-label="AI工具全书 首页"
+        >
           <div class="relative">
-            <Brain class="w-8 h-8 text-primary transition-transform duration-300 group-hover:scale-110 group-hover:rotate-12" />
+            <Brain class="w-9 h-9 text-primary transition-transform duration-300 group-hover:scale-110 group-hover:rotate-12" />
             <div class="absolute inset-0 bg-primary/20 rounded-full blur-lg group-hover:bg-primary/30 transition-all duration-300" />
           </div>
-          <h1 class="text-xl font-bold gradient-text">
+          <span class="text-xl font-bold gradient-text hidden sm:block">
             AI工具全书
-          </h1>
-        </div>
+          </span>
+        </router-link>
 
         <!-- 桌面导航 -->
-        <div class="hidden md:flex items-center space-x-1">
+        <div class="hidden lg:flex items-center space-x-1">
           <router-link
-            to="/"
-            class="nav-link relative px-4 py-2 text-white/70 hover:text-white transition-all duration-300"
-            active-class="text-white"
+            v-for="item in navItems"
+            :key="item.to"
+            :to="item.to"
+            class="nav-link group relative px-4 py-2.5 text-white/60 hover:text-white transition-all duration-200 rounded-lg hover:bg-white/5"
+            active-class="text-white bg-white/5"
           >
-            工具列表
-            <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" />
-          </router-link>
-          <router-link
-            to="/matcher"
-            class="nav-link relative px-4 py-2 text-white/70 hover:text-white transition-all duration-300"
-            active-class="text-white"
-          >
-            工具匹配
-            <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" />
-          </router-link>
-          <router-link
-            to="/pricing"
-            class="nav-link relative px-4 py-2 text-white/70 hover:text-white transition-all duration-300"
-            active-class="text-white"
-          >
-            订阅指南
-            <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" />
-          </router-link>
-          <router-link
-            to="/workflows"
-            class="nav-link relative px-4 py-2 text-white/70 hover:text-white transition-all duration-300"
-            active-class="text-white"
-          >
-            工作流
-            <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" />
-          </router-link>
-          <router-link
-            to="/comparison"
-            class="nav-link relative px-4 py-2 text-white/70 hover:text-white transition-all duration-300"
-            active-class="text-white"
-          >
-            对比分析
-            <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" />
+            <span class="flex items-center gap-2">
+              <component :is="item.icon" class="w-4 h-4" />
+              {{ item.label }}
+            </span>
+            <span class="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-1/2" />
           </router-link>
         </div>
 
         <!-- 移动菜单按钮 -->
-        <div class="flex items-center space-x-4">
+        <div class="flex items-center space-x-2">
           <button
-            class="md:hidden text-white/70 hover:text-white transition-colors p-2 rounded-lg hover:bg-white/5"
+            class="lg:hidden p-2.5 rounded-xl text-white/60 hover:text-white hover:bg-white/5 transition-all duration-200 cursor-pointer"
+            :aria-expanded="isMobileMenuOpen"
+            aria-label="切换菜单"
             @click="toggleMobileMenu"
           >
-            <Menu class="w-6 h-6" />
+            <Menu v-if="!isMobileMenuOpen" class="w-6 h-6" />
+            <X v-else class="w-6 h-6" />
           </button>
         </div>
       </div>
@@ -82,58 +59,18 @@
       >
         <div
           v-if="isMobileMenuOpen"
-          class="md:hidden mt-4 pb-4 border-t border-white/10 pt-4"
+          class="lg:hidden mt-4 pb-4 border-t border-white/10 pt-4"
         >
-          <div class="flex flex-col space-y-3">
+          <div class="grid grid-cols-2 gap-2">
             <router-link
-              to="/"
-              class="px-4 py-3 text-white/80 hover:text-white hover:bg-white/5 rounded-lg transition-all duration-200"
+              v-for="item in navItems"
+              :key="item.to"
+              :to="item.to"
+              class="flex flex-col items-center justify-center p-4 rounded-xl text-white/70 hover:text-white hover:bg-white/5 transition-all duration-200 cursor-pointer min-h-[88px]"
               @click="isMobileMenuOpen = false"
             >
-              <span class="flex items-center">
-                <span class="w-2 h-2 rounded-full bg-primary mr-3" />
-                工具列表
-              </span>
-            </router-link>
-            <router-link
-              to="/matcher"
-              class="px-4 py-3 text-white/80 hover:text-white hover:bg-white/5 rounded-lg transition-all duration-200"
-              @click="isMobileMenuOpen = false"
-            >
-              <span class="flex items-center">
-                <span class="w-2 h-2 rounded-full bg-accent mr-3" />
-                工具匹配
-              </span>
-            </router-link>
-            <router-link
-              to="/pricing"
-              class="px-4 py-3 text-white/80 hover:text-white hover:bg-white/5 rounded-lg transition-all duration-200"
-              @click="isMobileMenuOpen = false"
-            >
-              <span class="flex items-center">
-                <span class="w-2 h-2 rounded-full bg-green-400 mr-3" />
-                订阅指南
-              </span>
-            </router-link>
-            <router-link
-              to="/workflows"
-              class="px-4 py-3 text-white/80 hover:text-white hover:bg-white/5 rounded-lg transition-all duration-200"
-              @click="isMobileMenuOpen = false"
-            >
-              <span class="flex items-center">
-                <span class="w-2 h-2 rounded-full bg-purple-400 mr-3" />
-                工作流
-              </span>
-            </router-link>
-            <router-link
-              to="/comparison"
-              class="px-4 py-3 text-white/80 hover:text-white hover:bg-white/5 rounded-lg transition-all duration-200"
-              @click="isMobileMenuOpen = false"
-            >
-              <span class="flex items-center">
-                <span class="w-2 h-2 rounded-full bg-yellow-400 mr-3" />
-                对比分析
-              </span>
+              <component :is="item.icon" class="w-6 h-6 mb-2" :class="item.iconColor" />
+              <span class="text-sm font-medium">{{ item.label }}</span>
             </router-link>
           </div>
         </div>
@@ -144,9 +81,17 @@
 
 <script setup>
 import { ref } from 'vue'
-import { Brain, Menu } from 'lucide-vue-next'
+import { Brain, Menu, X, Search, Scale, Workflow, GitCompare, BarChart3 } from 'lucide-vue-next'
 
 const isMobileMenuOpen = ref(false)
+
+const navItems = [
+  { to: '/', label: '工具列表', icon: Search },
+  { to: '/matcher', label: '工具匹配', icon: Scale },
+  { to: '/pricing', label: '订阅指南', icon: BarChart3, iconColor: 'text-green-400' },
+  { to: '/workflows', label: '工作流', icon: Workflow, iconColor: 'text-purple-400' },
+  { to: '/comparison', label: '对比分析', icon: GitCompare, iconColor: 'text-yellow-400' }
+]
 
 const toggleMobileMenu = () => {
   isMobileMenuOpen.value = !isMobileMenuOpen.value
@@ -159,6 +104,6 @@ const toggleMobileMenu = () => {
 }
 
 .nav-link.router-link-active span:last-child {
-  width: 100%;
+  width: 50%;
 }
 </style>
