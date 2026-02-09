@@ -1,105 +1,92 @@
 <template>
-  <footer class="bg-surface border-t border-white/10 py-12">
+  <footer class="glass-effect border-t border-white/10 py-12 mt-16" role="contentinfo">
     <div class="container mx-auto px-4">
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+        <!-- 品牌信息 -->
         <div>
-          <div class="flex items-center space-x-2 mb-4">
-            <Brain class="w-8 h-8 text-primary" />
+          <router-link to="/" class="flex items-center gap-2 mb-4 group">
+            <div class="relative">
+              <Brain class="w-8 h-8 text-primary transition-transform duration-300 group-hover:scale-110" />
+              <div class="absolute inset-0 bg-primary/20 rounded-full blur-lg group-hover:bg-primary/30 transition-all duration-300" />
+            </div>
             <h3 class="text-xl font-bold gradient-text">
               AI工具全书
             </h3>
-          </div>
-          <p class="text-white/60 text-sm">
+          </router-link>
+          <p class="text-muted text-sm leading-relaxed">
             2026深度集成与实战教学版 - AI工具选型指南
           </p>
         </div>
 
+        <!-- 快速链接 -->
         <div>
-          <h4 class="text-lg font-semibold mb-4">
+          <h4 class="text-base font-semibold mb-4 text-white">
             快速链接
           </h4>
-          <ul class="space-y-2 text-white/60 text-sm">
-            <li>
-              <router-link
-                to="/"
-                class="hover:text-white transition-colors"
-              >
-                工具列表
-              </router-link>
-            </li>
-            <li>
-              <router-link
-                to="/matcher"
-                class="hover:text-white transition-colors"
-              >
-                工具匹配
-              </router-link>
-            </li>
-            <li>
-              <router-link
-                to="/pricing"
-                class="hover:text-white transition-colors"
-              >
-                订阅指南
-              </router-link>
-            </li>
-            <li>
-              <router-link
-                to="/workflows"
-                class="hover:text-white transition-colors"
-              >
-                工作流
-              </router-link>
-            </li>
-            <li>
-              <router-link
-                to="/comparison"
-                class="hover:text-white transition-colors"
-              >
-                对比分析
-              </router-link>
-            </li>
-          </ul>
+          <nav aria-label="Footer navigation">
+            <ul class="space-y-2 text-sm">
+              <li v-for="item in navLinks" :key="item.to">
+                <router-link
+                  :to="item.to"
+                  class="text-muted hover:text-white transition-colors duration-200 inline-flex items-center gap-1 group"
+                >
+                  <ChevronRight class="w-3 h-3 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-200" />
+                  {{ item.label }}
+                </router-link>
+              </li>
+            </ul>
+          </nav>
         </div>
 
+        <!-- 相关资源 -->
         <div>
-          <h4 class="text-lg font-semibold mb-4">
+          <h4 class="text-base font-semibold mb-4 text-white">
             相关资源
           </h4>
-          <ul class="space-y-2 text-white/60 text-sm">
-            <li>
+          <ul class="space-y-2 text-sm">
+            <li v-for="item in resources" :key="item.label">
               <a
-                href="https://github.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="hover:text-white transition-colors"
-              >GitHub</a>
-            </li>
-            <li>
-              <a
-                href="https://docs.example.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="hover:text-white transition-colors"
-              >文档</a>
-            </li>
-            <li>
-              <a
-                href="mailto:contact@example.com"
-                class="hover:text-white transition-colors"
-              >联系我们</a>
+                :href="item.href"
+                :target="item.external ? '_blank' : undefined"
+                :rel="item.external ? 'noopener noreferrer' : undefined"
+                class="text-muted hover:text-white transition-colors duration-200 inline-flex items-center gap-1 group"
+              >
+                <component :is="item.icon" class="w-3.5 h-3.5" />
+                {{ item.label }}
+                <ExternalLink v-if="item.external" class="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
+              </a>
             </li>
           </ul>
         </div>
       </div>
 
-      <div class="border-t border-white/10 pt-8 text-center text-white/40 text-sm">
-        <p>&copy; 2026 AI工具全书项目组. 保留所有权利。</p>
+      <!-- 版权信息 -->
+      <div class="border-t border-white/10 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-muted-light">
+        <p>&copy; 2026 AI工具全书. 保留所有权利。</p>
+        <p class="flex items-center gap-1">
+          Built with
+          <Heart class="w-3 h-3 text-red-400 fill-red-400/20" />
+          using Vue 3 + Tailwind CSS
+        </p>
       </div>
     </div>
   </footer>
 </template>
 
 <script setup>
-import { Brain } from 'lucide-vue-next'
+import { Brain, ChevronRight, Github, FileText, Mail, ExternalLink, Heart } from 'lucide-vue-next'
+
+const navLinks = [
+  { to: '/', label: '工具列表' },
+  { to: '/matcher', label: '工具匹配' },
+  { to: '/pricing', label: '订阅指南' },
+  { to: '/workflows', label: '工作流' },
+  { to: '/comparison', label: '对比分析' }
+]
+
+const resources = [
+  { label: 'GitHub 仓库', href: 'https://github.com/ava-agent/ai-tools', icon: Github, external: true },
+  { label: '使用文档', href: '/docs', icon: FileText, external: false },
+  { label: '联系我们', href: 'mailto:contact@example.com', icon: Mail, external: false }
+]
 </script>
