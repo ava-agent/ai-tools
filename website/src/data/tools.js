@@ -26,7 +26,8 @@ export const aiToolsData = [
       pitfalls: ['不要让它一次性改超过 10 个文件', '敏感项目建议关闭云端索引']
     },
     swot: { S: '全流程开发能力一流', W: '订阅成本高', O: '演进为代码自治 Agent', T: 'Trae、GitHub Copilot 竞争' },
-    tags: ['推荐', 'VS Code系', 'Agentic', '行业标杆']
+    tags: ['推荐', 'VS Code系', 'Agentic', '行业标杆'],
+    video: { src: '/videos/cursor.mp4', thumbnail: '/videos/cursor-thumb.jpg' }
   },
   {
     id: 'trae',
@@ -52,7 +53,8 @@ export const aiToolsData = [
       pitfalls: ['功能可能频繁变动', '敏感代码慎用（隐私条款：会临时上传代码用于 embeddings 计算）']
     },
     swot: { S: '免费、DeepSeek 集成', W: '功能迭代中', O: '国内市场巨大', T: 'Cursor 先发优势' },
-    tags: ['推荐', '国产', '免费', 'DeepSeek', '月活100万', 'Cue功能', '图像转码']
+    tags: ['推荐', '国产', '免费', 'DeepSeek', '月活100万', 'Cue功能', '图像转码'],
+    video: { src: '/videos/trae.mp4', thumbnail: '/videos/trae-thumb.jpg' }
   },
   {
     id: 'windsurf',
@@ -77,7 +79,8 @@ export const aiToolsData = [
       pitfalls: ['Cascade 有时过于自主', '必须明确限制改动范围', '复杂重构时注意测试']
     },
     swot: { S: 'Cascade AI 强、性价比高', W: '品牌知名度低', O: '企业市场潜力', T: 'Cursor 生态' },
-    tags: ['推荐', '性价比', 'Cascade', '超预期', 'SWE-1.5', 'GitWorktree']
+    tags: ['推荐', '性价比', 'Cascade', '超预期', 'SWE-1.5', 'GitWorktree'],
+    video: { src: '/videos/windsurf.mp4', thumbnail: '/videos/windsurf-thumb.jpg' }
   },
   {
     id: 'qoder',
@@ -102,7 +105,8 @@ export const aiToolsData = [
       pitfalls: ['项目效果有波动', '不如 Cursor 全面']
     },
     swot: { S: 'Repo Wiki、后端强', W: '小众', O: '企业级市场', T: 'Cursor 全能' },
-    tags: ['国产', '后端', 'Qwen', 'MoE']
+    tags: ['国产', '后端', 'Qwen', 'MoE'],
+    video: { src: '/videos/qoder.mp4', thumbnail: '/videos/qoder-thumb.jpg' }
   },
   {
     id: 'zed',
@@ -177,7 +181,8 @@ export const aiToolsData = [
       pitfalls: ['Free credits 太少', '不当主力写码']
     },
     swot: { S: 'Spec 驱动', W: '重量级', O: '企业规范', T: '轻量 IDE' },
-    tags: ['Amazon', 'Spec', '规范', 'AmazonQ']
+    tags: ['Amazon', 'Spec', '规范', 'AmazonQ'],
+    video: { src: '/videos/kiro.mp4', thumbnail: '/videos/kiro-thumb.jpg' }
   },
   {
     id: 'codebuddy',
@@ -202,7 +207,8 @@ export const aiToolsData = [
       pitfalls: ['不支持多会话是致命伤', '稳定性问题频繁', '优化差，流程经常中断', '不适合作为主力开发工具']
     },
     swot: { S: '腾讯云集成', W: '多会话缺失、稳定性、优化差', O: '云服务市场', T: 'Cursor 功能' },
-    tags: ['国产', '腾讯', 'BYOK', '不推荐主力', '混元']
+    tags: ['国产', '腾讯', 'BYOK', '不推荐主力', '混元'],
+    video: { src: '/videos/codebuddy.mp4', thumbnail: '/videos/codebuddy-thumb.jpg' }
   },
   {
     id: 'antigravity',
@@ -227,7 +233,8 @@ export const aiToolsData = [
       pitfalls: ['新品功能待验证', '定价待公布']
     },
     swot: { S: 'Google、Gemini', W: '新品未知', O: '生态整合', T: '成熟竞品' },
-    tags: ['Google', 'Gemini', '新品', 'AgentSkills', 'Beta免费']
+    tags: ['Google', 'Gemini', '新品', 'AgentSkills', 'Beta免费'],
+    video: { src: '/videos/antigravity.mp4', thumbnail: '/videos/antigravity-thumb.jpg' }
   },
   {
     id: 'github-copilot',
@@ -277,7 +284,8 @@ export const aiToolsData = [
       pitfalls: ['新工具仍在快速迭代', '需要熟悉多 Agent 工作流']
     },
     swot: { S: '多 Agent、Plan Mode', W: '新工具', O: '企业级市场', T: 'Cursor 生态' },
-    tags: ['多Agent', 'PlanMode', 'GitWorktrees', 'DiffLens', 'SWE-bench']
+    tags: ['多Agent', 'PlanMode', 'GitWorktrees', 'DiffLens', 'SWE-bench'],
+    video: { src: '/videos/verdent.mp4', thumbnail: '/videos/verdent-thumb.jpg' }
   },
   {
     id: 'jetbrains-ai',
@@ -329,7 +337,8 @@ export const aiToolsData = [
       pitfalls: ['价格贵需 Pro 订阅', '关键任务再用', '频繁权限请求', '简单任务可能过度思考']
     },
     swot: { S: '能力最强', W: '价格高', O: '企业需求', T: '免费替代' },
-    tags: ['推荐', 'CLI', '最强', 'Claude', 'AgentTeams', 'ContextCompaction', 'AdaptiveThinking']
+    tags: ['推荐', 'CLI', '最强', 'Claude', 'AgentTeams', 'ContextCompaction', 'AdaptiveThinking'],
+    video: { src: '/videos/claude-code.mp4', thumbnail: '/videos/claude-code-thumb.jpg' }
   },
   {
     id: 'gemini-cli',

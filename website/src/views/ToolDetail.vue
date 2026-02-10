@@ -86,6 +86,21 @@
             {{ tool.bestFor }}
           </p>
 
+          <!-- 演示视频 -->
+          <div
+            v-if="tool.video"
+            class="mb-8"
+          >
+            <h2 class="text-2xl font-bold text-white mb-4 flex items-center">
+              <Video class="w-6 h-6 text-primary mr-2" />
+              演示视频
+            </h2>
+            <VideoPlayer
+              :src="tool.video.src"
+              :thumbnail="tool.video.thumbnail"
+            />
+          </div>
+
           <div class="grid md:grid-cols-2 gap-8 mb-8">
             <div>
               <h2 class="text-2xl font-bold text-white mb-4 flex items-center">
@@ -260,7 +275,8 @@ import { ref, computed, onMounted } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { useToolsStore } from '../stores/tools'
 import { getTagColor, getCategoryLabel, getCategoryColor } from '../utils/helpers'
-import { ArrowLeft, CheckCircle, AlertCircle, AlertTriangle, Star } from 'lucide-vue-next'
+import { ArrowLeft, CheckCircle, AlertCircle, AlertTriangle, Star, Video } from 'lucide-vue-next'
+import VideoPlayer from '../components/VideoPlayer.vue'
 
 const route = useRoute()
 const router = useRouter()

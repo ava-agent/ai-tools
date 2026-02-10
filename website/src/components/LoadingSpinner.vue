@@ -1,6 +1,13 @@
 <template>
-  <div class="flex items-center justify-center py-20" role="status" aria-live="polite">
-    <div class="relative" aria-hidden="true">
+  <div
+    class="flex items-center justify-center py-20"
+    role="status"
+    aria-live="polite"
+  >
+    <div
+      class="relative"
+      aria-hidden="true"
+    >
       <!-- 外圈 -->
       <div class="w-16 h-16 border-4 border-primary/20 rounded-full" />
       <!-- 内圈动画 -->

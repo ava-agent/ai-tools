@@ -1,10 +1,16 @@
 <template>
-  <footer class="glass-effect border-t border-white/10 py-12 mt-16" role="contentinfo">
+  <footer
+    class="glass-effect border-t border-white/10 py-12 mt-16"
+    role="contentinfo"
+  >
     <div class="container mx-auto px-4">
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
         <!-- 品牌信息 -->
         <div>
-          <router-link to="/" class="flex items-center gap-2 mb-4 group">
+          <router-link
+            to="/"
+            class="flex items-center gap-2 mb-4 group"
+          >
             <div class="relative">
               <Brain class="w-8 h-8 text-primary transition-transform duration-300 group-hover:scale-110" />
               <div class="absolute inset-0 bg-primary/20 rounded-full blur-lg group-hover:bg-primary/30 transition-all duration-300" />
@@ -25,7 +31,10 @@
           </h4>
           <nav aria-label="Footer navigation">
             <ul class="space-y-2 text-sm">
-              <li v-for="item in navLinks" :key="item.to">
+              <li
+                v-for="item in navLinks"
+                :key="item.to"
+              >
                 <router-link
                   :to="item.to"
                   class="text-muted hover:text-white transition-colors duration-200 inline-flex items-center gap-1 group"
@@ -44,16 +53,25 @@
             相关资源
           </h4>
           <ul class="space-y-2 text-sm">
-            <li v-for="item in resources" :key="item.label">
+            <li
+              v-for="item in resources"
+              :key="item.label"
+            >
               <a
                 :href="item.href"
                 :target="item.external ? '_blank' : undefined"
                 :rel="item.external ? 'noopener noreferrer' : undefined"
                 class="text-muted hover:text-white transition-colors duration-200 inline-flex items-center gap-1 group"
               >
-                <component :is="item.icon" class="w-3.5 h-3.5" />
+                <component
+                  :is="item.icon"
+                  class="w-3.5 h-3.5"
+                />
                 {{ item.label }}
-                <ExternalLink v-if="item.external" class="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
+                <ExternalLink
+                  v-if="item.external"
+                  class="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity duration-200"
+                />
               </a>
             </li>
           </ul>

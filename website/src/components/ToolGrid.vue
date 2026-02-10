@@ -1,8 +1,15 @@
 <template>
-  <section id="tools" class="py-16" aria-labelledby="tools-heading">
+  <section
+    id="tools"
+    class="py-16"
+    aria-labelledby="tools-heading"
+  >
     <!-- 标题区域 -->
     <header class="text-center mb-12">
-      <h2 id="tools-heading" class="text-3xl sm:text-4xl font-bold mb-4 gradient-text">
+      <h2
+        id="tools-heading"
+        class="text-3xl sm:text-4xl font-bold mb-4 gradient-text"
+      >
         AI工具列表
       </h2>
       <p class="text-lg sm:text-xl text-white/80">

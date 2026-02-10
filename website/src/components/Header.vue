@@ -27,7 +27,10 @@
             active-class="text-white bg-white/5"
           >
             <span class="flex items-center gap-2">
-              <component :is="item.icon" class="w-4 h-4" />
+              <component
+                :is="item.icon"
+                class="w-4 h-4"
+              />
               {{ item.label }}
             </span>
             <span class="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-1/2" />
@@ -42,8 +45,14 @@
             aria-label="切换菜单"
             @click="toggleMobileMenu"
           >
-            <Menu v-if="!isMobileMenuOpen" class="w-6 h-6" />
-            <X v-else class="w-6 h-6" />
+            <Menu
+              v-if="!isMobileMenuOpen"
+              class="w-6 h-6"
+            />
+            <X
+              v-else
+              class="w-6 h-6"
+            />
           </button>
         </div>
       </div>
@@ -69,7 +78,11 @@
               class="flex flex-col items-center justify-center p-4 rounded-xl text-white/70 hover:text-white hover:bg-white/5 transition-all duration-200 cursor-pointer min-h-[88px]"
               @click="isMobileMenuOpen = false"
             >
-              <component :is="item.icon" class="w-6 h-6 mb-2" :class="item.iconColor" />
+              <component
+                :is="item.icon"
+                class="w-6 h-6 mb-2"
+                :class="item.iconColor"
+              />
               <span class="text-sm font-medium">{{ item.label }}</span>
             </router-link>
           </div>

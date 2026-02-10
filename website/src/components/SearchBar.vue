@@ -26,7 +26,10 @@
           :class="selectedCategory === category ? 'bg-primary text-white' : 'bg-white/5 text-white/70 hover:text-white'"
           @click="selectCategory(category)"
         >
-          <span class="relative z-10" :class="selectedCategory === category ? 'font-semibold' : ''">
+          <span
+            class="relative z-10"
+            :class="selectedCategory === category ? 'font-semibold' : ''"
+          >
             {{ category === 'all' ? '全部' : getCategoryDisplayName(category) }}
           </span>
         </button>
@@ -34,14 +37,20 @@
     </div>
 
     <!-- 标签筛选 -->
-    <div v-if="allTags && allTags.length > 0" class="space-y-4">
+    <div
+      v-if="allTags && allTags.length > 0"
+      class="space-y-4"
+    >
       <div class="flex items-center justify-between">
         <div class="flex items-center gap-2">
           <Tag class="w-5 h-5 text-primary" />
           <h3 class="text-base font-semibold text-white">
             标签筛选
           </h3>
-          <span v-if="selectedTags.length > 0" class="text-sm text-muted">
+          <span
+            v-if="selectedTags.length > 0"
+            class="text-sm text-muted"
+          >
             (已选 {{ selectedTags.length }} 个)
           </span>
         </div>
