@@ -27,6 +27,10 @@ jobs:
 
       - name: Install dependencies
         working-directory: ./website
+        run: npm install @rollup/rollup-linux-x64-gnu --no-save
+
+      - name: Install all dependencies
+        working-directory: ./website
         run: npm install
 
       - name: Build
