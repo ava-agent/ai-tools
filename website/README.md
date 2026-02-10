@@ -25,13 +25,21 @@ npm install
 npm run dev
 ```
 
-访问 http://localhost:3000
+访问 http://localhost:8765
 
 ### 构建生产版本
 
 ```bash
 npm run build
 ```
+
+### 预览生产构建
+
+```bash
+npm run preview
+```
+
+访问 http://localhost:8766
 
 ### 运行测试
 
@@ -70,7 +78,8 @@ website/
 │   │   ├── tools.js
 │   │   └── ui.js
 │   ├── data/             # 数据文件
-│   │   └── tools.js
+│   │   └── tools/         # 工具数据目录
+│   │       └── index.js
 │   ├── utils/            # 工具函数
 │   │   └── helpers.js
 │   ├── router/            # Vue Router 配置
@@ -84,6 +93,7 @@ website/
 ├── vitest.config.js       # Vitest 测试配置
 ├── Dockerfile            # Docker 构建配置
 ├── nginx.conf            # Nginx 服务器配置
+├── .npmrc                # npm 配置（公共源）
 └── package.json          # 项目配置
 ```
 
@@ -101,9 +111,19 @@ website/
 
 ## 📝 开发指南
 
+### npm 配置
+
+项目包含 `.npmrc` 文件，配置使用公共 npm 源：
+
+```ini
+registry=https://registry.npmjs.org/
+```
+
+这确保项目依赖从官方 npm 源下载，避免使用企业内部镜像源。
+
 ### 添加新工具
 
-编辑 `src/data/tools.js`，添加新的工具对象：
+编辑 `src/data/tools/index.js`，添加新的工具对象：
 
 ```javascript
 {
@@ -182,8 +202,10 @@ docker build -t ai-tools-website .
 ### 运行容器
 
 ```bash
-docker run -p 3000:80 ai-tools-website
+docker run -p 8080:80 ai-tools-website
 ```
+
+访问 http://localhost:8080
 
 ### Docker Compose
 
@@ -193,7 +215,7 @@ services:
   website:
     build: .
     ports:
-      - "3000:80"
+      - "8080:80"
     environment:
       - NODE_ENV=production
 ```
