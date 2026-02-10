@@ -25,11 +25,13 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Install & Build
+      - name: Install dependencies
         working-directory: ./website
-        run: |
-          npm ci
-          npm run build
+        run: npm install
+
+      - name: Build
+        working-directory: ./website
+        run: npm run build
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
