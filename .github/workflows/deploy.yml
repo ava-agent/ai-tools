@@ -25,16 +25,15 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v4
-        with:
-          version: 9
-
       - name: Install & Build
         working-directory: ./website
+        env:
+          npm_config_optional: 'true'
+          npm_config_include_optional: 'true'
         run: |
-          pnpm install
-          pnpm run build
+          rm -rf node_modules package-lock.json
+          npm install --force
+          npm run build
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
