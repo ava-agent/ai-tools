@@ -27,12 +27,9 @@ jobs:
 
       - name: Install & Build
         working-directory: ./website
-        env:
-          npm_config_optional: 'true'
-          npm_config_include_optional: 'true'
         run: |
           rm -rf node_modules package-lock.json
-          npm install --force
+          npm install
           npm run build
 
       - name: Upload artifact
