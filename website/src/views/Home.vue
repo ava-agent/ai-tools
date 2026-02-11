@@ -1,5 +1,6 @@
 <template>
   <div class="min-h-screen bg-background">
+    <IntroVideo :show="showIntro" @close="handleIntroClose" />
     <Hero />
     <SearchBar />
 
@@ -60,11 +61,22 @@
         <LoadingSpinner />
       </template>
     </Suspense>
+    <!-- Replay Intro Button -->
+    <Transition name="fade">
+      <button
+        v-if="!showIntro"
+        @click="showIntro = true"
+        class="fixed bottom-6 right-6 z-40 flex items-center gap-2 px-4 py-2 bg-surface/80 hover:bg-surface text-white text-sm font-medium rounded-full shadow-lg border border-white/10 backdrop-blur-sm transition-all hover:scale-105"
+      >
+        <PlayCircle class="w-4 h-4 text-primary" />
+        重看演示
+      </button>
+    </Transition>
   </div>
 </template>
 
 <script setup>
-import { computed, Suspense } from 'vue'
+import { computed, Suspense, ref, onMounted } from 'vue'
 import { PlayCircle, ArrowRight, Video, FileText } from 'lucide-vue-next'
 import { useToolsStore } from '../stores/tools'
 import { resources } from '../data/resources.js'
@@ -72,6 +84,22 @@ import Hero from '../components/Hero.vue'
 import SearchBar from '../components/SearchBar.vue'
 import ToolGrid from '../components/ToolGrid.vue'
 import LoadingSpinner from '../components/LoadingSpinner.vue'
+import IntroVideo from '../components/IntroVideo.vue'
+
+const showIntro = ref(false)
+
+function handleIntroClose() {
+  showIntro.value = false
+  sessionStorage.setItem('hasSeenIntro', 'true')
+}
+
+onMounted(() => {
+  // Check if user has seen intro in this session
+  const hasSeen = sessionStorage.getItem('hasSeenIntro')
+  if (!hasSeen) {
+    showIntro.value = true
+  }
+})
 
 const toolsStore = useToolsStore()
 
