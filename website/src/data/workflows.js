@@ -19,7 +19,7 @@ export const workflows = [
             '明确改动范围，告诉 AI "允许改"和"禁止改"的目录',
             '每步都要看 diff，不要直接接受'
         ],
-        flowImage: '/images/daily_dev_flow.png'
+        flowImage: 'images/daily_dev_flow.png'
     },
     {
         id: 'rapid-prototype',
@@ -38,7 +38,7 @@ export const workflows = [
             '原型验证后再决定是否继续投入',
             '原型验证成功后，用主力 IDE 重新开发生产版本'
         ],
-        flowImage: '/images/rapid_prototype_flow.png'
+        flowImage: 'images/rapid_prototype_flow.png'
     },
     {
         id: 'design-flow',
@@ -74,7 +74,7 @@ export const workflows = [
             '每次改动前确保 Git 工作区干净',
             '重要节点手动创建 Git tag 作为检查点'
         ],
-        flowImage: '/images/refactoring_flow.png'
+        flowImage: 'images/refactoring_flow.png'
     },
     {
         id: 'legacy-takeover',
@@ -92,7 +92,7 @@ export const workflows = [
             '关注代码中的业务逻辑，不只是技术实现',
             '记录遇到的问题，形成项目知识库'
         ],
-        flowImage: '/images/legacy_takeover_flow.png'
+        flowImage: 'images/legacy_takeover_flow.png'
     },
     {
         id: 'critical-task',
@@ -110,7 +110,7 @@ export const workflows = [
             'Gemini CLI 1M 上下文搜索相关代码',
             '每步都要充分测试验证'
         ],
-        flowImage: '/images/critical_task_flow.png'
+        flowImage: 'images/critical_task_flow.png'
     }
 ]
 
