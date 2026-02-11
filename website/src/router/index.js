@@ -44,6 +44,13 @@ const Workflows = defineAsyncComponent({
   timeout: 3000
 })
 
+const Resources = defineAsyncComponent({
+  loader: () => import('../views/Resources.vue'),
+  loadingComponent: () => import('../components/LoadingSpinner.vue'),
+  delay: 200,
+  timeout: 3000
+})
+
 const routes = [
   {
     path: '/',
@@ -100,6 +107,15 @@ const routes = [
       description: '基于真实项目经验总结的AI工作流方案'
     }
   },
+  {
+    path: '/resources',
+    name: 'resources',
+    component: Resources,
+    meta: {
+      title: '资源中心 - AI工具全书',
+      description: 'PPT 演示文稿、深度解析视频 — 全方位了解 AI 开发工具生态'
+    }
+  },
   // 404 页面
   {
     path: '/:pathMatch(.*)*',
@@ -129,13 +145,13 @@ const router = createRouter({
 router.beforeEach((to, from, next) => {
   const defaultTitle = 'AI工具全书 | 2026深度集成与实战教学版'
   document.title = to.meta.title || defaultTitle
-  
+
   // 更新 meta description
   const metaDescription = document.querySelector('meta[name="description"]')
   if (metaDescription && to.meta.description) {
     metaDescription.setAttribute('content', to.meta.description)
   }
-  
+
   next()
 })
 

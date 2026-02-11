@@ -86,6 +86,25 @@
             {{ tool.bestFor }}
           </p>
 
+          <!-- 能力雷达图 -->
+          <div
+            v-if="tool.radarChart"
+            class="mb-8"
+          >
+            <h2 class="text-2xl font-bold text-white mb-4 flex items-center">
+              <BarChart3 class="w-6 h-6 text-primary mr-2" />
+              能力雷达图
+            </h2>
+            <div class="bg-white/5 rounded-xl p-4 border border-white/10">
+              <img
+                :src="tool.radarChart"
+                :alt="tool.name + ' 能力雷达图'"
+                class="w-full max-w-lg mx-auto rounded-lg"
+                loading="lazy"
+              />
+            </div>
+          </div>
+
           <!-- 演示视频 -->
           <div
             v-if="tool.video"
@@ -275,7 +294,7 @@ import { ref, computed, onMounted } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { useToolsStore } from '../stores/tools'
 import { getTagColor, getCategoryLabel, getCategoryColor } from '../utils/helpers'
-import { ArrowLeft, CheckCircle, AlertCircle, AlertTriangle, Star, Video } from 'lucide-vue-next'
+import { ArrowLeft, CheckCircle, AlertCircle, AlertTriangle, Star, Video, BarChart3 } from 'lucide-vue-next'
 import VideoPlayer from '../components/VideoPlayer.vue'
 
 const route = useRoute()

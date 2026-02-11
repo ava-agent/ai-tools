@@ -62,42 +62,46 @@ export const quickSelectionGuide = [
 export const recommendedCombos = [
     {
         name: '全栈开发者方案',
-        budget: '$35-50/月',
+        budget: '$20-40/月',
         tools: [
             { layer: '主力 IDE', tool: 'Cursor', usage: '日常开发', cost: '$20/月' },
-            { layer: 'CLI 补强', tool: 'Gemini CLI', usage: '批量改动、调研', cost: '免费' },
-            { layer: '方案设计', tool: 'Claude', usage: '架构设计', cost: '$20/月' },
-            { layer: '图像生成', tool: 'Nano Banana', usage: '架构图', cost: '免费' }
+            { layer: '深度推理', tool: 'Claude Code', usage: '复杂任务', cost: '$20/月' },
+            { layer: '大规模分析', tool: 'Gemini CLI', usage: '代码分析、调研', cost: '免费' }
         ]
     },
     {
         name: '预算敏感方案',
-        budget: '$0-15/月',
+        budget: '$0/月',
         tools: [
             { layer: '主力 IDE', tool: 'Trae', usage: '日常开发', cost: '免费' },
-            { layer: 'CLI 补强', tool: 'Gemini CLI + Qwen CLI', usage: '批量改动', cost: '免费' },
-            { layer: '方案设计', tool: 'DeepSeek', usage: '架构设计', cost: '免费' },
-            { layer: '代码审查', tool: 'Aider', usage: 'Git 集成', cost: '免费' }
-        ]
-    },
-    {
-        name: '企业团队方案',
-        budget: '$50-100/人/月',
-        tools: [
-            { layer: '主力 IDE', tool: 'Windsurf / Cursor Teams', usage: '团队协作', cost: '$40/月' },
-            { layer: 'CLI 补强', tool: 'Claude Code', usage: '关键任务', cost: '$20/月' },
-            { layer: '知识管理', tool: 'NotebookLM', usage: '文档沉淀', cost: '免费' },
-            { layer: 'Agent 平台', tool: 'Coze Enterprise', usage: '流程自动化', cost: '定制' }
+            { layer: 'CLI 补强', tool: 'Gemini CLI', usage: '大规模分析', cost: '免费' },
+            { layer: '中文优化', tool: 'Qwen CLI', usage: '中文场景', cost: '免费' }
         ]
     },
     {
         name: '独立开发者方案',
-        budget: '$20-40/月',
+        budget: '$20/月',
         tools: [
             { layer: '主力 IDE', tool: 'Cursor', usage: '全栈开发', cost: '$20/月' },
-            { layer: '快速原型', tool: 'Trae', usage: 'MVP 验证', cost: '免费' },
-            { layer: '内容创作', tool: '可灵 + 剪映', usage: '视频内容', cost: '免费-$20/月' },
-            { layer: '部署', tool: 'Codebuddy', usage: '快速上线', cost: '低' }
+            { layer: '深度推理', tool: 'Claude Code', usage: '复杂任务', cost: '$20/月' },
+            { layer: '快速原型', tool: 'Trae', usage: 'MVP 验证', cost: '免费' }
+        ]
+    },
+    {
+        name: '企业团队方案',
+        budget: '$40-60/人/月',
+        tools: [
+            { layer: '主力 IDE', tool: 'Cursor', usage: '团队开发', cost: '$40/月' },
+            { layer: '协作', tool: 'GitHub Copilot', usage: 'PR 审查', cost: '$19/月' },
+            { layer: '需求管理', tool: 'Kiro', usage: 'Spec 驱动', cost: '$20+/月' }
+        ]
+    },
+    {
+        name: '后端专项方案',
+        budget: '$20/月',
+        tools: [
+            { layer: '存量代码', tool: 'Qoder', usage: 'Repo Wiki 理解', cost: '$20/月' },
+            { layer: '深度推理', tool: 'Claude Code', usage: '复杂任务', cost: '$20/月' }
         ]
     }
 ]

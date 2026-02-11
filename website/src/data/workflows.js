@@ -18,7 +18,8 @@ export const workflows = [
             '拆分任务为 3-7 个子任务，每步验证',
             '明确改动范围，告诉 AI "允许改"和"禁止改"的目录',
             '每步都要看 diff，不要直接接受'
-        ]
+        ],
+        flowImage: '/images/daily_dev_flow.png'
     },
     {
         id: 'rapid-prototype',
@@ -35,8 +36,9 @@ export const workflows = [
             '不要追求完美，先跑通再优化',
             '利用免费额度快速试错（Trae 完全免费）',
             '原型验证后再决定是否继续投入',
-            '注意：Codebuddy 不支持多会话且有稳定性问题，建议用 Windsurf 替代'
-        ]
+            '原型验证成功后，用主力 IDE 重新开发生产版本'
+        ],
+        flowImage: '/images/rapid_prototype_flow.png'
     },
     {
         id: 'design-flow',
@@ -71,7 +73,44 @@ export const workflows = [
             '先给范围限制，分步执行',
             '每次改动前确保 Git 工作区干净',
             '重要节点手动创建 Git tag 作为检查点'
-        ]
+        ],
+        flowImage: '/images/refactoring_flow.png'
+    },
+    {
+        id: 'legacy-takeover',
+        name: '存量项目接手流',
+        nameZh: '存量项目接手流',
+        description: '适用于接手他人项目、理解遗留代码',
+        steps: [
+            { step: 1, action: '代码库文档生成', tool: 'Qoder', tip: '利用 Repo Wiki 生成代码库文档' },
+            { step: 2, action: '依赖关系分析', tool: 'Gemini CLI', tip: '分析核心模块依赖关系' },
+            { step: 3, action: '阅读关键代码', tool: 'Cursor', tip: '阅读关键代码，添加注释' },
+            { step: 4, action: '总结技术债务', tool: 'Claude Code', tip: '总结技术债务和风险点' }
+        ],
+        tips: [
+            '不要急于修改，先理解再动手',
+            '关注代码中的业务逻辑，不只是技术实现',
+            '记录遇到的问题，形成项目知识库'
+        ],
+        flowImage: '/images/legacy_takeover_flow.png'
+    },
+    {
+        id: 'critical-task',
+        name: '关键任务攻关流',
+        nameZh: '关键任务攻关流',
+        description: '适用于高难 Bug 定位、性能优化、复杂方案设计',
+        steps: [
+            { step: 1, action: '深度推理分析', tool: 'Claude Code', tip: '利用 Agent Teams 并行协作' },
+            { step: 2, action: '搜索相关代码和日志', tool: 'Gemini CLI', tip: '1M 上下文全面覆盖' },
+            { step: 3, action: '实施解决方案', tool: 'Cursor', tip: '逐文件审查改动' },
+            { step: 4, action: '充分测试验证', tool: '手动', tip: '关键任务要格外谨慎' }
+        ],
+        tips: [
+            '关键任务使用 Claude Code 深度推理',
+            'Gemini CLI 1M 上下文搜索相关代码',
+            '每步都要充分测试验证'
+        ],
+        flowImage: '/images/critical_task_flow.png'
     }
 ]
 

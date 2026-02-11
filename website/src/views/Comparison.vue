@@ -129,11 +129,11 @@
           <ul class="space-y-3 text-white/80">
             <li class="flex items-start">
               <span class="font-semibold text-primary mr-2">Cursor：</span>
-              <span>Composer-1 多文件协同能力最强</span>
+              <span>Composer-1.5 多文件协同能力最强</span>
             </li>
             <li class="flex items-start">
               <span class="font-semibold text-primary mr-2">Trae：</span>
-              <span>免费预览期，DeepSeek R1 深度集成</span>
+              <span>完全免费，国产模型深度集成</span>
             </li>
             <li class="flex items-start">
               <span class="font-semibold text-primary mr-2">Claude：</span>

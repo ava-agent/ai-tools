@@ -11,23 +11,24 @@ export const aiToolsData = [
     developer: 'Anysphere',
     logo: null,
     versions: [
-      { type: 'Global', pricing: '免费/$20/$32/$200/月', models: 'Composer-1, Claude 3.5, GPT-4o, o1', link: 'https://cursor.sh' }
+      { type: 'Global', pricing: '免费/$20/$60(Pro+)/$200/月/$40用户月(团队)', models: 'Composer-1.5, Claude, GPT-4o, o1', link: 'https://cursor.sh' }
     ],
-    freeQuota: '免费试用有限',
+    freeQuota: '免费(50请求+2000Tab)',
     contextWindow: '取决于模型',
     chineseSupport: 4,
-    pros: ['业内标杆，功能最全', 'Composer-1 自研模型速度提升 4 倍', '支持 8 个 Agent 并行处理', 'Tab 补全极其流畅', '本地知识库/Repo Index', '原子级 diffs 精确代码更改', '语义搜索整个代码库', '强化学习训练的生产级编程', 'VS Code 生态无缝兼容', '跨平台支持 (Win/Mac/Linux)', 'Chat/Composer/Pause 三模式灵活切换', '.cursorrules 自定义规则强大'],
-    cons: ['价格昂贵 ($20/mo 起)', 'Business 计划较 ($32/用户/月)', 'Ultra 计划 $200/月 费用高', '国内访问需优化', '复杂重构需人工干预', '资源占用较高 (内存/CPU)', '学习曲线陡峭', '偶尔生成幻觉代码需验证'],
+    pros: ['业内标杆，功能最全', 'Composer-1.5 自研模型强化推理（强化学习扩展20倍）', '支持 8 个 Agent 并行处理', 'Tab 补全极其流畅（Pro 计划无限次）', '本地知识库/Repo Index，语义搜索整个代码库', '原子级 diffs 精确代码更改', 'VS Code 生态无缝兼容', '.cursorrules 自定义规则强大', 'MCP 协议支持'],
+    cons: ['不要让它一次性改超过 10 个文件', '敏感项目建议关闭云端索引', '价格昂贵（$20/月起）', '国内访问需优化'],
     bestFor: '日常主力开发、复杂架构重构与高频编码',
     funRanking: '夯',
     personalExperience: {
       rating: 5,
-      insights: '目前最成熟的 AI 原生 IDE。2026 年引入 Composer-1 自研模型速度提升 4 倍，支持 8 个 Agent 并行处理复杂任务。Composer 带来的跨文件重构能力是其护城河。如果不考虑价格，可以 only one 使用。',
+      insights: '目前最成熟的 AI 原生 IDE。2026 年引入 Composer-1.5 自研模型，通过强化学习扩展 20 倍提升推理能力，支持 8 个 Agent 并行处理复杂任务。Composer 带来的跨文件重构能力是其护城河。如果不考虑价格，可以 only one 使用。',
       pitfalls: ['不要让它一次性改超过 10 个文件', '敏感项目建议关闭云端索引']
     },
     swot: { S: '全流程开发能力一流', W: '订阅成本高', O: '演进为代码自治 Agent', T: 'Trae、GitHub Copilot 竞争' },
     tags: ['推荐', 'VS Code系', 'Agentic', '行业标杆'],
-    video: { src: './videos/cursor.mp4', thumbnail: './videos/cursor-thumb.jpg' }
+    video: { src: './videos/cursor.mp4', thumbnail: './videos/cursor-thumb.jpg' },
+    radarChart: '/images/cursor_radar_chart.png'
   },
   {
     id: 'trae',
@@ -43,18 +44,19 @@ export const aiToolsData = [
     freeQuota: '完全免费',
     contextWindow: '取决于模型',
     chineseSupport: 5,
-    pros: ['完全免费', 'DeepSeek R1 深度集成', 'Solo 双模式：Builder (0→1) + Coder (1→100)', '实时跟踪能力方便快速调试', 'UI/UX 现代流畅', '月活超100万，全球600万开发者', 'Cue功能代码预测行业领先', '支持图像转代码', 'SOLO Coder新增Plan模式', '年更新200次，版本迭代快', '字节跳动技术背书', '国产化适配优秀', '火山引擎基础设施稳定', '社区活跃文档丰富'],
-    cons: ['功能迭代中（稳定性波动）', '生态不如 Cursor 成熟', '隐私条款需注意：临时上传代码用于 embeddings 计算', '海外模型集成有限', '插件生态较少', '大型项目响应可能变慢', '部分高级功能需等待'],
+    pros: ['完全免费（SOLO 模式）', 'Solo 双模式：Builder (0→1) + Coder (1→100)', '国产模型深度集成', '月活 160 万，全球累计用户 600 万（覆盖近 200 个国家和地区）', 'Cue 功能代码补全、多行修改、智能导入、智能重命名', '支持图像转代码（通过 MCP 支持 Figma 设计稿转代码）', 'SOLO Coder Plan 模式：先输出开发计划，确认后再编写代码', '自定义智能体（累计创建 36.5 万个）', '字节跳动技术背书', '国产化适配优秀'],
+    cons: ['隐私条款：会临时上传代码用于 embeddings 计算', '功能可能频繁变动', '敏感代码慎用'],
     bestFor: '国内开发者、预算有限团队、快速原型',
     funRanking: '夯',
     personalExperience: {
       rating: 5,
-      insights: 'Cursor 的最佳平替。从"免费预览期"改为"完全免费"，Solo 双模式强大：Builder 负责从 0 到 1 的快速原型，Coder 负责从 1 到 100 的迭代优化。实时跟踪能力方便快速调试。全球开发者已达 600 万，月活用户已超100万。2026年新增Cue功能代码预测、图像转代码、SOLO Coder的Plan模式等功能。免费是巨大优势。',
+      insights: 'Cursor 的最佳平替。Solo 双模式强大：Builder 负责从 0 到 1 的快速原型，Coder 负责从 1 到 100 的迭代优化。实时跟踪能力方便快速调试。全球开发者已达 600 万，月活用户 160 万。2026 年新增 Cue 功能、图像转代码、SOLO Coder 的 Plan 模式、自定义智能体（36.5 万个）等功能。免费是巨大优势。',
       pitfalls: ['功能可能频繁变动', '敏感代码慎用（隐私条款：会临时上传代码用于 embeddings 计算）']
     },
     swot: { S: '免费、DeepSeek 集成', W: '功能迭代中', O: '国内市场巨大', T: 'Cursor 先发优势' },
     tags: ['推荐', '国产', '免费', 'DeepSeek', '月活100万', 'Cue功能', '图像转码'],
-    video: { src: './videos/trae.mp4', thumbnail: './videos/trae-thumb.jpg' }
+    video: { src: './videos/trae.mp4', thumbnail: './videos/trae-thumb.jpg' },
+    radarChart: '/images/trae_radar_chart.png'
   },
   {
     id: 'windsurf',
@@ -80,7 +82,8 @@ export const aiToolsData = [
     },
     swot: { S: 'Cascade AI 强、性价比高', W: '品牌知名度低', O: '企业市场潜力', T: 'Cursor 生态' },
     tags: ['推荐', '性价比', 'Cascade', '超预期', 'SWE-1.5', 'GitWorktree'],
-    video: { src: './videos/windsurf.mp4', thumbnail: './videos/windsurf-thumb.jpg' }
+    video: { src: './videos/windsurf.mp4', thumbnail: './videos/windsurf-thumb.jpg' },
+    radarChart: '/images/windsurf_radar_chart.png'
   },
   {
     id: 'qoder',
@@ -90,9 +93,9 @@ export const aiToolsData = [
     developer: '阿里巴巴',
     logo: null,
     versions: [
-      { type: 'CN', pricing: '免费/$2/月(Pro)', models: 'Qwen-Coder-Qoder 480B MoE', link: 'https://qoder.dev' }
+      { type: 'CN', pricing: 'Pro $20/月、Pro+ $60/月', models: 'Qwen-Coder-Qoder 480B MoE', link: 'https://qoder.dev' }
     ],
-    freeQuota: '有免费额度，Pro版2美元/月',
+    freeQuota: '2026年2月1-15日免费试用',
     contextWindow: '128K',
     chineseSupport: 5,
     pros: ['Repo Wiki 强大（AI自动生成代码库文档）', 'Qwen-Coder-Qoder 480B MoE 后端能力强', '适合存量代码理解', '2026 年 2 月最新模型', 'Pro版仅2美元/月性价比高', '阿里云企业级服务保障', '通义千问模型持续优化', '中文支持出色', '适合 Java/Go 后端项目', '代码补全准确率高'],
@@ -106,7 +109,8 @@ export const aiToolsData = [
     },
     swot: { S: 'Repo Wiki、后端强', W: '小众', O: '企业级市场', T: 'Cursor 全能' },
     tags: ['国产', '后端', 'Qwen', 'MoE'],
-    video: { src: './videos/qoder.mp4', thumbnail: './videos/qoder-thumb.jpg' }
+    video: { src: './videos/qoder.mp4', thumbnail: './videos/qoder-thumb.jpg' },
+    radarChart: '/images/qoder_radar_chart.png'
   },
   {
     id: 'zed',
@@ -166,13 +170,13 @@ export const aiToolsData = [
     developer: 'Amazon',
     logo: null,
     versions: [
-      { type: 'Global', pricing: '50 credits/月', models: 'Auto + Sonnet 4 + Amazon Q', link: 'https://kiro.dev' }
+      { type: 'Global', pricing: '免费/Pro $20/月/Pro+ $40/月/Power $200/月', models: 'Claude Sonnet 4/Opus 4.6, Auto', link: 'https://kiro.dev' }
     ],
-    freeQuota: '新用户 500 credits/14天',
+    freeQuota: '免费版 50 credits/月 + 500 一次性试用',
     contextWindow: '取决于模型',
     chineseSupport: 3,
-    pros: ['Spec 驱动工作流', '需求→设计→任务拆解强', '规范严谨', '集成 Amazon Q Developer', '企业级合规审查', 'AWS 生态深度集成', '适合团队协作规范', '可追溯的变更历史', '支持自定义工作流', '自动化文档生成'],
-    cons: ['Free credits 很少', '太重量级', '迭代不便', '上手门槛高', '不适合快速原型', '个人开发者性价比低', '配置选项过多易困惑', '小型项目过于繁琐'],
+    pros: ['Spec 驱动工作流（三阶段：生成用户故事→技术设计文档→可追踪任务列表）', '需求→设计→任务拆解强', 'AWS 开发，使用 Claude 模型（Sonnet 4/Opus 4.6）', 'MCP 协议支持', '企业级合规审查', '自主 Agent、Powers 系统、Run all tasks 批量执行'],
+    cons: ['Free credits 太少', '不当主力写码'],
     bestFor: '需求拆解、规格文档、任务分解',
     funRanking: '夯',
     personalExperience: {
@@ -182,7 +186,8 @@ export const aiToolsData = [
     },
     swot: { S: 'Spec 驱动', W: '重量级', O: '企业规范', T: '轻量 IDE' },
     tags: ['Amazon', 'Spec', '规范', 'AmazonQ'],
-    video: { src: './videos/kiro.mp4', thumbnail: './videos/kiro-thumb.jpg' }
+    video: { src: './videos/kiro.mp4', thumbnail: './videos/kiro-thumb.jpg' },
+    radarChart: '/images/kiro_radar_chart.png'
   },
   {
     id: 'codebuddy',
@@ -192,23 +197,24 @@ export const aiToolsData = [
     developer: '腾讯',
     logo: null,
     versions: [
-      { type: 'CN', pricing: '低价', models: '混元大模型 + BYOK', link: 'https://codebuddy.ai' }
+      { type: 'CN', pricing: '个人版免费/旗舰版 78元/人/月', models: '混元 + DeepSeek 双模型架构', link: 'https://codebuddy.ai' }
     ],
     freeQuota: '有免费额度',
     contextWindow: '200K+',
     chineseSupport: 5,
-    pros: ['腾讯云集成', '便宜', '部署便捷', '支持自定义模型', '混元大模型支持', '200K+长上下文', '腾讯云服务无缝对接', 'COS/SCF 一键部署', '支持企业级 SSO', '国产化合规'],
-    cons: ['不支持多会话严重影响体验', '稳定性问题', '优化差，流程中断或失去响应', '功能相对基础', '不支持本地模型', '代码补全准确率一般', '用户体验有待提升', '文档更新滞后'],
+    pros: ['腾讯云集成', '个人版完全免费（10万token/月）', '混元 + DeepSeek 双模型架构', 'Max Mode 保留完整上下文信息', 'Plan Agent 计划模式', 'MCP 协议支持', '部署便捷'],
+    cons: ['不支持多会话严重影响体验', '稳定性问题：经常流程中断或失去响应', '优化差，用户体验有待提升'],
     bestFor: '腾讯云用户、快速部署（非主力）',
     funRanking: '夯',
     personalExperience: {
       rating: 4,
-      insights: '腾讯云生态内的选择，但不支持多会话严重影响使用体验。稳定性问题和优化差（经常流程中断或失去响应）使其难以作为主力。可期待 Trae 后续提供火山引擎的原生集成能力。建议在 Trae 等 IDE 中完成开发后，仅使用 Codebuddy 进行部署。',
+      insights: '腾讯云生态内的选择，但不支持多会话严重影响使用体验。稳定性问题和优化差（经常流程中断或失去响应）使其难以作为主力。v4.3.3 版本新增 Plan Agent、MCP 支持、自定义 Agent 等功能。建议在 Trae 等 IDE 中完成开发后，仅使用 Codebuddy 进行部署。',
       pitfalls: ['不支持多会话是致命伤', '稳定性问题频繁', '优化差，流程经常中断', '不适合作为主力开发工具']
     },
     swot: { S: '腾讯云集成', W: '多会话缺失、稳定性、优化差', O: '云服务市场', T: 'Cursor 功能' },
     tags: ['国产', '腾讯', 'BYOK', '不推荐主力', '混元'],
-    video: { src: './videos/codebuddy.mp4', thumbnail: './videos/codebuddy-thumb.jpg' }
+    video: { src: './videos/codebuddy.mp4', thumbnail: './videos/codebuddy-thumb.jpg' },
+    radarChart: '/images/codebuddy_radar_chart.png'
   },
   {
     id: 'antigravity',
@@ -218,10 +224,10 @@ export const aiToolsData = [
     developer: 'Google',
     logo: null,
     versions: [
-      { type: 'Global', pricing: 'Beta期间免费', models: 'Gemini 2.5 Pro', link: 'https://antigravity.dev' }
+      { type: 'Global', pricing: 'Public Preview期间免费', models: 'Gemini 3 Pro, Gemini 3 Flash, Claude Sonnet/Opus 4.5', link: 'https://antigravity.dev' }
     ],
-    freeQuota: 'Beta期间完全免费',
-    contextWindow: '2M (Gemini 2.5 Pro)',
+    freeQuota: 'Public Preview期间免费（每 5 小时刷新配额）',
+    contextWindow: '2M (Gemini 3 Pro)',
     chineseSupport: 3,
     pros: ['Google 出品', 'Gemini 2.5 Pro 深度集成', '2M 超长上下文', '2025 年底已发布', '基于 VS Code fork 的完整平台（非插件）', '专注 Agentic Development', 'Agent Skills 系统', 'Beta期间免费', 'Google 生态无缝集成', 'Gmail/Drive/Calendar 集成潜力', '多模态支持强大'],
     cons: ['信息较少', '功能待探索', 'Beta 阶段稳定性未知', '未来定价不确定', '社区尚未形成', '学习资源匮乏', '企业功能待验证', '长期维护存疑'],
@@ -229,12 +235,13 @@ export const aiToolsData = [
     funRanking: '夯',
     personalExperience: {
       rating: 5,
-      insights: 'Google 2025 年底发布的 AI IDE，基于 VS Code fork 的完整平台（非插件），专注 Agentic Development。Gemini 2.5 Pro 深度集成，2M 超长上下文。引入 Agent Skills 系统增强能力。Beta期间完全免费，值得关注但需要更多实际使用验证。',
-      pitfalls: ['新品功能待验证', '定价待公布']
+      insights: 'Google 2025年11月18日发布的 AI IDE，基于 VS Code fork 的完整平台（非插件），专注 Agentic Development。Gemini 3 Pro 深度集成，2M 上下文窗口。引入 Agent Skills 系统，原生集成 Nano Banana 增强能力。Public Preview 期间免费（每 5 小时刷新配额），值得关注但需要更多实际使用验证。',
+      pitfalls: ['新品功能待验证', '存在安全漏洞报告（Prompt Injection 攻击风险）', '每周使用限制存在']
     },
     swot: { S: 'Google、Gemini', W: '新品未知', O: '生态整合', T: '成熟竞品' },
     tags: ['Google', 'Gemini', '新品', 'AgentSkills', 'Beta免费'],
-    video: { src: './videos/antigravity.mp4', thumbnail: './videos/antigravity-thumb.jpg' }
+    video: { src: './videos/antigravity.mp4', thumbnail: './videos/antigravity-thumb.jpg' },
+    radarChart: '/images/antigravity_radar_chart.png'
   },
   {
     id: 'github-copilot',
@@ -244,19 +251,19 @@ export const aiToolsData = [
     developer: 'GitHub',
     logo: null,
     versions: [
-      { type: 'Global', pricing: '免费/$10/$39/$20-200', models: 'GPT-4, Claude, Gemini', link: 'https://github.com/features/copilot' }
+      { type: 'Global', pricing: '免费/$10月付/$39月付/$19用户月(Business)', models: 'Claude Opus 4.6/Haiku 4.5, Gemini 3 Flash, GPT-4.1/GPT-5-mini, Grok Code Fast 1', link: 'https://github.com/features/copilot' }
     ],
-    freeQuota: 'Free: 2000补全/月 + 50 premium/月',
+    freeQuota: 'Free: 2000代码补全 + 50聊天请求/月',
     contextWindow: '取决于模型',
     chineseSupport: 3,
-    pros: ['生态最成熟', '与 GitHub 深度集成', '多 IDE 支持', '企业版强大', 'Coding Agent 多模型支持', '支持 Claude、Gemini', 'Copilot Workspace 协作编码', 'Pull Request 自动审查', 'GitHub Codespaces 无缝集成', '支持 20+ 主流 IDE', '企业级安全合规'],
+    pros: ['生态最成熟', '与 GitHub 深度集成', '支持 7 大平台（VS Code、Visual Studio、JetBrains 全套、Vim/Neovim、Azure Data Studio、Xcode、Eclipse）', '企业版强大', 'Agent Mode + MCP 支持', '多模型选择：Claude Opus 4.6/Haiku 4.5、Gemini 3 Flash、GPT-4.1/GPT-5-mini、Grok Code Fast 1'],
     cons: ['功能较单一', 'Free 配额少', '重构能力有限', '代码隐私顾虑', '生成质量参差不齐', '过度依赖易退化编码能力', '企业版价格昂贵', '离线无法使用'],
     bestFor: 'GitHub 用户、多 IDE 开发者',
     funRanking: '夯',
     personalExperience: {
       rating: 3,
-      insights: '最成熟的 AI 编程助手，生态支持最好。2026年引入Coding Agent支持多模型（Claude、Gemini），适合作为辅助工具使用。',
-      pitfalls: ['Free 配额太少', '重构不如 Cursor']
+      insights: '最成熟的 AI 编程助手，生态支持最好。2025 年 12 月推出 Agent Mode 和 MCP 支持，支持多模型选择。适合作为辅助工具使用。',
+      pitfalls: ['Free 配额太少（2000 代码补全 + 50 聊天请求/月）', '重构不如 Cursor']
     },
     swot: { S: '生态成熟', W: '功能单一', O: 'Workspace', T: 'Cursor' },
     tags: ['推荐', 'GitHub', '插件', '生态', 'CodingAgent']
@@ -269,12 +276,12 @@ export const aiToolsData = [
     developer: 'Verdent Team',
     logo: null,
     versions: [
-      { type: 'Global', pricing: '免费/付费', models: 'Claude, GPT-4, DeepSeek', link: 'https://verdent.dev' }
+      { type: 'Global', pricing: 'Free 7天100 credits/Starter $19/月/Pro $59/月/Max $179/月', models: 'Claude Sonnet/Opus 4.5, Gemini 3 Pro, GPT-5.2/Codex', link: 'https://verdent.dev' }
     ],
     freeQuota: '免费版可用',
     contextWindow: '取决于模型',
     chineseSupport: 4,
-    pros: ['多 Agent 并行执行', 'Plan Mode 规划能力', 'Git Worktrees 隔离', 'DiffLens 智能审查', 'SWE-bench 76.1% 成功率', '安全沙箱环境', '代码变更可追溯', '团队协作友好', '支持自定义 Agent 工作流', '测试覆盖率分析'],
+    pros: ['多 Agent 并行执行（Parallel Thinking & Parallel Coding）', 'Plan Mode 规划能力 + Clarification 主动提问', 'Git Worktrees 隔离', 'DiffLens 智能审查', 'SWE-bench Verified 76.1% pass@1', '安全沙箱环境', '多模型支持：Claude Sonnet/Opus 4.5、Gemini 3 Pro、GPT-5.2/Codex'],
     cons: ['新工具生态有限', '功能迭代中', '学习曲线陡峭', '配置复杂度高', '文档不够完善', '社区支持有限', '资源占用较高', '新手上手困难'],
     bestFor: '复杂任务分解、多 Agent 协作、代码审查',
     funRanking: '夯',
@@ -295,18 +302,18 @@ export const aiToolsData = [
     developer: 'JetBrains',
     logo: null,
     versions: [
-      { type: 'Global', pricing: '免费/$100-$300/年', models: '多模型 + 本地AI', link: 'https://www.jetbrains.com/ai' }
+      { type: 'Global', pricing: '免费/纥825-2,500/年', models: '多模型 + 本地AI (Ollama/LM Studio)', link: 'https://www.jetbrains.com/ai' }
     ],
-    freeQuota: '无限免费额度',
+    freeQuota: '免费层无限本地代码补全',
     contextWindow: '取决于模型',
     chineseSupport: 3,
-    pros: ['原生集成到 IntelliJ、PyCharm 等', '深度 IDE 集成', '企业级支持', '最广泛的 IDE 支持', '2026年无限免费额度', '支持本地AI', 'AI Pro $100/年', 'AI Ultimate $300/年', '代码解释详细', '重构建议专业', '支持 10+ JetBrains IDE', '离线模式可用', '企业级权限管理'],
+    pros: ['原生集成到 IntelliJ、PyCharm 等', '深度 IDE 集成', '企业级支持', '无限本地代码补全（免费层）', '支持本地 AI（Ollama、LM Studio）', '支持 11 个 JetBrains IDE'],
     cons: ['仅限 JetBrains IDE', '功能相对单一', 'IDE 启动速度受影响', '建议有时过于保守', '不支持其他编辑器', '上下文理解不如专用 AI IDE', '代码生成速度较慢'],
     bestFor: 'JetBrains 生态系统用户、企业团队',
     funRanking: '夯',
     personalExperience: {
       rating: 3,
-      insights: '原生集成到 JetBrains IDE，深度 IDE 集成和企业级支持是亮点。2026年推出无限免费额度和本地AI支持，AI Pro $100/年、AI Ultimate $300/年的新定价更具吸引力。适合 JetBrains 生态系统用户和企业团队。',
+      insights: '原生集成到 JetBrains IDE，深度 IDE 集成和企业级支持是亮点。免费层包含无限本地代码补全和本地 AI 支持（3 AI Credits/30天用于云功能），AI Pro 纥825/年、AI Ultimate 纥2,500/年的定价适合不同规模团队。适合 JetBrains 生态系统用户和企业团队。',
       pitfalls: ['仅限 JetBrains IDE', '功能相对单一']
     },
     swot: { S: 'JetBrains 集成、企业级', W: '仅限 JetBrains', O: '企业市场', T: 'GitHub Copilot' },
@@ -338,7 +345,8 @@ export const aiToolsData = [
     },
     swot: { S: '能力最强', W: '价格高', O: '企业需求', T: '免费替代' },
     tags: ['推荐', 'CLI', '最强', 'Claude', 'AgentTeams', 'ContextCompaction', 'AdaptiveThinking'],
-    video: { src: './videos/claude-code.mp4', thumbnail: './videos/claude-code-thumb.jpg' }
+    video: { src: './videos/claude-code.mp4', thumbnail: './videos/claude-code-thumb.jpg' },
+    radarChart: '/images/claude_code.png'
   },
   {
     id: 'gemini-cli',
@@ -363,7 +371,8 @@ export const aiToolsData = [
       pitfalls: ['有请求数上限', '极复杂任务用 Claude Code', 'MCP 安全漏洞需关注']
     },
     swot: { S: '1M 上下文、免费', W: '复杂工程一般', O: 'Google 生态', T: 'Claude Code 能力' },
-    tags: ['推荐', 'CLI', '免费', '长上下文', 'Google', 'Gemini3', 'MCP', 'FlashLite', 'Video']
+    tags: ['推荐', 'CLI', '免费', '长上下文', 'Google', 'Gemini3', 'MCP', 'FlashLite', 'Video'],
+    radarChart: '/images/geminicli.png'
   },
   {
     id: 'qwen-cli',
@@ -388,7 +397,8 @@ export const aiToolsData = [
       pitfalls: ['实际性能与基准有差距', '大型仓库偶现不准确', '适合快速编辑非企业级']
     },
     swot: { S: '中文、免费', W: '深度推理', O: '国内市场', T: 'Gemini CLI' },
-    tags: ['推荐', 'CLI', '免费', '国产', '中文', 'Qwen3', '本地部署', '多模态', 'MCP']
+    tags: ['推荐', 'CLI', '免费', '国产', '中文', 'Qwen3', '本地部署', '多模态', 'MCP'],
+    radarChart: '/images/qwencli.png'
   },
   {
     id: 'aider',
@@ -488,7 +498,8 @@ export const aiToolsData = [
       pitfalls: ['项目已归档', '建议迁移到 Crush']
     },
     swot: { S: '开源、隐私、多模型', W: '已归档', O: 'Crush 继任者', T: 'Claude Code 能力' },
-    tags: ['开源', 'CLI', '隐私', '多模型', '已归档', 'Crush']
+    tags: ['开源', 'CLI', '隐私', '多模型', '已归档', 'Crush'],
+    radarChart: '/images/opencode.png'
   },
   {
     id: 'codex',
@@ -513,7 +524,8 @@ export const aiToolsData = [
       pitfalls: ['原始 Codex 已不再独立', 'GPT-5.2-Codex 输出定价高', 'codex-mini-latest 已弃用']
     },
     swot: { S: '代码生成、生态', W: '价格、访问', O: '企业级市场', T: '开源替代' },
-    tags: ['推荐', 'CLI', 'OpenAI', '代码生成', '多语言', 'GPT-5', 'Agent', 'Deprecated']
+    tags: ['推荐', 'CLI', 'OpenAI', '代码生成', '多语言', 'GPT-5', 'Agent', 'Deprecated'],
+    radarChart: '/images/codex.png'
   },
   {
     id: 'goose',

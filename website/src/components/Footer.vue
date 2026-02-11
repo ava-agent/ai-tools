@@ -54,7 +54,7 @@
           </h4>
           <ul class="space-y-2 text-sm">
             <li
-              v-for="item in resources"
+              v-for="item in footerResources"
               :key="item.label"
             >
               <a
@@ -99,12 +99,23 @@ const navLinks = [
   { to: '/matcher', label: '工具匹配' },
   { to: '/pricing', label: '订阅指南' },
   { to: '/workflows', label: '工作流' },
+  { to: '/resources', label: '资源中心' },
   { to: '/comparison', label: '对比分析' }
 ]
 
-const resources = [
+const footerResources = [
   { label: 'GitHub 仓库', href: 'https://github.com/ava-agent/ai-tools', icon: Github, external: true },
   { label: '使用文档', href: '/docs', icon: FileText, external: false },
   { label: '联系我们', href: 'mailto:contact@example.com', icon: Mail, external: false }
 ]
 </script>
+
+<style scoped>
+.nav-link.router-link-active {
+  color: white;
+}
+
+.nav-link.router-link-active span:last-child {
+  width: 50%;
+}
+</style>

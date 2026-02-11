@@ -29,7 +29,7 @@
         class="text-lg sm:text-xl md:text-2xl text-white/80 mb-6 animate-slide-up leading-relaxed"
         style="animation-delay: 0.1s"
       >
-        整合多份调研文档、SWOT分析与<span class="text-primary font-semibold">49款</span>AI工具的CN/Global双版本实战数据
+        深度评测 <span class="text-primary font-semibold">49款</span> AI 工具，配套 PPT 讲解和实战视频
       </p>
 
       <!-- 描述 -->
@@ -37,7 +37,7 @@
         class="text-base md:text-lg text-muted mb-10 animate-slide-up max-w-3xl mx-auto leading-relaxed"
         style="animation-delay: 0.2s"
       >
-        涵盖Cursor、Windsurf、Trae、Claude Code、JetBrains AI等AI IDE、CLI、LLM、多模态工具的深度评测与选型建议
+        覆盖 Cursor、Trae、Claude Code、Gemini CLI 等主流工具的功能对比、定价分析与工作流最佳实践
       </p>
 
       <!-- CTA 按钮组 -->
@@ -51,6 +51,13 @@
         >
           <Search class="w-5 h-5 mr-2" />
           工具匹配
+        </router-link>
+        <router-link
+          to="/resources"
+          class="btn-secondary inline-flex items-center justify-center px-8 py-4 text-base"
+        >
+          <PlayCircle class="w-5 h-5 mr-2" />
+          PPT 与视频
         </router-link>
         <router-link
           to="/pricing"
@@ -76,18 +83,18 @@
         </div>
         <div class="group p-4 rounded-xl hover:bg-white/5 transition-all duration-300 cursor-pointer">
           <div class="text-3xl md:text-4xl font-bold gradient-text mb-2 transition-transform duration-300 group-hover:scale-110">
-            10+
+            6
           </div>
           <div class="text-sm text-muted">
-            调研文档
+            工作流
           </div>
         </div>
         <div class="group p-4 rounded-xl hover:bg-white/5 transition-all duration-300 cursor-pointer">
           <div class="text-3xl md:text-4xl font-bold gradient-text mb-2 transition-transform duration-300 group-hover:scale-110">
-            5
+            3+2
           </div>
           <div class="text-sm text-muted">
-            工具类别
+            PPT+视频
           </div>
         </div>
         <div class="group p-4 rounded-xl hover:bg-white/5 transition-all duration-300 cursor-pointer">
@@ -104,5 +111,5 @@
 </template>
 
 <script setup>
-import { Sparkles, Search, BarChart3 } from 'lucide-vue-next'
+import { Sparkles, Search, BarChart3, PlayCircle } from 'lucide-vue-next'
 </script>

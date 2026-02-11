@@ -98,6 +98,25 @@
               </li>
             </ul>
           </div>
+
+          <!-- Flow Image -->
+          <div
+            v-if="currentWorkflow.flowImage"
+            class="mt-6"
+          >
+            <h4 class="text-lg font-semibold text-white mb-3 flex items-center">
+              <ImageIcon class="w-5 h-5 text-primary mr-2" />
+              流程图
+            </h4>
+            <div class="bg-white/5 rounded-xl p-4 border border-white/10">
+              <img
+                :src="currentWorkflow.flowImage"
+                :alt="currentWorkflow.nameZh + ' 流程图'"
+                class="w-full rounded-lg"
+                loading="lazy"
+              />
+            </div>
+          </div>
         </div>
       </div>
 
@@ -285,7 +304,8 @@ import {
   Monitor,
   Terminal,
   Brain,
-  Code
+  Code,
+  Image as ImageIcon
 } from 'lucide-vue-next'
 import { workflows, pitfalls, promptTemplates } from '../data/workflows.js'
 
@@ -318,7 +338,9 @@ function getWorkflowIcon(workflowId) {
     'daily-dev': Code,
     'rapid-prototype': Monitor,
     'design-flow': Brain,
-    'refactor-flow': Terminal
+    'refactor-flow': Terminal,
+    'legacy-takeover': Code,
+    'critical-task': Brain
   }
   return icons[workflowId] || Code
 }

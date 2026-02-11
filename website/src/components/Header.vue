@@ -94,7 +94,7 @@
 
 <script setup>
 import { ref } from 'vue'
-import { Brain, Menu, X, Search, Scale, Workflow, GitCompare, BarChart3 } from 'lucide-vue-next'
+import { Brain, Menu, X, Search, Scale, Workflow, GitCompare, BarChart3, BookOpen } from 'lucide-vue-next'
 
 const isMobileMenuOpen = ref(false)
 
@@ -103,6 +103,7 @@ const navItems = [
   { to: '/matcher', label: '工具匹配', icon: Scale },
   { to: '/pricing', label: '订阅指南', icon: BarChart3, iconColor: 'text-green-400' },
   { to: '/workflows', label: '工作流', icon: Workflow, iconColor: 'text-purple-400' },
+  { to: '/resources', label: '资源中心', icon: BookOpen, iconColor: 'text-cyan-400' },
   { to: '/comparison', label: '对比分析', icon: GitCompare, iconColor: 'text-yellow-400' }
 ]
 
