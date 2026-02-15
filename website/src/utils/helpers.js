@@ -63,6 +63,24 @@ export function getCategoryColor(category) {
   return categoryColors[category] || 'bg-gray-500'
 }
 
+// 工具名称解析：从显示名称查找工具ID
+// excludeNames: 不需要解析的特殊名称列表
+export function resolveToolId(name, tools, excludeNames = []) {
+  if (!name || excludeNames.includes(name)) return null
+  const normalized = name.toLowerCase().replace(/\s+/g, '')
+  // 优先精确匹配
+  const exact = tools.find(t =>
+    t.name.toLowerCase().replace(/\s+/g, '') === normalized
+  )
+  if (exact) return exact.id
+  // 退而求其次：startsWith 匹配
+  const partial = tools.find(t => {
+    const tn = t.name.toLowerCase().replace(/\s+/g, '')
+    return normalized.startsWith(tn) || tn.startsWith(normalized)
+  })
+  return partial?.id || null
+}
+
 export function getTagColor(tag) {
   const colors = {
     // 通用标签

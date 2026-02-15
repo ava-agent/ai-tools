@@ -261,6 +261,7 @@ import {
 import { useToolsStore } from '../stores/tools'
 import { useGamificationStore } from '../stores/gamification'
 import { useAchievementsStore } from '../stores/achievements'
+import { resolveToolId as _resolveToolId } from '../utils/helpers'
 import { decisionTrees, scenarioGuide } from '../data/decisions.js'
 import { quickSelectionGuide, categories } from '../data/categories.js'
 
@@ -269,13 +270,7 @@ const gamification = useGamificationStore()
 const achievements = useAchievementsStore()
 
 function resolveToolId(name) {
-  if (!name) return null
-  const normalized = name.toLowerCase().replace(/\s+/g, '')
-  const tool = toolsStore.tools.find(t => {
-    const tn = t.name.toLowerCase().replace(/\s+/g, '')
-    return tn === normalized || normalized.includes(tn) || tn.includes(normalized)
-  })
-  return tool?.id || null
+  return _resolveToolId(name, toolsStore.tools)
 }
 
 const selectedCategory = ref('')

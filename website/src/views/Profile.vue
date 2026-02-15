@@ -141,7 +141,11 @@
             <div
               v-if="showResetConfirm"
               class="fixed inset-0 bg-black/60 z-[80] flex items-center justify-center p-4 backdrop-blur-sm"
+              role="dialog"
+              aria-modal="true"
+              aria-label="确认重置"
               @click.self="showResetConfirm = false"
+              @keydown.esc="showResetConfirm = false"
             >
               <div class="bg-surface rounded-2xl p-6 max-w-sm w-full border border-white/10">
                 <h3 class="text-lg font-bold text-white mb-2">
@@ -177,7 +181,7 @@
 import { ref, computed } from 'vue'
 import {
   Flame, Calendar, BarChart3, Eye, HelpCircle,
-  Swords, Target, GitCompare, User, Trophy
+  Swords, Target, User, Trophy
 } from 'lucide-vue-next'
 import { useGamificationStore } from '../stores/gamification.js'
 import { useAchievementsStore } from '../stores/achievements.js'

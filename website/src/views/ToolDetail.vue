@@ -2,14 +2,7 @@
   <div class="min-h-screen bg-background">
     <div class="container mx-auto px-4 py-8">
       <div
-        v-if="loading"
-        class="flex items-center justify-center py-20"
-      >
-        <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-primary" />
-      </div>
-      
-      <div
-        v-else-if="tool"
+        v-if="tool"
         class="max-w-4xl mx-auto"
       >
         <!-- 面包屑导航 -->
@@ -393,7 +386,6 @@ const toolsStore = useToolsStore()
 const gamification = useGamificationStore()
 const achievements = useAchievementsStore()
 
-const loading = ref(true)
 const tool = computed(() => {
   return toolsStore.tools.find(t => t.id === route.params.id)
 })
@@ -416,18 +408,18 @@ const relatedTools = computed(() => {
 })
 
 onMounted(() => {
-  loading.value = false
   document.title = `${tool.value?.name || '工具详情'} - AI工具全书`
-  // Track tool view for gamification
   if (tool.value) {
     gamification.trackToolView(tool.value.id)
     achievements.checkAll()
   }
 })
 
-// Also track when navigating between tools via related links
+// Also track and update title when navigating between tools via related links
 watch(() => route.params.id, (newId) => {
   if (newId) {
+    const t = toolsStore.tools.find(item => item.id === newId)
+    document.title = `${t?.name || '工具详情'} - AI工具全书`
     gamification.trackToolView(newId)
     achievements.checkAll()
   }

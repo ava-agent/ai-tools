@@ -340,19 +340,16 @@ import {
 } from 'lucide-vue-next'
 import { useUIStore } from '../stores/ui'
 import { useToolsStore } from '../stores/tools'
+import { getCategoryLabel, resolveToolId as _resolveToolId } from '../utils/helpers'
 import { workflows, pitfalls, promptTemplates } from '../data/workflows.js'
 
 const uiStore = useUIStore()
 const toolsStore = useToolsStore()
 
+const WORKFLOW_EXCLUDE_NAMES = ['手动', '手动测试', 'Git']
+
 function resolveToolId(name) {
-  if (!name || name === '手动' || name === '手动测试' || name === 'Git') return null
-  const normalized = name.toLowerCase().replace(/\s+/g, '')
-  const tool = toolsStore.tools.find(t => {
-    const tn = t.name.toLowerCase().replace(/\s+/g, '')
-    return tn === normalized || normalized.includes(tn) || tn.includes(normalized)
-  })
-  return tool?.id || null
+  return _resolveToolId(name, toolsStore.tools, WORKFLOW_EXCLUDE_NAMES)
 }
 
 const selectedWorkflow = ref(workflows[0]?.id || 'daily-dev')
@@ -360,15 +357,6 @@ const selectedWorkflow = ref(workflows[0]?.id || 'daily-dev')
 const currentWorkflow = computed(() => {
   return workflows.find(w => w.id === selectedWorkflow.value)
 })
-
-function getCategoryLabel(category) {
-  const labels = {
-    ide: 'AI IDE',
-    cli: 'AI CLI',
-    model: 'AI 模型'
-  }
-  return labels[category] || category
-}
 
 function getCategoryIcon(category) {
   const icons = {

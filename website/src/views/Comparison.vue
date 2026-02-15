@@ -30,7 +30,7 @@
           <button
             v-if="toolsStore.comparedToolIds.length >= 2"
             class="btn-primary text-sm px-4 py-1.5"
-            @click="showCompareView = true"
+            @click="startCompare"
           >
             <GitCompareArrows class="w-4 h-4 mr-1 inline" />
             开始对比 ({{ toolsStore.comparedToolIds.length }})
@@ -305,7 +305,7 @@
 </template>
 
 <script setup>
-import { ref, computed, onMounted } from 'vue'
+import { ref, computed } from 'vue'
 import { useToolsStore } from '../stores/tools'
 import { useGamificationStore } from '../stores/gamification'
 import { useAchievementsStore } from '../stores/achievements'
@@ -321,15 +321,18 @@ const toolsStore = useToolsStore()
 const gamification = useGamificationStore()
 const achievements = useAchievementsStore()
 
-onMounted(() => {
-  gamification.trackComparisonUse()
-  achievements.checkAll()
-})
+// Tracking moved to actual compare action instead of page visit
 
 const sortField = ref('rating')
 const sortDirection = ref('desc')
 const filterCategory = ref('all')
 const showCompareView = ref(false)
+
+function startCompare() {
+  showCompareView.value = true
+  gamification.trackComparisonUse()
+  achievements.checkAll()
+}
 
 const filterCategories = computed(() => {
   const cats = new Set(toolsStore.tools.map(t => t.category))

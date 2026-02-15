@@ -5,17 +5,10 @@
     <SearchBar />
 
     <!-- 工具列表（核心内容，首屏可见） -->
-    <Suspense>
-      <template #default>
-        <ToolGrid
-          :tools="filteredTools"
-          @clear-filters="handleClearFilters"
-        />
-      </template>
-      <template #fallback>
-        <LoadingSpinner />
-      </template>
-    </Suspense>
+    <ToolGrid
+      :tools="filteredTools"
+      @clear-filters="handleClearFilters"
+    />
 
     <!-- 每日推荐 + 冷知识（工具列表之后） -->
     <section class="py-4 px-4">
@@ -86,14 +79,13 @@
 </template>
 
 <script setup>
-import { computed, Suspense, ref, onMounted } from 'vue'
+import { computed, ref, onMounted } from 'vue'
 import { PlayCircle, ArrowRight, Video, FileText } from 'lucide-vue-next'
 import { useToolsStore } from '../stores/tools'
 import { resources } from '../data/resources.js'
 import Hero from '../components/Hero.vue'
 import SearchBar from '../components/SearchBar.vue'
 import ToolGrid from '../components/ToolGrid.vue'
-import LoadingSpinner from '../components/LoadingSpinner.vue'
 import IntroVideo from '../components/IntroVideo.vue'
 import ToolOfTheDayCompact from '../components/gamification/ToolOfTheDayCompact.vue'
 import FunFact from '../components/gamification/FunFact.vue'
@@ -116,7 +108,7 @@ const toolsStore = useToolsStore()
 
 const filteredTools = computed(() => toolsStore.filteredTools)
 
-const featuredResources = computed(() => resources)
+const featuredResources = computed(() => resources.slice(0, 5))
 
 function handleClearFilters() {
   toolsStore.clearFilters()

@@ -88,7 +88,11 @@ const routes = [
   {
     path: '/:pathMatch(.*)*',
     name: 'not-found',
-    component: () => import('../views/NotFound.vue')
+    component: () => import('../views/NotFound.vue'),
+    meta: {
+      title: '页面未找到 - AI工具全书',
+      description: '您访问的页面不存在'
+    }
   }
 ]
 
