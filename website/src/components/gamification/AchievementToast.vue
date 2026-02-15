@@ -42,7 +42,7 @@
 </template>
 
 <script setup>
-import { computed, watch } from 'vue'
+import { computed, watch, onUnmounted } from 'vue'
 import { Trophy } from 'lucide-vue-next'
 import { useAchievementsStore } from '../../stores/achievements.js'
 
@@ -50,12 +50,19 @@ const achievements = useAchievementsStore()
 
 const currentToast = computed(() => achievements.toastQueue[0] || null)
 
+let dismissTimer = null
+
 // Auto-dismiss after 4 seconds
 watch(currentToast, (toast) => {
+  clearTimeout(dismissTimer)
   if (toast) {
-    setTimeout(() => {
+    dismissTimer = setTimeout(() => {
       achievements.dismissToast()
     }, 4000)
   }
+})
+
+onUnmounted(() => {
+  clearTimeout(dismissTimer)
 })
 </script>

@@ -1,5 +1,11 @@
 <template>
   <div class="text-center">
+    <!-- Error State -->
+    <div v-if="hasError" class="py-8 text-white/50 text-sm">
+      分享卡片生成失败，请稍后重试
+    </div>
+
+    <template v-else>
     <!-- Canvas Preview -->
     <div class="inline-block rounded-xl overflow-hidden border border-white/10 shadow-2xl mb-6">
       <canvas
@@ -25,6 +31,7 @@
         {{ copied ? '已复制' : '复制到剪贴板' }}
       </button>
     </div>
+    </template>
   </div>
 </template>
 
@@ -43,20 +50,26 @@ const copied = ref(false)
 const shareCard = useShareCard()
 let generatedCanvas = null
 
+const hasError = ref(false)
+
 onMounted(async () => {
   await nextTick()
 
-  if (props.type === 'quiz') {
-    generatedCanvas = shareCard.generateQuizCard(props.data)
-  } else if (props.type === 'personality') {
-    generatedCanvas = shareCard.generatePersonalityCard(props.data)
-  }
+  try {
+    if (props.type === 'quiz') {
+      generatedCanvas = shareCard.generateQuizCard(props.data)
+    } else if (props.type === 'personality') {
+      generatedCanvas = shareCard.generatePersonalityCard(props.data)
+    }
 
-  if (generatedCanvas && canvasRef.value) {
-    const ctx = canvasRef.value.getContext('2d')
-    canvasRef.value.width = generatedCanvas.width
-    canvasRef.value.height = generatedCanvas.height
-    ctx.drawImage(generatedCanvas, 0, 0)
+    if (generatedCanvas && canvasRef.value) {
+      const ctx = canvasRef.value.getContext('2d')
+      canvasRef.value.width = generatedCanvas.width
+      canvasRef.value.height = generatedCanvas.height
+      ctx.drawImage(generatedCanvas, 0, 0)
+    }
+  } catch {
+    hasError.value = true
   }
 })
 

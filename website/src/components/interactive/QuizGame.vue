@@ -127,6 +127,7 @@ const isLastQuestion = computed(() => currentIndex.value >= questions.value.leng
 const isPerfect = computed(() => score.value === questions.value.length)
 
 const resultMessage = computed(() => {
+  if (questions.value.length === 0) return '加油！去工具列表多逛逛吧'
   const ratio = score.value / questions.value.length
   if (ratio === 1) return '满分！你是真正的 AI 工具专家！'
   if (ratio >= 0.8) return '非常棒！你对 AI 工具了如指掌'

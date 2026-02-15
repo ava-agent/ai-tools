@@ -107,14 +107,3 @@ export const recommendedCombos = [
     }
 ]
 
-export const getCategoryById = (id) => categories.find(c => c.id === id)
-export const getCategoryColor = (id) => {
-    const colorMap = {
-        ide: 'bg-blue-500',
-        cli: 'bg-green-500',
-        llm: 'bg-purple-500',
-        multimodal: 'bg-pink-500',
-        agent: 'bg-orange-500'
-    }
-    return colorMap[id] || 'bg-gray-500'
-}

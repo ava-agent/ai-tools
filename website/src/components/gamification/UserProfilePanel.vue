@@ -27,7 +27,13 @@
     >
       <div
         v-if="isOpen"
+        ref="panelRef"
+        role="dialog"
+        aria-modal="true"
+        aria-label="我的档案"
+        tabindex="-1"
         class="fixed top-0 right-0 h-full w-full max-w-md z-[70] overflow-y-auto bg-background border-l border-white/10"
+        @keydown.esc="emit('close')"
       >
         <div class="p-6">
           <!-- Header -->
@@ -126,17 +132,27 @@
 </template>
 
 <script setup>
-import { computed } from 'vue'
+import { computed, ref, watch, nextTick } from 'vue'
 import { X, Flame, Eye, HelpCircle, Swords, Target, GitCompare } from 'lucide-vue-next'
 import { useGamificationStore } from '../../stores/gamification.js'
 import LevelBadge from './LevelBadge.vue'
 import XpBar from './XpBar.vue'
 import AchievementGrid from './AchievementGrid.vue'
 
-defineProps({
+const props = defineProps({
   isOpen: { type: Boolean, default: false },
 })
-defineEmits(['close'])
+const emit = defineEmits(['close'])
+
+const panelRef = ref(null)
+
+// Auto-focus panel when opened for keyboard accessibility
+watch(() => props.isOpen, async (open) => {
+  if (open) {
+    await nextTick()
+    panelRef.value?.focus()
+  }
+})
 
 const gamification = useGamificationStore()
 

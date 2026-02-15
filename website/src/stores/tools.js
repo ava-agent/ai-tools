@@ -125,11 +125,10 @@ export const useToolsStore = defineStore('tools', () => {
   }
 
   function toggleTag(tag) {
-    const index = selectedTags.value.indexOf(tag)
-    if (index === -1) {
-      selectedTags.value.push(tag)
+    if (selectedTags.value.includes(tag)) {
+      selectedTags.value = selectedTags.value.filter(t => t !== tag)
     } else {
-      selectedTags.value.splice(index, 1)
+      selectedTags.value = [...selectedTags.value, tag]
     }
   }
 
@@ -172,7 +171,6 @@ export const useToolsStore = defineStore('tools', () => {
     } catch (err) {
       error.value = err
       isLoading.value = false
-      console.error('Failed to load tools:', err)
     }
   }
 

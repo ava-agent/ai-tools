@@ -10,7 +10,7 @@
       <video
         ref="videoRef"
         class="video-element"
-        :poster="thumbnail"
+        :poster="posterUrl"
         :controls="showControls"
         preload="metadata"
         @play="isPlaying = true"
@@ -135,7 +135,7 @@ let hideControlsTimer = null
 let playPromise = null
 
 const videoSrc = computed(() => videoError.value ? null : props.src)
-const thumbnail = computed(() => props.thumbnail)
+const posterUrl = computed(() => props.thumbnail)
 
 const progressPercent = computed(() => {
   if (duration.value === 0) return 0
@@ -150,6 +150,7 @@ const togglePlay = async () => {
       playPromise = videoRef.value.play()
       if (playPromise) await playPromise
       hasStarted.value = true
+      showCustomControls.value = true
     } catch {
       // play() was interrupted or failed — ignore
     }

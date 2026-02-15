@@ -6,7 +6,7 @@
       <div class="flex-1 relative group">
         <Search class="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-muted transition-colors group-focus-within:text-primary z-10" />
         <input
-          v-model="searchQuery"
+          :value="searchQuery"
           type="search"
           placeholder="搜索工具名称、开发者或用途..."
           class="input-field pl-12 pr-4 py-3.5"
@@ -80,19 +80,21 @@
 </template>
 
 <script setup>
-import { ref, computed, watch } from 'vue'
+import { ref, computed } from 'vue'
 import { useToolsStore } from '../stores/tools'
 import { Search, Tag } from 'lucide-vue-next'
-import { getTagColor, getCategoryLabel } from '../utils/helpers'
-import { debounce } from '../utils/helpers'
+import { getCategoryLabel } from '../utils/helpers'
 import { easterEggs } from '../data/easterEggs.js'
 
 const toolsStore = useToolsStore()
 
 const easterEggMessage = ref(null)
-const searchQuery = ref(toolsStore.searchQuery)
-const selectedCategory = ref(toolsStore.selectedCategory)
-const selectedTags = ref([...toolsStore.selectedTags])
+let easterEggTimer = null
+
+// Use store state directly — no duplicate local refs
+const searchQuery = computed(() => toolsStore.searchQuery)
+const selectedCategory = computed(() => toolsStore.selectedCategory)
+const selectedTags = computed(() => toolsStore.selectedTags)
 
 const categories = computed(() => toolsStore.categories)
 
@@ -102,18 +104,23 @@ const curatedTags = computed(() =>
   CURATED_TAG_LIST.filter(tag => toolsStore.allTags.includes(tag))
 )
 
-const handleSearch = debounce((event) => {
+let searchTimer = null
+const handleSearch = (event) => {
   const val = event.target.value
-  toolsStore.setSearchQuery(val)
+  clearTimeout(searchTimer)
+  searchTimer = setTimeout(() => {
+    toolsStore.setSearchQuery(val)
 
-  // Easter egg: search "42"
-  if (val.trim() === easterEggs.search42.value) {
-    easterEggMessage.value = easterEggs.search42.response
-    setTimeout(() => { easterEggMessage.value = null }, 4000)
-  } else {
-    easterEggMessage.value = null
-  }
-}, 300)
+    // Easter egg: search "42"
+    clearTimeout(easterEggTimer)
+    if (val.trim() === easterEggs.search42.value) {
+      easterEggMessage.value = easterEggs.search42.response
+      easterEggTimer = setTimeout(() => { easterEggMessage.value = null }, 4000)
+    } else {
+      easterEggMessage.value = null
+    }
+  }, 300)
+}
 
 const selectCategory = (category) => {
   toolsStore.setSelectedCategory(category)
@@ -131,16 +138,4 @@ const getCategoryDisplayName = (category) => {
   if (category === 'all') return '全部'
   return getCategoryLabel(category)
 }
-
-watch(() => toolsStore.searchQuery, (newValue) => {
-  searchQuery.value = newValue
-})
-
-watch(() => toolsStore.selectedCategory, (newValue) => {
-  selectedCategory.value = newValue
-})
-
-watch(() => toolsStore.selectedTags, (newValue) => {
-  selectedTags.value = [...newValue]
-})
 </script>

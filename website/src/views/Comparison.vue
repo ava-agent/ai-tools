@@ -79,10 +79,11 @@
         <table class="w-full min-w-[900px]">
           <thead>
             <tr class="border-b border-white/10">
-              <th class="p-4 w-10">
+              <th scope="col" class="p-4 w-10">
                 <span class="sr-only">选择</span>
               </th>
               <th
+                scope="col"
                 class="text-left p-4 text-white font-semibold cursor-pointer select-none hover:text-primary transition-colors"
                 @click="toggleSort('name')"
               >
@@ -96,6 +97,7 @@
                 </span>
               </th>
               <th
+                scope="col"
                 class="text-left p-4 text-white font-semibold cursor-pointer select-none hover:text-primary transition-colors"
                 @click="toggleSort('developer')"
               >
@@ -109,6 +111,7 @@
                 </span>
               </th>
               <th
+                scope="col"
                 class="text-left p-4 text-white font-semibold cursor-pointer select-none hover:text-primary transition-colors"
                 @click="toggleSort('category')"
               >
@@ -122,6 +125,7 @@
                 </span>
               </th>
               <th
+                scope="col"
                 class="text-left p-4 text-white font-semibold cursor-pointer select-none hover:text-primary transition-colors"
                 @click="toggleSort('rating')"
               >
@@ -134,13 +138,13 @@
                   />
                 </span>
               </th>
-              <th class="text-left p-4 text-white font-semibold">
+              <th scope="col" class="text-left p-4 text-white font-semibold">
                 定价
               </th>
-              <th class="text-left p-4 text-white font-semibold">
+              <th scope="col" class="text-left p-4 text-white font-semibold">
                 核心模型
               </th>
-              <th class="text-left p-4 text-white font-semibold">
+              <th scope="col" class="text-left p-4 text-white font-semibold">
                 操作
               </th>
             </tr>

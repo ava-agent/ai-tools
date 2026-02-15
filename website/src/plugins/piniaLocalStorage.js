@@ -5,7 +5,7 @@
  *   pinia.use(createLocalStoragePlugin({ stores: ['gamification', 'achievements'] }))
  */
 export function createLocalStoragePlugin({ stores = [], prefix = 'ai-tools-' } = {}) {
-  let debounceTimers = {}
+  const debounceTimers = {}
 
   return ({ store }) => {
     const storeId = store.$id

@@ -1,7 +1,16 @@
 <template>
   <div>
     <div
-      v-if="!matchup"
+      v-if="insufficientTools"
+      class="text-center py-12"
+    >
+      <p class="text-white/60">
+        需要至少 2 个工具才能进行对决
+      </p>
+    </div>
+
+    <div
+      v-else-if="!matchup"
       class="text-center py-12"
     >
       <p class="text-white/60">
@@ -73,8 +82,8 @@
         </button>
       </div>
 
-      <!-- VS Divider (visible on desktop) -->
-      <div class="hidden md:flex justify-center -mt-[calc(50%+12px)] mb-[calc(50%-12px)] relative z-10 pointer-events-none">
+      <!-- VS Divider (visible on desktop, centered between cards) -->
+      <div class="hidden md:flex justify-center -my-3 relative z-10 pointer-events-none">
         <div class="w-12 h-12 rounded-full bg-red-500/20 border border-red-500/30 flex items-center justify-center">
           <Swords class="w-5 h-5 text-red-400" />
         </div>
@@ -95,7 +104,7 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue'
+import { ref, computed, onMounted } from 'vue'
 import { Star, Swords, CheckCircle, RefreshCw } from 'lucide-vue-next'
 import { useToolsStore } from '../../stores/tools.js'
 import { useGamificationStore } from '../../stores/gamification.js'
@@ -108,8 +117,10 @@ const achievements = useAchievementsStore()
 
 const matchup = ref(null)
 const voted = ref(null)
+const insufficientTools = computed(() => toolsStore.tools.length < 2)
 
 function newBattle() {
+  if (insufficientTools.value) return
   matchup.value = generateMatchup(toolsStore.tools)
   voted.value = null
 }
