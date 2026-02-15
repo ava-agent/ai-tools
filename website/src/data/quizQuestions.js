@@ -63,10 +63,9 @@ function generateTrueFalse(tools) {
       return null
     }
   } else {
-    const otherTool = tools.filter(t => t.id !== tool.id && t.developer)[
-      Math.floor(Math.random() * (tools.length - 1))
-    ]
-    if (!otherTool) return null
+    const otherDevTools = tools.filter(t => t.id !== tool.id && t.developer)
+    if (otherDevTools.length === 0) return null
+    const otherTool = otherDevTools[Math.floor(Math.random() * otherDevTools.length)]
     statement = `${tool.name} 是由 ${otherTool.developer} 开发的`
     explanation = `错误！${tool.name} 由 ${tool.developer} 开发，不是 ${otherTool.developer}。`
   }
@@ -89,9 +88,9 @@ function generateScenario(tools) {
   const scenarios = [
     { scenario: '我需要一个免费的 AI IDE 来进行日常开发', filter: t => t.category === 'ide' && t.freeQuota },
     { scenario: '我需要一个能处理超长代码文件的工具', filter: t => t.contextWindow },
-    { scenario: '我需要进行深度技术调研和分析', filter: t => t.category === 'deep-research' },
+    { scenario: '我需要进行深度技术调研和分析', filter: t => t.category === 'llm' },
     { scenario: '我想在终端中使用 AI 编程助手', filter: t => t.category === 'cli' },
-    { scenario: '我需要用自然语言快速生成 Web 应用', filter: t => t.category === 'app-builder' },
+    { scenario: '我需要用自然语言快速生成 Web 应用', filter: t => t.category === 'ide' && t.tags?.includes('云端') },
     { scenario: '我的团队预算有限，需要免费方案', filter: t => t.freeQuota && (t.freeQuota.includes('免费') || t.freeQuota.includes('free')) },
   ]
 

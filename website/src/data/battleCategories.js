@@ -24,10 +24,14 @@ export function getRandomDimension() {
 export function generateMatchup(tools) {
   if (!tools || tools.length < 2) return null
 
-  // Pick two random different tools
-  const shuffled = [...tools].sort(() => Math.random() - 0.5)
-  const toolA = shuffled[0]
-  const toolB = shuffled[1]
+  // Pick two random different tools (Fisher-Yates for first 2)
+  const arr = [...tools]
+  for (let i = arr.length - 1; i > arr.length - 3 && i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]]
+  }
+  const toolA = arr[arr.length - 1]
+  const toolB = arr[arr.length - 2]
   const dimension = getRandomDimension()
 
   const ids = [toolA.id, toolB.id].sort()

@@ -36,10 +36,6 @@ export const funFacts = {
     'Zed 的多人协作功能借鉴了 Google Docs，可以实时看到同事的光标',
     'Zed 支持同时使用多个 AI 模型，包括本地运行的 Ollama 模型',
   ],
-  'augment-code': [
-    'Augment Code 专注于大型企业代码库，号称能理解百万行级别的代码',
-    'Augment Code 有独特的"代码记忆"功能，可以记住你的编码偏好和项目规范',
-  ],
   'cline': [
     'Cline（前身是 Claude Dev）是一个开源的 VS Code AI 助手',
     'Cline 的 MCP 工具集成让它可以连接浏览器、数据库等外部工具',
@@ -49,7 +45,7 @@ export const funFacts = {
     'DeepSeek 的推理模型 R1 在数学和编程能力上可与顶级模型媲美',
     'DeepSeek 是由中国团队开发的开源模型，代码完全公开可审计',
   ],
-  'chatgpt': [
+  'gpt': [
     'ChatGPT 在发布后 5 天内就突破了 100 万用户，是历史上增长最快的应用',
     'GPT-4o 支持多模态输入，可以同时处理文本、图片、音频和视频',
     'ChatGPT 的 Canvas 功能可以像白板一样协作编辑代码和文档',
@@ -71,22 +67,6 @@ export const funFacts = {
   'grok': [
     'Grok 由 Elon Musk 的 xAI 公司开发，可以实时访问 X (Twitter) 数据',
     'Grok 3 号称是"地球上最聪明的 AI"，在多个基准测试中领先',
-  ],
-  'devv': [
-    'Devv 是专为开发者设计的 AI 搜索引擎，能直接索引 GitHub 和 StackOverflow',
-    'Devv 的回答会自动附带可运行的代码示例',
-  ],
-  'v0': [
-    'v0 是 Vercel 推出的 AI UI 生成器，可以用自然语言生成 React 组件',
-    'v0 生成的代码直接使用 shadcn/ui 组件库，可以无缝集成到 Next.js 项目',
-  ],
-  'bolt': [
-    'Bolt.new 可以在浏览器中完成从编码到部署的全流程，无需本地开发环境',
-    'Bolt.new 使用 WebContainers 技术在浏览器中运行 Node.js 环境',
-  ],
-  'lovable': [
-    'Lovable（前身是 GPT Engineer）专注于快速将想法变成可工作的 Web 应用',
-    'Lovable 支持一键部署到 Vercel，从概念到上线只需几分钟',
   ],
 }
 

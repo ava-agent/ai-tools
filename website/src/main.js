@@ -20,36 +20,30 @@ app.mount('#app')
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
     navigator.serviceWorker
-      .register('/sw.js')
+      .register('./sw.js')
       .then((registration) => {
-        console.log('SW registered:', registration.scope)
-        
         // 监听更新
         registration.addEventListener('updatefound', () => {
           const newWorker = registration.installing
           newWorker.addEventListener('statechange', () => {
             if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
-              // 有新版本可用
-              console.log('New version available')
-              // 可以在这里提示用户刷新页面
+              // 有新版本可用，可以在这里提示用户刷新页面
             }
           })
         })
       })
-      .catch((error) => {
-        console.log('SW registration failed:', error)
+      .catch(() => {
+        // SW registration failed silently
       })
   })
 }
 
 // 监听网络状态
 window.addEventListener('online', () => {
-  console.log('Application is online')
   document.body.classList.remove('offline')
 })
 
 window.addEventListener('offline', () => {
-  console.log('Application is offline')
   document.body.classList.add('offline')
 })
 

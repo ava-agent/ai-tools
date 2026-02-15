@@ -1,38 +1,3 @@
-export function formatDate(date) {
-  return new Intl.DateTimeFormat('zh-CN', {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric'
-  }).format(new Date(date))
-}
-
-export function debounce(func, wait) {
-  let timeout
-  return function executedFunction(...args) {
-    const later = () => {
-      clearTimeout(timeout)
-      func(...args)
-    }
-    clearTimeout(timeout)
-    timeout = setTimeout(later, wait)
-  }
-}
-
-export function throttle(func, limit) {
-  let inThrottle
-  return function executedFunction(...args) {
-    if (!inThrottle) {
-      func(...args)
-      inThrottle = true
-      setTimeout(() => (inThrottle = false), limit)
-    }
-  }
-}
-
-export function getRatingStars(rating) {
-  return '夯'.repeat(rating)
-}
-
 // 类别标签映射
 const categoryLabels = {
   ide: 'AI IDE',
