@@ -4,8 +4,29 @@
     <Hero />
     <SearchBar />
 
+    <!-- 工具列表（核心内容，首屏可见） -->
+    <Suspense>
+      <template #default>
+        <ToolGrid
+          :tools="filteredTools"
+          @clear-filters="handleClearFilters"
+        />
+      </template>
+      <template #fallback>
+        <LoadingSpinner />
+      </template>
+    </Suspense>
+
+    <!-- 每日推荐 + 冷知识（工具列表之后） -->
+    <section class="py-4 px-4">
+      <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-3">
+        <ToolOfTheDayCompact />
+        <FunFact />
+      </div>
+    </section>
+
     <!-- 资源推荐横幅 -->
-    <section class="py-8 px-4">
+    <section class="py-6 px-4">
       <div class="max-w-6xl mx-auto">
         <div class="flex items-center justify-between mb-4">
           <h3 class="text-lg font-bold text-white flex items-center gap-2">
@@ -50,26 +71,15 @@
       </div>
     </section>
 
-    <Suspense>
-      <template #default>
-        <ToolGrid
-          :tools="filteredTools"
-          @clear-filters="handleClearFilters"
-        />
-      </template>
-      <template #fallback>
-        <LoadingSpinner />
-      </template>
-    </Suspense>
     <!-- Replay Intro Button -->
     <Transition name="fade">
       <button
         v-if="!showIntro"
         @click="showIntro = true"
-        class="fixed bottom-6 right-6 z-40 flex items-center gap-2 px-4 py-2 bg-surface/80 hover:bg-surface text-white text-sm font-medium rounded-full shadow-lg border border-white/10 backdrop-blur-sm transition-all hover:scale-105"
+        class="fixed bottom-6 right-6 z-40 flex items-center gap-2 px-3 py-1.5 bg-surface/60 hover:bg-surface text-white/60 hover:text-white text-xs rounded-full shadow-lg border border-white/10 backdrop-blur-sm transition-all hover:scale-105"
       >
-        <PlayCircle class="w-4 h-4 text-primary" />
-        重看演示
+        <PlayCircle class="w-3.5 h-3.5 text-primary" />
+        演示
       </button>
     </Transition>
   </div>
@@ -85,6 +95,8 @@ import SearchBar from '../components/SearchBar.vue'
 import ToolGrid from '../components/ToolGrid.vue'
 import LoadingSpinner from '../components/LoadingSpinner.vue'
 import IntroVideo from '../components/IntroVideo.vue'
+import ToolOfTheDayCompact from '../components/gamification/ToolOfTheDayCompact.vue'
+import FunFact from '../components/gamification/FunFact.vue'
 
 const showIntro = ref(false)
 
@@ -94,7 +106,6 @@ function handleIntroClose() {
 }
 
 onMounted(() => {
-  // Check if user has seen intro in this session
   const hasSeen = sessionStorage.getItem('hasSeenIntro')
   if (!hasSeen) {
     showIntro.value = true
@@ -105,7 +116,6 @@ const toolsStore = useToolsStore()
 
 const filteredTools = computed(() => toolsStore.filteredTools)
 
-// Show all 5 resources as compact cards
 const featuredResources = computed(() => resources)
 
 function handleClearFilters() {

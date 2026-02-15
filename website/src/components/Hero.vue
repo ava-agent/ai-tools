@@ -1,5 +1,5 @@
 <template>
-  <section class="py-16 md:py-24 text-center relative overflow-hidden">
+  <section class="py-12 md:py-16 text-center relative overflow-hidden">
     <!-- 背景装饰 -->
     <div
       class="absolute inset-0 pointer-events-none"
@@ -12,104 +12,69 @@
       />
     </div>
 
-    <div class="max-w-5xl mx-auto relative z-10 px-4">
-      <!-- 版本标签 -->
-      <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-8 animate-fade-in glass-effect cursor-pointer hover:scale-105 transition-all duration-300">
-        <Sparkles class="w-4 h-4 text-primary" />
-        <span class="text-sm text-primary font-medium">2026深度集成与实战教学版</span>
-      </div>
-
+    <div class="max-w-4xl mx-auto relative z-10 px-4">
       <!-- 主标题 -->
-      <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 animate-slide-up">
+      <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 animate-slide-up">
         <span class="gradient-text">AI工具全书</span>
       </h1>
 
       <!-- 副标题 -->
       <p
-        class="text-lg sm:text-xl md:text-2xl text-white/80 mb-6 animate-slide-up leading-relaxed"
+        class="text-base sm:text-lg md:text-xl text-white/80 mb-4 animate-slide-up leading-relaxed"
         style="animation-delay: 0.1s"
       >
-        深度评测 <span class="text-primary font-semibold">49款</span> AI 工具，配套 PPT 讲解和实战视频
+        深度评测 <span class="text-primary font-semibold">{{ toolCount }}款</span> AI 工具 · 配套 PPT 讲解和实战视频
       </p>
 
-      <!-- 描述 -->
-      <p
-        class="text-base md:text-lg text-muted mb-10 animate-slide-up max-w-3xl mx-auto leading-relaxed"
-        style="animation-delay: 0.2s"
-      >
-        覆盖 Cursor、Trae、Claude Code、Gemini CLI 等主流工具的功能对比、定价分析与工作流最佳实践
-      </p>
-
-      <!-- CTA 按钮组 -->
+      <!-- 简洁统计行 -->
       <div
-        class="flex flex-col sm:flex-row gap-4 justify-center animate-slide-up"
-        style="animation-delay: 0.3s"
+        class="flex items-center justify-center gap-4 md:gap-6 text-sm text-white/50 mb-8 animate-slide-up"
+        style="animation-delay: 0.15s"
+      >
+        <span>{{ toolCount }}+ 工具</span>
+        <span class="w-1 h-1 rounded-full bg-white/30" />
+        <span>{{ workflowCount }} 工作流</span>
+        <span class="w-1 h-1 rounded-full bg-white/30" />
+        <span>{{ pdfCount + videoCount }} 资源</span>
+        <span class="w-1 h-1 rounded-full bg-white/30" />
+        <span>100% 实战</span>
+      </div>
+
+      <!-- CTA 按钮组：1主 + 1副 -->
+      <div
+        class="flex flex-col sm:flex-row gap-3 justify-center animate-slide-up"
+        style="animation-delay: 0.2s"
       >
         <router-link
           to="/matcher"
-          class="btn-primary inline-flex items-center justify-center px-8 py-4 text-base"
+          class="btn-primary inline-flex items-center justify-center px-8 py-3 text-base"
         >
           <Search class="w-5 h-5 mr-2" />
-          工具匹配
+          智能匹配工具
         </router-link>
         <router-link
-          to="/resources"
-          class="btn-secondary inline-flex items-center justify-center px-8 py-4 text-base"
+          to="/comparison"
+          class="btn-secondary inline-flex items-center justify-center px-6 py-3 text-sm"
         >
-          <PlayCircle class="w-5 h-5 mr-2" />
-          PPT 与视频
+          <ArrowRightLeft class="w-4 h-4 mr-2" />
+          对比分析
         </router-link>
-        <router-link
-          to="/pricing"
-          class="btn-secondary inline-flex items-center justify-center px-8 py-4 text-base"
-        >
-          <BarChart3 class="w-5 h-5 mr-2" />
-          订阅指南
-        </router-link>
-      </div>
-
-      <!-- 统计数据 -->
-      <div
-        class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 animate-fade-in"
-        style="animation-delay: 0.4s"
-      >
-        <div class="group p-4 rounded-xl hover:bg-white/5 transition-all duration-300 cursor-pointer">
-          <div class="text-3xl md:text-4xl font-bold gradient-text mb-2 transition-transform duration-300 group-hover:scale-110">
-            49+
-          </div>
-          <div class="text-sm text-muted">
-            AI工具
-          </div>
-        </div>
-        <div class="group p-4 rounded-xl hover:bg-white/5 transition-all duration-300 cursor-pointer">
-          <div class="text-3xl md:text-4xl font-bold gradient-text mb-2 transition-transform duration-300 group-hover:scale-110">
-            6
-          </div>
-          <div class="text-sm text-muted">
-            工作流
-          </div>
-        </div>
-        <div class="group p-4 rounded-xl hover:bg-white/5 transition-all duration-300 cursor-pointer">
-          <div class="text-3xl md:text-4xl font-bold gradient-text mb-2 transition-transform duration-300 group-hover:scale-110">
-            3+2
-          </div>
-          <div class="text-sm text-muted">
-            PPT+视频
-          </div>
-        </div>
-        <div class="group p-4 rounded-xl hover:bg-white/5 transition-all duration-300 cursor-pointer">
-          <div class="text-3xl md:text-4xl font-bold gradient-text mb-2 transition-transform duration-300 group-hover:scale-110">
-            100%
-          </div>
-          <div class="text-sm text-muted">
-            实战数据
-          </div>
-        </div>
       </div>
     </div>
   </section>
 </template>
 
 <script setup>
-import { Sparkles, Search, BarChart3, PlayCircle } from 'lucide-vue-next'
+import { computed } from 'vue'
+import { Search, ArrowRightLeft } from 'lucide-vue-next'
+import { useToolsStore } from '../stores/tools'
+import { workflows } from '../data/workflows.js'
+import { resources } from '../data/resources.js'
+
+const toolsStore = useToolsStore()
+
+const toolCount = computed(() => toolsStore.tools.length)
+const workflowCount = computed(() => workflows.length)
+const pdfCount = computed(() => resources.filter(r => r.type === 'pdf').length)
+const videoCount = computed(() => resources.filter(r => r.type === 'video').length)
 </script>

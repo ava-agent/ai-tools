@@ -18,6 +18,7 @@
         @ended="onEnded"
         @timeupdate="onTimeUpdate"
         @loadedmetadata="onLoadedMetadata"
+        @error="onVideoError"
       >
         <source
           :src="videoSrc"
@@ -129,9 +130,11 @@ const hasStarted = ref(false)
 const currentTime = ref(0)
 const duration = ref(0)
 const showCustomControls = ref(false)
+const videoError = ref(false)
 let hideControlsTimer = null
+let playPromise = null
 
-const videoSrc = computed(() => props.src)
+const videoSrc = computed(() => videoError.value ? null : props.src)
 const thumbnail = computed(() => props.thumbnail)
 
 const progressPercent = computed(() => {
@@ -139,13 +142,24 @@ const progressPercent = computed(() => {
   return (currentTime.value / duration.value) * 100
 })
 
-const togglePlay = () => {
+const togglePlay = async () => {
   if (!videoRef.value) return
 
   if (videoRef.value.paused) {
-    videoRef.value.play()
-    hasStarted.value = true
+    try {
+      playPromise = videoRef.value.play()
+      if (playPromise) await playPromise
+      hasStarted.value = true
+    } catch {
+      // play() was interrupted or failed — ignore
+    }
+    playPromise = null
   } else {
+    // Wait for pending play() before pausing
+    if (playPromise) {
+      try { await playPromise } catch { /* ignore */ }
+      playPromise = null
+    }
     videoRef.value.pause()
   }
 }
@@ -164,6 +178,10 @@ const onLoadedMetadata = () => {
   if (videoRef.value) {
     duration.value = videoRef.value.duration
   }
+}
+
+const onVideoError = () => {
+  videoError.value = true
 }
 
 const seekTo = (event) => {
@@ -192,9 +210,9 @@ const formatTime = (seconds) => {
   return `${mins}:${secs.toString().padStart(2, '0')}`
 }
 
-onMounted(() => {
+onMounted(async () => {
   if (props.autoplay && videoRef.value) {
-    togglePlay()
+    await togglePlay()
   }
 })
 

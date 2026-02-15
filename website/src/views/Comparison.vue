@@ -10,21 +10,129 @@
         </p>
       </div>
 
-      <div class="card overflow-x-auto">
-        <table class="w-full min-w-[800px]">
+      <!-- 已选对比工具 -->
+      <div
+        v-if="toolsStore.comparedToolIds.length > 0"
+        class="mb-6"
+      >
+        <div class="flex items-center flex-wrap gap-3">
+          <span class="text-sm text-white/60">已选对比：</span>
+          <span
+            v-for="ct in toolsStore.comparedTools"
+            :key="ct.id"
+            class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-primary/20 text-primary text-sm rounded-full"
+          >
+            {{ ct.name }}
+            <button @click="toolsStore.removeFromCompare(ct.id)">
+              <X class="w-3.5 h-3.5 hover:text-white transition-colors" />
+            </button>
+          </span>
+          <button
+            v-if="toolsStore.comparedToolIds.length >= 2"
+            class="btn-primary text-sm px-4 py-1.5"
+            @click="showCompareView = true"
+          >
+            <GitCompareArrows class="w-4 h-4 mr-1 inline" />
+            开始对比 ({{ toolsStore.comparedToolIds.length }})
+          </button>
+          <button
+            class="text-sm text-white/50 hover:text-white transition-colors"
+            @click="toolsStore.clearCompare()"
+          >
+            清除
+          </button>
+        </div>
+      </div>
+
+      <!-- 侧边对比视图 -->
+      <div v-if="showCompareView && toolsStore.comparedTools.length >= 2">
+        <div class="mb-6">
+          <button
+            class="text-sm text-white/60 hover:text-white transition-colors flex items-center"
+            @click="showCompareView = false"
+          >
+            <ArrowLeft class="w-4 h-4 mr-1" />
+            返回列表
+          </button>
+        </div>
+        <CompareView :tools="toolsStore.comparedTools" />
+      </div>
+
+      <!-- 工具列表表格 -->
+      <div
+        v-else
+        class="card overflow-x-auto"
+      >
+        <!-- 分类筛选 -->
+        <div class="flex flex-wrap gap-2 mb-4 pb-4 border-b border-white/10">
+          <button
+            v-for="cat in filterCategories"
+            :key="cat"
+            class="px-3 py-1.5 text-sm rounded-lg transition-all cursor-pointer"
+            :class="filterCategory === cat ? 'bg-primary text-white' : 'bg-white/5 text-white/60 hover:text-white'"
+            @click="filterCategory = cat"
+          >
+            {{ cat === 'all' ? '全部' : getCategoryLabel(cat) }}
+          </button>
+        </div>
+
+        <table class="w-full min-w-[900px]">
           <thead>
             <tr class="border-b border-white/10">
-              <th class="text-left p-4 text-white font-semibold">
-                工具名称
+              <th class="p-4 w-10">
+                <span class="sr-only">选择</span>
               </th>
-              <th class="text-left p-4 text-white font-semibold">
-                开发者
+              <th
+                class="text-left p-4 text-white font-semibold cursor-pointer select-none hover:text-primary transition-colors"
+                @click="toggleSort('name')"
+              >
+                <span class="inline-flex items-center gap-1">
+                  工具名称
+                  <component
+                    :is="getSortIcon('name')"
+                    class="w-4 h-4"
+                    :class="sortField === 'name' ? 'text-primary' : 'text-white/30'"
+                  />
+                </span>
               </th>
-              <th class="text-left p-4 text-white font-semibold">
-                类别
+              <th
+                class="text-left p-4 text-white font-semibold cursor-pointer select-none hover:text-primary transition-colors"
+                @click="toggleSort('developer')"
+              >
+                <span class="inline-flex items-center gap-1">
+                  开发者
+                  <component
+                    :is="getSortIcon('developer')"
+                    class="w-4 h-4"
+                    :class="sortField === 'developer' ? 'text-primary' : 'text-white/30'"
+                  />
+                </span>
               </th>
-              <th class="text-left p-4 text-white font-semibold">
-                评分
+              <th
+                class="text-left p-4 text-white font-semibold cursor-pointer select-none hover:text-primary transition-colors"
+                @click="toggleSort('category')"
+              >
+                <span class="inline-flex items-center gap-1">
+                  类别
+                  <component
+                    :is="getSortIcon('category')"
+                    class="w-4 h-4"
+                    :class="sortField === 'category' ? 'text-primary' : 'text-white/30'"
+                  />
+                </span>
+              </th>
+              <th
+                class="text-left p-4 text-white font-semibold cursor-pointer select-none hover:text-primary transition-colors"
+                @click="toggleSort('rating')"
+              >
+                <span class="inline-flex items-center gap-1">
+                  评分
+                  <component
+                    :is="getSortIcon('rating')"
+                    class="w-4 h-4"
+                    :class="sortField === 'rating' ? 'text-primary' : 'text-white/30'"
+                  />
+                </span>
               </th>
               <th class="text-left p-4 text-white font-semibold">
                 定价
@@ -38,11 +146,21 @@
             </tr>
           </thead>
           <tbody>
-            <tr 
-              v-for="tool in tools" 
+            <tr
+              v-for="tool in sortedTools"
               :key="tool.id"
               class="border-b border-white/5 hover:bg-white/5 transition-colors"
+              :class="{ 'bg-primary/5': toolsStore.comparedToolIds.includes(tool.id) }"
             >
+              <td class="p-4">
+                <input
+                  type="checkbox"
+                  :checked="toolsStore.comparedToolIds.includes(tool.id)"
+                  :disabled="!toolsStore.comparedToolIds.includes(tool.id) && toolsStore.comparedToolIds.length >= 4"
+                  class="w-4 h-4 rounded border-white/30 bg-white/10 text-primary focus:ring-primary cursor-pointer accent-[var(--color-primary)]"
+                  @change="toggleCompare(tool.id)"
+                >
+              </td>
               <td class="p-4">
                 <div class="flex items-center">
                   <span class="font-semibold text-white">{{ tool.name }}</span>
@@ -63,7 +181,7 @@
               </td>
               <td class="p-4">
                 <span class="px-2 py-1 bg-primary/20 text-primary text-sm rounded-full">
-                  {{ tool.category }}
+                  {{ getCategoryLabel(tool.category) }}
                 </span>
               </td>
               <td class="p-4">
@@ -76,23 +194,30 @@
                   />
                 </div>
               </td>
-              <td class="p-4 text-white/80">
+              <td class="p-4 text-white/80 text-sm">
                 {{ tool.versions?.[0]?.pricing || 'N/A' }}
               </td>
               <td class="p-4 text-white/80 text-sm">
                 {{ tool.versions?.[0]?.models || 'N/A' }}
               </td>
               <td class="p-4">
-                <a
-                  :href="`/tool/${tool.id}`"
+                <router-link
+                  :to="{ name: 'tool-detail', params: { id: tool.id } }"
                   class="text-primary hover:text-primary/80 transition-colors"
                 >
-                  查看详情 →
-                </a>
+                  详情 →
+                </router-link>
               </td>
             </tr>
           </tbody>
         </table>
+
+        <p
+          v-if="toolsStore.comparedToolIds.length === 0"
+          class="text-center text-white/40 text-sm py-4 border-t border-white/5"
+        >
+          勾选 2-4 个工具进行侧边对比
+        </p>
       </div>
 
       <div class="grid md:grid-cols-3 gap-6 mt-12">
@@ -176,12 +301,89 @@
 </template>
 
 <script setup>
-import { computed } from 'vue'
+import { ref, computed, onMounted } from 'vue'
 import { useToolsStore } from '../stores/tools'
-import { getTagColor } from '../utils/helpers'
-import { CheckCircle, Zap, TrendingUp, Star } from 'lucide-vue-next'
+import { useGamificationStore } from '../stores/gamification'
+import { useAchievementsStore } from '../stores/achievements'
+import { getTagColor, getCategoryLabel } from '../utils/helpers'
+import {
+  CheckCircle, Zap, TrendingUp, Star,
+  ArrowUpDown, ChevronUp, ChevronDown,
+  X, GitCompareArrows, ArrowLeft
+} from 'lucide-vue-next'
+import CompareView from '../components/CompareView.vue'
 
 const toolsStore = useToolsStore()
+const gamification = useGamificationStore()
+const achievements = useAchievementsStore()
 
-const tools = computed(() => toolsStore.tools)
+onMounted(() => {
+  gamification.trackComparisonUse()
+  achievements.checkAll()
+})
+
+const sortField = ref('rating')
+const sortDirection = ref('desc')
+const filterCategory = ref('all')
+const showCompareView = ref(false)
+
+const filterCategories = computed(() => {
+  const cats = new Set(toolsStore.tools.map(t => t.category))
+  return ['all', ...Array.from(cats)]
+})
+
+const sortedTools = computed(() => {
+  let result = [...toolsStore.tools]
+
+  // 分类筛选
+  if (filterCategory.value !== 'all') {
+    result = result.filter(t => t.category === filterCategory.value)
+  }
+
+  // 排序
+  result.sort((a, b) => {
+    let comparison = 0
+    switch (sortField.value) {
+      case 'name':
+        comparison = a.name.localeCompare(b.name, 'zh-CN')
+        break
+      case 'developer':
+        comparison = (a.developer || '').localeCompare(b.developer || '', 'zh-CN')
+        break
+      case 'category':
+        comparison = a.category.localeCompare(b.category)
+        break
+      case 'rating':
+        comparison = (a.personalExperience?.rating || 0) - (b.personalExperience?.rating || 0)
+        break
+      default:
+        comparison = 0
+    }
+    return sortDirection.value === 'desc' ? -comparison : comparison
+  })
+
+  return result
+})
+
+function toggleSort(field) {
+  if (sortField.value === field) {
+    sortDirection.value = sortDirection.value === 'asc' ? 'desc' : 'asc'
+  } else {
+    sortField.value = field
+    sortDirection.value = field === 'rating' ? 'desc' : 'asc'
+  }
+}
+
+function getSortIcon(field) {
+  if (sortField.value !== field) return ArrowUpDown
+  return sortDirection.value === 'asc' ? ChevronUp : ChevronDown
+}
+
+function toggleCompare(toolId) {
+  if (toolsStore.comparedToolIds.includes(toolId)) {
+    toolsStore.removeFromCompare(toolId)
+  } else {
+    toolsStore.addToCompare(toolId)
+  }
+}
 </script>

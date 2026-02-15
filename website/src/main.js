@@ -1,11 +1,16 @@
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
+import { createLocalStoragePlugin } from './plugins/piniaLocalStorage'
 import App from './App.vue'
 import router from './router'
 import './style.css'
 
 const app = createApp(App)
 const pinia = createPinia()
+
+pinia.use(createLocalStoragePlugin({
+  stores: ['gamification', 'achievements']
+}))
 
 app.use(pinia)
 app.use(router)

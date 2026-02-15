@@ -37,8 +37,19 @@
           </router-link>
         </div>
 
-        <!-- 移动菜单按钮 -->
-        <div class="flex items-center space-x-2">
+        <!-- 右侧: 游戏化元素 + 移动菜单按钮 -->
+        <div class="flex items-center space-x-3">
+          <!-- 连续打卡 (桌面) -->
+          <StreakCounter class="hidden lg:flex" />
+
+          <!-- 等级徽章 -->
+          <LevelBadge
+            size="sm"
+            class="hidden sm:flex"
+            @click="isProfileOpen = true"
+          />
+
+          <!-- 移动菜单按钮 -->
           <button
             class="lg:hidden p-2.5 rounded-xl text-white/60 hover:text-white hover:bg-white/5 transition-all duration-200 cursor-pointer"
             :aria-expanded="isMobileMenuOpen"
@@ -57,6 +68,11 @@
         </div>
       </div>
 
+      <!-- XP 进度条 (桌面) -->
+      <div class="hidden lg:block mt-2">
+        <XpBar :compact="true" />
+      </div>
+
       <!-- 移动端菜单 -->
       <transition
         enter="transition ease-out duration-200"
@@ -70,6 +86,18 @@
           v-if="isMobileMenuOpen"
           class="lg:hidden mt-4 pb-4 border-t border-white/10 pt-4"
         >
+          <!-- 移动端 XP + 等级 -->
+          <div class="flex items-center gap-3 mb-4 px-2">
+            <LevelBadge
+              size="sm"
+              @click="isProfileOpen = true; isMobileMenuOpen = false"
+            />
+            <div class="flex-1">
+              <XpBar :compact="true" />
+            </div>
+            <StreakCounter />
+          </div>
+
           <div class="grid grid-cols-2 gap-2">
             <router-link
               v-for="item in navItems"
@@ -89,14 +117,25 @@
         </div>
       </transition>
     </nav>
+
+    <!-- User Profile Panel -->
+    <UserProfilePanel
+      :is-open="isProfileOpen"
+      @close="isProfileOpen = false"
+    />
   </header>
 </template>
 
 <script setup>
 import { ref } from 'vue'
-import { Brain, Menu, X, Search, Scale, Workflow, GitCompare, BarChart3, BookOpen } from 'lucide-vue-next'
+import { Brain, Menu, X, Search, Scale, Workflow, GitCompare, BarChart3, BookOpen, HelpCircle } from 'lucide-vue-next'
+import LevelBadge from './gamification/LevelBadge.vue'
+import XpBar from './gamification/XpBar.vue'
+import StreakCounter from './gamification/StreakCounter.vue'
+import UserProfilePanel from './gamification/UserProfilePanel.vue'
 
 const isMobileMenuOpen = ref(false)
+const isProfileOpen = ref(false)
 
 const navItems = [
   { to: '/', label: '工具列表', icon: Search },
@@ -104,7 +143,8 @@ const navItems = [
   { to: '/pricing', label: '订阅指南', icon: BarChart3, iconColor: 'text-green-400' },
   { to: '/workflows', label: '工作流', icon: Workflow, iconColor: 'text-purple-400' },
   { to: '/resources', label: '资源中心', icon: BookOpen, iconColor: 'text-cyan-400' },
-  { to: '/comparison', label: '对比分析', icon: GitCompare, iconColor: 'text-yellow-400' }
+  { to: '/comparison', label: '对比分析', icon: GitCompare, iconColor: 'text-yellow-400' },
+  { to: '/quiz', label: '趣味竞猜', icon: HelpCircle, iconColor: 'text-pink-400' },
 ]
 
 const toggleMobileMenu = () => {

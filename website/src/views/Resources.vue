@@ -17,7 +17,7 @@
           <button
             v-for="tab in filterTabs"
             :key="tab.id"
-            class="px-5 py-2.5 rounded-lg transition-all flex items-center gap-2"
+            class="px-5 py-2.5 rounded-lg transition-all flex items-center gap-2 cursor-pointer"
             :class="activeFilter === tab.id
               ? 'bg-primary text-white shadow-lg shadow-primary/25'
               : 'bg-surface text-white/80 hover:bg-surface/80'"
@@ -84,7 +84,7 @@
                   </div>
                 </div>
                 <button
-                  class="ml-4 flex-shrink-0 px-4 py-2 rounded-lg transition-all text-sm font-medium"
+                  class="ml-4 flex-shrink-0 px-4 py-2 rounded-lg transition-all text-sm font-medium cursor-pointer"
                   :class="expandedPdf === pdf.id
                     ? 'bg-primary text-white'
                     : 'bg-white/5 text-white/60 hover:bg-white/10 hover:text-white'"

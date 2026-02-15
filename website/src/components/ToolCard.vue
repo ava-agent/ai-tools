@@ -3,37 +3,42 @@
     :to="{ name: 'tool-detail', params: { id: tool.id } }"
     class="block"
   >
-    <article class="card group relative overflow-hidden cursor-pointer">
+    <article class="card card-interactive group relative overflow-hidden">
       <!-- 悬停光晕效果 -->
       <div class="absolute inset-0 bg-gradient-to-br from-primary/0 via-transparent to-accent/0 group-hover:from-primary/5 group-hover:via-transparent group-hover:to-accent/5 transition-all duration-500 pointer-events-none" />
 
       <div class="relative z-10">
-        <!-- 头部：工具名称和评分 -->
-        <div class="flex items-start justify-between mb-4">
-          <div class="flex-1 min-w-0 pr-4">
-            <h3 class="text-xl font-bold text-white mb-1 group-hover:text-primary transition-all duration-200 truncate">
+        <!-- 头部：Logo + 工具名称和评分 -->
+        <div class="flex items-start gap-3 mb-3">
+          <ToolLogo
+            :tool-id="tool.id"
+            :tool-name="tool.name"
+            size="lg"
+          />
+          <div class="flex-1 min-w-0">
+            <h3 class="text-lg font-bold text-white mb-0.5 group-hover:text-primary transition-all duration-200 truncate">
               {{ tool.name }}
             </h3>
-            <p class="text-sm text-muted truncate">
+            <p class="text-sm text-muted truncate mb-1">
               {{ tool.developer }}
             </p>
-          </div>
-          <div
-            class="flex items-center gap-0.5 flex-shrink-0"
-            :aria-label="`评分: ${tool.personalExperience?.rating || 0} 星`"
-          >
-            <Star
-              v-for="i in 5"
-              :key="i"
-              class="w-4 h-4 transition-colors duration-200"
-              :class="getStarClass(i)"
-            />
+            <div
+              class="flex items-center gap-0.5"
+              :aria-label="`推荐度: ${tool.personalExperience?.rating || 0} 星`"
+            >
+              <Star
+                v-for="i in 5"
+                :key="i"
+                class="w-3.5 h-3.5 transition-colors duration-200"
+                :class="getStarClass(i)"
+              />
+              <span class="text-xs text-white/40 ml-1">推荐度</span>
+            </div>
           </div>
         </div>
 
         <!-- 类别标签 + 视频标识 -->
-        <div class="mb-4 flex items-center gap-2 flex-wrap">
-          <!-- 视频标识（放在第一个位置） -->
+        <div class="mb-3 flex items-center gap-2 flex-wrap">
           <div
             v-if="tool.video"
             class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-primary/20 text-primary text-xs font-medium"
@@ -56,63 +61,25 @@
         </div>
 
         <!-- 工具描述 -->
-        <p class="text-white/80 mb-5 leading-relaxed line-clamp-2">
+        <p class="text-sm text-white/70 mb-3 leading-relaxed line-clamp-2">
           {{ tool.bestFor }}
         </p>
 
-        <!-- 优势劣势 -->
-        <div class="space-y-3 mb-5">
-          <div class="bg-green-500/5 rounded-lg p-3 border border-green-500/10 group-hover:border-green-500/20 transition-all duration-300">
-            <h4 class="text-sm font-semibold text-white mb-2 flex items-center">
-              <CheckCircle class="w-4 h-4 text-green-400 mr-2 flex-shrink-0" />
-              <span>优势</span>
-            </h4>
-            <ul class="text-sm text-muted space-y-1">
-              <li
-                v-for="pro in (tool.pros || []).slice(0, 3)"
-                :key="pro"
-                class="flex items-start gap-2"
-              >
-                <span class="text-green-400 flex-shrink-0">•</span>
-                <span class="line-clamp-1">{{ pro }}</span>
-              </li>
-            </ul>
-          </div>
-
-          <div class="bg-red-500/5 rounded-lg p-3 border border-red-500/10 group-hover:border-red-500/20 transition-all duration-300">
-            <h4 class="text-sm font-semibold text-white mb-2 flex items-center">
-              <AlertCircle class="w-4 h-4 text-red-400 mr-2 flex-shrink-0" />
-              <span>劣势</span>
-            </h4>
-            <ul class="text-sm text-muted space-y-1">
-              <li
-                v-for="con in (tool.cons || []).slice(0, 2)"
-                :key="con"
-                class="flex items-start gap-2"
-              >
-                <span class="text-red-400 flex-shrink-0">•</span>
-                <span class="line-clamp-1">{{ con }}</span>
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- 标签 -->
-        <div class="flex flex-wrap gap-2 mb-5">
-          <span
-            v-for="tag in (tool.tags || [])"
-            :key="tag"
-            class="tag-pill text-xs"
-            :class="getTagColor(tag)"
-          >
-            {{ tag }}
-          </span>
+        <!-- 核心亮点（仅显示第一个优势） -->
+        <div
+          v-if="tool.pros && tool.pros.length"
+          class="mb-3"
+        >
+          <p class="text-xs text-green-400/80 flex items-start gap-1.5">
+            <CheckCircle class="w-3.5 h-3.5 flex-shrink-0 mt-0.5" />
+            <span class="line-clamp-1">{{ tool.pros[0] }}</span>
+          </p>
         </div>
 
         <!-- 操作提示 -->
-        <div class="text-center text-sm text-white/40 group-hover:text-primary transition-colors">
-          点击查看详情
-          <ArrowRight class="inline-block w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
+        <div class="text-center text-xs text-white/30 group-hover:text-primary transition-colors">
+          查看详情
+          <ArrowRight class="inline-block w-3.5 h-3.5 ml-0.5 group-hover:translate-x-1 transition-transform" />
         </div>
       </div>
     </article>
@@ -120,9 +87,9 @@
 </template>
 
 <script setup>
-import { computed } from 'vue'
-import { CheckCircle, AlertCircle, Star, Video, ArrowRight } from 'lucide-vue-next'
-import { getTagColor, getCategoryLabel, getCategoryColor } from '../utils/helpers.js'
+import { CheckCircle, Star, Video, ArrowRight } from 'lucide-vue-next'
+import ToolLogo from './ToolLogo.vue'
+import { getCategoryLabel, getCategoryColor } from '../utils/helpers.js'
 
 const props = defineProps({
   tool: {

@@ -62,46 +62,47 @@ export const quickSelectionGuide = [
 export const recommendedCombos = [
     {
         name: '全栈开发者方案',
-        budget: '$20-40/月',
+        budget: '$20/月',
         tools: [
-            { layer: '主力 IDE', tool: 'Cursor', usage: '日常开发', cost: '$20/月' },
-            { layer: '深度推理', tool: 'Claude Code', usage: '复杂任务', cost: '$20/月' },
-            { layer: '大规模分析', tool: 'Gemini CLI', usage: '代码分析、调研', cost: '免费' }
+            { layer: '主力 IDE', tool: 'Cursor', usage: '日常开发主力，Composer 模式处理复杂任务', cost: '$20/月' },
+            { layer: 'CLI 补强', tool: 'Gemini CLI', usage: '批量改动、长文档调研', cost: '免费' },
+            { layer: '快速验证', tool: 'Trae', usage: '原型验证、想法快速落地', cost: '免费' }
         ]
     },
     {
         name: '预算敏感方案',
-        budget: '$0/月',
+        budget: '$0-15/月',
         tools: [
-            { layer: '主力 IDE', tool: 'Trae', usage: '日常开发', cost: '免费' },
-            { layer: 'CLI 补强', tool: 'Gemini CLI', usage: '大规模分析', cost: '免费' },
-            { layer: '中文优化', tool: 'Qwen CLI', usage: '中文场景', cost: '免费' }
+            { layer: '主力 IDE', tool: 'Trae', usage: '完全免费，国产模型优化', cost: '免费' },
+            { layer: 'CLI 补强', tool: 'Gemini CLI + Qwen CLI', usage: '长上下文 + 中文优化', cost: '免费' },
+            { layer: '备用 IDE', tool: 'Windsurf', usage: '需要时启用，Cascade AI 能力强', cost: '$15/月可选' }
         ]
     },
     {
         name: '独立开发者方案',
-        budget: '$20/月',
+        budget: '$20-40/月',
         tools: [
-            { layer: '主力 IDE', tool: 'Cursor', usage: '全栈开发', cost: '$20/月' },
-            { layer: '深度推理', tool: 'Claude Code', usage: '复杂任务', cost: '$20/月' },
-            { layer: '快速原型', tool: 'Trae', usage: 'MVP 验证', cost: '免费' }
+            { layer: '主力 IDE', tool: 'Cursor', usage: '全栈开发主力', cost: '$20/月' },
+            { layer: '快速原型', tool: 'Trae', usage: 'Solo Builder 模式 MVP 验证', cost: '免费' },
+            { layer: 'CLI 补强', tool: 'Claude Code', usage: '关键任务、复杂重构', cost: '$20/月' }
         ]
     },
     {
         name: '企业团队方案',
         budget: '$40-60/人/月',
         tools: [
-            { layer: '主力 IDE', tool: 'Cursor', usage: '团队开发', cost: '$40/月' },
-            { layer: '协作', tool: 'GitHub Copilot', usage: 'PR 审查', cost: '$19/月' },
-            { layer: '需求管理', tool: 'Kiro', usage: 'Spec 驱动', cost: '$20+/月' }
+            { layer: '主力 IDE', tool: 'Cursor Teams', usage: '团队协作，统一代码规范', cost: '$40/月' },
+            { layer: '后端专家', tool: 'Qoder', usage: 'Java/Go 项目，Repo Wiki', cost: '免费/付费' },
+            { layer: 'CLI 补强', tool: 'Claude Code', usage: '关键任务、代码审查', cost: '$20/月' }
         ]
     },
     {
         name: '后端专项方案',
         budget: '$20/月',
         tools: [
-            { layer: '存量代码', tool: 'Qoder', usage: 'Repo Wiki 理解', cost: '$20/月' },
-            { layer: '深度推理', tool: 'Claude Code', usage: '复杂任务', cost: '$20/月' }
+            { layer: '主力 IDE', tool: 'Qoder + Cursor', usage: 'Qoder 存量项目理解 + Cursor 开发', cost: '$20/月' },
+            { layer: 'CLI 补强', tool: 'Aider', usage: 'Git 工作流集成', cost: '免费' },
+            { layer: '长上下文', tool: 'Gemini CLI', usage: '大型代码库分析', cost: '免费' }
         ]
     }
 ]

@@ -16,7 +16,7 @@
         <button
           v-for="cat in categories"
           :key="cat.id"
-          class="card p-6 text-left transition-all duration-300 hover:scale-105"
+          class="card card-interactive p-6 text-left transition-all duration-300 hover:scale-[1.02]"
           :class="selectedCategory === cat.id ? 'ring-2 ring-primary' : ''"
           @click="selectCategory(cat.id)"
         >
@@ -96,7 +96,7 @@
                 v-for="option in currentNode.options"
                 :key="option.label"
                 class="btn-secondary py-4 text-lg"
-                @click="goToOption(option.next)"
+                @click="goToOption(option)"
               >
                 {{ option.label }}
               </button>
@@ -112,7 +112,15 @@
               <CheckCircle2 class="w-12 h-12 text-green-500" />
             </div>
             <h3 class="text-3xl font-bold text-white mb-4">
-              推荐工具：{{ currentNode.result }}
+              推荐工具：
+              <router-link
+                v-if="resolveToolId(currentNode.result)"
+                :to="{ name: 'tool-detail', params: { id: resolveToolId(currentNode.result) } }"
+                class="text-primary hover:text-primary/80 underline decoration-primary/30 hover:decoration-primary transition-all"
+              >
+                {{ currentNode.result }}
+              </router-link>
+              <span v-else>{{ currentNode.result }}</span>
             </h3>
             <p class="text-lg text-white/80 mb-8 max-w-lg mx-auto">
               {{ currentNode.reason }}
@@ -125,12 +133,12 @@
                 <RotateCcw class="w-5 h-5 mr-2 inline" />
                 重新选择
               </button>
-              <a
-                href="/tools"
+              <router-link
+                to="/"
                 class="btn-primary"
               >
                 查看工具列表
-              </a>
+              </router-link>
             </div>
           </div>
         </div>
@@ -173,7 +181,17 @@
                   {{ scenario.scenario }}
                 </td>
                 <td class="p-4">
-                  <span class="px-3 py-1 bg-primary/20 text-primary rounded-full text-sm">
+                  <router-link
+                    v-if="resolveToolId(scenario.primary)"
+                    :to="{ name: 'tool-detail', params: { id: resolveToolId(scenario.primary) } }"
+                    class="px-3 py-1 bg-primary/20 text-primary rounded-full text-sm hover:bg-primary/30 transition-colors inline-block"
+                  >
+                    {{ scenario.primary }}
+                  </router-link>
+                  <span
+                    v-else
+                    class="px-3 py-1 bg-primary/20 text-primary rounded-full text-sm"
+                  >
                     {{ scenario.primary }}
                   </span>
                 </td>
@@ -226,7 +244,7 @@
 </template>
 
 <script setup>
-import { ref, computed } from 'vue'
+import { ref, computed, watch } from 'vue'
 import {
   Monitor,
   Terminal,
@@ -240,12 +258,36 @@ import {
   Lightbulb,
   Zap
 } from 'lucide-vue-next'
+import { useToolsStore } from '../stores/tools'
+import { useGamificationStore } from '../stores/gamification'
+import { useAchievementsStore } from '../stores/achievements'
 import { decisionTrees, scenarioGuide } from '../data/decisions.js'
-import { quickSelectionGuide } from '../data/categories.js'
-import { categories } from '../data/categories.js'
+import { quickSelectionGuide, categories } from '../data/categories.js'
+
+const toolsStore = useToolsStore()
+const gamification = useGamificationStore()
+const achievements = useAchievementsStore()
+
+function resolveToolId(name) {
+  if (!name) return null
+  const normalized = name.toLowerCase().replace(/\s+/g, '')
+  const tool = toolsStore.tools.find(t => {
+    const tn = t.name.toLowerCase().replace(/\s+/g, '')
+    return tn === normalized || normalized.includes(tn) || tn.includes(normalized)
+  })
+  return tool?.id || null
+}
 
 const selectedCategory = ref('')
 const currentNodeRef = ref(null)
+
+// Track when user reaches a result node
+watch(currentNodeRef, (val) => {
+  if (val && typeof val === 'object' && val.result) {
+    gamification.trackMatcherComplete()
+    achievements.checkAll()
+  }
+})
 
 const currentDecision = computed(() => {
   if (!selectedCategory.value) return null
@@ -256,24 +298,12 @@ const currentNode = computed(() => {
   if (!currentDecision.value) return null
 
   if (currentNodeRef.value) {
-    // Find the node by ID
-    const findNode = (nodes, id) => {
-      for (const node of nodes) {
-        if (node.id === id) return node
-        if (node.yes && typeof node.yes === 'object') {
-          if (node.yes.result) return null
-          const found = findNode(currentDecision.value.nodes, node.yes)
-          if (found) return found
-        }
-        if (node.no && typeof node.no === 'object') {
-          if (node.no.result) return null
-          const found = findNode(currentDecision.value.nodes, node.no)
-          if (found) return found
-        }
-      }
-      return currentDecision.value.nodes.find(n => n.id === id)
+    // If currentNodeRef is a result object, return it directly
+    if (typeof currentNodeRef.value === 'object' && currentNodeRef.value.result) {
+      return currentNodeRef.value
     }
-    return findNode(currentDecision.value.nodes, currentNodeRef.value)
+    // Find the node by ID
+    return currentDecision.value.nodes.find(n => n.id === currentNodeRef.value) || null
   }
 
   // Start from the beginning
@@ -299,8 +329,12 @@ function goTo(direction) {
   }
 }
 
-function goToOption(nextId) {
-  currentNodeRef.value = nextId
+function goToOption(option) {
+  if (option.result) {
+    currentNodeRef.value = { result: option.result, reason: option.reason }
+  } else if (option.next) {
+    currentNodeRef.value = option.next
+  }
 }
 
 function resetDecision() {
