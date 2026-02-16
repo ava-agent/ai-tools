@@ -23,7 +23,7 @@
             已选择: {{ budgetTiers.find(t => t.id === selectedBudgetTier)?.name }}
           </span>
         </h2>
-        <div class="grid md:grid-cols-4 gap-4">
+        <div class="grid grid-cols-2 md:grid-cols-5 gap-4">
           <div
             v-for="tier in budgetTiers"
             :key="tier.id"
@@ -83,7 +83,7 @@
             已选择: {{ selectedCombo }}
           </span>
         </h2>
-        <div class="grid md:grid-cols-2 gap-6">
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           <div
             v-for="combo in filteredCombos"
             :key="combo.name"
@@ -319,6 +319,7 @@
               </p>
               <ul class="space-y-2 text-white/70 text-sm">
                 <li>• 个人开发者（月入 1-2 万）：推荐 $0-50/月 的方案</li>
+                <li>• 重度 AI 用户：Claude Code Max $200/月，无限额度，效率提升远超成本</li>
                 <li>• 小团队（5 人）：推荐 $100-300/月的团队方案</li>
                 <li>• 中型团队（20 人）：推荐 $500-1000/月的企业方案</li>
               </ul>
@@ -360,11 +361,13 @@ const budgetTiers = [
   { id: 'free', name: '免费方案', budget: '$0/月', users: '个人/学生', maxCost: 0 },
   { id: 'light', name: '轻量方案', budget: '$15-30/月', users: '个人开发者', highlight: true, maxCost: 30 },
   { id: 'standard', name: '标准方案', budget: '$50-100/月', users: '小团队', maxCost: 100 },
-  { id: 'enterprise', name: '企业方案', budget: '$100+/人/月', users: '中大型团队', maxCost: Infinity }
+  { id: 'enterprise', name: '企业方案', budget: '$100+/人/月', users: '中大型团队', maxCost: 200 },
+  { id: 'unlimited', name: '不设上限', budget: '$200+/月', users: '重度 AI 用户', maxCost: Infinity }
 ]
 
 // Map combos to compatible budget tiers
 const comboBudgetMap = {
+  '不设上限方案': ['unlimited'],
   '预算敏感方案': ['free', 'light'],
   '全栈开发者方案': ['light'],
   '独立开发者方案': ['light', 'standard'],
@@ -448,7 +451,8 @@ function matchesBudget(tool) {
 
   if (tier.id === 'light') return cost <= 30
   if (tier.id === 'standard') return cost <= 100
-  return cost > 100 // enterprise
+  if (tier.id === 'enterprise') return cost > 30 && cost <= 200
+  return cost >= 100 // unlimited
 }
 
 function getPriceValueColor(value) {

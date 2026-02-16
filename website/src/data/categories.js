@@ -18,7 +18,7 @@ export const categories = [
         icon: 'Terminal',
         description: '命令行工具，批量处理、自动化、长任务推进',
         color: 'green',
-        examples: ['Claude Code', 'Gemini CLI', 'Aider']
+        examples: ['Claude Code', 'Gemini CLI', 'Qwen CLI']
     },
     {
         id: 'llm',
@@ -61,6 +61,15 @@ export const quickSelectionGuide = [
 // 推荐组合方案
 export const recommendedCombos = [
     {
+        name: '不设上限方案',
+        budget: '$200+/月',
+        tools: [
+            { layer: '核心引擎', tool: 'Claude Code Max', usage: '无限使用 Opus/Sonnet，零限额焦虑，重度 AI 编程的终极选择', cost: '$200/月' },
+            { layer: '主力 IDE', tool: 'Cursor', usage: '日常 IDE 开发，Composer 模式协同', cost: '$20/月' },
+            { layer: '长上下文', tool: 'Gemini CLI', usage: '百万 Token 调研分析', cost: '免费' }
+        ]
+    },
+    {
         name: '全栈开发者方案',
         budget: '$20/月',
         tools: [
@@ -71,11 +80,11 @@ export const recommendedCombos = [
     },
     {
         name: '预算敏感方案',
-        budget: '$0-15/月',
+        budget: '$0/月',
         tools: [
             { layer: '主力 IDE', tool: 'Trae', usage: '完全免费，国产模型优化', cost: '免费' },
             { layer: 'CLI 补强', tool: 'Gemini CLI + Qwen CLI', usage: '长上下文 + 中文优化', cost: '免费' },
-            { layer: '备用 IDE', tool: 'Windsurf', usage: '需要时启用，Cascade AI 能力强', cost: '$15/月可选' }
+            { layer: '备用 CLI', tool: 'Codex', usage: 'OpenAI 出品，目前可免费试用，额度充足', cost: '免费试用' }
         ]
     },
     {
@@ -84,7 +93,7 @@ export const recommendedCombos = [
         tools: [
             { layer: '主力 IDE', tool: 'Cursor', usage: '全栈开发主力', cost: '$20/月' },
             { layer: '快速原型', tool: 'Trae', usage: 'Solo Builder 模式 MVP 验证', cost: '免费' },
-            { layer: 'CLI 补强', tool: 'Claude Code', usage: '关键任务、复杂重构', cost: '$20/月' }
+            { layer: 'CLI 补强', tool: 'Claude Code', usage: '关键任务、复杂重构（也可试用 Codex，免费额度接近）', cost: '$20/月' }
         ]
     },
     {
@@ -101,7 +110,7 @@ export const recommendedCombos = [
         budget: '$20/月',
         tools: [
             { layer: '主力 IDE', tool: 'Qoder + Cursor', usage: 'Qoder 存量项目理解 + Cursor 开发', cost: '$20/月' },
-            { layer: 'CLI 补强', tool: 'Aider', usage: 'Git 工作流集成', cost: '免费' },
+            { layer: 'CLI 补强', tool: 'Qwen CLI', usage: '中文优化、代码生成能力强', cost: '免费' },
             { layer: '长上下文', tool: 'Gemini CLI', usage: '大型代码库分析', cost: '免费' }
         ]
     }
