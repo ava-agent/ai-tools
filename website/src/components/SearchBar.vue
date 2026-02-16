@@ -83,7 +83,7 @@
 import { ref, computed } from 'vue'
 import { useToolsStore } from '../stores/tools'
 import { Search, Tag } from 'lucide-vue-next'
-import { getCategoryLabel } from '../utils/helpers'
+import { getCategoryLabel, getTagColor } from '../utils/helpers'
 import { easterEggs } from '../data/easterEggs.js'
 
 const toolsStore = useToolsStore()
