@@ -17,7 +17,7 @@
           <button
             v-for="workflow in workflows"
             :key="workflow.id"
-            class="px-4 py-2 rounded-lg transition-all"
+            class="px-4 py-2 rounded-lg transition-all cursor-pointer"
             :class="selectedWorkflow === workflow.id ? 'bg-primary text-white' : 'bg-surface text-white/80 hover:bg-surface/80'"
             @click="selectedWorkflow = workflow.id"
           >
@@ -65,7 +65,17 @@
                     <h4 class="text-lg font-semibold text-white mr-3">
                       {{ step.action }}
                     </h4>
-                    <span class="px-2 py-1 bg-primary/20 text-primary text-xs rounded-full">
+                    <router-link
+                      v-if="resolveToolId(step.tool)"
+                      :to="{ name: 'tool-detail', params: { id: resolveToolId(step.tool) } }"
+                      class="px-2 py-1 bg-primary/20 text-primary text-xs rounded-full hover:bg-primary/30 transition-colors"
+                    >
+                      {{ step.tool }}
+                    </router-link>
+                    <span
+                      v-else
+                      class="px-2 py-1 bg-primary/20 text-primary text-xs rounded-full"
+                    >
                       {{ step.tool }}
                     </span>
                   </div>
@@ -201,7 +211,9 @@
             </h3>
             <ul class="space-y-3 text-white/80">
               <li class="flex items-start">
-                <span class="text-2xl mr-3">🎯</span>
+                <div class="w-8 h-8 rounded-lg bg-blue-500/20 flex items-center justify-center mr-3 flex-shrink-0">
+                  <Target class="w-4 h-4 text-blue-400" />
+                </div>
                 <div>
                   <strong class="text-white">任务拆分</strong>
                   <p class="text-sm text-white/60">
@@ -210,7 +222,9 @@
                 </div>
               </li>
               <li class="flex items-start">
-                <span class="text-2xl mr-3">🔒</span>
+                <div class="w-8 h-8 rounded-lg bg-purple-500/20 flex items-center justify-center mr-3 flex-shrink-0">
+                  <Lock class="w-4 h-4 text-purple-400" />
+                </div>
                 <div>
                   <strong class="text-white">明确边界</strong>
                   <p class="text-sm text-white/60">
@@ -219,7 +233,9 @@
                 </div>
               </li>
               <li class="flex items-start">
-                <span class="text-2xl mr-3">👁️</span>
+                <div class="w-8 h-8 rounded-lg bg-cyan-500/20 flex items-center justify-center mr-3 flex-shrink-0">
+                  <Eye class="w-4 h-4 text-cyan-400" />
+                </div>
                 <div>
                   <strong class="text-white">人工审查</strong>
                   <p class="text-sm text-white/60">
@@ -228,7 +244,9 @@
                 </div>
               </li>
               <li class="flex items-start">
-                <span class="text-2xl mr-3">💾</span>
+                <div class="w-8 h-8 rounded-lg bg-green-500/20 flex items-center justify-center mr-3 flex-shrink-0">
+                  <Save class="w-4 h-4 text-green-400" />
+                </div>
                 <div>
                   <strong class="text-white">版本控制</strong>
                   <p class="text-sm text-white/60">
@@ -245,7 +263,9 @@
             </h3>
             <ul class="space-y-3 text-white/80">
               <li class="flex items-start">
-                <span class="text-2xl mr-3">🚫</span>
+                <div class="w-8 h-8 rounded-lg bg-red-500/20 flex items-center justify-center mr-3 flex-shrink-0">
+                  <Ban class="w-4 h-4 text-red-400" />
+                </div>
                 <div>
                   <strong class="text-white">不要一次改太多文件</strong>
                   <p class="text-sm text-white/60">
@@ -254,7 +274,9 @@
                 </div>
               </li>
               <li class="flex items-start">
-                <span class="text-2xl mr-3">🚫</span>
+                <div class="w-8 h-8 rounded-lg bg-red-500/20 flex items-center justify-center mr-3 flex-shrink-0">
+                  <Ban class="w-4 h-4 text-red-400" />
+                </div>
                 <div>
                   <strong class="text-white">不要盲目相信输出</strong>
                   <p class="text-sm text-white/60">
@@ -263,7 +285,9 @@
                 </div>
               </li>
               <li class="flex items-start">
-                <span class="text-2xl mr-3">🚫</span>
+                <div class="w-8 h-8 rounded-lg bg-red-500/20 flex items-center justify-center mr-3 flex-shrink-0">
+                  <Ban class="w-4 h-4 text-red-400" />
+                </div>
                 <div>
                   <strong class="text-white">不要上传敏感信息</strong>
                   <p class="text-sm text-white/60">
@@ -272,7 +296,9 @@
                 </div>
               </li>
               <li class="flex items-start">
-                <span class="text-2xl mr-3">🚫</span>
+                <div class="w-8 h-8 rounded-lg bg-red-500/20 flex items-center justify-center mr-3 flex-shrink-0">
+                  <Ban class="w-4 h-4 text-red-400" />
+                </div>
                 <div>
                   <strong class="text-white">不要忽视成本变化</strong>
                   <p class="text-sm text-white/60">
@@ -305,24 +331,32 @@ import {
   Terminal,
   Brain,
   Code,
-  Image as ImageIcon
+  Image as ImageIcon,
+  Target,
+  Lock,
+  Eye,
+  Save,
+  Ban
 } from 'lucide-vue-next'
+import { useUIStore } from '../stores/ui'
+import { useToolsStore } from '../stores/tools'
+import { getCategoryLabel, resolveToolId as _resolveToolId } from '../utils/helpers'
 import { workflows, pitfalls, promptTemplates } from '../data/workflows.js'
+
+const uiStore = useUIStore()
+const toolsStore = useToolsStore()
+
+const WORKFLOW_EXCLUDE_NAMES = ['手动', '手动测试', 'Git']
+
+function resolveToolId(name) {
+  return _resolveToolId(name, toolsStore.tools, WORKFLOW_EXCLUDE_NAMES)
+}
 
 const selectedWorkflow = ref(workflows[0]?.id || 'daily-dev')
 
 const currentWorkflow = computed(() => {
   return workflows.find(w => w.id === selectedWorkflow.value)
 })
-
-function getCategoryLabel(category) {
-  const labels = {
-    ide: 'AI IDE',
-    cli: 'AI CLI',
-    model: 'AI 模型'
-  }
-  return labels[category] || category
-}
 
 function getCategoryIcon(category) {
   const icons = {
@@ -347,7 +381,9 @@ function getWorkflowIcon(workflowId) {
 
 function copyTemplate(template) {
   navigator.clipboard.writeText(template).then(() => {
-    alert('模板已复制到剪贴板')
+    uiStore.showToast('模板已复制到剪贴板')
+  }).catch(() => {
+    uiStore.showToast('复制失败，请手动复制', 'error')
   })
 }
 </script>

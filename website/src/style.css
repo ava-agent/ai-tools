@@ -75,9 +75,9 @@
     transform: translateY(0);
   }
 
-  /* Card - Enhanced with better hover states */
+  /* Card - Base visual style (no cursor/transform by default) */
   .card {
-    @apply rounded-2xl p-6 transition-all duration-300 cursor-pointer;
+    @apply rounded-2xl p-6 transition-all duration-300;
     background: rgba(30, 41, 59, 0.6);
     border: 1px solid rgba(255, 255, 255, 0.08);
     backdrop-filter: blur(10px);
@@ -85,9 +85,19 @@
   }
 
   .card:hover {
+    border-color: rgba(59, 130, 246, 0.2);
+    box-shadow: 0 6px 20px rgba(59, 130, 246, 0.1);
+  }
+
+  /* Interactive card - for clickable cards only */
+  .card-interactive {
+    @apply cursor-pointer;
+  }
+
+  .card-interactive:hover {
     border-color: rgba(59, 130, 246, 0.3);
     box-shadow: 0 8px 30px rgba(59, 130, 246, 0.15);
-    transform: translateY(-4px);
+    transform: translateY(-2px);
   }
 
   /* Gradient Text - Smoother animation */

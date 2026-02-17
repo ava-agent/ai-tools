@@ -6,6 +6,22 @@ export const useUIStore = defineStore('ui', () => {
   const isDarkMode = ref(true)
   const isLoading = ref(false)
 
+  // Toast 通知系统
+  const toasts = ref([])
+  let toastIdCounter = 0
+
+  function showToast(message, type = 'success', duration = 3000) {
+    const id = ++toastIdCounter
+    toasts.value = [...toasts.value, { id, message, type }]
+    setTimeout(() => {
+      toasts.value = toasts.value.filter(t => t.id !== id)
+    }, duration)
+  }
+
+  function removeToast(id) {
+    toasts.value = toasts.value.filter(t => t.id !== id)
+  }
+
   function toggleMobileMenu() {
     isMobileMenuOpen.value = !isMobileMenuOpen.value
   }
@@ -31,9 +47,12 @@ export const useUIStore = defineStore('ui', () => {
     isMobileMenuOpen,
     isDarkMode,
     isLoading,
+    toasts,
     toggleMobileMenu,
     closeMobileMenu,
     toggleDarkMode,
-    setLoading
+    setLoading,
+    showToast,
+    removeToast
   }
 })

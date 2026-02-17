@@ -6,17 +6,16 @@ export const workflows = [
         id: 'daily-dev',
         name: '日常开发流',
         nameZh: '日常开发流',
-        description: '适用于日常功能开发、Bug修复、小型重构',
+        description: '适用于功能开发、Bug 修复、小型重构',
         steps: [
-            { step: 1, action: '需求澄清', tool: 'Claude / DeepSeek', tip: '用 AI 澄清需求，生成验收标准' },
-            { step: 2, action: '方案设计', tool: 'Cursor', tip: '在 IDE 中结合代码上下文设计方案' },
-            { step: 3, action: '代码实现', tool: 'Cursor', tip: '使用 Composer 模式多文件协同' },
-            { step: 4, action: '批量改动', tool: 'Gemini CLI', tip: '大范围格式化、重命名等批量操作' },
-            { step: 5, action: '验证交付', tool: '手动测试', tip: '运行测试用例，确认功能正常' }
+            { step: 1, action: '代码实现', tool: 'Cursor', tip: '使用 Composer 模式进行代码实现，明确改动范围，只允许修改必要目录' },
+            { step: 2, action: '审查 diff', tool: 'Cursor', tip: '逐文件审查 diff，确认后接受，不要批量接受所有改动' },
+            { step: 3, action: '验证功能', tool: '手动测试', tip: '运行测试用例，验证功能，每个子任务完成后都要验证' },
+            { step: 4, action: '提交代码', tool: 'Git', tip: '提交代码，保持工作区干净，下一步前确保 Git 状态正常' }
         ],
         tips: [
             '拆分任务为 3-7 个子任务，每步验证',
-            '明确改动范围，告诉 AI "允许改"和"禁止改"的目录',
+            '明确"允许改"和"禁止改"的目录',
             '每步都要看 diff，不要直接接受'
         ],
         flowImage: 'images/daily_dev_flow.png'
@@ -27,15 +26,14 @@ export const workflows = [
         nameZh: '快速原型流',
         description: '适用于 MVP 验证、Demo 开发、概念验证',
         steps: [
-            { step: 1, action: '想法描述', tool: 'Trae (Solo)', tip: '用自然语言描述想法' },
-            { step: 2, action: '快速实现', tool: 'Trae (Solo)', tip: 'Solo Builder 模式快速生成原型' },
-            { step: 3, action: '实时调试', tool: 'Trae', tip: '实时预览和调整' },
-            { step: 4, action: '快速部署', tool: 'Windsurf / Replit', tip: 'Windsurf Cascade AI 能力强，或一键部署到云端' }
+            { step: 1, action: '想法描述', tool: 'Trae (Solo Builder)', tip: '自然语言描述想法，0→1 生成原型，先跑通再优化' },
+            { step: 2, action: '迭代优化', tool: 'Trae (Solo Coder)', tip: '1→100 迭代优化，利用 Plan 模式规划改进' },
+            { step: 3, action: '快速调整', tool: 'Windsurf', tip: 'Cascade AI 模式快速调整，利用 Flow 模式上下文理解' },
+            { step: 4, action: '验证决策', tool: '手动', tip: '验证核心功能，决定是否继续投入，原型通过后再投入生产开发' }
         ],
         tips: [
-            '不要追求完美，先跑通再优化',
-            '利用免费额度快速试错（Trae 完全免费）',
-            '原型验证后再决定是否继续投入',
+            '不要在原型阶段追求代码质量',
+            '利用免费额度快速试错',
             '原型验证成功后，用主力 IDE 重新开发生产版本'
         ],
         flowImage: 'images/rapid_prototype_flow.png'
@@ -61,18 +59,19 @@ export const workflows = [
         id: 'refactor-flow',
         name: '大型重构流',
         nameZh: '大型重构流',
-        description: '适用于大规模代码重构、模块拆分、架构升级',
+        description: '适用于架构升级、模块拆分、技术栈迁移',
         steps: [
-            { step: 1, action: '仓库理解', tool: 'Gemini CLI', tip: '1M 上下文，全局理解代码库' },
-            { step: 2, action: '影响分析', tool: 'Claude Code', tip: '分析改动影响面' },
-            { step: 3, action: '分步重构', tool: 'Cursor', tip: '每步只改一个模块' },
-            { step: 4, action: '回归测试', tool: '自动化测试', tip: '每步都要跑测试' },
-            { step: 5, action: 'Code Review', tool: 'Claude', tip: '让 AI 帮助审查改动' }
+            { step: 1, action: '全局理解代码库', tool: 'Gemini CLI', tip: '1M 上下文全局理解代码库，生成代码库全景文档' },
+            { step: 2, action: '分析改动影响面', tool: 'Claude Code', tip: '分析改动影响面和风险点，生成详细的重构计划' },
+            { step: 3, action: '后端业务理解', tool: 'Qoder', tip: '后端项目用 Repo Wiki 理解业务，生成架构文档辅助决策' },
+            { step: 4, action: '分步执行重构', tool: 'Cursor', tip: '按计划分步执行重构，每步只改一个模块' },
+            { step: 5, action: '回归测试', tool: '自动化测试', tip: '每步完成后运行回归测试，确保功能不受影响' },
+            { step: 6, action: '创建检查点', tool: 'Git', tip: '重要节点创建 tag 作为检查点，方便出现问题时回滚' }
         ],
         tips: [
             '先给范围限制，分步执行',
             '每次改动前确保 Git 工作区干净',
-            '重要节点手动创建 Git tag 作为检查点'
+            '重要节点手动创建 Git tag'
         ],
         flowImage: 'images/refactoring_flow.png'
     },

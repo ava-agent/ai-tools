@@ -14,7 +14,7 @@ export const decisionTrees = {
             {
                 id: 'budget-yes',
                 question: '需要 Agent 能力最强？',
-                yes: { result: 'Cursor', reason: 'Composer 模式最强' },
+                yes: { result: 'Cursor', reason: 'Composer-1.5 自研模型，8 个 Agent 并行处理' },
                 no: { result: 'Windsurf', reason: 'Cascade AI 超预期，性价比高，$15/月' }
             },
             {
@@ -107,15 +107,15 @@ export const decisionTrees = {
     }
 }
 
-// 场景对照表
+// 场景对照表（基于 AI工具全景图谱 v2.5 更新）
 export const scenarioGuide = [
     { scenario: '日常开发主力', primary: 'Cursor', backup: 'Windsurf、Trae', budget: '$20/月' },
     { scenario: '预算有限开发', primary: 'Trae', backup: 'Zed + Gemini CLI', budget: '免费-$15/月' },
-    { scenario: '快速原型验证', primary: 'Trae (Solo)', backup: 'Replit', budget: '免费-$20/月' },
-    { scenario: '中大型后端项目', primary: 'Qoder', backup: 'Cursor + Repo Wiki', budget: '$20/月' },
-    { scenario: '批量重构/自动化', primary: 'Claude Code', backup: 'Aider', budget: '$20/月' },
-    { scenario: '日常调研总结', primary: 'Gemini CLI', backup: 'Qwen CLI', budget: '免费' },
-    { scenario: '方案设计', primary: 'Claude', backup: 'GPT-4o', budget: '$20/月' },
+    { scenario: '快速原型验证', primary: 'Trae (Solo Builder)', backup: 'Replit', budget: '免费-$20/月' },
+    { scenario: '中大型后端项目', primary: 'Qoder + Cursor', backup: 'Aider + Gemini CLI', budget: '$20/月' },
+    { scenario: '关键方案/复杂重构', primary: 'Claude Code', backup: 'Gemini CLI', budget: '$20-200/月' },
+    { scenario: '长文档调研/代码分析', primary: 'Gemini CLI', backup: 'Qwen CLI', budget: '免费' },
+    { scenario: '企业团队协作', primary: 'Cursor Teams + Qoder', backup: 'Claude Code', budget: '$40-60/人/月' },
     { scenario: '视频内容创作', primary: '可灵', backup: 'Sora', budget: '免费-$20/月' }
 ]
 

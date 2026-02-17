@@ -1,38 +1,3 @@
-export function formatDate(date) {
-  return new Intl.DateTimeFormat('zh-CN', {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric'
-  }).format(new Date(date))
-}
-
-export function debounce(func, wait) {
-  let timeout
-  return function executedFunction(...args) {
-    const later = () => {
-      clearTimeout(timeout)
-      func(...args)
-    }
-    clearTimeout(timeout)
-    timeout = setTimeout(later, wait)
-  }
-}
-
-export function throttle(func, limit) {
-  let inThrottle
-  return function executedFunction(...args) {
-    if (!inThrottle) {
-      func(...args)
-      inThrottle = true
-      setTimeout(() => (inThrottle = false), limit)
-    }
-  }
-}
-
-export function getRatingStars(rating) {
-  return '夯'.repeat(rating)
-}
-
 // 类别标签映射
 const categoryLabels = {
   ide: 'AI IDE',
@@ -61,6 +26,24 @@ const categoryColors = {
 
 export function getCategoryColor(category) {
   return categoryColors[category] || 'bg-gray-500'
+}
+
+// 工具名称解析：从显示名称查找工具ID
+// excludeNames: 不需要解析的特殊名称列表
+export function resolveToolId(name, tools, excludeNames = []) {
+  if (!name || excludeNames.includes(name)) return null
+  const normalized = name.toLowerCase().replace(/\s+/g, '')
+  // 优先精确匹配
+  const exact = tools.find(t =>
+    t.name.toLowerCase().replace(/\s+/g, '') === normalized
+  )
+  if (exact) return exact.id
+  // 退而求其次：startsWith 匹配
+  const partial = tools.find(t => {
+    const tn = t.name.toLowerCase().replace(/\s+/g, '')
+    return normalized.startsWith(tn) || tn.startsWith(normalized)
+  })
+  return partial?.id || null
 }
 
 export function getTagColor(tag) {

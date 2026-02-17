@@ -14,6 +14,7 @@ export const useToolsStore = defineStore('tools', () => {
   const selectedTags = ref([])
   const isLoading = ref(false)
   const error = ref(null)
+  const comparedToolIds = ref([])
 
   // Getters
   const filteredTools = computed(() => {
@@ -94,7 +95,27 @@ export const useToolsStore = defineStore('tools', () => {
     return Object.fromEntries(stats)
   })
 
+  const comparedTools = computed(() =>
+    comparedToolIds.value
+      .map(id => tools.value.find(t => t.id === id))
+      .filter(Boolean)
+  )
+
   // Actions
+  function addToCompare(toolId) {
+    if (comparedToolIds.value.length < 4 && !comparedToolIds.value.includes(toolId)) {
+      comparedToolIds.value = [...comparedToolIds.value, toolId]
+    }
+  }
+
+  function removeFromCompare(toolId) {
+    comparedToolIds.value = comparedToolIds.value.filter(id => id !== toolId)
+  }
+
+  function clearCompare() {
+    comparedToolIds.value = []
+  }
+
   function setSearchQuery(query) {
     searchQuery.value = query?.trim() || ''
   }
@@ -104,11 +125,10 @@ export const useToolsStore = defineStore('tools', () => {
   }
 
   function toggleTag(tag) {
-    const index = selectedTags.value.indexOf(tag)
-    if (index === -1) {
-      selectedTags.value.push(tag)
+    if (selectedTags.value.includes(tag)) {
+      selectedTags.value = selectedTags.value.filter(t => t !== tag)
     } else {
-      selectedTags.value.splice(index, 1)
+      selectedTags.value = [...selectedTags.value, tag]
     }
   }
 
@@ -151,7 +171,6 @@ export const useToolsStore = defineStore('tools', () => {
     } catch (err) {
       error.value = err
       isLoading.value = false
-      console.error('Failed to load tools:', err)
     }
   }
 
@@ -173,6 +192,7 @@ export const useToolsStore = defineStore('tools', () => {
     selectedTags,
     isLoading,
     error,
+    comparedToolIds,
 
     // Getters
     filteredTools,
@@ -181,8 +201,12 @@ export const useToolsStore = defineStore('tools', () => {
     categories,
     allTags,
     categoryStats,
+    comparedTools,
 
     // Actions
+    addToCompare,
+    removeFromCompare,
+    clearCompare,
     setSearchQuery,
     setSelectedCategory,
     toggleTag,

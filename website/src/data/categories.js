@@ -18,7 +18,7 @@ export const categories = [
         icon: 'Terminal',
         description: '命令行工具，批量处理、自动化、长任务推进',
         color: 'green',
-        examples: ['Claude Code', 'Gemini CLI', 'Aider']
+        examples: ['Claude Code', 'Gemini CLI', 'Qwen CLI']
     },
     {
         id: 'llm',
@@ -61,59 +61,58 @@ export const quickSelectionGuide = [
 // 推荐组合方案
 export const recommendedCombos = [
     {
-        name: '全栈开发者方案',
-        budget: '$20-40/月',
+        name: '不设上限方案',
+        budget: '$200+/月',
         tools: [
-            { layer: '主力 IDE', tool: 'Cursor', usage: '日常开发', cost: '$20/月' },
-            { layer: '深度推理', tool: 'Claude Code', usage: '复杂任务', cost: '$20/月' },
-            { layer: '大规模分析', tool: 'Gemini CLI', usage: '代码分析、调研', cost: '免费' }
+            { layer: '核心引擎', tool: 'Claude Code Max', usage: '无限使用 Opus/Sonnet，零限额焦虑，重度 AI 编程的终极选择', cost: '$200/月' },
+            { layer: '主力 IDE', tool: 'Cursor', usage: '日常 IDE 开发，Composer 模式协同', cost: '$20/月' },
+            { layer: '长上下文', tool: 'Gemini CLI', usage: '百万 Token 调研分析', cost: '免费' }
+        ]
+    },
+    {
+        name: '全栈开发者方案',
+        budget: '$20/月',
+        tools: [
+            { layer: '主力 IDE', tool: 'Cursor', usage: '日常开发主力，Composer 模式处理复杂任务', cost: '$20/月' },
+            { layer: 'CLI 补强', tool: 'Gemini CLI', usage: '批量改动、长文档调研', cost: '免费' },
+            { layer: '快速验证', tool: 'Trae', usage: '原型验证、想法快速落地', cost: '免费' }
         ]
     },
     {
         name: '预算敏感方案',
         budget: '$0/月',
         tools: [
-            { layer: '主力 IDE', tool: 'Trae', usage: '日常开发', cost: '免费' },
-            { layer: 'CLI 补强', tool: 'Gemini CLI', usage: '大规模分析', cost: '免费' },
-            { layer: '中文优化', tool: 'Qwen CLI', usage: '中文场景', cost: '免费' }
+            { layer: '主力 IDE', tool: 'Trae', usage: '完全免费，国产模型优化', cost: '免费' },
+            { layer: 'CLI 补强', tool: 'Gemini CLI + Qwen CLI', usage: '长上下文 + 中文优化', cost: '免费' },
+            { layer: '备用 CLI', tool: 'Codex', usage: 'OpenAI 出品，目前可免费试用，额度充足', cost: '免费试用' }
         ]
     },
     {
         name: '独立开发者方案',
-        budget: '$20/月',
+        budget: '$20-40/月',
         tools: [
-            { layer: '主力 IDE', tool: 'Cursor', usage: '全栈开发', cost: '$20/月' },
-            { layer: '深度推理', tool: 'Claude Code', usage: '复杂任务', cost: '$20/月' },
-            { layer: '快速原型', tool: 'Trae', usage: 'MVP 验证', cost: '免费' }
+            { layer: '主力 IDE', tool: 'Cursor', usage: '全栈开发主力', cost: '$20/月' },
+            { layer: '快速原型', tool: 'Trae', usage: 'Solo Builder 模式 MVP 验证', cost: '免费' },
+            { layer: 'CLI 补强', tool: 'Claude Code', usage: '关键任务、复杂重构（也可试用 Codex，免费额度接近）', cost: '$20/月' }
         ]
     },
     {
         name: '企业团队方案',
         budget: '$40-60/人/月',
         tools: [
-            { layer: '主力 IDE', tool: 'Cursor', usage: '团队开发', cost: '$40/月' },
-            { layer: '协作', tool: 'GitHub Copilot', usage: 'PR 审查', cost: '$19/月' },
-            { layer: '需求管理', tool: 'Kiro', usage: 'Spec 驱动', cost: '$20+/月' }
+            { layer: '主力 IDE', tool: 'Cursor Teams', usage: '团队协作，统一代码规范', cost: '$40/月' },
+            { layer: '后端专家', tool: 'Qoder', usage: 'Java/Go 项目，Repo Wiki', cost: '免费/付费' },
+            { layer: 'CLI 补强', tool: 'Claude Code', usage: '关键任务、代码审查', cost: '$20/月' }
         ]
     },
     {
         name: '后端专项方案',
         budget: '$20/月',
         tools: [
-            { layer: '存量代码', tool: 'Qoder', usage: 'Repo Wiki 理解', cost: '$20/月' },
-            { layer: '深度推理', tool: 'Claude Code', usage: '复杂任务', cost: '$20/月' }
+            { layer: '主力 IDE', tool: 'Qoder + Cursor', usage: 'Qoder 存量项目理解 + Cursor 开发', cost: '$20/月' },
+            { layer: 'CLI 补强', tool: 'Qwen CLI', usage: '中文优化、代码生成能力强', cost: '免费' },
+            { layer: '长上下文', tool: 'Gemini CLI', usage: '大型代码库分析', cost: '免费' }
         ]
     }
 ]
 
-export const getCategoryById = (id) => categories.find(c => c.id === id)
-export const getCategoryColor = (id) => {
-    const colorMap = {
-        ide: 'bg-blue-500',
-        cli: 'bg-green-500',
-        llm: 'bg-purple-500',
-        multimodal: 'bg-pink-500',
-        agent: 'bg-orange-500'
-    }
-    return colorMap[id] || 'bg-gray-500'
-}

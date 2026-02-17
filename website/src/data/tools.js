@@ -11,12 +11,12 @@ export const aiToolsData = [
     developer: 'Anysphere',
     logo: null,
     versions: [
-      { type: 'Global', pricing: '免费/$20/$60(Pro+)/$200/月/$40用户月(团队)', models: 'Composer-1.5, Claude, GPT-4o, o1', link: 'https://cursor.sh' }
+      { type: 'Global', pricing: '免费(50请求+2000Tab)/$20月付($16年付)/$60月付(Pro+)/$200月/$40用户月付(团队)', models: 'Composer-1.5, Claude, GPT-4o, o1', link: 'https://cursor.sh' }
     ],
     freeQuota: '免费(50请求+2000Tab)',
     contextWindow: '取决于模型',
     chineseSupport: 4,
-    pros: ['业内标杆，功能最全', 'Composer-1.5 自研模型强化推理（强化学习扩展20倍）', '支持 8 个 Agent 并行处理', 'Tab 补全极其流畅（Pro 计划无限次）', '本地知识库/Repo Index，语义搜索整个代码库', '原子级 diffs 精确代码更改', 'VS Code 生态无缝兼容', '.cursorrules 自定义规则强大', 'MCP 协议支持'],
+    pros: ['业内标杆，功能最全', 'Composer-1.5 自研模型强化推理，支持 8 个 Agent 并行处理', 'Tab 补全极其流畅（Pro 计划无限次）', '本地知识库/Repo Index，语义搜索整个代码库', '原子级 diffs 精确代码更改', 'VS Code 生态无缝兼容', '.cursorrules 自定义规则强大', 'MCP 协议支持'],
     cons: ['不要让它一次性改超过 10 个文件', '敏感项目建议关闭云端索引', '价格昂贵（$20/月起）', '国内访问需优化'],
     bestFor: '日常主力开发、复杂架构重构与高频编码',
     funRanking: '夯',
@@ -125,13 +125,13 @@ export const aiToolsData = [
     freeQuota: '完全免费开源',
     contextWindow: '取决于模型',
     chineseSupport: 3,
-    pros: ['Rust 编写，120fps 性能', '内置实时多人协作', '创新的 Edit Prediction 功能（支持多模型）', '完全开源免费', '界面简洁流畅', '跨平台支持（Windows已正式支持）', 'GPU 加速渲染', '内存占用极低', 'GPUI 创新架构', '健康的项目活跃度', 'Vim 模式原生支持'],
+    pros: ['Rust 编写，GPU 加速渲染高性能', '内置实时多人协作（基于 CRDT 技术）', 'Edit Prediction 支持多个提供商：Zeta、Mercury Coder、Sweep、Ollama、GitHub Copilot Next-Edit', '完全开源免费', '完全跨平台（Windows 已正式发布，支持 WSL 深度集成）', '扩展生态系统包含数百个扩展'],
     cons: ['AI 功能相对基础', '扩展生态较小且较新', '学习曲线较陡', '调试功能有限', 'LSP 支持不完整', '远程开发支持弱', '数据库插件缺失', '没有内置终端'],
     bestFor: '追求极致性能、团队协作、开源爱好者',
     funRanking: '夯夯',
     personalExperience: {
       rating: 3,
-      insights: '性能优势被广泛认可，120fps 的流畅体验是其他编辑器无法比拟的。创新的 Edit Prediction 功能支持多模型预测，内置协作是亮点。2026年Windows已正式支持，完全跨平台。AI 功能虽然不如 Cursor 全面，但性能和协作能力使其成为特定场景下的最佳选择。',
+      insights: '性能优势被广泛认可，GPU 加速渲染的高性能流畅体验是其他编辑器无法比拟的。创新的 Edit Prediction 功能支持多模型预测，内置协作是亮点。2025年10月 Windows 已正式发布，支持 WSL 深度集成，完全跨平台。AI 功能虽然不如 Cursor 全面，但性能和协作能力使其成为特定场景下的最佳选择。',
       pitfalls: ['AI 功能不如 Cursor 全面', '扩展生态在建设中']
     },
     swot: { S: '性能、开源', W: 'AI 基础', O: '社区增长', T: 'VS Code 生态' },
@@ -199,7 +199,7 @@ export const aiToolsData = [
     versions: [
       { type: 'CN', pricing: '个人版免费/旗舰版 78元/人/月', models: '混元 + DeepSeek 双模型架构', link: 'https://codebuddy.ai' }
     ],
-    freeQuota: '有免费额度',
+    freeQuota: '个人版完全免费（10万token/月）',
     contextWindow: '200K+',
     chineseSupport: 5,
     pros: ['腾讯云集成', '个人版完全免费（10万token/月）', '混元 + DeepSeek 双模型架构', 'Max Mode 保留完整上下文信息', 'Plan Agent 计划模式', 'MCP 协议支持', '部署便捷'],
@@ -229,7 +229,7 @@ export const aiToolsData = [
     freeQuota: 'Public Preview期间免费（每 5 小时刷新配额）',
     contextWindow: '2M (Gemini 3 Pro)',
     chineseSupport: 3,
-    pros: ['Google 出品', 'Gemini 2.5 Pro 深度集成', '2M 超长上下文', '2025 年底已发布', '基于 VS Code fork 的完整平台（非插件）', '专注 Agentic Development', 'Agent Skills 系统', 'Beta期间免费', 'Google 生态无缝集成', 'Gmail/Drive/Calendar 集成潜力', '多模态支持强大'],
+    pros: ['Google 出品，Gemini 3 Pro 深度集成（相比 Gemini 2.5 Pro 推理和可靠性提升 50%+）', '支持 Gemini 2M 上下文窗口', 'Agent Skills 系统（2026年1月14日全面集成）', '原生集成 Nano Banana 和 Nano Banana Pro', 'Agent-First 开发平台，基于 VS Code fork 的完整 IDE（非插件）', '多窗口设计，包含 Agent Manager', '多模型支持：Gemini 3 Flash、Claude Sonnet/Opus 4.5'],
     cons: ['信息较少', '功能待探索', 'Beta 阶段稳定性未知', '未来定价不确定', '社区尚未形成', '学习资源匮乏', '企业功能待验证', '长期维护存疑'],
     bestFor: 'Google 生态用户、尝鲜新品',
     funRanking: '夯',
@@ -329,12 +329,12 @@ export const aiToolsData = [
     developer: 'Anthropic',
     logo: null,
     versions: [
-      { type: 'Global', pricing: '免费/$17-20/$100-200/月', models: 'Claude Opus 4.6, Sonnet 4.5, Haiku 4.5', link: 'https://docs.anthropic.com/claude-code' }
+      { type: 'Global', pricing: '免费/$20月($200年)/$200月', models: 'Claude Opus 4.6, Sonnet 4.5, Haiku 4.5', link: 'https://docs.anthropic.com/claude-code' }
     ],
-    freeQuota: 'Free tier 可用 (5x less than paid)',
-    contextWindow: '200K (1M beta)',
+    freeQuota: 'Free tier 可用',
+    contextWindow: '1M (Opus 4.6: 1M token 上下文，128K 输出)',
     chineseSupport: 4,
-    pros: ['推理能力顶级', 'Workflow 成熟', '多文件改动稳定', 'Terminal-Bench 2.0 和 SWE-bench 72.5% 最高分', '5.5x token 效率比竞品更高', 'Agent teams 并行协作 (2026)', 'Context compaction 无限对话', 'Adaptive thinking 动态推理', '30% 更少代码返工', 'Skills 热重载', 'MCP Tool Search', '分叉上下文并行探索', 'Checkpointing 状态保存', 'Subagents 专业委托', 'Hooks 自动化', 'Chrome 扩展浏览器自动化', '终端/IDE/Web 三种访问', 'GitHub @claude 提及集成'],
+    pros: ['推理能力顶级，SWE-bench 67.60% 官方最高分（早期报告 72.5%）', 'Agent Teams 并行协作（2026）', 'Context Compaction 无限对话（减少 85% 上下文消耗）', 'Adaptive Thinking 动态推理', 'Opus 4.6：1M token 上下文窗口，128K 输出 tokens', 'MCP Tool Search', '分叉上下文并行探索', 'Checkpointing 状态保存', 'Chrome 扩展浏览器自动化'],
     cons: ['需 Claude Pro 订阅 ($17-20/月起)', '频繁权限请求打断工作流', '学习曲线陡峭', '比竞品更慢 (更彻底方法)', '仅限 Claude 模型无多模型灵活性', '使用量与 Claude.ai 共享', 'Max 层成本快速上升 $100-200/月', '上下文持久化问题', '无法恢复对话历史', '简单任务过度思考增加成本', '复杂架构偶有 inconsistencies'],
     bestFor: '关键方案、复杂重构、高难定位、大型代码库',
     funRanking: '夯夯',
@@ -372,6 +372,7 @@ export const aiToolsData = [
     },
     swot: { S: '1M 上下文、免费', W: '复杂工程一般', O: 'Google 生态', T: 'Claude Code 能力' },
     tags: ['推荐', 'CLI', '免费', '长上下文', 'Google', 'Gemini3', 'MCP', 'FlashLite', 'Video'],
+    video: { src: './videos/gemini-cli.mp4', thumbnail: './videos/gemini-cli-thumb.jpg' },
     radarChart: 'images/geminicli.png'
   },
   {
@@ -408,18 +409,18 @@ export const aiToolsData = [
     developer: 'Paul Gauthier',
     logo: null,
     versions: [
-      { type: 'Global', pricing: '免费 (API 自付)', models: 'Gemini 2.5 Pro, DeepSeek R1/V3, Claude 3.7 Sonnet, OpenAI o3/o4-mini/GPT-4.1, 本地模型', link: 'https://aider.chat' }
+      { type: 'Global', pricing: '免费 (API 自付)', models: 'Gemini 2.5 Pro 全系列, DeepSeek V3.2-Exp, GPT-5 全家桶, Grok-4, Claude Sonnet 4/Opus 4, o3/o4-mini, Qwen3 235B, Kimi K2', link: 'https://aider.chat' }
     ],
     freeQuota: '完全免费开源 (API 成本自付)',
-    contextWindow: '百万级 token (GPT-4.1: 1M, GPT-5: 400K)',
+    contextWindow: '百万级 token (Gemini 2.5 Pro 1M)',
     chineseSupport: 3,
-    pros: ['支持 100+ 编程语言', '自驱动开发 (70-80% 代码由 AI 编写)', '终端原生无需离开命令行', '自动测试迭代修复直到通过', '成本效益高', '灵活模型支持云端和本地', 'LLM 排行榜维护者', 'Git 深度集成', '自动生成合理提交消息', '直接与本地 Git 仓库工作', '代码库映射大型项目', '支持任意 LLM', '图像网页语音输入', '自动 Lint 测试', '隐私优先可本地运行'],
+    pros: ['Git 深度集成', '自动生成合理提交消息', '代码变更准确率 52.4-88%（基于 Aider Polyglot Leaderboard）', '支持大量模型：Gemini 2.5 Pro、DeepSeek V3.2-Exp、GPT-5、Grok-4、Claude Sonnet 4/Opus 4、o3/o4-mini、Qwen3 235B、Kimi K2', '隐私优先可本地运行', '支持底层模型的大上下文能力（如 Gemini 2.5 Pro 1M）'],
     cons: ['无 GUI/IDE 集成', '需要命令行舒适度', '学习曲线陡峭', '非完全自主 Agent', '响应时间较长', '大型代码库编辑受限', '多文件上下文处理有限'],
     bestFor: 'Git 工作流、多模型切换、隐私意识强团队',
     funRanking: '夯',
     personalExperience: {
       rating: 3,
-      insights: '2025-2026 年最活跃的开源 AI 编程助手之一，由 Paul Gauthier 维护。核心优势是 Git 优先设计，每次 AI 交互都作为 Git 操作处理，代码变更准确率达 81-88%。最新版本 v0.81.0 支持 Gemini 2.5 Pro、DeepSeek V3 等最新模型。自驱动开发特点显著 - 每个版本 70-80% 代码由 Aider 自己编写。还维护权威 LLM 代码编辑排行榜。支持百万级 token 上下文 (GPT-4.1: 1M)。',
+      insights: '2025-2026 年最活跃的开源 AI 编程助手之一，由 Paul Gauthier 维护。核心优势是 Git 优先设计，每次 AI 交互都作为 Git 操作处理。最新版本 v0.86.0 (2025年8月) 支持大量最新模型。还维护权威 LLM 代码编辑排行榜。',
       pitfalls: ['需要自带 API key', '仅终端无 GUI', '学习曲线陡', '大型代码库编辑受限']
     },
     swot: { S: '开源、Git', W: '仅终端', O: '开源社区', T: '集成工具' },
@@ -477,10 +478,10 @@ export const aiToolsData = [
   },
   {
     id: 'opencode',
-    name: 'OpenCode (已归档)',
+    name: 'OpenCode',
     category: 'cli',
     subcategory: '开源CLI',
-    developer: 'OpenCode Community (已迁移到 Crush)',
+    developer: 'OpenCode Community',
     logo: null,
     versions: [
       { type: 'Global', pricing: '免费 (API 自付)', models: '75+ LLM providers', link: 'https://github.com/opencode-ai/opencode' }
@@ -489,16 +490,17 @@ export const aiToolsData = [
     contextWindow: '支持自动压缩功能',
     chineseSupport: 3,
     pros: ['开源免费', '75+ LLM 提供商模型选择灵活', '终端原生 TUI 界面友好', 'MCP 协议扩展', 'LSP 集成代码智能', '会话管理和持久化', '自定义命令系统', '自动压缩长对话', '非交互模式脚本自动化', '隐私优先支持本地模型'],
-    cons: ['项目已归档不再维护', '需要迁移到 Crush 项目', '需自行配置 API 密钥', '仅终端操作无图形界面'],
-    bestFor: '已迁移到 Crush 项目',
+    cons: ['需自行配置 API 密钥', '仅终端操作无图形界面', '社区规模较小', '文档资源有限'],
+    bestFor: '注重隐私的开源 CLI 开发',
     funRanking: '夯夯',
     personalExperience: {
       rating: 4.5,
-      insights: '⚠️ 重要更新：OpenCode 项目已于 2026 年被归档，原项目作者和 Charm 团队推出了继任者 Crush。建议用户关注 Crush 项目获取最新功能和维护支持。原 OpenCode 支持 75+ 个 LLM 提供商，具有完整的 MCP 和 LSP 集成能力。',
-      pitfalls: ['项目已归档', '建议迁移到 Crush']
+      insights: 'OpenCode 支持 75+ 个 LLM 提供商，具有完整的 MCP 和 LSP 集成能力。终端原生 TUI 界面设计精良，会话管理和自动压缩功能实用。非交互模式支持脚本自动化，适合 CI/CD 集成。隐私优先架构支持本地模型部署。',
+      pitfalls: ['需自行配置 API key', '社区较小文档有限', '大型项目性能待优化']
     },
-    swot: { S: '开源、隐私、多模型', W: '已归档', O: 'Crush 继任者', T: 'Claude Code 能力' },
-    tags: ['开源', 'CLI', '隐私', '多模型', '已归档', 'Crush'],
+    swot: { S: '开源、隐私、多模型', W: '社区较小', O: '开源 CLI 需求增长', T: 'Claude Code 能力' },
+    tags: ['开源', 'CLI', '隐私', '多模型', 'MCP', 'LSP', 'TUI'],
+    video: { src: './videos/opencode-cli.mp4', thumbnail: './videos/opencode-cli-thumb.jpg' },
     radarChart: 'images/opencode.png'
   },
   {
@@ -524,7 +526,8 @@ export const aiToolsData = [
       pitfalls: ['原始 Codex 已不再独立', 'GPT-5.2-Codex 输出定价高', 'codex-mini-latest 已弃用']
     },
     swot: { S: '代码生成、生态', W: '价格、访问', O: '企业级市场', T: '开源替代' },
-    tags: ['推荐', 'CLI', 'OpenAI', '代码生成', '多语言', 'GPT-5', 'Agent', 'Deprecated'],
+    tags: ['推荐', 'CLI', 'OpenAI', '代码生成', '多语言', 'GPT-5', 'Agent'],
+    video: { src: './videos/codex-cli.mp4', thumbnail: './videos/codex-cli-thumb.jpg' },
     radarChart: 'images/codex.png'
   },
   {
@@ -540,7 +543,7 @@ export const aiToolsData = [
     freeQuota: '本地模型完全免费 | Tetrate $10 首次免费 | Groq 免费开源模型',
     contextWindow: 'xAI Grok-3: 131K | Claude Copilot: 200K | Gemini CLI: 1M',
     chineseSupport: 3,
-    pros: ['Block (Jack Dorsey 创立) 开发支持', '30.1K+ GitHub 星标 2.7K+ Fork 384+ 贡献者', 'Session Forking 会话分支功能', '自动 prompt caching 降低成本', '多模型配置 Lead/Worker Planning Mode', '内置 MCP 服务器集成', 'CLI 和 Desktop 双模式', 'Rust 构建性能优异', '自定义 OpenAI 兼容端点', 'CLI Pass-through Claude Code/ChatGPT/Cursor 现有订阅', '开源 AI 代理框架', '完全本地运行', '可写代码调试', '与文件系统交互', '透明性和可扩展性'],
+    pros: ['Block 公司（Square 母公司）开发支持', '30.2K GitHub 星标', 'Session Management（会话管理，支持多会话切换、导入导出、会话搜索）', 'Desktop + CLI 双模式，支持多模型配置', 'Rust 58.3% + TypeScript 33.4% 构建', '完全本地运行', '开源 AI 代理框架（Apache-2.0 许可）'],
     cons: ['严重依赖工具调用不支持受限', '本地模型需额外配置下载', '默认 4096 上下文可能不足', 'o1-mini/o1-preview 不支持', '免费模型性能不如付费', '缺乏企业级支持服务', '某些提供商需预配置 AWS/Azure 凭证', '配置复杂', '生态较新'],
     bestFor: '本地部署、隐私优先用户',
     funRanking: '夯',
@@ -565,13 +568,13 @@ export const aiToolsData = [
     freeQuota: '开源版完全免费 | Cloud Individual 每日 10 次对话',
     contextWindow: 'OpenHands LM: 128K | 兼容模型最高 400K',
     chineseSupport: 3,
-    pros: ['67.7K+ GitHub 星标', '180+ 贡献者活跃开发', '模型无关架构自由切换', 'MCP 服务器支持扩展工具', '企业级功能完整 RBAC SAML/SSO', '本地运行支持 AMD 合作', 'OpenHands Index 基准测试体系', '87% bug 同日修复率', '最新版本 1.12.0 (2026-02-09)', '开源 AI 编码助手', '充当全能软件开发者', '修改代码运行命令', '浏览网页调用 API', '综合界面聊天工作区 Jupyter 浏览器终端'],
+    pros: ['67.7K+ GitHub 星标', '468+ 贡献者活跃开发', '模型无关架构自由切换', 'MCP 服务器支持扩展工具', '企业级功能完整 RBAC SAML/SSO', '本地运行支持 AMD 合作', 'OpenHands Index 基准测试体系', '87% bug 同日修复率', '最新版本 1.12.0 (2026-02-09)', '开源 AI 编码助手', '充当全能软件开发者', '修改代码运行命令', '浏览网页调用 API', '综合界面聊天工作区 Jupyter 浏览器终端'],
     cons: ['CLI 模式稳定性问题', '浏览器功能 CLI 下受限', 'CLI 提示词未优化', '社区讨论热度相对较低', 'Individual Cloud 每日限制 10 次', '学习曲线陡', '需要配置'],
     bestFor: '开源用户、多模型切换',
     funRanking: '夯夯',
     personalExperience: {
       rating: 3.5,
-      insights: '开源 AI 编码助手，综合界面强大包含聊天、工作区、Jupyter、浏览器、终端。GitHub 星标达到 67.7K+，180+ 贡献者活跃开发。最新版本 1.12.0 (2026-02-09)。模型无关架构可自由切换，企业级功能完整包括 RBAC 和 SAML/SSO。自研 OpenHands LM 模型基于 Qwen Coder 2.5 (128K 上下文)。客户案例显示 87% bug 同日修复率。Cloud Individual 层免费但每日限制 10 次对话。',
+      insights: '开源 AI 编码助手，综合界面强大包含聊天、工作区、Jupyter、浏览器、终端。GitHub 星标达到 67.7K+，468+ 贡献者活跃开发。最新版本 1.3.0 (2026-02-02)。模型无关架构可自由切换，企业级功能包括 RBAC 权限控制。87% bug 同日修复率。',
       pitfalls: ['需要配置环境', '学习曲线较陡', 'CLI 模式稳定性问题', 'Individual Cloud 每日限制 10 次']
     },
     swot: { S: '开源、综合界面', W: '学习曲线', O: '开源社区', T: '商业产品' },

@@ -6,13 +6,29 @@
       <div class="flex-1 relative group">
         <Search class="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-muted transition-colors group-focus-within:text-primary z-10" />
         <input
-          v-model="searchQuery"
+          :value="searchQuery"
           type="search"
           placeholder="搜索工具名称、开发者或用途..."
           class="input-field pl-12 pr-4 py-3.5"
           @input="handleSearch"
         >
         <div class="absolute inset-0 rounded-xl bg-primary/5 opacity-0 group-focus-within:opacity-100 transition-opacity duration-300 pointer-events-none" />
+        <!-- Easter egg: search "42" -->
+        <transition
+          enter-active-class="transition-all duration-300"
+          enter-from-class="opacity-0 translate-y-1"
+          enter-to-class="opacity-100 translate-y-0"
+          leave-active-class="transition-all duration-200"
+          leave-from-class="opacity-100"
+          leave-to-class="opacity-0"
+        >
+          <div
+            v-if="easterEggMessage"
+            class="absolute top-full left-0 right-0 mt-2 px-4 py-2 rounded-lg bg-purple-500/10 border border-purple-500/20 text-purple-300 text-sm z-20"
+          >
+            {{ easterEggMessage }}
+          </div>
+        </transition>
       </div>
 
       <!-- 分类筛选按钮 -->
@@ -36,85 +52,75 @@
       </div>
     </div>
 
-    <!-- 标签筛选 -->
-    <div
-      v-if="allTags && allTags.length > 0"
-      class="space-y-4"
-    >
-      <div class="flex items-center justify-between">
-        <div class="flex items-center gap-2">
-          <Tag class="w-5 h-5 text-primary" />
-          <h3 class="text-base font-semibold text-white">
-            标签筛选
-          </h3>
-          <span
-            v-if="selectedTags.length > 0"
-            class="text-sm text-muted"
-          >
-            (已选 {{ selectedTags.length }} 个)
-          </span>
-        </div>
-        <button
-          v-if="selectedTags.length > 0"
-          class="px-4 py-2 text-sm bg-white/5 hover:bg-white/10 rounded-lg text-white/70 hover:text-white transition-all duration-200 border border-white/10 cursor-pointer"
-          @click="clearTags"
-        >
-          清除筛选
-        </button>
-      </div>
-      <div class="flex flex-wrap gap-2">
-        <button
-          v-for="tag in displayedTags"
-          :key="tag"
-          :aria-pressed="selectedTags.includes(tag)"
-          :aria-label="`筛选${tag}`"
-          class="tag-pill text-sm relative overflow-hidden group"
-          :class="[
-            selectedTags.includes(tag) ? 'text-white shadow-md' : 'text-white/70 hover:text-white',
-            getTagColor(tag)
-          ]"
-          @click="toggleTag(tag)"
-        >
-          <span class="relative z-10">{{ tag }}</span>
-        </button>
-        <button
-          v-if="allTags.length > displayLimit"
-          class="tag-pill text-sm bg-white/5 text-white/60 hover:text-white"
-          @click="toggleExpanded"
-        >
-          {{ isExpanded ? '收起' : `+${allTags.length - displayLimit} 更多` }}
-        </button>
-      </div>
+    <!-- 快捷标签 -->
+    <div class="flex items-center gap-2 flex-wrap">
+      <Tag class="w-4 h-4 text-white/40 flex-shrink-0" />
+      <button
+        v-for="tag in curatedTags"
+        :key="tag"
+        :aria-pressed="selectedTags.includes(tag)"
+        class="px-3 py-1 text-xs rounded-full transition-all cursor-pointer"
+        :class="[
+          selectedTags.includes(tag) ? 'text-white shadow-md' : 'text-white/60 hover:text-white',
+          getTagColor(tag)
+        ]"
+        @click="toggleTag(tag)"
+      >
+        {{ tag }}
+      </button>
+      <button
+        v-if="selectedTags.length > 0"
+        class="px-2 py-1 text-xs text-white/40 hover:text-white transition-colors cursor-pointer"
+        @click="clearTags"
+      >
+        清除
+      </button>
     </div>
   </div>
 </template>
 
 <script setup>
-import { ref, computed, watch } from 'vue'
+import { ref, computed } from 'vue'
 import { useToolsStore } from '../stores/tools'
 import { Search, Tag } from 'lucide-vue-next'
-import { getTagColor, getCategoryLabel } from '../utils/helpers'
-import { debounce } from '../utils/helpers'
+import { getCategoryLabel, getTagColor } from '../utils/helpers'
+import { easterEggs } from '../data/easterEggs.js'
 
 const toolsStore = useToolsStore()
 
-const searchQuery = ref(toolsStore.searchQuery)
-const selectedCategory = ref(toolsStore.selectedCategory)
-const selectedTags = ref([...toolsStore.selectedTags])
-const isExpanded = ref(false)
-const displayLimit = 20
+const easterEggMessage = ref(null)
+let easterEggTimer = null
+
+// Use store state directly — no duplicate local refs
+const searchQuery = computed(() => toolsStore.searchQuery)
+const selectedCategory = computed(() => toolsStore.selectedCategory)
+const selectedTags = computed(() => toolsStore.selectedTags)
 
 const categories = computed(() => toolsStore.categories)
-const allTags = computed(() => toolsStore.allTags)
 
-const displayedTags = computed(() => {
-  if (isExpanded.value) return allTags.value
-  return allTags.value.slice(0, displayLimit)
-})
+// Curated high-level tags only (meaningful for filtering)
+const CURATED_TAG_LIST = ['推荐', '免费', '开源', '国产']
+const curatedTags = computed(() =>
+  CURATED_TAG_LIST.filter(tag => toolsStore.allTags.includes(tag))
+)
 
-const handleSearch = debounce((event) => {
-  toolsStore.setSearchQuery(event.target.value)
-}, 300)
+let searchTimer = null
+const handleSearch = (event) => {
+  const val = event.target.value
+  clearTimeout(searchTimer)
+  searchTimer = setTimeout(() => {
+    toolsStore.setSearchQuery(val)
+
+    // Easter egg: search "42"
+    clearTimeout(easterEggTimer)
+    if (val.trim() === easterEggs.search42.value) {
+      easterEggMessage.value = easterEggs.search42.response
+      easterEggTimer = setTimeout(() => { easterEggMessage.value = null }, 4000)
+    } else {
+      easterEggMessage.value = null
+    }
+  }, 300)
+}
 
 const selectCategory = (category) => {
   toolsStore.setSelectedCategory(category)
@@ -125,27 +131,11 @@ const toggleTag = (tag) => {
 }
 
 const clearTags = () => {
-  toolsStore.selectedTags = []
-}
-
-const toggleExpanded = () => {
-  isExpanded.value = !isExpanded.value
+  toolsStore.setTags([])
 }
 
 const getCategoryDisplayName = (category) => {
   if (category === 'all') return '全部'
   return getCategoryLabel(category)
 }
-
-watch(() => toolsStore.searchQuery, (newValue) => {
-  searchQuery.value = newValue
-})
-
-watch(() => toolsStore.selectedCategory, (newValue) => {
-  selectedCategory.value = newValue
-})
-
-watch(() => toolsStore.selectedTags, (newValue) => {
-  selectedTags.value = [...newValue]
-})
 </script>
