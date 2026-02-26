@@ -17,15 +17,28 @@
           class="block w-auto h-auto max-w-[90vw] max-h-[90vh] object-contain"
           @ended="close"
         >
-          <source src="/hero-network.mp4" type="video/mp4">
+          <source
+            src="/hero-network.mp4"
+            type="video/mp4"
+          >
         </video>
         
         <!-- Close Button -->
         <button 
-          @click="close"
           class="absolute top-4 right-4 z-10 p-2 bg-black/50 hover:bg-black/70 text-white/80 hover:text-white rounded-full backdrop-blur-sm transition-colors"
+          @click="close"
         >
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          ><path d="M18 6 6 18" /><path d="m6 6 12 12" /></svg>
         </button>
 
         <!-- Progress bar -->
@@ -43,7 +56,7 @@
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
 
-const props = defineProps({
+defineProps({
   show: Boolean
 })
 

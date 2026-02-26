@@ -79,7 +79,10 @@
         <table class="w-full min-w-[900px]">
           <thead>
             <tr class="border-b border-white/10">
-              <th scope="col" class="p-4 w-10">
+              <th
+                scope="col"
+                class="p-4 w-10"
+              >
                 <span class="sr-only">选择</span>
               </th>
               <th
@@ -138,13 +141,22 @@
                   />
                 </span>
               </th>
-              <th scope="col" class="text-left p-4 text-white font-semibold">
+              <th
+                scope="col"
+                class="text-left p-4 text-white font-semibold"
+              >
                 定价
               </th>
-              <th scope="col" class="text-left p-4 text-white font-semibold">
+              <th
+                scope="col"
+                class="text-left p-4 text-white font-semibold"
+              >
                 核心模型
               </th>
-              <th scope="col" class="text-left p-4 text-white font-semibold">
+              <th
+                scope="col"
+                class="text-left p-4 text-white font-semibold"
+              >
                 操作
               </th>
             </tr>

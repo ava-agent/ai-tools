@@ -4,7 +4,10 @@
       class="inline-flex items-center justify-center w-24 h-24 rounded-full mb-6"
       :class="result.bg"
     >
-      <Sparkles class="w-12 h-12" :class="result.color" />
+      <Sparkles
+        class="w-12 h-12"
+        :class="result.color"
+      />
     </div>
 
     <h2 class="text-3xl font-bold text-white mb-2">
@@ -37,7 +40,10 @@
         <p class="text-white/50 text-sm mb-2">
           最匹配的 AI 工具
         </p>
-        <p class="text-xl font-bold" :class="result.color">
+        <p
+          class="text-xl font-bold"
+          :class="result.color"
+        >
           {{ result.tool }}
         </p>
       </div>

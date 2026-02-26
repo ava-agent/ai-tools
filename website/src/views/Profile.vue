@@ -2,6 +2,48 @@
   <div class="min-h-screen bg-background">
     <div class="container mx-auto px-4 py-8">
       <div class="max-w-3xl mx-auto">
+        <!-- Auth User Info -->
+        <div
+          v-if="authStore.isAuthenticated"
+          class="flex items-center gap-4 mb-6 p-4 rounded-xl bg-white/5 border border-white/10"
+        >
+          <img
+            v-if="authStore.avatarUrl"
+            :src="authStore.avatarUrl"
+            :alt="authStore.displayName"
+            class="w-12 h-12 rounded-full border-2 border-primary/30"
+          >
+          <div class="flex-1 min-w-0">
+            <p class="text-lg font-bold text-white truncate">
+              {{ authStore.displayName }}
+            </p>
+            <p class="text-sm text-white/40 flex items-center gap-1">
+              <Cloud class="w-3.5 h-3.5" />
+              进度已云端同步
+            </p>
+          </div>
+          <button
+            class="px-3 py-1.5 text-sm text-white/40 hover:text-red-400 rounded-lg hover:bg-white/5 transition-colors cursor-pointer"
+            @click="authStore.signOut"
+          >
+            退出
+          </button>
+        </div>
+        <div
+          v-else
+          class="flex items-center justify-between mb-6 p-4 rounded-xl bg-white/5 border border-white/10"
+        >
+          <p class="text-sm text-white/50">
+            登录后可跨设备同步进度、参与社区互动
+          </p>
+          <button
+            class="px-4 py-1.5 text-sm bg-primary/20 hover:bg-primary/30 text-primary rounded-lg transition-colors cursor-pointer"
+            @click="authStore.openAuthModal"
+          >
+            登录
+          </button>
+        </div>
+
         <!-- Header -->
         <div class="text-center mb-8">
           <h1 class="text-4xl md:text-5xl font-bold mb-4 gradient-text">
@@ -181,14 +223,16 @@
 import { ref, computed } from 'vue'
 import {
   Flame, Calendar, BarChart3, Eye, HelpCircle,
-  Swords, Target, User, Trophy
+  Swords, Target, User, Trophy, Cloud
 } from 'lucide-vue-next'
+import { useAuthStore } from '../stores/auth.js'
 import { useGamificationStore } from '../stores/gamification.js'
 import { useAchievementsStore } from '../stores/achievements.js'
 import LevelBadge from '../components/gamification/LevelBadge.vue'
 import XpBar from '../components/gamification/XpBar.vue'
 import AchievementGrid from '../components/gamification/AchievementGrid.vue'
 
+const authStore = useAuthStore()
 const gamification = useGamificationStore()
 const achievements = useAchievementsStore()
 

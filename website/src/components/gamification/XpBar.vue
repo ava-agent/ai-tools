@@ -15,7 +15,10 @@
     <!-- Full mode (for profile) -->
     <div v-else>
       <div class="flex items-center justify-between mb-2">
-        <span class="text-sm font-medium" :class="levelColor">
+        <span
+          class="text-sm font-medium"
+          :class="levelColor"
+        >
           Lv.{{ level.level }} {{ level.title }}
         </span>
         <span class="text-xs text-white/50">
@@ -38,7 +41,7 @@
 import { computed } from 'vue'
 import { useGamificationStore } from '../../stores/gamification.js'
 
-const props = defineProps({
+defineProps({
   compact: { type: Boolean, default: false },
 })
 

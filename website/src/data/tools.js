@@ -1,8 +1,8 @@
 // AI工具完整数据库
-// 基于调研文档整合 30+ 工具
+// 基于调研文档整合 82 款工具
 
 export const aiToolsData = [
-  // ============= AI IDE (10个) =============
+  // ============= AI IDE (17个) =============
   {
     id: 'cursor',
     name: 'Cursor',
@@ -320,7 +320,7 @@ export const aiToolsData = [
     tags: ['IDE', 'JetBrains', '企业', '插件', '本地AI']
   },
 
-  // ============= AI CLI (8个) =============
+  // ============= AI CLI (11个) =============
   {
     id: 'claude-code',
     name: 'Claude Code',
@@ -581,7 +581,7 @@ export const aiToolsData = [
     tags: ['开源', 'CLI', '多模型', '综合', 'OpenHandsLM', 'MCP', '企业级', 'RBAC']
   },
 
-  // ============= LLM (11个) =============
+  // ============= LLM (14个) =============
   {
     id: 'claude',
     name: 'Claude 4.5 Series',
@@ -834,7 +834,7 @@ export const aiToolsData = [
     tags: ['LLM', 'xAI', '实时', '推理']
   },
 
-  // ============= 多模态 (8个) =============
+  // ============= 多模态 (17个) =============
   {
     id: 'midjourney',
     name: 'Midjourney',
@@ -1058,7 +1058,7 @@ export const aiToolsData = [
     tags: ['推荐', '免费', '汇报', 'Google']
   },
 
-  // ============= Agent 平台 (7个) =============
+  // ============= Agent 平台 (10个) =============
   {
     id: 'qinglizi',
     name: '氢离子',
@@ -1214,6 +1214,844 @@ export const aiToolsData = [
     },
     swot: { S: '搜索、引用', W: '代码弱', O: '调研市场', T: '传统搜索' },
     tags: ['推荐', '搜索', 'Agent', '调研', '引用']
+  },
+
+  // ============= 新增 AI IDE/Coding (5个) =============
+  {
+    id: 'devin',
+    name: 'Devin',
+    category: 'ide',
+    subcategory: '自主AI工程师',
+    developer: 'Cognition Labs',
+    logo: null,
+    versions: [
+      { type: 'Global', pricing: '$500/月(团队)', models: 'Claude Sonnet 4.5, 自研Agent系统', link: 'https://devin.ai' }
+    ],
+    freeQuota: '无免费版',
+    contextWindow: '取决于模型',
+    chineseSupport: 2,
+    pros: ['首个自主AI软件工程师，可独立完成编程任务', '端到端任务执行：从需求理解到代码提交', '支持部署、调试、Bug修复完整流程', '基于 Claude Sonnet 4.5 重构后性能提升 12%', '规划能力提升 18%，并行工具执行效率高', 'SWE-bench 基准测试表现优异'],
+    cons: ['价格极高（$500/月）', '复杂任务仍需人工监督', '上下文窗口接近极限时会走捷径', '不适合所有类型的开发任务', '中文支持弱'],
+    bestFor: '自主化开发任务、端到端功能实现、Bug 修复自动化',
+    funRanking: '夯夯',
+    personalExperience: {
+      rating: 4,
+      insights: 'Cognition Labs 打造的首个自主 AI 工程师，2025 年基于 Claude Sonnet 4.5 重构后性能大幅提升。可独立完成从需求分析到代码部署的完整流程，但价格极高（$500/月），更适合企业团队。存在"上下文焦虑"问题——接近上下文窗口极限时会主动走捷径。',
+      pitfalls: ['价格极高不适合个人', '复杂任务需监督', '上下文焦虑问题']
+    },
+    swot: { S: '自主开发、端到端', W: '价格极高', O: '企业自动化', T: 'Claude Code Agent' },
+    tags: ['自主Agent', '企业级', '端到端', 'Claude']
+  },
+  {
+    id: 'bolt-new',
+    name: 'Bolt.new',
+    category: 'ide',
+    subcategory: 'AI应用构建器',
+    developer: 'StackBlitz',
+    logo: null,
+    versions: [
+      { type: 'Global', pricing: '免费/$20/$50/$100/月', models: 'Claude, GPT-4o, Gemini', link: 'https://bolt.new' }
+    ],
+    freeQuota: '免费版有限 token',
+    contextWindow: '取决于模型',
+    chineseSupport: 3,
+    pros: ['浏览器内全栈开发，零配置即开即用', '基于 WebContainer 技术，无需本地环境', '支持 React/Next.js/Vue/Svelte 等主流框架', '一键部署到 Netlify/Vercel', '实时预览和热更新', '支持多种 AI 模型切换'],
+    cons: ['复杂后端逻辑支持有限', '大型项目性能下降', '依赖浏览器环境', 'Token 消耗较快'],
+    bestFor: '快速原型、全栈 Web 应用构建、MVP 验证',
+    funRanking: '夯夯',
+    personalExperience: {
+      rating: 4,
+      insights: 'StackBlitz 推出的 AI 全栈应用构建器，基于 WebContainer 技术在浏览器内实现完整开发环境。最大优势是零配置即开即用，特别适合快速原型和 MVP 验证。支持多种前端框架和一键部署。',
+      pitfalls: ['Token 消耗快需注意', '复杂后端逻辑受限', '大型项目体验下降']
+    },
+    swot: { S: '零配置全栈、即开即用', W: '后端受限', O: '快速原型市场', T: 'Replit、Lovable' },
+    tags: ['推荐', '免费', '全栈', '零配置', '浏览器']
+  },
+  {
+    id: 'v0',
+    name: 'v0',
+    category: 'ide',
+    subcategory: 'AI UI生成器',
+    developer: 'Vercel',
+    logo: null,
+    versions: [
+      { type: 'Global', pricing: '免费($5额度)/$20月(Premium)/$30用户月(Team)', models: 'v0-1.5-md/lg, GPT-5, AutoFix自研模型', link: 'https://v0.app' }
+    ],
+    freeQuota: '免费版 $5 额度',
+    contextWindow: '取决于模型',
+    chineseSupport: 3,
+    pros: ['生成生产级 React/Next.js 代码', 'Vercel 一键部署', '自研 Composite Model 架构（RAG + LLM + AutoFix）', 'Figma 导入支持（Premium）', '自然语言迭代优化组件', 'AutoFix 模型自动修复错误，速度比 GPT-4o-mini 快 10-40 倍'],
+    cons: ['仅输出 React/Next.js 代码', '依赖 Tailwind CSS', '不生成后端逻辑', '复杂交互处理受限', '代码质量偶尔不稳定'],
+    bestFor: 'UI 快速原型、React 组件生成、Landing Page',
+    funRanking: '夯夯',
+    personalExperience: {
+      rating: 4,
+      insights: 'Vercel 的 AI UI 生成器，生成最干净的 React/Next.js 代码。2025 年推出自研 Composite Model 架构，结合 RAG、LLM 和自训练 AutoFix 模型。集成 GPT-5 作为底层模型。适合 UI 快速原型，但全栈应用建议用 Lovable 或 Bolt。',
+      pitfalls: ['仅限 React/Next.js', '不含后端逻辑', '复杂 UI 需手动调整']
+    },
+    swot: { S: 'React UI 最强、Vercel 集成', W: '仅前端', O: '前端开发市场', T: 'Bolt.new 全栈' },
+    tags: ['推荐', 'React', 'Next.js', 'Vercel', 'UI生成']
+  },
+  {
+    id: 'lovable',
+    name: 'Lovable',
+    category: 'ide',
+    subcategory: 'AI应用构建器',
+    developer: 'Lovable (原 GPT Engineer)',
+    logo: null,
+    versions: [
+      { type: 'Global', pricing: '免费/$20/$50/$200/月', models: 'Claude, GPT-4o', link: 'https://lovable.dev' }
+    ],
+    freeQuota: '免费版有限使用',
+    contextWindow: '取决于模型',
+    chineseSupport: 3,
+    pros: ['全栈应用构建（前端 + 后端 + 数据库）', '原生 Supabase 集成（认证、数据库、存储）', '支持 GitHub 同步和版本控制', '自然语言驱动的迭代开发', '内置部署到 Lovable 域名或自定义域名', '从 Figma 设计稿生成代码'],
+    cons: ['复杂逻辑需手动介入', '生成代码质量参差不齐', '大型项目扩展性受限', 'Token 消耗较快'],
+    bestFor: '全栈 Web 应用快速构建、非技术人员建站',
+    funRanking: '夯',
+    personalExperience: {
+      rating: 3.5,
+      insights: '原名 GPT Engineer，是全栈 AI 应用构建器。最大亮点是原生 Supabase 集成，可以直接生成带认证、数据库和存储的完整应用。支持 GitHub 同步。适合快速构建 MVP 和内部工具。',
+      pitfalls: ['复杂逻辑需手动调整', '代码质量不稳定', 'Token 消耗注意控制']
+    },
+    swot: { S: '全栈 + Supabase 集成', W: '代码质量不稳定', O: '非技术创业者', T: 'Bolt.new、Replit' },
+    tags: ['全栈', 'Supabase', 'GitHub', 'Figma']
+  },
+  {
+    id: 'tabnine',
+    name: 'Tabnine',
+    category: 'ide',
+    subcategory: 'IDE插件',
+    developer: 'Tabnine',
+    logo: null,
+    versions: [
+      { type: 'Global', pricing: '免费/$12用户月(Dev)/$39用户月(Enterprise)', models: '多模型 + 自研模型 + 私有化部署', link: 'https://tabnine.com' }
+    ],
+    freeQuota: '免费版基础代码补全',
+    contextWindow: '取决于模型',
+    chineseSupport: 3,
+    pros: ['零数据保留政策，隐私保护最强', '支持私有化部署（VPC/Air-gapped）', '可连接企业代码仓库训练定制模型', 'IP 保护：不使用非许可代码训练', 'IDE 覆盖率比 Copilot 更广', '企业级合规（SOC 2、GDPR）'],
+    cons: ['代码生成创意性不如 Copilot', '免费版功能有限', '企业版价格较高', '市场份额被 Copilot 挤压'],
+    bestFor: '企业隐私优先、合规要求严格的团队',
+    funRanking: '夯',
+    personalExperience: {
+      rating: 3,
+      insights: '企业级 AI 代码补全工具，最大优势是隐私保护：零数据保留、支持 Air-gapped 私有部署、不使用 GPL 代码训练。适合金融、医疗、国防等合规严格行业。但代码生成创意性和能力不如 Copilot。',
+      pitfalls: ['代码生成不如 Copilot', '市场份额下降', '免费版功能有限']
+    },
+    swot: { S: '隐私、合规、私有部署', W: '代码生成能力', O: '企业合规市场', T: 'Copilot 市场份额' },
+    tags: ['企业', '隐私', '合规', 'IDE', '私有部署']
+  },
+
+  // ============= 新增 AI CLI (1个) =============
+  {
+    id: 'warp',
+    name: 'Warp',
+    category: 'cli',
+    subcategory: 'AI终端',
+    developer: 'Warp',
+    logo: null,
+    versions: [
+      { type: 'Global', pricing: '免费(~150请求/月)/$20月(Pro)/$40月(Turbo)/$200月(Lightspeed)', models: 'Claude 3.5 Sonnet, Claude 3.5 Haiku, GPT-4o', link: 'https://warp.dev' }
+    ],
+    freeQuota: '免费版 ~150 AI 请求/月',
+    contextWindow: '取决于模型',
+    chineseSupport: 2,
+    pros: ['自然语言转命令行指令', '智能错误分析和修复建议', 'Block-based 组织终端输出', 'Warp 2.0 Agentic 开发环境（Code + Agents + Terminal + Drive）', '400+ CLI 工具实时自动补全', 'SOC 2 Type 2 安全认证', '团队协作和分享功能'],
+    cons: ['需要登录账号才能使用', '中文支持差（UI 仅英文，CJK 输入法有问题）', '不支持 Tmux', 'AI 功能需联网', '终端界面不适合代码审查'],
+    bestFor: '终端重度用户、DevOps 工程师、命令行学习',
+    funRanking: '夯',
+    personalExperience: {
+      rating: 3.5,
+      insights: '首个 AI 原生终端，2025 年推出 Warp 2.0 Agentic 开发环境。自然语言转命令、错误分析是核心亮点。Block-based 输出组织让终端更可读。但需要登录账号是争议点，中文支持（CJK 输入法）存在问题。SOC 2 Type 2 安全认证值得信赖。',
+      pitfalls: ['需要登录账号', '中文输入法问题', '不支持 Tmux']
+    },
+    swot: { S: 'AI 终端先行者、安全认证', W: '登录要求、中文差', O: 'DevOps 市场', T: '传统终端惯性' },
+    tags: ['CLI', '终端', 'AI补全', 'SOC2', '团队协作']
+  },
+
+  // ============= 新增 LLM (4个) =============
+  {
+    id: 'llama',
+    name: 'Llama 4',
+    category: 'llm',
+    subcategory: '开源大模型',
+    developer: 'Meta',
+    logo: null,
+    versions: [
+      { type: 'Global', pricing: '完全免费开源', models: 'Llama 4 Scout (17B激活/109B), Llama 4 Maverick (17B激活/400B)', link: 'https://llama.com' }
+    ],
+    freeQuota: '完全免费（开源部署）',
+    contextWindow: '10M (Scout, 基于长度泛化) / 1M (Maverick)',
+    chineseSupport: 3,
+    pros: ['完全开源免费，可自由部署', 'Scout 模型 10M token 超长上下文', 'MoE 架构效率高（17B 激活参数）', '多模态支持（视觉+语言）', '社区生态庞大', '可本地部署保护隐私'],
+    cons: ['EU 地区禁止使用（AI Act 监管）', '10M 上下文基于长度泛化非直接训练', '"开源"许可证存在使用限制争议', '基准测试表现存疑', '需要自行部署和维护', '国内访问 Meta 资源受限'],
+    bestFor: '本地部署、隐私优先、长上下文处理',
+    funRanking: '夯夯',
+    personalExperience: {
+      rating: 4,
+      insights: 'Meta 的开源旗舰模型。Llama 4 采用 MoE 架构，Scout 提供 10M token 超长上下文（但基于长度泛化非直接训练）。完全免费开源是巨大优势，但 EU 地区因 AI Act 被禁用引发争议。适合自部署和隐私敏感场景。',
+      pitfalls: ['EU 禁止使用', '长上下文非直接训练', '需自行部署维护']
+    },
+    swot: { S: '开源免费、长上下文', W: 'EU 限制、部署门槛', O: '开源社区', T: 'DeepSeek 开源竞争' },
+    tags: ['开源', '免费', 'Meta', 'MoE', '长上下文', '本地']
+  },
+  {
+    id: 'mistral',
+    name: 'Mistral Large 3',
+    category: 'llm',
+    subcategory: '通用大模型',
+    developer: 'Mistral AI (法国)',
+    logo: null,
+    versions: [
+      { type: 'Global', pricing: '免费/$14.99月(Pro)/$24.99月(Team)', models: 'Mistral Large 3 (675B MoE), Ministral 3B/8B/14B', link: 'https://mistral.ai' }
+    ],
+    freeQuota: 'Le Chat 免费版可用',
+    contextWindow: '256K (Large 3) / 128K-256K (Ministral)',
+    chineseSupport: 3,
+    pros: ['欧洲最强 AI（法国开发）', 'Large 3: 675B 总参数 MoE 架构，41B 激活参数', '开源开放权重（Apache License）', 'API 定价远低于 OpenAI/Anthropic', 'Le Chat Pro $14.99/月最便宜的订阅', 'Ministral 边缘模型可单 GPU 运行', '多模态支持', '无遥测模式保护隐私'],
+    cons: ['中文能力不如国产模型', '生态不如 OpenAI/Google 成熟', '社区规模较小', '企业级功能还在发展中'],
+    bestFor: '性价比优先、开源部署、欧洲合规场景',
+    funRanking: '夯夯',
+    personalExperience: {
+      rating: 4,
+      insights: '法国 Mistral AI 的旗舰模型。Large 3 是首个 MoE 架构开源旗舰（675B 总参数），性能对标 GPT-4o。Le Chat Pro 仅 $14.99/月，是最便宜的订阅方案。Ministral 3B/8B/14B 边缘模型可单 GPU 运行，成本极低。API 定价远低于竞品。',
+      pitfalls: ['中文能力一般', '生态尚在发展', '复杂推理不如顶级模型']
+    },
+    swot: { S: '开源、性价比、欧洲', W: '中文弱、生态小', O: '欧洲合规市场', T: 'Llama、DeepSeek' },
+    tags: ['开源', '性价比', '欧洲', 'MoE', 'API']
+  },
+  {
+    id: 'yi',
+    name: 'Yi-Lightning',
+    category: 'llm',
+    subcategory: '通用大模型',
+    developer: '零一万物 (01.AI)',
+    logo: null,
+    versions: [
+      { type: 'CN', pricing: '$0.14/1M tokens', models: 'Yi-Lightning (MoE)', link: 'https://01.ai' },
+      { type: 'Global', pricing: '$0.14/1M tokens', models: 'Yi-Lightning', link: 'https://platform.01.ai' }
+    ],
+    freeQuota: 'API 有免费额度',
+    contextWindow: '16K',
+    chineseSupport: 5,
+    pros: ['推理速度极快（RTX 4090 200+ tokens/s, H100 500+）', '价格极低 $0.14/1M tokens', '完全开源 Apache 2.0 无商用限制', 'MoE 架构轻量高效', '可本地部署（2-4 H100 或消费级多 GPU）', '李开复创办，技术背书强'],
+    cons: ['上下文窗口仅 16K 较短', '复杂推理不如顶级模型', '生态规模小', '更新频率不如 DeepSeek/Qwen'],
+    bestFor: '实时推理、低延迟场景、成本敏感的边缘部署',
+    funRanking: '夯',
+    personalExperience: {
+      rating: 3,
+      insights: '零一万物的 Yi-Lightning 定位快速推理，推理速度极快（消费级 GPU 200+ tokens/s），价格极低。完全开源 Apache 2.0 可自由商用。但 16K 上下文窗口较短，复杂推理能力不如顶级模型。适合对速度和成本敏感的实时应用。',
+      pitfalls: ['上下文窗口仅 16K', '复杂推理能力有限', '生态较小']
+    },
+    swot: { S: '速度快、价格低、开源', W: '上下文短、推理弱', O: '边缘部署', T: 'DeepSeek 竞争' },
+    tags: ['国产', '开源', '低价', '快速', '边缘部署']
+  },
+  {
+    id: 'ernie',
+    name: 'ERNIE 4.5',
+    category: 'llm',
+    subcategory: '通用大模型',
+    developer: '百度',
+    logo: null,
+    versions: [
+      { type: 'CN', pricing: '免费(消费者)/API极低价', models: 'ERNIE 4.5, ERNIE X1, ERNIE 5.0', link: 'https://yiyan.baidu.com' }
+    ],
+    freeQuota: '2025年4月起消费者完全免费',
+    contextWindow: '128K',
+    chineseSupport: 5,
+    pros: ['消费者完全免费使用', 'ERNIE 4.5 综合评分 79.6 超越 GPT-4.5', 'X1 推理模型中文知识问答、文学创作强', 'API 定价极低（Turbo: ¥0.8/1M输入）', '百度搜索生态集成', '中文场景优化最佳之一'],
+    cons: ['主要面向中国市场，海外访问受限', '英文能力不如国际顶级模型', '需 VPN 才能海外使用', '生态封闭程度高', 'ERNIE 5.0 刚发布功能待验证'],
+    bestFor: '中文场景、百度生态用户、预算敏感',
+    funRanking: '夯',
+    personalExperience: {
+      rating: 3.5,
+      insights: '百度的 ERNIE 系列在中文场景表现优异。2025年3月发布 ERNIE 4.5 和 X1，4月起消费者完全免费。API 定价极低，X1 中文知识问答和文学创作能力强。2025年11月发布 ERNIE 5.0 持续迭代。但海外访问受限是最大短板。',
+      pitfalls: ['海外访问受限', '英文能力一般', '生态相对封闭']
+    },
+    swot: { S: '中文强、免费、百度生态', W: '海外受限', O: '国内企业市场', T: 'DeepSeek 开源竞争' },
+    tags: ['国产', '免费', '低价', '中文', '百度']
+  },
+
+  // ============= 新增多模态 (7个) =============
+  {
+    id: 'flux',
+    name: 'FLUX',
+    category: 'multimodal',
+    subcategory: '图像生成',
+    developer: 'Black Forest Labs',
+    logo: null,
+    versions: [
+      { type: 'Global', pricing: 'Schnell免费开源/Dev非商用/Pro付费API', models: 'FLUX.1 Schnell/Dev/Pro, FLUX.2', link: 'https://bfl.ai' }
+    ],
+    freeQuota: 'Schnell 完全免费开源 (Apache)',
+    contextWindow: 'N/A',
+    chineseSupport: 2,
+    pros: ['Schnell 版本完全开源免费（Apache License）', '图像质量堪比 Midjourney', '文字渲染能力强', '支持本地部署（ComfyUI/WebUI）', 'FLUX.2 多语言理解', '社区生态活跃（最流行的开源图像模型）'],
+    cons: ['Pro 版本需付费 API', '需要本地 GPU 算力运行', '中文提示词支持有限', '生成速度依赖硬件'],
+    bestFor: '开源图像生成、本地部署、高质量AI艺术',
+    funRanking: '夯夯',
+    personalExperience: {
+      rating: 4.5,
+      insights: 'Black Forest Labs（Stable Diffusion 原班人马）打造的开源图像生成模型。Schnell 是首个真正超越 Midjourney 的开源模型。FLUX.2 进一步提升质量和多语言支持。配合 ComfyUI 本地部署是免费图像生成的最佳选择。',
+      pitfalls: ['需要 GPU 算力', '中文提示词效果一般', 'Pro 版才有最佳质量']
+    },
+    swot: { S: '开源免费、质量高', W: '需算力', O: '开源图像社区', T: 'Midjourney 品牌' },
+    tags: ['推荐', '开源', '免费', '图像', '本地', 'ComfyUI']
+  },
+  {
+    id: 'runway',
+    name: 'Runway Gen-3/Gen-4',
+    category: 'multimodal',
+    subcategory: '视频生成',
+    developer: 'Runway',
+    logo: null,
+    versions: [
+      { type: 'Global', pricing: '$12/$28/$76/月', models: 'Gen-3 Alpha, Gen-4', link: 'https://runway.ml' }
+    ],
+    freeQuota: '免费试用 125 credits',
+    contextWindow: 'N/A',
+    chineseSupport: 2,
+    pros: ['视频质量业界领先', '支持文本/图像/视频多种输入', '精确的运动控制和镜头语言', 'Gen-4 几何一致性大幅提升', '专业影视制作工具集', '支持 4K 分辨率输出'],
+    cons: ['价格较高', '免费额度极少', '生成时间较长', '中文支持弱', '国内访问受限'],
+    bestFor: '专业视频创作、影视级内容生成',
+    funRanking: '夯夯',
+    personalExperience: {
+      rating: 4,
+      insights: 'AI 视频生成领域的先驱和标杆。Gen-3 Alpha 以来质量持续提升，Gen-4 在几何一致性和运动控制上有重大突破。适合专业影视制作。但价格较高，免费额度极少。',
+      pitfalls: ['价格高', '免费额度少', '国内访问受限']
+    },
+    swot: { S: '视频质量、专业工具', W: '价格高', O: '影视制作', T: 'Sora、可灵竞争' },
+    tags: ['视频', '专业', '影视', '4K']
+  },
+  {
+    id: 'pika',
+    name: 'Pika',
+    category: 'multimodal',
+    subcategory: '视频生成',
+    developer: 'Pika Labs',
+    logo: null,
+    versions: [
+      { type: 'Global', pricing: '免费/$8/$28/月', models: 'Pika 2.5', link: 'https://pika.art' }
+    ],
+    freeQuota: '免费版每日有限 credits',
+    contextWindow: 'N/A',
+    chineseSupport: 3,
+    pros: ['价格亲民入门门槛低', '生成速度快', '创意特效丰富（挤压、融化、爆炸等）', 'Pika 2.5 画质大幅提升', '易用性好适合初学者', '支持图片转视频'],
+    cons: ['视频质量不如 Runway/Sora', 'Credit 计费系统复杂', '无原生音频', '精细控制能力有限'],
+    bestFor: '社交媒体内容、创意短视频、AI 视频入门',
+    funRanking: '夯',
+    personalExperience: {
+      rating: 3.5,
+      insights: 'AI 视频生成的平价选择。Pika 2.5 画质大幅提升，创意特效（挤压、融化等）是独特亮点。$8/月起的价格对预算有限的内容创作者友好。适合社交媒体短视频制作。',
+      pitfalls: ['质量不如 Runway', 'Credit 计费复杂', '无原生音频']
+    },
+    swot: { S: '价格低、创意特效', W: '质量一般', O: '短视频市场', T: 'Runway、Sora' },
+    tags: ['视频', '性价比', '创意', '社交媒体']
+  },
+  {
+    id: 'ideogram',
+    name: 'Ideogram',
+    category: 'multimodal',
+    subcategory: '图像生成',
+    developer: 'Ideogram',
+    logo: null,
+    versions: [
+      { type: 'Global', pricing: '免费/$8/$20/月', models: 'Ideogram 2.0/3.0', link: 'https://ideogram.ai' }
+    ],
+    freeQuota: '免费版每日有限生成',
+    contextWindow: 'N/A',
+    chineseSupport: 3,
+    pros: ['文字渲染能力业界最强', '图像中文字清晰准确', '价格亲民', 'Logo 和海报设计出色', '支持多种风格', '3.0 版本图像质量大幅提升'],
+    cons: ['复杂场景偶有失真', '生成速度一般', '社区规模不如 Midjourney', '部分风格不够稳定'],
+    bestFor: '含文字的图像设计、Logo、海报、社交媒体配图',
+    funRanking: '夯',
+    personalExperience: {
+      rating: 4,
+      insights: '文字渲染最强的 AI 图像生成工具。在图像中生成清晰准确的文字是其独特优势，特别适合 Logo、海报和社交媒体配图设计。价格亲民，免费版可日常使用。',
+      pitfalls: ['复杂场景偶有失真', '部分风格不稳定']
+    },
+    swot: { S: '文字渲染最强', W: '复杂场景', O: '设计市场', T: 'Midjourney 质量' },
+    tags: ['图像', '文字渲染', '设计', 'Logo', '性价比']
+  },
+  {
+    id: 'jimeng',
+    name: '即梦 (Jimeng)',
+    category: 'multimodal',
+    subcategory: '图像生成',
+    developer: '字节跳动',
+    logo: null,
+    versions: [
+      { type: 'CN', pricing: '免费/¥69月(年付)/¥79月', models: '即梦 3.0', link: 'https://jimeng.jianying.com' }
+    ],
+    freeQuota: '每日 80-100 积分（约数张图片）',
+    contextWindow: 'N/A',
+    chineseSupport: 5,
+    pros: ['中文提示词支持最佳', '支持中文字体直接生成', '国潮/小红书风格优化', '2K 高清输出', '12种电影级镜头运动', '表情迁移技术', '免费策略极友好（每日登录送积分）'],
+    cons: ['海外版功能有限', '中文排版仍需优化', '高分辨率需较高硬件', '视频生成质量待提升'],
+    bestFor: '中文图像/视频创作、国潮设计、社交媒体内容',
+    funRanking: '夯夯',
+    personalExperience: {
+      rating: 4,
+      insights: '字节跳动（剪映/星图团队）的 AI 创作平台。中文提示词支持最佳，支持直接生成中文字体是独特优势。即梦 3.0 海外版支持电影级画质和 2K 输出。每日登录送 80-100 积分的免费策略极为友好。',
+      pitfalls: ['海外版功能有限', '中文排版还需优化', '视频质量一般']
+    },
+    swot: { S: '中文最强、免费友好', W: '海外受限', O: '国内创作市场', T: 'Midjourney 质量' },
+    tags: ['推荐', '国产', '免费', '图像', '中文', '字节']
+  },
+  {
+    id: 'suno',
+    name: 'Suno',
+    category: 'multimodal',
+    subcategory: '音乐生成',
+    developer: 'Suno',
+    logo: null,
+    versions: [
+      { type: 'Global', pricing: '免费/$10/$30/月', models: 'Suno v4', link: 'https://suno.com' }
+    ],
+    freeQuota: '免费版每日有限 credits',
+    contextWindow: 'N/A',
+    chineseSupport: 3,
+    pros: ['完整歌曲生成（含人声和伴奏）', '60 秒内生成 90 秒以上完整歌曲', '人声质量接近真人', '4690 万月访问量（最受欢迎的 AI 音乐工具）', '支持多种音乐风格和语言', '操作极其简单'],
+    cons: ['版权争议严重（唱片公司起诉）', '生成质量不稳定', '歌词偶有重复或脱节', '精细控制受限', 'Credit 不可累积', '可能生成侵权"相似曲"'],
+    bestFor: '快速音乐创作、内容配乐、音乐灵感',
+    funRanking: '夯夯',
+    personalExperience: {
+      rating: 3.5,
+      insights: '最受欢迎的 AI 音乐生成工具，月访问量 4690 万。可在 60 秒内生成含人声的完整歌曲，操作极其简单。但面临 Sony/Universal/Warner 的版权诉讼，商用需谨慎。生成质量不稳定，需多次尝试。',
+      pitfalls: ['版权诉讼风险', '商用需谨慎', '质量不稳定需多次尝试']
+    },
+    swot: { S: '生成完整歌曲、易用', W: '版权风险', O: '内容创作', T: '版权诉讼、Udio竞争' },
+    tags: ['音乐', '人声', '创作', '版权风险']
+  },
+  {
+    id: 'elevenlabs',
+    name: 'ElevenLabs',
+    category: 'multimodal',
+    subcategory: '语音合成',
+    developer: 'ElevenLabs',
+    logo: null,
+    versions: [
+      { type: 'Global', pricing: '免费/$5/$22/$99/$330/月', models: 'Eleven V3, Flash v2.5, Multilingual v2', link: 'https://elevenlabs.io' }
+    ],
+    freeQuota: '免费版 10,000 字符/月',
+    contextWindow: 'N/A',
+    chineseSupport: 4,
+    pros: ['语音质量业界最强（最接近真人）', 'Eleven V3 表情丰富的情感语音', '支持 74 种语言（含中文普通话）', '语音克隆功能强大', '音频配音翻译保留说话人特征', 'Flash v2.5 超低延迟（~75ms）', '语音隔离和背景降噪'],
+    cons: ['价格较高（Credits 消耗快）', '实际项目预算需 3 倍预估', '多语言翻译未达专业水准', '部分声音将被弃用', '音乐生成功能一般（不如 Suno）'],
+    bestFor: '专业配音、有声读物、视频旁白、多语言内容',
+    funRanking: '夯夯',
+    personalExperience: {
+      rating: 4,
+      insights: '语音合成领域的绝对标杆。Eleven V3 生成的情感语音堪称业界最强。支持 74 种语言含中文普通话。语音克隆和音频配音翻译是独特优势。但 Credits 消耗快，实际项目预算需按广告价 3 倍计算。',
+      pitfalls: ['Credits 消耗快预算翻倍', '多语言翻译不够专业', '部分声音将被弃用']
+    },
+    swot: { S: '语音质量最强、多语言', W: '价格高', O: '配音市场', T: '开源 TTS 追赶' },
+    tags: ['语音', '配音', '多语言', '克隆', '专业']
+  },
+
+  // ============= 新增 Agent 平台 (3个) =============
+  {
+    id: 'manus',
+    name: 'Manus',
+    category: 'agent',
+    subcategory: '自主Agent',
+    developer: 'Butterfly Effect (已被 Meta 收购)',
+    logo: null,
+    versions: [
+      { type: 'Global', pricing: '订阅制（具体定价待定）', models: 'Claude, Qwen (微调版)', link: 'https://manus.im' }
+    ],
+    freeQuota: '邀请制，等待名单近百万',
+    contextWindow: '取决于模型',
+    chineseSupport: 4,
+    pros: ['首个通用 AI Agent，可自主完成复杂任务', '支持市场调研、编程、数据分析', '8 个月内年化收入超 $1 亿', '自然语言驱动的任务执行', '2025 年 12 月被 Meta 以 $20亿+ 收购'],
+    cons: ['系统稳定性差（频繁崩溃和卡顿）', '高峰期性能严重下降', '常被验证码和付费墙阻挡', '上下文长度限制导致任务碎片化', 'Bug 多（空 ZIP、刷新循环等）', '非真正自主 Agent，复杂任务需人工干预', '被 Meta 收购后部分客户流失'],
+    bestFor: '自动化调研、数据分析、内容生成',
+    funRanking: '夯',
+    personalExperience: {
+      rating: 3,
+      insights: '2025 年最火爆的 AI Agent 产品，等待名单近百万。中国团队开发后迁至新加坡，2025 年 12 月被 Meta 以 $20亿+ 收购。概念超前但稳定性堪忧，系统频繁崩溃、Bug 众多。MIT Technology Review 的评测也指出实际表现与宣传有差距。不建议专业业务使用。',
+      pitfalls: ['稳定性极差', 'Bug 众多', '被 Meta 收购后前景不确定', '专业用途不推荐']
+    },
+    swot: { S: '概念创新、Meta 收购', W: '稳定性、Bug', O: 'Meta 生态整合', T: '用户信任危机' },
+    tags: ['Agent', '自主', 'Meta', '调研', '不稳定']
+  },
+  {
+    id: 'crewai',
+    name: 'CrewAI',
+    category: 'agent',
+    subcategory: '多Agent框架',
+    developer: 'CrewAI',
+    logo: null,
+    versions: [
+      { type: 'Global', pricing: '免费(50次/月)/$99月(Basic)', models: '多模型支持', link: 'https://crewai.com' }
+    ],
+    freeQuota: '免费版 50 次执行/月',
+    contextWindow: '取决于模型',
+    chineseSupport: 3,
+    pros: ['多 Agent 协作框架（角色分工明确）', 'Python 原生支持', '可视化 Crew Studio 无代码构建', '支持自定义工具和 Agent', '开源核心 + 云端部署', '执行流程可观测'],
+    cons: ['免费额度极少（50次/月）', '付费跳转极大（$99/月 Basic -> $6000/年）', '不支持按量付费', '学习曲线较陡', '文档和社区在建设中'],
+    bestFor: '多 Agent 工作流编排、AI 自动化任务',
+    funRanking: '夯',
+    personalExperience: {
+      rating: 3.5,
+      insights: '多 Agent 协作框架，通过角色分工让多个 AI Agent 协同工作。Python 原生支持，Crew Studio 提供无代码可视化构建。开源核心可自托管。但免费额度极少（50次/月），付费方案价格跳跃大。',
+      pitfalls: ['免费额度极少', '付费价格跳跃大', '学习曲线陡']
+    },
+    swot: { S: '多 Agent 协作、Python', W: '定价策略', O: 'AI 自动化市场', T: 'LangGraph 竞争' },
+    tags: ['Agent', '多Agent', 'Python', '开源', '框架']
+  },
+  {
+    id: 'n8n',
+    name: 'n8n',
+    category: 'agent',
+    subcategory: '工作流自动化',
+    developer: 'n8n GmbH (德国)',
+    logo: null,
+    versions: [
+      { type: 'Global', pricing: '自托管免费/$20月(Cloud)/$50月(Pro)', models: '集成 OpenAI/Anthropic/Cohere 等', link: 'https://n8n.io' }
+    ],
+    freeQuota: '自托管完全免费 / Cloud 免费试用',
+    contextWindow: '取决于集成模型',
+    chineseSupport: 2,
+    pros: ['自托管完全免费（fair-code 许可）', '400+ 集成连接器', '内置 AI Agent 构建器（记忆、工具、护栏）', '可视化工作流编辑器', '2025 年估值 $25 亿（C轮 $1.8 亿）', '支持自定义代码节点', '活跃的开源社区（GitHub 60K+ 星标）'],
+    cons: ['中文界面不支持（仅英文）', '自托管需技术能力', '协作功能受限（自托管）', '复杂工作流调试困难', '企业级功能需付费'],
+    bestFor: '工作流自动化、AI Agent 编排、企业集成',
+    funRanking: '夯夯',
+    personalExperience: {
+      rating: 4,
+      insights: '德国开发的工作流自动化平台，2025 年估值达 $25 亿。最大优势是自托管完全免费，400+ 集成连接器覆盖主流服务。内置 AI Agent 构建器可设计带记忆和工具的智能工作流。GitHub 60K+ 星标，社区极活跃。适合技术团队构建 AI 自动化流程。',
+      pitfalls: ['不支持中文界面', '自托管需技术能力', '协作受限']
+    },
+    swot: { S: '自托管免费、400+集成', W: '中文缺失、技术门槛', O: 'AI 自动化爆发', T: 'Make.com、Zapier' },
+    tags: ['推荐', '开源', '免费', '工作流', '自动化', '400+集成']
+  },
+
+  // ============= MCP 工具 (13个) =============
+  {
+    id: 'context7',
+    name: 'Context7',
+    category: 'mcp',
+    subcategory: 'AI增强',
+    developer: 'Upstash',
+    logo: null,
+    versions: [
+      { type: 'Global', pricing: '完全免费', models: '无需LLM，独立文档服务', link: 'https://context7.com' }
+    ],
+    freeQuota: '完全免费',
+    contextWindow: '按需查询',
+    chineseSupport: 3,
+    pros: ['零配置即可使用（远程服务）', '实时查询最新官方技术文档', '有效防止 LLM API 幻觉', '支持版本化文档查询', '上下文占用极低', '支持 Cursor / Claude Code 等主流 AI IDE', '覆盖主流编程语言和框架'],
+    cons: ['仅支持已收录的库和框架', '查询结果依赖文档质量', '需要联网使用', '中文文档支持有限'],
+    bestFor: '开发时实时查阅最新 API 文档、防止代码幻觉',
+    funRanking: '夯夯夯',
+    personalExperience: {
+      rating: 5,
+      insights: 'MCP Core 核心工具之一。零配置远程服务，每次编码都可能用到。最大价值是解决 LLM 编码时的"幻觉"问题——直接拉取官方最新文档而非依赖训练数据。上下文占用极低，建议所有 AI IDE 用户必装。',
+      pitfalls: ['仅对已收录框架有效', '需要联网']
+    },
+    swot: { S: '零配置、防幻觉', W: '覆盖面有限', O: '成为 AI 编码标配', T: '各框架自建 MCP' },
+    tags: ['推荐', 'MCP', '免费', '文档查询', '防幻觉', '零配置']
+  },
+  {
+    id: 'playwright-mcp',
+    name: 'Playwright MCP',
+    category: 'mcp',
+    subcategory: '开发工具',
+    developer: 'Microsoft',
+    logo: null,
+    versions: [
+      { type: 'Global', pricing: '完全免费（开源）', models: '无需LLM，浏览器自动化服务', link: 'https://github.com/microsoft/playwright-mcp' }
+    ],
+    freeQuota: '完全免费',
+    contextWindow: 'N/A',
+    chineseSupport: 3,
+    pros: ['微软官方维护，稳定可靠', '支持 Chromium、Firefox、WebKit 三大浏览器', '浏览器自动化：导航、点击、表单填写', '页面截图和视频录制', '支持无头模式和设备模拟', '高级配置：代理设置、网络控制、轨迹追踪', 'E2E 端到端测试完整支持', 'npx 一键启动，零依赖安装'],
+    cons: ['上下文占用中等', '复杂场景配置较多', '无头模式部分功能受限', '大型页面操作较慢'],
+    bestFor: 'Web 自动化测试、页面截图、爬取动态页面',
+    funRanking: '夯夯',
+    personalExperience: {
+      rating: 4.5,
+      insights: 'MCP Core 核心工具之一。微软官方出品的浏览器自动化 MCP，功能远超简单的截图工具。支持完整的 E2E 测试流程：导航→操作→断言→截图。配合 AI IDE 使用可以自动化回归测试。推荐使用 --headless --caps=vision,pdf,testing 参数启动。',
+      pitfalls: ['上下文占用中等', '复杂场景需仔细配置 capabilities']
+    },
+    swot: { S: '微软官方、功能全面', W: '上下文占用', O: 'AI 驱动测试自动化', T: 'Chrome DevTools MCP' },
+    tags: ['推荐', 'MCP', '免费', '开源', '微软', 'E2E测试', '浏览器', '截图']
+  },
+  {
+    id: 'firecrawl-mcp',
+    name: 'Firecrawl MCP',
+    category: 'mcp',
+    subcategory: '数据工具',
+    developer: 'Mendable / Firecrawl',
+    logo: null,
+    versions: [
+      { type: 'Global', pricing: '免费(500次/月)/$19月(Hobby)/$49月(Standard)', models: '无需LLM，爬取服务', link: 'https://firecrawl.dev' }
+    ],
+    freeQuota: '免费 500 次爬取/月',
+    contextWindow: 'N/A',
+    chineseSupport: 3,
+    pros: ['智能网站全站爬取，无需 Sitemap', '自动转换为 LLM 友好的 Markdown 格式', '内置搜索和内容发现功能', '智能重试机制（可配置重试次数和延迟）', '积分消耗预警（可配置阈值）', '支持 JavaScript 渲染页面', '输出格式适配 RAG 流水线', '比 fetch 更适合深度爬取'],
+    cons: ['免费额度有限（500次/月）', '需要 API Key', '大规模爬取成本较高', '部分网站反爬机制可能导致失败'],
+    bestFor: '深度网站爬取、内容提取转 Markdown、RAG 数据准备',
+    funRanking: '夯夯',
+    personalExperience: {
+      rating: 4,
+      insights: '比简单的 fetch MCP 更强大的爬取工具。最大优势是自动将网页转为 LLM-ready 的 Markdown 格式，非常适合 RAG 数据准备。智能重试和积分预警机制设计贴心。免费额度 500 次/月基本够用。建议与 fetch 配合：简单请求用 fetch，深度爬取用 Firecrawl。',
+      pitfalls: ['注意积分消耗', '反爬严格的网站可能失败', '大规模爬取前先测试']
+    },
+    swot: { S: 'Markdown 转换、智能爬取', W: '付费门槛', O: 'RAG 数据管道', T: '免费替代方案' },
+    tags: ['MCP', '爬取', 'Markdown', 'API']
+  },
+  {
+    id: 'github-mcp',
+    name: 'GitHub MCP',
+    category: 'mcp',
+    subcategory: '开发工具',
+    developer: 'GitHub (Microsoft)',
+    logo: null,
+    versions: [
+      { type: 'Global', pricing: '完全免费（开源）', models: '无需LLM，GitHub API 服务', link: 'https://github.com/github/github-mcp-server' }
+    ],
+    freeQuota: '完全免费（受 GitHub API 限额）',
+    contextWindow: 'N/A',
+    chineseSupport: 3,
+    pros: ['GitHub 官方出品，功能全面', '仓库管理、文件操作', 'Issue 和 PR 自动化管理', 'CI/CD 智能分析', '支持细粒度工具权限控制（toolsets）', '支持本地 CLI 和远程 HTTP 两种模式', '代码审查辅助', 'Code Search 代码搜索'],
+    cons: ['需要 Personal Access Token', '受 GitHub API Rate Limit 限制', 'Go 语言编译方式启动较慢', '权限配置需谨慎'],
+    bestFor: '在 AI IDE 中直接管理 GitHub 仓库、Issue、PR',
+    funRanking: '夯夯',
+    personalExperience: {
+      rating: 4.5,
+      insights: 'MCP Core 核心工具之一。GitHub 官方 MCP 服务器，支持 repos/issues/pull_requests 等 toolsets 细粒度控制。推荐使用远程 HTTP 模式（api.githubcopilot.com）避免本地 Go 编译。配合 Claude Code 使用体验极好，可以直接在对话中完成 PR 创建、Issue 管理等操作。',
+      pitfalls: ['Token 权限要最小化', '注意 API Rate Limit', '远程模式更方便']
+    },
+    swot: { S: '官方出品、功能全面', W: 'Rate Limit', O: 'AI DevOps 核心', T: 'GitLab MCP 竞争' },
+    tags: ['推荐', 'MCP', '免费', '开源', 'GitHub', '官方', 'PR管理']
+  },
+  {
+    id: 'sequential-thinking-mcp',
+    name: 'Sequential Thinking',
+    category: 'mcp',
+    subcategory: 'AI增强',
+    developer: 'Anthropic (MCP 官方)',
+    logo: null,
+    versions: [
+      { type: 'Global', pricing: '完全免费（开源）', models: '增强任何 LLM 的推理能力', link: 'https://github.com/modelcontextprotocol/server-sequential-thinking' }
+    ],
+    freeQuota: '完全免费',
+    contextWindow: 'N/A',
+    chineseSupport: 3,
+    pros: ['MCP 官方出品', '结构化顺序思考，提升推理质量', '复杂问题自动分解为步骤', '思维链构建透明可观测', '帮助发现思维盲点', '适合代码审查和架构设计', 'npx 一键启动'],
+    cons: ['上下文占用中等', '简单问题使用反而增加开销', '推理步骤可能过长', '依赖 LLM 本身的推理能力'],
+    bestFor: '复杂业务逻辑分析、算法问题分解、代码 Bug 根因分析',
+    funRanking: '夯',
+    personalExperience: {
+      rating: 4,
+      insights: 'MCP Core 核心工具之一。Anthropic 官方出品，帮助 LLM 进行分步骤推理。对复杂问题的解决质量有显著提升，特别是架构设计权衡和 Bug 根因分析场景。不过对于简单问题有点"杀鸡用牛刀"。Claude Code 内置深度思考能力后，这个工具在 Claude Code 中不是必须的，但在 Cursor 等 IDE 中仍然推荐。',
+      pitfalls: ['简单问题不需要启用', '注意上下文占用']
+    },
+    swot: { S: '官方出品、推理增强', W: '上下文占用', O: '成为复杂推理标配', T: 'LLM 原生能力提升' },
+    tags: ['MCP', '免费', '开源', '思维链', '推理增强', '官方']
+  },
+  {
+    id: 'antv-chart-mcp',
+    name: 'AntV Chart MCP',
+    category: 'mcp',
+    subcategory: '可视化',
+    developer: '蚂蚁集团 (AntV)',
+    logo: null,
+    versions: [
+      { type: 'Global', pricing: '完全免费（开源）', models: '无需LLM，图表生成服务', link: 'https://github.com/antvis/mcp-server-chart' }
+    ],
+    freeQuota: '完全免费',
+    contextWindow: 'N/A',
+    chineseSupport: 5,
+    pros: ['阿里 AntV 官方出品，质量有保障', '支持 25+ 种图表类型', '基础图表：折线、柱状、饼图、面积图', '高级图表：箱线、雷达、热力、旭日图', '统计图表：直方图、小提琴图', '关系图表：桑基图、河流图、力导向图', '输出格式美观，可直接用于文档', 'SDK 支持程序化调用', 'npx 零配置启动'],
+    cons: ['图表交互性有限（静态输出）', '自定义样式能力一般', '部分复杂图表数据格式要求严格', '国际化文档较少'],
+    bestFor: '数据可视化、生成报表图表、项目进度展示',
+    funRanking: '夯夯',
+    personalExperience: {
+      rating: 4,
+      insights: 'MCP Core 核心工具之一。AntV 团队出品，25+ 种图表类型覆盖绝大部分数据可视化需求。零配置 npx 启动，在 AI 对话中直接生成图表非常方便。支持 SDK 程序化调用，可以集成到自动化报表流程中。输出质量高，直接用于文档或汇报。',
+      pitfalls: ['复杂图表注意数据格式', '静态输出无交互']
+    },
+    swot: { S: 'AntV 官方、图表丰富', W: '交互性有限', O: 'AI 数据分析可视化', T: 'ECharts 等竞品' },
+    tags: ['推荐', 'MCP', '免费', '开源', '国产', 'AntV', '25+图表', '图表', '阿里']
+  },
+  {
+    id: 'brave-search-mcp',
+    name: 'Brave Search MCP',
+    category: 'mcp',
+    subcategory: '搜索',
+    developer: 'Brave Software',
+    logo: null,
+    versions: [
+      { type: 'Global', pricing: '免费(2000次/月)/$3/1000次(付费)', models: '无需LLM，搜索服务', link: 'https://brave.com/search/api/' }
+    ],
+    freeQuota: '免费 2000 次查询/月',
+    contextWindow: 'N/A',
+    chineseSupport: 2,
+    pros: ['隐私优先，不追踪用户', '独立搜索索引（非 Google/Bing 代理）', '支持网页、图片、视频、新闻搜索', '本地商业搜索功能', 'AI 摘要生成', '免费额度充足（2000次/月）', '支持 HTTP 和 Docker 部署', '不依赖大型科技公司'],
+    cons: ['需要 API Key', '中文搜索效果一般', '索引覆盖面不如 Google', '高级功能需付费'],
+    bestFor: '在 AI IDE 中进行隐私优先的网络搜索和信息检索',
+    funRanking: '夯',
+    personalExperience: {
+      rating: 3.5,
+      insights: '隐私优先的搜索 MCP。最大特点是拥有独立搜索索引，不是 Google 的套壳。免费额度 2000 次/月基本够用。不过中文搜索效果一般，英文技术搜索质量不错。适合注重隐私或需要独立于 Google 搜索结果的场景。',
+      pitfalls: ['中文搜索效果一般', '需要注册获取 API Key']
+    },
+    swot: { S: '隐私优先、独立索引', W: '中文支持弱', O: '隐私意识增强', T: 'Google 搜索质量' },
+    tags: ['MCP', '搜索', '隐私', '隐私搜索', 'Brave', 'API']
+  },
+  {
+    id: 'openmemory-mcp',
+    name: 'OpenMemory MCP',
+    category: 'mcp',
+    subcategory: 'AI增强',
+    developer: 'Mem0',
+    logo: null,
+    versions: [
+      { type: 'Global', pricing: '开源自托管免费 / 云端版待定', models: '增强任何 LLM 的记忆能力', link: 'https://github.com/mem0ai/mem0' }
+    ],
+    freeQuota: '自托管免费',
+    contextWindow: 'N/A',
+    chineseSupport: 2,
+    pros: ['跨会话持久化记忆存储', '基于向量相似度的语义搜索', '支持记忆分类和优先级管理', '记忆强化机制（权重调整）', '让 AI 记住用户偏好和习惯', '与 Claude/Cursor 无缝集成', '开源可自托管'],
+    cons: ['需要启动本地服务', '配置相对复杂', '中文语义理解有限', '自托管需要向量数据库'],
+    bestFor: '让 AI 记住个人编码偏好、项目上下文、常用模式',
+    funRanking: '夯',
+    personalExperience: {
+      rating: 3.5,
+      insights: '创新性很强的 MCP 工具，让 AI 拥有长期记忆。可以记住你的编码风格、常用库、项目结构等偏好，跨会话保持个性化体验。但配置门槛较高，需要启动本地服务和向量数据库。适合重度 AI 编码用户。',
+      pitfalls: ['配置门槛高', '中文语义理解有限', '需要本地服务']
+    },
+    swot: { S: '跨会话记忆、个性化', W: '配置复杂', O: '个性化 AI 编码', T: 'IDE 原生记忆功能' },
+    tags: ['MCP', '开源', '记忆', '跨会话', '自托管']
+  },
+  {
+    id: 'notion-mcp',
+    name: 'Notion MCP',
+    category: 'mcp',
+    subcategory: '协作工具',
+    developer: 'Notion Labs',
+    logo: null,
+    versions: [
+      { type: 'Global', pricing: '完全免费（开源）', models: '无需LLM，Notion API 服务', link: 'https://github.com/notionhq/notion-mcp-server' }
+    ],
+    freeQuota: '完全免费（受 Notion API 限额）',
+    contextWindow: 'N/A',
+    chineseSupport: 4,
+    pros: ['Notion 官方出品', '支持 21 种工具操作', '页面搜索、创建、编辑', '数据库查询和管理', '评论和讨论操作', '自动化文档创建和管理', '项目管理数据库操作', 'npx 一键启动'],
+    cons: ['需要 Notion Integration Token', '操作受 Notion API 限速', '复杂数据库操作学习成本高', '部分高级功能需 Notion 付费版'],
+    bestFor: '在 AI IDE 中直接管理 Notion 文档、数据库、项目',
+    funRanking: '夯',
+    personalExperience: {
+      rating: 4,
+      insights: 'Notion 官方 MCP，21 种工具覆盖页面、数据库、评论等所有核心操作。配合 AI IDE 使用可以在编码过程中直接创建或更新 Notion 文档，实现"代码 + 文档"的无缝衔接。Token 配置简单，推荐 Notion 用户安装。',
+      pitfalls: ['需要创建 Notion Integration 获取 Token', '注意 API Rate Limit']
+    },
+    swot: { S: '官方出品、21 种工具', W: 'API 限速', O: 'AI 文档自动化', T: '飞书等竞品 MCP' },
+    tags: ['MCP', '免费', '开源', 'Notion', '知识库', '官方', '团队协作']
+  },
+  {
+    id: 'postman-mcp',
+    name: 'Postman MCP',
+    category: 'mcp',
+    subcategory: 'API工具',
+    developer: 'Postman',
+    logo: null,
+    versions: [
+      { type: 'Global', pricing: '完全免费（开源）', models: '无需LLM，API 管理服务', link: 'https://github.com/nicobailon/postman-mcp-server' }
+    ],
+    freeQuota: '完全免费（需 Postman API Key）',
+    contextWindow: 'N/A',
+    chineseSupport: 3,
+    pros: ['100+ 完整工具集', 'API 集合和环境管理', 'API 测试和自动化执行', '多语言代码生成', '工作流自动化', '三种模式：Minimal / Full / Code', 'Minimal 模式轻量快速', 'Full 模式企业级功能', 'Code 模式 API 发现和代码生成'],
+    cons: ['Full 模式工具过多可能影响上下文', '需要 Postman API Key', '依赖 Postman 平台生态', '部分高级功能需 Postman 付费版'],
+    bestFor: 'API 开发全流程：文档→测试→代码生成→自动化',
+    funRanking: '夯',
+    personalExperience: {
+      rating: 3.5,
+      insights: 'API 开发的瑞士军刀。三种模式设计很聪明：日常用 Minimal 保持轻量，需要时切换到 Full 获取全部功能。100+ 工具覆盖 API 开发全流程。但在 Claude Code 等已有强大 HTTP 能力的 IDE 中，使用频率不算高。更适合 API 密集型开发场景。',
+      pitfalls: ['建议日常使用 Minimal 模式', 'Full 模式上下文占用大', '需要 Postman 账号']
+    },
+    swot: { S: '100+ 工具、全流程', W: '上下文占用', O: 'API 经济增长', T: 'IDE 内置 HTTP 能力' },
+    tags: ['MCP', '免费', '开源', 'Postman', 'API测试', 'API']
+  },
+  {
+    id: 'atlassian-mcp',
+    name: 'Atlassian MCP',
+    category: 'mcp',
+    subcategory: '协作工具',
+    developer: 'Sooperset (社区)',
+    logo: null,
+    versions: [
+      { type: 'Global', pricing: '完全免费（开源）', models: '无需LLM，Atlassian API 服务', link: 'https://github.com/sooperset/mcp-atlassian' }
+    ],
+    freeQuota: '完全免费',
+    contextWindow: 'N/A',
+    chineseSupport: 3,
+    pros: ['Confluence + Jira 双平台集成', 'Confluence 文档搜索、创建、管理', 'Jira Issue 创建、搜索、更新', '支持空间和项目过滤', 'OAuth 2.0 安全认证', '只读模式保护生产数据', '支持 Docker 和 uvx 部署', '企业级团队协作利器'],
+    cons: ['需要 Confluence/Jira API Token', '配置参数较多', '社区维护（非官方）', '部分操作受 Atlassian API 限制'],
+    bestFor: '在 AI IDE 中直接查询 Confluence 文档、管理 Jira Issue',
+    funRanking: '夯',
+    personalExperience: {
+      rating: 3.5,
+      insights: '企业级协作 MCP，Confluence + Jira 双平台支持。对于使用 Atlassian 技术栈的团队来说是效率利器，可以在编码时直接查询相关文档和 Issue，不用切换窗口。只读模式设计贴心，适合生产环境。Docker 部署简单。',
+      pitfalls: ['Token 配置较复杂', '需要多个环境变量', '建议先用只读模式']
+    },
+    swot: { S: 'Confluence+Jira 双平台', W: '社区维护', O: '企业 AI 效率工具', T: '官方 MCP 出现' },
+    tags: ['MCP', '免费', '开源', 'Jira', 'Confluence', '企业级', '团队协作']
+  },
+  {
+    id: 'supabase-mcp',
+    name: 'Supabase MCP',
+    category: 'mcp',
+    subcategory: '开发工具',
+    developer: 'Supabase',
+    logo: null,
+    versions: [
+      { type: 'Global', pricing: '完全免费（开源）', models: '无需LLM，Supabase 管理服务', link: 'https://github.com/supabase-community/supabase-mcp' }
+    ],
+    freeQuota: '完全免费（受 Supabase 项目配额）',
+    contextWindow: 'N/A',
+    chineseSupport: 3,
+    pros: ['Supabase 官方出品', '数据库操作（SQL 执行、表管理）', 'Auth 用户认证管理', 'Storage 文件存储操作', 'Edge Functions 部署管理', '项目配置和监控', 'TypeScript 类型生成', '日志查询和分析', 'npx 一键启动'],
+    cons: ['需要 Supabase Access Token', '操作生产数据需谨慎', '功能依赖 Supabase 平台', '部分高级功能需 Supabase Pro'],
+    bestFor: '在 AI IDE 中直接管理 Supabase 项目：数据库、Auth、存储、Functions',
+    funRanking: '夯夯',
+    personalExperience: {
+      rating: 4.5,
+      insights: 'Supabase 全栈开发的核心 MCP。可以直接在 AI 对话中执行 SQL、管理用户认证、操作文件存储、部署 Edge Functions。配合 Claude Code 实现"AI 全栈开发"体验极佳。TypeScript 类型自动生成功能省去大量手动工作。强烈推荐 Supabase 用户安装。',
+      pitfalls: ['生产环境操作要谨慎', '建议用只读 Token 做日常查询', '注意 Token 权限最小化']
+    },
+    swot: { S: '官方出品、全栈覆盖', W: '平台绑定', O: 'AI 全栈开发', T: 'Firebase MCP 等竞品' },
+    tags: ['推荐', 'MCP', '免费', '开源', 'Supabase', '全栈', '官方']
+  },
+  {
+    id: 'figma-mcp',
+    name: 'Figma MCP',
+    category: 'mcp',
+    subcategory: '设计工具',
+    developer: 'Figma',
+    logo: null,
+    versions: [
+      { type: 'Global', pricing: '完全免费', models: '无需LLM，Figma API 服务', link: 'https://www.figma.com/developers' }
+    ],
+    freeQuota: '完全免费（受 Figma API 限额）',
+    contextWindow: 'N/A',
+    chineseSupport: 3,
+    pros: ['Figma 官方出品', '读取设计稿完整数据', '设计到代码转换辅助', 'HTTP OAuth 零配置认证', '支持组件和样式提取', '设计系统数据获取', '与 AI IDE 无缝集成', '远程 HTTP 服务无需本地安装'],
+    cons: ['需要 Figma API Key 或 OAuth', '复杂设计稿数据量大', '代码转换质量依赖 LLM', '需要 Figma 付费版获取完整功能'],
+    bestFor: '设计稿转代码、提取设计 Token、设计系统同步',
+    funRanking: '夯',
+    personalExperience: {
+      rating: 4,
+      insights: '设计师和前端开发者的桥梁 MCP。最大亮点是 HTTP OAuth 零配置——直接访问 mcp.figma.com 即可使用。可以在 AI IDE 中直接读取 Figma 设计稿，让 LLM 辅助将设计转换为代码。设计系统 Token 提取功能对前端组件库开发很有帮助。',
+      pitfalls: ['复杂设计稿可能数据量很大', '代码转换仍需人工审查']
+    },
+    swot: { S: '官方出品、零配置', W: '数据量大', O: '设计转码自动化', T: '其他设计工具 MCP' },
+    tags: ['MCP', '免费', 'Figma', '设计', '设计转码', '官方']
   }
 ]
 

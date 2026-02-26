@@ -13,6 +13,7 @@
     "test:coverage": "vitest --coverage"
   },
   "dependencies": {
+    "@supabase/supabase-js": "^2.97.0",
     "lucide-vue-next": "^0.344.0",
     "pinia": "^2.1.0",
     "vue": "^3.4.0",

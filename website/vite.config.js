@@ -3,7 +3,7 @@ import vue from '@vitejs/plugin-vue'
 import { resolve } from 'path'
 
 export default defineConfig(({ mode }) => ({
-  base: './',
+  base: '/',
   plugins: [
     vue()
   ],
@@ -59,7 +59,7 @@ export default defineConfig(({ mode }) => ({
   },
   // 优化依赖预构建
   optimizeDeps: {
-    include: ['vue', 'vue-router', 'pinia', 'lucide-vue-next'],
+    include: ['vue', 'vue-router', 'pinia', 'lucide-vue-next', '@supabase/supabase-js'],
     exclude: []
   },
   // CSS 优化

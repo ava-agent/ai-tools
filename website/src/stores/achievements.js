@@ -224,6 +224,14 @@ export const useAchievementsStore = defineStore('achievements', () => {
   }
 
   /**
+   * Hydrate unlocked achievements from cloud (used by SyncService)
+   */
+  function hydrateUnlocked(ids) {
+    if (!ids || !Array.isArray(ids)) return
+    unlockedIds.value = [...new Set([...unlockedIds.value, ...ids])]
+  }
+
+  /**
    * Reset all achievements
    */
   function resetAll() {
@@ -240,6 +248,7 @@ export const useAchievementsStore = defineStore('achievements', () => {
     progressPercent,
     checkAll,
     dismissToast,
+    hydrateUnlocked,
     resetAll,
   }
 })

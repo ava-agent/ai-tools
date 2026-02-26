@@ -1,36 +1,39 @@
 <template>
   <div class="text-center">
     <!-- Error State -->
-    <div v-if="hasError" class="py-8 text-white/50 text-sm">
+    <div
+      v-if="hasError"
+      class="py-8 text-white/50 text-sm"
+    >
       分享卡片生成失败，请稍后重试
     </div>
 
     <template v-else>
-    <!-- Canvas Preview -->
-    <div class="inline-block rounded-xl overflow-hidden border border-white/10 shadow-2xl mb-6">
-      <canvas
-        ref="canvasRef"
-        class="max-w-full h-auto"
-      />
-    </div>
+      <!-- Canvas Preview -->
+      <div class="inline-block rounded-xl overflow-hidden border border-white/10 shadow-2xl mb-6">
+        <canvas
+          ref="canvasRef"
+          class="max-w-full h-auto"
+        />
+      </div>
 
-    <!-- Actions -->
-    <div class="flex gap-3 justify-center">
-      <button
-        class="btn-secondary text-sm"
-        @click="download"
-      >
-        <Download class="w-4 h-4 mr-2 inline" />
-        下载 PNG
-      </button>
-      <button
-        class="btn-secondary text-sm"
-        @click="copyToClipboard"
-      >
-        <Copy class="w-4 h-4 mr-2 inline" />
-        {{ copied ? '已复制' : '复制到剪贴板' }}
-      </button>
-    </div>
+      <!-- Actions -->
+      <div class="flex gap-3 justify-center">
+        <button
+          class="btn-secondary text-sm"
+          @click="download"
+        >
+          <Download class="w-4 h-4 mr-2 inline" />
+          下载 PNG
+        </button>
+        <button
+          class="btn-secondary text-sm"
+          @click="copyToClipboard"
+        >
+          <Copy class="w-4 h-4 mr-2 inline" />
+          {{ copied ? '已复制' : '复制到剪贴板' }}
+        </button>
+      </div>
     </template>
   </div>
 </template>

@@ -37,7 +37,7 @@
           </router-link>
         </div>
 
-        <!-- 右侧: 游戏化元素 + 移动菜单按钮 -->
+        <!-- 右侧: 认证 + 游戏化元素 + 移动菜单按钮 -->
         <div class="flex items-center space-x-3">
           <!-- 连续打卡 (桌面) -->
           <StreakCounter class="hidden lg:flex" />
@@ -48,6 +48,32 @@
             class="hidden sm:flex"
             @click="isProfileOpen = true"
           />
+
+          <!-- 用户头像 / 登录按钮 -->
+          <button
+            v-if="authStore.isAuthenticated"
+            class="flex items-center gap-2 px-2 py-1.5 rounded-lg hover:bg-white/5 transition-colors cursor-pointer"
+            @click="isProfileOpen = true"
+          >
+            <img
+              v-if="authStore.avatarUrl"
+              :src="authStore.avatarUrl"
+              :alt="authStore.displayName"
+              class="w-7 h-7 rounded-full border border-white/20"
+            >
+            <UserCircle
+              v-else
+              class="w-7 h-7 text-white/60"
+            />
+          </button>
+          <button
+            v-else
+            class="hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-primary/20 hover:bg-primary/30 text-primary text-sm font-medium transition-colors cursor-pointer"
+            @click="authStore.openAuthModal"
+          >
+            <LogIn class="w-4 h-4" />
+            登录
+          </button>
 
           <!-- 移动菜单按钮 -->
           <button
@@ -128,12 +154,14 @@
 
 <script setup>
 import { ref } from 'vue'
-import { Brain, Menu, X, Search, Scale, Workflow, GitCompare, BarChart3, BookOpen, HelpCircle } from 'lucide-vue-next'
+import { Brain, Menu, X, Search, Scale, Workflow, GitCompare, BarChart3, BookOpen, HelpCircle, LogIn, UserCircle } from 'lucide-vue-next'
+import { useAuthStore } from '../stores/auth.js'
 import LevelBadge from './gamification/LevelBadge.vue'
 import XpBar from './gamification/XpBar.vue'
 import StreakCounter from './gamification/StreakCounter.vue'
 import UserProfilePanel from './gamification/UserProfilePanel.vue'
 
+const authStore = useAuthStore()
 const isMobileMenuOpen = ref(false)
 const isProfileOpen = ref(false)
 

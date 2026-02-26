@@ -89,10 +89,19 @@
         </div>
       </div>
 
+      <!-- Community Vote Results -->
+      <BattleResults
+        v-if="voted && currentBattleStats"
+        :stats="currentBattleStats"
+        :tool-a-name="matchup.toolA.name"
+        :tool-b-name="matchup.toolB.name"
+      />
+
       <!-- Next Battle -->
       <div class="text-center mt-8">
         <button
           class="btn-secondary"
+          :disabled="isSubmitting"
           @click="newBattle"
         >
           <RefreshCw class="w-4 h-4 mr-2 inline" />
@@ -109,27 +118,60 @@ import { Star, Swords, CheckCircle, RefreshCw } from 'lucide-vue-next'
 import { useToolsStore } from '../../stores/tools.js'
 import { useGamificationStore } from '../../stores/gamification.js'
 import { useAchievementsStore } from '../../stores/achievements.js'
+import { useAuthStore } from '../../stores/auth.js'
+import { useCommunityStore } from '../../stores/community.js'
 import { generateMatchup } from '../../data/battleCategories.js'
+import BattleResults from '../BattleResults.vue'
 
 const toolsStore = useToolsStore()
 const gamification = useGamificationStore()
 const achievements = useAchievementsStore()
+const authStore = useAuthStore()
+const communityStore = useCommunityStore()
 
 const matchup = ref(null)
 const voted = ref(null)
+const isSubmitting = ref(false)
 const insufficientTools = computed(() => toolsStore.tools.length < 2)
 
 function newBattle() {
-  if (insufficientTools.value) return
+  if (insufficientTools.value || isSubmitting.value) return
   matchup.value = generateMatchup(toolsStore.tools)
   voted.value = null
 }
 
-function vote(toolId) {
-  if (voted.value) return
+const currentBattleStats = computed(() => {
+  if (!matchup.value) return null
+  return communityStore.battleStats[matchup.value.matchupKey] || null
+})
+
+async function vote(toolId) {
+  if (voted.value || isSubmitting.value) return
   voted.value = toolId
-  gamification.trackBattleVote(matchup.value.matchupKey, toolId)
+  isSubmitting.value = true
+
+  // Capture snapshot before async — matchup must not change mid-flight
+  const m = matchup.value
+  gamification.trackBattleVote(m.matchupKey, toolId)
   achievements.checkAll()
+
+  try {
+    if (authStore.isAuthenticated && authStore.userId) {
+      await communityStore.submitBattleVote(
+        authStore.userId,
+        m.matchupKey,
+        toolId,
+        m.dimension.id,
+        m.toolA.id,
+        m.toolB.id,
+      )
+    } else {
+      // 匿名用户也尝试加载统计（只读）— use snapshot
+      await communityStore.fetchBattleStats(m.matchupKey)
+    }
+  } finally {
+    isSubmitting.value = false
+  }
 }
 
 onMounted(() => {

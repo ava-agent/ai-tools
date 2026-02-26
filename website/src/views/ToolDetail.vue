@@ -129,7 +129,7 @@
                 :alt="tool.name + ' 能力雷达图'"
                 class="w-full max-w-lg mx-auto rounded-lg"
                 loading="lazy"
-              />
+              >
             </div>
           </div>
 
@@ -250,6 +250,14 @@
           </div>
         </div>
 
+        <!-- 社区评分 -->
+        <div class="card mb-8">
+          <h2 class="text-2xl font-bold text-white mb-4 gradient-text">
+            社区评价
+          </h2>
+          <ToolRating :tool-id="tool.id" />
+        </div>
+
         <!-- 冷知识 -->
         <FunFact
           v-if="tool"
@@ -303,6 +311,11 @@
               </div>
             </div>
           </div>
+        </div>
+
+        <!-- 社区评论 -->
+        <div class="card mb-8">
+          <ToolReviews :tool-id="tool.id" />
         </div>
 
         <!-- 相关工具推荐 -->
@@ -370,7 +383,7 @@
 </template>
 
 <script setup>
-import { ref, computed, onMounted, watch } from 'vue'
+import { computed, onMounted, watch } from 'vue'
 import { useRoute } from 'vue-router'
 import { useToolsStore } from '../stores/tools'
 import { useGamificationStore } from '../stores/gamification'
@@ -380,6 +393,8 @@ import { ChevronRight, CheckCircle, AlertCircle, AlertTriangle, Star, Video, Bar
 import VideoPlayer from '../components/VideoPlayer.vue'
 import ToolLogo from '../components/ToolLogo.vue'
 import FunFact from '../components/gamification/FunFact.vue'
+import ToolRating from '../components/ToolRating.vue'
+import ToolReviews from '../components/ToolReviews.vue'
 
 const route = useRoute()
 const toolsStore = useToolsStore()

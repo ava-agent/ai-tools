@@ -200,6 +200,55 @@ export const useGamificationStore = defineStore('gamification', () => {
   }
 
   /**
+   * Hydrate from cloud data (used by SyncService)
+   */
+  function hydrate(data) {
+    if (!data) return
+    xp.value = data.xp ?? xp.value
+    streak.value = {
+      current: data.streak_current ?? streak.value.current,
+      longest: data.streak_longest ?? streak.value.longest,
+      lastVisitDate: data.streak_last_visit_date ?? streak.value.lastVisitDate,
+    }
+    stats.value = {
+      toolsViewed: data.tools_viewed ?? stats.value.toolsViewed,
+      quizzesCompleted: data.quizzes_completed ?? stats.value.quizzesCompleted,
+      quizBestScore: data.quiz_best_score ?? stats.value.quizBestScore,
+      battlesVoted: data.battles_voted ?? stats.value.battlesVoted,
+      matcherCompleted: data.matcher_completed ?? stats.value.matcherCompleted,
+      comparisonsUsed: data.comparisons_used ?? stats.value.comparisonsUsed,
+      personalityResult: data.personality_result ?? stats.value.personalityResult,
+      firstVisitDate: data.first_visit_date ?? stats.value.firstVisitDate,
+      visitDates: data.visit_dates ?? stats.value.visitDates,
+    }
+    battleVotes.value = data.battle_votes ?? battleVotes.value
+    dailyToolSeen.value = data.daily_tool_seen ?? dailyToolSeen.value
+  }
+
+  /**
+   * Serialize state to cloud DB format (used by SyncService)
+   */
+  function toCloudFormat() {
+    return {
+      xp: xp.value,
+      streak_current: streak.value.current,
+      streak_longest: streak.value.longest,
+      streak_last_visit_date: streak.value.lastVisitDate,
+      tools_viewed: stats.value.toolsViewed,
+      quizzes_completed: stats.value.quizzesCompleted,
+      quiz_best_score: stats.value.quizBestScore,
+      battles_voted: stats.value.battlesVoted,
+      matcher_completed: stats.value.matcherCompleted,
+      comparisons_used: stats.value.comparisonsUsed,
+      personality_result: stats.value.personalityResult,
+      first_visit_date: stats.value.firstVisitDate,
+      visit_dates: stats.value.visitDates,
+      daily_tool_seen: dailyToolSeen.value,
+      battle_votes: battleVotes.value,
+    }
+  }
+
+  /**
    * Reset all progress (with confirmation)
    */
   function resetAll() {
@@ -248,6 +297,8 @@ export const useGamificationStore = defineStore('gamification', () => {
     recordPersonalityResult,
     trackDailyTool,
     awardAchievementXp,
+    hydrate,
+    toCloudFormat,
     resetAll,
   }
 })

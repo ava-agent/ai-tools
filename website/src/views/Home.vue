@@ -1,6 +1,9 @@
 <template>
   <div class="min-h-screen bg-background">
-    <IntroVideo :show="showIntro" @close="handleIntroClose" />
+    <IntroVideo
+      :show="showIntro"
+      @close="handleIntroClose"
+    />
     <Hero />
     <SearchBar />
 
@@ -68,8 +71,8 @@
     <Transition name="fade">
       <button
         v-if="!showIntro"
-        @click="showIntro = true"
         class="fixed bottom-6 right-6 z-40 flex items-center gap-2 px-3 py-1.5 bg-surface/60 hover:bg-surface text-white/60 hover:text-white text-xs rounded-full shadow-lg border border-white/10 backdrop-blur-sm transition-all hover:scale-105"
+        @click="showIntro = true"
       >
         <PlayCircle class="w-3.5 h-3.5 text-primary" />
         演示

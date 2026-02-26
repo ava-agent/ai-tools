@@ -49,10 +49,7 @@
 
 <script setup>
 import { ref, onErrorCaptured, onMounted, onUnmounted, computed } from 'vue'
-import { useRouter } from 'vue-router'
 import { AlertTriangle, RefreshCw, Home } from 'lucide-vue-next'
-
-const router = useRouter()
 const error = ref(null)
 const errorMessage = ref('')
 const errorStack = ref('')

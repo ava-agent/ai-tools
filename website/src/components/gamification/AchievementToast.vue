@@ -17,7 +17,10 @@
           :class="[currentToast.tierStyle.bg, currentToast.tierStyle.border]"
         >
           <div class="flex-shrink-0">
-            <Trophy class="w-8 h-8" :class="currentToast.tierStyle.color" />
+            <Trophy
+              class="w-8 h-8"
+              :class="currentToast.tierStyle.color"
+            />
           </div>
           <div class="flex-1 min-w-0">
             <p class="text-xs text-white/50 uppercase tracking-wider mb-0.5">
@@ -31,7 +34,10 @@
             </p>
           </div>
           <div class="flex-shrink-0 text-right">
-            <span class="text-sm font-bold" :class="currentToast.tierStyle.color">
+            <span
+              class="text-sm font-bold"
+              :class="currentToast.tierStyle.color"
+            >
               +{{ currentToast.xp }} XP
             </span>
           </div>

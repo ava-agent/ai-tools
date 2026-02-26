@@ -3,6 +3,7 @@ import { createPinia } from 'pinia'
 import { createLocalStoragePlugin } from './plugins/piniaLocalStorage'
 import App from './App.vue'
 import router from './router'
+import { useAuthStore } from './stores/auth.js'
 import './style.css'
 
 const app = createApp(App)
@@ -14,13 +15,19 @@ pinia.use(createLocalStoragePlugin({
 
 app.use(pinia)
 app.use(router)
+
+// 先挂载应用，确保 App.vue 中的 watch 已注册
 app.mount('#app')
+
+// 挂载后初始化认证状态，auth 变化会触发 App.vue 中的 watcher
+const authStore = useAuthStore()
+authStore.initialize()
 
 // 注册 Service Worker（PWA 支持）
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
     navigator.serviceWorker
-      .register('./sw.js')
+      .register('/sw.js')
       .then((registration) => {
         // 监听更新
         registration.addEventListener('updatefound', () => {

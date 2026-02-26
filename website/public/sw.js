@@ -1,3 +1,4 @@
+/* eslint-env serviceworker */
 const CACHE_NAME = 'ai-tools-v1';
 const STATIC_ASSETS = [
   '/',
@@ -51,9 +52,15 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
-  // 缓存优先策略 - 静态资源
-  if (request.destination === 'image' || 
-      request.destination === 'font' || 
+  // 导航请求 (history mode): 网络优先，确保 Vercel 始终返回最新 index.html
+  if (request.mode === 'navigate') {
+    event.respondWith(networkFirst(request));
+    return;
+  }
+
+  // 缓存优先策略 - 带 hash 的静态资源，可长期缓存
+  if (request.destination === 'image' ||
+      request.destination === 'font' ||
       request.destination === 'style' ||
       request.destination === 'script') {
     event.respondWith(cacheFirst(request));
@@ -66,8 +73,8 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
-  // 默认策略 - 缓存优先
-  event.respondWith(cacheFirst(request));
+  // 默认策略 - 网络优先 (安全默认)
+  event.respondWith(networkFirst(request));
 });
 
 // 缓存优先策略

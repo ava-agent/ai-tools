@@ -53,7 +53,7 @@
             </h3>
             <div class="space-y-4">
               <div
-                v-for="(step, index) in currentWorkflow.steps"
+                v-for="step in currentWorkflow.steps"
                 :key="step.step"
                 class="flex items-start p-4 bg-white/5 rounded-lg border border-white/10"
               >
@@ -124,7 +124,7 @@
                 :alt="currentWorkflow.nameZh + ' 流程图'"
                 class="w-full rounded-lg"
                 loading="lazy"
-              />
+              >
             </div>
           </div>
         </div>

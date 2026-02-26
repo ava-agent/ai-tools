@@ -50,14 +50,18 @@
         class="pdf-loading"
       >
         <div class="animate-spin rounded-full h-10 w-10 border-b-2 border-primary" />
-        <p class="text-white/60 mt-3">正在加载 PDF...</p>
+        <p class="text-white/60 mt-3">
+          正在加载 PDF...
+        </p>
       </div>
       <div
         v-if="error"
         class="pdf-error"
       >
         <FileText class="w-12 h-12 text-white/30 mb-3" />
-        <p class="text-white/60 mb-3">PDF 加载失败</p>
+        <p class="text-white/60 mb-3">
+          PDF 加载失败
+        </p>
         <a
           :href="src"
           target="_blank"
@@ -74,7 +78,7 @@
 import { ref } from 'vue'
 import { FileText, Download, ExternalLink, Maximize } from 'lucide-vue-next'
 
-const props = defineProps({
+defineProps({
   src: {
     type: String,
     required: true
