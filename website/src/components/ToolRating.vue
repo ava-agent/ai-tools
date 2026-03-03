@@ -81,7 +81,10 @@ const displayRating = computed(() => hoverRating.value || myRating.value)
 async function handleRate(rating) {
   if (!authStore.userId || submitting.value) return
   submitting.value = true
-  await communityStore.submitRating(authStore.userId, props.toolId, rating)
+  const error = await communityStore.submitRating(authStore.userId, props.toolId, rating)
   submitting.value = false
+  if (error) {
+    console.error('[ToolRating] Failed to submit rating:', error.message)
+  }
 }
 </script>

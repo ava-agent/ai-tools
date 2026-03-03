@@ -84,6 +84,14 @@
             </button>
           </form>
 
+          <!-- Success message (for sign-up email confirmation) -->
+          <p
+            v-if="successMessage"
+            class="mt-3 text-xs text-green-400 text-center"
+          >
+            {{ successMessage }}
+          </p>
+
           <!-- Error message -->
           <p
             v-if="authStore.error"
@@ -119,6 +127,7 @@ const isSignUp = ref(false)
 const email = ref('')
 const password = ref('')
 const isLoading = ref(false)
+const successMessage = ref('')
 
 // Clear form when modal closes
 watch(
@@ -129,6 +138,7 @@ watch(
       password.value = ''
       isSignUp.value = false
       isLoading.value = false
+      successMessage.value = ''
     }
   },
 )
@@ -149,16 +159,21 @@ function handleGitHubLogin() {
 
 async function handleEmailSubmit() {
   isLoading.value = true
+  successMessage.value = ''
   if (isSignUp.value) {
     await authStore.signUpWithEmail(email.value, password.value)
+    // For sign-up, show success message (user may need to confirm email)
+    if (!authStore.error) {
+      successMessage.value = '注册成功！请查收邮件确认账户'
+      email.value = ''
+      password.value = ''
+      isSignUp.value = false // Switch to login mode
+    }
   } else {
     await authStore.signInWithEmail(email.value, password.value)
+    // For sign-in, the watch on isAuthenticated will close the modal
   }
   isLoading.value = false
-  // Close on success (no error set)
-  if (!authStore.error) {
-    authStore.closeAuthModal()
-  }
 }
 </script>
 
