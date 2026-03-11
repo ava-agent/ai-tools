@@ -27,7 +27,7 @@ export const aiToolsData = [
     },
     swot: { S: '全流程开发能力一流', W: '订阅成本高', O: '演进为代码自治 Agent', T: 'Trae、GitHub Copilot 竞争' },
     tags: ['推荐', 'VS Code系', 'Agentic', '行业标杆'],
-    video: { src: './videos/cursor.mp4', thumbnail: './videos/cursor-thumb.jpg' },
+    video: { src: './videos/cursor.mp4'},
     radarChart: 'images/cursor_radar_chart.png'
   },
   {
@@ -55,7 +55,7 @@ export const aiToolsData = [
     },
     swot: { S: '免费、DeepSeek 集成', W: '功能迭代中', O: '国内市场巨大', T: 'Cursor 先发优势' },
     tags: ['推荐', '国产', '免费', 'DeepSeek', '月活100万', 'Cue功能', '图像转码'],
-    video: { src: './videos/trae.mp4', thumbnail: './videos/trae-thumb.jpg' },
+    video: { src: './videos/trae.mp4'},
     radarChart: 'images/trae_radar_chart.png'
   },
   {
@@ -82,7 +82,7 @@ export const aiToolsData = [
     },
     swot: { S: 'Cascade AI 强、性价比高', W: '品牌知名度低', O: '企业市场潜力', T: 'Cursor 生态' },
     tags: ['推荐', '性价比', 'Cascade', '超预期', 'SWE-1.5', 'GitWorktree'],
-    video: { src: './videos/windsurf.mp4', thumbnail: './videos/windsurf-thumb.jpg' },
+    video: { src: './videos/windsurf.mp4'},
     radarChart: 'images/windsurf_radar_chart.png'
   },
   {
@@ -109,7 +109,7 @@ export const aiToolsData = [
     },
     swot: { S: 'Repo Wiki、后端强', W: '小众', O: '企业级市场', T: 'Cursor 全能' },
     tags: ['国产', '后端', 'Qwen', 'MoE'],
-    video: { src: './videos/qoder.mp4', thumbnail: './videos/qoder-thumb.jpg' },
+    video: { src: './videos/qoder.mp4'},
     radarChart: 'images/qoder_radar_chart.png'
   },
   {
@@ -186,7 +186,7 @@ export const aiToolsData = [
     },
     swot: { S: 'Spec 驱动', W: '重量级', O: '企业规范', T: '轻量 IDE' },
     tags: ['Amazon', 'Spec', '规范', 'AmazonQ'],
-    video: { src: './videos/kiro.mp4', thumbnail: './videos/kiro-thumb.jpg' },
+    video: { src: './videos/kiro.mp4'},
     radarChart: 'images/kiro_radar_chart.png'
   },
   {
@@ -213,7 +213,7 @@ export const aiToolsData = [
     },
     swot: { S: '腾讯云集成', W: '多会话缺失、稳定性、优化差', O: '云服务市场', T: 'Cursor 功能' },
     tags: ['国产', '腾讯', 'BYOK', '不推荐主力', '混元'],
-    video: { src: './videos/codebuddy.mp4', thumbnail: './videos/codebuddy-thumb.jpg' },
+    video: { src: './videos/codebuddy.mp4'},
     radarChart: 'images/codebuddy_radar_chart.png'
   },
   {
@@ -240,7 +240,7 @@ export const aiToolsData = [
     },
     swot: { S: 'Google、Gemini', W: '新品未知', O: '生态整合', T: '成熟竞品' },
     tags: ['Google', 'Gemini', '新品', 'AgentSkills', 'Beta免费'],
-    video: { src: './videos/antigravity.mp4', thumbnail: './videos/antigravity-thumb.jpg' },
+    video: { src: './videos/antigravity.mp4'},
     radarChart: 'images/antigravity_radar_chart.png'
   },
   {
@@ -292,7 +292,7 @@ export const aiToolsData = [
     },
     swot: { S: '多 Agent、Plan Mode', W: '新工具', O: '企业级市场', T: 'Cursor 生态' },
     tags: ['多Agent', 'PlanMode', 'GitWorktrees', 'DiffLens', 'SWE-bench'],
-    video: { src: './videos/verdent.mp4', thumbnail: './videos/verdent-thumb.jpg' }
+    video: { src: './videos/verdent.mp4'}
   },
   {
     id: 'jetbrains-ai',
@@ -345,7 +345,7 @@ export const aiToolsData = [
     },
     swot: { S: '能力最强', W: '价格高', O: '企业需求', T: '免费替代' },
     tags: ['推荐', 'CLI', '最强', 'Claude', 'AgentTeams', 'ContextCompaction', 'AdaptiveThinking'],
-    video: { src: './videos/claude-code.mp4', thumbnail: './videos/claude-code-thumb.jpg' },
+    video: { src: './videos/claude-code.mp4'},
     radarChart: 'images/claude_code.png'
   },
   {
@@ -372,7 +372,7 @@ export const aiToolsData = [
     },
     swot: { S: '1M 上下文、免费', W: '复杂工程一般', O: 'Google 生态', T: 'Claude Code 能力' },
     tags: ['推荐', 'CLI', '免费', '长上下文', 'Google', 'Gemini3', 'MCP', 'FlashLite', 'Video'],
-    video: { src: './videos/gemini-cli.mp4', thumbnail: './videos/gemini-cli-thumb.jpg' },
+    video: { src: './videos/gemini-cli.mp4'},
     radarChart: 'images/geminicli.png'
   },
   {
@@ -500,7 +500,7 @@ export const aiToolsData = [
     },
     swot: { S: '开源、隐私、多模型', W: '社区较小', O: '开源 CLI 需求增长', T: 'Claude Code 能力' },
     tags: ['开源', 'CLI', '隐私', '多模型', 'MCP', 'LSP', 'TUI'],
-    video: { src: './videos/opencode-cli.mp4', thumbnail: './videos/opencode-cli-thumb.jpg' },
+    video: { src: './videos/opencode-cli.mp4'},
     radarChart: 'images/opencode.png'
   },
   {
@@ -527,7 +527,7 @@ export const aiToolsData = [
     },
     swot: { S: '代码生成、生态', W: '价格、访问', O: '企业级市场', T: '开源替代' },
     tags: ['推荐', 'CLI', 'OpenAI', '代码生成', '多语言', 'GPT-5', 'Agent'],
-    video: { src: './videos/codex-cli.mp4', thumbnail: './videos/codex-cli-thumb.jpg' },
+    video: { src: './videos/codex-cli.mp4'},
     radarChart: 'images/codex.png'
   },
   {
