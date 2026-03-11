@@ -1,17 +1,22 @@
 # AI工具全书 - 2026深度集成与实战教学版
 
-一个全面的AI开发工具选型指南网站，整合了10+份调研文档、SWOT分析与30+款AI工具的CN/Global双版本实战数据。
+> 82 款 AI 工具深度评测与选型指南，涵盖 AI IDE、LLM、CLI、多模态、Agent、MCP 等类别
 
-## ✨ 特性
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
-- 🎯 **6款主流AI工具深度评测**：Cursor、Trae、Claude、DeepSeek、GitHub Copilot、Windsurf
-- 📊 **完整SWOT分析**：每个工具的优势、劣势、机会、威胁
-- 🔍 **智能搜索和筛选**：按名称、开发者、类别、标签筛选
-- 📱 **完全响应式设计**：适配桌面端和移动端
-- 🌙 **深色主题**：符合开发者使用习惯
-- ⚡ **性能优化**：代码分割、懒加载、资源压缩
+## 特性
 
-## 🚀 快速开始
+- **82 款工具评测** - 覆盖 AI IDE、LLM、Deep Research、CLI、多模态、Agent 平台、MCP 工具等类别
+- **SWOT 分析** - 每个工具的优势、劣势、机会、威胁分析
+- **智能搜索和筛选** - 按名称、开发者、类别、标签筛选
+- **社区功能** - 工具评分、评论、Battle 投票（Supabase 驱动）
+- **游戏化体验** - 经验值、成就系统、个性测试、每日推荐
+- **云同步** - 登录后自动同步游戏化进度
+- **双版本支持** - 区分国内版(CN)和国际版(Global)
+- **响应式设计** - 深色主题，完美适配桌面和移动设备
+- **PWA 支持** - Service Worker 离线缓存
+
+## 快速开始
 
 ### 安装依赖
 
@@ -54,197 +59,154 @@ npm run lint
 npm run format
 ```
 
-## 📁 项目结构
+## 项目结构
 
 ```
 website/
 ├── public/                 # 静态资源
-│   ├── logo.svg          # 网站 Logo
-│   ├── favicon.svg       # 网站图标
-│   └── og-image.png     # Open Graph 图片
+│   ├── logo.svg           # 网站 Logo
+│   ├── favicon.svg        # 网站图标
+│   ├── og-image.png       # Open Graph 图片
+│   ├── manifest.json      # PWA manifest
+│   ├── sw.js              # Service Worker
+│   ├── images/            # 工具图片、雷达图
+│   ├── videos/            # 工具演示视频
+│   └── pdfs/              # PDF 资源
 ├── src/
-│   ├── components/        # Vue 组件
+│   ├── components/         # Vue 组件（24+）
 │   │   ├── Header.vue
 │   │   ├── Footer.vue
 │   │   ├── Hero.vue
 │   │   ├── ToolCard.vue
 │   │   ├── ToolGrid.vue
-│   │   └── SearchBar.vue
-│   ├── views/            # 页面组件
-│   │   ├── Home.vue
-│   │   ├── ToolDetail.vue
-│   │   └── Comparison.vue
-│   ├── stores/            # Pinia 状态管理
-│   │   ├── tools.js
-│   │   └── ui.js
-│   ├── data/             # 数据文件
-│   │   └── tools/         # 工具数据目录
-│   │       └── index.js
-│   ├── utils/            # 工具函数
-│   │   └── helpers.js
-│   ├── router/            # Vue Router 配置
-│   │   └── index.js
-│   ├── App.vue            # 根组件
-│   ├── main.js            # 应用入口
-│   └── style.css          # 全局样式
-├── index.html             # HTML 模板
-├── vite.config.js         # Vite 配置
-├── tailwind.config.js     # Tailwind CSS 配置
-├── vitest.config.js       # Vitest 测试配置
-├── Dockerfile            # Docker 构建配置
-├── nginx.conf            # Nginx 服务器配置
-├── .npmrc                # npm 配置（公共源）
-└── package.json          # 项目配置
+│   │   ├── SearchBar.vue
+│   │   ├── ToolLogo.vue
+│   │   ├── ToolRating.vue
+│   │   ├── AuthModal.vue
+│   │   ├── ErrorBoundary.vue
+│   │   ├── ToastContainer.vue
+│   │   ├── IntroVideo.vue
+│   │   ├── PdfViewer.vue
+│   │   └── gamification/   # 游戏化组件
+│   ├── views/              # 页面组件（懒加载）
+│   │   ├── Home.vue        # 工具卡片网格
+│   │   ├── ToolDetail.vue  # 工具详情页
+│   │   ├── Comparison.vue  # 横向对比
+│   │   ├── Matcher.vue     # 智能匹配
+│   │   ├── Pricing.vue     # 订阅定价指南
+│   │   ├── Workflows.vue   # 工作流实践
+│   │   ├── Resources.vue   # 资源中心
+│   │   ├── Quiz.vue        # 互动测验
+│   │   ├── Profile.vue     # 用户档案
+│   │   └── NotFound.vue    # 404 页面
+│   ├── stores/             # Pinia 状态管理
+│   │   ├── tools.js        # 工具数据与过滤
+│   │   ├── ui.js           # UI 状态
+│   │   ├── auth.js         # 认证状态
+│   │   ├── gamification.js # 游戏化进度
+│   │   ├── achievements.js # 成就追踪
+│   │   └── community.js    # 社区评分/评论
+│   ├── data/               # 数据文件
+│   │   └── tools.js        # 82 款工具数据库
+│   ├── composables/        # Vue 3 组合式函数
+│   │   ├── useEasterEggs.js
+│   │   ├── useLocalStorage.js
+│   │   ├── usePerformance.js
+│   │   └── useShareCard.js
+│   ├── lib/                # 工具库
+│   │   ├── supabase.js     # Supabase 客户端
+│   │   └── syncService.js  # 云同步服务
+│   ├── utils/
+│   │   └── helpers.js      # 辅助函数
+│   ├── router/
+│   │   └── index.js        # Vue Router 配置
+│   ├── plugins/
+│   │   └── piniaLocalStorage.js
+│   ├── App.vue             # 根组件
+│   ├── main.js             # 应用入口
+│   └── style.css           # 全局样式
+├── vite.config.js          # Vite 配置
+├── tailwind.config.js      # Tailwind CSS 配置
+├── vitest.config.js        # 测试配置
+├── vercel.json             # Vercel 部署配置
+├── Dockerfile              # Docker 构建配置
+├── nginx.conf              # Nginx 服务器配置
+└── package.json            # 项目配置
 ```
 
-## 🛠️ 技术栈
+## 技术栈
 
-- **前端框架**：Vue.js 3.4.0
-- **构建工具**：Vite 5.4.21
-- **路由管理**：Vue Router 4.2.0
-- **状态管理**：Pinia 2.1.0
-- **样式框架**：Tailwind CSS 3.4.1
-- **图标库**：lucide-vue-next 0.344.0
-- **测试框架**：Vitest 1.2.0
-- **代码质量**：ESLint 8.56.0 + Prettier 3.2.5
-- **容器化**：Docker + Nginx 1.27
+- **前端框架**：Vue.js 3.5（Composition API + `<script setup>`）
+- **构建工具**：Vite 5.4
+- **路由管理**：Vue Router 4.6
+- **状态管理**：Pinia 2.3
+- **样式框架**：Tailwind CSS 3.4
+- **图标库**：Lucide Vue Next
+- **后端服务**：Supabase（认证、数据库、云同步）
+- **测试框架**：Vitest 1.6 + Vue Test Utils
+- **代码质量**：ESLint 8 + Prettier 3
+- **部署平台**：Vercel / Docker + Nginx
 
-## 📝 开发指南
+## 配置 Supabase（可选）
 
-### npm 配置
+社区功能（评分、评论、云同步）需要 Supabase：
 
-项目包含 `.npmrc` 文件，配置使用公共 npm 源：
-
-```ini
-registry=https://registry.npmjs.org/
+```bash
+cp .env.example .env
+# 编辑 .env，填入 Supabase 项目信息
 ```
 
-这确保项目依赖从官方 npm 源下载，避免使用企业内部镜像源。
+未配置 Supabase 时，网站仍可正常运行，社区功能将自动隐藏。
 
-### 添加新工具
+## Docker 部署
 
-编辑 `src/data/tools/index.js`，添加新的工具对象：
+```bash
+# 构建镜像
+docker build -t ai-tools-website .
+
+# 运行容器
+docker run -p 8080:80 ai-tools-website
+```
+
+## 性能优化
+
+- 代码分割（vue-vendor、icons、路由级懒加载）
+- 资源指纹（hash 命名，长期缓存）
+- Gzip 压缩
+- ES2020 构建目标
+- PWA 离线缓存
+
+## 添加新工具
+
+编辑 `src/data/tools.js`，按以下结构添加工具对象：
 
 ```javascript
 {
   id: 'tool-id',
   name: 'Tool Name',
-  category: 'IDE/LLM/插件',
+  category: 'ide|cli|llm|deep-research|multimodal|agent|mcp',
+  subcategory: '细分分类',
   developer: 'Developer Name',
   versions: [
-    {
-      type: 'CN/Global',
-      pricing: '定价信息',
-      models: '支持的模型',
-      link: 'https://example.com'
-    }
+    { type: 'CN/Global', pricing: '定价信息', models: '支持的模型', link: 'https://example.com' }
   ],
+  freeQuota: '免费额度说明',
+  contextWindow: '上下文窗口',
+  chineseSupport: 4,  // 1-5
   pros: ['优势1', '优势2'],
   cons: ['劣势1', '劣势2'],
   bestFor: '最佳使用场景',
   personalExperience: {
-    rating: 5,
+    rating: 5,  // 1-5
     insights: '使用心得',
-    pitfalls: ['注意事项1', '注意事项2']
+    pitfalls: ['注意事项']
   },
-  swot: {
-    S: '优势描述',
-    W: '劣势描述',
-    O: '机会描述',
-    T: '威胁描述'
-  },
+  swot: { S: '优势', W: '劣势', O: '机会', T: '威胁' },
   tags: ['标签1', '标签2']
 }
 ```
 
-### 添加新页面
-
-1. 在 `src/router/index.js` 添加路由
-2. 在 `src/views/` 创建对应的 Vue 组件
-3. 在 `src/components/` 创建可复用组件
-
-### 样式规范
-
-- 使用 Tailwind CSS 类名
-- 遵循 BEM 命名约定
-- 响应式设计优先（移动优先）
-
-### 代码规范
-
-- 使用 Vue 3 Composition API
-- 组件使用 `<script setup>` 语法
-- Props 和 Emits 明确定义
-
-## 🧪 测试
-
-### 运行测试
-
-```bash
-npm run test
-```
-
-### 测试覆盖率
-
-```bash
-npm run test:coverage
-```
-
-测试报告将生成在 `coverage/` 目录。
-
-## 🐳 Docker 部署
-
-### 构建镜像
-
-```bash
-docker build -t ai-tools-website .
-```
-
-### 运行容器
-
-```bash
-docker run -p 8080:80 ai-tools-website
-```
-
-访问 http://localhost:8080
-
-### Docker Compose
-
-```yaml
-version: '3.8'
-services:
-  website:
-    build: .
-    ports:
-      - "8080:80"
-    environment:
-      - NODE_ENV=production
-```
-
-## 📊 性能优化
-
-- ✅ 代码分割（vue-vendor、icons、index）
-- ✅ 资源指纹（hash 命名）
-- ✅ Gzip 压缩
-- ✅ 静态资源缓存（1年）
-- ✅ 懒加载（路由级别）
-
-## 🔒 安全性
-
-- ✅ CSP（内容安全策略）配置
-- ✅ HTTPS 支持（生产环境）
-- ✅ 依赖安全（定期更新）
-- ✅ 敏感信息保护
-
-## 📄 浏览器支持
-
-- ✅ Chrome/Edge（最新版本）
-- ✅ Firefox（最新版本）
-- ✅ Safari（最新版本）
-- ✅ 移动端浏览器（iOS Safari、Chrome Mobile）
-
-## 🤝 贡献指南
-
-欢迎贡献代码、文档、工具评测！
+## 贡献指南
 
 1. Fork 项目
 2. 创建特性分支：`git checkout -b feature/your-feature`
@@ -252,15 +214,6 @@ services:
 4. 推送分支：`git push origin feature/your-feature`
 5. 创建 Pull Request
 
-## 📄 许可证
+## 许可证
 
-MIT License - 详见 [LICENSE](LICENSE) 文件
-
-## 📞 联系方式
-
-- 📧 问题反馈：[GitHub Issues](https://github.com/your-username/ai-tools-website/issues)
-- 💬 讨论交流：[GitHub Discussions](https://github.com/your-username/ai-tools-website/discussions)
-
----
-
-**记录每一个技术决策，分享每一次成长经历。**
+MIT License
