@@ -1,11 +1,11 @@
 <template>
   <div
     id="app"
-    class="min-h-screen bg-background"
+    class="min-h-screen"
   >
     <ErrorBoundary>
       <Header />
-      <main class="container mx-auto px-4 py-8">
+      <main>
         <router-view v-slot="{ Component }">
           <transition
             name="fade"
