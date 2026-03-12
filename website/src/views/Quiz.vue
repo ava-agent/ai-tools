@@ -1,9 +1,12 @@
 <template>
   <div class="min-h-screen bg-background">
-    <div class="container mx-auto px-4 py-8">
+    <div class="max-w-[960px] mx-auto px-5 py-6">
       <!-- Header -->
       <div class="text-center mb-8">
-        <h1 class="text-4xl md:text-5xl font-bold mb-4 gradient-text">
+        <h1
+          class="text-[28px] font-bold text-white mb-4"
+          style="letter-spacing: -0.8px"
+        >
           趣味竞猜
         </h1>
         <p class="text-xl text-white/80 max-w-2xl mx-auto">
@@ -17,10 +20,10 @@
           <button
             v-for="tab in tabs"
             :key="tab.id"
-            class="px-5 py-2.5 rounded-lg transition-all flex items-center gap-2 cursor-pointer"
+            class="px-5 py-2.5 rounded-full transition-all flex items-center gap-2 cursor-pointer text-sm font-medium"
             :class="activeTab === tab.id
-              ? 'bg-primary text-white shadow-lg shadow-primary/25'
-              : 'bg-surface text-white/60 hover:text-white hover:bg-surface/80'"
+              ? 'bg-[#0a84ff] text-white shadow-lg shadow-[#0a84ff]/25'
+              : 'bg-white/[0.04] text-white/60 hover:text-white hover:bg-white/[0.08] border border-white/[0.06]'"
             @click="activeTab = tab.id"
           >
             <component

@@ -1,9 +1,12 @@
 <template>
   <div class="min-h-screen bg-background">
-    <div class="container mx-auto px-4 py-8">
+    <div class="max-w-[960px] mx-auto px-5 py-6">
       <!-- Header -->
       <div class="text-center mb-12">
-        <h1 class="text-4xl md:text-5xl font-bold mb-4 gradient-text">
+        <h1
+          class="text-[28px] font-bold text-white mb-4"
+          style="letter-spacing: -0.8px"
+        >
           资源中心
         </h1>
         <p class="text-xl text-white/80 max-w-2xl mx-auto">
@@ -12,15 +15,15 @@
       </div>
 
       <!-- Filter Tabs -->
-      <div class="max-w-5xl mx-auto mb-8">
+      <div class="mb-8">
         <div class="flex flex-wrap gap-2 justify-center">
           <button
             v-for="tab in filterTabs"
             :key="tab.id"
-            class="px-5 py-2.5 rounded-lg transition-all flex items-center gap-2 cursor-pointer"
+            class="px-5 py-2.5 rounded-full transition-all flex items-center gap-2 cursor-pointer text-sm font-medium"
             :class="activeFilter === tab.id
-              ? 'bg-primary text-white shadow-lg shadow-primary/25'
-              : 'bg-surface text-white/80 hover:bg-surface/80'"
+              ? 'bg-[#0a84ff] text-white shadow-lg shadow-[#0a84ff]/25'
+              : 'bg-white/[0.04] text-white/80 hover:bg-white/[0.08] border border-white/[0.06]'"
             @click="activeFilter = tab.id"
           >
             <component
@@ -39,27 +42,27 @@
       </div>
 
       <!-- Resources Grid -->
-      <div class="max-w-5xl mx-auto">
+      <div>
         <!-- PDF Section -->
         <div v-if="filteredPdfs.length > 0">
           <h2
             v-if="activeFilter === 'all'"
             class="text-2xl font-bold text-white mb-6 flex items-center"
           >
-            <FileText class="w-6 h-6 text-blue-400 mr-2" />
+            <FileText class="w-6 h-6 text-[#0a84ff] mr-2" />
             PPT 演示文稿
           </h2>
           <div class="grid md:grid-cols-1 gap-6 mb-12">
             <div
               v-for="pdf in filteredPdfs"
               :key="pdf.id"
-              class="card group"
+              class="glass-card rounded-2xl p-5 group"
             >
               <div class="flex items-start justify-between mb-4">
                 <div class="flex-1">
                   <div class="flex items-center gap-3 mb-2">
-                    <div class="w-10 h-10 rounded-lg bg-blue-500/20 flex items-center justify-center flex-shrink-0">
-                      <Presentation class="w-5 h-5 text-blue-400" />
+                    <div class="w-10 h-10 rounded-lg bg-[#0a84ff]/20 flex items-center justify-center flex-shrink-0">
+                      <Presentation class="w-5 h-5 text-[#0a84ff]" />
                     </div>
                     <div>
                       <h3 class="text-xl font-bold text-white">
@@ -77,17 +80,17 @@
                     <span
                       v-for="tag in pdf.tags"
                       :key="tag"
-                      class="px-2 py-0.5 text-xs rounded-full bg-blue-500/10 text-blue-400 border border-blue-500/20"
+                      class="px-2 py-0.5 text-xs rounded-full bg-[#0a84ff]/10 text-[#0a84ff] border border-[#0a84ff]/20"
                     >
                       {{ tag }}
                     </span>
                   </div>
                 </div>
                 <button
-                  class="ml-4 flex-shrink-0 px-4 py-2 rounded-lg transition-all text-sm font-medium cursor-pointer"
+                  class="ml-4 flex-shrink-0 px-4 py-2 rounded-full transition-all text-sm font-medium cursor-pointer"
                   :class="expandedPdf === pdf.id
-                    ? 'bg-primary text-white'
-                    : 'bg-white/5 text-white/60 hover:bg-white/10 hover:text-white'"
+                    ? 'bg-[#0a84ff] text-white'
+                    : 'bg-white/[0.04] text-white/60 hover:bg-white/[0.08] hover:text-white border border-white/[0.06]'"
                   @click="togglePdf(pdf.id)"
                 >
                   <component
@@ -134,7 +137,7 @@
             <div
               v-for="video in filteredVideos"
               :key="video.id"
-              class="card"
+              class="glass-card rounded-2xl p-5"
             >
               <div class="mb-4">
                 <div class="flex items-center gap-3 mb-2">

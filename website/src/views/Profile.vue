@@ -1,17 +1,17 @@
 <template>
   <div class="min-h-screen bg-background">
-    <div class="container mx-auto px-4 py-8">
+    <div class="max-w-[960px] mx-auto px-5 py-6">
       <div class="max-w-3xl mx-auto">
         <!-- Auth User Info -->
         <div
           v-if="authStore.isAuthenticated"
-          class="flex items-center gap-4 mb-6 p-4 rounded-xl bg-white/5 border border-white/10"
+          class="flex items-center gap-4 mb-6 p-4 rounded-2xl glass-card"
         >
           <img
             v-if="authStore.avatarUrl"
             :src="authStore.avatarUrl"
             :alt="authStore.displayName"
-            class="w-12 h-12 rounded-full border-2 border-primary/30"
+            class="w-12 h-12 rounded-full border-2 border-[#0a84ff]/30"
           >
           <div class="flex-1 min-w-0">
             <p class="text-lg font-bold text-white truncate">
@@ -23,7 +23,7 @@
             </p>
           </div>
           <button
-            class="px-3 py-1.5 text-sm text-white/40 hover:text-red-400 rounded-lg hover:bg-white/5 transition-colors cursor-pointer"
+            class="px-3 py-1.5 text-sm text-white/40 hover:text-[#ff453a] rounded-lg hover:bg-white/[0.04] transition-colors cursor-pointer"
             @click="authStore.signOut"
           >
             退出
@@ -31,13 +31,13 @@
         </div>
         <div
           v-else
-          class="flex items-center justify-between mb-6 p-4 rounded-xl bg-white/5 border border-white/10"
+          class="flex items-center justify-between mb-6 p-4 rounded-2xl glass-card"
         >
           <p class="text-sm text-white/50">
             登录后可跨设备同步进度、参与社区互动
           </p>
           <button
-            class="px-4 py-1.5 text-sm bg-primary/20 hover:bg-primary/30 text-primary rounded-lg transition-colors cursor-pointer"
+            class="btn-capsule-sm bg-[#0a84ff]/20 hover:bg-[#0a84ff]/30 text-[#0a84ff]"
             @click="authStore.openAuthModal"
           >
             登录
@@ -46,7 +46,10 @@
 
         <!-- Header -->
         <div class="text-center mb-8">
-          <h1 class="text-4xl md:text-5xl font-bold mb-4 gradient-text">
+          <h1
+            class="text-[28px] font-bold text-white mb-4"
+            style="letter-spacing: -0.8px"
+          >
             我的档案
           </h1>
           <p class="text-xl text-white/80">
@@ -55,7 +58,7 @@
         </div>
 
         <!-- Level Card -->
-        <div class="card mb-6">
+        <div class="glass-card rounded-2xl p-5 mb-6">
           <div class="flex items-center gap-6 mb-6">
             <LevelBadge size="lg" />
             <div class="flex-1">
@@ -68,8 +71,8 @@
             </div>
             <div class="text-right">
               <div class="flex items-center gap-2">
-                <Flame class="w-6 h-6 text-orange-400" />
-                <span class="text-3xl font-bold text-orange-400">
+                <Flame class="w-6 h-6 text-[#ff9f0a]" />
+                <span class="text-3xl font-bold text-[#ff9f0a]">
                   {{ gamification.streak.current }}
                 </span>
               </div>
@@ -82,9 +85,9 @@
         </div>
 
         <!-- 打卡日历 (最近30天) -->
-        <div class="card mb-6">
+        <div class="glass-card rounded-2xl p-5 mb-6">
           <h3 class="text-lg font-bold text-white mb-4 flex items-center gap-2">
-            <Calendar class="w-5 h-5 text-primary" />
+            <Calendar class="w-5 h-5 text-[#0a84ff]" />
             打卡日历
           </h3>
           <div class="grid grid-cols-7 gap-1.5">
@@ -93,10 +96,10 @@
               :key="day.date"
               class="aspect-square rounded-md flex items-center justify-center text-xs transition-colors"
               :class="day.visited
-                ? 'bg-primary/30 text-primary border border-primary/40'
+                ? 'bg-[#0a84ff]/30 text-[#0a84ff] border border-[#0a84ff]/40'
                 : day.future
-                  ? 'bg-white/3 text-white/15'
-                  : 'bg-white/5 text-white/30'"
+                  ? 'bg-white/[0.02] text-white/15'
+                  : 'bg-white/[0.04] text-white/30'"
               :title="day.date"
             >
               {{ day.dayNum }}
@@ -109,16 +112,16 @@
         </div>
 
         <!-- 统计仪表板 -->
-        <div class="card mb-6">
+        <div class="glass-card rounded-2xl p-5 mb-6">
           <h3 class="text-lg font-bold text-white mb-4 flex items-center gap-2">
-            <BarChart3 class="w-5 h-5 text-primary" />
+            <BarChart3 class="w-5 h-5 text-[#0a84ff]" />
             学习统计
           </h3>
           <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
             <div
               v-for="stat in statItems"
               :key="stat.label"
-              class="text-center p-4 rounded-xl bg-white/5 border border-white/5"
+              class="text-center p-4 rounded-xl bg-white/[0.04] border border-white/[0.06]"
             >
               <component
                 :is="stat.icon"
@@ -138,7 +141,7 @@
         <!-- 人格测试结果 -->
         <div
           v-if="gamification.stats.personalityResult"
-          class="card mb-6"
+          class="glass-card rounded-2xl p-5 mb-6"
         >
           <h3 class="text-lg font-bold text-white mb-2 flex items-center gap-2">
             <User class="w-5 h-5 text-purple-400" />
@@ -149,21 +152,21 @@
           </p>
           <router-link
             to="/quiz"
-            class="text-sm text-primary hover:text-primary/80 mt-2 inline-block"
+            class="text-sm text-[#0a84ff] hover:text-[#0a84ff]/80 mt-2 inline-block"
           >
             重新测试
           </router-link>
         </div>
 
         <!-- 成就 -->
-        <div class="card mb-6">
+        <div class="glass-card rounded-2xl p-5 mb-6">
           <AchievementGrid />
         </div>
 
         <!-- 重置进度 -->
         <div class="text-center">
           <button
-            class="text-sm text-white/30 hover:text-red-400 transition-colors cursor-pointer"
+            class="text-sm text-white/30 hover:text-[#ff453a] transition-colors cursor-pointer"
             @click="confirmReset"
           >
             重置所有进度
@@ -189,7 +192,7 @@
               @click.self="showResetConfirm = false"
               @keydown.esc="showResetConfirm = false"
             >
-              <div class="bg-surface rounded-2xl p-6 max-w-sm w-full border border-white/10">
+              <div class="glass-elevated rounded-2xl p-6 max-w-sm w-full">
                 <h3 class="text-lg font-bold text-white mb-2">
                   确认重置？
                 </h3>
@@ -198,13 +201,13 @@
                 </p>
                 <div class="flex gap-3">
                   <button
-                    class="flex-1 py-2 rounded-lg bg-white/5 text-white/60 hover:bg-white/10 transition-colors cursor-pointer"
+                    class="flex-1 py-2 rounded-full bg-white/[0.04] text-white/60 hover:bg-white/[0.08] transition-colors cursor-pointer border border-white/[0.06]"
                     @click="showResetConfirm = false"
                   >
                     取消
                   </button>
                   <button
-                    class="flex-1 py-2 rounded-lg bg-red-500/20 text-red-400 hover:bg-red-500/30 transition-colors cursor-pointer"
+                    class="flex-1 py-2 rounded-full bg-[#ff453a]/20 text-[#ff453a] hover:bg-[#ff453a]/30 transition-colors cursor-pointer"
                     @click="doReset"
                   >
                     确认重置
@@ -264,12 +267,12 @@ const calendarStartLabel = computed(() => {
 })
 
 const statItems = computed(() => [
-  { label: '已探索工具', value: gamification.stats.toolsViewed.length, icon: Eye, color: 'text-blue-400' },
-  { label: '竞猜次数', value: gamification.stats.quizzesCompleted, icon: HelpCircle, color: 'text-purple-400' },
-  { label: '最佳成绩', value: `${gamification.stats.quizBestScore}/10`, icon: Trophy, color: 'text-yellow-400' },
-  { label: '对决投票', value: gamification.stats.battlesVoted, icon: Swords, color: 'text-red-400' },
-  { label: '工具匹配', value: gamification.stats.matcherCompleted, icon: Target, color: 'text-green-400' },
-  { label: '最长连续', value: `${gamification.streak.longest} 天`, icon: Flame, color: 'text-orange-400' },
+  { label: '已探索工具', value: gamification.stats.toolsViewed.length, icon: Eye, color: 'text-[#0a84ff]' },
+  { label: '竞猜次数', value: gamification.stats.quizzesCompleted, icon: HelpCircle, color: 'text-[#bf5af2]' },
+  { label: '最佳成绩', value: `${gamification.stats.quizBestScore}/10`, icon: Trophy, color: 'text-[#ffd60a]' },
+  { label: '对决投票', value: gamification.stats.battlesVoted, icon: Swords, color: 'text-[#ff453a]' },
+  { label: '工具匹配', value: gamification.stats.matcherCompleted, icon: Target, color: 'text-[#30d158]' },
+  { label: '最长连续', value: `${gamification.streak.longest} 天`, icon: Flame, color: 'text-[#ff9f0a]' },
 ])
 
 function confirmReset() {
