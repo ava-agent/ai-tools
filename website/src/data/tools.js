@@ -858,24 +858,24 @@ export const aiToolsData = [
   },
   {
     id: 'dalle',
-    name: 'DALL-E 3',
+    name: 'GPT-4o 图像生成',
     category: 'multimodal',
     subcategory: '图像生成',
     developer: 'OpenAI',
     logo: null,
     versions: [
-      { type: 'Global', pricing: 'ChatGPT Plus 内含', models: 'DALL-E 3', link: 'https://openai.com/dall-e-3' }
+      { type: 'Global', pricing: 'ChatGPT Plus 内含', models: 'GPT-4o (原生图像) + DALL-E 3', link: 'https://openai.com/index/introducing-4o-image-generation/' }
     ],
-    freeQuota: 'ChatGPT Free 有限',
+    freeQuota: 'ChatGPT Free 有限额度',
     contextWindow: 'N/A',
-    chineseSupport: 3,
-    pros: ['与 ChatGPT 无缝集成，自然语言描述即可出图', '文字渲染能力最强，海报和配图利器', '安全过滤严格，商用风险低', '支持图像编辑和局部重绘功能'],
-    cons: ['需要 ChatGPT Plus 订阅（$20/月）', '艺术风格偏保守，创意表现力不如 Midjourney', '无法精确控制构图和画面元素位置'],
-    bestFor: '与 ChatGPT 配合使用',
-    funRanking: '夯',
-    personalExperience: { rating: 4, insights: '与 ChatGPT 深度集成是最大优势，直接在对话中描述需求即可生成图像，无需学习复杂的提示词语法。文字渲染能力是所有 AI 图像工具中最强的，适合生成包含文字的海报和配图。但艺术风格相对保守，不如 Midjourney 有创意张力。适合需要快速出图、对艺术风格要求不极致的场景。', pitfalls: ['需要订阅', '风格保守'] },
-    swot: { S: 'ChatGPT 集成', W: '订阅制', O: 'OpenAI 生态', T: 'Midjourney' },
-    tags: ['图像', 'OpenAI', '集成']
+    chineseSupport: 4,
+    pros: ['GPT-4o 原生图像生成，自然语言描述即可出图', '文字渲染能力业界最强，海报和配图利器', '支持对话式多轮迭代修改图像', '安全过滤严格，商用风险低', '与 ChatGPT 深度集成，零学习成本', '支持图像编辑、局部重绘和风格转换'],
+    cons: ['需要 ChatGPT Plus 订阅（$20/月）获得完整体验', '艺术风格偏保守，创意表现力不如 Midjourney', '免费用户额度极有限'],
+    bestFor: '与 ChatGPT 配合使用，快速出图',
+    funRanking: '夯夯',
+    personalExperience: { rating: 4.5, insights: 'GPT-4o 原生图像生成能力是 2025 年的重大升级，告别了调用外部 DALL-E 模型的割裂感。现在可以在对话中直接描述需求生成图像，支持多轮迭代修改，体验流畅自然。文字渲染能力仍然是业界最强。吉卜力风格等创意应用一度引爆社交媒体。对于需要快速、便捷出图的用户来说，这是最好的选择。', pitfalls: ['免费额度少', '风格偏保守', '高峰期可能需排队'] },
+    swot: { S: 'ChatGPT 集成、文字渲染', W: '订阅制、风格保守', O: 'OpenAI 生态垄断', T: 'Midjourney、FLUX 品质追赶' },
+    tags: ['推荐', '图像', 'OpenAI', '集成', '文字渲染']
   },
   {
     id: 'stable-diffusion',
@@ -933,16 +933,16 @@ export const aiToolsData = [
     versions: [
       { type: 'Global', pricing: '订阅制', models: 'Sora 2', link: 'https://openai.com/sora' }
     ],
-    freeQuota: '需 ChatGPT Plus/Pro 订阅（免费用户已无法使用）',
+    freeQuota: '需 ChatGPT Plus/Pro 订阅',
     contextWindow: 'N/A',
     chineseSupport: 3,
-    pros: ['电影级质感', '60秒时长', '物理模拟强', 'Sora 2 已发布（2025年9月30日）', '同步音频功能', '角色客串功能', '已集成迪士尼品牌角色（2026年初上线）'],
-    cons: ['需 ChatGPT Plus/Team/Enterprise 订阅', '价格高', '分阶段地区推出'],
-    bestFor: '电影级视频创作',
+    pros: ['电影级质感，物理模拟业界领先', '支持最长 60 秒高质量视频', 'Sora 2 同步音频和角色客串功能', '支持文生视频、图生视频、视频延展', '迪士尼品牌角色集成', '画面一致性和运动连贯性顶级'],
+    cons: ['需 ChatGPT Plus/Pro 订阅（$20-200/月）', '生成速度较慢，复杂场景需数分钟', '部分地区不可用'],
+    bestFor: '电影级视频创作、专业内容制作',
     funRanking: '夯夯',
-    personalExperience: { rating: 4, insights: 'OpenAI 的视频生成旗舰，Sora 2 在画质和动作连贯性上达到了业界顶级水平。支持文本生成视频、图片转视频、视频延展等多种模式。但定价较高，需要 ChatGPT Plus 或 Pro 订阅，且免费额度已取消。生成速度较慢，复杂场景需要等待数分钟。适合追求最高画质的专业内容创作者。', pitfalls: ['需付费订阅', '生成速度慢', '分阶段地区推出'] },
-    swot: { S: '质量顶级', W: '访问限制', O: '影视市场', T: '竞品崛起' },
-    tags: ['视频', 'OpenAI', '电影级']
+    personalExperience: { rating: 4, insights: 'OpenAI 的视频生成旗舰，Sora 2 在画质和动作连贯性上达到业界顶级水平。支持文生视频、图生视频、视频延展等多种模式。同步音频和角色客串是独特亮点。但价格门槛高，需要 ChatGPT Plus 或 Pro 订阅。生成速度偏慢，复杂场景需要耐心等待。适合追求最高画质的专业内容创作者。可灵在性价比上更友好。', pitfalls: ['需付费订阅', '生成速度慢', '部分地区不可用'] },
+    swot: { S: '质量顶级、OpenAI 品牌', W: '价格高、速度慢', O: '影视市场', T: '可灵、Runway 竞争' },
+    tags: ['视频', 'OpenAI', '电影级', '专业']
   },
   {
     id: 'kling',
@@ -1035,7 +1035,7 @@ export const aiToolsData = [
   {
     id: 'notebooklm',
     name: 'NotebookLM',
-    category: 'multimodal',
+    category: 'llm',
     subcategory: '内容生成',
     developer: 'Google',
     logo: null,
@@ -1058,11 +1058,11 @@ export const aiToolsData = [
     tags: ['推荐', '免费', '汇报', 'Google']
   },
 
-  // ============= Agent 平台 (10个) =============
+  // ============= Agent 平台 (8个) =============
   {
     id: 'qinglizi',
     name: '氢离子',
-    category: 'agent',
+    category: 'llm',
     subcategory: '垂直领域',
     developer: '氢离子团队',
     logo: null,
@@ -1172,8 +1172,8 @@ export const aiToolsData = [
   {
     id: 'nanobanana',
     name: 'Nano Banana',
-    category: 'agent',
-    subcategory: '特色工具',
+    category: 'multimodal',
+    subcategory: '图表生成',
     developer: 'Google',
     logo: null,
     versions: [
@@ -1650,7 +1650,7 @@ export const aiToolsData = [
     tags: ['语音', '配音', '多语言', '克隆', '专业']
   },
 
-  // ============= 新增 Agent 平台 (3个) =============
+  // ============= 新增 Agent 平台 (6个) =============
   {
     id: 'manus',
     name: 'Manus',
@@ -1726,8 +1726,83 @@ export const aiToolsData = [
     swot: { S: '自托管免费、400+集成', W: '中文缺失、技术门槛', O: 'AI 自动化爆发', T: 'Make.com、Zapier' },
     tags: ['推荐', '开源', '免费', '工作流', '自动化', '400+集成']
   },
+  {
+    id: 'openai-agents-sdk',
+    name: 'OpenAI Agents SDK',
+    category: 'agent',
+    subcategory: '开发框架',
+    developer: 'OpenAI',
+    logo: null,
+    versions: [
+      { type: 'Global', pricing: '开源免费（按 API 用量计费）', models: 'GPT-4o, o1, o3 等 OpenAI 模型', link: 'https://github.com/openai/openai-agents-python' }
+    ],
+    freeQuota: 'SDK 免费，API 按量计费',
+    contextWindow: '取决于模型',
+    chineseSupport: 3,
+    pros: ['OpenAI 官方出品，与 GPT 系列深度集成', '内置 Handoff 机制支持多 Agent 协作', '原生支持 Tool Use 和 Function Calling', '轻量级设计，核心概念少易上手', 'Tracing 内置调试追踪', '支持 Guardrails 安全护栏'],
+    cons: ['仅支持 OpenAI 模型（不支持 Claude/Gemini）', '生态较新，社区资源不如 LangChain', 'Python 优先，其他语言支持有限', '复杂编排能力不如 LangGraph'],
+    bestFor: 'OpenAI 生态下的 Agent 开发',
+    funRanking: '夯',
+    personalExperience: {
+      rating: 4,
+      insights: 'OpenAI 2025 年发布的官方 Agent SDK，设计哲学是"简单但强大"。核心概念只有 Agent、Tool、Handoff、Guardrail 四个，上手极快。Handoff 机制让多 Agent 协作变得直观——Agent 之间可以自然地"交接"任务。内置 Tracing 对调试非常有帮助。但只支持 OpenAI 自家模型是最大限制。',
+      pitfalls: ['仅限 OpenAI 模型', 'Python 为主', '生态还在建设中']
+    },
+    swot: { S: '官方出品、设计简洁', W: '模型锁定', O: 'OpenAI 生态', T: 'LangChain/CrewAI 竞争' },
+    tags: ['Agent', '框架', 'OpenAI', '官方', 'Python']
+  },
+  {
+    id: 'claude-agent-sdk',
+    name: 'Claude Agent SDK',
+    category: 'agent',
+    subcategory: '开发框架',
+    developer: 'Anthropic',
+    logo: null,
+    versions: [
+      { type: 'Global', pricing: '开源免费（按 API 用量计费）', models: 'Claude 4.5 Sonnet, Claude Opus 4.6', link: 'https://github.com/anthropics/claude-code-sdk-python' }
+    ],
+    freeQuota: 'SDK 免费，API 按量计费',
+    contextWindow: '200K',
+    chineseSupport: 3,
+    pros: ['Anthropic 官方 Agent 开发框架', '基于 Claude Code 的成熟 Agent 能力', '支持 Tool Use、多轮对话、文件操作', '200K 超长上下文窗口', '代码理解和生成能力业界最强', 'Python 和 TypeScript 双语言支持', '与 Claude Code CLI 无缝集成'],
+    cons: ['仅支持 Claude 模型', 'API 费用较高', '生态相比 LangChain 较新', '需要 Anthropic API Key'],
+    bestFor: '构建代码智能体、复杂推理 Agent',
+    funRanking: '夯夯',
+    personalExperience: {
+      rating: 4.5,
+      insights: 'Anthropic 官方的 Agent SDK，底层能力与 Claude Code 一致。Claude 的代码理解和复杂推理能力在 Agent 场景中优势明显，特别适合构建需要深度代码分析和多步骤推理的智能体。200K 上下文窗口让 Agent 可以处理大型代码库。Python 和 TypeScript 双语言支持覆盖面广。',
+      pitfalls: ['仅限 Claude 模型', 'API 费用注意控制', '文档持续完善中']
+    },
+    swot: { S: '代码能力最强、长上下文', W: '模型锁定、API 贵', O: 'AI 编码 Agent 市场', T: 'OpenAI Agents SDK' },
+    tags: ['推荐', 'Agent', '框架', 'Claude', 'Anthropic', '官方']
+  },
+  {
+    id: 'google-adk',
+    name: 'Google ADK',
+    category: 'agent',
+    subcategory: '开发框架',
+    developer: 'Google',
+    logo: null,
+    versions: [
+      { type: 'Global', pricing: '开源免费（按 API 用量计费）', models: 'Gemini 系列', link: 'https://google.github.io/adk-docs/' }
+    ],
+    freeQuota: 'SDK 免费，Gemini API 有免费额度',
+    contextWindow: '2M（Gemini 2.5 Pro）',
+    chineseSupport: 3,
+    pros: ['Google 官方 Agent 开发框架', '支持 2M 超长上下文（Gemini 2.5 Pro）', '内置多 Agent 编排和任务委派', '与 Google 生态深度集成（搜索、地图等）', '支持 A2A 协议跨 Agent 通信', 'Gemini API 有慷慨免费额度', '支持流式响应和多模态输入'],
+    cons: ['主要支持 Gemini 模型', '文档和社区仍在建设中', 'Python 优先', '部分功能需要 Google Cloud'],
+    bestFor: '利用 Gemini 长上下文构建复杂 Agent',
+    funRanking: '夯',
+    personalExperience: {
+      rating: 3.5,
+      insights: 'Google 2025 年发布的 Agent Development Kit，核心优势是 Gemini 的 2M 超长上下文——可以让 Agent 处理整个代码库或超长文档。支持多 Agent 编排和 A2A（Agent-to-Agent）协议。与 Google 搜索、地图等服务的集成是独特卖点。但框架成熟度不如 LangChain，生态还在早期。',
+      pitfalls: ['主要绑定 Gemini', '生态较新', '部分功能依赖 Google Cloud']
+    },
+    swot: { S: '2M 上下文、Google 生态', W: '模型绑定、生态新', O: '长上下文 Agent 场景', T: 'LangGraph、OpenAI Agents' },
+    tags: ['Agent', '框架', 'Google', 'Gemini', '长上下文', '官方']
+  },
 
-  // ============= MCP 工具 (13个) =============
+  // ============= MCP 工具 (14个+1) =============
   {
     id: 'context7',
     name: 'Context7',
@@ -2052,6 +2127,31 @@ export const aiToolsData = [
     },
     swot: { S: '官方出品、零配置', W: '数据量大', O: '设计转码自动化', T: '其他设计工具 MCP' },
     tags: ['MCP', '免费', 'Figma', '设计', '设计转码', '官方']
+  },
+  {
+    id: 'vercel-mcp',
+    name: 'Vercel MCP',
+    category: 'mcp',
+    subcategory: '开发工具',
+    developer: 'Vercel',
+    logo: null,
+    versions: [
+      { type: 'Global', pricing: '完全免费', models: '无需LLM，Vercel API 服务', link: 'https://vercel.com/docs/mcp' }
+    ],
+    freeQuota: '完全免费（受 Vercel 计划限额）',
+    contextWindow: 'N/A',
+    chineseSupport: 3,
+    pros: ['Vercel 官方出品', '部署管理：查看、触发、回滚部署', '运行时日志和构建日志查询', '项目配置和环境变量管理', '域名管理和 DNS 配置', '支持 Toolbar 评论和反馈', '零配置远程 HTTP 模式', '与 Next.js 生态深度集成'],
+    cons: ['需要 Vercel 账号和认证', '功能受 Vercel 计划限制', '主要面向 Vercel 平台用户', '非 Vercel 部署无法使用'],
+    bestFor: '在 AI IDE 中直接管理 Vercel 部署、查看日志、配置项目',
+    funRanking: '夯',
+    personalExperience: {
+      rating: 4,
+      insights: 'Vercel 官方 MCP，对于使用 Vercel + Next.js 技术栈的团队来说是效率利器。可以在 AI IDE 中直接查看部署状态、读取构建日志、排查线上问题。远程 HTTP 模式零配置，认证后即可使用。Toolbar 评论集成让代码审查和设计反馈闭环更完整。',
+      pitfalls: ['仅限 Vercel 平台', '注意部署操作权限']
+    },
+    swot: { S: '官方出品、零配置', W: '平台绑定', O: 'Next.js 生态', T: 'Netlify 等竞品 MCP' },
+    tags: ['MCP', '免费', 'Vercel', '部署', 'Next.js', '官方']
   }
 ]
 

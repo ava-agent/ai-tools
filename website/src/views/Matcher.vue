@@ -224,6 +224,7 @@ import {
   Brain,
   Image,
   Bot,
+  Plug,
   Check,
   X,
   CheckCircle2,
@@ -315,7 +316,8 @@ function getCategoryIcon(iconName) {
     Terminal,
     Brain,
     Image,
-    Bot
+    Bot,
+    Plug
   }
   return icons[iconName] || Brain
 }

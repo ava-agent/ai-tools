@@ -23,7 +23,7 @@ const categoryColors = {
   llm: 'bg-purple-500',
   multimodal: 'bg-pink-500',
   agent: 'bg-orange-500',
-  mcp: 'bg-teal-500'
+  mcp: 'bg-cyan-500'
 }
 
 export function getCategoryColor(category) {
@@ -197,7 +197,8 @@ export function getTagColor(tag) {
     截图: 'bg-sky-500',
     设计转码: 'bg-pink-500',
     官方: 'bg-green-500',
-    PR管理: 'bg-gray-700'
+    PR管理: 'bg-gray-700',
+    Anthropic: 'bg-orange-600'
   }
   return colors[tag] || 'bg-gray-500'
 }
