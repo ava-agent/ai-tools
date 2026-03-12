@@ -457,12 +457,6 @@ function matchesBudget(tool) {
   return cost >= 100 // unlimited
 }
 
-function getPriceValueColor(value) {
-  if (value >= 90) return 'bg-green-500'
-  if (value >= 70) return 'bg-yellow-500'
-  return 'bg-red-500'
-}
-
 // Check if a tool is in the selected combo
 function isToolInCombo(toolName) {
   if (comboToolNames.value.length === 0) return false
