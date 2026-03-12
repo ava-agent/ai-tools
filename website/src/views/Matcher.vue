@@ -1,67 +1,53 @@
 <template>
   <div class="min-h-screen bg-background">
-    <div class="container mx-auto px-4 py-8">
+    <div class="max-w-[720px] mx-auto px-5 py-6">
       <!-- Header -->
-      <div class="text-center mb-12">
-        <h1 class="text-4xl md:text-5xl font-bold mb-4 gradient-text">
+      <div class="text-center mb-10">
+        <h1
+          class="text-[28px] font-bold text-white mb-3"
+          style="letter-spacing: -0.8px"
+        >
           AI 工具匹配器
         </h1>
-        <p class="text-xl text-white/80 max-w-2xl mx-auto">
+        <p class="text-[15px] text-white/60 max-w-md mx-auto leading-relaxed">
           回答几个简单问题，为您推荐最合适的 AI 工具组合
         </p>
       </div>
 
       <!-- Category Selection -->
-      <div class="grid md:grid-cols-3 gap-6 mb-12">
+      <div class="flex flex-wrap gap-2 mb-10 justify-center">
         <button
           v-for="cat in categories"
           :key="cat.id"
-          class="card card-interactive p-6 text-left transition-all duration-300 hover:scale-[1.02]"
-          :class="selectedCategory === cat.id ? 'ring-2 ring-primary' : ''"
+          class="pill transition-all duration-200"
+          :class="selectedCategory === cat.id ? 'pill-active' : 'pill-inactive'"
           @click="selectCategory(cat.id)"
         >
-          <div class="flex items-center mb-4">
-            <div
-              class="w-12 h-12 rounded-lg flex items-center justify-center mr-4"
-              :class="getCategoryBgColor(cat.color)"
-            >
-              <component
-                :is="getCategoryIcon(cat.icon)"
-                class="w-6 h-6 text-white"
-              />
-            </div>
-            <div>
-              <h3 class="text-xl font-bold text-white">
-                {{ cat.nameZh }}
-              </h3>
-              <p class="text-sm text-white/60">
-                {{ cat.name }}
-              </p>
-            </div>
-          </div>
-          <p class="text-white/70 text-sm">
-            {{ cat.description }}
-          </p>
+          <component
+            :is="getCategoryIcon(cat.icon)"
+            class="w-4 h-4 mr-1.5"
+          />
+          {{ cat.nameZh }}
         </button>
       </div>
 
       <!-- Decision Tree -->
       <div
         v-if="selectedCategory && currentDecision"
-        class="max-w-3xl mx-auto"
+        class="mx-auto"
       >
-        <div class="card p-8">
-          <h2 class="text-2xl font-bold text-white mb-6 gradient-text">
+        <div class="glass-card p-5">
+          <h2 class="text-lg font-bold text-white mb-5">
             {{ currentDecision.title }}
           </h2>
 
           <!-- Question -->
           <div
             v-if="currentNode && !currentNode.result"
-            class="mb-8"
+            class="mb-4"
           >
-            <div class="bg-primary/10 border border-primary/30 rounded-lg p-6 mb-6">
-              <p class="text-xl text-white font-medium">
+            <div class="glass-card p-4 mb-4">
+              <p class="text-[15px] text-white font-medium leading-relaxed">
                 {{ currentNode.question }}
               </p>
             </div>
@@ -69,20 +55,20 @@
             <!-- Yes/No Options -->
             <div
               v-if="currentNode.yes !== undefined || currentNode.no !== undefined"
-              class="grid md:grid-cols-2 gap-4"
+              class="grid grid-cols-2 gap-3"
             >
               <button
-                class="btn-primary py-4 text-lg"
+                class="pill pill-active py-3 text-sm"
                 @click="goTo('yes')"
               >
-                <Check class="w-5 h-5 mr-2 inline" />
+                <Check class="w-4 h-4 mr-1.5 inline" />
                 是
               </button>
               <button
-                class="btn-secondary py-4 text-lg"
+                class="pill pill-inactive py-3 text-sm"
                 @click="goTo('no')"
               >
-                <X class="w-5 h-5 mr-2 inline" />
+                <X class="w-4 h-4 mr-1.5 inline" />
                 否
               </button>
             </div>
@@ -90,12 +76,12 @@
             <!-- Multiple Options -->
             <div
               v-else-if="currentNode.options"
-              class="grid md:grid-cols-2 gap-4"
+              class="grid grid-cols-2 gap-3"
             >
               <button
                 v-for="option in currentNode.options"
                 :key="option.label"
-                class="btn-secondary py-4 text-lg"
+                class="pill pill-inactive py-3 text-sm"
                 @click="goToOption(option)"
               >
                 {{ option.label }}
@@ -106,36 +92,41 @@
           <!-- Result -->
           <div
             v-else-if="currentNode && currentNode.result"
-            class="text-center"
+            class="text-center py-4"
           >
-            <div class="inline-flex items-center justify-center w-20 h-20 bg-green-500/20 rounded-full mb-6">
-              <CheckCircle2 class="w-12 h-12 text-green-500" />
+            <div class="glass-card p-5 mb-5">
+              <div class="inline-flex items-center justify-center w-14 h-14 bg-[rgba(48,209,88,0.1)] rounded-full mb-4">
+                <CheckCircle2 class="w-8 h-8 text-[#30d158]" />
+              </div>
+              <h3 class="text-xl font-bold text-white mb-2">
+                推荐工具：
+                <router-link
+                  v-if="resolveToolId(currentNode.result)"
+                  :to="{ name: 'tool-detail', params: { id: resolveToolId(currentNode.result) } }"
+                  class="text-[#30d158] hover:text-[#30d158]/80 underline decoration-[#30d158]/30 hover:decoration-[#30d158] transition-all"
+                >
+                  {{ currentNode.result }}
+                </router-link>
+                <span v-else>{{ currentNode.result }}</span>
+              </h3>
+              <div class="inline-block px-3 py-1 rounded-full text-xs font-medium text-[#30d158] bg-[rgba(48,209,88,0.1)] mb-3">
+                最佳匹配
+              </div>
+              <p class="text-sm text-white/60 max-w-md mx-auto leading-relaxed">
+                {{ currentNode.reason }}
+              </p>
             </div>
-            <h3 class="text-3xl font-bold text-white mb-4">
-              推荐工具：
-              <router-link
-                v-if="resolveToolId(currentNode.result)"
-                :to="{ name: 'tool-detail', params: { id: resolveToolId(currentNode.result) } }"
-                class="text-primary hover:text-primary/80 underline decoration-primary/30 hover:decoration-primary transition-all"
-              >
-                {{ currentNode.result }}
-              </router-link>
-              <span v-else>{{ currentNode.result }}</span>
-            </h3>
-            <p class="text-lg text-white/80 mb-8 max-w-lg mx-auto">
-              {{ currentNode.reason }}
-            </p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <div class="flex gap-3 justify-center">
               <button
-                class="btn-secondary"
+                class="pill pill-inactive py-2.5 px-5 text-sm"
                 @click="resetDecision"
               >
-                <RotateCcw class="w-5 h-5 mr-2 inline" />
+                <RotateCcw class="w-4 h-4 mr-1.5 inline" />
                 重新选择
               </button>
               <router-link
                 to="/"
-                class="btn-primary"
+                class="btn-capsule text-sm"
               >
                 查看工具列表
               </router-link>
@@ -147,93 +138,75 @@
       <!-- Scenario Guide -->
       <div
         v-if="selectedCategory"
-        class="max-w-4xl mx-auto mt-12"
+        class="mx-auto mt-10"
       >
-        <h2 class="text-2xl font-bold text-white mb-6 flex items-center">
-          <Lightbulb class="w-6 h-6 text-yellow-500 mr-2" />
+        <h2
+          class="text-lg font-bold text-white mb-4 flex items-center"
+          style="letter-spacing: -0.3px"
+        >
+          <Lightbulb class="w-5 h-5 text-yellow-500 mr-2" />
           快速场景对照表
         </h2>
-        <div class="card overflow-hidden">
-          <table class="w-full">
-            <thead>
-              <tr class="border-b border-white/10">
-                <th class="text-left p-4 text-white font-semibold">
-                  使用场景
-                </th>
-                <th class="text-left p-4 text-white font-semibold">
-                  首选工具
-                </th>
-                <th class="text-left p-4 text-white font-semibold">
-                  备选方案
-                </th>
-                <th class="text-left p-4 text-white font-semibold">
-                  预算
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr
-                v-for="scenario in (scenarioGuide || [])"
-                :key="scenario.scenario"
-                class="border-b border-white/5 hover:bg-white/5"
-              >
-                <td class="p-4 text-white/90">
-                  {{ scenario.scenario }}
-                </td>
-                <td class="p-4">
-                  <router-link
-                    v-if="resolveToolId(scenario.primary)"
-                    :to="{ name: 'tool-detail', params: { id: resolveToolId(scenario.primary) } }"
-                    class="px-3 py-1 bg-primary/20 text-primary rounded-full text-sm hover:bg-primary/30 transition-colors inline-block"
-                  >
-                    {{ scenario.primary }}
-                  </router-link>
-                  <span
-                    v-else
-                    class="px-3 py-1 bg-primary/20 text-primary rounded-full text-sm"
-                  >
-                    {{ scenario.primary }}
-                  </span>
-                </td>
-                <td class="p-4 text-white/70">
-                  {{ scenario.backup }}
-                </td>
-                <td class="p-4 text-white/70">
-                  {{ scenario.budget }}
-                </td>
-              </tr>
-            </tbody>
-          </table>
+        <div class="space-y-2">
+          <div
+            v-for="scenario in (scenarioGuide || [])"
+            :key="scenario.scenario"
+            class="info-cell"
+          >
+            <div class="flex items-center justify-between flex-wrap gap-2">
+              <span class="text-sm text-white/90 font-medium">{{ scenario.scenario }}</span>
+              <div class="flex items-center gap-2">
+                <router-link
+                  v-if="resolveToolId(scenario.primary)"
+                  :to="{ name: 'tool-detail', params: { id: resolveToolId(scenario.primary) } }"
+                  class="pill pill-active text-xs py-1 px-3"
+                >
+                  {{ scenario.primary }}
+                </router-link>
+                <span
+                  v-else
+                  class="pill pill-active text-xs py-1 px-3"
+                >
+                  {{ scenario.primary }}
+                </span>
+                <span class="text-xs text-white/40">{{ scenario.backup }}</span>
+                <span class="text-xs text-white/40">{{ scenario.budget }}</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
       <!-- Quick Selection Guide -->
-      <div class="max-w-4xl mx-auto mt-12">
-        <h2 class="text-2xl font-bold text-white mb-6 flex items-center">
-          <Zap class="w-6 h-6 text-yellow-500 mr-2" />
+      <div class="mx-auto mt-10">
+        <h2
+          class="text-lg font-bold text-white mb-4 flex items-center"
+          style="letter-spacing: -0.3px"
+        >
+          <Zap class="w-5 h-5 text-yellow-500 mr-2" />
           快速选型指南
         </h2>
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div class="grid md:grid-cols-2 gap-3">
           <div
             v-for="guide in quickSelectionGuide"
             :key="guide.need"
-            class="card"
+            class="glass-card p-4"
           >
-            <h3 class="text-lg font-bold text-white mb-2">
+            <h3 class="text-sm font-bold text-white mb-2">
               {{ guide.need }}
             </h3>
-            <div class="space-y-2 text-sm">
+            <div class="space-y-1.5 text-xs">
               <div class="flex items-center">
-                <span class="text-primary mr-2">→</span>
-                <span class="text-white/80">首选: <strong class="text-primary">{{ guide.primary }}</strong></span>
+                <span class="text-[#0a84ff] mr-1.5">→</span>
+                <span class="text-white/70">首选: <strong class="text-[#0a84ff]">{{ guide.primary }}</strong></span>
               </div>
               <div class="flex items-center">
-                <span class="text-white/50 mr-2">→</span>
-                <span class="text-white/60">备选: {{ guide.secondary }}</span>
+                <span class="text-white/30 mr-1.5">→</span>
+                <span class="text-white/50">备选: {{ guide.secondary }}</span>
               </div>
-              <div class="flex items-start mt-3 pt-3 border-t border-white/10">
-                <Lightbulb class="w-4 h-4 text-yellow-500 mr-2 mt-0.5 flex-shrink-0" />
-                <span class="text-white/70 text-xs">{{ guide.tip }}</span>
+              <div class="flex items-start mt-2 pt-2 border-t border-white/[0.06]">
+                <Lightbulb class="w-3.5 h-3.5 text-yellow-500 mr-1.5 mt-0.5 flex-shrink-0" />
+                <span class="text-white/50 text-[11px] leading-relaxed">{{ guide.tip }}</span>
               </div>
             </div>
           </div>
