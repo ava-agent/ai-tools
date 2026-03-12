@@ -1,9 +1,12 @@
 <template>
   <div class="min-h-screen bg-background">
-    <div class="container mx-auto px-4 py-8">
+    <div class="max-w-[960px] mx-auto px-5 py-6">
       <!-- Header -->
       <div class="text-center mb-12">
-        <h1 class="text-4xl md:text-5xl font-bold mb-4 gradient-text">
+        <h1
+          class="text-[28px] font-bold text-white mb-4"
+          style="letter-spacing: -0.8px"
+        >
           AI 工作流最佳实践
         </h1>
         <p class="text-xl text-white/80 max-w-2xl mx-auto">
@@ -12,13 +15,13 @@
       </div>
 
       <!-- Workflow Tabs -->
-      <div class="max-w-5xl mx-auto mb-8">
+      <div class="mb-8">
         <div class="flex flex-wrap gap-2 justify-center">
           <button
             v-for="workflow in workflows"
             :key="workflow.id"
-            class="px-4 py-2 rounded-lg transition-all cursor-pointer"
-            :class="selectedWorkflow === workflow.id ? 'bg-primary text-white' : 'bg-surface text-white/80 hover:bg-surface/80'"
+            class="pill cursor-pointer"
+            :class="selectedWorkflow === workflow.id ? 'pill-active' : 'pill-inactive'"
             @click="selectedWorkflow = workflow.id"
           >
             <component
@@ -33,9 +36,9 @@
       <!-- Workflow Detail -->
       <div
         v-if="currentWorkflow"
-        class="max-w-5xl mx-auto mb-12"
+        class="mb-12"
       >
-        <div class="card">
+        <div class="glass-card p-4">
           <div class="mb-6">
             <h2 class="text-3xl font-bold text-white mb-2">
               {{ currentWorkflow.nameZh }}
@@ -48,17 +51,17 @@
           <!-- Steps -->
           <div class="mb-8">
             <h3 class="text-xl font-bold text-white mb-4 flex items-center">
-              <ListOrdered class="w-5 h-5 text-primary mr-2" />
+              <ListOrdered class="w-5 h-5 text-[#0a84ff] mr-2" />
               执行步骤
             </h3>
             <div class="space-y-4">
               <div
                 v-for="step in currentWorkflow.steps"
                 :key="step.step"
-                class="flex items-start p-4 bg-white/5 rounded-lg border border-white/10"
+                class="glass-card p-4 flex items-start"
               >
-                <div class="flex-shrink-0 w-10 h-10 bg-primary/20 rounded-full flex items-center justify-center mr-4">
-                  <span class="text-primary font-bold">{{ step.step }}</span>
+                <div class="flex-shrink-0 w-10 h-10 bg-[#0a84ff]/20 rounded-full flex items-center justify-center mr-4">
+                  <span class="text-[#0a84ff] font-bold">{{ step.step }}</span>
                 </div>
                 <div class="flex-1">
                   <div class="flex items-center mb-2">
@@ -68,13 +71,13 @@
                     <router-link
                       v-if="resolveToolId(step.tool)"
                       :to="{ name: 'tool-detail', params: { id: resolveToolId(step.tool) } }"
-                      class="px-2 py-1 bg-primary/20 text-primary text-xs rounded-full hover:bg-primary/30 transition-colors"
+                      class="px-2 py-1 bg-[#0a84ff]/20 text-[#0a84ff] text-xs rounded-full hover:bg-[#0a84ff]/30 transition-colors"
                     >
                       {{ step.tool }}
                     </router-link>
                     <span
                       v-else
-                      class="px-2 py-1 bg-primary/20 text-primary text-xs rounded-full"
+                      class="px-2 py-1 bg-[#0a84ff]/20 text-[#0a84ff] text-xs rounded-full"
                     >
                       {{ step.tool }}
                     </span>
@@ -91,7 +94,7 @@
           <!-- Tips -->
           <div
             v-if="currentWorkflow.tips && currentWorkflow.tips.length"
-            class="bg-blue-500/10 border border-blue-500/30 rounded-lg p-4"
+            class="glass-card p-4 border-l-2 border-[#0a84ff]"
           >
             <h4 class="text-lg font-semibold text-blue-400 mb-3 flex items-center">
               <Info class="w-5 h-5 mr-2" />
@@ -115,10 +118,10 @@
             class="mt-6"
           >
             <h4 class="text-lg font-semibold text-white mb-3 flex items-center">
-              <ImageIcon class="w-5 h-5 text-primary mr-2" />
+              <ImageIcon class="w-5 h-5 text-[#0a84ff] mr-2" />
               流程图
             </h4>
-            <div class="bg-white/5 rounded-xl p-4 border border-white/10">
+            <div class="glass-card p-4">
               <img
                 :src="currentWorkflow.flowImage"
                 :alt="currentWorkflow.nameZh + ' 流程图'"
@@ -131,7 +134,7 @@
       </div>
 
       <!-- Pitfalls Guide -->
-      <div class="max-w-5xl mx-auto mb-12">
+      <div class="mb-12">
         <h2 class="text-2xl font-bold text-white mb-6 flex items-center">
           <AlertTriangle class="w-6 h-6 text-yellow-500 mr-2" />
           避坑指南
@@ -140,12 +143,12 @@
           <div
             v-for="(categoryPitfalls, category) in pitfalls"
             :key="category"
-            class="card"
+            class="glass-card p-4"
           >
             <h3 class="text-lg font-bold text-white mb-4 flex items-center">
               <component
                 :is="getCategoryIcon(category)"
-                class="w-5 h-5 text-primary mr-2"
+                class="w-5 h-5 text-[#0a84ff] mr-2"
               />
               {{ getCategoryLabel(category) }}
             </h3>
@@ -153,7 +156,7 @@
               <li
                 v-for="pitfall in categoryPitfalls"
                 :key="pitfall.issue"
-                class="border-b border-white/10 pb-3 last:border-0 last:pb-0"
+                class="border-b border-white/[0.06] pb-3 last:border-0 last:pb-0"
               >
                 <div class="flex items-start mb-2">
                   <X class="w-4 h-4 text-red-500 mr-2 mt-0.5 flex-shrink-0" />
@@ -170,7 +173,7 @@
       </div>
 
       <!-- Prompt Templates -->
-      <div class="max-w-4xl mx-auto mb-12">
+      <div class="mb-12">
         <h2 class="text-2xl font-bold text-white mb-6 flex items-center">
           <FileText class="w-6 h-6 text-blue-500 mr-2" />
           Prompt 模板
@@ -179,7 +182,7 @@
           <div
             v-for="template in promptTemplates"
             :key="template.name"
-            class="card"
+            class="glass-card p-4"
           >
             <h3 class="text-lg font-bold text-white mb-3">
               {{ template.name }}
@@ -188,7 +191,7 @@
               <pre class="whitespace-pre-wrap">{{ template.template }}</pre>
             </div>
             <button
-              class="mt-3 w-full btn-secondary text-sm py-2"
+              class="mt-3 w-full btn-capsule text-sm py-2"
               @click="copyTemplate(template.template)"
             >
               <Copy class="w-4 h-4 inline mr-2" />
@@ -199,13 +202,13 @@
       </div>
 
       <!-- Best Practices -->
-      <div class="max-w-4xl mx-auto">
+      <div>
         <h2 class="text-2xl font-bold text-white mb-6 flex items-center">
           <Award class="w-6 h-6 text-yellow-500 mr-2" />
           最佳实践原则
         </h2>
         <div class="grid md:grid-cols-2 gap-6">
-          <div class="card">
+          <div class="glass-card p-4">
             <h3 class="text-lg font-bold text-white mb-4">
               黄金法则
             </h3>
@@ -257,7 +260,7 @@
             </ul>
           </div>
 
-          <div class="card">
+          <div class="glass-card p-4">
             <h3 class="text-lg font-bold text-white mb-4">
               禁忌事项
             </h3>
