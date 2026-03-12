@@ -10,6 +10,23 @@
         </p>
       </div>
 
+      <!-- Recommended comparison groups -->
+      <div class="mb-6">
+        <h3 class="text-sm text-white/50 mb-3">
+          热门对比组合
+        </h3>
+        <div class="flex flex-wrap gap-2">
+          <button
+            v-for="group in recommendedGroups"
+            :key="group.label"
+            class="px-3 py-1.5 rounded-full text-sm bg-white/5 border border-white/10 hover:border-primary/50 hover:bg-primary/10 transition-colors"
+            @click="loadCompareGroup(group.ids)"
+          >
+            {{ group.label }}
+          </button>
+        </div>
+      </div>
+
       <!-- 已选对比工具 -->
       <div
         v-if="toolsStore.comparedToolIds.length > 0"
@@ -404,5 +421,18 @@ function toggleCompare(toolId) {
   } else {
     toolsStore.addToCompare(toolId)
   }
+}
+
+const recommendedGroups = [
+  { label: 'AI IDE 三强', ids: ['cursor', 'windsurf', 'trae'] },
+  { label: 'AI CLI 对决', ids: ['claude-code', 'gemini-cli', 'qwen-cli'] },
+  { label: '国产大模型', ids: ['deepseek', 'qwen', 'glm', 'kimi'] },
+  { label: '视频生成', ids: ['sora', 'kling', 'runway', 'pika'] },
+  { label: '图像生成', ids: ['midjourney', 'dalle', 'stable-diffusion', 'ideogram'] },
+]
+
+function loadCompareGroup(ids) {
+  toolsStore.clearCompare()
+  ids.forEach(id => toolsStore.addToCompare(id))
 }
 </script>

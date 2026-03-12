@@ -46,6 +46,15 @@ export const categories = [
         description: '智能体平台，工作流编排、自动化任务',
         color: 'orange',
         examples: ['Coze', 'Dify', 'AutoGPT']
+    },
+    {
+        id: 'mcp',
+        name: 'MCP Tools',
+        nameZh: 'MCP 工具',
+        icon: 'Plug',
+        description: 'MCP 协议工具，连接 AI 与外部数据源和服务',
+        color: 'cyan',
+        examples: ['Playwright MCP', 'Supabase MCP', 'GitHub MCP', 'Context7']
     }
 ]
 
@@ -55,7 +64,8 @@ export const quickSelectionGuide = [
     { need: '调研/写方案', primary: 'AI Models', secondary: 'AI IDE', tip: '关键结论要交叉验证' },
     { need: '批量改动/重构', primary: 'AI CLI', secondary: 'AI IDE', tip: '必须先给范围限制' },
     { need: '生成图片/视频', primary: 'AI Multimodal', secondary: 'AI Models', tip: '注意版权和隐私' },
-    { need: '自动化工作流', primary: 'AI Agent', secondary: 'AI CLI', tip: '先约束权限边界' }
+    { need: '自动化工作流', primary: 'AI Agent', secondary: 'AI CLI', tip: '先约束权限边界' },
+    { need: '连接外部服务/数据', primary: 'MCP Tools', secondary: 'AI Agent', tip: '先确认 IDE 是否已内置对应 MCP' }
 ]
 
 // 推荐组合方案

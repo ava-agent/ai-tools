@@ -4,6 +4,10 @@
     class="block"
   >
     <article class="card card-interactive group relative overflow-hidden">
+      <div
+        :class="categoryColorClass"
+        class="h-1 rounded-t-xl"
+      />
       <!-- 悬停光晕效果 -->
       <div class="absolute inset-0 bg-gradient-to-br from-primary/0 via-transparent to-accent/0 group-hover:from-primary/5 group-hover:via-transparent group-hover:to-accent/5 transition-all duration-500 pointer-events-none" />
 
@@ -33,6 +37,9 @@
                 :class="getStarClass(i)"
               />
               <span class="text-xs text-white/40 ml-1">推荐度</span>
+              <span class="text-sm text-white/50 ml-1">
+                {{ tool.personalExperience?.rating?.toFixed(1) }}
+              </span>
             </div>
           </div>
         </div>
@@ -87,6 +94,7 @@
 </template>
 
 <script setup>
+import { computed } from 'vue'
 import { CheckCircle, Star, Video, ArrowRight } from 'lucide-vue-next'
 import ToolLogo from './ToolLogo.vue'
 import { getCategoryLabel, getCategoryColor } from '../utils/helpers.js'
@@ -97,6 +105,16 @@ const props = defineProps({
     required: true
   }
 })
+
+const categoryColors = {
+  ide: 'bg-blue-500',
+  cli: 'bg-green-500',
+  llm: 'bg-purple-500',
+  multimodal: 'bg-pink-500',
+  agent: 'bg-orange-500',
+  mcp: 'bg-cyan-500',
+}
+const categoryColorClass = computed(() => categoryColors[props.tool.category] || 'bg-gray-500')
 
 const getStarClass = (index) => {
   const rating = Math.round((props.tool.personalExperience?.rating || 0) * 2) / 2

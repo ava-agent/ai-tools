@@ -227,9 +227,15 @@
                 />
               </div>
             </div>
-            <p class="text-white/80">
-              {{ tool.personalExperience?.insights || '' }}
-            </p>
+            <ScoreRadar
+              v-if="!tool.radarChart"
+              :tool="tool"
+            />
+            <div class="bg-primary/5 border-l-4 border-primary rounded-r-lg p-4 mt-4">
+              <p class="text-white/90 leading-relaxed text-base">
+                {{ tool.personalExperience?.insights || '' }}
+              </p>
+            </div>
           </div>
 
           <div v-if="tool.personalExperience?.pitfalls?.length">
@@ -272,8 +278,9 @@
           
           <div class="grid md:grid-cols-2 gap-6">
             <div class="space-y-4">
-              <div class="bg-green-500/10 border border-green-500/30 rounded-lg p-4">
-                <h3 class="text-lg font-bold text-green-400 mb-2">
+              <div class="bg-green-500/5 border-l-4 border-green-500 rounded-lg p-4">
+                <h3 class="text-lg font-bold text-green-400 mb-2 flex items-center">
+                  <Shield class="w-5 h-5 mr-2" />
                   优势 (Strengths)
                 </h3>
                 <p class="text-white/80">
@@ -281,8 +288,9 @@
                 </p>
               </div>
 
-              <div class="bg-red-500/10 border border-red-500/30 rounded-lg p-4">
-                <h3 class="text-lg font-bold text-red-400 mb-2">
+              <div class="bg-red-500/5 border-l-4 border-red-500 rounded-lg p-4">
+                <h3 class="text-lg font-bold text-red-400 mb-2 flex items-center">
+                  <AlertTriangle class="w-5 h-5 mr-2" />
                   劣势 (Weaknesses)
                 </h3>
                 <p class="text-white/80">
@@ -292,8 +300,9 @@
             </div>
 
             <div class="space-y-4">
-              <div class="bg-blue-500/10 border border-blue-500/30 rounded-lg p-4">
-                <h3 class="text-lg font-bold text-blue-400 mb-2">
+              <div class="bg-blue-500/5 border-l-4 border-blue-500 rounded-lg p-4">
+                <h3 class="text-lg font-bold text-blue-400 mb-2 flex items-center">
+                  <TrendingUp class="w-5 h-5 mr-2" />
                   机会 (Opportunities)
                 </h3>
                 <p class="text-white/80">
@@ -301,8 +310,9 @@
                 </p>
               </div>
 
-              <div class="bg-yellow-500/10 border border-yellow-500/30 rounded-lg p-4">
-                <h3 class="text-lg font-bold text-yellow-400 mb-2">
+              <div class="bg-orange-500/5 border-l-4 border-orange-500 rounded-lg p-4">
+                <h3 class="text-lg font-bold text-orange-400 mb-2 flex items-center">
+                  <AlertCircle class="w-5 h-5 mr-2" />
                   威胁 (Threats)
                 </h3>
                 <p class="text-white/80">
@@ -389,12 +399,13 @@ import { useToolsStore } from '../stores/tools'
 import { useGamificationStore } from '../stores/gamification'
 import { useAchievementsStore } from '../stores/achievements'
 import { getTagColor, getCategoryLabel, getCategoryColor } from '../utils/helpers'
-import { ChevronRight, CheckCircle, AlertCircle, AlertTriangle, Star, Video, BarChart3, ArrowRightLeft, Lightbulb, Ruler, Globe } from 'lucide-vue-next'
+import { ChevronRight, CheckCircle, AlertCircle, AlertTriangle, Star, Video, BarChart3, ArrowRightLeft, Lightbulb, Ruler, Globe, Shield, TrendingUp } from 'lucide-vue-next'
 import VideoPlayer from '../components/VideoPlayer.vue'
 import ToolLogo from '../components/ToolLogo.vue'
 import FunFact from '../components/gamification/FunFact.vue'
 import ToolRating from '../components/ToolRating.vue'
 import ToolReviews from '../components/ToolReviews.vue'
+import ScoreRadar from '@/components/ScoreRadar.vue'
 
 const route = useRoute()
 const toolsStore = useToolsStore()

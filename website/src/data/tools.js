@@ -156,7 +156,7 @@ export const aiToolsData = [
     funRanking: '夯',
     personalExperience: {
       rating: 3,
-      insights: '云端开发一体化解决方案，特别适合教学和快速原型。Agent 3 可自主工作 200 分钟，支持复杂多步骤任务，内置浏览器测试和自我修复能力强大。团队版 $35/月 适合协作开发。',
+      insights: '云端开发一体化解决方案，特别适合教学和快速原型验证。Agent 3 可自主工作 200 分钟，支持复杂多步骤任务，内置浏览器测试和自我修复能力强大。无需本地环境配置是最大优势，浏览器打开即用。团队版 $35/月适合协作开发。但网络依赖性强，离线无法使用，大项目性能有瓶颈。',
       pitfalls: ['私有代码需谨慎', '复杂依赖支持有限']
     },
     swot: { S: '云端一体', W: '隐私顾虑', O: '教育市场', T: '本地 IDE' },
@@ -181,7 +181,7 @@ export const aiToolsData = [
     funRanking: '夯',
     personalExperience: {
       rating: 4,
-      insights: '适合做需求拆解和规格文档，集成 Amazon Q Developer 增强企业级能力，但不适合当主力写代码。',
+      insights: 'AWS 推出的 AI IDE，最大特色是「Spec 驱动开发」模式——先用 AI 生成需求规格文档，再据此编写代码。集成 Amazon Q Developer 增强企业级能力，对 AWS 生态集成最好。适合需求拆解和规格文档场景，但纯写代码速度不如 Cursor。适合 AWS 技术栈的企业团队。',
       pitfalls: ['Free credits 太少', '不当主力写码']
     },
     swot: { S: 'Spec 驱动', W: '重量级', O: '企业规范', T: '轻量 IDE' },
@@ -262,7 +262,7 @@ export const aiToolsData = [
     funRanking: '夯',
     personalExperience: {
       rating: 3,
-      insights: '最成熟的 AI 编程助手，生态支持最好。已推出 Agent Mode 和 MCP 支持（2025年12月），支持多模型选择。适合作为辅助工具使用。',
+      insights: '最成熟的 AI 编程助手，GitHub 生态集成无人能及。已推出 Agent Mode 和 MCP 支持（2025年12月），支持 GPT-4o、Claude 4.5 等多模型选择。代码补全准确率高，在 VS Code 和 JetBrains 中体验一致。适合作为与 Cursor 互补的辅助工具，特别是重度 GitHub 用户。',
       pitfalls: ['Free 配额太少（2000 代码补全 + 50 聊天请求/月）', '重构不如 Cursor']
     },
     swot: { S: '生态成熟', W: '功能单一', O: 'Workspace', T: 'Cursor' },
@@ -601,7 +601,7 @@ export const aiToolsData = [
     funRanking: '夯夯夯',
     personalExperience: {
       rating: 5,
-      insights: 'Claude 4.5 Sonnet 是目前最均衡的模型。代码能力极强，推理稳定，多模态能力显著提升。Opus 推理能力最强，Haiku 快速响应性价比高。主要用于方案设计和技术文档撰写。',
+      insights: 'Claude 4.5 Sonnet 是目前最均衡的编程模型，代码能力极强，推理稳定，多模态能力显著提升。Opus 推理能力最强但价格较高，Haiku 快速响应性价比高。Artifacts 功能可以实时生成可交互的网页应用，非常适合原型验证。主要用于方案设计、技术文档撰写和复杂代码重构，是编程场景的首选对话模型。',
       pitfalls: ['输出价格高', '国内访问需代理']
     },
     swot: { S: '代码能力、推理稳定', W: '价格高', O: '企业市场', T: 'GPT-5.2 竞争' },
@@ -626,7 +626,7 @@ export const aiToolsData = [
     funRanking: '夯夯夯',
     personalExperience: {
       rating: 5,
-      insights: 'GPT-5.2 系列是 OpenAI 最新旗舰，推理能力进一步提升。o3 是推理增强模型，DALL-E 3 集成于 ChatGPT 订阅。生态最成熟是最大优势。',
+      insights: 'GPT-5.2 系列是 OpenAI 最新旗舰，推理能力大幅提升，多模态支持最全面（文本、图片、音频、视频）。o3 是专门的推理增强模型，适合数学和逻辑密集任务。ChatGPT 生态最成熟，插件、GPTs 商店和 Canvas 协作编辑等功能丰富。DALL-E 3 集成于订阅内，一站式满足文本+图像需求。适合需要全能型 AI 助手的用户。',
       pitfalls: ['输出成本高', '控制输出长度避免过度输出']
     },
     swot: { S: '生态成熟、推理强', W: '价格高', O: 'Agent 市场', T: 'Claude 竞争' },
@@ -651,7 +651,7 @@ export const aiToolsData = [
     funRanking: '夯夯',
     personalExperience: {
       rating: 5,
-      insights: 'Gemini 3 系列是 Google 最新旗舰，1M+ 上下文是巨大优势，推理能力显著提升。',
+      insights: 'Google 最新旗舰模型系列，最大亮点是 200 万 Token 的超长上下文窗口，处理大型代码库和长文档无压力。Gemini 3 Pro 推理能力显著提升，编码能力已接近 Claude 4.5。Deep Research 功能可自动撰写带引用的深度研究报告，调研场景极为强大。免费版 API 额度慷慨，非常适合长上下文场景和深度调研任务。',
       pitfalls: ['免费层数据可能用于改进', '输出价格高']
     },
     swot: { S: '1M+ 上下文、推理', W: '输出贵', O: 'Google 整合', T: 'Claude 能力' },
@@ -677,7 +677,7 @@ export const aiToolsData = [
     funRanking: '夯夯夯',
     personalExperience: {
       rating: 4,
-      insights: 'DeepSeek R1 推理能力极强，价格极具竞争力。API 价格远低于顶级模型，成本效益高，可自托管。用于日常使用和搜索资料。',
+      insights: 'DeepSeek R1 推理能力极强，在数学和编程基准测试中可与顶级模型媲美。API 价格远低于 GPT 和 Claude，成本效益是最大优势。完全开源可自托管，适合对数据隐私有要求的场景。V3 模型在日常对话和通用任务上表现出色。中文理解和生成能力在开源模型中领先。唯一不足是峰值期间 API 响应速度可能较慢。',
       pitfalls: ['API 稳定性偶有波动', '多模态能力弱']
     },
     swot: { S: '推理强、价格低', W: '生态', O: '开源社区', T: 'OpenAI 生态' },
@@ -697,12 +697,12 @@ export const aiToolsData = [
     contextWindow: '128K-1M',
     chineseSupport: 5,
     pros: ['中文能力强', '多工具入口方便', '成本分档可控', 'Qwen-Coder 代码专项版本能力强', 'Qwen3-Coder-480B MoE (35B 激活) 后端能力强'],
-    cons: ['超长上下文价格陡增'],
+    cons: ['超长上下文价格陡增，大文档处理成本高', '英文场景表现不如 Claude/GPT 等海外模型'],
     bestFor: '中文场景、代码任务',
     funRanking: '夯夯',
     personalExperience: {
       rating: 4.5,
-      insights: 'Qwen3 中文表现优秀，Qwen-Coder 代码专项版本能力强。生成图片、海报等中文内容效果好。',
+      insights: '阿里推出的 Qwen3 系列是国产大模型的领军者，中文理解和生成能力出色。Qwen-Coder 代码专项版本在 HumanEval 等基准上表现优异。Qwen3-235B-A22B 采用 MoE 架构，推理和长上下文能力显著增强。生成中文图片、海报等内容效果好。开源版本可自由部署，商业化友好。超长上下文价格陡增是主要短板。',
       pitfalls: ['超长上下文分档收费']
     },
     swot: { S: '中文、代码', W: '长上下文贵', O: '国内生态', T: 'DeepSeek' },
@@ -722,12 +722,12 @@ export const aiToolsData = [
     contextWindow: '200K',
     chineseSupport: 5,
     pros: ['前端审美好', '完整 demo 生成', 'Agent 友好', '价格低'],
-    cons: ['极复杂任务弱于 Claude/GPT'],
+    cons: ['极复杂推理和多步骤任务表现弱于 Claude/GPT', '英文内容生成质量不如中文'],
     bestFor: '前端开发、完整 demo、Agent 场景',
     funRanking: '夯夯',
     personalExperience: {
       rating: 4.5,
-      insights: 'GLM-4.7 前端审美和完整度不错，价格便宜。',
+      insights: '智谱 AI 推出的 GLM-4.7 系列性价比极高，前端代码生成的审美和完整度令人惊喜。价格在国产大模型中非常有竞争力，适合预算敏感的场景。支持联网搜索、代码执行、图像理解等多模态能力。清言（ChatGLM）对话体验流畅，智能体平台功能不断完善。极复杂推理任务上与 Claude/GPT 有差距，但日常使用绰绰有余。',
       pitfalls: ['极复杂任务不如 Claude']
     },
     swot: { S: '前端、价格', W: '复杂任务', O: '国内市场', T: 'DeepSeek' },
@@ -752,7 +752,7 @@ export const aiToolsData = [
     funRanking: '夯夯',
     personalExperience: {
       rating: 4.5,
-      insights: 'Kimi K2.5 长文档处理能力强，中文对话流畅。',
+      insights: '月之暗面推出的 Kimi K2.5 长文档处理能力是核心亮点，20 万字长文一次读入，摘要和问答质量高。中文对话体验流畅自然，回答风格讨喜。探索版功能支持深度搜索和多步骤推理。免费版额度相对慷慨，日常使用基本够用。适合长文档阅读、论文总结、合同审阅等需要处理大量文本的场景。',
       pitfalls: ['不支持视觉输入']
     },
     swot: { S: '长文档、中文', W: '无视觉', O: '国内市场', T: 'DeepSeek' },
@@ -772,12 +772,12 @@ export const aiToolsData = [
     contextWindow: '200K',
     chineseSupport: 5,
     pros: ['多语言强', 'Rust/Java/Go 优秀', '框架泛化好', '价格低'],
-    cons: ['知名度不如顶级玩家'],
+    cons: ['知名度和社区生态不如 GPT/Claude 等头部产品', '极复杂推理任务表现有提升空间'],
     bestFor: '多语言项目、高频 Agent',
     funRanking: '夯夯',
     personalExperience: {
       rating: 4.5,
-      insights: 'M2.1 多语言和后端能力不错，价格极具竞争力。',
+      insights: 'MiniMax 的 M2.1 模型在多语言能力和后端代码生成上表现不错，性价比在国产模型中极具竞争力。语音合成技术是其独特优势，海螺 AI 的语音克隆和 TTS 能力业界领先。支持 API 和网页两种使用方式，接入灵活。适合需要语音+文本多模态能力的应用场景，以及对成本敏感的 API 调用场景。',
       pitfalls: ['知名度较低']
     },
     swot: { S: '多语言、价格', W: '知名度', O: 'API 市场', T: '顶级模型' },
@@ -797,12 +797,12 @@ export const aiToolsData = [
     contextWindow: '256K',
     chineseSupport: 5,
     pros: ['Bugfix/前端专项', '深度思考', '缓存机制', '价格低'],
-    cons: ['长上下文分档涨价'],
+    cons: ['长上下文使用时按档位涨价，成本不够透明', '深度推理和复杂编程能力不如顶级模型'],
     bestFor: '前端开发、Bug 修复',
     funRanking: '夯',
     personalExperience: {
       rating: 3,
-      insights: '豆包适合"多读少说"的场景，输出短效果好。',
+      insights: '字节跳动旗下的 AI 对话助手，背靠豆包大模型。日常对话体验流畅，回答风格活泼接地气。与抖音、飞书等字节生态深度集成，办公场景实用性强。支持联网搜索、图片理解、文档处理等多模态功能。免费使用且无需复杂注册，入门门槛极低。适合日常问答和轻量级办公辅助，深度推理和编程任务建议用更专业的模型。',
       pitfalls: ['长上下文会跳档涨价']
     },
     swot: { S: '前端、缓存', W: '长上下文贵', O: '字节生态', T: 'DeepSeek' },
@@ -827,7 +827,7 @@ export const aiToolsData = [
     funRanking: '夯夯',
     personalExperience: {
       rating: 4.5,
-      insights: 'Grok-4 是 xAI 旗舰模型，实时信息接入是巨大优势，推理能力显著提升。与 X 平台深度集成，内容政策相对宽松，适合特定内容场景。',
+      insights: 'xAI 的旗舰模型 Grok-4 推理能力显著提升，号称「地球上最聪明的 AI」在多项基准中领先。最大差异化优势是实时接入 X (Twitter) 数据，时事和热点话题回答极为及时。内容政策相对宽松，对创意写作限制少。与 X Premium 捆绑订阅，已有 X 会员的用户性价比高。适合需要实时信息和开放内容政策的场景。',
       pitfalls: ['需要 X Premium 订阅', '生态仍在发展中']
     },
     swot: { S: '实时信息、推理', W: '生态新', O: 'X 整合', T: 'GPT/Claude' },
@@ -848,11 +848,11 @@ export const aiToolsData = [
     freeQuota: '无免费',
     contextWindow: 'N/A',
     chineseSupport: 2,
-    pros: ['艺术风格强', '质量高', '社区活跃'],
-    cons: ['需要 Discord', '价格较高'],
+    pros: ['艺术风格质量业界领先，光影和构图极其出色', '社区生态丰富，海量风格模板和提示词库', 'V6.1 版本细节表现大幅提升', '支持图片混合、风格迁移等高级功能', '生成速度快，标准模式约 30 秒出图'],
+    cons: ['需要 Discord 使用，门槛较高', '价格较高（$10-60/月）'],
     bestFor: '艺术创作、概念设计',
     funRanking: '夯夯',
-    personalExperience: { rating: 5, insights: '艺术风格最强的图像生成工具。', pitfalls: ['需要 Discord'] },
+    personalExperience: { rating: 5, insights: '艺术风格最强的 AI 图像生成工具，V6.1 版本在细节、光影和构图上达到了新高度。通过 Discord 使用的方式门槛较高，但社区生态极其丰富，大量风格模板和提示词可直接复用。适合需要高质量艺术风格图像的设计师和创意工作者，不适合需要快速迭代的场景。', pitfalls: ['需要 Discord', '提示词工程学习成本高'] },
     swot: { S: '艺术质量', W: 'Discord 依赖', O: '创意市场', T: '免费替代' },
     tags: ['图像', '艺术', 'Discord']
   },
@@ -869,11 +869,11 @@ export const aiToolsData = [
     freeQuota: 'ChatGPT Free 有限',
     contextWindow: 'N/A',
     chineseSupport: 3,
-    pros: ['与 ChatGPT 集成', '文字渲染好', '理解力强'],
-    cons: ['订阅制'],
+    pros: ['与 ChatGPT 无缝集成，自然语言描述即可出图', '文字渲染能力最强，海报和配图利器', '安全过滤严格，商用风险低', '支持图像编辑和局部重绘功能'],
+    cons: ['需要 ChatGPT Plus 订阅（$20/月）', '艺术风格偏保守，创意表现力不如 Midjourney', '无法精确控制构图和画面元素位置'],
     bestFor: '与 ChatGPT 配合使用',
     funRanking: '夯',
-    personalExperience: { rating: 4, insights: '与 ChatGPT 集成方便，文字渲染不错。', pitfalls: ['需要订阅'] },
+    personalExperience: { rating: 4, insights: '与 ChatGPT 深度集成是最大优势，直接在对话中描述需求即可生成图像，无需学习复杂的提示词语法。文字渲染能力是所有 AI 图像工具中最强的，适合生成包含文字的海报和配图。但艺术风格相对保守，不如 Midjourney 有创意张力。适合需要快速出图、对艺术风格要求不极致的场景。', pitfalls: ['需要订阅', '风格保守'] },
     swot: { S: 'ChatGPT 集成', W: '订阅制', O: 'OpenAI 生态', T: 'Midjourney' },
     tags: ['图像', 'OpenAI', '集成']
   },
@@ -890,11 +890,11 @@ export const aiToolsData = [
     freeQuota: '完全免费',
     contextWindow: 'N/A',
     chineseSupport: 3,
-    pros: ['开源可本地', '完全免费', '社区庞大', '可定制'],
-    cons: ['需要本地算力', '学习曲线'],
+    pros: ['完全开源免费，无使用次数限制', '本地部署隐私安全，无内容审核', 'LoRA/ControlNet 等扩展生态极其丰富', '可训练专属风格模型，定制化能力最强', 'ComfyUI 工作流支持复杂图像处理流水线'],
+    cons: ['需要本地 GPU 算力，配置门槛高', 'ComfyUI 工作流学习曲线陡峭'],
     bestFor: '本地部署、定制需求',
     funRanking: '夯',
-    personalExperience: { rating: 4, insights: '开源免费，本地部署自由度高。', pitfalls: ['需要 GPU'] },
+    personalExperience: { rating: 4, insights: '开源生态最完善的 AI 图像生成工具，SD3.5 和 SDXL 模型质量已接近商业工具。本地部署完全免费且无审核限制，LoRA 微调可训练专属风格。但上手门槛高，需要配置 Python 环境和 GPU，ComfyUI 工作流学习曲线陡峭。适合有技术背景、需要高度定制化的用户。', pitfalls: ['需要 GPU', '环境配置复杂'] },
     swot: { S: '开源、免费', W: '需算力', O: '开源社区', T: '云端服务' },
     tags: ['图像', '开源', '免费', '本地']
   },
@@ -917,7 +917,7 @@ export const aiToolsData = [
     funRanking: '夯',
     personalExperience: {
       rating: 4,
-      insights: '照片二次编辑和美化工具，AI 美颜、图像增强、背景替换、风格转换等功能强大。易于使用，移动端和 PC 端都有。',
+      insights: '国内最成熟的 AI 图像编辑工具，美颜、背景替换、风格转换等功能开箱即用。移动端体验极佳，操作流畅直觉化，完全不需要设计基础。AI 消除和扩图功能实用性强，处理产品图和社交媒体配图效率极高。免费版功能已经很够用，VIP 价格也很亲民。适合电商、社交媒体运营等需要大量图片处理的场景。',
       pitfalls: ['消费者应用', '非开发者工具']
     },
     swot: { S: '易用、中文', W: '消费者应用', O: '大众市场', T: '专业软件' },
@@ -940,7 +940,7 @@ export const aiToolsData = [
     cons: ['需 ChatGPT Plus/Team/Enterprise 订阅', '价格高', '分阶段地区推出'],
     bestFor: '电影级视频创作',
     funRanking: '夯夯',
-    personalExperience: { rating: 4, insights: '视频质量极高，Sora 2 已于 2025 年 9 月发布。免费用户已无法使用，需要付费订阅。', pitfalls: ['需付费订阅', '分阶段地区推出'] },
+    personalExperience: { rating: 4, insights: 'OpenAI 的视频生成旗舰，Sora 2 在画质和动作连贯性上达到了业界顶级水平。支持文本生成视频、图片转视频、视频延展等多种模式。但定价较高，需要 ChatGPT Plus 或 Pro 订阅，且免费额度已取消。生成速度较慢，复杂场景需要等待数分钟。适合追求最高画质的专业内容创作者。', pitfalls: ['需付费订阅', '生成速度慢', '分阶段地区推出'] },
     swot: { S: '质量顶级', W: '访问限制', O: '影视市场', T: '竞品崛起' },
     tags: ['视频', 'OpenAI', '电影级']
   },
@@ -957,11 +957,11 @@ export const aiToolsData = [
     freeQuota: '有免费额度',
     contextWindow: 'N/A',
     chineseSupport: 5,
-    pros: ['动作连贯性好', '10秒时长', '国内访问友好'],
-    cons: ['时长限制'],
+    pros: ['动作连贯性和物理真实感业界领先', '每日免费赠送积分，日常使用零成本', '中文提示词理解准确', '支持 1080P 高清视频输出', '运镜控制和场景切换能力强'],
+    cons: ['单次生成时长限制（最长 10 秒）', '海外访问速度较慢，需要中国网络环境'],
     bestFor: '短视频创作、动作连贯',
     funRanking: '夯夯',
-    personalExperience: { rating: 5, insights: '动作连贯性在国内工具中最好，推荐使用。', pitfalls: ['时长有限'] },
+    personalExperience: { rating: 5, insights: '快手旗下的 AI 视频生成工具，动作连贯性和物理真实感在国产工具中领先。可灵 2.0 支持 1080P 高清输出，运镜控制和场景切换能力强。每日免费赠送积分足够日常使用，性价比极高。中文提示词理解准确，特别适合国内内容创作者。短视频和社交媒体内容制作的首选国产工具。', pitfalls: ['时长有限', '海外访问慢'] },
     swot: { S: '动作连贯', W: '时长', O: '短视频市场', T: 'Sora' },
     tags: ['推荐', '视频', '国产', '连贯']
   },
@@ -984,7 +984,7 @@ export const aiToolsData = [
     funRanking: '夯',
     personalExperience: {
       rating: 4,
-      insights: '视频二次编辑工具，AI 智能剪辑、字幕自动生成、特效和转场、智能配音等功能强大。易于使用，移动端和 PC 端都有，与抖音深度集成。',
+      insights: '字节跳动旗下的视频编辑神器，AI 功能全面且易用。智能字幕识别准确率极高，一键生成字幕省去大量手工时间。智能配音、AI 特效、自动卡点等功能让视频制作门槛大幅降低。与抖音深度集成，模板和素材库极其丰富。移动端和桌面端体验一致，随时随地可以编辑。国内短视频创作者的标配工具，免费版功能已非常强大。',
       pitfalls: ['消费者应用', '非开发者工具']
     },
     swot: { S: '易用、抖音集成', W: '消费者应用', O: '短视频市场', T: '专业软件' },
@@ -1003,11 +1003,11 @@ export const aiToolsData = [
     freeQuota: '有免费额度',
     contextWindow: 'N/A',
     chineseSupport: 3,
-    pros: ['文本/图像转 3D', '多种格式', '易用'],
-    cons: ['质量待提升'],
+    pros: ['文字/图片均可生成 3D 模型，上手简单', '支持 PBR 材质和多种格式导出（GLB/FBX/OBJ）', 'Meshy-4 几何细节和纹理质量显著提升', '免费版有月度生成额度'],
+    cons: ['复杂场景和精细模型质量仍有差距', '免费版生成速度较慢，需排队等待'],
     bestFor: '快速 3D 原型',
     funRanking: '夯',
-    personalExperience: { rating: 4, insights: '快速生成 3D 模型的好工具。', pitfalls: ['质量有限'] },
+    personalExperience: { rating: 4, insights: '目前最易用的 AI 3D 模型生成工具，支持文字描述和图片两种方式生成 3D 模型。Meshy-4 版本在几何细节和纹理质量上有显著提升，支持 PBR 材质导出。适合游戏开发、建筑可视化等场景的快速原型制作。免费版每月有生成额度，专业版 $20/月性价比不错。', pitfalls: ['质量有限', '免费版排队'] },
     swot: { S: '易用', W: '质量', O: '游戏/设计', T: '专业软件' },
     tags: ['3D', '多模态', '快速']
   },
@@ -1024,11 +1024,11 @@ export const aiToolsData = [
     freeQuota: '有免费额度',
     contextWindow: 'N/A',
     chineseSupport: 5,
-    pros: ['腾讯出品', '中文优化', '质量不错'],
-    cons: ['生态较新'],
+    pros: ['中文提示词理解最佳', '单张图片即可生成 3D 模型', '腾讯生态集成潜力大', '持续快速迭代，版本更新频繁'],
+    cons: ['生态和社区相比 Meshy 仍较年轻', '导出格式和工作流集成有待完善'],
     bestFor: '中文 3D 创作',
     funRanking: '夯',
-    personalExperience: { rating: 4, insights: '腾讯出品，中文场景友好。', pitfalls: ['生态较新'] },
+    personalExperience: { rating: 4, insights: '腾讯推出的 AI 3D 生成工具，对中文提示词的理解在同类工具中最好。混元 3D 2.0 支持从单张图片生成高质量 3D 模型，纹理细节和几何精度持续提升。作为腾讯生态的一部分，与微信小程序、QQ 等平台的集成潜力大。目前仍在快速迭代中，适合关注国产 3D 生成能力发展的开发者。', pitfalls: ['生态较新', '导出格式有限'] },
     swot: { S: '中文', W: '生态新', O: '国内市场', T: '海外工具' },
     tags: ['3D', '国产', '腾讯']
   },
@@ -1045,14 +1045,14 @@ export const aiToolsData = [
     freeQuota: '完全免费',
     contextWindow: 'N/A',
     chineseSupport: 4,
-    pros: ['PPT/视频/音频生成', '汇报材料强', '免费', '支持 9 种输出格式'],
-    cons: ['功能较专一'],
+    pros: ['PPT/视频/音频生成', '汇报材料强', '完全免费', '支持 9 种输出格式', '音频概述功能可将文档变为播客式对话', '支持多份资料交叉引用分析'],
+    cons: ['功能聚焦于资料整理和汇报生成，不支持通用对话', '上传资料有数量和大小限制'],
     bestFor: '汇报材料制作',
     funRanking: '夯夯',
     personalExperience: {
       rating: 4,
-      insights: '汇报材料神器！完全免费，支持 9 种输出格式（PPT、视频、音频、文档等）。从资料到成品汇报材料的效率提升巨大，是职场人士必备工具。',
-      pitfalls: ['功能较专一']
+      insights: '汇报材料神器！Google 出品，完全免费。支持 9 种输出格式（PPT、视频、音频、文档等），从原始资料到成品汇报材料的效率提升巨大。音频概述功能可以把文档变成播客式对话，通勤时听特别方便。是职场人士制作汇报材料和学习总结的必备工具。上传多份资料后可交叉引用分析，洞察力强。',
+      pitfalls: ['功能较专一', '资料上传有限制']
     },
     swot: { S: '汇报材料、免费', W: '功能单一', O: '办公市场', T: '专业软件' },
     tags: ['推荐', '免费', '汇报', 'Google']
@@ -1072,13 +1072,13 @@ export const aiToolsData = [
     freeQuota: '有免费额度',
     contextWindow: '取决于模型',
     chineseSupport: 5,
-    pros: ['医学专业 AI', '中文医学知识库', '低幻觉', '高循证'],
-    cons: ['垂直领域', '仅限医学'],
+    pros: ['医学专业 AI，低幻觉高循证', '中文医学知识库覆盖面广', '标注证据等级和参考文献', '支持症状分析、用药查询、报告解读'],
+    cons: ['垂直领域，仅限医学场景', '不能替代专业医生诊断'],
     bestFor: '医学问题咨询',
     funRanking: '夯',
     personalExperience: {
       rating: 4,
-      insights: '医学专业 AI，中文医学知识库强大。低幻觉、高循证是亮点。用于健康相关问题咨询。',
+      insights: '国内医学垂直领域最专业的 AI 工具，低幻觉和高循证是核心优势。回答基于医学文献和临床指南，标注证据等级和参考文献，可信度远高于通用 AI。支持症状分析、用药查询、检查报告解读等场景。中文医学知识库覆盖面广，对罕见病和中医药也有不错的支持。适合医疗从业者辅助决策和普通用户健康咨询，但不能替代专业医生诊断。',
       pitfalls: ['仅限医学领域', '不能替代专业医生']
     },
     swot: { S: '医学专业', W: '垂直领域', O: '医疗市场', T: '通用模型' },
@@ -1098,11 +1098,11 @@ export const aiToolsData = [
     freeQuota: '有免费额度',
     contextWindow: '取决于模型',
     chineseSupport: 5,
-    pros: ['无代码', '插件丰富', '多平台部署'],
-    cons: ['复杂流程有限'],
+    pros: ['无代码可视化搭建，零门槛上手', '插件生态丰富，集成能力强', '与飞书/微信等国内平台深度集成', '工作流编排支持条件分支和循环', '免费额度慷慨'],
+    cons: ['极复杂多步骤工作流稳定性有待提升', '对海外服务集成不如 n8n 等平台丰富'],
     bestFor: '日程辅助、信息收集、工作流自动化',
     funRanking: '夯',
-    personalExperience: { rating: 4, insights: '无代码搭建智能体，插件生态丰富。', pitfalls: ['复杂流程受限'] },
+    personalExperience: { rating: 4, insights: '字节跳动推出的 AI Bot 构建平台，无代码可视化搭建智能体是最大亮点。插件市场丰富，可快速集成搜索、绘图、数据分析等能力。工作流编排支持条件分支和循环，能构建相当复杂的自动化流程。与飞书、微信等国内平台集成便利，适合企业内部自动化场景。免费额度慷慨，入门门槛极低。', pitfalls: ['复杂流程受限', '海外服务集成弱'] },
     swot: { S: '无代码、插件', W: '复杂流程', O: '自动化市场', T: '专业平台' },
     tags: ['推荐', 'Agent', '无代码', '字节']
   },
@@ -1119,11 +1119,11 @@ export const aiToolsData = [
     freeQuota: '完全免费',
     contextWindow: '取决于模型',
     chineseSupport: 4,
-    pros: ['开源可自托管', '工作流强', '模型灵活'],
-    cons: ['需要部署'],
+    pros: ['完全开源，可自托管保障数据安全', '可视化工作流编排，支持复杂流程', '支持几乎所有主流 LLM 接入', '社区活跃，模板和插件丰富', 'Docker 一键部署，上手快'],
+    cons: ['自托管需要服务器资源和运维能力', '高并发场景下性能调优门槛较高'],
     bestFor: '自托管、复杂工作流',
     funRanking: '夯',
-    personalExperience: { rating: 4, insights: '开源可自托管，工作流能力强。', pitfalls: ['需要自己部署'] },
+    personalExperience: { rating: 4, insights: '最受欢迎的开源 LLMOps 平台，可自托管保障数据隐私。可视化工作流编排能力强大，支持 RAG、Agent、文本生成等多种应用类型。支持接入 OpenAI、Claude、本地模型等几乎所有主流 LLM。社区活跃，插件和模板资源丰富。Docker 一键部署简单，但生产环境配置需要一定运维经验。适合有自托管需求的团队和企业。', pitfalls: ['需要自己部署', '运维成本'] },
     swot: { S: '开源、自托管', W: '需部署', O: '企业自建', T: '云服务' },
     tags: ['开源', 'Agent', '自托管']
   },
@@ -1140,11 +1140,11 @@ export const aiToolsData = [
     freeQuota: '完全免费',
     contextWindow: '取决于模型',
     chineseSupport: 3,
-    pros: ['自主决策', '开源', '可扩展'],
-    cons: ['稳定性一般', '需要调试'],
+    pros: ['AI Agent 概念先驱，社区影响力巨大', '自主任务分解和执行能力', '平台版提供可视化界面和模板', '开源免费，学习 Agent 机制的好工具'],
+    cons: ['稳定性一般，复杂任务易偏离目标', '需要较多调试和人工干预'],
     bestFor: '实验性自主任务',
     funRanking: '夯',
-    personalExperience: { rating: 3, insights: '开创性的自主 Agent，但稳定性需要优化。', pitfalls: ['稳定性一般'] },
+    personalExperience: { rating: 3, insights: 'AI Agent 概念的开创者，首次实现了让 AI 自主分解目标、规划步骤并执行任务。AutoGPT 平台版提供可视化界面和预置 Agent 模板，降低了使用门槛。但自主执行的不可控性仍是核心挑战，复杂任务容易陷入循环或偏离目标。作为概念验证和学习 Agent 机制的工具很有价值，生产环境建议用更成熟的框架。', pitfalls: ['稳定性一般', '复杂任务易失控'] },
     swot: { S: '自主决策', W: '稳定性', O: '研究', T: '成熟产品' },
     tags: ['开源', 'Agent', '自主']
   },
@@ -1161,11 +1161,11 @@ export const aiToolsData = [
     freeQuota: '完全免费',
     contextWindow: '取决于模型',
     chineseSupport: 3,
-    pros: ['灵活编排', '社区活跃', '文档丰富'],
-    cons: ['需要编程', '学习曲线'],
+    pros: ['生态最完善，文档和教程资源极其丰富', 'LangGraph 有状态 Agent 编排能力强大', 'LangSmith 提供专业的调试追踪工具', '支持几乎所有 LLM 和向量数据库'],
+    cons: ['框架抽象层较多，学习曲线陡峭', 'API 变化频繁，需持续关注版本更新'],
     bestFor: '开发者自建 Agent',
     funRanking: '夯',
-    personalExperience: { rating: 4, insights: '最流行的 Agent 开发框架，灵活度高。', pitfalls: ['需要编程能力'] },
+    personalExperience: { rating: 4, insights: '最流行的 LLM 应用开发框架，提供了从 RAG 到 Agent 的完整工具链。LangGraph 子项目专注于有状态多步骤 Agent 编排，是构建复杂 Agent 的首选。LangSmith 平台提供调试、追踪和评估能力。但框架抽象层较多，新手学习曲线陡峭，且 API 变化频繁需要持续关注版本更新。适合有 Python 基础的 AI 应用开发者。', pitfalls: ['需要编程能力', 'API 变化频繁'] },
     swot: { S: '灵活、社区', W: '学习曲线', O: '开发者市场', T: '低代码平台' },
     tags: ['开源', 'Agent', '框架', '开发者']
   },
@@ -1182,11 +1182,11 @@ export const aiToolsData = [
     freeQuota: '免费',
     contextWindow: 'N/A',
     chineseSupport: 4,
-    pros: ['架构图/示意图生成', '免费', '技术文档配图'],
-    cons: ['功能专一'],
+    pros: ['文字描述即可生成专业技术图表', '支持架构图、流程图、ER 图等多种类型', '完全免费，无需注册', '排版和配色自动优化，开箱即用'],
+    cons: ['功能专注于图表生成，不支持其他场景', '复杂图表的布局和细节定制能力有限'],
     bestFor: '技术文档配图',
     funRanking: '夯',
-    personalExperience: { rating: 4, insights: '生成架构图和示意图的好工具，免费好用。', pitfalls: ['功能专一'] },
+    personalExperience: { rating: 4, insights: '专注于 AI 生成架构图和流程图的轻量工具，输入文字描述即可生成专业的技术图表。支持系统架构图、流程图、ER 图等多种图表类型，排版和配色自动优化。完全免费使用，无需注册。生成速度快，适合技术方案评审和文档配图。但定制化能力有限，复杂图表建议作为初稿再手动调整。', pitfalls: ['功能专一', '定制能力有限'] },
     swot: { S: '架构图', W: '专一', O: '技术文档', T: '专业绘图工具' },
     tags: ['免费', '图表', 'Google']
   },
@@ -1203,14 +1203,14 @@ export const aiToolsData = [
     freeQuota: '免费版可用',
     contextWindow: '取决于模型',
     chineseSupport: 3,
-    pros: ['带引用搜索', '实时信息', '适合调研', 'Agent 模式'],
-    cons: ['代码能力一般'],
+    pros: ['回答标注信息来源，可信度高', 'Pro Search 自动分解复杂问题深度搜索', '支持多模态搜索（文件、图片）', '免费版功能实用，日常调研够用', '搜索结果时效性强，接近实时信息'],
+    cons: ['代码生成和技术推理能力不如专用编程助手', '深度分析能力不如 Claude/GPT 等对话模型'],
     bestFor: '日常调研、实时信息查询、信息 Agent',
     funRanking: '夯夯',
     personalExperience: {
       rating: 4,
-      insights: '带引用的搜索型 AI Agent，适合快速调研和验证信息。',
-      pitfalls: ['代码能力一般']
+      insights: 'AI 搜索引擎的标杆产品，每个回答都标注信息来源和引用链接，可信度远高于普通 AI 对话。Pro Search 会自动分解复杂问题，逐步搜索后综合答案，调研效率极高。支持上传文件和图片进行多模态搜索。免费版每天有一定的 Pro Search 次数，日常调研够用。最适合需要快速验证信息、做竞品调研和技术选型的场景。',
+      pitfalls: ['代码能力一般', '深度分析弱于对话模型']
     },
     swot: { S: '搜索、引用', W: '代码弱', O: '调研市场', T: '传统搜索' },
     tags: ['推荐', '搜索', 'Agent', '调研', '引用']
@@ -1518,7 +1518,7 @@ export const aiToolsData = [
     funRanking: '夯夯',
     personalExperience: {
       rating: 4,
-      insights: 'AI 视频生成领域的先驱和标杆。Gen-3 Alpha 以来质量持续提升，Gen-4 在几何一致性和运动控制上有重大突破。适合专业影视制作。但价格较高，免费额度极少。',
+      insights: 'AI 视频生成领域的先驱和标杆工具。Gen-4 在几何一致性和运动控制上实现重大突破，画面质量接近专业影视级别。支持文生视频、图生视频、运动笔刷等多种创作模式，创意自由度高。Act-One 功能可以用真人表情驱动虚拟角色。但价格是同类产品中最高的，$12/月起步且额度有限。适合专业影视制作和高端内容创作。',
       pitfalls: ['价格高', '免费额度少', '国内访问受限']
     },
     swot: { S: '视频质量、专业工具', W: '价格高', O: '影视制作', T: 'Sora、可灵竞争' },
@@ -1543,7 +1543,7 @@ export const aiToolsData = [
     funRanking: '夯',
     personalExperience: {
       rating: 3.5,
-      insights: 'AI 视频生成的平价选择。Pika 2.5 画质大幅提升，创意特效（挤压、融化等）是独特亮点。$8/月起的价格对预算有限的内容创作者友好。适合社交媒体短视频制作。',
+      insights: 'AI 视频生成的平价之选，Pika 2.5 画质大幅提升，已接近 Runway 水平。独特的创意特效（挤压、融化、爆炸等）是差异化亮点，非常适合社交媒体吸睛内容。$8/月起的价格对预算有限的内容创作者极为友好。场景一致性和运动连贯性持续改善，性价比在视频生成工具中数一数二。适合社交媒体短视频和创意内容制作。',
       pitfalls: ['质量不如 Runway', 'Credit 计费复杂', '无原生音频']
     },
     swot: { S: '价格低、创意特效', W: '质量一般', O: '短视频市场', T: 'Runway、Sora' },
@@ -1568,7 +1568,7 @@ export const aiToolsData = [
     funRanking: '夯',
     personalExperience: {
       rating: 4,
-      insights: '文字渲染最强的 AI 图像生成工具。在图像中生成清晰准确的文字是其独特优势，特别适合 Logo、海报和社交媒体配图设计。价格亲民，免费版可日常使用。',
+      insights: '文字渲染最强的 AI 图像生成工具，在图中生成清晰准确的文字是独一无二的优势。Ideogram 3.0 画质全面提升，风格多样性也明显增强。特别适合 Logo 设计、海报制作、社交媒体配图等需要文字元素的场景。免费版每天可生成约 10 张图，日常使用完全够用。价格亲民，$8/月专业版性价比高。是 Midjourney 和 DALL-E 之外的有力补充选项。',
       pitfalls: ['复杂场景偶有失真', '部分风格不稳定']
     },
     swot: { S: '文字渲染最强', W: '复杂场景', O: '设计市场', T: 'Midjourney 质量' },
@@ -1593,7 +1593,7 @@ export const aiToolsData = [
     funRanking: '夯夯',
     personalExperience: {
       rating: 4,
-      insights: '字节跳动（剪映/星图团队）的 AI 创作平台。中文提示词支持最佳，支持直接生成中文字体是独特优势。即梦 3.0 海外版支持电影级画质和 2K 输出。每日登录送 80-100 积分的免费策略极为友好。',
+      insights: '字节跳动（剪映/星图团队）的 AI 创作平台，中文提示词支持最佳，直接生成中文字体是独特优势。即梦 3.0 海外版支持电影级画质和 2K 输出，质量已接近 Midjourney。每日登录送 80-100 积分的免费策略极为慷慨。支持图片生成、视频生成和图片编辑三大功能板块，功能全面性在国产工具中领先。',
       pitfalls: ['海外版功能有限', '中文排版还需优化', '视频质量一般']
     },
     swot: { S: '中文最强、免费友好', W: '海外受限', O: '国内创作市场', T: 'Midjourney 质量' },
@@ -1922,7 +1922,7 @@ export const aiToolsData = [
     funRanking: '夯',
     personalExperience: {
       rating: 3.5,
-      insights: '创新性很强的 MCP 工具，让 AI 拥有长期记忆。可以记住你的编码风格、常用库、项目结构等偏好，跨会话保持个性化体验。但配置门槛较高，需要启动本地服务和向量数据库。适合重度 AI 编码用户。',
+      insights: '创新性极强的 MCP 工具，让 AI 拥有跨会话的长期记忆。可以记住你的编码风格、常用库、项目结构等偏好，每次新对话都延续个性化体验。但配置门槛较高，需要启动本地服务和向量数据库（Qdrant）。适合重度 AI 编码用户，能显著减少重复解释项目上下文的时间。',
       pitfalls: ['配置门槛高', '中文语义理解有限', '需要本地服务']
     },
     swot: { S: '跨会话记忆、个性化', W: '配置复杂', O: '个性化 AI 编码', T: 'IDE 原生记忆功能' },

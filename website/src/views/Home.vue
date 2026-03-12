@@ -5,6 +5,37 @@
       @close="handleIntroClose"
     />
     <Hero />
+
+    <!-- Stats ribbon -->
+    <div class="max-w-6xl mx-auto px-4 py-6">
+      <div class="flex flex-wrap justify-center gap-8 text-center">
+        <div>
+          <div class="text-3xl font-bold text-primary">
+            {{ toolsStore.tools.length }}
+          </div>
+          <div class="text-sm text-white/60 mt-1">
+            AI 工具收录
+          </div>
+        </div>
+        <div>
+          <div class="text-3xl font-bold text-green-400">
+            {{ Object.keys(toolsStore.categoryStats).length }}
+          </div>
+          <div class="text-sm text-white/60 mt-1">
+            工具分类
+          </div>
+        </div>
+        <div>
+          <div class="text-3xl font-bold text-purple-400">
+            2026.03
+          </div>
+          <div class="text-sm text-white/60 mt-1">
+            最近更新
+          </div>
+        </div>
+      </div>
+    </div>
+
     <SearchBar />
 
     <!-- 工具列表（核心内容，首屏可见） -->
