@@ -5,8 +5,9 @@
         <div
           v-for="toast in toasts"
           :key="toast.id"
-          class="flex items-center gap-3 px-4 py-3 rounded-lg shadow-lg backdrop-blur-md border pointer-events-auto max-w-sm"
+          class="flex items-center gap-3 px-4 py-3 rounded-2xl shadow-lg backdrop-blur-xl border pointer-events-auto max-w-sm"
           :class="toastClasses(toast.type)"
+          style="background: rgba(255, 255, 255, 0.06)"
         >
           <CheckCircle
             v-if="toast.type === 'success'"
@@ -49,13 +50,13 @@ function removeToast(id) {
 function toastClasses(type) {
   switch (type) {
     case 'success':
-      return 'bg-green-500/20 border-green-500/30 text-green-400'
+      return 'border-[#30d158]/30 text-[#30d158]'
     case 'error':
-      return 'bg-red-500/20 border-red-500/30 text-red-400'
+      return 'border-[#ff453a]/30 text-[#ff453a]'
     case 'info':
-      return 'bg-blue-500/20 border-blue-500/30 text-blue-400'
+      return 'border-[#0a84ff]/30 text-[#0a84ff]'
     default:
-      return 'bg-green-500/20 border-green-500/30 text-green-400'
+      return 'border-[#30d158]/30 text-[#30d158]'
   }
 }
 </script>
