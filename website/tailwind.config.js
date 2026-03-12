@@ -11,11 +11,27 @@ export default {
         mono: ['JetBrains Mono', 'monospace']
       },
       colors: {
-        background: '#0f172a',
-        surface: '#1e293b',
-        primary: '#3b82f6',
-        secondary: '#8b5cf6',
-        accent: '#06b6d4'
+        background: '#05051a',
+        surface: '#0a0a2a',
+        primary: '#0a84ff',
+        secondary: '#bf5af2',
+        accent: '#30d158',
+        apple: {
+          blue: '#0a84ff',
+          green: '#30d158',
+          purple: '#bf5af2',
+          yellow: '#ffd60a',
+          red: '#ff453a',
+          orange: '#ff9f0a',
+        },
+      },
+      borderRadius: {
+        capsule: '980px',
+        card: '14px',
+        'card-lg': '16px',
+        cell: '12px',
+        icon: '9px',
+        control: '8px',
       },
       animation: {
         'fade-in': 'fadeIn 0.5s ease-in-out',
