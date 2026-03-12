@@ -1,8 +1,11 @@
 <template>
   <div class="min-h-screen bg-background">
-    <div class="container mx-auto px-4 py-8">
+    <div class="max-w-[960px] mx-auto px-5 py-6">
       <div class="text-center mb-12">
-        <h1 class="text-4xl font-bold mb-4 gradient-text">
+        <h1
+          class="text-[28px] font-bold text-white mb-4"
+          style="letter-spacing: -0.8px"
+        >
           工具对比
         </h1>
         <p class="text-xl text-white/80">
@@ -19,7 +22,7 @@
           <button
             v-for="group in recommendedGroups"
             :key="group.label"
-            class="px-3 py-1.5 rounded-full text-sm bg-white/5 border border-white/10 hover:border-primary/50 hover:bg-primary/10 transition-colors"
+            class="pill pill-inactive"
             @click="loadCompareGroup(group.ids)"
           >
             {{ group.label }}
@@ -30,7 +33,7 @@
       <!-- 已选对比工具 -->
       <div
         v-if="toolsStore.comparedToolIds.length > 0"
-        class="mb-6"
+        class="glass-card p-4 mb-4"
       >
         <div class="flex items-center flex-wrap gap-3">
           <span class="text-sm text-white/60">已选对比：</span>
@@ -46,7 +49,7 @@
           </span>
           <button
             v-if="toolsStore.comparedToolIds.length >= 2"
-            class="btn-primary text-sm px-4 py-1.5"
+            class="btn-capsule text-sm px-4 py-1.5"
             @click="startCompare"
           >
             <GitCompareArrows class="w-4 h-4 mr-1 inline" />
@@ -78,183 +81,187 @@
       <!-- 工具列表表格 -->
       <div
         v-else
-        class="card overflow-x-auto"
+        class="glass-card p-0 overflow-hidden mb-4"
       >
         <!-- 分类筛选 -->
-        <div class="flex flex-wrap gap-2 mb-4 pb-4 border-b border-white/10">
+        <div class="flex flex-wrap gap-2 p-4 pb-4 border-b border-white/[0.06]">
           <button
             v-for="cat in filterCategories"
             :key="cat"
-            class="px-3 py-1.5 text-sm rounded-lg transition-all cursor-pointer"
-            :class="filterCategory === cat ? 'bg-primary text-white' : 'bg-white/5 text-white/60 hover:text-white'"
+            class="pill"
+            :class="filterCategory === cat ? 'pill-active' : 'pill-inactive'"
             @click="filterCategory = cat"
           >
             {{ cat === 'all' ? '全部' : getCategoryLabel(cat) }}
           </button>
         </div>
 
-        <table class="w-full min-w-[900px]">
-          <thead>
-            <tr class="border-b border-white/10">
-              <th
-                scope="col"
-                class="p-4 w-10"
-              >
-                <span class="sr-only">选择</span>
-              </th>
-              <th
-                scope="col"
-                class="text-left p-4 text-white font-semibold cursor-pointer select-none hover:text-primary transition-colors"
-                @click="toggleSort('name')"
-              >
-                <span class="inline-flex items-center gap-1">
-                  工具名称
-                  <component
-                    :is="getSortIcon('name')"
-                    class="w-4 h-4"
-                    :class="sortField === 'name' ? 'text-primary' : 'text-white/30'"
-                  />
-                </span>
-              </th>
-              <th
-                scope="col"
-                class="text-left p-4 text-white font-semibold cursor-pointer select-none hover:text-primary transition-colors"
-                @click="toggleSort('developer')"
-              >
-                <span class="inline-flex items-center gap-1">
-                  开发者
-                  <component
-                    :is="getSortIcon('developer')"
-                    class="w-4 h-4"
-                    :class="sortField === 'developer' ? 'text-primary' : 'text-white/30'"
-                  />
-                </span>
-              </th>
-              <th
-                scope="col"
-                class="text-left p-4 text-white font-semibold cursor-pointer select-none hover:text-primary transition-colors"
-                @click="toggleSort('category')"
-              >
-                <span class="inline-flex items-center gap-1">
-                  类别
-                  <component
-                    :is="getSortIcon('category')"
-                    class="w-4 h-4"
-                    :class="sortField === 'category' ? 'text-primary' : 'text-white/30'"
-                  />
-                </span>
-              </th>
-              <th
-                scope="col"
-                class="text-left p-4 text-white font-semibold cursor-pointer select-none hover:text-primary transition-colors"
-                @click="toggleSort('rating')"
-              >
-                <span class="inline-flex items-center gap-1">
-                  评分
-                  <component
-                    :is="getSortIcon('rating')"
-                    class="w-4 h-4"
-                    :class="sortField === 'rating' ? 'text-primary' : 'text-white/30'"
-                  />
-                </span>
-              </th>
-              <th
-                scope="col"
-                class="text-left p-4 text-white font-semibold"
-              >
-                定价
-              </th>
-              <th
-                scope="col"
-                class="text-left p-4 text-white font-semibold"
-              >
-                核心模型
-              </th>
-              <th
-                scope="col"
-                class="text-left p-4 text-white font-semibold"
-              >
-                操作
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr
-              v-for="tool in sortedTools"
-              :key="tool.id"
-              class="border-b border-white/5 hover:bg-white/5 transition-colors"
-              :class="{ 'bg-primary/5': toolsStore.comparedToolIds.includes(tool.id) }"
-            >
-              <td class="p-4">
-                <input
-                  type="checkbox"
-                  :checked="toolsStore.comparedToolIds.includes(tool.id)"
-                  :disabled="!toolsStore.comparedToolIds.includes(tool.id) && toolsStore.comparedToolIds.length >= 4"
-                  class="w-4 h-4 rounded border-white/30 bg-white/10 text-primary focus:ring-primary cursor-pointer accent-[var(--color-primary)]"
-                  @change="toggleCompare(tool.id)"
+        <div class="overflow-x-auto">
+          <table class="w-full min-w-[900px]">
+            <thead>
+              <tr class="bg-white/[0.04] border-b border-white/[0.06]">
+                <th
+                  scope="col"
+                  class="p-4 w-10"
                 >
-              </td>
-              <td class="p-4">
-                <div class="flex items-center">
-                  <span class="font-semibold text-white">{{ tool.name }}</span>
-                  <div class="flex flex-wrap gap-1 ml-2">
-                    <span
-                      v-for="tag in (tool.tags || []).slice(0, 2)"
-                      :key="tag"
-                      class="px-2 py-0.5 text-xs rounded-full text-white"
-                      :class="getTagColor(tag)"
-                    >
-                      {{ tag }}
-                    </span>
+                  <span class="sr-only">选择</span>
+                </th>
+                <th
+                  scope="col"
+                  class="text-left p-4 text-white font-semibold cursor-pointer select-none hover:text-primary transition-colors"
+                  @click="toggleSort('name')"
+                >
+                  <span class="inline-flex items-center gap-1">
+                    工具名称
+                    <component
+                      :is="getSortIcon('name')"
+                      class="w-4 h-4"
+                      :class="sortField === 'name' ? 'text-primary' : 'text-white/30'"
+                    />
+                  </span>
+                </th>
+                <th
+                  scope="col"
+                  class="text-left p-4 text-white font-semibold cursor-pointer select-none hover:text-primary transition-colors"
+                  @click="toggleSort('developer')"
+                >
+                  <span class="inline-flex items-center gap-1">
+                    开发者
+                    <component
+                      :is="getSortIcon('developer')"
+                      class="w-4 h-4"
+                      :class="sortField === 'developer' ? 'text-primary' : 'text-white/30'"
+                    />
+                  </span>
+                </th>
+                <th
+                  scope="col"
+                  class="text-left p-4 text-white font-semibold cursor-pointer select-none hover:text-primary transition-colors"
+                  @click="toggleSort('category')"
+                >
+                  <span class="inline-flex items-center gap-1">
+                    类别
+                    <component
+                      :is="getSortIcon('category')"
+                      class="w-4 h-4"
+                      :class="sortField === 'category' ? 'text-primary' : 'text-white/30'"
+                    />
+                  </span>
+                </th>
+                <th
+                  scope="col"
+                  class="text-left p-4 text-white font-semibold cursor-pointer select-none hover:text-primary transition-colors"
+                  @click="toggleSort('rating')"
+                >
+                  <span class="inline-flex items-center gap-1">
+                    评分
+                    <component
+                      :is="getSortIcon('rating')"
+                      class="w-4 h-4"
+                      :class="sortField === 'rating' ? 'text-primary' : 'text-white/30'"
+                    />
+                  </span>
+                </th>
+                <th
+                  scope="col"
+                  class="text-left p-4 text-white font-semibold"
+                >
+                  定价
+                </th>
+                <th
+                  scope="col"
+                  class="text-left p-4 text-white font-semibold"
+                >
+                  核心模型
+                </th>
+                <th
+                  scope="col"
+                  class="text-left p-4 text-white font-semibold"
+                >
+                  操作
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr
+                v-for="(tool, index) in sortedTools"
+                :key="tool.id"
+                class="border-b border-white/[0.06] hover:bg-white/[0.04] transition-colors"
+                :class="[
+                  toolsStore.comparedToolIds.includes(tool.id) ? 'bg-primary/5' : (index % 2 === 0 ? 'bg-transparent' : 'bg-white/[0.02]')
+                ]"
+              >
+                <td class="p-4">
+                  <input
+                    type="checkbox"
+                    :checked="toolsStore.comparedToolIds.includes(tool.id)"
+                    :disabled="!toolsStore.comparedToolIds.includes(tool.id) && toolsStore.comparedToolIds.length >= 4"
+                    class="w-4 h-4 rounded border-white/30 bg-white/10 text-primary focus:ring-primary cursor-pointer accent-[var(--color-primary)]"
+                    @change="toggleCompare(tool.id)"
+                  >
+                </td>
+                <td class="p-4">
+                  <div class="flex items-center">
+                    <span class="font-semibold text-white">{{ tool.name }}</span>
+                    <div class="flex flex-wrap gap-1 ml-2">
+                      <span
+                        v-for="tag in (tool.tags || []).slice(0, 2)"
+                        :key="tag"
+                        class="px-2 py-0.5 text-xs rounded-full text-white"
+                        :class="getTagColor(tag)"
+                      >
+                        {{ tag }}
+                      </span>
+                    </div>
                   </div>
-                </div>
-              </td>
-              <td class="p-4 text-white/80">
-                {{ tool.developer }}
-              </td>
-              <td class="p-4">
-                <span class="px-2 py-1 bg-primary/20 text-primary text-sm rounded-full">
-                  {{ getCategoryLabel(tool.category) }}
-                </span>
-              </td>
-              <td class="p-4">
-                <div class="flex items-center space-x-1">
-                  <Star
-                    v-for="i in 5"
-                    :key="i"
-                    class="w-5 h-5"
-                    :class="i <= (tool.personalExperience?.rating || 0) ? 'text-primary fill-primary' : 'text-gray-600'"
-                  />
-                </div>
-              </td>
-              <td class="p-4 text-white/80 text-sm">
-                {{ tool.versions?.[0]?.pricing || 'N/A' }}
-              </td>
-              <td class="p-4 text-white/80 text-sm">
-                {{ tool.versions?.[0]?.models || 'N/A' }}
-              </td>
-              <td class="p-4">
-                <router-link
-                  :to="{ name: 'tool-detail', params: { id: tool.id } }"
-                  class="text-primary hover:text-primary/80 transition-colors"
-                >
-                  详情 →
-                </router-link>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+                </td>
+                <td class="p-4 text-white/80">
+                  {{ tool.developer }}
+                </td>
+                <td class="p-4">
+                  <span class="px-2 py-1 bg-primary/20 text-primary text-sm rounded-full">
+                    {{ getCategoryLabel(tool.category) }}
+                  </span>
+                </td>
+                <td class="p-4">
+                  <div class="flex items-center space-x-1">
+                    <Star
+                      v-for="i in 5"
+                      :key="i"
+                      class="w-5 h-5"
+                      :class="i <= (tool.personalExperience?.rating || 0) ? 'text-primary fill-primary' : 'text-gray-600'"
+                    />
+                  </div>
+                </td>
+                <td class="p-4 text-white/80 text-sm">
+                  {{ tool.versions?.[0]?.pricing || 'N/A' }}
+                </td>
+                <td class="p-4 text-white/80 text-sm">
+                  {{ tool.versions?.[0]?.models || 'N/A' }}
+                </td>
+                <td class="p-4">
+                  <router-link
+                    :to="{ name: 'tool-detail', params: { id: tool.id } }"
+                    class="text-primary hover:text-primary/80 transition-colors"
+                  >
+                    详情 →
+                  </router-link>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
 
         <p
           v-if="toolsStore.comparedToolIds.length === 0"
-          class="text-center text-white/40 text-sm py-4 border-t border-white/5"
+          class="text-center text-white/40 text-sm py-4 border-t border-white/[0.06]"
         >
           勾选 2-4 个工具进行侧边对比
         </p>
       </div>
 
       <div class="grid md:grid-cols-3 gap-6 mt-12">
-        <div class="card">
+        <div class="glass-card p-4">
           <h3 class="text-xl font-bold text-white mb-4 flex items-center">
             <CheckCircle class="w-5 h-5 text-green-500 mr-2" />
             推荐场景
@@ -279,7 +286,7 @@
           </ul>
         </div>
 
-        <div class="card">
+        <div class="glass-card p-4">
           <h3 class="text-xl font-bold text-white mb-4 flex items-center">
             <Zap class="w-5 h-5 text-yellow-500 mr-2" />
             核心优势对比
@@ -304,7 +311,7 @@
           </ul>
         </div>
 
-        <div class="card">
+        <div class="glass-card p-4">
           <h3 class="text-xl font-bold text-white mb-4 flex items-center">
             <TrendingUp class="w-5 h-5 text-blue-500 mr-2" />
             选型建议
