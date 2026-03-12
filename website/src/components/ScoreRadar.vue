@@ -101,8 +101,8 @@ const labelPositions = computed(() => {
       <!-- Data polygon -->
       <polygon
         :points="polygonPoints"
-        fill="rgba(99, 102, 241, 0.2)"
-        stroke="rgba(99, 102, 241, 0.8)"
+        fill="rgba(10,132,255,0.15)"
+        stroke="rgba(10,132,255,0.6)"
         stroke-width="2"
       />
       <!-- Data points -->
@@ -112,7 +112,7 @@ const labelPositions = computed(() => {
         :cx="getPoint(i, d.value).x"
         :cy="getPoint(i, d.value).y"
         r="3"
-        fill="rgb(99, 102, 241)"
+        fill="rgb(10,132,255)"
       />
       <!-- Labels -->
       <text
@@ -122,7 +122,7 @@ const labelPositions = computed(() => {
         :y="lp.y"
         text-anchor="middle"
         dominant-baseline="middle"
-        class="fill-white/60 text-[10px]"
+        class="fill-white/40 text-[10px]"
       >
         {{ lp.label }}
       </text>
