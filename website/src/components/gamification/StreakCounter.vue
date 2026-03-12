@@ -16,7 +16,7 @@
     </span>
 
     <!-- Tooltip -->
-    <div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-3 py-1.5 bg-surface rounded-lg text-xs text-white/70 opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap border border-white/10">
+    <div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-3 py-1.5 bg-white/[0.04] backdrop-blur-xl rounded-lg text-xs text-white/70 opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap border border-white/[0.06]">
       <span class="text-white/40">最长:</span> {{ longestStreak }} 天
     </div>
   </div>

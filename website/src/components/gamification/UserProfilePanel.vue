@@ -32,7 +32,7 @@
         aria-modal="true"
         aria-label="我的档案"
         tabindex="-1"
-        class="fixed top-0 right-0 h-full w-full max-w-md z-[70] overflow-y-auto bg-background border-l border-white/10"
+        class="fixed top-0 right-0 h-full w-full max-w-md z-[70] overflow-y-auto glass-elevated border-l border-white/[0.06]"
         @keydown.esc="emit('close')"
       >
         <div class="p-6">
@@ -42,7 +42,7 @@
               我的档案
             </h2>
             <button
-              class="p-2 rounded-lg hover:bg-white/5 text-white/60 hover:text-white transition-colors cursor-pointer"
+              class="p-2 rounded-lg hover:bg-white/[0.04] text-white/60 hover:text-white transition-colors cursor-pointer"
               @click="$emit('close')"
             >
               <X class="w-5 h-5" />
@@ -50,7 +50,7 @@
           </div>
 
           <!-- Level & XP -->
-          <div class="card mb-4">
+          <div class="glass-card mb-4">
             <div class="flex items-center gap-4 mb-4">
               <LevelBadge size="lg" />
               <div class="flex-1">
@@ -66,7 +66,7 @@
           </div>
 
           <!-- Streak -->
-          <div class="card mb-4">
+          <div class="glass-card mb-4">
             <div class="flex items-center justify-between">
               <div class="flex items-center gap-2">
                 <Flame class="w-5 h-5 text-orange-400" />
@@ -85,7 +85,7 @@
           </div>
 
           <!-- Stats -->
-          <div class="card mb-4">
+          <div class="glass-card mb-4">
             <h3 class="text-sm font-medium text-white/50 uppercase tracking-wider mb-3">
               统计
             </h3>
@@ -113,14 +113,14 @@
           </div>
 
           <!-- Achievements -->
-          <div class="card mb-4">
+          <div class="glass-card mb-4">
             <AchievementGrid />
           </div>
 
           <!-- Full Profile Link -->
           <router-link
             to="/profile"
-            class="block w-full text-center py-3 rounded-xl bg-primary/10 text-primary hover:bg-primary/20 transition-colors text-sm font-medium"
+            class="block w-full text-center py-3 rounded-xl bg-[#0a84ff]/10 text-[#0a84ff] hover:bg-[#0a84ff]/20 transition-colors text-sm font-medium"
             @click="$emit('close')"
           >
             查看完整档案

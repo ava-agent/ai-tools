@@ -17,7 +17,7 @@
         class="relative flex flex-col items-center p-3 rounded-xl border transition-all duration-300"
         :class="achievement.unlocked
           ? [achievement.tierStyle.bg, achievement.tierStyle.border, 'cursor-default']
-          : 'bg-white/5 border-white/5 opacity-40 grayscale'"
+          : 'bg-white/[0.04] border-white/[0.04] opacity-40 grayscale'"
         :title="achievement.unlocked ? `${achievement.name}: ${achievement.description}` : '???'"
       >
         <Trophy
