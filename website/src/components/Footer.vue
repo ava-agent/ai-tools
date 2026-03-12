@@ -1,9 +1,9 @@
 <template>
   <footer
-    class="glass-effect border-t border-white/10 py-12 mt-16"
+    class="glass-nav border-t border-white/[0.06] py-12 mt-16"
     role="contentinfo"
   >
-    <div class="container mx-auto px-4">
+    <div class="max-w-[960px] mx-auto px-4">
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
         <!-- 品牌信息 -->
         <div>
@@ -19,7 +19,7 @@
               AI工具全书
             </h3>
           </router-link>
-          <p class="text-muted text-sm leading-relaxed">
+          <p class="text-white/55 text-sm leading-relaxed">
             2026深度集成与实战教学版 - AI工具选型指南
           </p>
         </div>
@@ -37,7 +37,7 @@
               >
                 <router-link
                   :to="item.to"
-                  class="text-muted hover:text-white transition-colors duration-200 inline-flex items-center gap-1 group"
+                  class="text-white/55 hover:text-white transition-colors duration-200 inline-flex items-center gap-1 group"
                 >
                   <ChevronRight class="w-3 h-3 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-200" />
                   {{ item.label }}
@@ -61,7 +61,7 @@
                 :href="item.href"
                 :target="item.external ? '_blank' : undefined"
                 :rel="item.external ? 'noopener noreferrer' : undefined"
-                class="text-muted hover:text-white transition-colors duration-200 inline-flex items-center gap-1 group"
+                class="text-white/55 hover:text-white transition-colors duration-200 inline-flex items-center gap-1 group"
               >
                 <component
                   :is="item.icon"
@@ -79,11 +79,11 @@
       </div>
 
       <!-- 版权信息 -->
-      <div class="border-t border-white/10 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-muted-light">
+      <div class="border-t border-white/[0.06] pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-white/55">
         <p>&copy; 2026 AI工具全书. 保留所有权利。</p>
         <p class="flex items-center gap-1">
           Built with
-          <Heart class="w-3 h-3 text-red-400 fill-red-400/20" />
+          <Heart class="w-3 h-3 text-[#ff453a] fill-[#ff453a]/20" />
           using Vue 3 + Tailwind CSS
         </p>
       </div>
