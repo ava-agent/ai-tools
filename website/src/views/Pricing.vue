@@ -1,9 +1,12 @@
 <template>
   <div class="min-h-screen bg-background">
-    <div class="container mx-auto px-4 py-8">
+    <div class="max-w-[960px] mx-auto px-5 py-6">
       <!-- Header -->
       <div class="text-center mb-12">
-        <h1 class="text-4xl md:text-5xl font-bold mb-4 gradient-text">
+        <h1
+          class="text-[28px] font-bold text-white mb-4"
+          style="letter-spacing: -0.8px"
+        >
           AI 工具订阅指南
         </h1>
         <p class="text-xl text-white/80 max-w-2xl mx-auto">
@@ -12,7 +15,7 @@
       </div>
 
       <!-- Budget Overview -->
-      <div class="max-w-4xl mx-auto mb-12">
+      <div class="mb-12">
         <h2 class="text-2xl font-bold text-white mb-6 flex items-center">
           <DollarSign class="w-6 h-6 text-green-500 mr-2" />
           预算层级概览
@@ -27,11 +30,11 @@
           <div
             v-for="tier in budgetTiers"
             :key="tier.id"
-            class="card card-interactive text-center transition-all duration-300 relative overflow-hidden group"
+            class="pill cursor-pointer text-center transition-all duration-300 relative overflow-hidden group p-4"
             :class="{
-              'ring-2 ring-primary': selectedBudgetTier === tier.id,
+              'pill-active': selectedBudgetTier === tier.id,
+              'pill-inactive': selectedBudgetTier !== tier.id,
               'ring-2 ring-primary/50': tier.highlight && !selectedBudgetTier,
-              'hover:ring-2 hover:ring-primary/30': selectedBudgetTier !== tier.id
             }"
             @click="selectBudgetTier(tier.id)"
           >
@@ -72,7 +75,7 @@
       </div>
 
       <!-- Recommended Combinations -->
-      <div class="max-w-6xl mx-auto mb-12">
+      <div class="mb-12">
         <h2 class="text-2xl font-bold text-white mb-6 flex items-center">
           <Star class="w-6 h-6 text-yellow-500 mr-2" />
           推荐组合方案
@@ -87,7 +90,7 @@
           <div
             v-for="combo in filteredCombos"
             :key="combo.name"
-            class="card card-interactive transition-all duration-300 relative overflow-hidden group"
+            class="glass-card p-4 cursor-pointer transition-all duration-300 relative overflow-hidden group"
             :class="{
               'ring-2 ring-primary': selectedCombo === combo.name,
               'ring-2 ring-green-400/50': selectedBudgetTier && combo.matches && selectedCombo !== combo.name,
@@ -126,7 +129,7 @@
                 <div
                   v-for="(tool, index) in combo.tools"
                   :key="index"
-                  class="flex items-start justify-between p-3 bg-white/5 rounded-lg"
+                  class="flex items-start justify-between p-3 bg-white/[0.04] rounded-lg"
                 >
                   <div class="flex-1">
                     <div class="flex items-center mb-1">
@@ -160,13 +163,13 @@
       </div>
 
       <!-- Cost Optimization Tips -->
-      <div class="max-w-4xl mx-auto mb-12">
+      <div class="mb-12">
         <h2 class="text-2xl font-bold text-white mb-6 flex items-center">
           <Lightbulb class="w-6 h-6 text-yellow-500 mr-2" />
           成本优化策略
         </h2>
         <div class="grid md:grid-cols-2 gap-6">
-          <div class="card">
+          <div class="glass-card p-4">
             <h3 class="text-lg font-bold text-white mb-4 flex items-center">
               <TrendingUp class="w-5 h-5 text-green-500 mr-2" />
               分层使用策略
@@ -187,7 +190,7 @@
             </ul>
           </div>
 
-          <div class="card">
+          <div class="glass-card p-4">
             <h3 class="text-lg font-bold text-white mb-4 flex items-center">
               <AlertTriangle class="w-5 h-5 text-yellow-500 mr-2" />
               避坑指南
@@ -211,7 +214,7 @@
       </div>
 
       <!-- Pricing Comparison Table -->
-      <div class="max-w-6xl mx-auto">
+      <div class="mb-12">
         <h2 class="text-2xl font-bold text-white mb-6 flex items-center">
           <Scale class="w-6 h-6 text-blue-500 mr-2" />
           全部工具价格对比
@@ -219,14 +222,14 @@
             ({{ pricingComparison.length }} 个工具)
           </span>
         </h2>
-        <div class="card overflow-hidden">
+        <div class="glass-card p-0 overflow-hidden">
           <!-- 分类筛选 -->
-          <div class="flex flex-wrap gap-2 mb-4 pb-4 border-b border-white/10">
+          <div class="flex flex-wrap gap-2 p-4 pb-4 border-b border-white/[0.06]">
             <button
               v-for="cat in pricingCategories"
               :key="cat"
-              class="px-3 py-1.5 text-sm rounded-lg transition-all cursor-pointer"
-              :class="pricingCategory === cat ? 'bg-primary text-white' : 'bg-white/5 text-white/60 hover:text-white'"
+              class="pill cursor-pointer transition-all"
+              :class="pricingCategory === cat ? 'pill-active' : 'pill-inactive'"
               @click="pricingCategory = cat"
             >
               {{ cat === 'all' ? '全部' : getCategoryLabel(cat) }}
@@ -235,7 +238,7 @@
           <div class="overflow-x-auto">
             <table class="w-full min-w-[800px]">
               <thead>
-                <tr class="border-b border-white/10">
+                <tr class="border-b border-white/[0.06]">
                   <th class="text-left p-4 text-white font-semibold">
                     工具
                   </th>
@@ -252,13 +255,13 @@
               </thead>
               <tbody>
                 <tr
-                  v-for="tool in pricingComparison"
+                  v-for="(tool, index) in pricingComparison"
                   :key="tool.name"
-                  class="border-b border-white/5 transition-all duration-200"
+                  class="border-b border-white/[0.06] transition-all duration-200"
                   :class="{
                     'opacity-30': !matchesBudget(tool),
                     'bg-primary/10 hover:bg-primary/15': isToolInCombo(tool.name),
-                    'hover:bg-white/5': matchesBudget(tool) && !isToolInCombo(tool.name)
+                    [index % 2 === 0 ? 'bg-transparent' : 'bg-white/[0.02]']: matchesBudget(tool) && !isToolInCombo(tool.name)
                   }"
                 >
                   <td class="p-4">
@@ -288,10 +291,9 @@
                   </td>
                   <td class="p-4">
                     <div class="flex items-center">
-                      <div class="flex-1 bg-white/10 rounded-full h-2 mr-2">
+                      <div class="flex-1 bg-white/[0.04] rounded-full h-2 mr-2">
                         <div
-                          class="h-2 rounded-full"
-                          :class="getPriceValueColor(tool.value)"
+                          class="h-2 rounded-full bg-[#0a84ff]"
                           :style="{ width: tool.value + '%' }"
                         />
                       </div>
@@ -306,8 +308,8 @@
       </div>
 
       <!-- Cost Calculator Tip -->
-      <div class="max-w-4xl mx-auto mt-12">
-        <div class="card bg-gradient-to-r from-primary/20 to-secondary/20 border border-primary/30">
+      <div class="mt-12">
+        <div class="glass-card p-4 border-l-4 border-l-[#0a84ff]">
           <div class="flex items-start">
             <Calculator class="w-8 h-8 text-primary mr-4 flex-shrink-0" />
             <div>
