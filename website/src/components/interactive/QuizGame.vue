@@ -5,8 +5,8 @@
       v-if="phase === 'start'"
       class="text-center"
     >
-      <div class="inline-flex items-center justify-center w-20 h-20 bg-primary/20 rounded-full mb-6">
-        <HelpCircle class="w-10 h-10 text-primary" />
+      <div class="inline-flex items-center justify-center w-20 h-20 bg-[#0a84ff]/20 rounded-full mb-6">
+        <HelpCircle class="w-10 h-10 text-[#0a84ff]" />
       </div>
       <h2 class="text-2xl font-bold text-white mb-4">
         AI 工具知识竞猜
@@ -15,7 +15,7 @@
         从 {{ totalTools }} 款 AI 工具的真实数据中随机出题，测试你对 AI 工具生态的了解程度
       </p>
       <button
-        class="btn-primary px-8 py-3 text-lg"
+        class="btn-capsule px-8 py-3 text-lg"
         @click="startQuiz"
       >
         <Play class="w-5 h-5 mr-2 inline" />
@@ -31,13 +31,13 @@
           <span class="text-sm text-white/60">
             第 {{ currentIndex + 1 }} / {{ questions.length }} 题
           </span>
-          <span class="text-sm font-medium text-primary">
+          <span class="text-sm font-medium text-[#0a84ff]">
             {{ score }} 分
           </span>
         </div>
-        <div class="w-full h-1.5 bg-white/10 rounded-full overflow-hidden">
+        <div class="w-full h-1.5 bg-white/[0.06] rounded-full overflow-hidden">
           <div
-            class="h-full bg-primary rounded-full transition-all duration-300"
+            class="h-full bg-[#0a84ff] rounded-full transition-all duration-300"
             :style="{ width: `${((currentIndex + 1) / questions.length) * 100}%` }"
           />
         </div>
@@ -56,7 +56,7 @@
         class="text-center mt-6"
       >
         <button
-          class="btn-primary px-6 py-2"
+          class="btn-capsule px-6 py-2"
           @click="nextQuestion"
         >
           {{ isLastQuestion ? '查看结果' : '下一题' }}
@@ -86,12 +86,12 @@
       <p class="text-white/60 mb-2">
         {{ resultMessage }}
       </p>
-      <p class="text-sm text-primary font-medium mb-8">
+      <p class="text-sm text-[#0a84ff] font-medium mb-8">
         +{{ xpEarned }} XP
       </p>
       <div class="flex flex-col sm:flex-row gap-3 justify-center">
         <button
-          class="btn-secondary"
+          class="pill pill-inactive"
           @click="resetQuiz"
         >
           <RotateCcw class="w-4 h-4 mr-2 inline" />

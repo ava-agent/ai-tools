@@ -1,5 +1,5 @@
 <template>
-  <div class="card">
+  <div class="glass-card">
     <!-- Question -->
     <p class="text-lg font-medium text-white mb-6">
       {{ question.question }}
@@ -76,7 +76,7 @@ function selectAnswer(index) {
 
 function getOptionClass(option, index) {
   if (!answered.value) {
-    return 'bg-white/5 border-white/10 hover:bg-white/10 hover:border-primary/30 text-white'
+    return 'bg-white/[0.04] border-white/[0.06] hover:bg-white/[0.08] hover:border-[#0a84ff]/30 text-white'
   }
   if (option.correct) {
     return 'bg-green-500/10 border-green-500/30 text-white'
@@ -84,12 +84,12 @@ function getOptionClass(option, index) {
   if (selectedIndex.value === index && !option.correct) {
     return 'bg-red-500/10 border-red-500/30 text-white/60'
   }
-  return 'bg-white/5 border-white/5 text-white/30'
+  return 'bg-white/[0.04] border-white/[0.04] text-white/30'
 }
 
 function getCircleClass(option, index) {
   if (!answered.value) {
-    return 'bg-white/10 text-white/60'
+    return 'bg-white/[0.08] text-white/60'
   }
   if (option.correct) {
     return 'bg-green-500/20 text-green-400'
@@ -97,6 +97,6 @@ function getCircleClass(option, index) {
   if (selectedIndex.value === index && !option.correct) {
     return 'bg-red-500/20 text-red-400'
   }
-  return 'bg-white/5 text-white/20'
+  return 'bg-white/[0.04] text-white/20'
 }
 </script>

@@ -15,7 +15,7 @@
         回答 8 个简单问题，发现你的 AI 工具人格类型
       </p>
       <button
-        class="btn-primary px-8 py-3 text-lg"
+        class="btn-capsule px-8 py-3 text-lg"
         @click="phase = 'playing'"
       >
         <Play class="w-5 h-5 mr-2 inline" />
@@ -32,16 +32,16 @@
             第 {{ currentStep + 1 }} / {{ questions.length }} 题
           </span>
         </div>
-        <div class="w-full h-1.5 bg-white/10 rounded-full overflow-hidden">
+        <div class="w-full h-1.5 bg-white/[0.06] rounded-full overflow-hidden">
           <div
-            class="h-full bg-purple-500 rounded-full transition-all duration-300"
+            class="h-full bg-[#bf5af2] rounded-full transition-all duration-300"
             :style="{ width: `${((currentStep + 1) / questions.length) * 100}%` }"
           />
         </div>
       </div>
 
       <!-- Current Question -->
-      <div class="card">
+      <div class="glass-card">
         <p class="text-lg font-medium text-white mb-6">
           {{ questions[currentStep].question }}
         </p>
@@ -49,7 +49,7 @@
           <button
             v-for="(option, i) in questions[currentStep].options"
             :key="i"
-            class="w-full text-left px-4 py-3 rounded-xl border bg-white/5 border-white/10 hover:bg-purple-500/10 hover:border-purple-500/30 transition-all duration-200 text-white cursor-pointer"
+            class="w-full text-left px-4 py-3 rounded-xl border bg-white/[0.04] border-white/[0.06] hover:bg-[#bf5af2]/10 hover:border-[#bf5af2]/30 transition-all duration-200 text-white cursor-pointer"
             @click="selectOption(i)"
           >
             {{ option.text }}

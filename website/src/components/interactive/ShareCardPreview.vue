@@ -10,7 +10,7 @@
 
     <template v-else>
       <!-- Canvas Preview -->
-      <div class="inline-block rounded-xl overflow-hidden border border-white/10 shadow-2xl mb-6">
+      <div class="inline-block rounded-xl overflow-hidden border border-white/[0.06] shadow-2xl mb-6">
         <canvas
           ref="canvasRef"
           class="max-w-full h-auto"
@@ -20,14 +20,14 @@
       <!-- Actions -->
       <div class="flex gap-3 justify-center">
         <button
-          class="btn-secondary text-sm"
+          class="pill pill-inactive text-sm"
           @click="download"
         >
           <Download class="w-4 h-4 mr-2 inline" />
           下载 PNG
         </button>
         <button
-          class="btn-secondary text-sm"
+          class="pill pill-inactive text-sm"
           @click="copyToClipboard"
         >
           <Copy class="w-4 h-4 mr-2 inline" />

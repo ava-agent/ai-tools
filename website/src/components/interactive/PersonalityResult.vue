@@ -18,7 +18,7 @@
     </p>
 
     <div
-      class="card max-w-lg mx-auto mb-6"
+      class="glass-card max-w-lg mx-auto mb-6"
       :class="[result.bg, result.border]"
     >
       <p class="text-white/80 mb-4">
@@ -36,7 +36,7 @@
         </span>
       </div>
 
-      <div class="pt-4 border-t border-white/10">
+      <div class="pt-4 border-t border-white/[0.06]">
         <p class="text-white/50 text-sm mb-2">
           最匹配的 AI 工具
         </p>
@@ -49,12 +49,12 @@
       </div>
     </div>
 
-    <p class="text-sm text-primary font-medium mb-6">
+    <p class="text-sm text-[#0a84ff] font-medium mb-6">
       +40 XP
     </p>
 
     <button
-      class="btn-secondary"
+      class="pill pill-inactive"
       @click="$emit('restart')"
     >
       <RotateCcw class="w-4 h-4 mr-2 inline" />

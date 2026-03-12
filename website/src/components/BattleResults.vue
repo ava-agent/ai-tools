@@ -1,7 +1,7 @@
 <template>
   <div
     v-if="stats"
-    class="mt-3 p-3 rounded-xl bg-white/5 border border-white/5"
+    class="mt-3 p-3 rounded-xl bg-white/[0.04] border border-white/[0.04]"
   >
     <p class="text-xs text-white/40 mb-2">
       社区投票 ({{ stats.total }} 票)
@@ -9,9 +9,9 @@
     <div class="flex items-center gap-2">
       <!-- Tool A -->
       <span class="text-xs text-white/60 w-16 text-right truncate">{{ toolAName }}</span>
-      <div class="flex-1 h-5 bg-white/5 rounded-full overflow-hidden flex">
+      <div class="flex-1 h-5 bg-white/[0.04] rounded-full overflow-hidden flex">
         <div
-          class="h-full bg-primary/60 rounded-l-full transition-all duration-500 flex items-center justify-end pr-1"
+          class="h-full bg-[#0a84ff]/60 rounded-l-full transition-all duration-500 flex items-center justify-end pr-1"
           :style="{ width: toolAPercent + '%' }"
         >
           <span

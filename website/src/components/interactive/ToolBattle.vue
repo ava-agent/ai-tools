@@ -31,11 +31,11 @@
         <button
           v-for="tool in [matchup.toolA, matchup.toolB]"
           :key="tool.id"
-          class="card text-left transition-all duration-300 cursor-pointer"
+          class="glass-card text-left transition-all duration-300 cursor-pointer"
           :class="[
-            voted && voted === tool.id ? 'ring-2 ring-primary bg-primary/5' : '',
+            voted && voted === tool.id ? 'ring-2 ring-[#0a84ff] bg-[#0a84ff]/5' : '',
             voted && voted !== tool.id ? 'opacity-50' : '',
-            !voted ? 'hover:ring-2 hover:ring-primary/30' : '',
+            !voted ? 'hover:ring-2 hover:ring-[#0a84ff]/30' : '',
           ]"
           :disabled="!!voted"
           @click="vote(tool.id)"
@@ -49,7 +49,7 @@
                 v-for="i in 5"
                 :key="i"
                 class="w-4 h-4"
-                :class="i <= (tool.personalExperience?.rating || 0) ? 'text-primary fill-primary' : 'text-white/20'"
+                :class="i <= (tool.personalExperience?.rating || 0) ? 'text-[#0a84ff] fill-[#0a84ff]' : 'text-white/20'"
               />
             </div>
           </div>
@@ -72,10 +72,10 @@
           <!-- Vote indicator -->
           <div
             v-if="voted === tool.id"
-            class="mt-4 pt-3 border-t border-white/10 flex items-center gap-2"
+            class="mt-4 pt-3 border-t border-white/[0.06] flex items-center gap-2"
           >
-            <CheckCircle class="w-4 h-4 text-primary" />
-            <span class="text-sm text-primary font-medium">
+            <CheckCircle class="w-4 h-4 text-[#0a84ff]" />
+            <span class="text-sm text-[#0a84ff] font-medium">
               你的选择 +5 XP
             </span>
           </div>
@@ -100,7 +100,7 @@
       <!-- Next Battle -->
       <div class="text-center mt-8">
         <button
-          class="btn-secondary"
+          class="pill pill-inactive"
           :disabled="isSubmitting"
           @click="newBattle"
         >
