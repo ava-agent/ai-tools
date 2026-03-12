@@ -1,4 +1,4 @@
-/* Import Design Typography - Must come before Tailwind */
+/* Import Design Typography */
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
 
 @tailwind base;
@@ -11,16 +11,18 @@
   }
 
   body {
-    @apply bg-background text-white antialiased;
     font-family: 'IBM Plex Sans', system-ui, sans-serif;
+    color: #fff;
+    -webkit-font-smoothing: antialiased;
+    background: linear-gradient(180deg, #05051a 0%, #0a0a2a 40%, #0f0a1e 100%);
+    min-height: 100vh;
   }
 
-  /* Focus visible for keyboard navigation */
   *:focus-visible {
-    @apply outline-none ring-2 ring-primary ring-offset-2 ring-offset-background;
+    outline: 2px solid #0a84ff;
+    outline-offset: 2px;
   }
 
-  /* Reduced motion */
   @media (prefers-reduced-motion: reduce) {
     *,
     *::before,
@@ -33,125 +35,252 @@
 }
 
 @layer components {
-  /* Primary Button - Enhanced with better interactions */
+  /* ===== Vibrancy Material System ===== */
+
+  .glass-nav {
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  .glass-card {
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 14px;
+    transition: all 0.2s ease;
+  }
+
+  .glass-card:hover {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(255, 255, 255, 0.08);
+  }
+
+  .glass-card-interactive {
+    cursor: pointer;
+  }
+
+  .glass-card-interactive:hover {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(255, 255, 255, 0.08);
+    transform: translateY(-1px);
+  }
+
+  .glass-elevated {
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 14px;
+  }
+
+  /* ===== Capsule Buttons ===== */
+
+  .btn-capsule {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 20px;
+    background: #0a84ff;
+    color: #fff;
+    border-radius: 980px;
+    font-size: 13px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    border: none;
+  }
+
+  .btn-capsule:hover {
+    filter: brightness(1.1);
+  }
+
+  .btn-capsule-sm {
+    padding: 6px 16px;
+    font-size: 12px;
+  }
+
+  /* ===== Category Pills ===== */
+
+  .pill {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px 16px;
+    border-radius: 980px;
+    font-size: 13px;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    border: none;
+  }
+
+  .pill-active {
+    background: #0a84ff;
+    color: #fff;
+    font-weight: 500;
+  }
+
+  .pill-inactive {
+    background: rgba(255, 255, 255, 0.06);
+    color: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+
+  .pill-inactive:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.8);
+  }
+
+  /* ===== Tag Pills ===== */
+
+  .tag-pill {
+    display: inline-flex;
+    align-items: center;
+    padding: 4px 12px;
+    border-radius: 980px;
+    font-size: 11px;
+    transition: all 0.2s ease;
+  }
+
+  .tag-pill-highlight {
+    background: rgba(10, 132, 255, 0.1);
+    color: #0a84ff;
+  }
+
+  .tag-pill-default {
+    background: rgba(255, 255, 255, 0.06);
+    color: rgba(255, 255, 255, 0.5);
+  }
+
+  /* ===== Info Grid Cell ===== */
+
+  .info-cell {
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 12px;
+    padding: 14px;
+    text-align: center;
+  }
+
+  /* ===== Segmented Control ===== */
+
+  .segmented-control {
+    display: flex;
+    background: rgba(255, 255, 255, 0.06);
+    border-radius: 8px;
+    padding: 2px;
+  }
+
+  .segment {
+    padding: 5px 14px;
+    font-size: 12px;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    color: rgba(255, 255, 255, 0.45);
+    border: none;
+    background: none;
+  }
+
+  .segment-active {
+    background: rgba(255, 255, 255, 0.12);
+    color: #fff;
+    font-weight: 500;
+  }
+
+  /* ===== Input ===== */
+
+  .input-field {
+    width: 100%;
+    padding: 6px 12px;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 12px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    transition: all 0.2s ease;
+  }
+
+  .input-field::placeholder {
+    color: rgba(255, 255, 255, 0.25);
+  }
+
+  .input-field:focus {
+    outline: none;
+    border-color: rgba(10, 132, 255, 0.5);
+    box-shadow: 0 0 0 3px rgba(10, 132, 255, 0.1);
+  }
+
+  /* ===== Legacy compat ===== */
+
+  .glass-effect {
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  .gradient-text {
+    background: linear-gradient(135deg, #0a84ff, #bf5af2);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
   .btn-primary {
     @apply px-6 py-3 text-white font-semibold rounded-xl transition-all duration-300 cursor-pointer;
-    background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 50%, #06b6d4 100%);
-    background-size: 200% 200%;
-    box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
+    background: linear-gradient(135deg, #0a84ff 0%, #bf5af2 100%);
+    box-shadow: 0 4px 15px rgba(10, 132, 255, 0.4);
   }
 
   .btn-primary:hover {
-    background-position: 100% 0;
-    box-shadow: 0 6px 25px rgba(59, 130, 246, 0.6);
+    box-shadow: 0 6px 25px rgba(10, 132, 255, 0.6);
     transform: translateY(-2px);
   }
 
-  .btn-primary:active {
-    transform: translateY(0);
-  }
-
-  .btn-primary:disabled {
-    @apply opacity-50 cursor-not-allowed;
-    transform: none;
-  }
-
-  /* Secondary Button - Better glass effect */
   .btn-secondary {
     @apply px-6 py-3 text-white font-semibold rounded-xl transition-all duration-300 border cursor-pointer;
-    background: rgba(30, 41, 59, 0.8);
-    border-color: rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, 0.04);
+    border-color: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
   }
 
   .btn-secondary:hover {
-    background: rgba(30, 41, 59, 0.95);
-    border-color: rgba(59, 130, 246, 0.5);
-    box-shadow: 0 4px 15px rgba(59, 130, 246, 0.2);
-    transform: translateY(-2px);
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(10, 132, 255, 0.3);
   }
 
-  .btn-secondary:active {
-    transform: translateY(0);
-  }
-
-  /* Card - Base visual style (no cursor/transform by default) */
   .card {
     @apply rounded-2xl p-6 transition-all duration-300;
-    background: rgba(30, 41, 59, 0.6);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    backdrop-filter: blur(10px);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(16px);
   }
 
   .card:hover {
-    border-color: rgba(59, 130, 246, 0.2);
-    box-shadow: 0 6px 20px rgba(59, 130, 246, 0.1);
+    border-color: rgba(255, 255, 255, 0.08);
   }
 
-  /* Interactive card - for clickable cards only */
   .card-interactive {
     @apply cursor-pointer;
   }
 
   .card-interactive:hover {
-    border-color: rgba(59, 130, 246, 0.3);
-    box-shadow: 0 8px 30px rgba(59, 130, 246, 0.15);
-    transform: translateY(-2px);
+    border-color: rgba(255, 255, 255, 0.1);
+    transform: translateY(-1px);
   }
 
-  /* Gradient Text - Smoother animation */
-  .gradient-text {
-    background: linear-gradient(135deg, #60a5fa 0%, #a78bfa 25%, #06b6d4 50%, #22d3ee 75%, #60a5fa 100%);
-    background-size: 200% auto;
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: shimmer 4s ease-in-out infinite;
-  }
-
-  @keyframes shimmer {
-    0%, 100% { background-position: 0% center; }
-    50% { background-position: 100% center; }
-  }
-
-  /* Glass Effect - Better visibility */
-  .glass-effect {
-    background: rgba(30, 41, 59, 0.7);
-    backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-  }
-
-  /* Glow Effect */
   .glow-effect {
-    box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+    box-shadow: 0 0 20px rgba(10, 132, 255, 0.3);
   }
 
   .glow-effect:hover {
-    box-shadow: 0 0 30px rgba(59, 130, 246, 0.5);
-  }
-
-  /* Tag Pills - Better touch targets */
-  .tag-pill {
-    @apply px-4 py-2 text-sm font-medium rounded-full transition-all duration-200 cursor-pointer;
-    @apply inline-flex items-center justify-center min-w-[44px] min-h-[44px];
-  }
-
-  /* Input Field - Better focus states */
-  .input-field {
-    @apply w-full px-4 py-3 rounded-xl text-white placeholder-white/40;
-    @apply transition-all duration-300;
-    background: rgba(30, 41, 59, 0.6);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-  }
-
-  .input-field:focus {
-    border-color: rgba(59, 130, 246, 0.5);
-    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
-  }
-
-  .input-field:hover:not(:focus) {
-    border-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 30px rgba(10, 132, 255, 0.5);
   }
 }
 
@@ -160,12 +289,11 @@
     text-wrap: balance;
   }
 
-  /* Better contrast for muted text */
   .text-muted {
-    @apply text-white/60;
+    @apply text-white/55;
   }
 
   .text-muted-light {
-    @apply text-white/40;
+    @apply text-white/35;
   }
 }
