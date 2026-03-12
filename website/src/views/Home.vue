@@ -1,148 +1,66 @@
 <template>
-  <div class="min-h-screen bg-background">
-    <IntroVideo
-      :show="showIntro"
-      @close="handleIntroClose"
-    />
+  <div class="min-h-screen">
     <Hero />
-
-    <!-- Stats ribbon -->
-    <div class="max-w-6xl mx-auto px-4 py-6">
-      <div class="flex flex-wrap justify-center gap-8 text-center">
-        <div>
-          <div class="text-3xl font-bold text-primary">
-            {{ toolsStore.tools.length }}
-          </div>
-          <div class="text-sm text-white/60 mt-1">
-            AI 工具收录
-          </div>
-        </div>
-        <div>
-          <div class="text-3xl font-bold text-green-400">
-            {{ Object.keys(toolsStore.categoryStats).length }}
-          </div>
-          <div class="text-sm text-white/60 mt-1">
-            工具分类
-          </div>
-        </div>
-        <div>
-          <div class="text-3xl font-bold text-purple-400">
-            2026.03
-          </div>
-          <div class="text-sm text-white/60 mt-1">
-            最近更新
-          </div>
-        </div>
-      </div>
-    </div>
-
     <SearchBar />
 
-    <!-- 工具列表（核心内容，首屏可见） -->
-    <ToolGrid
-      :tools="filteredTools"
-      @clear-filters="handleClearFilters"
-    />
-
-    <!-- 每日推荐 + 冷知识（工具列表之后） -->
-    <section class="py-4 px-4">
-      <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-3">
-        <ToolOfTheDayCompact />
-        <FunFact />
-      </div>
-    </section>
-
-    <!-- 资源推荐横幅 -->
-    <section class="py-6 px-4">
-      <div class="max-w-6xl mx-auto">
-        <div class="flex items-center justify-between mb-4">
-          <h3 class="text-lg font-bold text-white flex items-center gap-2">
-            <PlayCircle class="w-5 h-5 text-primary" />
-            精选资源
-          </h3>
-          <router-link
-            to="/resources"
-            class="text-sm text-primary hover:text-primary/80 transition-colors flex items-center gap-1"
-          >
-            查看全部
-            <ArrowRight class="w-4 h-4" />
-          </router-link>
-        </div>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3">
-          <router-link
-            v-for="item in featuredResources"
-            :key="item.id"
-            to="/resources"
-            class="group flex items-center gap-3 p-3 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-primary/30 transition-all duration-200"
-          >
-            <div
-              class="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0"
-              :class="item.type === 'video' ? 'bg-purple-500/20' : 'bg-blue-500/20'"
-            >
-              <component
-                :is="item.type === 'video' ? Video : FileText"
-                class="w-4 h-4"
-                :class="item.type === 'video' ? 'text-purple-400' : 'text-blue-400'"
-              />
-            </div>
-            <div class="min-w-0">
-              <p class="text-sm font-medium text-white truncate group-hover:text-primary transition-colors">
-                {{ item.title }}
-              </p>
-              <p class="text-xs text-white/40">
-                {{ item.type === 'video' ? '视频' : 'PPT' }}
-              </p>
-            </div>
-          </router-link>
-        </div>
-      </div>
-    </section>
-
-    <!-- Replay Intro Button -->
-    <Transition name="fade">
-      <button
-        v-if="!showIntro"
-        class="fixed bottom-6 right-6 z-40 flex items-center gap-2 px-3 py-1.5 bg-surface/60 hover:bg-surface text-white/60 hover:text-white text-xs rounded-full shadow-lg border border-white/10 backdrop-blur-sm transition-all hover:scale-105"
-        @click="showIntro = true"
+    <div class="max-w-[960px] mx-auto px-5">
+      <!-- Featured / Editor's Pick -->
+      <div
+        v-if="featuredTool"
+        class="glass-card glass-card-interactive p-5 mb-4 flex items-center gap-4 cursor-pointer"
+        style="border-radius: 16px;"
+        @click="$router.push({ name: 'tool-detail', params: { id: featuredTool.id } })"
       >
-        <PlayCircle class="w-3.5 h-3.5 text-primary" />
-        演示
-      </button>
-    </Transition>
+        <div
+          class="w-14 h-14 rounded-[14px] flex items-center justify-center text-2xl flex-shrink-0"
+          style="background: linear-gradient(135deg, rgba(10,132,255,0.3), rgba(191,90,242,0.2));"
+        >
+          ⚡
+        </div>
+        <div class="flex-1 min-w-0">
+          <div class="text-[10px] text-[#bf5af2] uppercase tracking-widest font-semibold mb-0.5">
+            编辑推荐
+          </div>
+          <div class="text-lg font-bold text-white" style="letter-spacing: -0.3px;">
+            {{ featuredTool.name }}
+          </div>
+          <div class="text-[13px] text-white/50 mt-0.5 truncate">
+            {{ featuredTool.personalExperience?.insights?.substring(0, 60) }}...
+          </div>
+        </div>
+        <div class="flex-shrink-0">
+          <span class="btn-capsule btn-capsule-sm">查看</span>
+        </div>
+      </div>
+
+      <!-- Tool Grid -->
+      <ToolGrid
+        :tools="filteredTools"
+        @clear-filters="handleClearFilters"
+      />
+    </div>
   </div>
 </template>
 
 <script setup>
-import { computed, ref, onMounted } from 'vue'
-import { PlayCircle, ArrowRight, Video, FileText } from 'lucide-vue-next'
+import { computed } from 'vue'
 import { useToolsStore } from '../stores/tools'
-import { resources } from '../data/resources.js'
 import Hero from '../components/Hero.vue'
 import SearchBar from '../components/SearchBar.vue'
 import ToolGrid from '../components/ToolGrid.vue'
-import IntroVideo from '../components/IntroVideo.vue'
-import ToolOfTheDayCompact from '../components/gamification/ToolOfTheDayCompact.vue'
-import FunFact from '../components/gamification/FunFact.vue'
-
-const showIntro = ref(false)
-
-function handleIntroClose() {
-  showIntro.value = false
-  sessionStorage.setItem('hasSeenIntro', 'true')
-}
-
-onMounted(() => {
-  const hasSeen = sessionStorage.getItem('hasSeenIntro')
-  if (!hasSeen) {
-    showIntro.value = true
-  }
-})
 
 const toolsStore = useToolsStore()
 
 const filteredTools = computed(() => toolsStore.filteredTools)
 
-const featuredResources = computed(() => resources.slice(0, 5))
+// Featured tool: highest rated tool (first in sorted list)
+const featuredTool = computed(() => {
+  const tools = toolsStore.tools
+  if (!tools.length) return null
+  return [...tools].sort((a, b) =>
+    (b.personalExperience?.rating || 0) - (a.personalExperience?.rating || 0)
+  )[0]
+})
 
 function handleClearFilters() {
   toolsStore.clearFilters()
