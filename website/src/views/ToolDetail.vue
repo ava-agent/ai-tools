@@ -1,394 +1,357 @@
 <template>
-  <div class="min-h-screen bg-background">
-    <div class="container mx-auto px-4 py-8">
-      <div
-        v-if="tool"
-        class="max-w-4xl mx-auto"
+  <div
+    v-if="tool"
+    class="min-h-screen"
+  >
+    <!-- Back nav header -->
+    <div class="max-w-[720px] mx-auto px-5 py-3 flex items-center gap-3">
+      <button
+        class="text-[13px] text-[#0a84ff] cursor-pointer"
+        @click="$router.back()"
       >
-        <!-- 面包屑导航 -->
-        <nav
-          aria-label="Breadcrumb"
-          class="mb-6"
-        >
-          <ol class="flex items-center text-sm text-white/60 flex-wrap">
-            <li class="flex items-center">
-              <router-link
-                to="/"
-                class="hover:text-white transition-colors"
-              >
-                首页
-              </router-link>
-            </li>
-            <li class="flex items-center">
-              <ChevronRight class="w-4 h-4 mx-2" />
-              <router-link
-                :to="{ path: '/', query: { category: tool.category } }"
-                class="hover:text-white transition-colors"
-              >
-                {{ getCategoryLabel(tool.category) }}
-              </router-link>
-            </li>
-            <li class="flex items-center">
-              <ChevronRight class="w-4 h-4 mx-2" />
-              <span class="text-white/80">{{ tool.name }}</span>
-            </li>
-          </ol>
-        </nav>
+        &larr; 返回
+      </button>
+      <div class="flex-1 text-center text-sm font-semibold text-white">
+        {{ tool.name }}
+      </div>
+      <div class="w-12" />
+    </div>
 
-        <div class="card mb-8">
-          <div class="flex items-start gap-4 mb-6">
-            <ToolLogo
-              :tool-id="tool.id"
-              :tool-name="tool.name"
-              size="xl"
-            />
-            <div class="flex-1">
-              <h1 class="text-4xl font-bold text-white mb-2">
-                {{ tool.name }}
-              </h1>
-              <p class="text-lg text-white/80 mb-1">
-                {{ tool.developer }}
-              </p>
-              <div class="flex items-center space-x-1">
-                <Star
+    <!-- Content area -->
+    <div class="max-w-[720px] mx-auto px-5 pb-16">
+      <!-- Tool header -->
+      <div class="glass-card p-5 mb-4">
+        <div class="flex items-start gap-4 mb-6">
+          <div
+            class="w-16 h-16 rounded-[16px] flex items-center justify-center text-[28px] flex-shrink-0"
+            :style="{ background: 'linear-gradient(135deg, ' + iconGradient + ')' }"
+          >
+            {{ categoryEmoji }}
+          </div>
+          <div class="flex-1">
+            <div
+              class="text-2xl font-bold text-white"
+              style="letter-spacing: -0.5px;"
+            >
+              {{ tool.name }}
+            </div>
+            <div class="text-sm text-white/45 mt-0.5">
+              {{ tool.developer }}
+            </div>
+            <div class="flex items-center gap-3 mt-2">
+              <div class="text-[13px] text-[#ffd60a]">
+                <span
                   v-for="i in 5"
                   :key="i"
-                  class="w-5 h-5"
-                  :class="i <= (tool.personalExperience?.rating || 0) ? 'text-primary fill-primary' : 'text-gray-600'"
-                />
+                >{{ i <= Math.round(tool.personalExperience?.rating || 0) ? '★' : '☆' }}</span>
+              </div>
+              <div class="text-[13px] text-[#30d158] font-semibold">
+                {{ tool.personalExperience?.rating?.toFixed(1) }}
+              </div>
+              <div class="text-xs text-white/30">
+                |
+              </div>
+              <div class="text-xs text-white/40">
+                {{ tool.funRanking }}
               </div>
             </div>
           </div>
-
-          <div class="mb-6 flex items-center gap-3">
-            <span 
-              class="inline-block px-4 py-2 text-white text-lg rounded-full"
-              :class="getCategoryColor(tool.category)"
-            >
-              {{ getCategoryLabel(tool.category) }}
-            </span>
-            <span
-              v-if="tool.subcategory"
-              class="text-white/60"
-            >
-              {{ tool.subcategory }}
-            </span>
-          </div>
-
-          <div
-            v-if="tool.freeQuota || tool.contextWindow"
-            class="mb-6 flex flex-wrap gap-4 text-sm"
-          >
-            <div
-              v-if="tool.freeQuota"
-              class="flex items-center text-white/70"
-            >
-              <Lightbulb class="w-4 h-4 text-green-400 mr-2 flex-shrink-0" />
-              免费额度: {{ tool.freeQuota }}
-            </div>
-            <div
-              v-if="tool.contextWindow"
-              class="flex items-center text-white/70"
-            >
-              <Ruler class="w-4 h-4 text-blue-400 mr-2 flex-shrink-0" />
-              上下文: {{ tool.contextWindow }}
-            </div>
-            <div
-              v-if="tool.chineseSupport"
-              class="flex items-center text-white/70"
-            >
-              <Globe class="w-4 h-4 text-red-400 mr-2 flex-shrink-0" />
-              <span>中文支持:</span>
-              <span class="flex items-center ml-1">
-                <Star
-                  v-for="i in 5"
-                  :key="'cn-' + i"
-                  class="w-3 h-3"
-                  :class="i <= tool.chineseSupport ? 'text-yellow-400 fill-yellow-400' : 'text-white/20'"
-                />
-              </span>
-            </div>
-          </div>
-
-          <p class="text-xl text-white/90 mb-8">
-            {{ tool.bestFor }}
-          </p>
-
-          <!-- 能力雷达图 -->
-          <div
-            v-if="tool.radarChart"
-            class="mb-8"
-          >
-            <h2 class="text-2xl font-bold text-white mb-4 flex items-center">
-              <BarChart3 class="w-6 h-6 text-primary mr-2" />
-              能力雷达图
-            </h2>
-            <div class="bg-white/5 rounded-xl p-4 border border-white/10">
-              <img
-                :src="tool.radarChart"
-                :alt="tool.name + ' 能力雷达图'"
-                class="w-full max-w-lg mx-auto rounded-lg"
-                loading="lazy"
-              >
-            </div>
-          </div>
-
-          <!-- 演示视频 -->
-          <div
-            v-if="tool.video"
-            class="mb-8"
-          >
-            <h2 class="text-2xl font-bold text-white mb-4 flex items-center">
-              <Video class="w-6 h-6 text-primary mr-2" />
-              演示视频
-            </h2>
-            <VideoPlayer
-              :src="tool.video.src"
-              :thumbnail="tool.video.thumbnail"
-            />
-          </div>
-
-          <div class="grid md:grid-cols-2 gap-8 mb-8">
-            <div>
-              <h2 class="text-2xl font-bold text-white mb-4 flex items-center">
-                <CheckCircle class="w-6 h-6 text-green-500 mr-2" />
-                优势
-              </h2>
-              <ul class="space-y-3 text-white/80">
-                <li
-                  v-for="pro in (tool.pros || [])"
-                  :key="pro"
-                  class="flex items-start"
-                >
-                  <span class="text-green-500 mr-3 text-xl">•</span>
-                  <span>{{ pro }}</span>
-                </li>
-              </ul>
-            </div>
-
-            <div>
-              <h2 class="text-2xl font-bold text-white mb-4 flex items-center">
-                <AlertCircle class="w-6 h-6 text-red-500 mr-2" />
-                劣势
-              </h2>
-              <ul class="space-y-3 text-white/80">
-                <li
-                  v-for="con in (tool.cons || [])"
-                  :key="con"
-                  class="flex items-start"
-                >
-                  <span class="text-red-500 mr-3 text-xl">•</span>
-                  <span>{{ con }}</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="flex flex-wrap gap-2 mb-8">
-            <span
-              v-for="tag in (tool.tags || [])"
-              :key="tag"
-              class="px-3 py-1 text-sm rounded-full text-white"
-              :class="getTagColor(tag)"
-            >
-              {{ tag }}
-            </span>
-          </div>
-
-          <div class="space-y-4">
-            <a
-              v-for="version in (tool.versions || [])"
-              :key="version.type"
-              :href="version.link"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="block w-full btn-secondary text-center"
-            >
-              {{ version.type }} 版本 - {{ version.pricing }}
-              <span class="block text-sm text-white/60 mt-1">{{ version.models }}</span>
-            </a>
-          </div>
+          <a
+            v-if="mainLink"
+            :href="mainLink"
+            target="_blank"
+            rel="noopener"
+            class="btn-capsule flex-shrink-0"
+          >访问官网</a>
         </div>
 
-        <div class="card mb-8">
-          <h2 class="text-2xl font-bold text-white mb-6 gradient-text">
-            个人使用经验
-          </h2>
-          
-          <div class="mb-6">
-            <div class="flex items-center mb-3">
-              <span class="text-sm text-white/60 mr-2">综合评分：</span>
-              <div class="flex items-center space-x-1">
-                <Star
-                  v-for="i in 5"
-                  :key="i"
-                  class="w-5 h-5"
-                  :class="i <= (tool.personalExperience?.rating || 0) ? 'text-primary fill-primary' : 'text-gray-600'"
-                />
-              </div>
+        <!-- Info grid -->
+        <div class="grid grid-cols-3 gap-[10px] mb-5">
+          <div class="info-cell">
+            <div class="text-[11px] text-white/35 mb-1">
+              定价
             </div>
-            <ScoreRadar
-              v-if="!tool.radarChart"
-              :tool="tool"
-            />
-            <div class="bg-primary/5 border-l-4 border-primary rounded-r-lg p-4 mt-4">
-              <p class="text-white/90 leading-relaxed text-base">
-                {{ tool.personalExperience?.insights || '' }}
-              </p>
+            <div class="text-sm font-semibold text-white">
+              {{ pricingDisplay }}
             </div>
           </div>
-
-          <div v-if="tool.personalExperience?.pitfalls?.length">
-            <h3 class="text-lg font-semibold text-white mb-4 flex items-center">
-              <AlertTriangle class="w-5 h-5 text-yellow-500 mr-2" />
-              注意事项
-            </h3>
-            <ul class="space-y-2 text-white/70">
-              <li
-                v-for="pitfall in (tool.personalExperience?.pitfalls || [])"
-                :key="pitfall"
-                class="flex items-start"
-              >
-                <AlertTriangle class="w-4 h-4 text-yellow-500 mr-3 mt-0.5 flex-shrink-0" />
-                <span>{{ pitfall }}</span>
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- 社区评分 -->
-        <div class="card mb-8">
-          <h2 class="text-2xl font-bold text-white mb-4 gradient-text">
-            社区评价
-          </h2>
-          <ToolRating :tool-id="tool.id" />
-        </div>
-
-        <!-- 冷知识 -->
-        <FunFact
-          v-if="tool"
-          :tool-id="tool.id"
-          class="mb-8"
-        />
-
-        <div class="card">
-          <h2 class="text-2xl font-bold text-white mb-6 gradient-text">
-            SWOT 分析
-          </h2>
-          
-          <div class="grid md:grid-cols-2 gap-6">
-            <div class="space-y-4">
-              <div class="bg-green-500/5 border-l-4 border-green-500 rounded-lg p-4">
-                <h3 class="text-lg font-bold text-green-400 mb-2 flex items-center">
-                  <Shield class="w-5 h-5 mr-2" />
-                  优势 (Strengths)
-                </h3>
-                <p class="text-white/80">
-                  {{ tool.swot?.S || '' }}
-                </p>
-              </div>
-
-              <div class="bg-red-500/5 border-l-4 border-red-500 rounded-lg p-4">
-                <h3 class="text-lg font-bold text-red-400 mb-2 flex items-center">
-                  <AlertTriangle class="w-5 h-5 mr-2" />
-                  劣势 (Weaknesses)
-                </h3>
-                <p class="text-white/80">
-                  {{ tool.swot?.W || '' }}
-                </p>
-              </div>
+          <div class="info-cell">
+            <div class="text-[11px] text-white/35 mb-1">
+              上下文
             </div>
-
-            <div class="space-y-4">
-              <div class="bg-blue-500/5 border-l-4 border-blue-500 rounded-lg p-4">
-                <h3 class="text-lg font-bold text-blue-400 mb-2 flex items-center">
-                  <TrendingUp class="w-5 h-5 mr-2" />
-                  机会 (Opportunities)
-                </h3>
-                <p class="text-white/80">
-                  {{ tool.swot?.O || '' }}
-                </p>
-              </div>
-
-              <div class="bg-orange-500/5 border-l-4 border-orange-500 rounded-lg p-4">
-                <h3 class="text-lg font-bold text-orange-400 mb-2 flex items-center">
-                  <AlertCircle class="w-5 h-5 mr-2" />
-                  威胁 (Threats)
-                </h3>
-                <p class="text-white/80">
-                  {{ tool.swot?.T || '' }}
-                </p>
-              </div>
+            <div class="text-sm font-semibold text-white">
+              {{ tool.contextWindow || '-' }}
+            </div>
+          </div>
+          <div class="info-cell">
+            <div class="text-[11px] text-white/35 mb-1">
+              中文支持
+            </div>
+            <div class="text-sm font-semibold text-white">
+              {{ chineseSupportStars }}
             </div>
           </div>
         </div>
 
-        <!-- 社区评论 -->
-        <div class="card mb-8">
-          <ToolReviews :tool-id="tool.id" />
-        </div>
-
-        <!-- 相关工具推荐 -->
+        <!-- Best for -->
         <div
-          v-if="relatedTools.length > 0"
-          class="mt-8"
+          v-if="tool.bestFor"
+          class="text-[13px] text-white/50 leading-relaxed"
         >
-          <h2 class="text-2xl font-bold text-white mb-6 flex items-center">
-            <ArrowRightLeft class="w-6 h-6 text-primary mr-2" />
-            相关工具
-          </h2>
-          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            <router-link
-              v-for="related in relatedTools"
-              :key="related.id"
-              :to="{ name: 'tool-detail', params: { id: related.id } }"
-              class="card card-interactive group hover:ring-2 hover:ring-primary/30 transition-all duration-200"
-            >
-              <div class="flex items-center justify-between mb-2">
-                <h3 class="font-semibold text-white group-hover:text-primary transition-colors">
-                  {{ related.name }}
-                </h3>
-                <div class="flex items-center space-x-0.5">
-                  <Star
-                    v-for="i in 5"
-                    :key="i"
-                    class="w-3 h-3"
-                    :class="i <= (related.personalExperience?.rating || 0) ? 'text-primary fill-primary' : 'text-gray-600'"
-                  />
-                </div>
-              </div>
-              <p class="text-xs text-white/50 mb-2">
-                {{ related.developer }}
-              </p>
-              <span
-                class="px-2 py-0.5 text-xs rounded-full text-white"
-                :class="getCategoryColor(related.category)"
-              >
-                {{ getCategoryLabel(related.category) }}
-              </span>
-              <p class="text-sm text-white/60 mt-2 line-clamp-2">
-                {{ related.bestFor }}
-              </p>
-            </router-link>
+          {{ tool.bestFor }}
+        </div>
+      </div>
+
+      <!-- Insight card -->
+      <div
+        v-if="tool.personalExperience?.insights"
+        class="glass-card p-4 mb-4"
+      >
+        <div class="text-[13px] font-semibold text-white mb-2">
+          💡 使用心得
+        </div>
+        <div class="text-[13px] text-white/55 leading-relaxed">
+          {{ tool.personalExperience.insights }}
+        </div>
+      </div>
+
+      <!-- Radar chart -->
+      <div
+        v-if="tool.personalExperience"
+        class="glass-card p-4 mb-4"
+      >
+        <div class="text-[13px] font-semibold text-white mb-3">
+          📊 评分雷达
+        </div>
+        <ScoreRadar :tool="tool" />
+      </div>
+
+      <!-- Pitfalls -->
+      <div
+        v-if="tool.personalExperience?.pitfalls?.length"
+        class="glass-card p-4 mb-4"
+      >
+        <div class="text-[13px] font-semibold text-[#ffd60a] mb-2">
+          ⚠️ 注意事项
+        </div>
+        <div class="text-xs text-white/50 leading-loose">
+          <div
+            v-for="pitfall in tool.personalExperience.pitfalls"
+            :key="pitfall"
+          >
+            • {{ pitfall }}
           </div>
         </div>
       </div>
 
-      <div
-        v-else
-        class="text-center py-20"
-      >
-        <p class="text-xl text-white/60">
-          未找到该工具
-        </p>
-        <router-link
-          to="/"
-          class="btn-secondary mt-4 inline-block"
+      <!-- Pros / Cons dual column -->
+      <div class="grid grid-cols-2 gap-[10px] mb-4">
+        <div
+          class="rounded-xl p-4"
+          style="background: rgba(48,209,88,0.04); border: 1px solid rgba(48,209,88,0.1);"
         >
-          返回列表
-        </router-link>
+          <div class="text-[13px] font-semibold text-[#30d158] mb-2">
+            优势
+          </div>
+          <div class="text-xs text-white/50 leading-loose">
+            <div
+              v-for="pro in tool.pros"
+              :key="pro"
+            >
+              • {{ pro }}
+            </div>
+          </div>
+        </div>
+        <div
+          class="rounded-xl p-4"
+          style="background: rgba(255,69,58,0.04); border: 1px solid rgba(255,69,58,0.1);"
+        >
+          <div class="text-[13px] font-semibold text-[#ff453a] mb-2">
+            劣势
+          </div>
+          <div class="text-xs text-white/50 leading-loose">
+            <div
+              v-for="con in tool.cons"
+              :key="con"
+            >
+              • {{ con }}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SWOT grid -->
+      <div
+        v-if="tool.swot"
+        class="glass-card p-4 mb-4"
+      >
+        <div class="text-[13px] font-semibold text-white mb-3">
+          📋 SWOT 分析
+        </div>
+        <div class="grid grid-cols-2 gap-2">
+          <div
+            class="py-2.5 px-3 rounded-r-lg"
+            style="background: rgba(48,209,88,0.06); border-left: 3px solid #30d158;"
+          >
+            <div class="text-[11px] font-semibold text-[#30d158] mb-1">
+              S 优势
+            </div>
+            <div class="text-xs text-white/50">
+              {{ tool.swot.S }}
+            </div>
+          </div>
+          <div
+            class="py-2.5 px-3 rounded-r-lg"
+            style="background: rgba(255,69,58,0.06); border-left: 3px solid #ff453a;"
+          >
+            <div class="text-[11px] font-semibold text-[#ff453a] mb-1">
+              W 劣势
+            </div>
+            <div class="text-xs text-white/50">
+              {{ tool.swot.W }}
+            </div>
+          </div>
+          <div
+            class="py-2.5 px-3 rounded-r-lg"
+            style="background: rgba(10,132,255,0.06); border-left: 3px solid #0a84ff;"
+          >
+            <div class="text-[11px] font-semibold text-[#0a84ff] mb-1">
+              O 机会
+            </div>
+            <div class="text-xs text-white/50">
+              {{ tool.swot.O }}
+            </div>
+          </div>
+          <div
+            class="py-2.5 px-3 rounded-r-lg"
+            style="background: rgba(255,159,10,0.06); border-left: 3px solid #ff9f0a;"
+          >
+            <div class="text-[11px] font-semibold text-[#ff9f0a] mb-1">
+              T 威胁
+            </div>
+            <div class="text-xs text-white/50">
+              {{ tool.swot.T }}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Versions -->
+      <div
+        v-if="tool.versions?.length"
+        class="glass-card p-4 mb-4"
+      >
+        <div class="text-[13px] font-semibold text-white mb-3">
+          🔗 版本与链接
+        </div>
+        <div class="space-y-2">
+          <a
+            v-for="version in tool.versions"
+            :key="version.type"
+            :href="version.link"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="block py-2.5 px-3 rounded-lg text-[13px] text-white/60 hover:text-white transition-colors"
+            style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.06);"
+          >
+            <div class="flex items-center justify-between">
+              <span class="font-medium text-white/80">{{ version.type }}</span>
+              <span class="text-[11px] text-[#0a84ff]">{{ version.pricing }}</span>
+            </div>
+            <div
+              v-if="version.models"
+              class="text-[11px] text-white/35 mt-0.5"
+            >
+              {{ version.models }}
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- Community rating -->
+      <div class="glass-card p-4 mb-4">
+        <div class="text-[13px] font-semibold text-white mb-3">
+          ⭐ 社区评价
+        </div>
+        <ToolRating :tool-id="tool.id" />
+      </div>
+
+      <!-- Fun fact -->
+      <FunFact
+        v-if="tool"
+        :tool-id="tool.id"
+        class="mb-4"
+      />
+
+      <!-- Community reviews -->
+      <div class="glass-card p-4 mb-4">
+        <ToolReviews :tool-id="tool.id" />
+      </div>
+
+      <!-- Tags -->
+      <div
+        v-if="tool.tags?.length"
+        class="flex flex-wrap gap-1.5 mb-4"
+      >
+        <span
+          v-for="tag in tool.tags"
+          :key="tag"
+          :class="tag === '推荐' ? 'tag-pill tag-pill-highlight' : 'tag-pill tag-pill-default'"
+        >
+          {{ tag }}
+        </span>
+      </div>
+
+      <!-- Related tools -->
+      <div
+        v-if="relatedTools.length > 0"
+        class="glass-card p-4"
+      >
+        <div class="text-[13px] font-semibold text-white mb-3">
+          🔄 相关工具
+        </div>
+        <div class="grid grid-cols-2 gap-2">
+          <router-link
+            v-for="related in relatedTools"
+            :key="related.id"
+            :to="{ name: 'tool-detail', params: { id: related.id } }"
+            class="block py-2.5 px-3 rounded-lg transition-colors hover:bg-white/[0.06]"
+            style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06);"
+          >
+            <div class="text-[13px] font-semibold text-white truncate">
+              {{ related.name }}
+            </div>
+            <div class="text-[11px] text-white/35 truncate mt-0.5">
+              {{ related.developer }}
+            </div>
+            <div class="flex items-center gap-1 mt-1">
+              <span class="text-[10px] text-[#ffd60a]">
+                <span
+                  v-for="i in 5"
+                  :key="i"
+                >{{ i <= Math.round(related.personalExperience?.rating || 0) ? '★' : '☆' }}</span>
+              </span>
+            </div>
+          </router-link>
+        </div>
       </div>
     </div>
+  </div>
+
+  <!-- Not found -->
+  <div
+    v-else
+    class="text-center py-20"
+  >
+    <p class="text-xl text-white/60">
+      未找到该工具
+    </p>
+    <router-link
+      to="/"
+      class="btn-capsule mt-4 inline-block"
+    >
+      返回列表
+    </router-link>
   </div>
 </template>
 
@@ -398,10 +361,6 @@ import { useRoute } from 'vue-router'
 import { useToolsStore } from '../stores/tools'
 import { useGamificationStore } from '../stores/gamification'
 import { useAchievementsStore } from '../stores/achievements'
-import { getTagColor, getCategoryLabel, getCategoryColor } from '../utils/helpers'
-import { ChevronRight, CheckCircle, AlertCircle, AlertTriangle, Star, Video, BarChart3, ArrowRightLeft, Lightbulb, Ruler, Globe, Shield, TrendingUp } from 'lucide-vue-next'
-import VideoPlayer from '../components/VideoPlayer.vue'
-import ToolLogo from '../components/ToolLogo.vue'
 import FunFact from '../components/gamification/FunFact.vue'
 import ToolRating from '../components/ToolRating.vue'
 import ToolReviews from '../components/ToolReviews.vue'
@@ -413,24 +372,74 @@ const gamification = useGamificationStore()
 const achievements = useAchievementsStore()
 
 const tool = computed(() => {
-  return toolsStore.tools.find(t => t.id === route.params.id)
+  return toolsStore.tools.find((t) => t.id === route.params.id)
 })
 
 const relatedTools = computed(() => {
   const current = tool.value
   if (!current) return []
   return toolsStore.tools
-    .filter(t => t.id !== current.id)
-    .map(t => {
+    .filter((t) => t.id !== current.id)
+    .map((t) => {
       let score = 0
       if (t.category === current.category) score += 10
       if (t.subcategory === current.subcategory) score += 5
-      const sharedTags = (t.tags || []).filter(tag => (current.tags || []).includes(tag))
+      const sharedTags = (t.tags || []).filter((tag) => (current.tags || []).includes(tag))
       score += sharedTags.length * 2
       return { ...t, _score: score }
     })
     .sort((a, b) => b._score - a._score)
     .slice(0, 4)
+})
+
+// Category emoji map (matches ToolCard)
+const categoryEmojiMap = {
+  ide: '⚡',
+  cli: '💻',
+  'deep-research': '🔬',
+  llm: '🤖',
+  multimodal: '🎨',
+  agent: '🧠',
+  mcp: '🔗',
+}
+
+const categoryEmoji = computed(() => {
+  return categoryEmojiMap[tool.value?.category] || '🔧'
+})
+
+// Gradient colors per category
+const categoryGradientMap = {
+  ide: '#0a84ff, #5ac8fa',
+  cli: '#0a84ff, #30d158',
+  'deep-research': '#30d158, #34c759',
+  llm: '#ffd60a, #ff9f0a',
+  multimodal: '#bf5af2, #ff2d55',
+  agent: '#ff9f0a, #ff6723',
+  mcp: '#ff453a, #ff6961',
+}
+
+const iconGradient = computed(() => {
+  return categoryGradientMap[tool.value?.category] || '#6e6e73, #8e8e93'
+})
+
+// Pricing display from first version
+const pricingDisplay = computed(() => {
+  const versions = tool.value?.versions
+  if (!versions || versions.length === 0) return '-'
+  return versions[0].pricing || '-'
+})
+
+// Chinese support stars
+const chineseSupportStars = computed(() => {
+  const level = tool.value?.chineseSupport || 0
+  return '★'.repeat(level) + '☆'.repeat(5 - level)
+})
+
+// Main link from first version
+const mainLink = computed(() => {
+  const versions = tool.value?.versions
+  if (!versions || versions.length === 0) return null
+  return versions[0].link || null
 })
 
 onMounted(() => {
@@ -442,12 +451,21 @@ onMounted(() => {
 })
 
 // Also track and update title when navigating between tools via related links
-watch(() => route.params.id, (newId) => {
-  if (newId) {
-    const t = toolsStore.tools.find(item => item.id === newId)
-    document.title = `${t?.name || '工具详情'} - AI工具全书`
-    gamification.trackToolView(newId)
-    achievements.checkAll()
-  }
-})
+watch(
+  () => route.params.id,
+  (newId) => {
+    if (newId) {
+      const t = toolsStore.tools.find((item) => item.id === newId)
+      document.title = `${t?.name || '工具详情'} - AI工具全书`
+      gamification.trackToolView(newId)
+      achievements.checkAll()
+    }
+  },
+)
 </script>
+
+<style scoped>
+a {
+  text-decoration: none;
+}
+</style>
