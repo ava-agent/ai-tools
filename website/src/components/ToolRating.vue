@@ -10,7 +10,7 @@
           v-for="i in 5"
           :key="i"
           class="w-4 h-4"
-          :class="i <= Math.round(stats.avgRating) ? 'text-yellow-400 fill-yellow-400' : 'text-white/20'"
+          :class="i <= Math.round(stats.avgRating) ? 'text-[#ffd60a] fill-[#ffd60a]' : 'text-white/20'"
         />
       </div>
       <span class="text-sm text-white/60">
@@ -21,7 +21,7 @@
     <!-- 分隔线 -->
     <div
       v-if="stats && authStore.isAuthenticated"
-      class="w-px h-4 bg-white/10"
+      class="w-px h-4 bg-white/[0.06]"
     />
 
     <!-- 用户评分 -->
@@ -41,7 +41,7 @@
         >
           <Star
             class="w-4 h-4"
-            :class="i <= displayRating ? 'text-primary fill-primary' : 'text-white/20'"
+            :class="i <= displayRating ? 'text-[#ffd60a] fill-[#ffd60a]' : 'text-white/20'"
           />
         </button>
       </div>
@@ -50,7 +50,7 @@
     <!-- 未登录提示 -->
     <button
       v-if="!authStore.isAuthenticated"
-      class="text-xs text-white/30 hover:text-primary transition-colors cursor-pointer"
+      class="text-xs text-white/30 hover:text-[#0a84ff] transition-colors cursor-pointer"
       @click="authStore.openAuthModal"
     >
       登录后评分

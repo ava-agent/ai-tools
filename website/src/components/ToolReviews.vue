@@ -1,7 +1,7 @@
 <template>
   <div>
     <h3 class="text-lg font-bold text-white mb-4 flex items-center gap-2">
-      <MessageSquare class="w-5 h-5 text-primary" />
+      <MessageSquare class="w-5 h-5 text-[#0a84ff]" />
       社区评论
       <span
         v-if="reviews.length"
@@ -20,7 +20,7 @@
         <img
           v-if="authStore.avatarUrl"
           :src="authStore.avatarUrl"
-          class="w-8 h-8 rounded-full border border-white/10 flex-shrink-0 mt-1"
+          class="w-8 h-8 rounded-full border border-white/[0.06] flex-shrink-0 mt-1"
         >
         <div class="flex-1">
           <textarea
@@ -28,16 +28,16 @@
             placeholder="分享你的使用体验..."
             rows="3"
             maxlength="2000"
-            class="w-full px-3 py-2 rounded-xl bg-white/5 border border-white/10 text-white placeholder-white/30 text-sm focus:outline-none focus:border-primary/50 transition-colors resize-none"
+            class="w-full px-3 py-2 rounded-xl bg-white/[0.04] border border-white/[0.06] text-white placeholder-white/30 text-sm focus:outline-none focus:border-[#0a84ff]/50 transition-colors resize-none"
           />
           <div class="flex items-center justify-between mt-2">
             <span class="text-xs text-white/30">{{ newReviewContent.length }}/2000</span>
             <button
-              class="px-4 py-1.5 text-sm rounded-lg transition-colors"
+              class="px-4 py-1.5 text-sm rounded-full transition-colors"
               :class="
                 canSubmit
-                  ? 'bg-primary hover:bg-primary/90 text-white cursor-pointer'
-                  : 'bg-white/5 text-white/20 cursor-not-allowed'
+                  ? 'bg-[#0a84ff] hover:brightness-110 text-white cursor-pointer'
+                  : 'bg-white/[0.04] text-white/20 cursor-not-allowed'
               "
               :disabled="!canSubmit"
               @click="handleSubmitReview"
@@ -56,10 +56,10 @@
     </div>
     <div
       v-else
-      class="mb-4 p-3 rounded-xl bg-white/5 border border-white/10 text-center"
+      class="mb-4 p-3 rounded-xl bg-white/[0.04] border border-white/[0.06] text-center"
     >
       <button
-        class="text-sm text-primary hover:text-primary/80 transition-colors cursor-pointer"
+        class="text-sm text-[#0a84ff] hover:text-[#0a84ff]/80 transition-colors cursor-pointer"
         @click="authStore.openAuthModal"
       >
         登录后发表评论
@@ -86,21 +86,21 @@
       <div
         v-for="review in reviews"
         :key="review.id"
-        class="p-3 rounded-xl bg-white/5 border border-white/5"
+        class="p-3 rounded-xl bg-white/[0.04] border border-white/[0.06]"
       >
         <div class="flex items-center gap-2 mb-2">
           <img
             v-if="review.avatarUrl"
             :src="review.avatarUrl"
-            class="w-6 h-6 rounded-full border border-white/10"
+            class="w-6 h-6 rounded-full border border-white/[0.06]"
           >
           <div
             v-else
-            class="w-6 h-6 rounded-full bg-white/10 flex items-center justify-center"
+            class="w-6 h-6 rounded-full bg-white/[0.06] flex items-center justify-center"
           >
             <span class="text-xs text-white/40">{{ (review.displayName || '?')[0] }}</span>
           </div>
-          <span class="text-sm font-medium text-white/70">{{ review.displayName }}</span>
+          <span class="text-sm font-medium text-white/[0.55]">{{ review.displayName }}</span>
           <span class="text-xs text-white/20">{{ formatDate(review.createdAt) }}</span>
           <button
             v-if="review.userId === authStore.userId"
@@ -110,7 +110,7 @@
             删除
           </button>
         </div>
-        <p class="text-sm text-white/60 whitespace-pre-wrap">
+        <p class="text-sm text-white/[0.55] whitespace-pre-wrap">
           {{ review.content }}
         </p>
       </div>

@@ -224,7 +224,9 @@ onUnmounted(() => {
 
 <style scoped>
 .video-player {
-  @apply w-full bg-black rounded-lg overflow-hidden;
+  @apply w-full rounded-2xl overflow-hidden;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .video-player--compact {
@@ -259,7 +261,7 @@ onUnmounted(() => {
 
 .control-btn {
   @apply flex items-center justify-center;
-  @apply text-white hover:text-primary transition-colors;
+  @apply text-white hover:text-[#0a84ff] transition-colors;
   @apply bg-transparent border-none cursor-pointer;
   @apply p-1 rounded;
 }
@@ -269,11 +271,11 @@ onUnmounted(() => {
 }
 
 .progress-bar {
-  @apply h-1 bg-white/30 rounded-full overflow-hidden;
+  @apply h-1 bg-white/20 rounded-full overflow-hidden;
 }
 
 .progress-filled {
-  @apply h-full bg-primary transition-all duration-100;
+  @apply h-full bg-[#0a84ff] transition-all duration-100;
 }
 
 .time-display {
@@ -287,15 +289,22 @@ onUnmounted(() => {
 }
 
 .play-button {
-  @apply w-16 h-16 rounded-full bg-primary/90;
+  @apply w-16 h-16 rounded-full;
+  background: rgba(10, 132, 255, 0.9);
   @apply flex items-center justify-center;
   @apply text-white;
-  @apply hover:bg-primary transition-colors;
+  @apply transition-colors;
   @apply shadow-lg;
+}
+
+.play-button:hover {
+  background: rgba(10, 132, 255, 1);
 }
 
 .video-placeholder {
   @apply flex flex-col items-center justify-center;
-  @apply py-12 px-4 bg-white/5 rounded-lg;
+  @apply py-12 px-4 rounded-2xl;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.06);
 }
 </style>
