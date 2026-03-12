@@ -71,7 +71,7 @@ export const decisionTrees = {
                 id: 'code',
                 question: '预算情况？',
                 options: [
-                    { label: '充足', result: 'Claude 3.5 Sonnet', reason: '代码能力最强' },
+                    { label: '充足', result: 'Claude 4.5 Sonnet', reason: '代码能力最强' },
                     { label: '中文项目', result: 'Qwen3-Coder', reason: '中文代码优化' },
                     { label: '免费', result: 'DeepSeek-V3', reason: '免费且强大' }
                 ]
@@ -80,8 +80,8 @@ export const decisionTrees = {
                 id: 'reasoning',
                 question: '上下文需求？',
                 options: [
-                    { label: '超长（1M+）', result: 'Gemini 2.5 Pro', reason: '1M 上下文' },
-                    { label: '长（200K）', result: 'Claude 3.5', reason: '推理稳定' },
+                    { label: '超长（2M+）', result: 'Gemini 3 Pro', reason: '2M 上下文' },
+                    { label: '长（200K）', result: 'Claude 4.5', reason: '推理稳定' },
                     { label: '复杂推理', result: 'o1/o3', reason: '推理最强但贵' }
                 ]
             },
@@ -89,7 +89,7 @@ export const decisionTrees = {
                 id: 'chat',
                 question: '语言偏好？',
                 options: [
-                    { label: '通用', result: 'GPT-4o', reason: '生态最成熟' },
+                    { label: '通用', result: 'GPT-5.2', reason: '生态最成熟' },
                     { label: '中文', result: 'Qwen3 / DeepSeek', reason: '中文表现优异' },
                     { label: '实时信息', result: 'Perplexity', reason: '带引用搜索' }
                 ]

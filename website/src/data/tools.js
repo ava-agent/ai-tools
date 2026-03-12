@@ -11,7 +11,7 @@ export const aiToolsData = [
     developer: 'Anysphere',
     logo: null,
     versions: [
-      { type: 'Global', pricing: '免费(50请求+2000Tab)/$20月付($16年付)/$60月付(Pro+)/$200月/$40用户月付(团队)', models: 'Composer-1.5, Claude, GPT-4o, o1', link: 'https://cursor.sh' }
+      { type: 'Global', pricing: '免费(50请求+2000Tab)/$20月付($16年付)/$60月付(Pro+)/$200月/$40用户月付(团队)', models: 'Composer-1.5, Claude, GPT-5.2, o3', link: 'https://cursor.sh' }
     ],
     freeQuota: '免费(50请求+2000Tab)',
     contextWindow: '取决于模型',
@@ -39,7 +39,7 @@ export const aiToolsData = [
     logo: null,
     versions: [
       { type: 'CN', pricing: '完全免费', models: '豆包, DeepSeek R1/V3', link: 'https://trae.ai' },
-      { type: 'Global', pricing: '待公布', models: 'Claude, GPT-4, DeepSeek', link: 'https://trae.ai' }
+      { type: 'Global', pricing: '待公布', models: 'Claude, GPT-5, DeepSeek', link: 'https://trae.ai' }
     ],
     freeQuota: '完全免费',
     contextWindow: '取决于模型',
@@ -66,7 +66,7 @@ export const aiToolsData = [
     developer: 'Codeium',
     logo: null,
     versions: [
-      { type: 'Global', pricing: '$15/月', models: 'Claude, GPT-4, SWE-1.5', link: 'https://codeium.com/windsurf' }
+      { type: 'Global', pricing: '$15/月', models: 'Claude, GPT-5, SWE-1.5', link: 'https://codeium.com/windsurf' }
     ],
     freeQuota: '免费版功能强大',
     contextWindow: '取决于模型',
@@ -95,7 +95,7 @@ export const aiToolsData = [
     versions: [
       { type: 'CN', pricing: 'Pro $20/月、Pro+ $60/月', models: 'Qwen-Coder-Qoder 480B MoE', link: 'https://qoder.dev' }
     ],
-    freeQuota: '2026年2月1-15日免费试用',
+    freeQuota: 'Pro $20/月、Pro+ $60/月（免费试用已结束）',
     contextWindow: '128K',
     chineseSupport: 5,
     pros: ['Repo Wiki 强大（AI自动生成代码库文档）', 'Qwen-Coder-Qoder 480B MoE 后端能力强', '适合存量代码理解', '2026 年 2 月最新模型', 'Pro版仅2美元/月性价比高', '阿里云企业级服务保障', '通义千问模型持续优化', '中文支持出色', '适合 Java/Go 后端项目', '代码补全准确率高'],
@@ -131,7 +131,7 @@ export const aiToolsData = [
     funRanking: '夯夯',
     personalExperience: {
       rating: 3,
-      insights: '性能优势被广泛认可，GPU 加速渲染的高性能流畅体验是其他编辑器无法比拟的。创新的 Edit Prediction 功能支持多模型预测，内置协作是亮点。2025年10月 Windows 已正式发布，支持 WSL 深度集成，完全跨平台。AI 功能虽然不如 Cursor 全面，但性能和协作能力使其成为特定场景下的最佳选择。',
+      insights: '性能优势被广泛认可，GPU 加速渲染的高性能流畅体验是其他编辑器无法比拟的。创新的 Edit Prediction 功能支持多模型预测，内置协作是亮点。Windows 版已于 2025 年 10 月正式发布，支持 WSL 深度集成，完全跨平台。AI 功能虽然不如 Cursor 全面，但性能和协作能力使其成为特定场景下的最佳选择。',
       pitfalls: ['AI 功能不如 Cursor 全面', '扩展生态在建设中']
     },
     swot: { S: '性能、开源', W: 'AI 基础', O: '社区增长', T: 'VS Code 生态' },
@@ -226,7 +226,7 @@ export const aiToolsData = [
     versions: [
       { type: 'Global', pricing: 'Public Preview期间免费', models: 'Gemini 3 Pro, Gemini 3 Flash, Claude Sonnet/Opus 4.5', link: 'https://antigravity.dev' }
     ],
-    freeQuota: 'Public Preview期间免费（每 5 小时刷新配额）',
+    freeQuota: 'Public Preview 期间免费（每 5 小时刷新配额，正式版定价待定）',
     contextWindow: '2M (Gemini 3 Pro)',
     chineseSupport: 3,
     pros: ['Google 出品，Gemini 3 Pro 深度集成（相比 Gemini 2.5 Pro 推理和可靠性提升 50%+）', '支持 Gemini 2M 上下文窗口', 'Agent Skills 系统（2026年1月14日全面集成）', '原生集成 Nano Banana 和 Nano Banana Pro', 'Agent-First 开发平台，基于 VS Code fork 的完整 IDE（非插件）', '多窗口设计，包含 Agent Manager', '多模型支持：Gemini 3 Flash、Claude Sonnet/Opus 4.5'],
@@ -235,11 +235,11 @@ export const aiToolsData = [
     funRanking: '夯',
     personalExperience: {
       rating: 5,
-      insights: 'Google 2025年11月18日发布的 AI IDE，基于 VS Code fork 的完整平台（非插件），专注 Agentic Development。Gemini 3 Pro 深度集成，2M 上下文窗口。引入 Agent Skills 系统，原生集成 Nano Banana 增强能力。Public Preview 期间免费（每 5 小时刷新配额），值得关注但需要更多实际使用验证。',
+      insights: 'Google 于 2025 年 11 月发布的 AI IDE，基于 VS Code fork 的完整平台（非插件），专注 Agentic Development。Gemini 3 Pro 深度集成，2M 上下文窗口。已引入 Agent Skills 系统，原生集成 Nano Banana 增强能力。Public Preview 期间免费（每 5 小时刷新配额），值得关注但需要更多实际使用验证。',
       pitfalls: ['新品功能待验证', '存在安全漏洞报告（Prompt Injection 攻击风险）', '每周使用限制存在']
     },
     swot: { S: 'Google、Gemini', W: '新品未知', O: '生态整合', T: '成熟竞品' },
-    tags: ['Google', 'Gemini', '新品', 'AgentSkills', 'Beta免费'],
+    tags: ['Google', 'Gemini', 'AgentFirst', 'AgentSkills', 'Beta免费'],
     video: { src: './videos/antigravity.mp4'},
     radarChart: 'images/antigravity_radar_chart.png'
   },
@@ -262,7 +262,7 @@ export const aiToolsData = [
     funRanking: '夯',
     personalExperience: {
       rating: 3,
-      insights: '最成熟的 AI 编程助手，生态支持最好。2025 年 12 月推出 Agent Mode 和 MCP 支持，支持多模型选择。适合作为辅助工具使用。',
+      insights: '最成熟的 AI 编程助手，生态支持最好。已推出 Agent Mode 和 MCP 支持（2025年12月），支持多模型选择。适合作为辅助工具使用。',
       pitfalls: ['Free 配额太少（2000 代码补全 + 50 聊天请求/月）', '重构不如 Cursor']
     },
     swot: { S: '生态成熟', W: '功能单一', O: 'Workspace', T: 'Cursor' },
@@ -356,7 +356,7 @@ export const aiToolsData = [
     developer: 'Google',
     logo: null,
     versions: [
-      { type: 'Global', pricing: '免费', models: 'Gemini 2.5 Pro, 2.5 Flash, 2.5 Flash-Lite, 3 Pro', link: 'https://github.com/google-gemini/gemini-cli' }
+      { type: 'Global', pricing: '免费', models: 'Gemini 3 Pro, 2.5 Pro, 2.5 Flash, Flash-Lite', link: 'https://github.com/google-gemini/gemini-cli' }
     ],
     freeQuota: '1000次/天 (60次/分钟) + 免费用户可用 Gemini 3 系列',
     contextWindow: '1M (支持 2M 用于大规模扫描)',
@@ -388,13 +388,13 @@ export const aiToolsData = [
     freeQuota: '中国 2000次/天 | 海外 1000次/天 (60次/分钟)',
     contextWindow: '256K (可扩展至 1M)',
     chineseSupport: 5,
-    pros: ['无 Token 数量限制仅限调用次数', '本地部署支持 (32B 模型可 MacBook 运行)', '多模态支持开箱即用', 'FP8 格式无需量化', 'LiveCodeBench/Spider/BIRD-SQL 超越 GPT-4o/Claude 3.5', '开源可定制', '长期免费政策', 'MCP 服务器集成', '中文强', 'Terminal agent 完整'],
+    pros: ['无 Token 数量限制仅限调用次数', '本地部署支持 (32B 模型可 MacBook 运行)', '多模态支持开箱即用', 'FP8 格式无需量化', 'LiveCodeBench/Spider/BIRD-SQL 基准测试表现优异（2026年初数据）', '开源可定制', '长期免费政策', 'MCP 服务器集成', '中文强', 'Terminal agent 完整'],
     cons: ['实际性能与基准有差距', '社区较小教程少', '大型仓库偶现不准确', '适合快速编辑非企业级', 'qwen.md 配置有时被忽略', '成熟度不如 Claude Code/Gemini CLI'],
     bestFor: '中文需求、中小项目开发',
     funRanking: '夯',
     personalExperience: {
       rating: 4,
-      insights: '被称为"平民化的 Claude Code CLI"。2026 年 1 月发布 Qwen3 系列，包括旗舰 Qwen3-235B-A22B 和 Qwen3-Max-Thinking。Qwen3-Coder-Next 于 2026 年 2 月发布专为编码代理设计。在 LiveCodeBench、Spider、BIRD-SQL 等基准测试中超越 GPT-4o 和 Claude 3.5 Sonnet，但实际使用中"好但不算优秀"。无 Token 数量限制仅限调用次数是巨大优势，更适合预算有限的开发者和小型项目。',
+      insights: '被称为"平民化的 Claude Code CLI"。Qwen3 系列已发布，包括旗舰 Qwen3-235B-A22B 和 Qwen3-Max-Thinking。Qwen3-Coder-Next 专为编码代理设计。在 LiveCodeBench、Spider、BIRD-SQL 等基准测试中表现优异（2026年初数据），但实际使用中"好但不算优秀"。无 Token 数量限制仅限调用次数是巨大优势，更适合预算有限的开发者和小型项目。',
       pitfalls: ['实际性能与基准有差距', '大型仓库偶现不准确', '适合快速编辑非企业级']
     },
     swot: { S: '中文、免费', W: '深度推理', O: '国内市场', T: 'Gemini CLI' },
@@ -420,7 +420,7 @@ export const aiToolsData = [
     funRanking: '夯',
     personalExperience: {
       rating: 3,
-      insights: '2025-2026 年最活跃的开源 AI 编程助手之一，由 Paul Gauthier 维护。核心优势是 Git 优先设计，每次 AI 交互都作为 Git 操作处理。最新版本 v0.86.0 (2025年8月) 支持大量最新模型。还维护权威 LLM 代码编辑排行榜。',
+      insights: '最活跃的开源 AI 编程助手之一，由 Paul Gauthier 维护。核心优势是 Git 优先设计，每次 AI 交互都作为 Git 操作处理。支持大量最新模型，还维护权威 LLM 代码编辑排行榜（Aider Polyglot Leaderboard）。',
       pitfalls: ['需要自带 API key', '仅终端无 GUI', '学习曲线陡', '大型代码库编辑受限']
     },
     swot: { S: '开源、Git', W: '仅终端', O: '开源社区', T: '集成工具' },
@@ -434,7 +434,7 @@ export const aiToolsData = [
     developer: '开源社区',
     logo: null,
     versions: [
-      { type: 'Global', pricing: '免费 (API 自付)', models: 'Claude, OpenAI, Gemini 2.5, DeepSeek, AWS Bedrock, Azure, GCP, 本地模型', link: 'https://github.com/cline/cline' }
+      { type: 'Global', pricing: '免费 (API 自付)', models: 'Claude, OpenAI, Gemini 3, DeepSeek, AWS Bedrock, Azure, GCP, 本地模型', link: 'https://github.com/cline/cline' }
     ],
     freeQuota: '免费开源 (API 自付), Open Source Teams 至 2026 Q1 免费 (最多 10 席位)',
     contextWindow: '200K-400K+ (取决于模型)',
@@ -459,7 +459,7 @@ export const aiToolsData = [
     developer: '开源社区',
     logo: null,
     versions: [
-      { type: 'Global', pricing: '免费开源', models: '50+ 提供商 (OpenAI GPT-5, Anthropic Claude 4.5/Opus 4.6, Google Gemini 2.5, DeepSeek, Mistral, 本地模型)', link: 'https://continue.dev' }
+      { type: 'Global', pricing: '免费开源', models: '50+ 提供商 (OpenAI GPT-5, Anthropic Claude 4.5/Opus 4.6, Google Gemini 3, DeepSeek, Mistral, 本地模型)', link: 'https://continue.dev' }
     ],
     freeQuota: '完全免费开源 (本地模型无额外成本)',
     contextWindow: '取决于模型 (Claude 200K+, 自动上下文选择)',
@@ -538,7 +538,7 @@ export const aiToolsData = [
     developer: 'Block (原 Square)',
     logo: null,
     versions: [
-      { type: 'Global', pricing: '完全免费开源 Apache-2.0', models: '20+ LLM: Anthropic Claude, OpenAI GPT-4o/o1, Google Gemini, xAI Grok-3, Groq 免费模型, Ollama 本地, Azure, AWS Bedrock, Mistral, OpenRouter', link: 'https://github.com/block/goose' }
+      { type: 'Global', pricing: '完全免费开源 Apache-2.0', models: '20+ LLM: Anthropic Claude, OpenAI GPT-5/o3, Google Gemini, xAI Grok-4, Groq 免费模型, Ollama 本地, Azure, AWS Bedrock, Mistral, OpenRouter', link: 'https://github.com/block/goose' }
     ],
     freeQuota: '本地模型完全免费 | Tetrate $10 首次免费 | Groq 免费开源模型',
     contextWindow: 'xAI Grok-3: 131K | Claude Copilot: 200K | Gemini CLI: 1M',
@@ -563,7 +563,7 @@ export const aiToolsData = [
     developer: 'OpenHands Community',
     logo: null,
     versions: [
-      { type: 'Global', pricing: '免费开源 | Cloud Individual 免费 | Cloud Growth $500/月起', models: 'Claude Sonnet 4.5/Opus 4.1, GPT-4/GPT-5, DeepSeek V3.2/R1, Qwen3, OpenHands LM 自研 (128K), 本地模型 Ollama', link: 'https://github.com/OpenHands/openhands' }
+      { type: 'Global', pricing: '免费开源 | Cloud Individual 免费 | Cloud Growth $500/月起', models: 'Claude Sonnet 4.5/Opus 4.1, GPT-5, DeepSeek V3.2/R1, Qwen3, OpenHands LM 自研 (128K), 本地模型 Ollama', link: 'https://github.com/OpenHands/openhands' }
     ],
     freeQuota: '开源版完全免费 | Cloud Individual 每日 10 次对话',
     contextWindow: 'OpenHands LM: 128K | 兼容模型最高 400K',
@@ -574,7 +574,7 @@ export const aiToolsData = [
     funRanking: '夯夯',
     personalExperience: {
       rating: 3.5,
-      insights: '开源 AI 编码助手，综合界面强大包含聊天、工作区、Jupyter、浏览器、终端。GitHub 星标达到 67.7K+，468+ 贡献者活跃开发。最新版本 1.3.0 (2026-02-02)。模型无关架构可自由切换，企业级功能包括 RBAC 权限控制。87% bug 同日修复率。',
+      insights: '开源 AI 编码助手，综合界面强大包含聊天、工作区、Jupyter、浏览器、终端。GitHub 星标达到 67.7K+，468+ 贡献者活跃开发。最新版本 1.12.0 (2026-02-09)。模型无关架构可自由切换，企业级功能包括 RBAC 权限控制。87% bug 同日修复率。',
       pitfalls: ['需要配置环境', '学习曲线较陡', 'CLI 模式稳定性问题', 'Individual Cloud 每日限制 10 次']
     },
     swot: { S: '开源、综合界面', W: '学习曲线', O: '开源社区', T: '商业产品' },
@@ -677,7 +677,7 @@ export const aiToolsData = [
     funRanking: '夯夯夯',
     personalExperience: {
       rating: 4,
-      insights: 'DeepSeek R1 推理能力极强，价格极具竞争力。是 GPT-4 的强力替代。成本效益高，可自托管。用于日常使用和搜索资料。',
+      insights: 'DeepSeek R1 推理能力极强，价格极具竞争力。API 价格远低于顶级模型，成本效益高，可自托管。用于日常使用和搜索资料。',
       pitfalls: ['API 稳定性偶有波动', '多模态能力弱']
     },
     swot: { S: '推理强、价格低', W: '生态', O: '开源社区', T: 'OpenAI 生态' },
@@ -933,14 +933,14 @@ export const aiToolsData = [
     versions: [
       { type: 'Global', pricing: '订阅制', models: 'Sora 2', link: 'https://openai.com/sora' }
     ],
-    freeQuota: '2026年1月10日起免费用户无法使用',
+    freeQuota: '需 ChatGPT Plus/Pro 订阅（免费用户已无法使用）',
     contextWindow: 'N/A',
     chineseSupport: 3,
-    pros: ['电影级质感', '60秒时长', '物理模拟强', 'Sora 2 已发布（2025年9月30日）', '同步音频功能', '角色客串功能', '2026年初将包含迪士尼品牌角色'],
+    pros: ['电影级质感', '60秒时长', '物理模拟强', 'Sora 2 已发布（2025年9月30日）', '同步音频功能', '角色客串功能', '已集成迪士尼品牌角色（2026年初上线）'],
     cons: ['需 ChatGPT Plus/Team/Enterprise 订阅', '价格高', '分阶段地区推出'],
     bestFor: '电影级视频创作',
     funRanking: '夯夯',
-    personalExperience: { rating: 4, insights: '视频质量极高，Sora 2 已于 2025 年 9 月发布。2026 年 1 月 10 日起免费用户无法使用，需要付费订阅。', pitfalls: ['需付费订阅', '分阶段地区推出'] },
+    personalExperience: { rating: 4, insights: '视频质量极高，Sora 2 已于 2025 年 9 月发布。免费用户已无法使用，需要付费订阅。', pitfalls: ['需付费订阅', '分阶段地区推出'] },
     swot: { S: '质量顶级', W: '访问限制', O: '影视市场', T: '竞品崛起' },
     tags: ['视频', 'OpenAI', '电影级']
   },
@@ -1250,7 +1250,7 @@ export const aiToolsData = [
     developer: 'StackBlitz',
     logo: null,
     versions: [
-      { type: 'Global', pricing: '免费/$20/$50/$100/月', models: 'Claude, GPT-4o, Gemini', link: 'https://bolt.new' }
+      { type: 'Global', pricing: '免费/$20/$50/$100/月', models: 'Claude, GPT-5, Gemini', link: 'https://bolt.new' }
     ],
     freeQuota: '免费版有限 token',
     contextWindow: '取决于模型',
@@ -1300,7 +1300,7 @@ export const aiToolsData = [
     developer: 'Lovable (原 GPT Engineer)',
     logo: null,
     versions: [
-      { type: 'Global', pricing: '免费/$20/$50/$200/月', models: 'Claude, GPT-4o', link: 'https://lovable.dev' }
+      { type: 'Global', pricing: '免费/$20/$50/$200/月', models: 'Claude, GPT-5', link: 'https://lovable.dev' }
     ],
     freeQuota: '免费版有限使用',
     contextWindow: '取决于模型',
@@ -1352,7 +1352,7 @@ export const aiToolsData = [
     developer: 'Warp',
     logo: null,
     versions: [
-      { type: 'Global', pricing: '免费(~150请求/月)/$20月(Pro)/$40月(Turbo)/$200月(Lightspeed)', models: 'Claude 3.5 Sonnet, Claude 3.5 Haiku, GPT-4o', link: 'https://warp.dev' }
+      { type: 'Global', pricing: '免费(~150请求/月)/$20月(Pro)/$40月(Turbo)/$200月(Lightspeed)', models: 'Claude Sonnet 4.5, Claude Haiku 4.5, GPT-5.2', link: 'https://warp.dev' }
     ],
     freeQuota: '免费版 ~150 AI 请求/月',
     contextWindow: '取决于模型',
@@ -1415,7 +1415,7 @@ export const aiToolsData = [
     funRanking: '夯夯',
     personalExperience: {
       rating: 4,
-      insights: '法国 Mistral AI 的旗舰模型。Large 3 是首个 MoE 架构开源旗舰（675B 总参数），性能对标 GPT-4o。Le Chat Pro 仅 $14.99/月，是最便宜的订阅方案。Ministral 3B/8B/14B 边缘模型可单 GPU 运行，成本极低。API 定价远低于竞品。',
+      insights: '法国 Mistral AI 的旗舰模型。Large 3 是首个 MoE 架构开源旗舰（675B 总参数），性能对标 GPT-5 级别。Le Chat Pro 仅 $14.99/月，是最便宜的订阅方案。Ministral 3B/8B/14B 边缘模型可单 GPU 运行，成本极低。API 定价远低于竞品。',
       pitfalls: ['中文能力一般', '生态尚在发展', '复杂推理不如顶级模型']
     },
     swot: { S: '开源、性价比、欧洲', W: '中文弱、生态小', O: '欧洲合规市场', T: 'Llama、DeepSeek' },
@@ -1457,7 +1457,7 @@ export const aiToolsData = [
     versions: [
       { type: 'CN', pricing: '免费(消费者)/API极低价', models: 'ERNIE 4.5, ERNIE X1, ERNIE 5.0', link: 'https://yiyan.baidu.com' }
     ],
-    freeQuota: '2025年4月起消费者完全免费',
+    freeQuota: '消费者完全免费（2025年4月起）',
     contextWindow: '128K',
     chineseSupport: 5,
     pros: ['消费者完全免费使用', 'ERNIE 4.5 综合评分 79.6 超越 GPT-4.5', 'X1 推理模型中文知识问答、文学创作强', 'API 定价极低（Turbo: ¥0.8/1M输入）', '百度搜索生态集成', '中文场景优化最佳之一'],
@@ -1466,7 +1466,7 @@ export const aiToolsData = [
     funRanking: '夯',
     personalExperience: {
       rating: 3.5,
-      insights: '百度的 ERNIE 系列在中文场景表现优异。2025年3月发布 ERNIE 4.5 和 X1，4月起消费者完全免费。API 定价极低，X1 中文知识问答和文学创作能力强。2025年11月发布 ERNIE 5.0 持续迭代。但海外访问受限是最大短板。',
+      insights: '百度的 ERNIE 系列在中文场景表现优异。ERNIE 4.5/X1 已发布，消费者完全免费。API 定价极低，X1 中文知识问答和文学创作能力强。ERNIE 5.0 于 2025 年底发布，持续迭代中。但海外访问受限是最大短板。',
       pitfalls: ['海外访问受限', '英文能力一般', '生态相对封闭']
     },
     swot: { S: '中文强、免费、百度生态', W: '海外受限', O: '国内企业市场', T: 'DeepSeek 开源竞争' },

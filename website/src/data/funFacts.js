@@ -19,7 +19,7 @@ export const funFacts = {
   ],
   'claude-code': [
     'Claude Code 是完全运行在终端中的 AI 编程助手，不需要 IDE',
-    'Claude Code 拥有 200K Token 的超大上下文窗口，可以一次理解整个项目',
+    'Claude Code 拥有 1M Token 的超大上下文窗口（Opus 4.6），可以一次理解整个项目',
     'Claude Code 的 /compact 命令可以智能压缩对话历史，延长工作会话',
   ],
   'github-copilot': [
@@ -29,7 +29,7 @@ export const funFacts = {
   ],
   'gemini-cli': [
     'Gemini CLI 是 Google 推出的开源命令行 AI 工具，支持 100 万 Token 上下文',
-    'Gemini CLI 使用 Gemini 2.5 Pro 模型，在代码推理方面表现突出',
+    'Gemini CLI 支持 Gemini 3 Pro 模型，在代码推理方面表现突出',
   ],
   'zed': [
     'Zed 号称"世界最快的代码编辑器"，使用 Rust 编写，启动速度极快',
@@ -41,13 +41,13 @@ export const funFacts = {
     'Cline 的 MCP 工具集成让它可以连接浏览器、数据库等外部工具',
   ],
   'deepseek': [
-    'DeepSeek 是目前性价比最高的 AI 模型之一，价格仅为 GPT-4 的 1/10',
+    'DeepSeek 是目前性价比最高的 AI 模型之一，API 价格远低于 GPT-5 和 Claude',
     'DeepSeek 的推理模型 R1 在数学和编程能力上可与顶级模型媲美',
     'DeepSeek 是由中国团队开发的开源模型，代码完全公开可审计',
   ],
   'gpt': [
     'ChatGPT 在发布后 5 天内就突破了 100 万用户，是历史上增长最快的应用',
-    'GPT-4o 支持多模态输入，可以同时处理文本、图片、音频和视频',
+    'GPT-5.2 支持多模态输入，可以同时处理文本、图片、音频和视频',
     'ChatGPT 的 Canvas 功能可以像白板一样协作编辑代码和文档',
   ],
   'claude': [
@@ -57,7 +57,7 @@ export const funFacts = {
   ],
   'gemini': [
     'Gemini 是 Google 将 DeepMind 和 Google Brain 合并后的旗舰模型',
-    'Gemini 2.5 Pro 拥有最长的上下文窗口，可达 100 万 Token',
+    'Gemini 3 Pro 拥有最长的上下文窗口，可达 200 万 Token',
     'Gemini 的 Deep Research 功能可以自动撰写带引用的深度研究报告',
   ],
   'perplexity': [
@@ -66,7 +66,7 @@ export const funFacts = {
   ],
   'grok': [
     'Grok 由 Elon Musk 的 xAI 公司开发，可以实时访问 X (Twitter) 数据',
-    'Grok 3 号称是"地球上最聪明的 AI"，在多个基准测试中领先',
+    'Grok-4 号称是"地球上最聪明的 AI"，在多个基准测试中领先',
   ],
 }
 
