@@ -1,0 +1,140 @@
+<h2>色彩与材质系统</h2>
+<p class="subtitle">macOS Dark Mode 有不同的材质层级，选择卡片和表面的视觉处理方式</p>
+
+<div class="cards">
+
+  <!-- Option A: Pure Black + Elevated Cards -->
+  <div class="card" data-choice="a" onclick="toggleSelect(this)">
+    <div class="card-image" style="padding: 24px; background: #000;">
+      <div style="font-size: 14px; font-weight: 600; color: #fff; margin-bottom: 12px; letter-spacing: -0.2px;">IDE 工具</div>
+      <div style="display: flex; flex-direction: column; gap: 8px;">
+        <div style="background: #1c1c1e; border-radius: 12px; padding: 14px; box-shadow: 0 2px 8px rgba(0,0,0,0.4), 0 0 1px rgba(255,255,255,0.05);">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <div>
+              <div style="font-size: 14px; font-weight: 600; color: #fff;">Cursor</div>
+              <div style="font-size: 12px; color: rgba(255,255,255,0.45); margin-top: 2px;">AI-First IDE · Anysphere</div>
+            </div>
+            <div style="font-size: 12px; color: #ffd60a;">★★★★★</div>
+          </div>
+          <div style="font-size: 11px; color: rgba(255,255,255,0.35); margin-top: 8px; line-height: 1.5;">当前最强的 AI-First IDE，多模型支持，代码能力极强</div>
+        </div>
+        <div style="background: #1c1c1e; border-radius: 12px; padding: 14px; box-shadow: 0 2px 8px rgba(0,0,0,0.4), 0 0 1px rgba(255,255,255,0.05);">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <div>
+              <div style="font-size: 14px; font-weight: 600; color: #fff;">Windsurf</div>
+              <div style="font-size: 12px; color: rgba(255,255,255,0.45); margin-top: 2px;">AI IDE · Codeium</div>
+            </div>
+            <div style="font-size: 12px; color: #ffd60a;">★★★★★</div>
+          </div>
+        </div>
+      </div>
+      <div style="margin-top: 16px; display: flex; gap: 8px;">
+        <div style="display: flex; align-items: center; gap: 4px;">
+          <div style="width: 10px; height: 10px; border-radius: 50%; background: #000; border: 2px solid rgba(255,255,255,0.15);"></div>
+          <span style="font-size: 10px; color: rgba(255,255,255,0.3);">背景 #000000</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 4px;">
+          <div style="width: 10px; height: 10px; border-radius: 50%; background: #1c1c1e;"></div>
+          <span style="font-size: 10px; color: rgba(255,255,255,0.3);">卡片 #1C1C1E</span>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>A. 纯黑 + 浮起卡片</h3>
+      <p>Apple TV/OLED 风格。纯黑 #000 背景，卡片用 #1C1C1E（systemGray6）+ 微妙投影浮起。对比度最强，OLED 屏幕效果极佳。干净利落。</p>
+    </div>
+  </div>
+
+  <!-- Option B: Grouped Background + Inset Cards -->
+  <div class="card" data-choice="b" onclick="toggleSelect(this)">
+    <div class="card-image" style="padding: 24px; background: #000;">
+      <div style="font-size: 14px; font-weight: 600; color: #fff; margin-bottom: 12px; letter-spacing: -0.2px;">IDE 工具</div>
+      <div style="background: #1c1c1e; border-radius: 12px; overflow: hidden;">
+        <div style="padding: 14px; border-bottom: 1px solid rgba(255,255,255,0.06);">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <div>
+              <div style="font-size: 14px; font-weight: 600; color: #fff;">Cursor</div>
+              <div style="font-size: 12px; color: rgba(255,255,255,0.45); margin-top: 2px;">AI-First IDE · Anysphere</div>
+            </div>
+            <div style="font-size: 12px; color: rgba(255,255,255,0.3);">›</div>
+          </div>
+        </div>
+        <div style="padding: 14px; border-bottom: 1px solid rgba(255,255,255,0.06);">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <div>
+              <div style="font-size: 14px; font-weight: 600; color: #fff;">Windsurf</div>
+              <div style="font-size: 12px; color: rgba(255,255,255,0.45); margin-top: 2px;">AI IDE · Codeium</div>
+            </div>
+            <div style="font-size: 12px; color: rgba(255,255,255,0.3);">›</div>
+          </div>
+        </div>
+        <div style="padding: 14px;">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <div>
+              <div style="font-size: 14px; font-weight: 600; color: #fff;">Trae</div>
+              <div style="font-size: 12px; color: rgba(255,255,255,0.45); margin-top: 2px;">AI IDE · ByteDance</div>
+            </div>
+            <div style="font-size: 12px; color: rgba(255,255,255,0.3);">›</div>
+          </div>
+        </div>
+      </div>
+      <div style="margin-top: 16px; display: flex; gap: 8px;">
+        <div style="display: flex; align-items: center; gap: 4px;">
+          <div style="width: 10px; height: 10px; border-radius: 50%; background: #000; border: 2px solid rgba(255,255,255,0.15);"></div>
+          <span style="font-size: 10px; color: rgba(255,255,255,0.3);">背景 #000000</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 4px;">
+          <div style="width: 10px; height: 10px; border-radius: 50%; background: #1c1c1e;"></div>
+          <span style="font-size: 10px; color: rgba(255,255,255,0.3);">分组 #1C1C1E</span>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>B. iOS 设置列表风格</h3>
+      <p>Grouped UITableView 经典模式。工具按分类分组，组内用分割线而非独立卡片。空间效率最高，适合大量数据浏览。像 iOS 设置一样可靠熟悉。</p>
+    </div>
+  </div>
+
+  <!-- Option C: Vibrancy + Glass -->
+  <div class="card" data-choice="c" onclick="toggleSelect(this)">
+    <div class="card-image" style="padding: 24px; background: linear-gradient(135deg, #0a0a1a 0%, #1a0a2e 50%, #0a1a2e 100%);">
+      <div style="font-size: 14px; font-weight: 600; color: #fff; margin-bottom: 12px; letter-spacing: -0.2px;">IDE 工具</div>
+      <div style="display: flex; flex-direction: column; gap: 8px;">
+        <div style="background: rgba(255,255,255,0.06); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-radius: 12px; padding: 14px; border: 1px solid rgba(255,255,255,0.08);">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <div>
+              <div style="font-size: 14px; font-weight: 600; color: #fff;">Cursor</div>
+              <div style="font-size: 12px; color: rgba(255,255,255,0.5); margin-top: 2px;">AI-First IDE · Anysphere</div>
+            </div>
+            <div style="font-size: 12px; color: #ffd60a;">★★★★★</div>
+          </div>
+          <div style="font-size: 11px; color: rgba(255,255,255,0.4); margin-top: 8px; line-height: 1.5;">当前最强的 AI-First IDE，多模型支持</div>
+        </div>
+        <div style="background: rgba(255,255,255,0.06); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-radius: 12px; padding: 14px; border: 1px solid rgba(255,255,255,0.08);">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <div>
+              <div style="font-size: 14px; font-weight: 600; color: #fff;">Windsurf</div>
+              <div style="font-size: 12px; color: rgba(255,255,255,0.5); margin-top: 2px;">AI IDE · Codeium</div>
+            </div>
+            <div style="font-size: 12px; color: #ffd60a;">★★★★★</div>
+          </div>
+        </div>
+      </div>
+      <div style="margin-top: 16px; display: flex; gap: 8px;">
+        <div style="display: flex; align-items: center; gap: 4px;">
+          <div style="width: 10px; height: 10px; border-radius: 50%; background: linear-gradient(135deg, #0a0a1a, #1a0a2e); border: 1px solid rgba(255,255,255,0.15);"></div>
+          <span style="font-size: 10px; color: rgba(255,255,255,0.3);">渐变背景</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 4px;">
+          <div style="width: 10px; height: 10px; border-radius: 50%; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.08);"></div>
+          <span style="font-size: 10px; color: rgba(255,255,255,0.3);">毛玻璃卡片</span>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>C. 毛玻璃 Vibrancy 风格（推荐）</h3>
+      <p>macOS 窗口材质。深色渐变背景 + 半透明模糊卡片 + 极细边框。比纯黑更有层次感，保留现有 glassmorphism 基因但更精致。与 macOS Sonoma 风格一致。</p>
+    </div>
+  </div>
+
+</div>

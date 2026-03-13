@@ -1,0 +1,129 @@
+<h2>完整设计预览 — 首页</h2>
+<p class="subtitle">macOS App Store 风格 + Vibrancy 材质 · 点击确认或提出修改意见</p>
+
+<div class="cards">
+  <div class="card" data-choice="approve" onclick="toggleSelect(this)">
+    <div class="card-image" style="padding: 0; background: #000; overflow: hidden;">
+
+      <!-- Full Home Page Mockup -->
+      <div style="min-height: 480px; background: linear-gradient(180deg, #05051a 0%, #0a0a2a 40%, #0f0a1e 100%); position: relative; overflow: hidden;">
+
+        <!-- Subtle gradient orbs in background -->
+        <div style="position: absolute; width: 300px; height: 300px; border-radius: 50%; background: radial-gradient(circle, rgba(10,132,255,0.08) 0%, transparent 70%); top: -100px; right: -50px;"></div>
+        <div style="position: absolute; width: 250px; height: 250px; border-radius: 50%; background: radial-gradient(circle, rgba(191,90,242,0.06) 0%, transparent 70%); bottom: 50px; left: -80px;"></div>
+
+        <!-- Header / Navigation Bar -->
+        <div style="backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); background: rgba(255,255,255,0.04); border-bottom: 1px solid rgba(255,255,255,0.06); padding: 0 20px; position: relative; z-index: 10;">
+          <div style="max-width: 960px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 48px;">
+            <!-- Logo -->
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <div style="width: 24px; height: 24px; background: linear-gradient(135deg, #0a84ff, #bf5af2); border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 12px;">🧠</div>
+              <span style="font-size: 15px; font-weight: 600; color: #fff; letter-spacing: -0.3px;">AI Tools</span>
+            </div>
+            <!-- Segmented Control -->
+            <div style="display: flex; background: rgba(255,255,255,0.06); border-radius: 8px; padding: 2px;">
+              <div style="padding: 5px 14px; font-size: 12px; color: #fff; background: rgba(255,255,255,0.12); border-radius: 6px; font-weight: 500;">发现</div>
+              <div style="padding: 5px 14px; font-size: 12px; color: rgba(255,255,255,0.45);">对比</div>
+              <div style="padding: 5px 14px; font-size: 12px; color: rgba(255,255,255,0.45);">匹配</div>
+              <div style="padding: 5px 14px; font-size: 12px; color: rgba(255,255,255,0.45);">定价</div>
+            </div>
+            <!-- Search -->
+            <div style="display: flex; align-items: center; gap: 6px; background: rgba(255,255,255,0.06); border-radius: 8px; padding: 6px 12px;">
+              <span style="font-size: 12px; color: rgba(255,255,255,0.25);">🔍</span>
+              <span style="font-size: 12px; color: rgba(255,255,255,0.25);">搜索</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Main Content -->
+        <div style="max-width: 960px; margin: 0 auto; padding: 24px 20px; position: relative; z-index: 5;">
+
+          <!-- Hero Section (minimal) -->
+          <div style="margin-bottom: 24px;">
+            <div style="font-size: 28px; font-weight: 700; color: #fff; letter-spacing: -0.8px; line-height: 1.15;">发现最好的 AI 工具</div>
+            <div style="font-size: 14px; color: rgba(255,255,255,0.45); margin-top: 6px;">82 款工具深度评测 · 持续更新</div>
+          </div>
+
+          <!-- Category Filter Pills -->
+          <div style="display: flex; gap: 8px; margin-bottom: 20px; flex-wrap: wrap;">
+            <div style="background: #0a84ff; color: #fff; padding: 6px 16px; border-radius: 980px; font-size: 13px; font-weight: 500;">全部</div>
+            <div style="background: rgba(255,255,255,0.06); color: rgba(255,255,255,0.6); padding: 6px 16px; border-radius: 980px; font-size: 13px; backdrop-filter: blur(10px);">IDE</div>
+            <div style="background: rgba(255,255,255,0.06); color: rgba(255,255,255,0.6); padding: 6px 16px; border-radius: 980px; font-size: 13px; backdrop-filter: blur(10px);">CLI</div>
+            <div style="background: rgba(255,255,255,0.06); color: rgba(255,255,255,0.6); padding: 6px 16px; border-radius: 980px; font-size: 13px; backdrop-filter: blur(10px);">大模型</div>
+            <div style="background: rgba(255,255,255,0.06); color: rgba(255,255,255,0.6); padding: 6px 16px; border-radius: 980px; font-size: 13px; backdrop-filter: blur(10px);">多模态</div>
+            <div style="background: rgba(255,255,255,0.06); color: rgba(255,255,255,0.6); padding: 6px 16px; border-radius: 980px; font-size: 13px; backdrop-filter: blur(10px);">Agent</div>
+            <div style="background: rgba(255,255,255,0.06); color: rgba(255,255,255,0.6); padding: 6px 16px; border-radius: 980px; font-size: 13px; backdrop-filter: blur(10px);">MCP</div>
+          </div>
+
+          <!-- Featured Card -->
+          <div style="background: rgba(255,255,255,0.04); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.06); border-radius: 16px; padding: 20px; margin-bottom: 16px; display: flex; align-items: center; gap: 16px;">
+            <div style="width: 56px; height: 56px; background: linear-gradient(135deg, rgba(10,132,255,0.3), rgba(191,90,242,0.2)); border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 24px; flex-shrink: 0;">⚡</div>
+            <div style="flex: 1;">
+              <div style="font-size: 10px; color: #bf5af2; text-transform: uppercase; letter-spacing: 1px; font-weight: 600; margin-bottom: 2px;">编辑推荐</div>
+              <div style="font-size: 18px; font-weight: 700; color: #fff; letter-spacing: -0.3px;">Cursor</div>
+              <div style="font-size: 13px; color: rgba(255,255,255,0.5); margin-top: 2px;">当前最强的 AI-First IDE，Agent 模式 + 多模型支持 + Composer 全局编辑</div>
+            </div>
+            <div style="text-align: right; flex-shrink: 0;">
+              <div style="background: #0a84ff; color: #fff; padding: 6px 16px; border-radius: 980px; font-size: 12px; font-weight: 500;">查看</div>
+            </div>
+          </div>
+
+          <!-- Tool Cards Grid -->
+          <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px;">
+            <!-- Card 1 -->
+            <div style="background: rgba(255,255,255,0.04); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid rgba(255,255,255,0.06); border-radius: 14px; padding: 16px; transition: all 0.2s;">
+              <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px;">
+                <div style="width: 36px; height: 36px; background: rgba(10,132,255,0.15); border-radius: 9px; display: flex; align-items: center; justify-content: center; font-size: 16px;">💻</div>
+                <div>
+                  <div style="font-size: 14px; font-weight: 600; color: #fff; letter-spacing: -0.2px;">Claude Code</div>
+                  <div style="font-size: 11px; color: rgba(255,255,255,0.4);">Anthropic · CLI</div>
+                </div>
+              </div>
+              <div style="font-size: 12px; color: rgba(255,255,255,0.45); line-height: 1.5; margin-bottom: 10px;">Anthropic 官方 AI CLI Agent...</div>
+              <div style="display: flex; justify-content: space-between; align-items: center;">
+                <div style="font-size: 11px; color: #ffd60a;">★★★★★</div>
+                <div style="font-size: 11px; color: #30d158; background: rgba(48,209,88,0.1); padding: 2px 8px; border-radius: 6px;">5.0</div>
+              </div>
+            </div>
+            <!-- Card 2 -->
+            <div style="background: rgba(255,255,255,0.04); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid rgba(255,255,255,0.06); border-radius: 14px; padding: 16px;">
+              <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px;">
+                <div style="width: 36px; height: 36px; background: rgba(48,209,88,0.15); border-radius: 9px; display: flex; align-items: center; justify-content: center; font-size: 16px;">🌊</div>
+                <div>
+                  <div style="font-size: 14px; font-weight: 600; color: #fff; letter-spacing: -0.2px;">Windsurf</div>
+                  <div style="font-size: 11px; color: rgba(255,255,255,0.4);">Codeium · IDE</div>
+                </div>
+              </div>
+              <div style="font-size: 12px; color: rgba(255,255,255,0.45); line-height: 1.5; margin-bottom: 10px;">AI 流式编辑体验最好的 IDE...</div>
+              <div style="display: flex; justify-content: space-between; align-items: center;">
+                <div style="font-size: 11px; color: #ffd60a;">★★★★★</div>
+                <div style="font-size: 11px; color: #30d158; background: rgba(48,209,88,0.1); padding: 2px 8px; border-radius: 6px;">5.0</div>
+              </div>
+            </div>
+            <!-- Card 3 -->
+            <div style="background: rgba(255,255,255,0.04); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid rgba(255,255,255,0.06); border-radius: 14px; padding: 16px;">
+              <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px;">
+                <div style="width: 36px; height: 36px; background: rgba(255,214,10,0.15); border-radius: 9px; display: flex; align-items: center; justify-content: center; font-size: 16px;">🤖</div>
+                <div>
+                  <div style="font-size: 14px; font-weight: 600; color: #fff; letter-spacing: -0.2px;">GPT-5.2</div>
+                  <div style="font-size: 11px; color: rgba(255,255,255,0.4);">OpenAI · LLM</div>
+                </div>
+              </div>
+              <div style="font-size: 12px; color: rgba(255,255,255,0.45); line-height: 1.5; margin-bottom: 10px;">最成熟的生态系统...</div>
+              <div style="display: flex; justify-content: space-between; align-items: center;">
+                <div style="font-size: 11px; color: #ffd60a;">★★★★★</div>
+                <div style="font-size: 11px; color: #30d158; background: rgba(48,209,88,0.1); padding: 2px 8px; border-radius: 6px;">5.0</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+    <div class="card-body">
+      <h3>首页设计 — 点击确认或提出修改</h3>
+      <p>Vibrancy 导航栏 + 分段控件路由 + 胶囊分类筛选 + 编辑推荐大卡 + 工具卡片网格。Apple 系统色彩：蓝 #0a84ff、绿 #30d158、紫 #bf5af2、黄 #ffd60a。</p>
+    </div>
+  </div>
+</div>

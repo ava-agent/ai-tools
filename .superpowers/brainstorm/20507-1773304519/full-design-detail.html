@@ -1,0 +1,141 @@
+<h2>完整设计预览 — 工具详情页</h2>
+<p class="subtitle">点击查看后的工具详情页面 · 点击确认或提出修改</p>
+
+<div class="cards">
+  <div class="card" data-choice="approve" onclick="toggleSelect(this)">
+    <div class="card-image" style="padding: 0; background: #000; overflow: hidden;">
+
+      <div style="min-height: 580px; background: linear-gradient(180deg, #05051a 0%, #0a0a2a 40%, #0f0a1e 100%); position: relative; overflow: hidden;">
+        <!-- Background orbs -->
+        <div style="position: absolute; width: 300px; height: 300px; border-radius: 50%; background: radial-gradient(circle, rgba(10,132,255,0.06) 0%, transparent 70%); top: -80px; right: -50px;"></div>
+
+        <!-- Header -->
+        <div style="backdrop-filter: blur(20px); background: rgba(255,255,255,0.04); border-bottom: 1px solid rgba(255,255,255,0.06); padding: 0 20px; position: relative; z-index: 10;">
+          <div style="max-width: 720px; margin: 0 auto; display: flex; align-items: center; height: 48px; gap: 12px;">
+            <div style="font-size: 13px; color: #0a84ff; cursor: pointer;">← 返回</div>
+            <div style="flex: 1; text-align: center; font-size: 14px; font-weight: 600; color: #fff;">Cursor</div>
+            <div style="width: 50px;"></div>
+          </div>
+        </div>
+
+        <!-- Content -->
+        <div style="max-width: 720px; margin: 0 auto; padding: 24px 20px; position: relative; z-index: 5;">
+
+          <!-- Tool Header -->
+          <div style="display: flex; align-items: flex-start; gap: 16px; margin-bottom: 24px;">
+            <div style="width: 64px; height: 64px; background: linear-gradient(135deg, rgba(10,132,255,0.3), rgba(191,90,242,0.2)); border-radius: 16px; display: flex; align-items: center; justify-content: center; font-size: 28px; flex-shrink: 0;">⚡</div>
+            <div style="flex: 1;">
+              <div style="font-size: 24px; font-weight: 700; color: #fff; letter-spacing: -0.5px;">Cursor</div>
+              <div style="font-size: 14px; color: rgba(255,255,255,0.45); margin-top: 2px;">Anysphere · AI-First IDE</div>
+              <div style="display: flex; align-items: center; gap: 12px; margin-top: 8px;">
+                <div style="font-size: 13px; color: #ffd60a;">★★★★★</div>
+                <div style="font-size: 13px; color: #30d158; font-weight: 600;">5.0</div>
+                <div style="font-size: 12px; color: rgba(255,255,255,0.3);">|</div>
+                <div style="font-size: 12px; color: rgba(255,255,255,0.4);">夯夯夯</div>
+              </div>
+            </div>
+            <div style="background: #0a84ff; color: #fff; padding: 8px 20px; border-radius: 980px; font-size: 13px; font-weight: 500; flex-shrink: 0;">访问官网</div>
+          </div>
+
+          <!-- Info Grid -->
+          <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 20px;">
+            <div style="background: rgba(255,255,255,0.04); backdrop-filter: blur(16px); border: 1px solid rgba(255,255,255,0.06); border-radius: 12px; padding: 14px; text-align: center;">
+              <div style="font-size: 11px; color: rgba(255,255,255,0.35); margin-bottom: 4px;">定价</div>
+              <div style="font-size: 14px; font-weight: 600; color: #fff;">$20/月</div>
+            </div>
+            <div style="background: rgba(255,255,255,0.04); backdrop-filter: blur(16px); border: 1px solid rgba(255,255,255,0.06); border-radius: 12px; padding: 14px; text-align: center;">
+              <div style="font-size: 11px; color: rgba(255,255,255,0.35); margin-bottom: 4px;">上下文</div>
+              <div style="font-size: 14px; font-weight: 600; color: #fff;">1M Token</div>
+            </div>
+            <div style="background: rgba(255,255,255,0.04); backdrop-filter: blur(16px); border: 1px solid rgba(255,255,255,0.06); border-radius: 12px; padding: 14px; text-align: center;">
+              <div style="font-size: 11px; color: rgba(255,255,255,0.35); margin-bottom: 4px;">中文支持</div>
+              <div style="font-size: 14px; font-weight: 600; color: #fff;">★★★★☆</div>
+            </div>
+          </div>
+
+          <!-- Personal Insights -->
+          <div style="background: rgba(255,255,255,0.04); backdrop-filter: blur(16px); border: 1px solid rgba(255,255,255,0.06); border-radius: 14px; padding: 16px; margin-bottom: 16px;">
+            <div style="font-size: 13px; font-weight: 600; color: #fff; margin-bottom: 8px;">💡 使用心得</div>
+            <div style="font-size: 13px; color: rgba(255,255,255,0.55); line-height: 1.7;">当前最强的 AI-First IDE，Multi-model 支持让你可以在不同任务间切换最佳模型。Composer 全局编辑是杀手级功能，Agent 模式可以自主完成复杂任务...</div>
+          </div>
+
+          <!-- Radar Chart Placeholder -->
+          <div style="background: rgba(255,255,255,0.04); backdrop-filter: blur(16px); border: 1px solid rgba(255,255,255,0.06); border-radius: 14px; padding: 16px; margin-bottom: 16px;">
+            <div style="font-size: 13px; font-weight: 600; color: #fff; margin-bottom: 12px;">📊 评分雷达</div>
+            <div style="display: flex; justify-content: center;">
+              <svg viewBox="0 0 200 200" width="160" height="160">
+                <polygon points="100,30 170,75 150,150 50,150 30,75" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+                <polygon points="100,50 155,82 140,138 60,138 45,82" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+                <polygon points="100,70 140,90 130,125 70,125 60,90" fill="none" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+                <polygon points="100,35 165,77 148,148 52,148 35,77" fill="rgba(10,132,255,0.15)" stroke="rgba(10,132,255,0.6)" stroke-width="1.5"/>
+                <text x="100" y="22" text-anchor="middle" fill="rgba(255,255,255,0.4)" font-size="10">能力</text>
+                <text x="178" y="78" text-anchor="start" fill="rgba(255,255,255,0.4)" font-size="10">易用</text>
+                <text x="158" y="158" text-anchor="start" fill="rgba(255,255,255,0.4)" font-size="10">中文</text>
+                <text x="42" y="158" text-anchor="end" fill="rgba(255,255,255,0.4)" font-size="10">性价比</text>
+                <text x="22" y="78" text-anchor="end" fill="rgba(255,255,255,0.4)" font-size="10">生态</text>
+              </svg>
+            </div>
+          </div>
+
+          <!-- Pros & Cons -->
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 16px;">
+            <div style="background: rgba(48,209,88,0.04); backdrop-filter: blur(16px); border: 1px solid rgba(48,209,88,0.1); border-radius: 14px; padding: 16px;">
+              <div style="font-size: 13px; font-weight: 600; color: #30d158; margin-bottom: 8px;">优势</div>
+              <div style="font-size: 12px; color: rgba(255,255,255,0.5); line-height: 1.8;">
+                <div>• 多模型支持（Claude/GPT/Gemini）</div>
+                <div>• Composer 全局多文件编辑</div>
+                <div>• Agent 模式自主完成任务</div>
+                <div>• Tab 代码补全极快</div>
+              </div>
+            </div>
+            <div style="background: rgba(255,69,58,0.04); backdrop-filter: blur(16px); border: 1px solid rgba(255,69,58,0.1); border-radius: 14px; padding: 16px;">
+              <div style="font-size: 13px; font-weight: 600; color: #ff453a; margin-bottom: 8px;">劣势</div>
+              <div style="font-size: 12px; color: rgba(255,255,255,0.5); line-height: 1.8;">
+                <div>• 快请求消耗快</div>
+                <div>• 价格较高（$20/月）</div>
+                <div>• 国内网络受限</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- SWOT -->
+          <div style="background: rgba(255,255,255,0.04); backdrop-filter: blur(16px); border: 1px solid rgba(255,255,255,0.06); border-radius: 14px; padding: 16px; margin-bottom: 16px;">
+            <div style="font-size: 13px; font-weight: 600; color: #fff; margin-bottom: 12px;">📋 SWOT 分析</div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
+              <div style="background: rgba(48,209,88,0.06); border-left: 3px solid #30d158; border-radius: 0 8px 8px 0; padding: 10px 12px;">
+                <div style="font-size: 11px; font-weight: 600; color: #30d158; margin-bottom: 4px;">S 优势</div>
+                <div style="font-size: 12px; color: rgba(255,255,255,0.5);">多模型、Agent、Composer</div>
+              </div>
+              <div style="background: rgba(255,69,58,0.06); border-left: 3px solid #ff453a; border-radius: 0 8px 8px 0; padding: 10px 12px;">
+                <div style="font-size: 11px; font-weight: 600; color: #ff453a; margin-bottom: 4px;">W 劣势</div>
+                <div style="font-size: 12px; color: rgba(255,255,255,0.5);">价格高、请求限制</div>
+              </div>
+              <div style="background: rgba(10,132,255,0.06); border-left: 3px solid #0a84ff; border-radius: 0 8px 8px 0; padding: 10px 12px;">
+                <div style="font-size: 11px; font-weight: 600; color: #0a84ff; margin-bottom: 4px;">O 机会</div>
+                <div style="font-size: 12px; color: rgba(255,255,255,0.5);">AI 编程市场快速增长</div>
+              </div>
+              <div style="background: rgba(255,159,10,0.06); border-left: 3px solid #ff9f0a; border-radius: 0 8px 8px 0; padding: 10px 12px;">
+                <div style="font-size: 11px; font-weight: 600; color: #ff9f0a; margin-bottom: 4px;">T 威胁</div>
+                <div style="font-size: 12px; color: rgba(255,255,255,0.5);">Windsurf、Trae 竞争</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tags -->
+          <div style="display: flex; flex-wrap: wrap; gap: 6px;">
+            <div style="background: rgba(10,132,255,0.1); color: #0a84ff; padding: 4px 12px; border-radius: 980px; font-size: 11px;">推荐</div>
+            <div style="background: rgba(255,255,255,0.06); color: rgba(255,255,255,0.5); padding: 4px 12px; border-radius: 980px; font-size: 11px;">IDE</div>
+            <div style="background: rgba(255,255,255,0.06); color: rgba(255,255,255,0.5); padding: 4px 12px; border-radius: 980px; font-size: 11px;">Agent</div>
+            <div style="background: rgba(255,255,255,0.06); color: rgba(255,255,255,0.5); padding: 4px 12px; border-radius: 980px; font-size: 11px;">多模型</div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+    <div class="card-body">
+      <h3>工具详情页 — 点击确认或提出修改</h3>
+      <p>返回导航 + 工具头部（图标/名称/评分/CTA）+ 信息网格 + 使用心得 + 雷达图 + 优劣势双栏 + SWOT 四格 + 标签。全部使用 Vibrancy 卡片 + Apple 系统色。</p>
+    </div>
+  </div>
+</div>

@@ -1,5 +1,16 @@
 <template>
+  <!-- 图片 Logo 模式 -->
+  <img
+    v-if="logo?.logoUrl"
+    :src="logo.logoUrl"
+    :alt="toolName"
+    class="inline-flex items-center justify-center rounded-xl object-contain flex-shrink-0 bg-white p-1"
+    :class="sizeClass"
+    @error="handleImageError"
+  >
+  <!-- 首字母渐变模式 -->
   <div
+    v-else
     class="inline-flex items-center justify-center rounded-xl font-bold select-none flex-shrink-0"
     :class="sizeClass"
     :style="logoStyle"
@@ -9,7 +20,7 @@
 </template>
 
 <script setup>
-import { computed } from 'vue'
+import { computed, ref } from 'vue'
 import { getToolLogo } from '../data/toolLogos.js'
 
 const props = defineProps({
@@ -18,7 +29,20 @@ const props = defineProps({
   size: { type: String, default: 'md' },
 })
 
-const logo = computed(() => getToolLogo(props.toolId))
+const imageError = ref(false)
+
+const logo = computed(() => {
+  const logoData = getToolLogo(props.toolId)
+  if (imageError.value && logoData) {
+    // 图片加载失败，移除 logoUrl 使用首字母模式
+    return { ...logoData, logoUrl: null }
+  }
+  return logoData
+})
+
+const handleImageError = () => {
+  imageError.value = true
+}
 
 const displayInitials = computed(() => {
   if (logo.value) return logo.value.initials
