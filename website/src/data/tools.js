@@ -262,7 +262,7 @@ export const aiToolsData = [
     funRanking: '夯',
     personalExperience: {
       rating: 3,
-      insights: '最成熟的 AI 编程助手，GitHub 生态集成无人能及。已推出 Agent Mode 和 MCP 支持（2025年12月），支持 GPT-4o、Claude 4.5 等多模型选择。代码补全准确率高，在 VS Code 和 JetBrains 中体验一致。适合作为与 Cursor 互补的辅助工具，特别是重度 GitHub 用户。',
+      insights: '最成熟的 AI 编程助手，GitHub 生态集成无人能及。已推出 Agent Mode 和 MCP 支持（2025年12月），支持 GPT-5、Claude 4.5 等多模型选择。代码补全准确率高，在 VS Code 和 JetBrains 中体验一致。适合作为与 Cursor 互补的辅助工具，特别是重度 GitHub 用户。',
       pitfalls: ['Free 配额太少（2000 代码补全 + 50 聊天请求/月）', '重构不如 Cursor']
     },
     swot: { S: '生态成熟', W: '功能单一', O: 'Workspace', T: 'Cursor' },
@@ -541,7 +541,7 @@ export const aiToolsData = [
       { type: 'Global', pricing: '完全免费开源 Apache-2.0', models: '20+ LLM: Anthropic Claude, OpenAI GPT-5/o3, Google Gemini, xAI Grok-4, Groq 免费模型, Ollama 本地, Azure, AWS Bedrock, Mistral, OpenRouter', link: 'https://github.com/block/goose' }
     ],
     freeQuota: '本地模型完全免费 | Tetrate $10 首次免费 | Groq 免费开源模型',
-    contextWindow: 'xAI Grok-3: 131K | Claude Copilot: 200K | Gemini CLI: 1M',
+    contextWindow: 'xAI Grok-4: 131K | Claude Copilot: 200K | Gemini CLI: 1M',
     chineseSupport: 3,
     pros: ['Block 公司（Square 母公司）开发支持', '30.2K GitHub 星标', 'Session Management（会话管理，支持多会话切换、导入导出、会话搜索）', 'Desktop + CLI 双模式，支持多模型配置', 'Rust 58.3% + TypeScript 33.4% 构建', '完全本地运行', '开源 AI 代理框架（Apache-2.0 许可）'],
     cons: ['严重依赖工具调用不支持受限', '本地模型需额外配置下载', '默认 4096 上下文可能不足', 'o1-mini/o1-preview 不支持', '免费模型性能不如付费', '缺乏企业级支持服务', '某些提供商需预配置 AWS/Azure 凭证', '配置复杂', '生态较新'],
@@ -1734,7 +1734,7 @@ export const aiToolsData = [
     developer: 'OpenAI',
     logo: null,
     versions: [
-      { type: 'Global', pricing: '开源免费（按 API 用量计费）', models: 'GPT-4o, o1, o3 等 OpenAI 模型', link: 'https://github.com/openai/openai-agents-python' }
+      { type: 'Global', pricing: '开源免费（按 API 用量计费）', models: 'GPT-5, o1, o3 等 OpenAI 模型', link: 'https://github.com/openai/openai-agents-python' }
     ],
     freeQuota: 'SDK 免费，API 按量计费',
     contextWindow: '取决于模型',
