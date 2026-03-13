@@ -21,7 +21,10 @@
           <div class="text-[10px] text-[#bf5af2] uppercase tracking-widest font-semibold mb-0.5">
             编辑推荐
           </div>
-          <div class="text-lg font-bold text-white" style="letter-spacing: -0.3px;">
+          <div
+            class="text-lg font-bold text-white"
+            style="letter-spacing: -0.3px;"
+          >
             {{ featuredTool.name }}
           </div>
           <div class="text-[13px] text-white/50 mt-0.5 truncate">

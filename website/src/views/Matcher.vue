@@ -225,6 +225,7 @@ import {
   Image,
   Bot,
   Plug,
+  Wrench,
   Check,
   X,
   CheckCircle2,
@@ -317,7 +318,8 @@ function getCategoryIcon(iconName) {
     Brain,
     Image,
     Bot,
-    Plug
+    Plug,
+    Wrench
   }
   return icons[iconName] || Brain
 }

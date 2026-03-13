@@ -6,6 +6,7 @@ const categoryLabels = {
   multimodal: '多模态',
   agent: 'Agent',
   mcp: 'MCP 工具',
+  skill: 'AI 技能',
   // 兼容旧格式
   IDE: 'AI IDE',
   LLM: 'AI 模型',
@@ -23,7 +24,8 @@ const categoryColors = {
   llm: 'bg-purple-500',
   multimodal: 'bg-pink-500',
   agent: 'bg-orange-500',
-  mcp: 'bg-cyan-500'
+  mcp: 'bg-cyan-500',
+  skill: 'bg-amber-500'
 }
 
 export function getCategoryColor(category) {

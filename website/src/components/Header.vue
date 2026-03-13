@@ -2,9 +2,14 @@
   <header class="sticky top-0 z-50 glass-nav">
     <div class="max-w-[960px] mx-auto flex items-center h-12 px-5 gap-3">
       <!-- Logo -->
-      <router-link to="/" class="flex items-center gap-2 flex-shrink-0">
-        <div class="w-6 h-6 rounded-md flex items-center justify-center text-xs"
-             style="background: linear-gradient(135deg, #0a84ff, #bf5af2);">
+      <router-link
+        to="/"
+        class="flex items-center gap-2 flex-shrink-0"
+      >
+        <div
+          class="w-6 h-6 rounded-md flex items-center justify-center text-xs"
+          style="background: linear-gradient(135deg, #0a84ff, #bf5af2);"
+        >
           <Brain class="w-3.5 h-3.5 text-white" />
         </div>
         <span class="text-[15px] font-semibold text-white tracking-tight hidden sm:block">AI Tools</span>
@@ -13,13 +18,16 @@
       <div class="flex-1" />
 
       <!-- Segmented Control (desktop) -->
-      <nav class="hidden md:flex segmented-control" aria-label="Main navigation">
+      <nav
+        class="hidden md:flex segmented-control"
+        aria-label="Main navigation"
+      >
         <router-link
           v-for="item in mainNav"
           :key="item.to"
+          v-slot="{ navigate, isActive }"
           :to="item.to"
           custom
-          v-slot="{ navigate, isActive }"
         >
           <button
             class="segment"
@@ -67,7 +75,10 @@
             :alt="authStore.displayName"
             class="w-6 h-6 rounded-full border border-white/20"
           >
-          <UserCircle v-else class="w-6 h-6 text-white/45" />
+          <UserCircle
+            v-else
+            class="w-6 h-6 text-white/45"
+          />
         </button>
 
         <!-- Mobile menu button -->
@@ -77,8 +88,14 @@
           aria-label="Toggle menu"
           @click="toggleMobileMenu"
         >
-          <Menu v-if="!isMobileMenuOpen" class="w-5 h-5" />
-          <X v-else class="w-5 h-5" />
+          <Menu
+            v-if="!isMobileMenuOpen"
+            class="w-5 h-5"
+          />
+          <X
+            v-else
+            class="w-5 h-5"
+          />
         </button>
       </div>
     </div>
@@ -92,7 +109,10 @@
       leave-from-class="opacity-100 translate-y-0"
       leave-to-class="opacity-0 -translate-y-2"
     >
-      <div v-if="isMobileMenuOpen" class="md:hidden px-5 pb-4 pt-2 border-t border-white/[0.06]">
+      <div
+        v-if="isMobileMenuOpen"
+        class="md:hidden px-5 pb-4 pt-2 border-t border-white/[0.06]"
+      >
         <div class="flex flex-col gap-1">
           <router-link
             v-for="item in [...mainNav, ...secondaryNav]"
@@ -101,7 +121,10 @@
             class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm text-white/60 hover:text-white hover:bg-white/5 transition-colors"
             @click="isMobileMenuOpen = false"
           >
-            <component :is="item.icon" class="w-4 h-4" />
+            <component
+              :is="item.icon"
+              class="w-4 h-4"
+            />
             {{ item.label }}
           </router-link>
         </div>

@@ -8,7 +8,10 @@
         >
           404
         </div>
-        <h1 class="text-[28px] font-bold text-white mb-4" style="letter-spacing: -0.8px">
+        <h1
+          class="text-[28px] font-bold text-white mb-4"
+          style="letter-spacing: -0.8px"
+        >
           页面未找到
         </h1>
         <p class="text-xl text-white/60 mb-8">
