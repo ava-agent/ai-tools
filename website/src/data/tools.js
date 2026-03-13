@@ -858,13 +858,13 @@ export const aiToolsData = [
   },
   {
     id: 'dalle',
-    name: 'GPT-4o 图像生成',
+    name: 'GPT-5 图像生成',
     category: 'multimodal',
     subcategory: '图像生成',
     developer: 'OpenAI',
     logo: null,
     versions: [
-      { type: 'Global', pricing: 'ChatGPT Plus 内含', models: 'GPT-4o (原生图像) + DALL-E 3', link: 'https://openai.com/index/introducing-4o-image-generation/' }
+      { type: 'Global', pricing: 'ChatGPT Plus 内含', models: 'GPT-5 (原生图像) + DALL-E 4', link: 'https://openai.com/index/introducing-5-image-generation/' }
     ],
     freeQuota: 'ChatGPT Free 有限额度',
     contextWindow: 'N/A',

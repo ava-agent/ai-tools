@@ -123,7 +123,7 @@ export const decisionTrees = {
                 question: '需要什么风格？',
                 options: [
                     { label: '艺术创作/高品质', result: 'Midjourney', reason: '艺术风格业界领先' },
-                    { label: '含文字的设计', result: 'GPT-4o 图像生成', reason: '文字渲染最强，对话式迭代' },
+                    { label: '含文字的设计', result: 'GPT-5 图像生成', reason: '文字渲染最强，对话式迭代' },
                     { label: '开源/本地部署', result: 'FLUX', reason: 'Schnell 完全免费开源' },
                     { label: '中文/国产', result: '即梦', reason: '中文提示词最佳，免费友好' }
                 ]
@@ -262,7 +262,7 @@ export const scenarioGuide = [
     { scenario: '长文档调研/代码分析', primary: 'Gemini CLI', backup: 'Qwen CLI', budget: '免费' },
     { scenario: '企业团队协作', primary: 'Cursor Teams + Qoder', backup: 'Claude Code', budget: '$40-60/人/月' },
     { scenario: '视频内容创作', primary: '可灵', backup: 'Sora、Runway', budget: '免费-$20/月' },
-    { scenario: '图像设计/海报', primary: 'Midjourney', backup: 'GPT-4o、即梦', budget: '免费-$30/月' },
+    { scenario: '图像设计/海报', primary: 'Midjourney', backup: 'GPT-5、即梦', budget: '免费-$30/月' },
     { scenario: '音乐/配乐创作', primary: 'Suno', backup: 'ElevenLabs', budget: '免费-$30/月' },
     { scenario: '构建 AI Agent', primary: 'Claude Agent SDK', backup: 'LangChain、Dify', budget: '按 API 用量' },
     { scenario: '工作流自动化', primary: 'n8n', backup: 'Coze', budget: '免费-$50/月' },
