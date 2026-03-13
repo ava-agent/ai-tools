@@ -2152,6 +2152,107 @@ export const aiToolsData = [
     },
     swot: { S: '官方出品、零配置', W: '平台绑定', O: 'Next.js 生态', T: 'Netlify 等竞品 MCP' },
     tags: ['MCP', '免费', 'Vercel', '部署', 'Next.js', '官方']
+  },
+  // ============= AI Skills (4个) =============
+  {
+    id: 'frontend-design-skill',
+    name: 'frontend-design',
+    category: 'skill',
+    subcategory: 'UI/UX设计',
+    developer: 'Community',
+    logo: null,
+    versions: [
+      { type: 'Global', pricing: '完全免费', models: 'Claude Code 内置', link: 'https://github.com/anthropics/claude-code' }
+    ],
+    freeQuota: '完全免费',
+    contextWindow: 'N/A',
+    chineseSupport: 5,
+    pros: ['UI/UX 设计智能助手', '67 种风格、96 种调色板', '57 种字体配对方案', '25 种图表类型支持', '支持 13 种技术栈（React、Vue、Next.js、SwiftUI 等）', '玻璃态、粘土态、极简等现代风格', '响应式设计自动适配', 'shadcn/ui MCP 集成'],
+    cons: ['需要 Claude Code 环境', '复杂设计需要多次迭代', '依赖设计规范理解'],
+    bestFor: 'UI/UX 设计、前端组件开发、设计系统构建',
+    funRanking: '夯夯',
+    personalExperience: {
+      rating: 4.5,
+      insights: 'Claude Code Skills 中的 UI/UX 设计专家。支持 67 种设计风格和 96 种调色板，覆盖从玻璃态到极简主义的各种风格。对前端开发者非常友好，可以直接生成 React/Vue/Next.js 代码。shadcn/ui 集成让组件搜索和示例获取更便捷。',
+      pitfalls: ['复杂设计需多轮迭代', '需要一定的设计基础']
+    },
+    swot: { S: '风格全面、技术栈丰富', W: '需 Claude Code 环境', O: 'AI 设计工具市场增长', T: '专业设计工具竞争' },
+    tags: ['Skills', '免费', 'UI/UX', '设计', '前端']
+  },
+  {
+    id: 'webapp-testing-skill',
+    name: 'webapp-testing',
+    category: 'skill',
+    subcategory: '测试',
+    developer: 'Community',
+    logo: null,
+    versions: [
+      { type: 'Global', pricing: '完全免费', models: 'Claude Code 内置', link: 'https://github.com/anthropics/claude-code' }
+    ],
+    freeQuota: '完全免费',
+    contextWindow: 'N/A',
+    chineseSupport: 5,
+    pros: ['Web 应用测试专家', 'E2E 测试用例生成', 'Playwright/Cypress 集成', '测试覆盖率分析', '边界条件和异常测试', '自动化测试脚本生成', '支持属性测试和快照测试'],
+    cons: ['需要 Claude Code 环境', '复杂场景需人工调整', '测试环境配置依赖'],
+    bestFor: 'Web 应用测试、E2E 测试、测试用例编写',
+    funRanking: '夯',
+    personalExperience: {
+      rating: 4,
+      insights: 'Claude Code Skills 中的测试专家。可以自动生成 E2E 测试用例，支持 Playwright 和 Cypress 框架。对于提高测试覆盖率、发现边界条件问题非常有帮助。生成的测试脚本质量不错，但复杂场景仍需人工调整。',
+      pitfalls: ['复杂场景需人工调整', '测试环境需提前配置']
+    },
+    swot: { S: '自动化测试生成', W: '需 Claude Code 环境', O: 'AI 测试工具需求增长', T: '专业测试工具竞争' },
+    tags: ['Skills', '免费', '测试', 'E2E', 'Playwright']
+  },
+  {
+    id: 'mcp-builder-skill',
+    name: 'mcp-builder',
+    category: 'skill',
+    subcategory: 'MCP开发',
+    developer: 'Community',
+    logo: null,
+    versions: [
+      { type: 'Global', pricing: '完全免费', models: 'Claude Code 内置', link: 'https://github.com/anthropics/claude-code' }
+    ],
+    freeQuota: '完全免费',
+    contextWindow: 'N/A',
+    chineseSupport: 5,
+    pros: ['MCP 服务器开发专家', '完整的 MCP 协议支持', '工具、资源、提示词模板生成', 'TypeScript/Python 双语言支持', '最佳实践和设计模式指导', '调试和测试辅助', '文档自动生成'],
+    cons: ['需要 Claude Code 环境', 'MCP 协议更新需跟进', '复杂 MCP 需要深度定制'],
+    bestFor: 'MCP 服务器开发、工具集成、API 封装',
+    funRanking: '夯夯',
+    personalExperience: {
+      rating: 4.5,
+      insights: 'Claude Code Skills 中的 MCP 开发专家。对于想要快速构建 MCP 服务器的开发者来说是必备工具。支持 TypeScript 和 Python 两种语言，可以生成完整的 MCP 服务器代码，包括工具定义、资源暴露和提示词模板。最佳实践指导让新手也能写出高质量的 MCP。',
+      pitfalls: ['MCP 协议更新需关注', '复杂场景需深度定制']
+    },
+    swot: { S: 'MCP 开发专家', W: '需 Claude Code 环境', O: 'MCP 生态快速增长', T: '官方工具链竞争' },
+    tags: ['Skills', '免费', 'MCP', '开发', 'API']
+  },
+  {
+    id: 'skill-creator-skill',
+    name: 'skill-creator',
+    category: 'skill',
+    subcategory: 'Skills开发',
+    developer: 'Community',
+    logo: null,
+    versions: [
+      { type: 'Global', pricing: '完全免费', models: 'Claude Code 内置', link: 'https://github.com/anthropics/claude-code' }
+    ],
+    freeQuota: '完全免费',
+    contextWindow: 'N/A',
+    chineseSupport: 5,
+    pros: ['Skills 创建专家', '领域专家设计原则', '提示词工程最佳实践', '技能模板和结构生成', '测试和验证辅助', '文档和示例编写', '技能发布流程指导'],
+    cons: ['需要 Claude Code 环境', '高质量技能需要领域知识', '技能设计需要多次迭代'],
+    bestFor: 'Claude Code Skills 开发、自定义技能创建',
+    funRanking: '夯',
+    personalExperience: {
+      rating: 4,
+      insights: 'Claude Code Skills 中的元技能——用于创建其他 Skills。遵循领域专家设计原则，可以帮助你快速构建自定义技能。从提示词设计到技能结构，再到测试验证，全流程覆盖。对于想要扩展 Claude Code 能力的开发者来说是必备工具。',
+      pitfalls: ['需要领域专业知识', '技能设计需多次迭代']
+    },
+    swot: { S: 'Skills 创建专家', W: '需 Claude Code 环境', O: 'Skills 生态增长', T: '官方 Skills 工具' },
+    tags: ['Skills', '免费', '元技能', '开发', '创建']
   }
 ]
 
