@@ -55,6 +55,15 @@ export const categories = [
         description: 'MCP 协议工具，连接 AI 与外部数据源和服务',
         color: 'cyan',
         examples: ['Playwright MCP', 'Supabase MCP', 'GitHub MCP', 'Context7']
+    },
+    {
+        id: 'skill',
+        name: 'AI Skills',
+        nameZh: 'AI 技能',
+        icon: 'Wrench',
+        description: 'Claude Code 技能扩展，文档处理、测试、内容创作',
+        color: 'amber',
+        examples: ['frontend-design', 'webapp-testing', 'mcp-builder', 'skill-creator']
     }
 ]
 

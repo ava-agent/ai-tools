@@ -13,7 +13,10 @@
           {{ categoryEmoji[tool.category] || '🔧' }}
         </div>
         <div class="min-w-0">
-          <div class="text-sm font-semibold text-white truncate" style="letter-spacing: -0.2px;">
+          <div
+            class="text-sm font-semibold text-white truncate"
+            style="letter-spacing: -0.2px;"
+          >
             {{ tool.name }}
           </div>
           <div class="text-[11px] text-white/40 truncate">
@@ -30,7 +33,10 @@
       <!-- Footer: Stars + Score Badge -->
       <div class="flex justify-between items-center">
         <div class="flex items-center gap-0.5 text-[11px] text-[#ffd60a]">
-          <span v-for="i in 5" :key="i">{{ i <= Math.round(tool.personalExperience?.rating || 0) ? '★' : '☆' }}</span>
+          <span
+            v-for="i in 5"
+            :key="i"
+          >{{ i <= Math.round(tool.personalExperience?.rating || 0) ? '★' : '☆' }}</span>
         </div>
         <div
           v-if="tool.personalExperience?.rating"
@@ -60,6 +66,7 @@ const categoryIconBg = {
   multimodal: 'rgba(191,90,242,0.15)',
   agent: 'rgba(255,159,10,0.15)',
   mcp: 'rgba(255,69,58,0.15)',
+  skill: 'rgba(245,158,11,0.15)',
 }
 
 const categoryEmoji = {
@@ -70,6 +77,7 @@ const categoryEmoji = {
   multimodal: '🎨',
   agent: '🧠',
   mcp: '🔗',
+  skill: '🔧',
 }
 </script>
 
