@@ -4,8 +4,10 @@
     v-if="logo?.logoUrl"
     :src="logo.logoUrl"
     :alt="toolName"
-    class="inline-flex items-center justify-center rounded-xl object-contain flex-shrink-0 bg-white p-1"
+    class="inline-flex items-center justify-center rounded-xl object-contain flex-shrink-0 bg-white/10 p-1"
     :class="sizeClass"
+    referrerpolicy="no-referrer"
+    crossorigin="anonymous"
     @error="handleImageError"
   >
   <!-- 首字母渐变模式 -->
