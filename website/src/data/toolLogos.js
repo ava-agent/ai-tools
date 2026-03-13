@@ -37,8 +37,8 @@ export const toolLogos = {
   'deepseek':        { initials: 'DS', colors: ['#0066ff', '#0052cc'], text: '#ffffff', logoUrl: 'https://www.deepseek.com/favicon.ico' },
   'glm':             { initials: 'GL', colors: ['#1890ff', '#0070cc'], text: '#ffffff', logoUrl: 'https://www.zhipuai.cn/favicon.ico' },
   'kimi':            { initials: 'Ki', colors: ['#000000', '#1a1a2e'], text: '#36d7b7', logoUrl: 'https://www.moonshot.cn/favicon.ico' },
-  'minimax':         { initials: 'Mx', colors: ['#ff6b35', '#e65a2e'], text: '#ffffff' },
-  'doubao':          { initials: 'Db', colors: ['#3b82f6', '#2563eb'], text: '#ffffff' },
+  'minimax':         { initials: 'Mx', colors: ['#ff6b35', '#e65a2e'], text: '#ffffff', logoUrl: 'https://www.minimaxi.com/favicon.ico' },
+  'doubao':          { initials: 'Db', colors: ['#3b82f6', '#2563eb'], text: '#ffffff', logoUrl: 'https://www.doubao.com/favicon.ico' },
 
   // === Multimodal ===
   'midjourney':      { initials: 'MJ', colors: ['#000000', '#1a1a2e'], text: '#ffffff', logoUrl: 'https://www.midjourney.com/favicon.ico' },
@@ -46,8 +46,8 @@ export const toolLogos = {
   'stable-diffusion':{ initials: 'SD', colors: ['#a855f7', '#9333ea'], text: '#ffffff', logoUrl: 'https://stability.ai/favicon.ico' },
   'meitu-ai':        { initials: 'Mt', colors: ['#ff4081', '#e91e63'], text: '#ffffff' },
   'sora':            { initials: 'So', colors: ['#000000', '#1a1a2e'], text: '#10a37f', logoUrl: 'https://openai.com/favicon.ico' },
-  'kling':           { initials: 'Kl', colors: ['#6366f1', '#4f46e5'], text: '#ffffff' },
-  'jianying':        { initials: 'JY', colors: ['#ff4757', '#ff3838'], text: '#ffffff' },
+  'kling':           { initials: 'Kl', colors: ['#6366f1', '#4f46e5'], text: '#ffffff', logoUrl: 'https://klingai.com/favicon.ico' },
+  'jianying':        { initials: 'JY', colors: ['#ff4757', '#ff3838'], text: '#ffffff', logoUrl: 'https://www.capcut.com/favicon.ico' },
   'hunyuan3d':       { initials: 'HY', colors: ['#1890ff', '#0070cc'], text: '#ffffff' },
 
   // === Agent & Others ===
