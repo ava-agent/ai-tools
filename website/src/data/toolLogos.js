@@ -48,7 +48,6 @@ export const toolLogos = {
   'sora':            { initials: 'So', colors: ['#000000', '#1a1a2e'], text: '#10a37f', logoUrl: 'https://openai.com/favicon.ico' },
   'kling':           { initials: 'Kl', colors: ['#6366f1', '#4f46e5'], text: '#ffffff' },
   'jianying':        { initials: 'JY', colors: ['#ff4757', '#ff3838'], text: '#ffffff' },
-  'meshy':           { initials: 'Me', colors: ['#8b5cf6', '#7c3aed'], text: '#ffffff' },
   'hunyuan3d':       { initials: 'HY', colors: ['#1890ff', '#0070cc'], text: '#ffffff' },
 
   // === Agent & Others ===
@@ -78,7 +77,7 @@ export const toolLogos = {
   'grok':            { initials: 'Gk', colors: ['#000000', '#1a1a2e'], text: '#ffffff', logoUrl: 'https://x.ai/favicon.ico' },
 
   // === Agent 平台 ===
-  'manus':           { initials: 'Mn', colors: ['#10b981', '#059669'], text: '#ffffff' },
+  'manus':           { initials: 'Mn', colors: ['#10b981', '#059669'], text: '#ffffff', logoUrl: 'https://manus.im/favicon.ico' },
   'crewai':          { initials: 'Cr', colors: ['#ff6b35', '#e65a2e'], text: '#ffffff', logoUrl: 'https://www.crewai.com/favicon.ico' },
   'n8n':             { initials: 'n8', colors: ['#ff6d5a', '#ff4d4d'], text: '#ffffff', logoUrl: 'https://n8n.io/favicon.ico' },
 
@@ -107,6 +106,22 @@ export const toolLogos = {
 
   // === 新增工具 (Crush等) ===
   'crush':           { initials: 'Cr', colors: ['#ff6b9d', '#e91e63'], text: '#ffffff', logoUrl: 'https://charm.sh/favicon.ico' },
+
+  // === 多媒体工具 (补充) ===
+  'suno':            { initials: 'Sn', colors: ['#000000', '#1a1a2e'], text: '#ffffff', logoUrl: 'https://suno.com/favicon.ico' },
+  'elevenlabs':      { initials: 'EL', colors: ['#000000', '#1a1a2e'], text: '#ffffff', logoUrl: 'https://elevenlabs.io/favicon.ico' },
+  'flux':            { initials: 'Fl', colors: ['#ff6b35', '#e65a2e'], text: '#ffffff', logoUrl: 'https://blackforestlabs.ai/favicon.ico' },
+  'runway':          { initials: 'Rw', colors: ['#000000', '#1a1a2e'], text: '#ffffff', logoUrl: 'https://runwayml.com/favicon.ico' },
+  'pika':            { initials: 'Pk', colors: ['#ff6b9d', '#e91e63'], text: '#ffffff', logoUrl: 'https://pika.art/favicon.ico' },
+  'ideogram':        { initials: 'Id', colors: ['#000000', '#1a1a2e'], text: '#ffffff', logoUrl: 'https://ideogram.ai/favicon.ico' },
+  'jimeng':          { initials: 'Jm', colors: ['#ff4757', '#ff3838'], text: '#ffffff', logoUrl: 'https://jimeng.jianying.com/favicon.ico' },
+  'meshy':           { initials: 'Me', colors: ['#8b5cf6', '#7c3aed'], text: '#ffffff', logoUrl: 'https://www.meshy.ai/favicon.ico' },
+
+  // === MCP 工具 (补充) ===
+  'sequential-thinking-mcp': { initials: 'ST', colors: ['#d97706', '#b45309'], text: '#ffffff', logoUrl: 'https://www.anthropic.com/favicon.svg' },
+  'antv-chart-mcp':          { initials: 'AC', colors: ['#1677ff', '#0958d9'], text: '#ffffff', logoUrl: 'https://antv.antgroup.com/favicon.ico' },
+  'openmemory-mcp':          { initials: 'OM', colors: ['#7c3aed', '#6d28d9'], text: '#ffffff', logoUrl: 'https://mem0.ai/favicon.ico' },
+  'atlassian-mcp':           { initials: 'AM', colors: ['#0052cc', '#0747a6'], text: '#ffffff', logoUrl: 'https://www.atlassian.com/favicon.ico' },
 }
 
 export function getToolLogo(toolId) {
