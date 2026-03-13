@@ -478,7 +478,7 @@ export const aiToolsData = [
   },
   {
     id: 'opencode',
-    name: 'OpenCode',
+    name: 'OpenCode (已归档)',
     category: 'cli',
     subcategory: '开源CLI',
     developer: 'OpenCode Community',
@@ -489,23 +489,23 @@ export const aiToolsData = [
     freeQuota: '工具免费，API 自付',
     contextWindow: '支持自动压缩功能',
     chineseSupport: 3,
-    pros: ['开源免费', '75+ LLM 提供商模型选择灵活', '终端原生 TUI 界面友好', 'MCP 协议扩展', 'LSP 集成代码智能', '会话管理和持久化', '自定义命令系统', '自动压缩长对话', '非交互模式脚本自动化', '隐私优先支持本地模型'],
-    cons: ['需自行配置 API 密钥', '仅终端操作无图形界面', '社区规模较小', '文档资源有限'],
-    bestFor: '注重隐私的开源 CLI 开发',
-    funRanking: '夯夯',
+    pros: ['开源免费', '75+ LLM 提供商模型选择灵活', '终端原生 TUI 界面友好', 'MCP 协议扩展', 'LSP 集成代码智能', '会话管理和持久化'],
+    cons: ['项目已归档（2025年9月）', '迁移至 Crush 继续开发', '不再维护更新'],
+    bestFor: '已归档项目，建议迁移至 Crush',
+    funRanking: '归档',
     personalExperience: {
-      rating: 4.5,
-      insights: 'OpenCode 支持 75+ 个 LLM 提供商，具有完整的 MCP 和 LSP 集成能力。终端原生 TUI 界面设计精良，会话管理和自动压缩功能实用。非交互模式支持脚本自动化，适合 CI/CD 集成。隐私优先架构支持本地模型部署。',
-      pitfalls: ['需自行配置 API key', '社区较小文档有限', '大型项目性能待优化']
+      rating: 3,
+      insights: 'OpenCode 已于 2025年9月18日归档为只读状态。项目已迁移至 Charm Bracelet 旗下的 Crush 继续开发。Crush 继承了 OpenCode 的核心功能，包括多 LLM 支持、TUI 界面、MCP 协议等，并持续维护更新。',
+      pitfalls: ['项目已归档不再维护', '建议迁移至 Crush', 'https://github.com/charmbracelet/crush']
     },
-    swot: { S: '开源、隐私、多模型', W: '社区较小', O: '开源 CLI 需求增长', T: 'Claude Code 能力' },
-    tags: ['开源', 'CLI', '隐私', '多模型', 'MCP', 'LSP', 'TUI'],
+    swot: { S: '功能完整', W: '已归档', O: '迁移至 Crush', T: '停止维护' },
+    tags: ['已归档', '迁移至Crush'],
     video: { src: './videos/opencode-cli.mp4'},
     radarChart: 'images/opencode.png'
   },
   {
     id: 'codex',
-    name: 'GPT-5.x-Codex (原 Codex)',
+    name: 'Codex',
     category: 'cli',
     subcategory: '代码生成',
     developer: 'OpenAI',
@@ -554,6 +554,31 @@ export const aiToolsData = [
     },
     swot: { S: '开源、本地', W: '生态新', O: '隐私市场', T: '云端工具' },
     tags: ['开源', 'CLI', '本地', 'Block', 'Rust', 'MCP', 'MultiModel', 'SessionForking']
+  },
+  {
+    id: 'crush',
+    name: 'Crush',
+    category: 'cli',
+    subcategory: '开源CLI',
+    developer: 'Charm Bracelet',
+    logo: null,
+    versions: [
+      { type: 'Global', pricing: '免费开源 (API 自付)', models: '支持多 LLM 提供商', link: 'https://github.com/charmbracelet/crush' }
+    ],
+    freeQuota: '工具免费，API 按量计费',
+    contextWindow: '取决于所选模型',
+    chineseSupport: 3,
+    pros: ['Charm Bracelet 出品，TUI 界面精美', '继承 OpenCode 核心功能', '多 LLM 提供商支持', 'MCP 协议扩展', 'LSP 集成代码智能', '会话管理', '活跃的 Charm 生态'],
+    cons: ['项目较新，功能在快速迭代', 'API 密钥需自行配置', '国内访问可能受限'],
+    bestFor: '喜欢精美 TUI 的开源 CLI 用户',
+    funRanking: '夯夯',
+    personalExperience: {
+      rating: 4,
+      insights: 'Crush 是 OpenCode 的继任者，由 Charm Bracelet 团队接手开发。继承了 OpenCode 的多 LLM 支持、MCP 协议、TUI 界面等核心特性，同时融入了 Charm 生态的精美设计语言。作为 OpenCode 的迁移目标，适合喜欢终端美学和开源工具的用户。',
+      pitfalls: ['项目快速迭代中', '需自行配置 API', '关注 Charm 官方更新']
+    },
+    swot: { S: '精美 TUI、开源、Charm 生态', W: '项目较新', O: 'OpenCode 用户迁移', T: '其他 CLI 工具' },
+    tags: ['开源', 'CLI', 'TUI', 'Charm', 'MCP', '继任OpenCode']
   },
   {
     id: 'openhands',
