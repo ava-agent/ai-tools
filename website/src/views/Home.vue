@@ -1,5 +1,9 @@
 <template>
   <div class="min-h-screen">
+    <IntroVideo
+      :show="showIntro"
+      @close="handleIntroClose"
+    />
     <Hero />
     <SearchBar />
 
@@ -41,18 +45,59 @@
         @clear-filters="handleClearFilters"
       />
     </div>
+
+    <!-- Replay Intro Button -->
+    <Transition name="fade">
+      <button
+        v-if="!showIntro"
+        class="fixed bottom-6 right-6 z-40 flex items-center gap-2 px-4 py-2 glass-card text-white text-sm font-medium rounded-full transition-all hover:scale-105"
+        style="border: 1px solid rgba(255,255,255,0.1);"
+        @click="showIntro = true"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="text-[#0a84ff]"
+        >
+          <path d="M9 18V5l12 6-12 6" />
+        </svg>
+        重看演示
+      </button>
+    </Transition>
   </div>
 </template>
 
 <script setup>
-import { computed } from 'vue'
+import { computed, ref, onMounted } from 'vue'
 import { useToolsStore } from '../stores/tools'
 import Hero from '../components/Hero.vue'
 import SearchBar from '../components/SearchBar.vue'
 import ToolGrid from '../components/ToolGrid.vue'
 import ToolLogo from '../components/ToolLogo.vue'
+import IntroVideo from '../components/IntroVideo.vue'
 
 const toolsStore = useToolsStore()
+const showIntro = ref(false)
+
+function handleIntroClose() {
+  showIntro.value = false
+  sessionStorage.setItem('hasSeenIntro', 'true')
+}
+
+onMounted(() => {
+  // Check if user has seen intro in this session
+  const hasSeen = sessionStorage.getItem('hasSeenIntro')
+  if (!hasSeen) {
+    showIntro.value = true
+  }
+})
 
 const filteredTools = computed(() => toolsStore.filteredTools)
 
