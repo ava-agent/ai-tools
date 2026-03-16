@@ -202,6 +202,12 @@
                 </td>
                 <td class="p-4">
                   <div class="flex items-center">
+                    <ToolLogo
+                      :tool-id="tool.id"
+                      :tool-name="tool.name"
+                      size="xs"
+                      class="mr-2"
+                    />
                     <span class="font-semibold text-white">{{ tool.name }}</span>
                     <div class="flex flex-wrap gap-1 ml-2">
                       <span
@@ -352,6 +358,7 @@ import {
   X, GitCompareArrows, ArrowLeft
 } from 'lucide-vue-next'
 import CompareView from '../components/CompareView.vue'
+import ToolLogo from '../components/ToolLogo.vue'
 
 const toolsStore = useToolsStore()
 const gamification = useGamificationStore()

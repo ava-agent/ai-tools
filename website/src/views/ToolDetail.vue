@@ -22,12 +22,11 @@
       <!-- Tool header -->
       <div class="glass-card p-5 mb-4">
         <div class="flex items-start gap-4 mb-6">
-          <div
-            class="w-16 h-16 rounded-[16px] flex items-center justify-center text-[28px] flex-shrink-0"
-            :style="{ background: 'linear-gradient(135deg, ' + iconGradient + ')' }"
-          >
-            {{ categoryEmoji }}
-          </div>
+          <ToolLogo
+            :tool-id="tool.id"
+            :tool-name="tool.name"
+            size="xl"
+          />
           <div class="flex-1">
             <div
               class="text-2xl font-bold text-white"
@@ -365,6 +364,7 @@ import FunFact from '../components/gamification/FunFact.vue'
 import ToolRating from '../components/ToolRating.vue'
 import ToolReviews from '../components/ToolReviews.vue'
 import ScoreRadar from '@/components/ScoreRadar.vue'
+import ToolLogo from '../components/ToolLogo.vue'
 
 const route = useRoute()
 const toolsStore = useToolsStore()
@@ -390,36 +390,6 @@ const relatedTools = computed(() => {
     })
     .sort((a, b) => b._score - a._score)
     .slice(0, 4)
-})
-
-// Category emoji map (matches ToolCard)
-const categoryEmojiMap = {
-  ide: '⚡',
-  cli: '💻',
-  'deep-research': '🔬',
-  llm: '🤖',
-  multimodal: '🎨',
-  agent: '🧠',
-  mcp: '🔗',
-}
-
-const categoryEmoji = computed(() => {
-  return categoryEmojiMap[tool.value?.category] || '🔧'
-})
-
-// Gradient colors per category
-const categoryGradientMap = {
-  ide: '#0a84ff, #5ac8fa',
-  cli: '#0a84ff, #30d158',
-  'deep-research': '#30d158, #34c759',
-  llm: '#ffd60a, #ff9f0a',
-  multimodal: '#bf5af2, #ff2d55',
-  agent: '#ff9f0a, #ff6723',
-  mcp: '#ff453a, #ff6961',
-}
-
-const iconGradient = computed(() => {
-  return categoryGradientMap[tool.value?.category] || '#6e6e73, #8e8e93'
 })
 
 // Pricing display from first version

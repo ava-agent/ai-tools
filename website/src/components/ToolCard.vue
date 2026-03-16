@@ -6,12 +6,11 @@
     <article class="glass-card glass-card-interactive p-4">
       <!-- Header: Icon + Name + Developer -->
       <div class="flex items-center gap-2.5 mb-2.5">
-        <div
-          class="w-9 h-9 rounded-icon flex items-center justify-center text-base flex-shrink-0"
-          :style="{ background: categoryIconBg[tool.category] || 'rgba(255,255,255,0.1)' }"
-        >
-          {{ categoryEmoji[tool.category] || '🔧' }}
-        </div>
+        <ToolLogo
+          :tool-id="tool.id"
+          :tool-name="tool.name"
+          size="sm"
+        />
         <div class="min-w-0">
           <div
             class="text-sm font-semibold text-white truncate"
@@ -51,6 +50,8 @@
 </template>
 
 <script setup>
+import ToolLogo from './ToolLogo.vue'
+
 defineProps({
   tool: {
     type: Object,
@@ -58,27 +59,6 @@ defineProps({
   }
 })
 
-const categoryIconBg = {
-  ide: 'rgba(10,132,255,0.15)',
-  cli: 'rgba(10,132,255,0.15)',
-  'deep-research': 'rgba(48,209,88,0.15)',
-  llm: 'rgba(255,214,10,0.15)',
-  multimodal: 'rgba(191,90,242,0.15)',
-  agent: 'rgba(255,159,10,0.15)',
-  mcp: 'rgba(255,69,58,0.15)',
-  skill: 'rgba(245,158,11,0.15)',
-}
-
-const categoryEmoji = {
-  ide: '⚡',
-  cli: '💻',
-  'deep-research': '🔬',
-  llm: '🤖',
-  multimodal: '🎨',
-  agent: '🧠',
-  mcp: '🔗',
-  skill: '🔧',
-}
 </script>
 
 <style scoped>

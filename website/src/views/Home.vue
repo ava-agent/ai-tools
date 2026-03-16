@@ -11,12 +11,11 @@
         style="border-radius: 16px;"
         @click="$router.push({ name: 'tool-detail', params: { id: featuredTool.id } })"
       >
-        <div
-          class="w-14 h-14 rounded-[14px] flex items-center justify-center text-2xl flex-shrink-0"
-          style="background: linear-gradient(135deg, rgba(10,132,255,0.3), rgba(191,90,242,0.2));"
-        >
-          ⚡
-        </div>
+        <ToolLogo
+          :tool-id="featuredTool.id"
+          :tool-name="featuredTool.name"
+          size="lg"
+        />
         <div class="flex-1 min-w-0">
           <div class="text-[10px] text-[#bf5af2] uppercase tracking-widest font-semibold mb-0.5">
             编辑推荐
@@ -51,6 +50,7 @@ import { useToolsStore } from '../stores/tools'
 import Hero from '../components/Hero.vue'
 import SearchBar from '../components/SearchBar.vue'
 import ToolGrid from '../components/ToolGrid.vue'
+import ToolLogo from '../components/ToolLogo.vue'
 
 const toolsStore = useToolsStore()
 
