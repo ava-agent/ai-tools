@@ -6,12 +6,23 @@
       class="flex items-center gap-2"
     >
       <div class="flex items-center gap-0.5">
-        <Star
+        <span
           v-for="i in 5"
           :key="i"
-          class="w-4 h-4"
-          :class="i <= Math.round(stats.avgRating) ? 'text-[#ffd60a] fill-[#ffd60a]' : 'text-white/20'"
-        />
+          class="relative w-4 h-4"
+        >
+          <Star
+            class="w-4 h-4"
+            :class="i <= Math.floor(stats.avgRating) ? 'text-[#ffd60a] fill-[#ffd60a]' : 'text-white/20'"
+          />
+          <span
+            v-if="i === Math.ceil(stats.avgRating) && stats.avgRating % 1 >= 0.25"
+            class="absolute inset-0 overflow-hidden"
+            style="width: 50%;"
+          >
+            <Star class="w-4 h-4 text-[#ffd60a] fill-[#ffd60a]" />
+          </span>
+        </span>
       </div>
       <span class="text-sm text-white/60">
         {{ stats.avgRating }} <span class="text-white/30">({{ stats.ratingCount }})</span>

@@ -38,11 +38,12 @@
               {{ tool.developer }}
             </div>
             <div class="flex items-center gap-3 mt-2">
-              <div class="text-[13px] text-[#ffd60a]">
+              <div class="flex items-center text-[13px] text-[#ffd60a]">
                 <span
                   v-for="i in 5"
                   :key="i"
-                >{{ i <= Math.round(tool.personalExperience?.rating || 0) ? '★' : '☆' }}</span>
+                  class="relative"
+                ><template v-if="i <= Math.floor(tool.personalExperience?.rating || 0)">★</template><template v-else-if="i === Math.ceil(tool.personalExperience?.rating || 0) && (tool.personalExperience?.rating || 0) % 1 >= 0.5"><span class="half-star">★</span><span class="text-white/15">★</span></template><template v-else><span class="text-white/15">★</span></template></span>
               </div>
               <div class="text-[13px] text-[#30d158] font-semibold">
                 {{ tool.personalExperience?.rating?.toFixed(1) }}
@@ -324,11 +325,12 @@
               {{ related.developer }}
             </div>
             <div class="flex items-center gap-1 mt-1">
-              <span class="text-[10px] text-[#ffd60a]">
+              <span class="flex items-center text-[10px] text-[#ffd60a]">
                 <span
                   v-for="i in 5"
                   :key="i"
-                >{{ i <= Math.round(related.personalExperience?.rating || 0) ? '★' : '☆' }}</span>
+                  class="relative"
+                ><template v-if="i <= Math.floor(related.personalExperience?.rating || 0)">★</template><template v-else-if="i === Math.ceil(related.personalExperience?.rating || 0) && (related.personalExperience?.rating || 0) % 1 >= 0.5"><span class="half-star">★</span><span class="text-white/15">★</span></template><template v-else><span class="text-white/15">★</span></template></span>
               </span>
             </div>
           </router-link>
@@ -437,5 +439,12 @@ watch(
 <style scoped>
 a {
   text-decoration: none;
+}
+.half-star {
+  position: absolute;
+  left: 0;
+  top: 0;
+  overflow: hidden;
+  width: 50%;
 }
 </style>

@@ -231,12 +231,23 @@
                 </td>
                 <td class="p-4">
                   <div class="flex items-center space-x-1">
-                    <Star
+                    <span
                       v-for="i in 5"
                       :key="i"
-                      class="w-5 h-5"
-                      :class="i <= (tool.personalExperience?.rating || 0) ? 'text-primary fill-primary' : 'text-gray-600'"
-                    />
+                      class="relative w-5 h-5"
+                    >
+                      <Star
+                        class="w-5 h-5"
+                        :class="i <= Math.floor(tool.personalExperience?.rating || 0) ? 'text-primary fill-primary' : 'text-gray-600'"
+                      />
+                      <span
+                        v-if="i === Math.ceil(tool.personalExperience?.rating || 0) && (tool.personalExperience?.rating || 0) % 1 >= 0.5"
+                        class="absolute inset-0 overflow-hidden"
+                        style="width: 50%;"
+                      >
+                        <Star class="w-5 h-5 text-primary fill-primary" />
+                      </span>
+                    </span>
                   </div>
                 </td>
                 <td class="p-4 text-white/80 text-sm">
