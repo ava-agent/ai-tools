@@ -21,13 +21,13 @@ export const toolLogos = {
   // === AI CLI ===
   'claude-code':     { initials: 'CC', colors: ['#d97706', '#b45309'], text: '#ffffff', logoUrl: 'https://icons.duckduckgo.com/ip3/anthropic.com.ico' },
   'gemini-cli':      { initials: 'Gc', colors: ['#4285f4', '#3367d6'], text: '#ffffff', logoUrl: 'https://icons.duckduckgo.com/ip3/google.com.ico' },
-  'qwen-cli':        { initials: 'Qc', colors: ['#6236ff', '#4f2dd5'], text: '#ffffff', logoUrl: 'https://icons.duckduckgo.com/ip3/qwenlm.github.io.ico' },
+  'qwen-cli':        { initials: 'Qc', colors: ['#6236ff', '#4f2dd5'], text: '#ffffff', logoUrl: 'https://icons.duckduckgo.com/ip3/tongyi.aliyun.com.ico' },
   'aider':           { initials: 'Ai', colors: ['#22c55e', '#16a34a'], text: '#ffffff', logoUrl: 'https://icons.duckduckgo.com/ip3/aider.chat.ico' },
   'cline':           { initials: 'Cl', colors: ['#06b6d4', '#0891b2'], text: '#ffffff', logoUrl: 'https://icons.duckduckgo.com/ip3/cline.bot.ico' },
   'continue':        { initials: 'Ct', colors: ['#f97316', '#ea580c'], text: '#ffffff', logoUrl: 'https://icons.duckduckgo.com/ip3/continue.dev.ico' },
   'opencode':        { initials: 'OC', colors: ['#a855f7', '#9333ea'], text: '#ffffff' },
   'codex':           { initials: 'Cx', colors: ['#10a37f', '#0d8c6c'], text: '#ffffff', logoUrl: 'https://icons.duckduckgo.com/ip3/openai.com.ico' },
-  'goose':           { initials: 'Go', colors: ['#f59e0b', '#d97706'], text: '#ffffff', logoUrl: 'https://icons.duckduckgo.com/ip3/block.github.io.ico' },
+  'goose':           { initials: 'Go', colors: ['#f59e0b', '#d97706'], text: '#ffffff', logoUrl: 'https://icons.duckduckgo.com/ip3/block.xyz.ico' },
   'openhands':       { initials: 'OH', colors: ['#ef4444', '#dc2626'], text: '#ffffff' },
 
   // === AI Models ===
@@ -73,7 +73,7 @@ export const toolLogos = {
   'mistral':         { initials: 'Mi', colors: ['#ff6b35', '#e65a2e'], text: '#ffffff', logoUrl: 'https://icons.duckduckgo.com/ip3/mistral.ai.ico' },
   'yi':              { initials: 'Yi', colors: ['#1677ff', '#0958d9'], text: '#ffffff', logoUrl: 'https://icons.duckduckgo.com/ip3/01.ai.ico' },
   'ernie':           { initials: 'Er', colors: ['#4285f4', '#3367d6'], text: '#ffffff', logoUrl: 'https://icons.duckduckgo.com/ip3/yiyan.baidu.com.ico' },
-  'qwen':            { initials: 'Qw', colors: ['#6236ff', '#4f2dd5'], text: '#ffffff', logoUrl: 'https://icons.duckduckgo.com/ip3/qwenlm.github.io.ico' },
+  'qwen':            { initials: 'Qw', colors: ['#6236ff', '#4f2dd5'], text: '#ffffff', logoUrl: 'https://icons.duckduckgo.com/ip3/tongyi.aliyun.com.ico' },
   'grok':            { initials: 'Gk', colors: ['#000000', '#1a1a2e'], text: '#ffffff', logoUrl: 'https://icons.duckduckgo.com/ip3/x.ai.ico' },
 
   // === Agent 平台 ===

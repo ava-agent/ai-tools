@@ -1,13 +1,12 @@
 <template>
   <!-- 图片 Logo 模式 -->
   <img
-    v-if="logo?.logoUrl"
-    :src="logo.logoUrl"
+    v-if="currentLogoUrl"
+    :src="currentLogoUrl"
     :alt="toolName"
     class="inline-flex items-center justify-center rounded-xl object-contain flex-shrink-0 bg-white/10 p-1"
     :class="sizeClass"
     referrerpolicy="no-referrer"
-    crossorigin="anonymous"
     @error="handleImageError"
   >
   <!-- 首字母渐变模式 -->
@@ -31,19 +30,27 @@ const props = defineProps({
   size: { type: String, default: 'md' },
 })
 
-const imageError = ref(false)
+const errorCount = ref(0)
 
-const logo = computed(() => {
-  const logoData = getToolLogo(props.toolId)
-  if (imageError.value && logoData) {
-    // 图片加载失败，移除 logoUrl 使用首字母模式
-    return { ...logoData, logoUrl: null }
-  }
-  return logoData
+const logo = computed(() => getToolLogo(props.toolId))
+
+// Build fallback URL from DuckDuckGo URL by extracting the domain
+const googleFallbackUrl = computed(() => {
+  const ddgUrl = logo.value?.logoUrl
+  if (!ddgUrl) return null
+  const match = ddgUrl.match(/ip3\/(.+)\.ico$/)
+  if (!match) return null
+  return `https://www.google.com/s2/favicons?domain=${match[1]}&sz=128`
+})
+
+const currentLogoUrl = computed(() => {
+  if (errorCount.value === 0) return logo.value?.logoUrl || null
+  if (errorCount.value === 1) return googleFallbackUrl.value
+  return null // fall back to initials
 })
 
 const handleImageError = () => {
-  imageError.value = true
+  errorCount.value++
 }
 
 const displayInitials = computed(() => {
