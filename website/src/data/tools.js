@@ -2178,7 +2178,7 @@ export const aiToolsData = [
     swot: { S: '官方出品、零配置', W: '平台绑定', O: 'Next.js 生态', T: 'Netlify 等竞品 MCP' },
     tags: ['MCP', '免费', 'Vercel', '部署', 'Next.js', '官方']
   },
-  // ============= AI Skills (4个) =============
+  // ============= AI Skills (20个) =============
   {
     id: 'frontend-design-skill',
     name: 'frontend-design',
@@ -2278,6 +2278,397 @@ export const aiToolsData = [
     },
     swot: { S: 'Skills 创建专家', W: '需 Claude Code 环境', O: 'Skills 生态增长', T: '官方 Skills 工具' },
     tags: ['Skills', '免费', '元技能', '开发', '创建']
+  },
+
+  // --- 安全审计 Skills ---
+  {
+    id: 'semgrep-skill',
+    name: 'semgrep',
+    category: 'skill',
+    subcategory: '安全审计',
+    developer: 'Community',
+    logo: null,
+    versions: [
+      { type: 'Global', pricing: '完全免费', models: 'Claude Code 内置', link: 'https://github.com/anthropics/claude-code' }
+    ],
+    freeQuota: '完全免费',
+    contextWindow: 'N/A',
+    chineseSupport: 3,
+    pros: ['完整 Semgrep 静态分析扫描', '自动检测项目语言并选择规则集', '并行 Worker 执行多语言扫描', '支持 Semgrep Pro 跨文件分析', '自动分类和优先级排序漏洞', '生成可操作的修复建议'],
+    cons: ['需安装 Semgrep CLI', '大项目扫描耗时较长', 'Pro 版需额外授权'],
+    bestFor: '代码安全扫描、漏洞检测、静态分析',
+    funRanking: '夯夯',
+    personalExperience: {
+      rating: 4.5,
+      insights: '将 Semgrep 深度集成到 Claude Code 中，自动检测项目语言、选择规则集、并行扫描、分类排序。对安全审计和 PR Review 极其有价值。支持 Semgrep Pro 的跨文件分析更是锦上添花。',
+      pitfalls: ['大项目首次扫描较慢', '需要理解 Semgrep 规则语法']
+    },
+    swot: { S: '自动化安全扫描', W: '依赖外部工具', O: '代码安全需求增长', T: 'GitHub Advanced Security' },
+    tags: ['Skills', '免费', '安全', 'Semgrep', '静态分析']
+  },
+  {
+    id: 'differential-review-skill',
+    name: 'differential-review',
+    category: 'skill',
+    subcategory: '安全审计',
+    developer: 'Community',
+    logo: null,
+    versions: [
+      { type: 'Global', pricing: '完全免费', models: 'Claude Code 内置', link: 'https://github.com/anthropics/claude-code' }
+    ],
+    freeQuota: '完全免费',
+    contextWindow: 'N/A',
+    chineseSupport: 3,
+    pros: ['安全聚焦的差异代码审查', '自动计算变更爆炸半径', '利用 Git 历史理解上下文', '检测安全回归', '测试覆盖率分析', '生成完整 Markdown 审查报告', '根据代码库规模自适应分析深度'],
+    cons: ['需要 Git 仓库环境', '大型 PR 分析时间较长', '安全规则需持续更新'],
+    bestFor: 'PR 安全审查、代码变更审计、安全回归检测',
+    funRanking: '夯夯',
+    personalExperience: {
+      rating: 4.5,
+      insights: '安全审计利器。不只看代码质量，更专注于安全维度的差异审查。爆炸半径分析和安全回归检测是亮点，能发现普通 Code Review 容易遗漏的安全问题。生成的 Markdown 报告直接可用于 PR 评论。',
+      pitfalls: ['复杂安全问题仍需人工判断', '误报需要经验过滤']
+    },
+    swot: { S: '安全聚焦、自动化报告', W: '误报需过滤', O: 'DevSecOps 趋势', T: '专业安全审计工具' },
+    tags: ['Skills', '免费', '安全', 'PR审查', 'DevSecOps']
+  },
+  {
+    id: 'insecure-defaults-skill',
+    name: 'insecure-defaults',
+    category: 'skill',
+    subcategory: '安全审计',
+    developer: 'Community',
+    logo: null,
+    versions: [
+      { type: 'Global', pricing: '完全免费', models: 'Claude Code 内置', link: 'https://github.com/anthropics/claude-code' }
+    ],
+    freeQuota: '完全免费',
+    contextWindow: 'N/A',
+    chineseSupport: 3,
+    pros: ['检测 fail-open 不安全默认值', '发现硬编码密钥和弱认证', '识别宽松的安全配置', '环境变量处理分析', '覆盖 OWASP 常见配置问题'],
+    cons: ['需要 Claude Code 环境', '业务特定配置需人工判断', '覆盖面有限'],
+    bestFor: '安全配置审计、默认值检测、环境变量安全',
+    funRanking: '夯',
+    personalExperience: {
+      rating: 4,
+      insights: '专注于检测"默认不安全"的配置问题，如硬编码的 API Key、宽松的 CORS 配置、弱密码策略等。上线前的安全检查必备技能，特别适合快速原型转生产的场景。',
+      pitfalls: ['需结合业务场景判断', '不替代完整安全审计']
+    },
+    swot: { S: '聚焦配置安全', W: '覆盖面有限', O: '云原生安全需求', T: '配置管理工具自带检测' },
+    tags: ['Skills', '免费', '安全', '配置', 'OWASP']
+  },
+  {
+    id: 'sharp-edges-skill',
+    name: 'sharp-edges',
+    category: 'skill',
+    subcategory: '安全审计',
+    developer: 'Community',
+    logo: null,
+    versions: [
+      { type: 'Global', pricing: '完全免费', models: 'Claude Code 内置', link: 'https://github.com/anthropics/claude-code' }
+    ],
+    freeQuota: '完全免费',
+    contextWindow: 'N/A',
+    chineseSupport: 3,
+    pros: ['识别 API 设计中的 footgun', '检测危险配置和易误用接口', '密码学库安全评估', '遵循 secure-by-default 原则', '提供 misuse-resistant 改进建议'],
+    cons: ['需要 Claude Code 环境', '需要 API 设计经验理解建议', '主观性较强'],
+    bestFor: 'API 安全评审、SDK 设计审计、安全默认值评估',
+    funRanking: '夯',
+    personalExperience: {
+      rating: 3.5,
+      insights: '关注"开发者容易踩坑"的 API 设计问题。从 pit of success 和 misuse-resistant 角度审视接口设计，帮助发现容易导致安全错误的 API 模式。适合 SDK/库的设计评审阶段。',
+      pitfalls: ['建议较为理论化', '需结合实际场景']
+    },
+    swot: { S: '独特的 API 安全视角', W: '主观性强', O: 'API 经济增长', T: '自动化 API 安全测试' },
+    tags: ['Skills', '免费', '安全', 'API', '设计审计']
+  },
+
+  // --- 代码质量 Skills ---
+  {
+    id: 'second-opinion-skill',
+    name: 'second-opinion',
+    category: 'skill',
+    subcategory: '代码质量',
+    developer: 'Community',
+    logo: null,
+    versions: [
+      { type: 'Global', pricing: '完全免费', models: 'Claude Code + OpenAI/Gemini', link: 'https://github.com/anthropics/claude-code' }
+    ],
+    freeQuota: '完全免费',
+    contextWindow: 'N/A',
+    chineseSupport: 3,
+    pros: ['调用外部 LLM（Codex/Gemini CLI）做交叉审查', '多模型视角避免单一模型盲区', '支持未提交变更、分支 diff、特定 commit', '真正的"第二意见"代码审查', '结果对比分析'],
+    cons: ['需安装 Codex CLI 或 Gemini CLI', '依赖外部 API 额度', '审查速度取决于外部模型'],
+    bestFor: '代码审查交叉验证、多模型对比、高风险变更审核',
+    funRanking: '夯夯',
+    personalExperience: {
+      rating: 4.5,
+      insights: '极其创新的 Skill。让 Claude Code 调用竞品 LLM（OpenAI Codex 或 Google Gemini）来审查代码，实现真正的多模型交叉验证。对于关键代码变更，一个模型可能漏掉的问题另一个模型能发现。',
+      pitfalls: ['需要外部 CLI 工具已安装', '外部 API 额度消耗']
+    },
+    swot: { S: '多模型交叉审查', W: '依赖外部工具', O: '多模型协作趋势', T: 'IDE 内置多模型切换' },
+    tags: ['Skills', '免费', '代码审查', '多模型', '交叉验证']
+  },
+  {
+    id: 'audit-context-building-skill',
+    name: 'audit-context-building',
+    category: 'skill',
+    subcategory: '代码质量',
+    developer: 'Community',
+    logo: null,
+    versions: [
+      { type: 'Global', pricing: '完全免费', models: 'Claude Code 内置', link: 'https://github.com/anthropics/claude-code' }
+    ],
+    freeQuota: '完全免费',
+    contextWindow: 'N/A',
+    chineseSupport: 3,
+    pros: ['逐行深度代码分析', '构建完整架构上下文', '漏洞发现前的深度理解', '数据流和控制流追踪', '适合大型代码库审计'],
+    cons: ['分析耗时较长', '需要 Claude Code 环境', '大文件可能超出上下文'],
+    bestFor: '代码审计前置分析、架构理解、漏洞挖掘',
+    funRanking: '夯',
+    personalExperience: {
+      rating: 4,
+      insights: '审计的"慢功夫"技能。不急于发现问题，而是先逐行构建对代码的深度理解——数据流、控制流、依赖关系。这种深度上下文让后续的漏洞发现更精准，减少误报。适合对关键模块做深度审计。',
+      pitfalls: ['耗时较长', '需配合其他审计 Skill 使用']
+    },
+    swot: { S: '深度代码理解', W: '耗时长', O: '安全审计需求', T: '自动化分析工具' },
+    tags: ['Skills', '免费', '代码审计', '架构分析', '深度理解']
+  },
+
+  // --- 开发工具 Skills ---
+  {
+    id: 'git-cleanup-skill',
+    name: 'git-cleanup',
+    category: 'skill',
+    subcategory: '开发工具',
+    developer: 'Community',
+    logo: null,
+    versions: [
+      { type: 'Global', pricing: '完全免费', models: 'Claude Code 内置', link: 'https://github.com/anthropics/claude-code' }
+    ],
+    freeQuota: '完全免费',
+    contextWindow: 'N/A',
+    chineseSupport: 3,
+    pros: ['安全清理本地 Git 分支和 Worktree', '智能分类：已合并/squash 合并/已废弃/活跃', '防止误删活跃分支', '交互式确认清理', '支持 Worktree 关联清理'],
+    cons: ['仅处理本地分支', '需要 Git 仓库环境', 'squash 合并检测有一定误差'],
+    bestFor: 'Git 分支清理、本地仓库维护、Worktree 管理',
+    funRanking: '夯',
+    personalExperience: {
+      rating: 4,
+      insights: '本地分支堆积是每个开发者的痛点。这个 Skill 能智能识别哪些分支已合并（包括 squash merge）、哪些已废弃、哪些还在活跃，安全清理不误删。Worktree 关联清理是加分项。',
+      pitfalls: ['建议先 dry-run 确认', 'squash 合并检测非 100% 准确']
+    },
+    swot: { S: '智能分支分类', W: '仅本地分支', O: 'Git 工具链需求', T: 'Git GUI 内置清理' },
+    tags: ['Skills', '免费', 'Git', '清理', '分支管理']
+  },
+  {
+    id: 'ask-questions-skill',
+    name: 'ask-questions-if-underspecified',
+    category: 'skill',
+    subcategory: '开发工具',
+    developer: 'Community',
+    logo: null,
+    versions: [
+      { type: 'Global', pricing: '完全免费', models: 'Claude Code 内置', link: 'https://github.com/anthropics/claude-code' }
+    ],
+    freeQuota: '完全免费',
+    contextWindow: 'N/A',
+    chineseSupport: 5,
+    pros: ['在实现前主动澄清模糊需求', '避免因误解导致返工', '结构化的问题收集框架', '区分关键问题和可选问题', '减少沟通成本'],
+    cons: ['可能过度提问', '简单任务不需要', '需要用户耐心回答'],
+    bestFor: '需求澄清、复杂任务前的对齐、减少返工',
+    funRanking: '夯',
+    personalExperience: {
+      rating: 4,
+      insights: '看似简单但极其实用。让 AI 在开始编码前先问清楚，而不是猜测需求直接写代码。对复杂任务特别有价值——一次好的提问能省下多次返工。',
+      pitfalls: ['简单明确的任务可跳过', '问题数量需要控制']
+    },
+    swot: { S: '减少返工', W: '增加交互轮次', O: 'AI 协作效率提升', T: '更智能的需求理解' },
+    tags: ['Skills', '免费', '需求', '沟通', '效率']
+  },
+
+  // --- 测试 Skills ---
+  {
+    id: 'property-based-testing-skill',
+    name: 'property-based-testing',
+    category: 'skill',
+    subcategory: '测试',
+    developer: 'Community',
+    logo: null,
+    versions: [
+      { type: 'Global', pricing: '完全免费', models: 'Claude Code 内置', link: 'https://github.com/anthropics/claude-code' }
+    ],
+    freeQuota: '完全免费',
+    contextWindow: 'N/A',
+    chineseSupport: 3,
+    pros: ['属性测试（Property-Based Testing）专家', '多语言支持（JS/Python/Rust/Solidity）', '智能检测需要属性测试的模式', '自动发现序列化/解析/验证中的边界问题', '智能合约 Fuzz Testing', '比示例测试覆盖更全面'],
+    cons: ['学习曲线较陡', '测试执行时间较长', '属性定义需要经验'],
+    bestFor: '属性测试、Fuzz Testing、序列化/解析函数测试',
+    funRanking: '夯',
+    personalExperience: {
+      rating: 4,
+      insights: '超越传统示例测试的思维方式。不是写"输入 A 期望 B"，而是定义"对所有输入都应满足的性质"。对序列化/反序列化、解析器、数据验证等场景效果极佳，能发现手写测试想不到的边界情况。',
+      pitfalls: ['属性定义需要深入理解业务', '初次使用有学习成本']
+    },
+    swot: { S: '更强的测试覆盖', W: '学习成本高', O: '质量驱动开发', T: '传统测试工具改进' },
+    tags: ['Skills', '免费', '测试', '属性测试', 'Fuzz']
+  },
+
+  // --- 数据库 Skills ---
+  {
+    id: 'supabase-skill',
+    name: 'supabase',
+    category: 'skill',
+    subcategory: '数据库',
+    developer: 'Community',
+    logo: null,
+    versions: [
+      { type: 'Global', pricing: '完全免费', models: 'Claude Code 内置', link: 'https://github.com/anthropics/claude-code' }
+    ],
+    freeQuota: '完全免费',
+    contextWindow: 'N/A',
+    chineseSupport: 3,
+    pros: ['Supabase 全栈开发专家', 'Edge Functions（TypeScript/Deno）', '声明式 Schema 管理', 'PostgreSQL 函数（SECURITY INVOKER）', 'RLS 策略实现', 'Migration 创建和管理', 'SQL 格式化最佳实践'],
+    cons: ['仅限 Supabase 生态', '需要 PostgreSQL 基础', '高级功能需 Supabase Pro'],
+    bestFor: 'Supabase 开发、数据库 Schema 设计、RLS 策略',
+    funRanking: '夯夯',
+    personalExperience: {
+      rating: 4.5,
+      insights: 'Supabase 开发的最佳搭档。从 Schema 设计到 Edge Functions，从 RLS 策略到 Migration 管理，全流程覆盖。生成的 SQL 遵循 SECURITY INVOKER 等最佳实践，避免常见的权限问题。',
+      pitfalls: ['需了解 Supabase 基础概念', '复杂查询仍需优化']
+    },
+    swot: { S: 'Supabase 全栈覆盖', W: '平台绑定', O: 'Supabase 生态增长', T: '其他 BaaS 竞争' },
+    tags: ['Skills', '免费', 'Supabase', '数据库', 'PostgreSQL']
+  },
+  {
+    id: 'supabase-realtime-skill',
+    name: 'supabase-realtime',
+    category: 'skill',
+    subcategory: '数据库',
+    developer: 'Community',
+    logo: null,
+    versions: [
+      { type: 'Global', pricing: '完全免费', models: 'Claude Code 内置', link: 'https://github.com/anthropics/claude-code' }
+    ],
+    freeQuota: '完全免费',
+    contextWindow: 'N/A',
+    chineseSupport: 3,
+    pros: ['Supabase Realtime 实现专家', '消息/通知/在线状态/协作功能', '从 postgres_changes 到 broadcast 迁移指南', 'RLS 授权集成', '命名规范和性能优化', '可扩展模式设计'],
+    cons: ['仅限 Supabase Realtime', '实时系统调试较复杂', '需要理解 WebSocket'],
+    bestFor: 'Supabase 实时功能开发、消息推送、协作应用',
+    funRanking: '夯',
+    personalExperience: {
+      rating: 4,
+      insights: '专注 Supabase 实时功能的深度技能。涵盖消息、通知、在线状态、协作编辑等场景。特别有价值的是 postgres_changes 到 broadcast 的迁移指南和性能优化建议。',
+      pitfalls: ['实时系统调试需要经验', 'WebSocket 连接管理需注意']
+    },
+    swot: { S: '实时功能专精', W: '平台绑定', O: '实时协作需求增长', T: 'Firebase/Ably 竞争' },
+    tags: ['Skills', '免费', 'Supabase', '实时', 'WebSocket']
+  },
+
+  // --- UI/UX Skills ---
+  {
+    id: 'ui-ux-pro-max-skill',
+    name: 'ui-ux-pro-max',
+    category: 'skill',
+    subcategory: 'UI/UX设计',
+    developer: 'Community',
+    logo: null,
+    versions: [
+      { type: 'Global', pricing: '完全免费', models: 'Claude Code 内置', link: 'https://github.com/anthropics/claude-code' }
+    ],
+    freeQuota: '完全免费',
+    contextWindow: 'N/A',
+    chineseSupport: 5,
+    pros: ['67 种设计风格', '96 种调色板方案', '57 种字体配对', '25 种图表类型', '13 种技术栈覆盖（React/Vue/Svelte/SwiftUI/Flutter）', '支持 glassmorphism/claymorphism/neumorphism 等现代风格', 'shadcn/ui MCP 深度集成', '响应式和暗色模式支持'],
+    cons: ['提示词较长占用上下文', '过于全面可能选择困难', '需要设计审美基础'],
+    bestFor: 'UI/UX 设计决策、风格选择、前端组件生成',
+    funRanking: '夯夯夯',
+    personalExperience: {
+      rating: 5,
+      insights: '所有 UI/UX Skill 中最全面的一个。67 种风格 + 96 种调色板的组合几乎覆盖了所有设计场景。跨 13 种技术栈的能力让它不限于 Web 开发。与 frontend-design 互补——ui-ux-pro-max 侧重设计系统和风格，frontend-design 侧重代码实现。',
+      pitfalls: ['选择太多反而纠结', '需要有基本审美判断']
+    },
+    swot: { S: '风格库最全面', W: '上下文消耗大', O: 'AI 设计工具爆发', T: 'Figma AI/v0 竞争' },
+    tags: ['Skills', '免费', 'UI/UX', '设计系统', '调色板', '全栈']
+  },
+
+  // --- 内容生成 Skills ---
+  {
+    id: 'week-report-skill',
+    name: 'week-report-generator',
+    category: 'skill',
+    subcategory: '内容生成',
+    developer: '自研',
+    logo: null,
+    versions: [
+      { type: 'CN', pricing: '完全免费', models: 'Claude Code 内置', link: 'https://github.com/anthropics/claude-code' }
+    ],
+    freeQuota: '完全免费',
+    contextWindow: 'N/A',
+    chineseSupport: 5,
+    pros: ['自动化企业周报生成', '告警监控数据分析', 'BigEyes 平台集成', '结构化周报模板', '支持自定义报告格式', '中文优化'],
+    cons: ['仅限特定企业场景', '数据源需要配置', '模板定制需要调整'],
+    bestFor: '企业周报自动生成、告警监控报告',
+    funRanking: '夯',
+    personalExperience: {
+      rating: 3.5,
+      insights: '针对企业场景的周报生成技能，特别集成了 BigEyes 告警监控平台。适合需要定期输出监控报告的团队。中文优化到位，生成的报告结构清晰，减少了大量重复性文档工作。',
+      pitfalls: ['需要配置数据源', '企业场景定制性强']
+    },
+    swot: { S: '企业场景贴合', W: '通用性有限', O: '自动化报告需求', T: '企业内部工具' },
+    tags: ['Skills', '免费', '周报', '自动化', '国产', '企业']
+  },
+
+  // --- 思维增强 Skills ---
+  {
+    id: 'think-harder-skill',
+    name: 'think-harder',
+    category: 'skill',
+    subcategory: '思维增强',
+    developer: 'Community',
+    logo: null,
+    versions: [
+      { type: 'Global', pricing: '完全免费', models: 'Claude Code 内置', link: 'https://github.com/anthropics/claude-code' }
+    ],
+    freeQuota: '完全免费',
+    contextWindow: 'N/A',
+    chineseSupport: 5,
+    pros: ['增强分析推理能力', '多角度思考复杂问题', '结构化推理过程', '避免过早下结论', '适合复杂架构决策'],
+    cons: ['增加响应时间', '简单问题不需要', '消耗更多 Token'],
+    bestFor: '复杂问题分析、架构决策、技术方案评估',
+    funRanking: '夯',
+    personalExperience: {
+      rating: 4,
+      insights: '当普通回答不够深入时的"加速器"。让 Claude 在回答前进行更深入的分析推理，避免表面化回答。特别适合架构决策、技术方案选型等需要多角度思考的场景。',
+      pitfalls: ['简单问题不要用', '增加等待时间']
+    },
+    swot: { S: '深度推理', W: '速度较慢', O: 'AI 推理能力提升', T: '模型自身推理增强' },
+    tags: ['Skills', '免费', '推理', '分析', '决策']
+  },
+  {
+    id: 'research-skill',
+    name: 'research',
+    category: 'skill',
+    subcategory: '研究分析',
+    developer: 'Community',
+    logo: null,
+    versions: [
+      { type: 'Global', pricing: '完全免费', models: 'Claude Code 内置', link: 'https://github.com/anthropics/claude-code' }
+    ],
+    freeQuota: '完全免费',
+    contextWindow: 'N/A',
+    chineseSupport: 5,
+    pros: ['并行 Subagent 深度研究', '自动引用来源', '多维度信息收集', '结构化研究报告', '支持 Web 搜索和本地文件'],
+    cons: ['需要网络访问', '研究耗时较长', '信息时效性依赖搜索引擎'],
+    bestFor: '技术调研、竞品分析、方案对比研究',
+    funRanking: '夯夯',
+    personalExperience: {
+      rating: 4.5,
+      insights: '用多个并行 Subagent 进行深度研究，自动搜索、整理、引用。比手动搜索效率高出数倍。输出带引用的结构化报告，可直接用于技术文档。特别适合"快速了解一个新技术/框架"的场景。',
+      pitfalls: ['需要联网', '信息需要人工验证']
+    },
+    swot: { S: '并行深度研究', W: '依赖网络', O: '知识密集型工作增长', T: 'Perplexity 等专业搜索' },
+    tags: ['Skills', '免费', '研究', '调研', '分析', '引用']
   }
 ]
 

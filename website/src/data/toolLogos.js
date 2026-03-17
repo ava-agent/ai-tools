@@ -98,11 +98,26 @@ export const toolLogos = {
   'postman-mcp':       { initials: 'PM', colors: ['#ff6c37', '#e65c2e'], text: '#ffffff', logoUrl: 'https://icons.duckduckgo.com/ip3/postman.com.ico' },
   'brave-search-mcp':  { initials: 'BS', colors: ['#fb542b', '#e04a24'], text: '#ffffff', logoUrl: 'https://icons.duckduckgo.com/ip3/brave.com.ico' },
 
-  // === Skills (新添加) ===
+  // === Skills ===
   'frontend-design-skill': { initials: 'FD', colors: ['#3b82f6', '#2563eb'], text: '#ffffff' },
   'webapp-testing-skill':  { initials: 'WT', colors: ['#10b981', '#059669'], text: '#ffffff' },
   'mcp-builder-skill':     { initials: 'MB', colors: ['#8b5cf6', '#7c3aed'], text: '#ffffff' },
   'skill-creator-skill':   { initials: 'SC', colors: ['#f59e0b', '#d97706'], text: '#ffffff' },
+  'semgrep-skill':         { initials: 'SG', colors: ['#14b8a6', '#0d9488'], text: '#ffffff' },
+  'differential-review-skill': { initials: 'DR', colors: ['#ef4444', '#dc2626'], text: '#ffffff' },
+  'insecure-defaults-skill':   { initials: 'ID', colors: ['#f97316', '#ea580c'], text: '#ffffff' },
+  'sharp-edges-skill':     { initials: 'SE', colors: ['#eab308', '#ca8a04'], text: '#ffffff' },
+  'second-opinion-skill':  { initials: '2O', colors: ['#6366f1', '#4f46e5'], text: '#ffffff' },
+  'audit-context-building-skill': { initials: 'AC', colors: ['#8b5cf6', '#7c3aed'], text: '#ffffff' },
+  'git-cleanup-skill':     { initials: 'GC', colors: ['#f43f5e', '#e11d48'], text: '#ffffff' },
+  'ask-questions-skill':   { initials: 'AQ', colors: ['#06b6d4', '#0891b2'], text: '#ffffff' },
+  'property-based-testing-skill': { initials: 'PB', colors: ['#22c55e', '#16a34a'], text: '#ffffff' },
+  'supabase-skill':        { initials: 'SB', colors: ['#3ecf8e', '#2ecc71'], text: '#ffffff' },
+  'supabase-realtime-skill': { initials: 'SR', colors: ['#3ecf8e', '#2ecc71'], text: '#ffffff' },
+  'ui-ux-pro-max-skill':   { initials: 'UX', colors: ['#ec4899', '#db2777'], text: '#ffffff' },
+  'week-report-skill':     { initials: 'WR', colors: ['#0ea5e9', '#0284c7'], text: '#ffffff' },
+  'think-harder-skill':    { initials: 'TH', colors: ['#a855f7', '#9333ea'], text: '#ffffff' },
+  'research-skill':        { initials: 'RS', colors: ['#6366f1', '#4f46e5'], text: '#ffffff' },
 
   // === 新增工具 (Crush等) ===
   'crush':           { initials: 'Cr', colors: ['#ff6b9d', '#e91e63'], text: '#ffffff', logoUrl: 'https://icons.duckduckgo.com/ip3/charm.land.ico' },

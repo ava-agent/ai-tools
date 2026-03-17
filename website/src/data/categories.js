@@ -63,7 +63,7 @@ export const categories = [
         icon: 'Wrench',
         description: 'Claude Code 技能扩展，文档处理、测试、内容创作',
         color: 'amber',
-        examples: ['frontend-design', 'webapp-testing', 'mcp-builder', 'skill-creator']
+        examples: ['semgrep', 'second-opinion', 'ui-ux-pro-max', 'supabase', 'research']
     }
 ]
 
