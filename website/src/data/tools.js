@@ -2,7 +2,7 @@
 // 基于调研文档整合 82 款工具
 
 export const aiToolsData = [
-  // ============= AI IDE (17个) =============
+  // ============= AI IDE (13个) =============
   {
     id: 'cursor',
     name: 'Cursor',
@@ -1060,7 +1060,7 @@ export const aiToolsData = [
   {
     id: 'notebooklm',
     name: 'NotebookLM',
-    category: 'llm',
+    category: 'multimodal',
     subcategory: '内容生成',
     developer: 'Google',
     logo: null,
@@ -1241,12 +1241,12 @@ export const aiToolsData = [
     tags: ['推荐', '搜索', 'Agent', '调研', '引用']
   },
 
-  // ============= 新增 AI IDE/Coding (5个) =============
+  // ============= 新增 Agent 应用构建器 + IDE (5个) =============
   {
     id: 'devin',
     name: 'Devin',
-    category: 'ide',
-    subcategory: '自主AI工程师',
+    category: 'agent',
+    subcategory: '自主Agent',
     developer: 'Cognition Labs',
     logo: null,
     versions: [
@@ -1270,7 +1270,7 @@ export const aiToolsData = [
   {
     id: 'bolt-new',
     name: 'Bolt.new',
-    category: 'ide',
+    category: 'agent',
     subcategory: 'AI应用构建器',
     developer: 'StackBlitz',
     logo: null,
@@ -1295,8 +1295,8 @@ export const aiToolsData = [
   {
     id: 'v0',
     name: 'v0',
-    category: 'ide',
-    subcategory: 'AI UI生成器',
+    category: 'agent',
+    subcategory: 'AI应用构建器',
     developer: 'Vercel',
     logo: null,
     versions: [
@@ -1320,7 +1320,7 @@ export const aiToolsData = [
   {
     id: 'lovable',
     name: 'Lovable',
-    category: 'ide',
+    category: 'agent',
     subcategory: 'AI应用构建器',
     developer: 'Lovable (原 GPT Engineer)',
     logo: null,
