@@ -2178,6 +2178,489 @@ export const aiToolsData = [
     swot: { S: '官方出品、零配置', W: '平台绑定', O: 'Next.js 生态', T: 'Netlify 等竞品 MCP' },
     tags: ['MCP', '免费', 'Vercel', '部署', 'Next.js', '官方']
   },
+
+  // ============= 新增 MCP 工具 (8个) =============
+  {
+    id: 'slack-mcp',
+    name: 'Slack MCP',
+    category: 'mcp',
+    subcategory: '协作工具',
+    developer: 'Slack/Community',
+    logo: null,
+    versions: [
+      { type: 'Global', pricing: '完全免费', models: '通过 MCP 协议', link: 'https://github.com/anthropics/claude-code' }
+    ],
+    freeQuota: '完全免费',
+    contextWindow: 'N/A',
+    chineseSupport: 2,
+    pros: ['在 AI IDE 中读写 Slack 消息', '频道消息搜索和检索', '支持发送消息和回复', '团队沟通与编码无缝衔接', '支持频道列表和用户查询'],
+    cons: ['需要 Slack Bot Token 配置', '消息权限需谨慎管理', '大量消息检索性能有限'],
+    bestFor: '在 AI IDE 中直接查看和回复 Slack 消息，团队沟通不切换窗口',
+    funRanking: '夯',
+    personalExperience: {
+      rating: 4,
+      insights: '团队协作必备 MCP。不用切换到 Slack 就能查看消息和回复，特别适合在编码时快速响应同事提问。搜索历史消息获取上下文也很方便。但消息发送要谨慎，建议只用于读取。',
+      pitfalls: ['注意 Bot Token 权限范围', '避免在 AI 中自动发送消息']
+    },
+    swot: { S: '团队沟通集成', W: '权限管理复杂', O: '远程办公需求', T: '原生 Slack AI' },
+    tags: ['MCP', '免费', 'Slack', '协作', '消息']
+  },
+  {
+    id: 'linear-mcp',
+    name: 'Linear MCP',
+    category: 'mcp',
+    subcategory: '项目管理',
+    developer: 'Linear/Community',
+    logo: null,
+    versions: [
+      { type: 'Global', pricing: '完全免费', models: '通过 MCP 协议', link: 'https://github.com/anthropics/claude-code' }
+    ],
+    freeQuota: '完全免费',
+    contextWindow: 'N/A',
+    chineseSupport: 2,
+    pros: ['在 AI IDE 中管理 Linear Issue', '创建/更新/搜索 Issue', '关联代码变更与任务', 'Sprint 和项目进度查看', '支持评论和状态变更'],
+    cons: ['需要 Linear API Key', '仅限 Linear 用户', '复杂查询有限制'],
+    bestFor: '编码时直接创建和管理 Linear 任务，代码与需求联动',
+    funRanking: '夯',
+    personalExperience: {
+      rating: 4,
+      insights: 'Linear 是 2026 年最受开发者欢迎的项目管理工具之一。MCP 集成后可以在编码时直接查看和管理任务，避免频繁切换上下文。特别适合"修 Bug → 更新 Issue → 提交代码"的闭环工作流。',
+      pitfalls: ['注意 API 调用频率限制', '写操作需要确认']
+    },
+    swot: { S: '开发者友好的项目管理', W: '平台绑定', O: '开发工具集成趋势', T: 'Jira/GitHub Issues' },
+    tags: ['MCP', '免费', 'Linear', '项目管理', 'Issue']
+  },
+  {
+    id: 'sentry-mcp',
+    name: 'Sentry MCP',
+    category: 'mcp',
+    subcategory: '监控调试',
+    developer: 'Sentry/Community',
+    logo: null,
+    versions: [
+      { type: 'Global', pricing: '完全免费', models: '通过 MCP 协议', link: 'https://github.com/anthropics/claude-code' }
+    ],
+    freeQuota: '完全免费',
+    contextWindow: 'N/A',
+    chineseSupport: 2,
+    pros: ['在 AI IDE 中查看 Sentry 错误', '错误堆栈和上下文获取', '直接定位到出错代码', 'AI 辅助错误根因分析', '性能监控数据查询'],
+    cons: ['需要 Sentry Auth Token', '依赖 Sentry 账号', '历史数据查询有限'],
+    bestFor: '在 AI IDE 中直接查看线上错误并让 AI 辅助修复',
+    funRanking: '夯夯',
+    personalExperience: {
+      rating: 4.5,
+      insights: 'AI 辅助 Debug 的杀手级 MCP。Sentry 报错直接带上下文给 AI 分析，AI 能定位到具体代码行并提供修复建议。"查看错误 → AI 分析 → 修复代码"的闭环体验极佳，大幅减少 Debug 时间。',
+      pitfalls: ['需要 Sentry 付费计划获取完整 API', '注意错误数据敏感性']
+    },
+    swot: { S: 'AI 辅助 Debug 闭环', W: '依赖 Sentry', O: '可观测性 + AI', T: '其他 APM 工具 MCP' },
+    tags: ['MCP', '免费', 'Sentry', '监控', 'Debug', '错误追踪']
+  },
+  {
+    id: 'docker-mcp',
+    name: 'Docker MCP',
+    category: 'mcp',
+    subcategory: 'DevOps',
+    developer: 'Docker/Community',
+    logo: null,
+    versions: [
+      { type: 'Global', pricing: '完全免费', models: '通过 MCP 协议', link: 'https://github.com/anthropics/claude-code' }
+    ],
+    freeQuota: '完全免费',
+    contextWindow: 'N/A',
+    chineseSupport: 2,
+    pros: ['在 AI IDE 中管理 Docker 容器', '容器启停/日志查看', '镜像构建和管理', 'Dockerfile 智能生成', 'Docker Compose 操作'],
+    cons: ['需要本地 Docker 环境', '安全敏感操作需谨慎', '不适合生产环境操作'],
+    bestFor: '在 AI IDE 中直接管理本地 Docker 开发环境',
+    funRanking: '夯',
+    personalExperience: {
+      rating: 3.5,
+      insights: '开发环境管理利器。让 AI 帮忙启停容器、查看日志、生成 Dockerfile。特别适合微服务开发场景——不用切换到终端就能管理多个服务容器。但生产环境操作建议走正规 CI/CD 流程。',
+      pitfalls: ['避免在生产环境使用', '容器删除操作要确认']
+    },
+    swot: { S: '开发环境管理', W: '安全风险', O: '容器化普及', T: 'K8s 管理工具' },
+    tags: ['MCP', '免费', 'Docker', 'DevOps', '容器']
+  },
+  {
+    id: 'stripe-mcp',
+    name: 'Stripe MCP',
+    category: 'mcp',
+    subcategory: '支付API',
+    developer: 'Stripe/Community',
+    logo: null,
+    versions: [
+      { type: 'Global', pricing: '完全免费', models: '通过 MCP 协议', link: 'https://github.com/anthropics/claude-code' }
+    ],
+    freeQuota: '完全免费',
+    contextWindow: 'N/A',
+    chineseSupport: 2,
+    pros: ['在 AI IDE 中查询 Stripe 数据', '支付订单和客户信息查询', '产品/价格/订阅管理', 'Webhook 事件查看', 'API 文档快速参考'],
+    cons: ['需要 Stripe API Key', '写操作需极度谨慎', '仅限 Stripe 用户'],
+    bestFor: '在 AI IDE 中查询支付数据、调试 Webhook、管理产品',
+    funRanking: '夯',
+    personalExperience: {
+      rating: 3.5,
+      insights: 'SaaS 开发者的实用 MCP。查询订单状态、客户信息、调试 Webhook 都不需要打开 Stripe Dashboard。但涉及金额的写操作一定要谨慎，建议仅在 test mode 下使用写功能。',
+      pitfalls: ['只用 test mode API Key', '避免 AI 自动操作支付']
+    },
+    swot: { S: '支付数据直达', W: '安全敏感', O: 'SaaS 经济', T: '其他支付 MCP' },
+    tags: ['MCP', '免费', 'Stripe', '支付', 'SaaS']
+  },
+  {
+    id: 'cloudflare-mcp',
+    name: 'Cloudflare MCP',
+    category: 'mcp',
+    subcategory: 'DevOps',
+    developer: 'Cloudflare',
+    logo: null,
+    versions: [
+      { type: 'Global', pricing: '完全免费', models: '通过 MCP 协议', link: 'https://github.com/cloudflare/mcp-server-cloudflare' }
+    ],
+    freeQuota: '完全免费',
+    contextWindow: 'N/A',
+    chineseSupport: 2,
+    pros: ['Cloudflare Workers 开发和部署', 'KV/R2/D1 存储管理', 'DNS 和域名配置', 'Workers AI 模型调用', '官方出品质量保证', '零信任安全配置'],
+    cons: ['需要 Cloudflare 账号', '功能受 Cloudflare 计划限制', '复杂配置需要经验'],
+    bestFor: '在 AI IDE 中管理 Cloudflare Workers、KV 存储和 DNS',
+    funRanking: '夯',
+    personalExperience: {
+      rating: 4,
+      insights: 'Cloudflare 官方 MCP，直接在 AI IDE 中管理 Workers、KV、R2、D1。对于使用 Cloudflare 全家桶的团队来说效率提升明显。Workers AI 集成让边缘 AI 推理也能在 IDE 中调试。',
+      pitfalls: ['注意 Workers 计费', 'DNS 变更要谨慎']
+    },
+    swot: { S: '官方出品、全栈覆盖', W: '平台绑定', O: '边缘计算增长', T: 'AWS/GCP MCP' },
+    tags: ['MCP', '免费', 'Cloudflare', 'Workers', 'DevOps', '官方']
+  },
+  {
+    id: 'gitlab-mcp',
+    name: 'GitLab MCP',
+    category: 'mcp',
+    subcategory: '开发工具',
+    developer: 'GitLab/Community',
+    logo: null,
+    versions: [
+      { type: 'Global', pricing: '完全免费', models: '通过 MCP 协议', link: 'https://github.com/anthropics/claude-code' }
+    ],
+    freeQuota: '完全免费',
+    contextWindow: 'N/A',
+    chineseSupport: 3,
+    pros: ['在 AI IDE 中管理 GitLab 项目', 'MR（Merge Request）创建和审查', 'CI/CD Pipeline 状态查看', 'Issue 管理和搜索', '代码仓库浏览和文件读取', '支持自托管 GitLab 实例'],
+    cons: ['需要 GitLab Token', '大型 MR 处理较慢', '权限配置较复杂'],
+    bestFor: '使用 GitLab 的团队在 AI IDE 中管理 MR、查看 CI/CD、处理 Issue',
+    funRanking: '夯',
+    personalExperience: {
+      rating: 4,
+      insights: '对于使用 GitLab（特别是自托管）的企业团队来说是 GitHub MCP 的对标产品。MR 审查、CI/CD 状态查看、Issue 管理一应俱全。支持自托管实例是相对 GitHub MCP 的独特优势。',
+      pitfalls: ['自托管实例需配置网络', 'Token 权限要最小化']
+    },
+    swot: { S: '支持自托管', W: '知名度不如 GitHub MCP', O: '企业 GitLab 市场', T: 'GitHub MCP' },
+    tags: ['MCP', '免费', 'GitLab', 'CI/CD', 'MR', '企业']
+  },
+  {
+    id: 'elasticsearch-mcp',
+    name: 'Elasticsearch MCP',
+    category: 'mcp',
+    subcategory: '数据工具',
+    developer: 'Elastic/Community',
+    logo: null,
+    versions: [
+      { type: 'Global', pricing: '完全免费', models: '通过 MCP 协议', link: 'https://github.com/anthropics/claude-code' }
+    ],
+    freeQuota: '完全免费',
+    contextWindow: 'N/A',
+    chineseSupport: 2,
+    pros: ['在 AI IDE 中查询 Elasticsearch', '自然语言转 ES 查询', '索引管理和映射查看', '日志搜索和分析', '聚合查询结果可视化'],
+    cons: ['需要 ES 集群连接信息', '复杂查询需理解 DSL', '大数据量查询注意性能'],
+    bestFor: '在 AI IDE 中用自然语言查询 ES 日志和数据',
+    funRanking: '夯',
+    personalExperience: {
+      rating: 3.5,
+      insights: '对运维和后端开发者非常实用。最大亮点是自然语言转 ES 查询——不用记 DSL 语法就能搜索日志。特别适合线上排查问题时快速查找日志和数据。',
+      pitfalls: ['注意查询性能对集群的影响', '敏感数据需要权限控制']
+    },
+    swot: { S: '自然语言查询 ES', W: '需要 ES 集群', O: '可观测性需求', T: '其他日志分析 MCP' },
+    tags: ['MCP', '免费', 'Elasticsearch', '日志', '搜索', '数据']
+  },
+
+  // ============= 新增 Agent 平台/框架 (5个) =============
+  {
+    id: 'autogen',
+    name: 'AutoGen',
+    category: 'agent',
+    subcategory: '开发框架',
+    developer: 'Microsoft',
+    logo: null,
+    versions: [
+      { type: 'Global', pricing: '完全免费', models: '支持多种 LLM', link: 'https://microsoft.github.io/autogen/' }
+    ],
+    freeQuota: '完全免费（开源）',
+    contextWindow: '取决于模型',
+    chineseSupport: 3,
+    pros: ['微软出品的多 Agent 框架', '对话式 Agent 编排', '支持人机协作模式', 'Code Executor 安全沙箱', '灵活的 Agent 拓扑定义', '企业级可靠性', '活跃的开源社区'],
+    cons: ['学习曲线较陡', 'Python 限定', '复杂场景调试困难', '文档相对学术化'],
+    bestFor: '多 Agent 协作、人机交互任务、企业级 Agent 系统',
+    funRanking: '夯夯',
+    personalExperience: {
+      rating: 4,
+      insights: '微软的 Agent 框架，核心优势是多 Agent 对话编排和人机协作。与 CrewAI 相比更偏学术和企业级，灵活性更高但上手难度也更大。Code Executor 沙箱执行是安全亮点。适合需要精细控制 Agent 交互流程的场景。',
+      pitfalls: ['Agent 拓扑设计需要经验', '调试多 Agent 交互较复杂']
+    },
+    swot: { S: '微软背书、灵活编排', W: '学习门槛高', O: '企业 Agent 需求', T: 'CrewAI/LangGraph 竞争' },
+    tags: ['Agent', '免费', '开源', '微软', '多Agent', '企业']
+  },
+  {
+    id: 'zapier-ai',
+    name: 'Zapier AI Actions',
+    category: 'agent',
+    subcategory: '工作流自动化',
+    developer: 'Zapier',
+    logo: null,
+    versions: [
+      { type: 'Global', pricing: '免费(100任务/月)/$29.99+/月', models: 'AI Actions API', link: 'https://zapier.com' }
+    ],
+    freeQuota: '免费(100任务/月)',
+    contextWindow: 'N/A',
+    chineseSupport: 2,
+    pros: ['连接 7000+ 应用', 'AI Actions 让 LLM 调用 Zapier 自动化', '无代码工作流编排', '企业级可靠性和安全性', '8M+ 用户验证', '丰富的模板库'],
+    cons: ['免费版任务数有限', '复杂流程调试困难', '国内访问受限', '高级功能价格较贵'],
+    bestFor: '跨应用自动化、AI 触发工作流、无代码业务自动化',
+    funRanking: '夯',
+    personalExperience: {
+      rating: 3.5,
+      insights: '自动化平台的老牌王者。AI Actions 让 LLM 可以直接调用 Zapier 的 7000+ 应用集成，实现"AI 说一句话，Zapier 自动执行跨应用操作"。适合非技术用户和快速搭建业务自动化流程。',
+      pitfalls: ['免费版 100 任务/月很快用完', '复杂流程建议用 n8n']
+    },
+    swot: { S: '应用集成数量最多', W: '价格贵', O: 'AI 自动化需求爆发', T: 'n8n/Make 开源竞争' },
+    tags: ['Agent', '部分免费', '自动化', '工作流', 'SaaS']
+  },
+  {
+    id: 'make',
+    name: 'Make (Integromat)',
+    category: 'agent',
+    subcategory: '工作流自动化',
+    developer: 'Make',
+    logo: null,
+    versions: [
+      { type: 'Global', pricing: '免费(1000操作/月)/$10.59+/月', models: 'AI模块集成', link: 'https://www.make.com' }
+    ],
+    freeQuota: '免费(1000操作/月)',
+    contextWindow: 'N/A',
+    chineseSupport: 2,
+    pros: ['可视化工作流编辑器（拖拽式）', '比 Zapier 更灵活的逻辑控制', '支持循环、条件、错误处理', '2000+ 应用集成', 'AI 模块支持多种 LLM', '性价比高于 Zapier'],
+    cons: ['国内访问受限', 'UI 复杂度较高', '文档以英文为主', '高级功能需要付费'],
+    bestFor: '复杂工作流自动化、需要条件逻辑的业务流程',
+    funRanking: '夯',
+    personalExperience: {
+      rating: 3.5,
+      insights: 'Zapier 的主要竞争者，优势在于可视化编辑器更灵活，支持循环、条件分支、错误处理等复杂逻辑。免费版给 1000 操作/月比 Zapier 大方。适合需要复杂业务流程但不想写代码的用户。',
+      pitfalls: ['可视化编辑器初次使用需学习', '注意操作数计费']
+    },
+    swot: { S: '灵活的可视化编排', W: '知名度不如 Zapier', O: '自动化市场增长', T: 'Zapier/n8n' },
+    tags: ['Agent', '部分免费', '自动化', '可视化', '工作流']
+  },
+  {
+    id: 'camel-ai',
+    name: 'CAMEL-AI',
+    category: 'agent',
+    subcategory: '开发框架',
+    developer: 'CAMEL-AI.org',
+    logo: null,
+    versions: [
+      { type: 'Global', pricing: '完全免费', models: '支持多种 LLM', link: 'https://www.camel-ai.org' }
+    ],
+    freeQuota: '完全免费（开源）',
+    contextWindow: '取决于模型',
+    chineseSupport: 3,
+    pros: ['首个 LLM 多 Agent 框架', '角色扮演式 Agent 交互', '丰富的预定义角色库', '支持任务分解和规划', '学术界广泛引用', 'Agent 社会模拟能力'],
+    cons: ['偏学术研究导向', '生产部署经验有限', '文档不够工程化', '社区规模不如 LangChain'],
+    bestFor: '多 Agent 角色扮演、Agent 社会模拟、学术研究',
+    funRanking: '夯',
+    personalExperience: {
+      rating: 3.5,
+      insights: '多 Agent 领域的学术先驱，首次提出让 AI Agent 通过角色扮演进行协作。预定义角色库丰富，适合研究"AI Agent 社会"相关课题。但工程化程度不如 CrewAI 和 LangChain，更适合研究和原型验证。',
+      pitfalls: ['生产环境建议选 CrewAI/LangChain', '学术导向文档偏理论']
+    },
+    swot: { S: '学术先驱、角色扮演', W: '工程化不足', O: 'Agent 研究热潮', T: '工程化框架' },
+    tags: ['Agent', '免费', '开源', '学术', '多Agent', '角色扮演']
+  },
+  {
+    id: 'agentscope',
+    name: 'AgentScope',
+    category: 'agent',
+    subcategory: '开发框架',
+    developer: 'MSRA (微软亚洲研究院)',
+    logo: null,
+    versions: [
+      { type: 'Global', pricing: '完全免费', models: '支持多种 LLM', link: 'https://github.com/modelscope/agentscope' }
+    ],
+    freeQuota: '完全免费（开源）',
+    contextWindow: '取决于模型',
+    chineseSupport: 5,
+    pros: ['微软亚研院出品', '生产级多 Agent 框架', '分布式 Agent 支持', '丰富的内置服务（搜索、代码执行等）', '中文文档完善', '支持 Agent 即服务模式', 'ModelScope 生态集成'],
+    cons: ['主要面向中文社区', '国际知名度不如 LangChain', '生态规模较小', '更新节奏需关注'],
+    bestFor: '中文环境的多 Agent 系统、分布式 Agent 部署',
+    funRanking: '夯',
+    personalExperience: {
+      rating: 4,
+      insights: '国产 Agent 框架的领先者。微软亚研院出品，质量有保障。中文文档完善是对国内开发者的巨大优势。分布式 Agent 支持让其适合大规模部署。与 ModelScope 生态集成，国产模型适配优秀。',
+      pitfalls: ['国际社区资源较少', '大型系统需要运维经验']
+    },
+    swot: { S: '中文友好、分布式支持', W: '国际生态小', O: '国内 Agent 需求', T: 'LangChain/CrewAI' },
+    tags: ['Agent', '免费', '开源', '国产', '微软', '分布式']
+  },
+
+  // ============= 新增多模态 (3个) =============
+  {
+    id: 'luma',
+    name: 'Luma Dream Machine',
+    category: 'multimodal',
+    subcategory: '视频生成',
+    developer: 'Luma AI',
+    logo: null,
+    versions: [
+      { type: 'Global', pricing: '免费(30代/月)/$29/$99/$499/月', models: 'Dream Machine 2.0', link: 'https://lumalabs.ai' }
+    ],
+    freeQuota: '免费(30代/月)',
+    contextWindow: 'N/A',
+    chineseSupport: 2,
+    pros: ['高质量视频生成', '物理世界模拟出色', '运动一致性好', '支持文生视频和图生视频', '3D 场景理解能力强', '生成速度较快'],
+    cons: ['免费额度有限', '国内访问需优化', '长视频生成受限', '复杂场景偶有不一致'],
+    bestFor: '高质量短视频生成、产品展示视频、创意内容',
+    funRanking: '夯夯',
+    personalExperience: {
+      rating: 4,
+      insights: '视频生成领域的强力竞争者。Dream Machine 2.0 在物理世界模拟和运动一致性方面表现出色，生成的视频质感自然。与 Sora 相比生成速度更快，免费额度也更友好。适合产品演示和创意内容创作。',
+      pitfalls: ['复杂场景需多次尝试', '人物面部细节偶有问题']
+    },
+    swot: { S: '物理模拟出色、速度快', W: '长视频受限', O: '视频内容需求增长', T: 'Sora/Kling 竞争' },
+    tags: ['多模态', '部分免费', '视频生成', 'AI视频', '3D']
+  },
+  {
+    id: 'hailuo',
+    name: '海螺AI (Hailuo)',
+    category: 'multimodal',
+    subcategory: '视频生成',
+    developer: 'MiniMax',
+    logo: null,
+    versions: [
+      { type: 'CN', pricing: '免费(每日额度)', models: 'Hailuo Video', link: 'https://hailuoai.video' }
+    ],
+    freeQuota: '免费(每日额度)',
+    contextWindow: 'N/A',
+    chineseSupport: 5,
+    pros: ['免费且每日有额度', '视频生成质量高', '中文提示词理解优秀', '生成速度较快', 'MiniMax 技术支撑', '人物动态表现自然'],
+    cons: ['国际知名度较低', '每日免费额度有限', '长视频支持不足', '风格多样性待提升'],
+    bestFor: '中文场景视频生成、短视频内容创作',
+    funRanking: '夯夯',
+    personalExperience: {
+      rating: 4,
+      insights: 'MiniMax 出品的视频生成工具，免费使用是最大亮点。中文提示词理解是国产工具的优势，人物动态表现自然。每日免费额度虽有限但对个人用户已经够用。适合日常创意视频和中文内容场景。',
+      pitfalls: ['每日额度需合理分配', '复杂场景质量不稳定']
+    },
+    swot: { S: '免费、中文优化', W: '国际知名度低', O: '国内短视频市场', T: 'Sora/Kling' },
+    tags: ['多模态', '免费', '视频生成', '国产', '中文']
+  },
+  {
+    id: 'udio',
+    name: 'Udio',
+    category: 'multimodal',
+    subcategory: '音乐生成',
+    developer: 'Udio',
+    logo: null,
+    versions: [
+      { type: 'Global', pricing: '免费(10首/月)/$10/$30/月', models: 'Udio v2', link: 'https://udio.com' }
+    ],
+    freeQuota: '免费(10首/月)',
+    contextWindow: 'N/A',
+    chineseSupport: 2,
+    pros: ['音乐生成质量极高', '支持歌词和旋律生成', '多种音乐风格', '人声合成自然', '支持续写和混音', '与 Suno 并列顶级'],
+    cons: ['免费额度有限', '国内访问受限', '商用授权需付费', '生成歌曲长度有限'],
+    bestFor: '原创音乐创作、BGM 生成、歌曲制作',
+    funRanking: '夯夯',
+    personalExperience: {
+      rating: 4,
+      insights: 'Suno 的最强竞争者。音乐生成质量和 Suno 各有千秋，Udio 在人声自然度和音乐编排上稍有优势。两者建议都试用后选择更适合自己风格的。免费版每月 10 首对于偶尔使用够用。',
+      pitfalls: ['商用需要付费授权', '歌曲长度有限制']
+    },
+    swot: { S: '音质顶级', W: '额度有限', O: 'AIGC 音乐市场', T: 'Suno 竞争' },
+    tags: ['多模态', '部分免费', '音乐生成', 'AI音乐', '人声']
+  },
+
+  // ============= 新增 LLM (3个) =============
+  {
+    id: 'cohere',
+    name: 'Cohere Command R+',
+    category: 'llm',
+    subcategory: '企业大模型',
+    developer: 'Cohere',
+    logo: null,
+    versions: [
+      { type: 'Global', pricing: '试用免费/$1/M tokens(Input)', models: 'Command R+ 08-2024', link: 'https://cohere.com' }
+    ],
+    freeQuota: '试用免费',
+    contextWindow: '128K',
+    chineseSupport: 2,
+    pros: ['RAG 检索增强领域领先', 'Enterprise 级数据安全', '多语言支持（10+ 语言）', '内置搜索和引用功能', 'API 价格极具竞争力', '支持私有化部署'],
+    cons: ['通用能力不如 GPT/Claude', '中文能力一般', '国内知名度低', '生态不如大厂完善'],
+    bestFor: '企业 RAG 应用、知识库检索、多语言业务',
+    funRanking: '夯',
+    personalExperience: {
+      rating: 3.5,
+      insights: 'RAG 领域的专家模型。Command R+ 对检索增强生成的优化是其核心竞争力——内置搜索和引用功能，让 RAG 应用开发简单很多。API 价格极其便宜。但通用对话能力不如 Claude/GPT，适合 RAG 专用场景。',
+      pitfalls: ['不适合通用对话', '中文场景建议选国产模型']
+    },
+    swot: { S: 'RAG 专精、价格低', W: '通用能力弱', O: '企业 RAG 需求', T: 'GPT/Claude RAG 增强' },
+    tags: ['LLM', '部分免费', 'RAG', '企业', '多语言']
+  },
+  {
+    id: 'amazon-nova',
+    name: 'Amazon Nova',
+    category: 'llm',
+    subcategory: '云平台大模型',
+    developer: 'Amazon (AWS)',
+    logo: null,
+    versions: [
+      { type: 'Global', pricing: '按量计费(AWS Bedrock)', models: 'Nova Pro/Lite/Micro', link: 'https://aws.amazon.com/bedrock/' }
+    ],
+    freeQuota: 'AWS 免费套餐可试用',
+    contextWindow: '300K',
+    chineseSupport: 3,
+    pros: ['AWS 生态深度集成', '300K 超长上下文', 'Nova Pro/Lite/Micro 三档选择', '性价比极高（比 GPT-4 便宜 75%）', '支持多模态输入', 'Bedrock 一站式管理'],
+    cons: ['需要 AWS 账号', '独立使用不便', '中文能力一般', '品牌知名度不如 GPT/Claude'],
+    bestFor: 'AWS 生态应用、成本敏感的 AI 部署、长文档处理',
+    funRanking: '夯',
+    personalExperience: {
+      rating: 3.5,
+      insights: 'AWS 的自研大模型系列。最大亮点是性价比——比 GPT-4 便宜 75% 且支持 300K 上下文。三档模型选择灵活：Micro 适合简单任务、Lite 适合日常、Pro 适合复杂推理。对于已经在 AWS 生态的团队是顺理成章的选择。',
+      pitfalls: ['AWS 生态外使用体验一般', '独立 API 调用不如 OpenAI 方便']
+    },
+    swot: { S: '价格低、AWS 集成', W: '生态依赖', O: '企业降本需求', T: 'Claude on Bedrock 自家竞争' },
+    tags: ['LLM', '按量计费', 'AWS', '企业', '长上下文', '性价比']
+  },
+  {
+    id: 'hunyuan',
+    name: '混元大模型',
+    category: 'llm',
+    subcategory: '通用大模型',
+    developer: '腾讯',
+    logo: null,
+    versions: [
+      { type: 'CN', pricing: '免费(腾讯云试用)/按量计费', models: '混元-Turbo/Pro/Lite', link: 'https://hunyuan.tencent.com' }
+    ],
+    freeQuota: '腾讯云免费试用额度',
+    contextWindow: '256K',
+    chineseSupport: 5,
+    pros: ['腾讯全栈技术支撑', '256K 超长上下文', '微信/企微生态集成', '中文理解能力强', '支持 MoE 架构高效推理', '腾讯云一站式部署'],
+    cons: ['国际知名度低', '独立使用入口不明显', '主要服务腾讯生态', '第三方集成有限'],
+    bestFor: '腾讯生态应用、中文内容生成、企业微信集成',
+    funRanking: '夯',
+    personalExperience: {
+      rating: 3.5,
+      insights: '腾讯的大模型系列，与微信/企微生态深度绑定是独特优势。256K 超长上下文和 MoE 架构让其在长文档处理上表现不错。适合已在腾讯云生态的团队。混元 3D 已单独收录在多模态分类。',
+      pitfalls: ['腾讯生态外体验一般', '需要腾讯云账号']
+    },
+    swot: { S: '腾讯生态、中文强', W: '生态依赖', O: '企微 AI 需求', T: '通义千问/文心一言' },
+    tags: ['LLM', '部分免费', '国产', '腾讯', '中文', '企业']
+  },
   // ============= AI Skills (20个) =============
   {
     id: 'frontend-design-skill',

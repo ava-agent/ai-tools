@@ -137,6 +137,33 @@ export const toolLogos = {
   'antv-chart-mcp':          { initials: 'AC', colors: ['#1677ff', '#0958d9'], text: '#ffffff', logoUrl: 'https://icons.duckduckgo.com/ip3/antv.antgroup.com.ico' },
   'openmemory-mcp':          { initials: 'OM', colors: ['#7c3aed', '#6d28d9'], text: '#ffffff', logoUrl: 'https://icons.duckduckgo.com/ip3/mem0.ai.ico' },
   'atlassian-mcp':           { initials: 'AM', colors: ['#0052cc', '#0747a6'], text: '#ffffff', logoUrl: 'https://icons.duckduckgo.com/ip3/atlassian.com.ico' },
+
+  // === 新增 MCP 工具 ===
+  'slack-mcp':         { initials: 'SL', colors: ['#4a154b', '#611f69'], text: '#ffffff', logoUrl: 'https://icons.duckduckgo.com/ip3/slack.com.ico' },
+  'linear-mcp':        { initials: 'LN', colors: ['#5e6ad2', '#4f5bd5'], text: '#ffffff', logoUrl: 'https://icons.duckduckgo.com/ip3/linear.app.ico' },
+  'sentry-mcp':        { initials: 'ST', colors: ['#362d59', '#2b1d4e'], text: '#ffffff', logoUrl: 'https://icons.duckduckgo.com/ip3/sentry.io.ico' },
+  'docker-mcp':        { initials: 'DK', colors: ['#2496ed', '#1a7bc1'], text: '#ffffff', logoUrl: 'https://icons.duckduckgo.com/ip3/docker.com.ico' },
+  'stripe-mcp':        { initials: 'SP', colors: ['#635bff', '#5046e5'], text: '#ffffff', logoUrl: 'https://icons.duckduckgo.com/ip3/stripe.com.ico' },
+  'cloudflare-mcp':    { initials: 'CF', colors: ['#f38020', '#e07318'], text: '#ffffff', logoUrl: 'https://icons.duckduckgo.com/ip3/cloudflare.com.ico' },
+  'gitlab-mcp':        { initials: 'GL', colors: ['#fc6d26', '#e24329'], text: '#ffffff', logoUrl: 'https://icons.duckduckgo.com/ip3/gitlab.com.ico' },
+  'elasticsearch-mcp': { initials: 'ES', colors: ['#fed10a', '#f0c800'], text: '#1a1a2e', logoUrl: 'https://icons.duckduckgo.com/ip3/elastic.co.ico' },
+
+  // === 新增 Agent 平台 ===
+  'autogen':           { initials: 'AG', colors: ['#0078d4', '#005a9e'], text: '#ffffff', logoUrl: 'https://icons.duckduckgo.com/ip3/microsoft.com.ico' },
+  'zapier-ai':         { initials: 'ZP', colors: ['#ff4f00', '#e04600'], text: '#ffffff', logoUrl: 'https://icons.duckduckgo.com/ip3/zapier.com.ico' },
+  'make':              { initials: 'Mk', colors: ['#6d00cc', '#5a00aa'], text: '#ffffff', logoUrl: 'https://icons.duckduckgo.com/ip3/make.com.ico' },
+  'camel-ai':          { initials: 'CA', colors: ['#c4820e', '#a66d0c'], text: '#ffffff', logoUrl: 'https://icons.duckduckgo.com/ip3/camel-ai.org.ico' },
+  'agentscope':        { initials: 'AS', colors: ['#0078d4', '#005a9e'], text: '#ffffff', logoUrl: 'https://icons.duckduckgo.com/ip3/modelscope.cn.ico' },
+
+  // === 新增多模态 ===
+  'luma':              { initials: 'Lm', colors: ['#000000', '#1a1a2e'], text: '#ffffff', logoUrl: 'https://icons.duckduckgo.com/ip3/lumalabs.ai.ico' },
+  'hailuo':            { initials: 'HL', colors: ['#6366f1', '#4f46e5'], text: '#ffffff', logoUrl: 'https://icons.duckduckgo.com/ip3/hailuoai.video.ico' },
+  'udio':              { initials: 'Ud', colors: ['#000000', '#1a1a2e'], text: '#ffffff', logoUrl: 'https://icons.duckduckgo.com/ip3/udio.com.ico' },
+
+  // === 新增 LLM ===
+  'cohere':            { initials: 'Co', colors: ['#39594d', '#2d4840'], text: '#ffffff', logoUrl: 'https://icons.duckduckgo.com/ip3/cohere.com.ico' },
+  'amazon-nova':       { initials: 'AN', colors: ['#ff9900', '#e68a00'], text: '#1a1a2e', logoUrl: 'https://icons.duckduckgo.com/ip3/aws.amazon.com.ico' },
+  'hunyuan':           { initials: 'HY', colors: ['#1890ff', '#0070cc'], text: '#ffffff', logoUrl: 'https://icons.duckduckgo.com/ip3/tencent.com.ico' },
 }
 
 export function getToolLogo(toolId) {
