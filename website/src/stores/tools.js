@@ -12,8 +12,6 @@ export const useToolsStore = defineStore('tools', () => {
   const searchQuery = ref('')
   const selectedCategory = ref('all')
   const selectedTags = ref([])
-  const isLoading = ref(false)
-  const error = ref(null)
   const comparedToolIds = ref([])
 
   // Getters
@@ -162,8 +160,6 @@ export const useToolsStore = defineStore('tools', () => {
     searchQuery.value = ''
     selectedCategory.value = 'all'
     selectedTags.value = []
-    isLoading.value = false
-    error.value = null
   }
 
   return {
@@ -172,8 +168,6 @@ export const useToolsStore = defineStore('tools', () => {
     searchQuery,
     selectedCategory,
     selectedTags,
-    isLoading,
-    error,
     comparedToolIds,
 
     // Getters

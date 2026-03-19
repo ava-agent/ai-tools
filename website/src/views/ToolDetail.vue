@@ -7,7 +7,7 @@
     <div class="max-w-[720px] mx-auto px-5 py-3 flex items-center gap-3">
       <button
         class="text-[13px] text-[#0a84ff] cursor-pointer"
-        @click="$router.back()"
+        @click="goBack"
       >
         &larr; 返回
       </button>
@@ -58,7 +58,7 @@
             v-if="mainLink"
             :href="mainLink"
             target="_blank"
-            rel="noopener"
+            rel="noopener noreferrer"
             class="btn-capsule flex-shrink-0"
           >访问官网</a>
         </div>
@@ -354,7 +354,7 @@
 
 <script setup>
 import { computed, onMounted, watch } from 'vue'
-import { useRoute } from 'vue-router'
+import { useRoute, useRouter } from 'vue-router'
 import { useToolsStore } from '../stores/tools'
 import { useGamificationStore } from '../stores/gamification'
 import { useAchievementsStore } from '../stores/achievements'
@@ -366,6 +366,7 @@ import ToolLogo from '../components/ToolLogo.vue'
 import StarRating from '../components/StarRating.vue'
 
 const route = useRoute()
+const router = useRouter()
 const toolsStore = useToolsStore()
 const gamification = useGamificationStore()
 const achievements = useAchievementsStore()
@@ -412,8 +413,8 @@ const mainLink = computed(() => {
 })
 
 onMounted(() => {
-  document.title = `${tool.value?.name || '工具详情'} - AI工具全书`
   if (tool.value) {
+    document.title = `${tool.value.name} - AI工具全书`
     gamification.trackToolView(tool.value.id)
     achievements.checkAll()
   }
@@ -424,13 +425,23 @@ watch(
   () => route.params.id,
   (newId) => {
     if (newId) {
-      const t = toolsStore.tools.find((item) => item.id === newId)
-      document.title = `${t?.name || '工具详情'} - AI工具全书`
+      const t = toolsStore.getToolById(newId)
+      if (t) {
+        document.title = `${t.name} - AI工具全书`
+      }
       gamification.trackToolView(newId)
       achievements.checkAll()
     }
   },
 )
+
+function goBack() {
+  if (window.history.length > 1) {
+    router.back()
+  } else {
+    router.push('/')
+  }
+}
 </script>
 
 <style scoped>

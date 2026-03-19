@@ -123,6 +123,7 @@ import { ref, computed, onMounted } from 'vue'
 import { MessageSquare } from 'lucide-vue-next'
 import { useAuthStore } from '../stores/auth.js'
 import { useCommunityStore } from '../stores/community.js'
+import { useUIStore } from '../stores/ui.js'
 
 const props = defineProps({
   toolId: { type: String, required: true },
@@ -130,6 +131,7 @@ const props = defineProps({
 
 const authStore = useAuthStore()
 const communityStore = useCommunityStore()
+const uiStore = useUIStore()
 
 const newReviewContent = ref('')
 const submitting = ref(false)
@@ -166,7 +168,11 @@ async function handleSubmitReview() {
 }
 
 async function handleDelete(reviewId) {
-  await communityStore.deleteReview(reviewId, props.toolId, authStore.userId)
+  if (!confirm('确定要删除这条评论吗？')) return
+  const { error } = await communityStore.deleteReview(reviewId, props.toolId, authStore.userId)
+  if (error) {
+    uiStore.showToast('删除失败，请重试', 'error')
+  }
 }
 
 onMounted(async () => {

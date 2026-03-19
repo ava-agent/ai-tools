@@ -68,8 +68,6 @@ const stopAuthWatch = watch(
 )
 
 onMounted(() => {
-  document.title = 'AI工具全书 | 2026深度集成与实战教学版'
-
   // Track daily visit for gamification
   gamification.trackDailyVisit()
   achievements.checkAll()

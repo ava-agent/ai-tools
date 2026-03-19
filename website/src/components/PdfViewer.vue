@@ -18,6 +18,7 @@
         <a
           :href="src"
           target="_blank"
+          rel="noopener noreferrer"
           class="toolbar-btn"
           title="新标签页打开"
         >
@@ -65,6 +66,7 @@
         <a
           :href="src"
           target="_blank"
+          rel="noopener noreferrer"
           class="btn-secondary text-sm"
         >
           在新标签页中打开

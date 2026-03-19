@@ -20,13 +20,13 @@ export const decisionTrees = {
             {
                 id: 'budget-no',
                 question: '需要快速原型？',
-                yes: { result: 'Trae', reason: 'Solo 双模式，完全免费' },
+                yes: { result: 'Trae', reason: 'Solo 双模式，免费层可用' },
                 no: 'budget-no-2'
             },
             {
                 id: 'budget-no-2',
                 question: '需要中文优化？',
-                yes: { result: 'Trae', reason: '国内生态友好，完全免费' },
+                yes: { result: 'Trae', reason: '国内生态友好，免费层+Pro $10/月' },
                 no: { result: 'Zed', reason: '开源免费，性能极佳' }
             }
         ]
@@ -261,8 +261,8 @@ export const scenarioGuide = [
     { scenario: '关键方案/复杂重构', primary: 'Claude Code', backup: 'Gemini CLI', budget: '$20-200/月' },
     { scenario: '长文档调研/代码分析', primary: 'Gemini CLI', backup: 'Qwen CLI', budget: '免费' },
     { scenario: '企业团队协作', primary: 'Cursor Teams + Qoder', backup: 'Claude Code', budget: '$40-60/人/月' },
-    { scenario: '视频内容创作', primary: '可灵', backup: 'Sora、Runway', budget: '免费-$20/月' },
-    { scenario: '图像设计/海报', primary: 'Midjourney', backup: 'GPT-5、即梦', budget: '免费-$30/月' },
+    { scenario: '视频内容创作', primary: '可灵 (Kling)', backup: 'Sora、Runway Gen-3/Gen-4', budget: '免费-$20/月' },
+    { scenario: '图像设计/海报', primary: 'Midjourney', backup: 'GPT-5、即梦 (Jimeng)', budget: '免费-$30/月' },
     { scenario: '音乐/配乐创作', primary: 'Suno', backup: 'ElevenLabs', budget: '免费-$30/月' },
     { scenario: '构建 AI Agent', primary: 'Claude Agent SDK', backup: 'LangChain、Dify', budget: '按 API 用量' },
     { scenario: '工作流自动化', primary: 'n8n', backup: 'Coze', budget: '免费-$50/月' },

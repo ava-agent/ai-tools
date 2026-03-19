@@ -11,9 +11,9 @@ export const aiToolsData = [
     developer: 'Anysphere',
     logo: null,
     versions: [
-      { type: 'Global', pricing: '免费(50请求+2000Tab)/$20月付($16年付)/$60月付(Pro+)/$200月/$40用户月付(团队)', models: 'Composer-1.5, Claude, GPT-5.2, o3', link: 'https://cursor.sh' }
+      { type: 'Global', pricing: '免费(积分制)/$20月付/$60月付(Pro+)/$200月(Ultra)/$40用户月(团队)', models: 'Composer-1.5, Claude, GPT-5.2, o3', link: 'https://cursor.com' }
     ],
-    freeQuota: '免费(50请求+2000Tab)',
+    freeQuota: '免费层（积分制，原50请求+2000Tab）',
     contextWindow: '取决于模型',
     chineseSupport: 4,
     pros: ['业内标杆，功能最全', 'Composer-1.5 自研模型强化推理，支持 8 个 Agent 并行处理', 'Tab 补全极其流畅（Pro 计划无限次）', '本地知识库/Repo Index，语义搜索整个代码库', '原子级 diffs 精确代码更改', 'VS Code 生态无缝兼容', '.cursorrules 自定义规则强大', 'MCP 协议支持'],
@@ -38,10 +38,10 @@ export const aiToolsData = [
     developer: '字节跳动',
     logo: null,
     versions: [
-      { type: 'CN', pricing: '完全免费', models: '豆包, DeepSeek R1/V3', link: 'https://trae.ai' },
-      { type: 'Global', pricing: '待公布', models: 'Claude, GPT-5, DeepSeek', link: 'https://trae.ai' }
+      { type: 'CN', pricing: '免费层+Pro $10/月', models: '豆包, DeepSeek R1/V3', link: 'https://trae.ai' },
+      { type: 'Global', pricing: '免费层+Pro $10/月', models: 'Claude, GPT-5, DeepSeek', link: 'https://trae.ai' }
     ],
-    freeQuota: '完全免费',
+    freeQuota: '免费层+Pro $10/月',
     contextWindow: '取决于模型',
     chineseSupport: 5,
     pros: ['完全免费（SOLO 模式）', 'Solo 双模式：Builder (0→1) + Coder (1→100)', '国产模型深度集成', '月活 160 万，全球累计用户 600 万（覆盖近 200 个国家和地区）', 'Cue 功能代码补全、多行修改、智能导入、智能重命名', '支持图像转代码（通过 MCP 支持 Figma 设计稿转代码）', 'SOLO Coder Plan 模式：先输出开发计划，确认后再编写代码', '自定义智能体（累计创建 36.5 万个）', '字节跳动技术背书', '国产化适配优秀'],
@@ -66,7 +66,7 @@ export const aiToolsData = [
     developer: 'Codeium',
     logo: null,
     versions: [
-      { type: 'Global', pricing: '$15/月', models: 'Claude, GPT-5, SWE-1.5', link: 'https://codeium.com/windsurf' }
+      { type: 'Global', pricing: '$15/月', models: 'Claude, GPT-5, SWE-1.5', link: 'https://windsurf.com' }
     ],
     freeQuota: '免费版功能强大',
     contextWindow: '取决于模型',
@@ -76,7 +76,7 @@ export const aiToolsData = [
     bestFor: '复杂逻辑重构、多文件协作、预算敏感',
     funRanking: '夯夯',
     personalExperience: {
-      rating: 3.5,
+      rating: 4,
       insights: '实际体验远超预期！Cascade AI 能力强大，跨文件重构精准。Flow 模式上下文理解极其丝滑，Codemaps 可视化代码导航是亮点。SWE-1.5 模型推理速度达 950 tokens/秒，支持 Git Worktree 隔离环境。$15/月性价比极高，是 Cursor 的最佳平替。2026 年初的更新让其体验大幅提升。',
       pitfalls: ['Cascade 有时过于自主', '必须明确限制改动范围', '复杂重构时注意测试']
     },
@@ -131,7 +131,7 @@ export const aiToolsData = [
     funRanking: '夯夯',
     personalExperience: {
       rating: 3,
-      insights: '性能优势被广泛认可，GPU 加速渲染的高性能流畅体验是其他编辑器无法比拟的。创新的 Edit Prediction 功能支持多模型预测，内置协作是亮点。Windows 版已于 2025 年 10 月正式发布，支持 WSL 深度集成，完全跨平台。AI 功能虽然不如 Cursor 全面，但性能和协作能力使其成为特定场景下的最佳选择。',
+      insights: '性能优势被广泛认可，GPU 加速渲染的高性能流畅体验是其他编辑器无法比拟的。创新的 Edit Prediction 功能支持多模型预测，内置协作是亮点。支持 Windows/Mac/Linux 全平台，Windows 版支持 WSL 深度集成。AI 功能虽然不如 Cursor 全面，但性能和协作能力使其成为特定场景下的最佳选择。',
       pitfalls: ['AI 功能不如 Cursor 全面', '扩展生态在建设中']
     },
     swot: { S: '性能、开源', W: 'AI 基础', O: '社区增长', T: 'VS Code 生态' },
@@ -145,9 +145,9 @@ export const aiToolsData = [
     developer: 'Replit',
     logo: null,
     versions: [
-      { type: 'Global', pricing: '免费/$20/$35/月', models: '多模型', link: 'https://replit.com' }
+      { type: 'Global', pricing: '免费/Core $20/月/Pro $100/月', models: '多模型', link: 'https://replit.com' }
     ],
-    freeQuota: '免费版可用，团队版$35/月',
+    freeQuota: '免费版可用，Core $20/月，Pro $100/月（Teams 计划已退役）',
     contextWindow: '取决于模型',
     chineseSupport: 3,
     pros: ['云端一体开发托管', 'Agent 3 可自主工作 200 分钟', '内置浏览器测试和自我修复', '一键部署', '实时协作', '适合教学', 'Agent 3 支持复杂多步骤任务', '丰富的项目模板库', '活跃的社区项目分享', '支持 50+ 语言环境', '零配置启动', '内置数据库服务', 'Ghostwriter 代码补全'],
@@ -156,7 +156,7 @@ export const aiToolsData = [
     funRanking: '夯',
     personalExperience: {
       rating: 3,
-      insights: '云端开发一体化解决方案，特别适合教学和快速原型验证。Agent 3 可自主工作 200 分钟，支持复杂多步骤任务，内置浏览器测试和自我修复能力强大。无需本地环境配置是最大优势，浏览器打开即用。团队版 $35/月适合协作开发。但网络依赖性强，离线无法使用，大项目性能有瓶颈。',
+      insights: '云端开发一体化解决方案，特别适合教学和快速原型验证。Agent 3 可自主工作 200 分钟，支持复杂多步骤任务，内置浏览器测试和自我修复能力强大。无需本地环境配置是最大优势，浏览器打开即用。Core $20/月适合个人开发，Pro $100/月适合专业用户（原 Teams 计划已退役）。但网络依赖性强，离线无法使用，大项目性能有瓶颈。',
       pitfalls: ['私有代码需谨慎', '复杂依赖支持有限']
     },
     swot: { S: '云端一体', W: '隐私顾虑', O: '教育市场', T: '本地 IDE' },
@@ -207,7 +207,7 @@ export const aiToolsData = [
     bestFor: '腾讯云用户、快速部署（非主力）',
     funRanking: '夯',
     personalExperience: {
-      rating: 4,
+      rating: 2.5,
       insights: '腾讯云生态内的选择，但不支持多会话严重影响使用体验。稳定性问题和优化差（经常流程中断或失去响应）使其难以作为主力。v4.3.3 版本新增 Plan Agent、MCP 支持、自定义 Agent 等功能。建议在 Trae 等 IDE 中完成开发后，仅使用 Codebuddy 进行部署。',
       pitfalls: ['不支持多会话是致命伤', '稳定性问题频繁', '优化差，流程经常中断', '不适合作为主力开发工具']
     },
@@ -234,7 +234,7 @@ export const aiToolsData = [
     bestFor: 'Google 生态用户、尝鲜新品',
     funRanking: '夯',
     personalExperience: {
-      rating: 5,
+      rating: 3.5,
       insights: 'Google 于 2025 年 11 月发布的 AI IDE，基于 VS Code fork 的完整平台（非插件），专注 Agentic Development。Gemini 3 Pro 深度集成，2M 上下文窗口。已引入 Agent Skills 系统，原生集成 Nano Banana 增强能力。Public Preview 期间免费（每 5 小时刷新配额），值得关注但需要更多实际使用验证。',
       pitfalls: ['新品功能待验证', '存在安全漏洞报告（Prompt Injection 攻击风险）', '每周使用限制存在']
     },
@@ -251,7 +251,7 @@ export const aiToolsData = [
     developer: 'GitHub',
     logo: null,
     versions: [
-      { type: 'Global', pricing: '免费/$10月付/$39月付/$19用户月(Business)', models: 'Claude Opus 4.6/Haiku 4.5, Gemini 3 Flash, GPT-4.1/GPT-5-mini, Grok Code Fast 1', link: 'https://github.com/features/copilot' }
+      { type: 'Global', pricing: '免费/$10月付/Pro+ $39月付/$19用户月(Business)', models: 'Claude Opus 4.6/Haiku 4.5, Gemini 3 Flash, GPT-4.1/GPT-5-mini, Grok Code Fast 1', link: 'https://github.com/features/copilot' }
     ],
     freeQuota: 'Free: 2000代码补全 + 50聊天请求/月',
     contextWindow: '取决于模型',
@@ -302,7 +302,7 @@ export const aiToolsData = [
     developer: 'JetBrains',
     logo: null,
     versions: [
-      { type: 'Global', pricing: '免费/纥825-2,500/年', models: '多模型 + 本地AI (Ollama/LM Studio)', link: 'https://www.jetbrains.com/ai' }
+      { type: 'Global', pricing: '免费/€825-2,500/年', models: '多模型 + 本地AI (Ollama/LM Studio)', link: 'https://www.jetbrains.com/ai' }
     ],
     freeQuota: '免费层无限本地代码补全',
     contextWindow: '取决于模型',
@@ -313,7 +313,7 @@ export const aiToolsData = [
     funRanking: '夯',
     personalExperience: {
       rating: 3,
-      insights: '原生集成到 JetBrains IDE，深度 IDE 集成和企业级支持是亮点。免费层包含无限本地代码补全和本地 AI 支持（3 AI Credits/30天用于云功能），AI Pro 纥825/年、AI Ultimate 纥2,500/年的定价适合不同规模团队。适合 JetBrains 生态系统用户和企业团队。',
+      insights: '原生集成到 JetBrains IDE，深度 IDE 集成和企业级支持是亮点。免费层包含无限本地代码补全和本地 AI 支持（3 AI Credits/30天用于云功能），AI Pro €825/年、AI Ultimate €2,500/年的定价适合不同规模团队。适合 JetBrains 生态系统用户和企业团队。',
       pitfalls: ['仅限 JetBrains IDE', '功能相对单一']
     },
     swot: { S: 'JetBrains 集成、企业级', W: '仅限 JetBrains', O: '企业市场', T: 'GitHub Copilot' },
@@ -329,7 +329,7 @@ export const aiToolsData = [
     developer: 'Anthropic',
     logo: null,
     versions: [
-      { type: 'Global', pricing: '免费/$20月($200年)/$200月', models: 'Claude Opus 4.6, Sonnet 4.5, Haiku 4.5', link: 'https://docs.anthropic.com/claude-code' }
+      { type: 'Global', pricing: '免费/$20月付(Pro)/Max $100月付(5x)/Max $200月付(20x)', models: 'Claude Opus 4.6, Sonnet 4.5, Haiku 4.5', link: 'https://platform.claude.com/docs/claude-code' }
     ],
     freeQuota: 'Free tier 可用',
     contextWindow: '1M (Opus 4.6: 1M token 上下文，128K 输出)',
@@ -436,7 +436,7 @@ export const aiToolsData = [
     versions: [
       { type: 'Global', pricing: '免费 (API 自付)', models: 'Claude, OpenAI, Gemini 3, DeepSeek, AWS Bedrock, Azure, GCP, 本地模型', link: 'https://github.com/cline/cline' }
     ],
-    freeQuota: '免费开源 (API 自付), Open Source Teams 至 2026 Q1 免费 (最多 10 席位)',
+    freeQuota: '免费开源 (API 自付), Open Source Teams 免费计划（原至 2026 Q1，需确认是否延续）(最多 10 席位)',
     contextWindow: '200K-400K+ (取决于模型)',
     chineseSupport: 3,
     pros: ['2026 新增 Skills 兼容性', '内置 Web 搜索和网页抓取', 'CLI 2.0 多代理并行执行', '免费 Kimi K2.5 集成', 'Claude Sonnet Computer Use', '官方 JetBrains 插件', 'Plan/Act 双模式企业审批', '终端优先直接执行命令', 'MCP 协议生态集成', 'VS Code/JetBrains 扩展', '自主执行多步骤任务', '人在环审批系统', '本地优先架构', '检查点回滚', '仓库内操作非旁观', '完全开源免费 Apache 2.0', '5M+ 开发者使用'],
@@ -588,7 +588,7 @@ export const aiToolsData = [
     developer: 'OpenHands Community',
     logo: null,
     versions: [
-      { type: 'Global', pricing: '免费开源 | Cloud Individual 免费 | Cloud Growth $500/月起', models: 'Claude Sonnet 4.5/Opus 4.1, GPT-5, DeepSeek V3.2/R1, Qwen3, OpenHands LM 自研 (128K), 本地模型 Ollama', link: 'https://github.com/OpenHands/openhands' }
+      { type: 'Global', pricing: '免费开源 | Cloud Individual 免费 | Cloud Growth $500/月起', models: 'Claude Sonnet 4.5/Opus 4.6, GPT-5, DeepSeek V3.2/R1, Qwen3, OpenHands LM 自研 (128K), 本地模型 Ollama', link: 'https://github.com/OpenHands/openhands' }
     ],
     freeQuota: '开源版完全免费 | Cloud Individual 每日 10 次对话',
     contextWindow: 'OpenHands LM: 128K | 兼容模型最高 400K',
@@ -615,7 +615,7 @@ export const aiToolsData = [
     developer: 'Anthropic',
     logo: null,
     versions: [
-      { type: 'Global', pricing: '$20/月 (Pro)', models: 'Claude 4.5 Sonnet, Opus, Haiku', link: 'https://claude.ai' }
+      { type: 'Global', pricing: '$20/月(Pro)/Max $100月付(5x)/Max $200月付(20x)', models: 'Claude 4.5 Sonnet, Opus, Haiku', link: 'https://claude.ai' }
     ],
     freeQuota: '有限免费使用',
     contextWindow: '200K (可扩展至1M)',
@@ -640,7 +640,7 @@ export const aiToolsData = [
     developer: 'OpenAI',
     logo: null,
     versions: [
-      { type: 'Global', pricing: '$20-200/月', models: 'GPT-5.2, o3, o1', link: 'https://openai.com' }
+      { type: 'Global', pricing: '免费/Go $8月付/$20月付(Plus)/$200月付(Pro)/$25用户月付(Business)', models: 'GPT-5.2, o3, o1', link: 'https://openai.com' }
     ],
     freeQuota: 'ChatGPT Free 有限',
     contextWindow: '128K+',
@@ -766,7 +766,7 @@ export const aiToolsData = [
     developer: '月之暗面',
     logo: null,
     versions: [
-      { type: 'CN', pricing: '$0.6/1M in, $2.5/1M out', models: 'K2.5, K2.5 Thinking', link: 'https://kimi.ai' }
+      { type: 'CN', pricing: '$0.6/1M in, $2.5/1M out', models: 'K2.5, K2.5 Thinking', link: 'https://www.kimi.com' }
     ],
     freeQuota: '有免费对话',
     contextWindow: '256K',
@@ -977,7 +977,7 @@ export const aiToolsData = [
     developer: '快手',
     logo: null,
     versions: [
-      { type: 'CN', pricing: '免费/订阅', models: '可灵', link: 'https://kling.kuaishou.com' }
+      { type: 'CN', pricing: '免费/订阅', models: '可灵', link: 'https://app.klingai.com' }
     ],
     freeQuota: '有免费额度',
     contextWindow: 'N/A',
@@ -1250,7 +1250,7 @@ export const aiToolsData = [
     developer: 'Cognition Labs',
     logo: null,
     versions: [
-      { type: 'Global', pricing: '$500/月(团队)', models: 'Claude Sonnet 4.5, 自研Agent系统', link: 'https://devin.ai' }
+      { type: 'Global', pricing: 'Core $20/月(按量ACU)/$500月付(Team 250 ACUs)/企业定制', models: 'Claude Sonnet 4.5, 自研Agent系统', link: 'https://devin.ai' }
     ],
     freeQuota: '无免费版',
     contextWindow: '取决于模型',
@@ -1486,7 +1486,7 @@ export const aiToolsData = [
     contextWindow: '128K',
     chineseSupport: 5,
     pros: ['消费者完全免费使用', 'ERNIE 4.5 综合评分 79.6 超越 GPT-4.5', 'X1 推理模型中文知识问答、文学创作强', 'API 定价极低（Turbo: ¥0.8/1M输入）', '百度搜索生态集成', '中文场景优化最佳之一'],
-    cons: ['主要面向中国市场，海外访问受限', '英文能力不如国际顶级模型', '需 VPN 才能海外使用', '生态封闭程度高', 'ERNIE 5.0 刚发布功能待验证'],
+    cons: ['主要面向中国市场，海外访问受限', '英文能力不如国际顶级模型', '需 VPN 才能海外使用', '生态封闭程度高', 'ERNIE 5.0 已发布功能待验证'],
     bestFor: '中文场景、百度生态用户、预算敏感',
     funRanking: '夯',
     personalExperience: {
@@ -1532,7 +1532,7 @@ export const aiToolsData = [
     developer: 'Runway',
     logo: null,
     versions: [
-      { type: 'Global', pricing: '$12/$28/$76/月', models: 'Gen-3 Alpha, Gen-4', link: 'https://runway.ml' }
+      { type: 'Global', pricing: '$12/$28/$76/月', models: 'Gen-3 Alpha, Gen-4', link: 'https://runwayml.com' }
     ],
     freeQuota: '免费试用 125 credits',
     contextWindow: 'N/A',
@@ -1784,7 +1784,7 @@ export const aiToolsData = [
     developer: 'Anthropic',
     logo: null,
     versions: [
-      { type: 'Global', pricing: '开源免费（按 API 用量计费）', models: 'Claude 4.5 Sonnet, Claude Opus 4.6', link: 'https://github.com/anthropics/claude-code-sdk-python' }
+      { type: 'Global', pricing: '开源免费（按 API 用量计费）', models: 'Claude 4.5 Sonnet, Claude Opus 4.6', link: 'https://github.com/anthropics/claude-agent-sdk-python' }
     ],
     freeQuota: 'SDK 免费，API 按量计费',
     contextWindow: '200K',
@@ -2036,7 +2036,7 @@ export const aiToolsData = [
     developer: 'Notion Labs',
     logo: null,
     versions: [
-      { type: 'Global', pricing: '完全免费（开源）', models: '无需LLM，Notion API 服务', link: 'https://github.com/notionhq/notion-mcp-server' }
+      { type: 'Global', pricing: '完全免费（开源）', models: '无需LLM，Notion API 服务', link: 'https://github.com/makenotion/notion-mcp-server' }
     ],
     freeQuota: '完全免费（受 Notion API 限额）',
     contextWindow: 'N/A',
@@ -2490,7 +2490,7 @@ export const aiToolsData = [
     developer: 'MSRA (微软亚洲研究院)',
     logo: null,
     versions: [
-      { type: 'Global', pricing: '完全免费', models: '支持多种 LLM', link: 'https://github.com/modelscope/agentscope' }
+      { type: 'Global', pricing: '完全免费', models: '支持多种 LLM', link: 'https://github.com/agentscope-ai/agentscope' }
     ],
     freeQuota: '完全免费（开源）',
     contextWindow: '取决于模型',
