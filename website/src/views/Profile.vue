@@ -37,7 +37,7 @@
             登录后可跨设备同步进度、参与社区互动
           </p>
           <button
-            class="btn-capsule-sm bg-[#0a84ff]/20 hover:bg-[#0a84ff]/30 text-[#0a84ff]"
+            class="btn-capsule btn-capsule-sm bg-[#0a84ff]/20 hover:bg-[#0a84ff]/30 text-[#0a84ff]"
             @click="authStore.openAuthModal"
           >
             登录

@@ -71,10 +71,9 @@ function close() {
 
 onMounted(() => {
   if (videoRef.value) {
-    videoRef.value.play().catch(err => {
-      console.log('Autoplay failed:', err)
-      // If autoplay fails, we might want to close or show a play button.
-      // For now, let's keep it simple.
+    videoRef.value.play().catch(() => {
+      // Autoplay blocked by browser policy — close the overlay
+      close()
     })
 
     // Update progress

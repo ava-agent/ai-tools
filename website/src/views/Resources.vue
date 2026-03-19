@@ -124,18 +124,18 @@
           </div>
         </div>
 
-        <!-- Video Section -->
-        <div v-if="filteredVideos.length > 0">
+        <!-- Featured Videos -->
+        <div v-if="featuredVideos.length > 0 && activeFilter !== 'pdf'">
           <h2
             v-if="activeFilter === 'all'"
             class="text-2xl font-bold text-white mb-6 flex items-center"
           >
             <Video class="w-6 h-6 text-purple-400 mr-2" />
-            讲解视频
+            专题视频
           </h2>
-          <div class="grid md:grid-cols-2 gap-6">
+          <div class="grid md:grid-cols-2 gap-6 mb-12">
             <div
-              v-for="video in filteredVideos"
+              v-for="video in featuredVideos"
               :key="video.id"
               class="glass-card rounded-2xl p-5"
             >
@@ -173,6 +173,54 @@
             </div>
           </div>
         </div>
+
+        <!-- Demo Videos -->
+        <div v-if="demoVideos.length > 0 && activeFilter !== 'pdf'">
+          <h2 class="text-2xl font-bold text-white mb-6 flex items-center">
+            <Monitor class="w-6 h-6 text-[#0a84ff] mr-2" />
+            工具演示
+            <span class="ml-2 text-sm font-normal text-white/40">{{ demoVideos.length }} 个</span>
+          </h2>
+          <div class="grid md:grid-cols-2 gap-6">
+            <div
+              v-for="video in demoVideos"
+              :key="video.id"
+              class="glass-card rounded-2xl p-5"
+            >
+              <div class="mb-4">
+                <div class="flex items-center gap-3 mb-2">
+                  <div class="w-10 h-10 rounded-lg bg-[#0a84ff]/20 flex items-center justify-center flex-shrink-0">
+                    <Monitor class="w-5 h-5 text-[#0a84ff]" />
+                  </div>
+                  <div>
+                    <h3 class="text-lg font-bold text-white">
+                      {{ video.title }}
+                    </h3>
+                    <p class="text-xs text-white/40">
+                      {{ video.titleEn }}
+                    </p>
+                  </div>
+                </div>
+                <p class="text-white/70 text-sm mt-2">
+                  {{ video.description }}
+                </p>
+                <div class="flex flex-wrap gap-2 mt-3">
+                  <span
+                    v-for="tag in video.tags"
+                    :key="tag"
+                    class="px-2 py-0.5 text-xs rounded-full bg-[#0a84ff]/10 text-[#0a84ff] border border-[#0a84ff]/20"
+                  >
+                    {{ tag }}
+                  </span>
+                </div>
+              </div>
+              <VideoPlayer
+                :src="video.src"
+                :show-controls="true"
+              />
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -186,7 +234,8 @@ import {
   Presentation,
   ChevronDown,
   ChevronUp,
-  Layers
+  Layers,
+  Monitor
 } from 'lucide-vue-next'
 import { resources } from '../data/resources.js'
 import PdfViewer from '../components/PdfViewer.vue'
@@ -197,21 +246,18 @@ const expandedPdf = ref(null)
 
 const pdfs = computed(() => resources.filter(r => r.type === 'pdf'))
 const videos = computed(() => resources.filter(r => r.type === 'video'))
+const featuredVideos = computed(() => videos.value.filter(v => !v.id.startsWith('demo-')))
+const demoVideos = computed(() => videos.value.filter(v => v.id.startsWith('demo-')))
 
 const filteredPdfs = computed(() => {
   if (activeFilter.value === 'video') return []
   return pdfs.value
 })
 
-const filteredVideos = computed(() => {
-  if (activeFilter.value === 'pdf') return []
-  return videos.value
-})
-
 const filterTabs = computed(() => [
   { id: 'all', label: '全部', icon: Layers, count: resources.length },
   { id: 'pdf', label: 'PPT / PDF', icon: FileText, count: pdfs.value.length },
-  { id: 'video', label: '讲解视频', icon: Video, count: videos.value.length }
+  { id: 'video', label: '视频', icon: Video, count: videos.value.length }
 ])
 
 function togglePdf(id) {

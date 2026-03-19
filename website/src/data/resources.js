@@ -31,7 +31,7 @@ export const resources = [
         tags: ['Agentic', '实战', '案例', '最佳实践'],
         date: '2026-02'
     },
-    // ============= 视频 =============
+    // ============= 专题视频 =============
     {
         id: 'ai-coding-tool-map',
         title: 'AI 编程工具地图',
@@ -50,6 +50,147 @@ export const resources = [
         description: 'AI 编码工具正从简单的代码补全进化为自主编码智能体，深度解析这一趋势的技术演进、代表性产品与未来方向。',
         src: 'videos/超越自动补全：AI_编码智能体新浪潮.mp4',
         tags: ['Agent', '趋势', '深度解析'],
+        date: '2026-02'
+    },
+    // ============= 工具演示视频 =============
+    {
+        id: 'demo-cursor',
+        title: 'Cursor 使用演示',
+        titleEn: 'Cursor Demo',
+        type: 'video',
+        description: 'Cursor IDE 核心功能演示：Composer 模式、AI 代码生成、多文件编辑等实战操作。',
+        src: 'videos/cursor.mp4',
+        tags: ['Cursor', 'AI IDE', '演示'],
+        date: '2026-02'
+    },
+    {
+        id: 'demo-windsurf',
+        title: 'Windsurf 使用演示',
+        titleEn: 'Windsurf Demo',
+        type: 'video',
+        description: 'Windsurf IDE 核心功能演示：Cascade AI 模式、Flow 上下文理解等特色功能。',
+        src: 'videos/windsurf.mp4',
+        tags: ['Windsurf', 'AI IDE', '演示'],
+        date: '2026-02'
+    },
+    {
+        id: 'demo-trae',
+        title: 'Trae 使用演示',
+        titleEn: 'Trae Demo',
+        type: 'video',
+        description: 'Trae IDE 使用演示：Solo Builder/Coder 模式、免费额度、国产模型优化。',
+        src: 'videos/trae.mp4',
+        tags: ['Trae', 'AI IDE', '演示', '免费'],
+        date: '2026-02'
+    },
+    {
+        id: 'demo-claude-code',
+        title: 'Claude Code 使用演示',
+        titleEn: 'Claude Code Demo',
+        type: 'video',
+        description: 'Claude Code CLI 工具演示：Agent 模式、批量处理、项目级重构。',
+        src: 'videos/claude-code.mp4',
+        tags: ['Claude Code', 'AI CLI', '演示'],
+        date: '2026-02'
+    },
+    {
+        id: 'demo-gemini-cli',
+        title: 'Gemini CLI 使用演示',
+        titleEn: 'Gemini CLI Demo',
+        type: 'video',
+        description: 'Gemini CLI 使用演示：百万 Token 上下文、大型代码库分析。',
+        src: 'videos/gemini-cli.mp4',
+        tags: ['Gemini CLI', 'AI CLI', '演示', '长上下文'],
+        date: '2026-02'
+    },
+    {
+        id: 'demo-codex-cli',
+        title: 'Codex CLI 使用演示',
+        titleEn: 'Codex CLI Demo',
+        type: 'video',
+        description: 'OpenAI Codex CLI 使用演示：代码生成、任务自动化。',
+        src: 'videos/codex-cli.mp4',
+        tags: ['Codex', 'AI CLI', '演示', 'OpenAI'],
+        date: '2026-02'
+    },
+    {
+        id: 'demo-qoder',
+        title: 'Qoder 使用演示',
+        titleEn: 'Qoder Demo',
+        type: 'video',
+        description: 'Qoder IDE 使用演示：后端专项、Repo Wiki、Java/Go 项目理解。',
+        src: 'videos/qoder.mp4',
+        tags: ['Qoder', 'AI IDE', '演示', '后端'],
+        date: '2026-02'
+    },
+    {
+        id: 'demo-qoder-cli',
+        title: 'Qoder CLI 使用演示',
+        titleEn: 'Qoder CLI Demo',
+        type: 'video',
+        description: 'Qoder CLI 命令行工具演示：代码库分析、批量操作。',
+        src: 'videos/qoder-cli.mp4',
+        tags: ['Qoder', 'AI CLI', '演示'],
+        date: '2026-02'
+    },
+    {
+        id: 'demo-kiro',
+        title: 'Kiro 使用演示',
+        titleEn: 'Kiro Demo',
+        type: 'video',
+        description: 'AWS Kiro IDE 使用演示：Spec 驱动开发、自动化工作流。',
+        src: 'videos/kiro.mp4',
+        tags: ['Kiro', 'AI IDE', '演示', 'AWS'],
+        date: '2026-02'
+    },
+    {
+        id: 'demo-verdent',
+        title: 'Verdent 使用演示',
+        titleEn: 'Verdent Demo',
+        type: 'video',
+        description: 'Verdent 工具使用演示。',
+        src: 'videos/verdent.mp4',
+        tags: ['Verdent', '演示'],
+        date: '2026-02'
+    },
+    {
+        id: 'demo-antigravity',
+        title: 'AntiGravity 使用演示',
+        titleEn: 'AntiGravity Demo',
+        type: 'video',
+        description: 'AntiGravity 多模态工具使用演示。',
+        src: 'videos/antigravity.mp4',
+        tags: ['AntiGravity', '多模态', '演示'],
+        date: '2026-02'
+    },
+    {
+        id: 'demo-chrome-ai',
+        title: 'Chrome AI 插件演示',
+        titleEn: 'Chrome AI Demo',
+        type: 'video',
+        description: 'Chrome AI 插件使用演示：浏览器内 AI 辅助功能。',
+        src: 'videos/chrome-ai.mp4',
+        tags: ['Chrome', 'AI 插件', '演示'],
+        date: '2026-02'
+    },
+    {
+        id: 'demo-codebuddy',
+        title: 'CodeBuddy 使用演示',
+        titleEn: 'CodeBuddy Demo',
+        type: 'video',
+        description: 'CodeBuddy IDE 使用演示。',
+        src: 'videos/codebuddy.mp4',
+        tags: ['CodeBuddy', 'AI IDE', '演示'],
+        date: '2026-02'
+    },
+    {
+        id: 'demo-opencode-cli',
+        title: 'OpenCode CLI 使用演示',
+        titleEn: 'OpenCode CLI Demo',
+        type: 'video',
+        description: 'OpenCode CLI 使用演示：开源 AI 命令行工具。',
+        src: 'videos/opencode-cli.mp4',
+        tags: ['OpenCode', 'AI CLI', '演示', '开源'],
         date: '2026-02'
     }
 ]

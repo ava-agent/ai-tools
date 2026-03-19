@@ -1,5 +1,5 @@
 <template>
-  <div class="card overflow-hidden">
+  <div class="glass-card overflow-hidden p-6">
     <div class="flex items-center justify-between mb-6">
       <h2 class="text-2xl font-bold text-white flex items-center">
         <GitCompareArrows class="w-6 h-6 text-primary mr-2" />

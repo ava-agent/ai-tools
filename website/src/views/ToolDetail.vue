@@ -38,13 +38,11 @@
               {{ tool.developer }}
             </div>
             <div class="flex items-center gap-3 mt-2">
-              <div class="flex items-center text-[13px] text-[#ffd60a]">
-                <span
-                  v-for="i in 5"
-                  :key="i"
-                  class="relative"
-                ><template v-if="i <= Math.floor(tool.personalExperience?.rating || 0)">★</template><template v-else-if="i === Math.ceil(tool.personalExperience?.rating || 0) && (tool.personalExperience?.rating || 0) % 1 >= 0.5"><span class="half-star">★</span><span class="text-white/15">★</span></template><template v-else><span class="text-white/15">★</span></template></span>
-              </div>
+              <StarRating
+                :rating="tool.personalExperience?.rating || 0"
+                size="md"
+                class="text-[#ffd60a]"
+              />
               <div class="text-[13px] text-[#30d158] font-semibold">
                 {{ tool.personalExperience?.rating?.toFixed(1) }}
               </div>
@@ -325,13 +323,11 @@
               {{ related.developer }}
             </div>
             <div class="flex items-center gap-1 mt-1">
-              <span class="flex items-center text-[10px] text-[#ffd60a]">
-                <span
-                  v-for="i in 5"
-                  :key="i"
-                  class="relative"
-                ><template v-if="i <= Math.floor(related.personalExperience?.rating || 0)">★</template><template v-else-if="i === Math.ceil(related.personalExperience?.rating || 0) && (related.personalExperience?.rating || 0) % 1 >= 0.5"><span class="half-star">★</span><span class="text-white/15">★</span></template><template v-else><span class="text-white/15">★</span></template></span>
-              </span>
+              <StarRating
+                :rating="related.personalExperience?.rating || 0"
+                size="xs"
+                class="text-[#ffd60a]"
+              />
             </div>
           </router-link>
         </div>
@@ -367,6 +363,7 @@ import ToolRating from '../components/ToolRating.vue'
 import ToolReviews from '../components/ToolReviews.vue'
 import ScoreRadar from '@/components/ScoreRadar.vue'
 import ToolLogo from '../components/ToolLogo.vue'
+import StarRating from '../components/StarRating.vue'
 
 const route = useRoute()
 const toolsStore = useToolsStore()
@@ -439,12 +436,5 @@ watch(
 <style scoped>
 a {
   text-decoration: none;
-}
-.half-star {
-  position: absolute;
-  left: 0;
-  top: 0;
-  overflow: hidden;
-  width: 50%;
 }
 </style>

@@ -54,6 +54,8 @@ export const useAuthStore = defineStore('auth', () => {
     } = supabase.auth.onAuthStateChange((_event, s) => {
       session.value = s
       user.value = s?.user || null
+      // Clear stale errors on successful auth
+      if (s?.user) error.value = null
     })
     _authSubscription = subscription
 

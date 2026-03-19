@@ -3,7 +3,7 @@
     id="tools"
     aria-labelledby="tools-heading"
   >
-    <!-- 空状态 -->
+    <!-- Empty state -->
     <div
       v-if="!tools || tools.length === 0"
       class="glass-card text-center py-16 px-4"
@@ -27,27 +27,50 @@
       </button>
     </div>
 
-    <!-- 工具列表 - 使用 transition-group 实现列表动画 -->
-    <TransitionGroup
-      v-else
-      tag="div"
-      name="tool-card"
-      class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[10px]"
-    >
-      <ToolCard
-        v-for="tool in tools"
-        :key="tool.id"
-        :tool="tool"
-      />
-    </TransitionGroup>
+    <!-- Tool list with pagination -->
+    <template v-else>
+      <TransitionGroup
+        tag="div"
+        name="tool-card"
+        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[10px]"
+      >
+        <ToolCard
+          v-for="tool in visibleTools"
+          :key="tool.id"
+          :tool="tool"
+        />
+      </TransitionGroup>
+
+      <!-- Load more -->
+      <div
+        v-if="hasMore"
+        class="text-center mt-6"
+      >
+        <button
+          class="pill pill-inactive inline-flex items-center gap-2"
+          @click="loadMore"
+        >
+          <ChevronDown class="w-4 h-4" />
+          加载更多（还有 {{ remainingCount }} 个）
+        </button>
+      </div>
+
+      <!-- Result count -->
+      <div class="text-center mt-4 text-xs text-white/30">
+        显示 {{ visibleTools.length }} / {{ tools.length }} 个工具
+      </div>
+    </template>
   </section>
 </template>
 
 <script setup>
-import { SearchX, RefreshCw } from 'lucide-vue-next'
+import { ref, computed, watch } from 'vue'
+import { SearchX, RefreshCw, ChevronDown } from 'lucide-vue-next'
 import ToolCard from './ToolCard.vue'
 
-defineProps({
+const PAGE_SIZE = 30
+
+const props = defineProps({
   tools: {
     type: Array,
     required: true
@@ -55,10 +78,24 @@ defineProps({
 })
 
 defineEmits(['clearFilters'])
+
+const displayCount = ref(PAGE_SIZE)
+
+// Reset pagination when tools list changes (search/filter)
+watch(() => props.tools.length, () => {
+  displayCount.value = PAGE_SIZE
+})
+
+const visibleTools = computed(() => props.tools.slice(0, displayCount.value))
+const hasMore = computed(() => displayCount.value < props.tools.length)
+const remainingCount = computed(() => props.tools.length - displayCount.value)
+
+function loadMore() {
+  displayCount.value += PAGE_SIZE
+}
 </script>
 
 <style scoped>
-/* 工具卡片过渡动画 */
 .tool-card-enter-active {
   transition: all 0.3s ease-out;
 }
@@ -77,7 +114,6 @@ defineEmits(['clearFilters'])
   transform: scale(0.9);
 }
 
-/* 列表重排动画 */
 .tool-card-move {
   transition: transform 0.3s ease;
 }

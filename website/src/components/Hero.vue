@@ -7,7 +7,7 @@
       发现最好的 AI 工具
     </h1>
     <p class="text-sm text-white/45 mt-1.5">
-      {{ toolCount }} 款工具深度评测 · 持续更新
+      {{ toolCount }} 款工具深度评测 · {{ categoryCount }} 大类别 · 持续更新
     </p>
   </section>
 </template>
@@ -18,4 +18,5 @@ import { useToolsStore } from '../stores/tools'
 
 const toolsStore = useToolsStore()
 const toolCount = computed(() => toolsStore.tools.length)
+const categoryCount = computed(() => toolsStore.categories.length - 1) // exclude 'all'
 </script>

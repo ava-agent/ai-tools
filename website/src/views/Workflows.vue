@@ -349,7 +349,7 @@ import { workflows, pitfalls, promptTemplates } from '../data/workflows.js'
 const uiStore = useUIStore()
 const toolsStore = useToolsStore()
 
-const WORKFLOW_EXCLUDE_NAMES = ['手动', '手动测试', 'Git']
+const WORKFLOW_EXCLUDE_NAMES = ['手动', '手动测试', 'Git', '自动化测试']
 
 function resolveToolId(name) {
   return _resolveToolId(name, toolsStore.tools, WORKFLOW_EXCLUDE_NAMES)

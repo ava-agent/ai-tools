@@ -105,8 +105,8 @@ const navLinks = [
 
 const footerResources = [
   { label: 'GitHub 仓库', href: 'https://github.com/ava-agent/ai-tools', icon: Github, external: true },
-  { label: '使用文档', href: '/docs', icon: FileText, external: false },
-  { label: '联系我们', href: 'mailto:contact@example.com', icon: Mail, external: false }
+  { label: '提交反馈', href: 'https://github.com/ava-agent/ai-tools/issues', icon: FileText, external: true },
+  { label: '联系作者', href: 'https://github.com/ava-agent', icon: Mail, external: true }
 ]
 </script>
 

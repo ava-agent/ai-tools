@@ -7,6 +7,7 @@ const stubs = {
     template: '<a :href="to"><slot /></a>',
     props: ['to'],
   },
+  ToolLogo: { template: '<div class="tool-logo-stub" />' },
 }
 
 describe('ToolCard', () => {
@@ -55,8 +56,8 @@ describe('ToolCard', () => {
     expect(link.exists()).toBe(true)
   })
 
-  it('shows category emoji icon', () => {
+  it('renders ToolLogo component', () => {
     const wrapper = mountCard()
-    expect(wrapper.text()).toContain('⚡')  // IDE emoji
+    expect(wrapper.find('.tool-logo-stub').exists()).toBe(true)
   })
 })

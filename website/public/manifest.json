@@ -63,29 +63,12 @@
   "dir": "ltr",
   "related_applications": [],
   "prefer_related_applications": false,
-  "screenshots": [
-    {
-      "src": "./screenshots/home.png",
-      "sizes": "1280x720",
-      "type": "image/png",
-      "form_factor": "wide",
-      "label": "首页"
-    },
-    {
-      "src": "./screenshots/mobile.png",
-      "sizes": "750x1334",
-      "type": "image/png",
-      "form_factor": "narrow",
-      "label": "移动端首页"
-    }
-  ],
   "shortcuts": [
     {
       "name": "工具对比",
       "short_name": "对比",
       "description": "查看AI工具横向对比",
-      "url": "./comparison",
-      "icons": [{ "src": "./icons/compare.png", "sizes": "96x96" }]
+      "url": "./comparison"
     }
   ]
 }

@@ -36,8 +36,19 @@ export function getCategoryColor(category) {
 // excludeNames: 不需要解析的特殊名称列表
 export function resolveToolId(name, tools, excludeNames = []) {
   if (!name || excludeNames.includes(name)) return null
-  const normalized = name.toLowerCase().replace(/\s+/g, '')
-  // 优先精确匹配
+  // Handle compound names like "Claude / Gemini" — use the first tool
+  const firstName = name.includes('/') ? name.split('/')[0].trim() : name
+  // Strip parenthetical qualifiers: "Trae (Solo Builder)" → "Trae"
+  const baseName = firstName.replace(/\s*\(.*?\)\s*$/, '').trim()
+  const normalized = baseName.toLowerCase().replace(/\s+/g, '')
+  // Also try the original full name (without compound split)
+  const normalizedFull = name.toLowerCase().replace(/\s+/g, '')
+  // 优先精确匹配（完整名称）
+  const exactFull = tools.find(t =>
+    t.name.toLowerCase().replace(/\s+/g, '') === normalizedFull
+  )
+  if (exactFull) return exactFull.id
+  // 精确匹配（去括号后 / 取第一个工具名）
   const exact = tools.find(t =>
     t.name.toLowerCase().replace(/\s+/g, '') === normalized
   )

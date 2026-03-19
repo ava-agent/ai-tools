@@ -131,12 +131,17 @@ async function doBackgroundSync() {
 // 推送通知
 self.addEventListener('push', (event) => {
   if (event.data) {
-    const data = event.data.json();
+    let data;
+    try {
+      data = event.data.json();
+    } catch {
+      return;
+    }
     event.waitUntil(
-      self.registration.showNotification(data.title, {
-        body: data.body,
+      self.registration.showNotification(data.title || 'AI工具全书', {
+        body: data.body || '',
         icon: '/icons/icon-192x192.svg',
-        badge: '/icons/icon-72x72.svg',
+        badge: '/icons/icon-192x192.svg',
         tag: data.tag,
         requireInteraction: data.requireInteraction || false,
         actions: data.actions || []

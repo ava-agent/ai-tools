@@ -50,7 +50,7 @@ export const useCommunityStore = defineStore('community', () => {
   }
 
   async function submitRating(userId, toolId, rating) {
-    if (!supabase || !userId) return
+    if (!supabase || !userId) return { message: '未登录或服务未配置' }
     const { error } = await supabase.from('tool_ratings').upsert(
       {
         user_id: userId,
@@ -62,8 +62,8 @@ export const useCommunityStore = defineStore('community', () => {
     )
     if (!error) {
       myRatings.value = { ...myRatings.value, [toolId]: rating }
-      // 刷新该工具的统计
       await fetchRatingStats()
+      return null
     }
     return error
   }
@@ -172,7 +172,7 @@ export const useCommunityStore = defineStore('community', () => {
   }
 
   async function submitBattleVote(userId, matchupKey, winnerId, dimensionId, toolAId, toolBId) {
-    if (!supabase || !userId) return
+    if (!supabase || !userId) return { message: '未登录或服务未配置' }
     const { error } = await supabase.from('battle_votes').upsert(
       {
         user_id: userId,

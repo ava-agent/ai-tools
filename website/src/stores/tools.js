@@ -156,24 +156,6 @@ export const useToolsStore = defineStore('tools', () => {
     )
   }
 
-  async function loadTools() {
-    isLoading.value = true
-    error.value = null
-    try {
-      // 这里可以替换为 API 调用
-      // const response = await fetch('/api/tools')
-      // tools.value = await response.json()
-
-      // 模拟加载延迟
-      await new Promise(resolve => setTimeout(resolve, 300))
-
-      isLoading.value = false
-    } catch (err) {
-      error.value = err
-      isLoading.value = false
-    }
-  }
-
   // 重置状态
   function $reset() {
     tools.value = aiToolsData
@@ -215,7 +197,6 @@ export const useToolsStore = defineStore('tools', () => {
     getToolById,
     getToolsByCategory,
     getToolsByTag,
-    loadTools,
     $reset
   }
 })

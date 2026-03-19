@@ -31,13 +31,10 @@
 
       <!-- Footer: Stars + Score Badge -->
       <div class="flex justify-between items-center">
-        <div class="flex items-center text-[11px] text-[#ffd60a]">
-          <span
-            v-for="i in 5"
-            :key="i"
-            class="relative"
-          ><template v-if="i <= Math.floor(tool.personalExperience?.rating || 0)">★</template><template v-else-if="i === Math.ceil(tool.personalExperience?.rating || 0) && (tool.personalExperience?.rating || 0) % 1 >= 0.5"><span class="half-star">★</span><span class="text-white/15">★</span></template><template v-else><span class="text-white/15">★</span></template></span>
-        </div>
+        <StarRating
+          :rating="tool.personalExperience?.rating || 0"
+          class="text-[#ffd60a]"
+        />
         <div
           v-if="tool.personalExperience?.rating"
           class="text-[11px] text-[#30d158] px-2 py-0.5 rounded-md"
@@ -52,6 +49,7 @@
 
 <script setup>
 import ToolLogo from './ToolLogo.vue'
+import StarRating from './StarRating.vue'
 
 defineProps({
   tool: {
@@ -59,16 +57,8 @@ defineProps({
     required: true
   }
 })
-
 </script>
 
 <style scoped>
 a { text-decoration: none; }
-.half-star {
-  position: absolute;
-  left: 0;
-  top: 0;
-  overflow: hidden;
-  width: 50%;
-}
 </style>

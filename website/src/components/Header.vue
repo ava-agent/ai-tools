@@ -25,13 +25,13 @@
         <router-link
           v-for="item in mainNav"
           :key="item.to"
-          v-slot="{ navigate, isActive }"
+          v-slot="{ navigate, isExactActive }"
           :to="item.to"
           custom
         >
           <button
             class="segment"
-            :class="{ 'segment-active': isActive }"
+            :class="{ 'segment-active': isExactActive }"
             @click="navigate"
           >
             {{ item.label }}
