@@ -101,13 +101,14 @@ onMounted(() => {
 
 const filteredTools = computed(() => toolsStore.filteredTools)
 
-// Featured tool: highest rated tool (first in sorted list)
+// Featured tool: daily rotation among top-rated tools
 const featuredTool = computed(() => {
   const tools = toolsStore.tools
   if (!tools.length) return null
-  return [...tools].sort((a, b) =>
-    (b.personalExperience?.rating || 0) - (a.personalExperience?.rating || 0)
-  )[0]
+  const topTools = tools.filter(t => (t.personalExperience?.rating || 0) >= 5)
+  if (!topTools.length) return tools[0]
+  const dayIndex = Math.floor(Date.now() / 86400000) % topTools.length
+  return topTools[dayIndex]
 })
 
 function handleClearFilters() {
