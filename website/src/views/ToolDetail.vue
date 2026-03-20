@@ -100,28 +100,18 @@
         </div>
       </div>
 
-      <!-- Insight card -->
+      <!-- Insight card (enhanced) -->
       <div
         v-if="tool.personalExperience?.insights"
-        class="glass-card p-4 mb-4"
+        class="rounded-xl p-4 mb-4"
+        style="background: rgba(48,209,88,0.04); border-left: 4px solid #30d158;"
       >
-        <div class="text-[13px] font-semibold text-white mb-2">
-          💡 使用心得
+        <div class="text-[13px] font-semibold text-[#30d158] mb-2">
+          实战洞察
         </div>
         <div class="text-[13px] text-white/55 leading-relaxed">
           {{ tool.personalExperience.insights }}
         </div>
-      </div>
-
-      <!-- Radar chart -->
-      <div
-        v-if="tool.personalExperience"
-        class="glass-card p-4 mb-4"
-      >
-        <div class="text-[13px] font-semibold text-white mb-3">
-          📊 评分雷达
-        </div>
-        <ScoreRadar :tool="tool" />
       </div>
 
       <!-- Pitfalls -->
@@ -142,40 +132,15 @@
         </div>
       </div>
 
-      <!-- Pros / Cons dual column -->
-      <div class="grid grid-cols-2 gap-[10px] mb-4">
-        <div
-          class="rounded-xl p-4"
-          style="background: rgba(48,209,88,0.04); border: 1px solid rgba(48,209,88,0.1);"
-        >
-          <div class="text-[13px] font-semibold text-[#30d158] mb-2">
-            优势
-          </div>
-          <div class="text-xs text-white/50 leading-loose">
-            <div
-              v-for="pro in tool.pros"
-              :key="pro"
-            >
-              • {{ pro }}
-            </div>
-          </div>
+      <!-- Radar chart -->
+      <div
+        v-if="tool.personalExperience"
+        class="glass-card p-4 mb-4"
+      >
+        <div class="text-[13px] font-semibold text-white mb-3">
+          📊 评分雷达
         </div>
-        <div
-          class="rounded-xl p-4"
-          style="background: rgba(255,69,58,0.04); border: 1px solid rgba(255,69,58,0.1);"
-        >
-          <div class="text-[13px] font-semibold text-[#ff453a] mb-2">
-            劣势
-          </div>
-          <div class="text-xs text-white/50 leading-loose">
-            <div
-              v-for="con in tool.cons"
-              :key="con"
-            >
-              • {{ con }}
-            </div>
-          </div>
-        </div>
+        <ScoreRadar :tool="tool" />
       </div>
 
       <!-- SWOT grid -->
@@ -229,6 +194,42 @@
             </div>
             <div class="text-xs text-white/50">
               {{ tool.swot.T }}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pros / Cons dual column -->
+      <div class="grid grid-cols-2 gap-[10px] mb-4">
+        <div
+          class="rounded-xl p-4"
+          style="background: rgba(48,209,88,0.04); border: 1px solid rgba(48,209,88,0.1);"
+        >
+          <div class="text-[13px] font-semibold text-[#30d158] mb-2">
+            优势
+          </div>
+          <div class="text-xs text-white/50 leading-loose">
+            <div
+              v-for="pro in tool.pros"
+              :key="pro"
+            >
+              • {{ pro }}
+            </div>
+          </div>
+        </div>
+        <div
+          class="rounded-xl p-4"
+          style="background: rgba(255,69,58,0.04); border: 1px solid rgba(255,69,58,0.1);"
+        >
+          <div class="text-[13px] font-semibold text-[#ff453a] mb-2">
+            劣势
+          </div>
+          <div class="text-xs text-white/50 leading-loose">
+            <div
+              v-for="con in tool.cons"
+              :key="con"
+            >
+              • {{ con }}
             </div>
           </div>
         </div>

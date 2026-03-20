@@ -57,7 +57,7 @@
         <button
           class="flex items-center gap-1.5 px-3 py-1.5 rounded-control text-xs cursor-pointer"
           style="background: rgba(255,255,255,0.06);"
-          @click="$router.push('/')"
+          @click="$router.push('/tools')"
         >
           <Search class="w-3.5 h-3.5 text-white/25" />
           <span class="text-white/25 hidden sm:inline">搜索</span>
@@ -141,7 +141,7 @@
 
 <script setup>
 import { ref } from 'vue'
-import { Brain, Menu, X, Search, Scale, BarChart3, GitCompare, Workflow, BookOpen, HelpCircle, UserCircle } from 'lucide-vue-next'
+import { Brain, Menu, X, Search, LayoutGrid, GitCompare, Workflow, UserCircle } from 'lucide-vue-next'
 import { useAuthStore } from '../stores/auth.js'
 import UserProfilePanel from './gamification/UserProfilePanel.vue'
 
@@ -150,17 +150,13 @@ const isMobileMenuOpen = ref(false)
 const isProfileOpen = ref(false)
 
 const mainNav = [
-  { to: '/', label: '发现', icon: Search },
-  { to: '/comparison', label: '对比', icon: GitCompare },
-  { to: '/matcher', label: '匹配', icon: Scale },
-  { to: '/pricing', label: '定价', icon: BarChart3 },
+  { to: '/', label: '首页', icon: Brain },
+  { to: '/tools', label: '全景浏览', icon: LayoutGrid },
+  { to: '/comparison', label: '工具对比', icon: GitCompare },
+  { to: '/workflows', label: '工作流', icon: Workflow },
 ]
 
-const secondaryNav = [
-  { to: '/workflows', label: '工作流', icon: Workflow },
-  { to: '/resources', label: '资源', icon: BookOpen },
-  { to: '/quiz', label: '竞猜', icon: HelpCircle },
-]
+const secondaryNav = []
 
 const toggleMobileMenu = () => {
   isMobileMenuOpen.value = !isMobileMenuOpen.value

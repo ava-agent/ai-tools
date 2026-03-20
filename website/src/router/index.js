@@ -4,11 +4,20 @@ import { createRouter, createWebHashHistory } from 'vue-router'
 const routes = [
   {
     path: '/',
-    name: 'home',
-    component: () => import('../views/Home.vue'),
+    name: 'landing',
+    component: () => import('../views/Landing.vue'),
     meta: {
       title: 'AI工具全书 | 2026深度集成与实战教学版',
-      description: '整合10+份调研文档、SWOT分析与30+款AI工具的CN/Global双版本实战数据'
+      description: '基于真实项目经验的 AI 工具评测与选型指南'
+    }
+  },
+  {
+    path: '/tools',
+    name: 'tools',
+    component: () => import('../views/Home.vue'),
+    meta: {
+      title: '全景浏览 - AI工具全书',
+      description: '125+ 款 AI 工具分类浏览与搜索'
     }
   },
   {
