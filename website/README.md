@@ -7,152 +7,108 @@
 
 **在线访问**：[https://aitools.rxcloud.group](https://aitools.rxcloud.group)
 
+<p align="center">
+  <img src="../docs/screenshots/landing-hero.png" alt="Landing Page" width="700">
+</p>
+
 ## 特性
 
 - **125+ 款工具评测** - 覆盖 AI IDE、LLM、CLI、多模态、Agent 平台、MCP 工具、AI 技能等 7 大类别
 - **SWOT 分析** - 每个工具的优势、劣势、机会、威胁分析
+- **雷达图评分** - 功能、性能、易用性、生态、性价比五维可视化
 - **智能搜索和筛选** - 按名称、开发者、类别、标签筛选
+- **横向对比** - 最多 4 款工具同屏对比
+- **工作流指南** - 6 套实战工作流模板
 - **社区功能** - 工具评分、评论、Battle 投票（Supabase 驱动）
 - **游戏化体验** - 经验值、成就系统、个性测试、每日推荐
 - **云同步** - 登录后自动同步游戏化进度
-- **双版本支持** - 区分国内版(CN)和国际版(Global)
-- **响应式设计** - 深色主题，完美适配桌面和移动设备
 - **PWA 支持** - Service Worker 离线缓存
 
 ## 快速开始
 
-### 安装依赖
-
 ```bash
-npm install
+npm install         # 安装依赖
+npm run dev         # 开发服务器（:8765）
+npm run build       # 生产构建
+npm run preview     # 预览构建（:8766）
+npm run test        # 运行测试
+npm run lint        # 代码检查（自动修复）
+npm run format      # 代码格式化
 ```
 
-### 开发模式
+## 页面截图
 
-```bash
-npm run dev
-```
+<details>
+<summary>展开查看所有页面</summary>
 
-访问 http://localhost:8765
+### 全景浏览
+<img src="../docs/screenshots/tool-browse.png" alt="Tool Browse" width="700">
 
-### 构建生产版本
+### 工具详情
+<img src="../docs/screenshots/tool-detail.png" alt="Tool Detail" width="700">
 
-```bash
-npm run build
-```
+### 横向对比
+<img src="../docs/screenshots/tool-compare.png" alt="Tool Comparison" width="700">
 
-### 预览生产构建
+### 工作流指南
+<img src="../docs/screenshots/workflows.png" alt="Workflows" width="700">
 
-```bash
-npm run preview
-```
-
-访问 http://localhost:8766
-
-### 运行测试
-
-```bash
-npm run test
-```
-
-### 代码检查
-
-```bash
-npm run lint
-npm run format
-```
+</details>
 
 ## 项目结构
 
 ```
 website/
-├── public/                 # 静态资源
-│   ├── logo.svg           # 网站 Logo
-│   ├── favicon.svg        # 网站图标
-│   ├── og-image.png       # Open Graph 图片
-│   ├── manifest.json      # PWA manifest
-│   ├── sw.js              # Service Worker
-│   ├── images/            # 工具图片、雷达图
-│   ├── videos/            # 工具演示视频
-│   └── pdfs/              # PDF 资源
+├── public/                 # 静态资源（logo, favicon, images, videos）
 ├── src/
-│   ├── components/         # Vue 组件（24+）
-│   │   ├── Header.vue
-│   │   ├── Footer.vue
-│   │   ├── Hero.vue
-│   │   ├── ToolCard.vue
-│   │   ├── ToolGrid.vue
-│   │   ├── SearchBar.vue
-│   │   ├── ToolLogo.vue
-│   │   ├── ToolRating.vue
-│   │   ├── AuthModal.vue
-│   │   ├── ErrorBoundary.vue
-│   │   ├── ToastContainer.vue
-│   │   ├── IntroVideo.vue
-│   │   ├── PdfViewer.vue
+│   ├── components/         # Vue 组件（30+）
+│   │   ├── landing/        # 落地页组件（Hero, ToolLandscape, Recommendations）
 │   │   └── gamification/   # 游戏化组件
 │   ├── views/              # 页面组件（懒加载）
+│   │   ├── Landing.vue     # 首页落地页
 │   │   ├── Home.vue        # 工具卡片网格
-│   │   ├── ToolDetail.vue  # 工具详情页
+│   │   ├── ToolDetail.vue  # 工具详情（SWOT/雷达图）
 │   │   ├── Comparison.vue  # 横向对比
+│   │   ├── Workflows.vue   # 工作流实践
 │   │   ├── Matcher.vue     # 智能匹配
 │   │   ├── Pricing.vue     # 订阅定价指南
-│   │   ├── Workflows.vue   # 工作流实践
 │   │   ├── Resources.vue   # 资源中心
 │   │   ├── Quiz.vue        # 互动测验
-│   │   ├── Profile.vue     # 用户档案
-│   │   └── NotFound.vue    # 404 页面
+│   │   └── Profile.vue     # 用户档案
 │   ├── stores/             # Pinia 状态管理
-│   │   ├── tools.js        # 工具数据与过滤
+│   │   ├── tools.js        # 工具数据与过滤（125+ 工具）
 │   │   ├── ui.js           # UI 状态
 │   │   ├── auth.js         # 认证状态
 │   │   ├── gamification.js # 游戏化进度
 │   │   ├── achievements.js # 成就追踪
 │   │   └── community.js    # 社区评分/评论
-│   ├── data/               # 数据文件
-│   │   └── tools.js        # 82 款工具数据库
+│   ├── data/tools.js       # 125+ 工具数据库
 │   ├── composables/        # Vue 3 组合式函数
-│   │   ├── useEasterEggs.js
-│   │   ├── useLocalStorage.js
-│   │   ├── usePerformance.js
-│   │   └── useShareCard.js
-│   ├── lib/                # 工具库
-│   │   ├── supabase.js     # Supabase 客户端
-│   │   └── syncService.js  # 云同步服务
-│   ├── utils/
-│   │   └── helpers.js      # 辅助函数
-│   ├── router/
-│   │   └── index.js        # Vue Router 配置
-│   ├── plugins/
-│   │   └── piniaLocalStorage.js
-│   ├── App.vue             # 根组件
-│   ├── main.js             # 应用入口
-│   └── style.css           # 全局样式
+│   ├── lib/                # Supabase 集成
+│   ├── utils/              # 工具函数
+│   └── router/             # Vue Router（Hash 模式）
 ├── vite.config.js          # Vite 配置
 ├── tailwind.config.js      # Tailwind CSS 配置
 ├── vitest.config.js        # 测试配置
 ├── vercel.json             # Vercel 部署配置
-├── Dockerfile              # Docker 构建配置
-├── nginx.conf              # Nginx 服务器配置
-└── package.json            # 项目配置
+└── Dockerfile              # Docker 构建配置
 ```
 
 ## 技术栈
 
-- **前端框架**：Vue.js 3.5（Composition API + `<script setup>`）
-- **构建工具**：Vite 5.4
-- **路由管理**：Vue Router 4.6
-- **状态管理**：Pinia 2.3
-- **样式框架**：Tailwind CSS 3.4
-- **图标库**：Lucide Vue Next
-- **后端服务**：Supabase（认证、数据库、云同步）
-- **测试框架**：Vitest 1.6 + Vue Test Utils
-- **代码质量**：ESLint 8 + Prettier 3
-- **部署平台**：Vercel / Docker + Nginx
+| 技术 | 版本 | 用途 |
+|------|------|------|
+| Vue.js | 3.4 | 前端框架（Composition API + `<script setup>`） |
+| Vite | 5.1 | 构建工具 |
+| Tailwind CSS | 3.4 | 样式框架（深色主题） |
+| Pinia | 2.1 | 状态管理 |
+| Vue Router | 4.2 | 路由（Hash 模式） |
+| Lucide | latest | 图标库 |
+| Supabase | latest | 认证、数据库、云同步 |
+| Vitest | 1.2 | 测试框架 |
+| ESLint + Prettier | 8 / 3 | 代码质量 |
 
 ## 配置 Supabase（可选）
-
-社区功能（评分、评论、云同步）需要 Supabase：
 
 ```bash
 cp .env.example .env
@@ -164,20 +120,9 @@ cp .env.example .env
 ## Docker 部署
 
 ```bash
-# 构建镜像
 docker build -t ai-tools-website .
-
-# 运行容器
 docker run -p 8080:80 ai-tools-website
 ```
-
-## 性能优化
-
-- 代码分割（vue-vendor、icons、路由级懒加载）
-- 资源指纹（hash 命名，长期缓存）
-- Gzip 压缩
-- ES2020 构建目标
-- PWA 离线缓存
 
 ## 添加新工具
 
@@ -187,24 +132,12 @@ docker run -p 8080:80 ai-tools-website
 {
   id: 'tool-id',
   name: 'Tool Name',
-  category: 'ide|cli|llm|deep-research|multimodal|agent|mcp',
-  subcategory: '细分分类',
+  category: 'ide|cli|llm|multimodal|agent|mcp|skill',
   developer: 'Developer Name',
-  versions: [
-    { type: 'CN/Global', pricing: '定价信息', models: '支持的模型', link: 'https://example.com' }
-  ],
-  freeQuota: '免费额度说明',
-  contextWindow: '上下文窗口',
-  chineseSupport: 4,  // 1-5
-  pros: ['优势1', '优势2'],
-  cons: ['劣势1', '劣势2'],
-  bestFor: '最佳使用场景',
-  personalExperience: {
-    rating: 5,  // 1-5
-    insights: '使用心得',
-    pitfalls: ['注意事项']
-  },
+  versions: [{ type: 'CN/Global', pricing: '定价', models: '模型', link: 'URL' }],
+  personalExperience: { rating: 5, insights: '心得', pitfalls: ['注意事项'] },
   swot: { S: '优势', W: '劣势', O: '机会', T: '威胁' },
+  radarChart: { 功能: 5, 性能: 4, 易用性: 5, 生态: 4, 性价比: 3 },
   tags: ['标签1', '标签2']
 }
 ```
