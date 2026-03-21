@@ -1,17 +1,26 @@
 <!-- src/components/landing/QuickEntryCards.vue -->
 <template>
-  <section class="max-w-[960px] mx-auto px-5 py-16">
+  <section
+    ref="sectionRef"
+    class="max-w-[960px] mx-auto px-5 py-16"
+    :class="{ revealed: isRevealed }"
+  >
     <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
       <router-link
-        v-for="entry in entries"
+        v-for="(entry, index) in entries"
         :key="entry.to"
         :to="entry.to"
-        class="glass-card glass-card-interactive p-5 text-center group"
+        class="reveal-item entry-card glass-card glass-card-interactive p-5 text-center group"
+        :style="{ '--reveal-i': index }"
       >
-        <component
-          :is="entry.icon"
-          class="w-6 h-6 mx-auto mb-3 text-white/40 group-hover:text-primary transition-colors"
-        />
+        <!-- Scene illustration -->
+        <div class="w-full h-24 mb-3 overflow-hidden rounded-lg">
+          <img
+            :src="entry.bgImage"
+            :alt="entry.label"
+            class="w-full h-full object-cover opacity-40 group-hover:opacity-70 group-hover:scale-105 transition-all duration-500"
+          >
+        </div>
         <div class="text-sm font-semibold text-white mb-1">
           {{ entry.label }}
         </div>
@@ -36,11 +45,13 @@
 </template>
 
 <script setup>
-import { LayoutGrid, GitCompare, Workflow } from 'lucide-vue-next'
+import { useReveal } from '../../composables/useReveal'
+
+const { sectionRef, isRevealed } = useReveal()
 
 const entries = [
-  { to: '/tools', label: '全景浏览', desc: '125+ 工具分类浏览与搜索', icon: LayoutGrid },
-  { to: '/comparison', label: '选型对比', desc: '最多 4 款工具横向对比', icon: GitCompare },
-  { to: '/workflows', label: '工作流指南', desc: '6 套实战工作流模板', icon: Workflow },
+  { to: '/tools', label: '全景浏览', desc: '125+ 工具分类浏览与搜索', bgImage: '/images/landing/entry-browse.png' },
+  { to: '/comparison', label: '选型对比', desc: '最多 4 款工具横向对比', bgImage: '/images/landing/entry-compare.png' },
+  { to: '/workflows', label: '工作流指南', desc: '6 套实战工作流模板', bgImage: '/images/landing/entry-workflow.png' },
 ]
 </script>
