@@ -1,16 +1,19 @@
 # AI Tools Handbook
 
-> 82 款 AI 工具深度评测与选型指南 — 2026 深度集成与实战教学版
+> 125+ 款 AI 工具深度评测与选型指南 — 2026 深度集成与实战教学版
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+[![Website](https://img.shields.io/badge/Website-aitools.rxcloud.group-blue)](https://aitools.rxcloud.group)
+
+**在线访问**：[https://aitools.rxcloud.group](https://aitools.rxcloud.group)
 
 ## 简介
 
-AI Tools Handbook 是一个全面的 AI 开发工具选型指南，基于实战经验整合了 82 款工具的深度评测数据。涵盖 AI IDE、大语言模型、Deep Research、CLI 工具、多模态、Agent 平台、MCP 工具等多个类别，提供 SWOT 分析、社区评价和最佳实践建议。
+AI Tools Handbook 是一个全面的 AI 开发工具选型指南，基于实战经验整合了 125+ 款工具的深度评测数据。涵盖 AI IDE、大语言模型、CLI 工具、多模态、Agent 平台、MCP 工具、AI 技能等 7 大类别，提供 SWOT 分析、社区评价和最佳实践建议。
 
 ## 特性
 
-- **82 款工具评测** - 覆盖 AI IDE、LLM、CLI、多模态、Agent、MCP 等类别
+- **125+ 款工具评测** - 覆盖 AI IDE、LLM、CLI、多模态、Agent、MCP、AI 技能等 7 大类别
 - **SWOT 分析** - 每个工具的优势、劣势、机会、威胁分析
 - **智能筛选** - 按类别、标签、开发者快速筛选
 - **社区功能** - 工具评分、评论、Battle 投票（Supabase 驱动）
@@ -23,13 +26,13 @@ AI Tools Handbook 是一个全面的 AI 开发工具选型指南，基于实战�
 
 | 类别 | 数量 | 示例 |
 |------|------|------|
-| AI IDE | 10+ | Cursor, Windsurf, Trae, Devin, Bolt, v0 |
-| Deep Research | 5+ | Gemini Deep Research, Perplexity, Grok |
-| CLI | 5+ | Claude Code, GitHub Copilot CLI, Warp |
-| LLM | 10+ | GPT-4o, Claude, Gemini, DeepSeek, Llama |
-| 多模态 | 10+ | Midjourney, DALL-E, Flux, Runway, Suno |
-| Agent 平台 | 5+ | Manus, CrewAI, n8n |
-| MCP 工具 | 13 | Context7, Playwright, Firecrawl, Supabase |
+| AI 开发环境 | 13 | Cursor, Trae, Windsurf, Kiro, Qoder |
+| AI 命令行 | 12 | Claude Code, Codex, Gemini CLI, Crush |
+| AI 模型 | 18 | Claude 4.5, GPT-5.2, Gemini 3, DeepSeek, Qwen3 |
+| AI 多模态 | 21 | Midjourney, 可灵, FLUX, Sora, ElevenLabs |
+| AI 智能体 | 20 | Claude Agent SDK, Devin, Bolt.new, n8n |
+| MCP 工具 | 22 | Context7, Playwright MCP, GitHub MCP, Supabase MCP |
+| AI 技能 | 19 | ui-ux-pro-max, semgrep, research, mcp-builder |
 
 ## 快速开始
 

@@ -1,12 +1,15 @@
 # AI工具全书 - 2026深度集成与实战教学版
 
-> 82 款 AI 工具深度评测与选型指南，涵盖 AI IDE、LLM、CLI、多模态、Agent、MCP 等类别
+> 125+ 款 AI 工具深度评测与选型指南，涵盖 AI IDE、LLM、CLI、多模态、Agent、MCP、AI 技能等 7 大类别
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+[![Website](https://img.shields.io/badge/Website-aitools.rxcloud.group-blue)](https://aitools.rxcloud.group)
+
+**在线访问**：[https://aitools.rxcloud.group](https://aitools.rxcloud.group)
 
 ## 特性
 
-- **82 款工具评测** - 覆盖 AI IDE、LLM、Deep Research、CLI、多模态、Agent 平台、MCP 工具等类别
+- **125+ 款工具评测** - 覆盖 AI IDE、LLM、CLI、多模态、Agent 平台、MCP 工具、AI 技能等 7 大类别
 - **SWOT 分析** - 每个工具的优势、劣势、机会、威胁分析
 - **智能搜索和筛选** - 按名称、开发者、类别、标签筛选
 - **社区功能** - 工具评分、评论、Battle 投票（Supabase 驱动）
