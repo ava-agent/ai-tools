@@ -1113,7 +1113,7 @@ Add to script:
 const recommendedGroups = [
   { label: 'AI IDE 三强', ids: ['cursor', 'windsurf', 'trae'] },
   { label: 'AI CLI 对决', ids: ['claude-code', 'gemini-cli', 'qwen-cli'] },
-  { label: '国产大模型', ids: ['deepseek', 'qwen', 'glm', 'kimi'] },
+  { label: '国产大模型', ids: ['deepseek', 'qwen', 'doubao', 'kimi'] },
   { label: '视频生成', ids: ['sora', 'kling', 'runway', 'pika'] },
   { label: '图像生成', ids: ['midjourney', 'dalle', 'stable-diffusion', 'ideogram'] },
 ]
