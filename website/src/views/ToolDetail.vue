@@ -28,12 +28,12 @@
             size="xl"
           />
           <div class="flex-1">
-            <div
+            <h1
               class="text-2xl font-bold text-white"
               style="letter-spacing: -0.5px;"
             >
               {{ tool.name }}
-            </div>
+            </h1>
             <div class="text-sm text-white/45 mt-0.5">
               {{ tool.developer }}
             </div>

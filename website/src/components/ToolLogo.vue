@@ -28,6 +28,7 @@ const props = defineProps({
   toolId: { type: String, required: true },
   toolName: { type: String, default: '' },
   size: { type: String, default: 'md' },
+  preferImage: { type: Boolean, default: false },
 })
 
 const errorCount = ref(0)
@@ -44,6 +45,7 @@ const googleFallbackUrl = computed(() => {
 })
 
 const currentLogoUrl = computed(() => {
+  if (!props.preferImage) return null
   if (errorCount.value === 0) return logo.value?.logoUrl || null
   if (errorCount.value === 1) return googleFallbackUrl.value
   return null // fall back to initials
