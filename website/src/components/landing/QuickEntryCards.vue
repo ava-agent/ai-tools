@@ -18,6 +18,8 @@
           <img
             :src="entry.bgImage"
             :alt="entry.label"
+            loading="lazy"
+            decoding="async"
             class="w-full h-full object-cover opacity-40 group-hover:opacity-70 group-hover:scale-105 transition-all duration-500"
           >
         </div>

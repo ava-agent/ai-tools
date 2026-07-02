@@ -1,4 +1,20 @@
 // 资源中心数据
+const RESOURCE_ASSET_CHECKED_AT = '2026-07-02'
+const RESOURCE_FRESHNESS_NOTE = '历史快照：非实时价格、模型或额度依据'
+
+export const RESOURCE_HISTORY_NOTICE = '资源中心资料保留为 2026-02 历史快照，用于回顾当时的工具生态与演示内容；价格、模型、额度和产品状态请以当前官方来源为准。'
+
+function withResourceMetadata(resource) {
+    return {
+        verificationStatus: 'historical',
+        lastVerified: null,
+        assetCheckedAt: RESOURCE_ASSET_CHECKED_AT,
+        freshnessNote: RESOURCE_FRESHNESS_NOTE,
+        ...resource,
+        sources: resource.sources?.length ? resource.sources : [`/${resource.src}`]
+    }
+}
+
 export const resources = [
     // ============= PPT/PDF =============
     {
@@ -193,4 +209,4 @@ export const resources = [
         tags: ['OpenCode', 'AI CLI', '演示', '开源'],
         date: '2026-02'
     }
-]
+].map(withResourceMetadata)

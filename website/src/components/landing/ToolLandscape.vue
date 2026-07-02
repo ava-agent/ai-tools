@@ -7,7 +7,7 @@
     :class="{ revealed: isRevealed }"
   >
     <h2
-      class="reveal-item text-2xl font-bold text-white tracking-tight mb-2"
+      class="reveal-item text-2xl font-bold text-white tracking-normal mb-2"
       style="--reveal-i: 0"
     >
       工具版图
@@ -23,7 +23,7 @@
       <div
         v-for="(cat, catIndex) in groupedTools"
         :key="cat.id"
-        class="reveal-item relative overflow-hidden rounded-xl p-4"
+        class="reveal-item relative overflow-visible rounded-xl p-4"
         :style="{ '--reveal-i': catIndex + 2 }"
       >
         <!-- Category background decoration -->
@@ -56,7 +56,7 @@
             v-for="tool in cat.tools"
             :key="tool.id"
             :to="{ name: 'tool-detail', params: { id: tool.id } }"
-            class="tool-bubble group relative flex items-center justify-center rounded-full"
+            class="tool-bubble group relative flex min-h-11 min-w-11 items-center justify-center rounded-full"
             :style="{
               width: bubbleSize(tool) + 'px',
               height: bubbleSize(tool) + 'px',
@@ -65,6 +65,8 @@
               '--bubble-glow': cat.color + '35',
             }"
             :title="tool.name + ' — ' + (tool.bestFor || '')"
+            :aria-label="`查看 ${tool.name} 详情：${tool.bestFor || '工具详情'}`"
+            :aria-describedby="`tool-bubble-tip-${tool.id}`"
           >
             <ToolLogo
               :tool-id="tool.id"
@@ -74,7 +76,8 @@
 
             <!-- Enhanced tooltip -->
             <div
-              class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2.5 px-3 py-2 rounded-lg text-xs whitespace-nowrap opacity-0 group-hover:opacity-100 transition-all duration-200 pointer-events-none z-20 scale-95 group-hover:scale-100"
+              :id="`tool-bubble-tip-${tool.id}`"
+              class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2.5 max-w-[220px] px-3 py-2 rounded-lg text-xs opacity-0 group-hover:opacity-100 group-focus-visible:opacity-100 transition-all duration-200 pointer-events-none z-20 scale-95 group-hover:scale-100 group-focus-visible:scale-100"
               :style="{
                 background: 'rgba(12, 12, 30, 0.95)',
                 border: '1px solid ' + cat.color + '25',
@@ -108,7 +111,10 @@ import ToolLogo from '../ToolLogo.vue'
 import { categoryIconMap } from './CategoryIcons.js'
 
 const toolsStore = useToolsStore()
-const { sectionRef, isRevealed } = useReveal()
+const { sectionRef, isRevealed } = useReveal({
+  threshold: 0.02,
+  rootMargin: '0px 0px -24px 0px',
+})
 
 const categoryColors = {
   ide: '#0a84ff',
@@ -135,7 +141,7 @@ const groupedTools = computed(() => {
 
 function bubbleSize(tool) {
   const rating = tool.personalExperience?.rating || 3
-  // Map rating 1-5 to size 36-64px
-  return 36 + (rating - 1) * 7
+  // Map rating 1-5 to a touch-safe 44-64px range.
+  return 44 + (rating - 1) * 5
 }
 </script>

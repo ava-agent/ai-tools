@@ -1,12 +1,14 @@
 <template>
   <button
-    class="relative flex items-center justify-center rounded-full transition-all duration-300 cursor-pointer"
+    class="relative flex min-h-11 min-w-11 items-center justify-center rounded-full transition-all duration-300 cursor-pointer"
     :class="[
       sizeClass,
       level.bg,
       `border-2 ${level.border}`,
       'hover:scale-105'
     ]"
+    type="button"
+    :aria-label="badgeLabel"
     :title="`Lv.${level.level} ${level.title}`"
     @click="$emit('click')"
   >
@@ -31,6 +33,7 @@ defineEmits(['click'])
 
 const store = useGamificationStore()
 const level = computed(() => store.currentLevel)
+const badgeLabel = computed(() => `等级 Lv.${level.value.level} ${level.value.title}`)
 
 const sizeClass = computed(() => {
   const sizes = { sm: 'w-7 h-7', md: 'w-9 h-9', lg: 'w-14 h-14' }

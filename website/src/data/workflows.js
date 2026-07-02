@@ -7,6 +7,10 @@ export const workflows = [
         name: '日常开发流',
         nameZh: '日常开发流',
         description: '适用于功能开发、Bug 修复、小型重构',
+        recommendedStack: [
+            { role: '主力实现', tool: 'Cursor', reason: '负责代码实现、上下文补全和多文件改动' },
+            { role: '代码审查', tool: 'Cursor', reason: '保留在同一上下文内逐文件审查 diff' }
+        ],
         steps: [
             { step: 1, action: '代码实现', tool: 'Cursor', tip: '使用 Composer 模式进行代码实现，明确改动范围，只允许修改必要目录' },
             { step: 2, action: '审查 diff', tool: 'Cursor', tip: '逐文件审查 diff，确认后接受，不要批量接受所有改动' },
@@ -25,6 +29,10 @@ export const workflows = [
         name: '快速原型流',
         nameZh: '快速原型流',
         description: '适用于 MVP 验证、Demo 开发、概念验证',
+        recommendedStack: [
+            { role: '0→1 原型', tool: 'Trae', reason: '用 Solo Builder 快速生成可运行原型' },
+            { role: '快速调整', tool: 'Windsurf', reason: '用 Cascade/Flow 做小步交互和页面调整' }
+        ],
         steps: [
             { step: 1, action: '想法描述', tool: 'Trae (Solo Builder)', tip: '自然语言描述想法，0→1 生成原型，先跑通再优化' },
             { step: 2, action: '迭代优化', tool: 'Trae (Solo Coder)', tip: '1→100 迭代优化，利用 Plan 模式规划改进' },
@@ -43,10 +51,15 @@ export const workflows = [
         name: '方案设计流',
         nameZh: '方案设计流',
         description: '适用于架构设计、技术调研、方案评审',
+        recommendedStack: [
+            { role: '低成本调研', tool: 'DeepSeek', reason: '先收集背景信息和备选路线' },
+            { role: '深度推理', tool: 'Claude', reason: '用于长上下文分析和方案权衡' },
+            { role: '交叉验证', tool: 'Gemini', reason: '对关键结论做第二模型检查' }
+        ],
         steps: [
             { step: 1, action: '初步调研', tool: 'DeepSeek', tip: '成本低，快速获取背景信息' },
             { step: 2, action: '深度分析', tool: 'Claude', tip: '长上下文，深度推理' },
-            { step: 3, action: '方案设计', tool: 'Claude / Gemini', tip: '输出结构化的技术方案' },
+            { step: 3, action: '方案设计', tool: 'Claude / Gemini', toolIds: ['claude', 'gemini'], tip: '输出结构化的技术方案' },
             { step: 4, action: '汇报材料', tool: 'NotebookLM', tip: '生成 PPT、视频等汇报材料' }
         ],
         tips: [
@@ -60,6 +73,11 @@ export const workflows = [
         name: '大型重构流',
         nameZh: '大型重构流',
         description: '适用于架构升级、模块拆分、技术栈迁移',
+        recommendedStack: [
+            { role: '代码库全景', tool: 'Gemini CLI', reason: '先建立全局依赖和模块地图' },
+            { role: '重构计划', tool: 'Claude Code', reason: '拆解影响面、风险和回归点' },
+            { role: '分步实现', tool: 'Cursor', reason: '按计划小步改动并审查 diff' }
+        ],
         steps: [
             { step: 1, action: '全局理解代码库', tool: 'Gemini CLI', tip: '1M 上下文全局理解代码库，生成代码库全景文档' },
             { step: 2, action: '分析改动影响面', tool: 'Claude Code', tip: '分析改动影响面和风险点，生成详细的重构计划' },
@@ -80,6 +98,11 @@ export const workflows = [
         name: '存量项目接手流',
         nameZh: '存量项目接手流',
         description: '适用于接手他人项目、理解遗留代码',
+        recommendedStack: [
+            { role: '文档生成', tool: 'Qoder', reason: '先生成 Repo Wiki 和项目结构说明' },
+            { role: '依赖分析', tool: 'Gemini CLI', reason: '识别关键模块和调用链' },
+            { role: '技术债总结', tool: 'Claude Code', reason: '整理风险、债务和接手顺序' }
+        ],
         steps: [
             { step: 1, action: '代码库文档生成', tool: 'Qoder', tip: '利用 Repo Wiki 生成代码库文档' },
             { step: 2, action: '依赖关系分析', tool: 'Gemini CLI', tip: '分析核心模块依赖关系' },
@@ -98,6 +121,11 @@ export const workflows = [
         name: '关键任务攻关流',
         nameZh: '关键任务攻关流',
         description: '适用于高难 Bug 定位、性能优化、复杂方案设计',
+        recommendedStack: [
+            { role: '深度定位', tool: 'Claude Code', reason: '分析复杂原因链和修复路径' },
+            { role: '全局搜索', tool: 'Gemini CLI', reason: '覆盖日志、调用链和跨目录上下文' },
+            { role: '谨慎落地', tool: 'Cursor', reason: '逐文件实施并保留人工审查' }
+        ],
         steps: [
             { step: 1, action: '深度推理分析', tool: 'Claude Code', tip: '利用 Agent Teams 并行协作' },
             { step: 2, action: '搜索相关代码和日志', tool: 'Gemini CLI', tip: '1M 上下文全面覆盖' },

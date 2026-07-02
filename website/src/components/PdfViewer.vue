@@ -1,36 +1,52 @@
 <template>
   <div class="pdf-viewer">
     <div class="pdf-toolbar">
-      <div class="flex items-center gap-3">
-        <FileText class="w-5 h-5 text-primary" />
-        <span class="text-white font-medium truncate">{{ title }}</span>
+      <div class="min-w-0 flex items-center gap-3">
+        <FileText
+          class="w-5 h-5 text-primary"
+          aria-hidden="true"
+        />
+        <span class="min-w-0 truncate text-white font-medium">{{ title }}</span>
       </div>
-      <div class="flex items-center gap-2">
+      <div class="flex items-center justify-end gap-2">
         <a
           :href="src"
           download
-          class="toolbar-btn"
+          :aria-label="downloadLabel"
+          class="toolbar-btn min-h-11 min-w-11 justify-center"
           title="下载 PDF"
         >
-          <Download class="w-4 h-4" />
+          <Download
+            class="w-4 h-4"
+            aria-hidden="true"
+          />
           <span class="hidden sm:inline ml-1 text-sm">下载</span>
         </a>
         <a
           :href="src"
           target="_blank"
           rel="noopener noreferrer"
-          class="toolbar-btn"
+          :aria-label="openLabel"
+          class="toolbar-btn min-h-11 min-w-11 justify-center"
           title="新标签页打开"
         >
-          <ExternalLink class="w-4 h-4" />
+          <ExternalLink
+            class="w-4 h-4"
+            aria-hidden="true"
+          />
           <span class="hidden sm:inline ml-1 text-sm">新窗口</span>
         </a>
         <button
-          class="toolbar-btn"
+          type="button"
+          :aria-label="fullscreenLabel"
+          class="toolbar-btn min-h-11 min-w-11 justify-center"
           title="全屏查看"
           @click="toggleFullscreen"
         >
-          <Maximize class="w-4 h-4" />
+          <Maximize
+            class="w-4 h-4"
+            aria-hidden="true"
+          />
         </button>
       </div>
     </div>
@@ -59,7 +75,10 @@
         v-if="error"
         class="pdf-error"
       >
-        <FileText class="w-12 h-12 text-white/30 mb-3" />
+        <FileText
+          class="w-12 h-12 text-white/30 mb-3"
+          aria-hidden="true"
+        />
         <p class="text-white/60 mb-3">
           PDF 加载失败
         </p>
@@ -67,6 +86,7 @@
           :href="src"
           target="_blank"
           rel="noopener noreferrer"
+          :aria-label="openLabel"
           class="btn-secondary text-sm"
         >
           在新标签页中打开
@@ -77,10 +97,10 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { computed, ref } from 'vue'
 import { FileText, Download, ExternalLink, Maximize } from 'lucide-vue-next'
 
-defineProps({
+const props = defineProps({
   src: {
     type: String,
     required: true
@@ -94,6 +114,10 @@ defineProps({
 const containerRef = ref(null)
 const loading = ref(true)
 const error = ref(false)
+
+const downloadLabel = computed(() => `\u4e0b\u8f7d ${props.title}`)
+const openLabel = computed(() => `\u5728\u65b0\u6807\u7b7e\u9875\u6253\u5f00 ${props.title}`)
+const fullscreenLabel = computed(() => `\u5168\u5c4f\u67e5\u770b ${props.title}`)
 
 function onLoad() {
   loading.value = false
@@ -121,7 +145,7 @@ function toggleFullscreen() {
 }
 
 .pdf-toolbar {
-  @apply flex items-center justify-between px-4 py-3;
+  @apply flex flex-col items-stretch gap-3 px-4 py-3 sm:flex-row sm:items-center sm:justify-between;
   @apply border-b border-white/10 bg-white/5;
 }
 
@@ -134,8 +158,15 @@ function toggleFullscreen() {
 
 .pdf-container {
   @apply relative;
-  height: 70vh;
-  min-height: 400px;
+  height: 60vh;
+  min-height: 280px;
+}
+
+@media (min-width: 640px) {
+  .pdf-container {
+    height: 70vh;
+    min-height: 400px;
+  }
 }
 
 .pdf-iframe {

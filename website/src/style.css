@@ -5,6 +5,7 @@
 @layer base {
   :root {
     color-scheme: dark;
+    --color-primary: #0a84ff;
   }
 
   body {
@@ -50,19 +51,21 @@
     transition: all 0.2s ease;
   }
 
-  .glass-card:hover {
-    background: rgba(255, 255, 255, 0.06);
-    border-color: rgba(255, 255, 255, 0.08);
-  }
-
   .glass-card-interactive {
     cursor: pointer;
   }
 
-  .glass-card-interactive:hover {
-    background: rgba(255, 255, 255, 0.06);
-    border-color: rgba(255, 255, 255, 0.08);
-    transform: translateY(-1px);
+  @media (hover: hover) {
+    .glass-card:hover {
+      background: rgba(255, 255, 255, 0.06);
+      border-color: rgba(255, 255, 255, 0.08);
+    }
+
+    .glass-card-interactive:hover {
+      background: rgba(255, 255, 255, 0.06);
+      border-color: rgba(255, 255, 255, 0.08);
+      transform: translateY(-1px);
+    }
   }
 
   .glass-elevated {
@@ -80,6 +83,7 @@
     align-items: center;
     justify-content: center;
     padding: 8px 20px;
+    min-height: 44px;
     background: #0a84ff;
     color: #fff;
     border-radius: 980px;
@@ -96,6 +100,7 @@
 
   .btn-capsule-sm {
     padding: 6px 16px;
+    min-height: 36px;
     font-size: 12px;
   }
 
@@ -105,6 +110,8 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    min-height: 44px;
+    min-width: 44px;
     padding: 6px 16px;
     border-radius: 980px;
     font-size: 13px;
@@ -147,6 +154,12 @@
     color: #0a84ff;
   }
 
+  .tag-pill-primary {
+    background: rgba(10, 132, 255, 0.12);
+    color: #0a84ff;
+    border: 1px solid rgba(10, 132, 255, 0.2);
+  }
+
   .tag-pill-default {
     background: rgba(255, 255, 255, 0.06);
     color: rgba(255, 255, 255, 0.5);
@@ -174,7 +187,9 @@
   }
 
   .segment {
-    padding: 5px 14px;
+    padding: 6px 14px;
+    min-height: 44px;
+    min-width: 44px;
     font-size: 12px;
     border-radius: 6px;
     transition: all 0.2s ease;
@@ -195,6 +210,7 @@
   .input-field {
     width: 100%;
     padding: 6px 12px;
+    min-height: 44px;
     border-radius: 8px;
     color: #fff;
     font-size: 12px;

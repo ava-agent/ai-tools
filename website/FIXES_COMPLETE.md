@@ -1,61 +1,65 @@
-# AI-Tools Website 问题修复完成报告
+> Maintenance note (2026-06-28): this is a historical 2026-02-04 report. Current dev server defaults are
+npm run dev on http://127.0.0.1:8765/ and
+npm run preview on http://127.0.0.1:8766/; old 8767 references below are retained as historical evidence only.
 
-## 修复日期
+# AI-Tools Website 闂淇瀹屾垚鎶ュ憡
+
+## 淇鏃ユ湡
 2026-02-04
 
-## 修复的问题
+## 淇鐨勯棶棰?
 
-### 1. 数据导入错误 ✅
-**问题**: `Cannot read properties of undefined (reading 'length')`
+### 1. 鏁版嵁瀵煎叆閿欒 鉁?
+**闂**: `Cannot read properties of undefined (reading 'length')`
 
-**原因分析**:
-- 某些组件在访问数组属性时没有进行防御性检查
-- 数据可能在某些情况下为 undefined
+**鍘熷洜鍒嗘瀽**:
+- 鏌愪簺缁勪欢鍦ㄨ闂暟缁勫睘鎬ф椂娌℃湁杩涜闃插尽鎬ф鏌?
+- 鏁版嵁鍙兘鍦ㄦ煇浜涙儏鍐典笅涓?undefined
 
-**修复方案**:
-- 在 `ToolGrid.vue` 中添加防御性检查: `{{ tools?.length || 0 }}`
-- 在 `SearchBar.vue` 中添加检查: `v-if="allTags && allTags.length > 0"`
-- 在 `Matcher.vue` 中添加检查: `v-for="scenario in (scenarioGuide || [])"`
+**淇鏂规**:
+- 鍦?`ToolGrid.vue` 涓坊鍔犻槻寰℃€ф鏌? `{{ tools?.length || 0 }}`
+- 鍦?`SearchBar.vue` 涓坊鍔犳鏌? `v-if="allTags && allTags.length > 0"`
+- 鍦?`Matcher.vue` 涓坊鍔犳鏌? `v-for="scenario in (scenarioGuide || [])"`
 
-### 2. 端口冲突问题 ✅
-**问题**: 常用端口（3000, 3001, 3002）经常被占用
+### 2. 绔彛鍐茬獊闂 鉁?
+**闂**: 甯哥敤绔彛锛?000, 3001, 3002锛夌粡甯歌鍗犵敤
 
-**修复方案**:
-- 更新 `vite.config.js` 使用端口 8765
-- 设置 `strictPort: false` 允许自动寻找可用端口
-- 服务器最终运行在 `http://127.0.0.1:8767/`
+**淇鏂规**:
+- 鏇存柊 `vite.config.js` 浣跨敤绔彛 8765
+- 璁剧疆 `strictPort: false` 鍏佽鑷姩瀵绘壘鍙敤绔彛
+- 鏈嶅姟鍣ㄦ渶缁堣繍琛屽湪 `http://127.0.0.1:8767/`
 
 ---
 
-## CLI 测试验证结果
+## CLI 娴嬭瘯楠岃瘉缁撴灉
 
-### 页面访问测试
-| 页面 | URL | 状态 |
+### 椤甸潰璁块棶娴嬭瘯
+| 椤甸潰 | URL | 鐘舵€?|
 |------|-----|------|
-| 首页 | `/` | ✅ 正常 |
-| 工具匹配器 | `/matcher` | ✅ 正常 |
-| 订阅指南 | `/pricing` | ✅ 正常 |
-| 工作流 | `/workflows` | ✅ 正常 |
-| 对比分析 | `/comparison` | ✅ 正常 |
+| 棣栭〉 | `/` | 鉁?姝ｅ父 |
+| 宸ュ叿鍖归厤鍣?| `/matcher` | 鉁?姝ｅ父 |
+| 璁㈤槄鎸囧崡 | `/pricing` | 鉁?姝ｅ父 |
+| 宸ヤ綔娴?| `/workflows` | 鉁?姝ｅ父 |
+| 瀵规瘮鍒嗘瀽 | `/comparison` | 鉁?姝ｅ父 |
 
-### 构建测试
+### 鏋勫缓娴嬭瘯
 ```
-✓ 1492 modules transformed
-✓ built in 4.72s
+鉁?1492 modules transformed
+鉁?built in 4.72s
 ```
 
-所有新页面都被正确打包：
+鎵€鏈夋柊椤甸潰閮借姝ｇ‘鎵撳寘锛?
 - `Matcher-0l3uj_hr.js` (8.60 kB)
 - `Pricing-CmMMKHKo.js` (7.55 kB)
 - `Workflows-BXl8t3RF.js` (9.37 kB)
 
 ---
 
-## 服务器信息
+## 鏈嶅姟鍣ㄤ俊鎭?
 
-**开发服务器地址**: `http://127.0.0.1:8767/`
+**寮€鍙戞湇鍔″櫒鍦板潃**: `http://127.0.0.1:8767/`
 
-**启动命令**:
+**鍚姩鍛戒护**:
 ```bash
 cd ai_tools/ai-tools/website
 npm run dev
@@ -63,66 +67,66 @@ npm run dev
 
 ---
 
-## 修改的文件列表
+## 淇敼鐨勬枃浠跺垪琛?
 
-### 数据导入修复
-1. `src/components/ToolGrid.vue` - 添加 tools?.length 检查
-2. `src/components/SearchBar.vue` - 添加 allTags 检查
-3. `src/views/Matcher.vue` - 添加 scenarioGuard 检查
+### 鏁版嵁瀵煎叆淇
+1. `src/components/ToolGrid.vue` - 娣诲姞 tools?.length 妫€鏌?
+2. `src/components/SearchBar.vue` - 娣诲姞 allTags 妫€鏌?
+3. `src/views/Matcher.vue` - 娣诲姞 scenarioGuard 妫€鏌?
 
-### 配置修改
-4. `vite.config.js` - 更新端口为 8765，添加 host 配置
-
----
-
-## 如何访问
-
-### 浏览器访问
-直接访问: `http://127.0.0.1:8767/`
-
-### 导航栏入口
-页面顶部导航栏包含以下链接：
-- **工具列表** - 首页，展示所有 AI 工具
-- **工具匹配** - 交互式决策树工具匹配器
-- **订阅指南** - 定价和成本优化策略
-- **工作流** - 最佳实践工作流方案
-- **对比分析** - 工具横向对比
-
-### 移动端
-点击右上角汉堡菜单图标，查看所有导航链接
+### 閰嶇疆淇敼
+4. `vite.config.js` - 鏇存柊绔彛涓?8765锛屾坊鍔?host 閰嶇疆
 
 ---
 
-## 防御性编程改进
+## 濡備綍璁块棶
 
-所有数组访问现在都使用可选链操作符或条件检查：
+### 娴忚鍣ㄨ闂?
+鐩存帴璁块棶: `http://127.0.0.1:8767/`
+
+### 瀵艰埅鏍忓叆鍙?
+椤甸潰椤堕儴瀵艰埅鏍忓寘鍚互涓嬮摼鎺ワ細
+- **宸ュ叿鍒楄〃** - 棣栭〉锛屽睍绀烘墍鏈?AI 宸ュ叿
+- **宸ュ叿鍖归厤** - 浜や簰寮忓喅绛栨爲宸ュ叿鍖归厤鍣?
+- **璁㈤槄鎸囧崡** - 瀹氫环鍜屾垚鏈紭鍖栫瓥鐣?
+- **宸ヤ綔娴?* - 鏈€浣冲疄璺靛伐浣滄祦鏂规
+- **瀵规瘮鍒嗘瀽** - 宸ュ叿妯悜瀵规瘮
+
+### 绉诲姩绔?
+鐐瑰嚮鍙充笂瑙掓眽鍫¤彍鍗曞浘鏍囷紝鏌ョ湅鎵€鏈夊鑸摼鎺?
+
+---
+
+## 闃插尽鎬х紪绋嬫敼杩?
+
+鎵€鏈夋暟缁勮闂幇鍦ㄩ兘浣跨敤鍙€夐摼鎿嶄綔绗︽垨鏉′欢妫€鏌ワ細
 
 ```vue
-<!-- 之前 -->
+<!-- 涔嬪墠 -->
 {{ tools.length }}
 v-if="tools.length === 0"
 
-<!-- 之后 -->
+<!-- 涔嬪悗 -->
 {{ tools?.length || 0 }}
 v-if="!tools || tools.length === 0"
 ```
 
 ---
 
-## 后续建议
+## 鍚庣画寤鸿
 
-1. **错误边界**: 考虑添加全局错误处理组件
-2. **加载状态**: 为异步数据添加更好的加载状态
-3. **类型检查**: 考虑添加 TypeScript 以获得更好的类型安全
+1. **閿欒杈圭晫**: 鑰冭檻娣诲姞鍏ㄥ眬閿欒澶勭悊缁勪欢
+2. **鍔犺浇鐘舵€?*: 涓哄紓姝ユ暟鎹坊鍔犳洿濂界殑鍔犺浇鐘舵€?
+3. **绫诲瀷妫€鏌?*: 鑰冭檻娣诲姞 TypeScript 浠ヨ幏寰楁洿濂界殑绫诲瀷瀹夊叏
 
 ---
 
-## 总结
+## 鎬荤粨
 
-✅ 所有问题已修复
-✅ 服务器稳定运行在端口 8767
-✅ 所有页面可正常访问
-✅ 构建成功无错误
-✅ CLI 测试通过
+鉁?鎵€鏈夐棶棰樺凡淇
+鉁?鏈嶅姟鍣ㄧǔ瀹氳繍琛屽湪绔彛 8767
+鉁?鎵€鏈夐〉闈㈠彲姝ｅ父璁块棶
+鉁?鏋勫缓鎴愬姛鏃犻敊璇?
+鉁?CLI 娴嬭瘯閫氳繃
 
-项目现在可以正常使用了！
+椤圭洰鐜板湪鍙互姝ｅ父浣跨敤浜嗭紒

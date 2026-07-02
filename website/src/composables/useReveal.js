@@ -20,12 +20,21 @@ export function useReveal(options = {}) {
     if (!sectionRef.value) return
 
     // Respect prefers-reduced-motion
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const prefersReducedMotion =
+      typeof window.matchMedia === 'function' &&
+      window.matchMedia('(prefers-reduced-motion: reduce)').matches
+
+    if (prefersReducedMotion) {
       isRevealed.value = true
       return
     }
 
-    observer = new IntersectionObserver(
+    if (typeof window.IntersectionObserver !== 'function') {
+      isRevealed.value = true
+      return
+    }
+
+    observer = new window.IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
           isRevealed.value = true

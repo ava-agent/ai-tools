@@ -53,10 +53,9 @@
 
     <!-- Title with gradient text -->
     <h1
-      class="hero-entrance relative text-4xl sm:text-5xl font-bold tracking-tight"
+      class="hero-entrance relative text-4xl sm:text-5xl font-bold tracking-normal"
       style="
         --hero-delay: 0ms;
-        letter-spacing: -1.5px;
         line-height: 1.1;
         background: linear-gradient(
           135deg,
@@ -75,7 +74,7 @@
       class="hero-entrance text-base text-white/45 mt-3 max-w-md"
       style="--hero-delay: 120ms"
     >
-      基于真实项目经验的 AI 工具评测与选型指南
+      按场景、预算和核验状态筛选 AI 工具，先看结论，再查价格、风险与替代方案
     </p>
 
     <!-- Stats with glow -->
@@ -92,7 +91,7 @@
           class="text-3xl sm:text-4xl font-bold tabular-nums transition-all duration-300"
           :style="{ color: stat.color, textShadow: '0 0 40px ' + stat.color + '40' }"
         >
-          {{ animatedValues[stat.key] }}<span class="text-xl opacity-60">+</span>
+          {{ statValues[stat.key] }}<span class="text-xl opacity-60">+</span>
         </div>
         <div class="text-xs text-white/35 mt-1">
           {{ stat.label }}
@@ -110,13 +109,12 @@
       "
       @click="scrollToLandscape"
     >
-      浏览工具全景
+      按场景选工具
     </button>
   </section>
 </template>
 
 <script setup>
-import { onMounted, reactive } from 'vue'
 import { useToolsStore } from '../../stores/tools'
 import HeroConstellation from './HeroConstellation.vue'
 
@@ -141,27 +139,12 @@ const targetValues = {
   }, 0),
 }
 
-const animatedValues = reactive({ tools: 0, categories: 0, insights: 0 })
-
-function animateCount(key, target, duration = 1200) {
-  const start = performance.now()
-  function step(now) {
-    const progress = Math.min((now - start) / duration, 1)
-    const eased = 1 - Math.pow(1 - progress, 3) // ease-out cubic
-    animatedValues[key] = Math.round(eased * target)
-    if (progress < 1) requestAnimationFrame(step)
-  }
-  requestAnimationFrame(step)
-}
-
-onMounted(() => {
-  // Stagger the animations
-  setTimeout(() => animateCount('tools', targetValues.tools), 400)
-  setTimeout(() => animateCount('categories', targetValues.categories), 600)
-  setTimeout(() => animateCount('insights', targetValues.insights), 800)
-})
+const statValues = targetValues
 
 function scrollToLandscape() {
-  document.getElementById('landscape')?.scrollIntoView({ behavior: 'smooth' })
+  const prefersReducedMotion = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches
+  document
+    .getElementById('landscape')
+    ?.scrollIntoView({ behavior: prefersReducedMotion ? 'auto' : 'smooth' })
 }
 </script>

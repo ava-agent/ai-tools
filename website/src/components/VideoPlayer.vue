@@ -34,6 +34,7 @@
         :class="{ 'video-controls--visible': showCustomControls }"
       >
         <button
+          type="button"
           class="control-btn"
           :aria-label="isPlaying ? '暂停' : '播放'"
           @click="togglePlay"
@@ -48,22 +49,24 @@
           />
         </button>
 
-        <div
+        <input
           ref="progressRef"
-          class="progress-container"
-          @click="seekTo"
+          class="progress-slider"
+          type="range"
+          min="0"
+          :max="duration || 0"
+          step="0.1"
+          :value="currentTime"
+          aria-label="视频播放进度"
+          :aria-valuetext="`${formatTime(currentTime)} / ${formatTime(duration)}`"
+          :style="{ '--progress': progressPercent + '%' }"
+          @input="seekToValue"
         >
-          <div class="progress-bar">
-            <div
-              class="progress-filled"
-              :style="{ width: progressPercent + '%' }"
-            />
-          </div>
-        </div>
 
         <span class="time-display">{{ formatTime(currentTime) }} / {{ formatTime(duration) }}</span>
 
         <button
+          type="button"
           class="control-btn"
           aria-label="全屏"
           @click="toggleFullscreen"
@@ -73,15 +76,17 @@
       </div>
 
       <!-- 播放按钮覆盖层 -->
-      <div
+      <button
         v-if="!isPlaying && !hasStarted"
+        type="button"
         class="play-overlay"
+        aria-label="播放视频"
         @click="togglePlay"
       >
         <div class="play-button">
           <Play class="w-12 h-12" />
         </div>
-      </div>
+      </button>
     </div>
 
     <div
@@ -185,12 +190,9 @@ const onVideoError = () => {
   videoError.value = true
 }
 
-const seekTo = (event) => {
-  if (!videoRef.value || !progressRef.value) return
-
-  const rect = progressRef.value.getBoundingClientRect()
-  const percent = (event.clientX - rect.left) / rect.width
-  videoRef.value.currentTime = percent * duration.value
+const seekToValue = (event) => {
+  if (!videoRef.value) return
+  videoRef.value.currentTime = Number(event.target.value)
 }
 
 const toggleFullscreen = () => {
@@ -260,22 +262,62 @@ onUnmounted(() => {
 }
 
 .control-btn {
-  @apply flex items-center justify-center;
+  @apply flex min-h-11 min-w-11 items-center justify-center;
   @apply text-white hover:text-[#0a84ff] transition-colors;
   @apply bg-transparent border-none cursor-pointer;
-  @apply p-1 rounded;
+  @apply p-0 rounded-full;
 }
 
-.progress-container {
-  @apply flex-1 cursor-pointer;
+.control-btn:focus-visible {
+  outline: 2px solid #0a84ff;
+  outline-offset: 2px;
 }
 
-.progress-bar {
-  @apply h-1 bg-white/20 rounded-full overflow-hidden;
+@media (hover: none), (pointer: coarse) {
+  .video-controls {
+    @apply opacity-100;
+    pointer-events: auto;
+  }
 }
 
-.progress-filled {
-  @apply h-full bg-[#0a84ff] transition-all duration-100;
+.progress-slider {
+  @apply flex-1 h-11 cursor-pointer appearance-none bg-transparent;
+}
+
+.progress-slider::-webkit-slider-runnable-track {
+  height: 4px;
+  border-radius: 999px;
+  background: linear-gradient(to right, #0a84ff var(--progress), rgba(255, 255, 255, 0.2) var(--progress));
+}
+
+.progress-slider::-webkit-slider-thumb {
+  width: 16px;
+  height: 16px;
+  margin-top: -6px;
+  appearance: none;
+  border-radius: 999px;
+  background: #fff;
+  border: 2px solid #0a84ff;
+}
+
+.progress-slider::-moz-range-track {
+  height: 4px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.progress-slider::-moz-range-progress {
+  height: 4px;
+  border-radius: 999px;
+  background: #0a84ff;
+}
+
+.progress-slider::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  border-radius: 999px;
+  background: #fff;
+  border: 2px solid #0a84ff;
 }
 
 .time-display {
@@ -286,6 +328,7 @@ onUnmounted(() => {
   @apply absolute inset-0 flex items-center justify-center;
   @apply bg-black/40 cursor-pointer;
   @apply transition-opacity duration-300;
+  @apply border-none;
 }
 
 .play-button {

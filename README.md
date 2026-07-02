@@ -5,7 +5,7 @@
 <h1 align="center">AI Tools Handbook</h1>
 
 <p align="center">
-  <strong>125+ 款 AI 工具深度评测与选型指南 — 2026 深度集成与实战教学版</strong>
+  <strong>125+ 款 AI 工具深度评测与选型指南 — 持续核验的实战选型版</strong>
 </p>
 
 <p align="center">
@@ -25,7 +25,7 @@
 <p align="center">
   <img src="docs/screenshots/landing-hero.png" alt="Landing Page" width="800">
   <br>
-  <em>首页 — 星空节点网络背景 · 125+ 工具 · 7 大类别 · 1742 条实战洞察</em>
+  <em>首页 — 星空节点网络背景 · 125+ 工具 · 7 大类别 · 分批核验的实战洞察</em>
 </p>
 
 <details>
@@ -92,7 +92,7 @@
 |------|:----:|---------|
 | **AI 开发环境** | 13 | Cursor, Trae, Windsurf, Kiro, Qoder |
 | **AI 命令行** | 12 | Claude Code, Codex, Gemini CLI, Crush |
-| **AI 模型** | 18 | Claude 4.5, GPT-5.2, Gemini 3, DeepSeek, Qwen3 |
+| **AI 模型** | 18 | Claude, GPT / OpenAI, Gemini, DeepSeek V4, Qwen |
 | **AI 多模态** | 21 | Midjourney, 可灵, FLUX, Sora, ElevenLabs |
 | **AI 智能体** | 20 | Claude Agent SDK, Devin, Bolt.new, n8n |
 | **MCP 工具** | 22 | Context7, Playwright MCP, GitHub MCP, Supabase MCP |
@@ -114,6 +114,8 @@ npm run dev
 
 访问 http://localhost:8765 即可查看。
 
+> 内容维护提示：本项目正在按 2026-06-25 的目标分批核验高影响工具的价格、模型、额度和产品状态。未完成核验的具体价格/模型表述应按“待核验”处理，不建议直接视为实时结论。
+
 ### 配置 Supabase（可选）
 
 社区功能（评分、评论、云同步）需要 Supabase：
@@ -130,18 +132,18 @@ cp .env.example .env
 ## 技术栈
 
 ```
-Vue 3.4 + Vite 5 + Tailwind CSS 3.4 + Pinia + Vue Router + Supabase + Vercel
+Vue 3.4 + Vite 8 + Tailwind CSS 3.4 + Pinia + Vue Router + Supabase + Vercel
 ```
 
 | 层面 | 技术 |
 |------|------|
 | **前端框架** | Vue 3 Composition API + `<script setup>` |
-| **构建工具** | Vite 5，ES2020 目标，代码分割 |
+| **构建工具** | Vite 8，ES2020 目标，代码分割 |
 | **样式** | Tailwind CSS 深色主题 + Glassmorphism |
 | **状态管理** | Pinia（tools, ui, auth, gamification, achievements, community） |
 | **后端** | Supabase（认证、数据库、云同步） |
 | **部署** | Vercel（自动 CI/CD）/ Docker + Nginx |
-| **测试** | Vitest + Vue Test Utils |
+| **测试** | Vitest 4 + Vue Test Utils + V8 coverage |
 
 ---
 
@@ -153,7 +155,8 @@ npm run build            # 生产构建
 npm run preview          # 预览构建（:8766）
 npm run lint             # ESLint 检查（自动修复）
 npm run format           # Prettier 格式化
-npm run test             # Vitest 测试
+npm run test             # Vitest 一次性测试
+npm run test:watch       # Vitest watch 模式
 npm run test:coverage    # 测试覆盖率报告
 ```
 

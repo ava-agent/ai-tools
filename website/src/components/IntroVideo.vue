@@ -25,7 +25,9 @@
 
         <!-- Close Button -->
         <button
-          class="absolute top-4 right-4 z-10 p-2 bg-black/50 hover:bg-black/70 text-white/80 hover:text-white rounded-full backdrop-blur-sm transition-colors"
+          class="absolute top-4 right-4 z-10 flex min-h-11 min-w-11 items-center justify-center rounded-full bg-black/50 text-white/80 backdrop-blur-sm transition-colors hover:bg-black/70 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+          type="button"
+          aria-label="关闭介绍视频"
           @click="close"
         >
           <svg

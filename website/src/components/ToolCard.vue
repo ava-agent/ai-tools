@@ -1,5 +1,5 @@
 <template>
-  <router-link
+  <RouterLink
     :to="{ name: 'tool-detail', params: { id: tool.id } }"
     class="block"
   >
@@ -12,14 +12,19 @@
           size="sm"
         />
         <div class="min-w-0">
-          <div
-            class="text-sm font-semibold text-white truncate"
-            style="letter-spacing: -0.2px;"
-          >
+          <div class="text-sm font-semibold text-white truncate">
             {{ tool.name }}
           </div>
-          <div class="text-[11px] text-white/40 truncate">
-            {{ tool.developer }}
+          <div class="flex items-center gap-1.5 min-w-0">
+            <div class="text-[11px] text-white/40 truncate">
+              {{ tool.developer }}
+            </div>
+            <span
+              :class="verificationClass"
+              :title="verification.description"
+            >
+              {{ verification.label }}
+            </span>
           </div>
         </div>
       </div>
@@ -44,19 +49,25 @@
         </div>
       </div>
     </article>
-  </router-link>
+  </RouterLink>
 </template>
 
 <script setup>
+import { computed } from 'vue'
+import { RouterLink } from 'vue-router'
 import ToolLogo from './ToolLogo.vue'
 import StarRating from './StarRating.vue'
+import { getToolVerification, getVerificationBadgeClass } from '../utils/toolMetadata'
 
-defineProps({
+const props = defineProps({
   tool: {
     type: Object,
     required: true
   }
 })
+
+const verification = computed(() => getToolVerification(props.tool))
+const verificationClass = computed(() => getVerificationBadgeClass(props.tool))
 </script>
 
 <style scoped>

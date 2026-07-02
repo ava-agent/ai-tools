@@ -53,7 +53,7 @@ export function useShareCard() {
     // Footer
     ctx.fillStyle = '#475569'
     ctx.font = '12px sans-serif'
-    ctx.fillText('AI工具全书 — 2026深度集成与实战教学版', 40, 300)
+    ctx.fillText('AI工具全书 — 持续核验的实战选型指南', 40, 300)
 
     return canvas
   }
@@ -101,7 +101,7 @@ export function useShareCard() {
     // Footer
     ctx.fillStyle = '#475569'
     ctx.font = '12px sans-serif'
-    ctx.fillText('AI工具全书 — 2026深度集成与实战教学版', 40, 300)
+    ctx.fillText('AI工具全书 — 持续核验的实战选型指南', 40, 300)
 
     return canvas
   }

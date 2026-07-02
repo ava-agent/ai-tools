@@ -7,6 +7,10 @@ const stubs = {
     template: '<a :href="to"><slot /></a>',
     props: ['to'],
   },
+  RouterLink: {
+    template: '<a :href="to"><slot /></a>',
+    props: ['to'],
+  },
   ToolLogo: { template: '<div class="tool-logo-stub" />' },
 }
 
@@ -59,5 +63,22 @@ describe('ToolCard', () => {
   it('renders ToolLogo component', () => {
     const wrapper = mountCard()
     expect(wrapper.find('.tool-logo-stub').exists()).toBe(true)
+  })
+
+  it('shows conservative verification status by default', () => {
+    const wrapper = mountCard()
+    expect(wrapper.text()).toContain('待核验')
+  })
+
+  it('shows verified status when source metadata is present', () => {
+    const wrapper = mountCard({
+      tool: {
+        ...tool,
+        verificationStatus: 'verified',
+        lastVerified: '2026-06-25',
+        sources: ['https://example.com'],
+      },
+    })
+    expect(wrapper.text()).toContain('已核验')
   })
 })

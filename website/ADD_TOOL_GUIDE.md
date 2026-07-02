@@ -175,7 +175,7 @@ tags: ['推荐', 'VS Code 系', 'Agentic', '行业标杆']
 
 #### 特殊标签
 - `DeepSeek` - DeepSeek 相关
-- `GPT-4` - GPT-4 相关
+- `OpenAI` - OpenAI / GPT Image / GPT 模型生态相关
 - `Claude` - Claude 相关
 - `行业标杆` - 行业标杆产品
 
@@ -218,7 +218,7 @@ CLI 工具需要额外说明安装方式和使用命令：
     {
       type: 'Global',
       pricing: '免费',
-      models: 'GPT-4',
+      models: '以官方当前开放模型为准',
       link: 'https://example.com',
       install: 'npm install -g ai-cli',  // 安装命令
       usage: 'ai-cli generate'           // 使用示例
@@ -241,8 +241,8 @@ API 服务需要说明认证方式和调用示例：
   versions: [
     {
       type: 'Global',
-      pricing: '按量计费 ($0.01/1K tokens)',
-      models: 'GPT-4, Claude 3.5',
+      pricing: '按官方 pricing / calculator 估算',
+      models: '以官方当前开放模型为准',
       link: 'https://api.example.com',
       auth: 'Bearer Token',              // 认证方式
       endpoint: 'https://api.example.com/v1/chat'  // API 端点
@@ -266,7 +266,7 @@ API 服务需要说明认证方式和调用示例：
     {
       type: 'Global',
       pricing: '免费',
-      models: 'GPT-4',
+      models: '以官方当前开放模型为准',
       link: 'https://example.com',
       browsers: ['Chrome', 'Firefox', 'Edge', 'Safari'],  // 支持的浏览器
       install: 'Chrome Web Store 搜索安装'
@@ -385,7 +385,7 @@ npm run build
     {
       type: 'Global',
       pricing: '订阅制 ($20/mo)',
-      models: 'Composer-1 (Claude 3.5), GPT-4o, o1',
+      models: '以产品内当前可用模型为准',
       link: 'https://cursor.sh'
     }
   ],
@@ -428,7 +428,7 @@ npm run build
     {
       type: 'Global',
       pricing: '按量计费 / 订阅制',
-      models: 'Claude 3.5 Sonnet, Claude 3 Opus, Claude 3 Haiku',
+      models: '以 Anthropic 当前可用 Claude 模型为准',
       link: 'https://claude.ai'
     }
   ],
@@ -438,19 +438,19 @@ npm run build
     '支持多模态输入',
     'API 稳定可靠'
   ],
-  cons: ['相比 GPT-4 在某些创意任务上稍弱', '国内访问需要网络环境', 'API 价格相对较高'],
+  cons: ['部分创意任务需与其他模型交叉验证', '国内访问需要网络环境', 'API 价格相对较高'],
   bestFor: '代码审查、文档生成、复杂推理任务、需要长上下文的场景',
   funRanking: '夯夯',
   personalExperience: {
     rating: 5,
-    insights: 'Claude 3.5 Sonnet 是目前最均衡的模型之一。代码理解能力极强，特别适合代码审查和重构任务。200K 上下文窗口是巨大优势。',
+    insights: 'Claude 模型适合代码理解、代码审查和复杂重构任务；具体模型名、上下文和额度应按 Anthropic 当前文档与订阅/API 路径核验。',
     pitfalls: ['长上下文消耗 token 较快，注意成本控制。', '国内访问不稳定，建议使用代理。']
   },
   swot: {
     S: '代码理解能力强，上下文窗口大，安全性高',
     W: 'API 价格较高，国内访问受限',
     O: '企业级应用市场巨大，多模态能力拓展',
-    T: 'GPT-4 的持续迭代，开源模型的竞争'
+    T: 'OpenAI、Gemini、开源模型的持续竞争'
   },
   tags: ['推荐', 'LLM', '代码理解', '长上下文']
 }
@@ -468,7 +468,7 @@ npm run build
     {
       type: 'Global',
       pricing: '订阅制 ($10/mo)',
-      models: 'GPT-4, Codex',
+      models: '以 GitHub Copilot 当前模型与 AI credits 开放为准',
       link: 'https://github.com/features/copilot'
     }
   ],
@@ -558,8 +558,8 @@ npm run build
   versions: [
     {
       type: 'Global',
-      pricing: '按量计费 (GPT-4: $0.03/1K tokens)',
-      models: 'GPT-4, GPT-3.5, DALL-E 3, Whisper',
+      pricing: '按官方 pricing / calculator 估算',
+      models: '以 OpenAI 当前文本、图像、音频模型为准',
       link: 'https://platform.openai.com',
       auth: 'Bearer Token (sk-...)'
     }
@@ -575,7 +575,7 @@ npm run build
   funRanking: '夯夯',
   personalExperience: {
     rating: 5,
-    insights: 'OpenAI API 是目前最成熟的 AI API 服务。GPT-4 的质量仍然是业界标杆，API 设计简洁易用。适合作为主要 AI 能力提供商。',
+    insights: 'OpenAI API 生态成熟，覆盖文本、图像、音频、工具调用和 Agent 工作流；具体模型、价格和工具计费应按官方当前文档核验。',
     pitfalls: [
       '注意控制 token 使用量，成本可能较高。',
       '国内访问不稳定，建议使用代理或国内替代方案。'
@@ -587,7 +587,7 @@ npm run build
     O: '企业市场、多模态应用',
     T: '开源模型竞争、国内厂商'
   },
-  tags: ['推荐', 'API', 'GPT-4', '多模态', '商业']
+  tags: ['推荐', 'API', 'OpenAI', '多模态', '商业']
 }
 ```
 
@@ -603,7 +603,7 @@ npm run build
     {
       type: 'Global',
       pricing: '免费 / Pro ($20/mo)',
-      models: 'GPT-4, Claude 3, Perplexity Model',
+      models: '以产品内当前可用模型为准',
       link: 'https://perplexity.ai',
       browsers: ['Chrome', 'Firefox', 'Edge', 'Safari'],
       install: 'Chrome Web Store 搜索 "Perplexity AI"'
@@ -648,7 +648,7 @@ npm run build
     {
       type: 'Global',
       pricing: '免费 / Pro ($20/mo)',
-      models: 'Claude 3.5 Sonnet, Claude 3 Opus',
+      models: '以 Anthropic 当前可用 Claude 模型为准',
       link: 'https://claude.ai/download',
       platforms: ['macOS', 'Windows', 'Linux']
     }
@@ -691,8 +691,8 @@ npm run build
   versions: [
     {
       type: 'Global',
-      pricing: '免费 / Pro ($15/mo)',
-      models: 'GPT-4, Claude 3.5',
+      pricing: '免费 / Pro（以官方 pricing 为准）',
+      models: '以产品内当前可用模型为准',
       link: 'https://codegpt.com/review'
     }
   ],
@@ -731,7 +731,7 @@ npm run build
 
 **注意事项：**
 - 重点描述代码补全、多文件编辑、项目索引等核心功能
-- `versions.models` 应列出支持的 AI 模型（如 Composer-1、GPT-4o）
+- `versions.models` 应优先写“以产品内当前可用模型为准”，只有已核验来源时才列具体模型名
 - `bestFor` 应明确适用的开发场景（前端、后端、全栈等）
 - `personalExperience.pitfalls` 应包含隐私设置、网络环境等实用建议
 

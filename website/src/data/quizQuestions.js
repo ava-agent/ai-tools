@@ -3,6 +3,8 @@
  * 4 question types: guess-tool, true-false, pricing, scenario
  */
 
+import { hasMeaningfulContextWindow } from '../utils/toolMetadata'
+
 function shuffle(arr) {
   const a = [...arr]
   for (let i = a.length - 1; i > 0; i--) {
@@ -87,7 +89,7 @@ function generateTrueFalse(tools) {
 function generateScenario(tools) {
   const scenarios = [
     { scenario: '我需要一个免费的 AI IDE 来进行日常开发', filter: t => t.category === 'ide' && t.freeQuota },
-    { scenario: '我需要一个能处理超长代码文件的工具', filter: t => t.contextWindow },
+    { scenario: '我需要一个能处理超长代码文件的工具', filter: t => hasMeaningfulContextWindow(t.contextWindow) },
     { scenario: '我需要进行深度技术调研和分析', filter: t => t.category === 'llm' },
     { scenario: '我想在终端中使用 AI 编程助手', filter: t => t.category === 'cli' },
     { scenario: '我需要用自然语言快速生成 Web 应用', filter: t => t.category === 'ide' && t.tags?.includes('云端') },

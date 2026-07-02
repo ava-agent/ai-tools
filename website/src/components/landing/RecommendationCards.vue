@@ -6,24 +6,26 @@
     :class="{ revealed: isRevealed }"
   >
     <h2
-      class="reveal-item text-2xl font-bold text-white tracking-tight mb-2"
+      class="reveal-item text-2xl font-bold text-white tracking-normal mb-2"
       style="--reveal-i: 0"
     >
-      我的推荐栈
+      按场景选工具
     </h2>
     <p
       class="reveal-item text-sm text-white/35 mb-8"
       style="--reveal-i: 1"
     >
-      基于日常使用的个人工具组合
+      先按任务缩小范围，再进入详情核对价格、风险和替代方案
     </p>
 
     <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-      <div
+      <RouterLink
         v-for="(rec, index) in recommendations"
         :key="rec.id"
-        class="reveal-item rec-card glass-card p-4 flex gap-3 relative overflow-hidden"
+        :to="{ name: 'tools', query: { scenario: rec.id } }"
+        class="reveal-item rec-card glass-card glass-card-interactive p-4 flex gap-3 relative overflow-hidden focus:outline-none focus-visible:ring-2 focus-visible:ring-accent/70"
         :style="{ '--reveal-i': index + 2 }"
+        :aria-label="`${rec.label}：${rec.insight}`"
       >
         <!-- Scene background decoration -->
         <img
@@ -54,7 +56,7 @@
             {{ rec.insight }}
           </div>
         </div>
-      </div>
+      </RouterLink>
     </div>
   </section>
 </template>
@@ -72,7 +74,8 @@ const recBgMap = {
   'daily-coding': '/images/landing/rec-coding.png',
   'complex-refactor': '/images/landing/rec-refactor.png',
   'free-stack': '/images/landing/rec-free.png',
-  'visual-design': '/images/landing/rec-design.png',
+  'long-context': '/images/landing/rec-refactor.png',
+  'visual-generation': '/images/landing/rec-design.png',
 }
 
 function getToolName(toolId) {

@@ -61,6 +61,27 @@ export function resolveToolId(name, tools, excludeNames = []) {
   return partial?.id || null
 }
 
+export function resolveToolLinks(label, tools, explicitIds = []) {
+  const catalog = Array.isArray(tools) ? tools : []
+  const ids = Array.isArray(explicitIds) ? explicitIds.filter(Boolean) : []
+
+  if (ids.length > 0) {
+    return ids
+      .map(id => catalog.find(tool => tool.id === id))
+      .filter(Boolean)
+      .map(tool => ({ id: tool.id, name: tool.name }))
+  }
+
+  if (!label || label.includes('/')) {
+    return []
+  }
+
+  const id = resolveToolId(label, catalog)
+  const tool = id ? catalog.find(item => item.id === id) : null
+
+  return tool ? [{ id: tool.id, name: tool.name }] : []
+}
+
 export function getTagColor(tag) {
   const colors = {
     // 通用标签
@@ -109,7 +130,6 @@ export function getTagColor(tag) {
     教学: 'bg-violet-500',
     部署: 'bg-emerald-500',
     BYOK: 'bg-gray-600',
-    最强: 'bg-yellow-500',
     Git: 'bg-orange-600',
     多IDE: 'bg-purple-500',
     // 多模态

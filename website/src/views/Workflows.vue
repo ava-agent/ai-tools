@@ -5,7 +5,6 @@
       <div class="text-center mb-12">
         <h1
           class="text-[28px] font-bold text-white mb-4"
-          style="letter-spacing: -0.8px"
         >
           AI 工作流最佳实践
         </h1>
@@ -22,6 +21,8 @@
             :key="workflow.id"
             class="pill cursor-pointer"
             :class="selectedWorkflow === workflow.id ? 'pill-active' : 'pill-inactive'"
+            :aria-pressed="selectedWorkflow === workflow.id"
+            :data-testid="`workflow-tab-${workflow.id}`"
             @click="selectedWorkflow = workflow.id"
           >
             <component
@@ -38,7 +39,7 @@
         v-if="currentWorkflow"
         class="mb-12"
       >
-        <div class="glass-card p-4">
+        <div class="workflow-detail-card glass-card p-4">
           <div class="mb-6">
             <h2 class="text-3xl font-bold text-white mb-2">
               {{ currentWorkflow.nameZh }}
@@ -46,6 +47,57 @@
             <p class="text-lg text-white/70">
               {{ currentWorkflow.description }}
             </p>
+          </div>
+
+          <!-- Recommended Stack -->
+          <div
+            v-if="currentRecommendedStack.length"
+            class="mb-8"
+          >
+            <h3 class="text-xl font-bold text-white mb-4 flex items-center">
+              <Target class="w-5 h-5 text-[#0a84ff] mr-2" />
+              推荐工具栈
+            </h3>
+            <div class="grid md:grid-cols-2 gap-3">
+              <div
+                v-for="item in currentRecommendedStack"
+                :key="`${item.role}-${item.toolName}`"
+                class="border-l-2 border-white/[0.12] py-2 pl-4"
+              >
+                <div class="flex items-center justify-between gap-3 mb-2">
+                  <span class="text-[12px] font-semibold text-[#0a84ff]">{{ item.role }}</span>
+                  <span
+                    v-if="item.tool"
+                    :class="getWorkflowVerificationClass(item.tool)"
+                    :title="getWorkflowVerification(item.tool).description"
+                  >
+                    {{ getWorkflowVerification(item.tool).label }}
+                  </span>
+                </div>
+                <router-link
+                  v-if="item.tool"
+                  :to="{ name: 'tool-detail', params: { id: item.tool.id } }"
+                  class="text-base font-semibold text-white hover:text-primary transition-colors"
+                >
+                  {{ item.tool.name }}
+                </router-link>
+                <div
+                  v-else
+                  class="text-base font-semibold text-white"
+                >
+                  {{ item.toolName }}
+                </div>
+                <p class="text-xs text-white/55 leading-relaxed mt-2">
+                  {{ item.reason }}
+                </p>
+                <p
+                  v-if="item.tool && getWorkflowVerification(item.tool).lastVerified"
+                  class="text-[11px] text-white/35 mt-2"
+                >
+                  核验于 {{ getWorkflowVerification(item.tool).lastVerified }}
+                </p>
+              </div>
+            </div>
           </div>
 
           <!-- Steps -->
@@ -58,31 +110,57 @@
               <div
                 v-for="step in currentWorkflow.steps"
                 :key="step.step"
-                class="glass-card p-4 flex items-start"
+                class="border-l-2 border-white/[0.12] py-2 pl-4 flex flex-col items-start gap-3 sm:flex-row"
+                :data-testid="`workflow-step-${step.step}`"
               >
-                <div class="flex-shrink-0 w-10 h-10 bg-[#0a84ff]/20 rounded-full flex items-center justify-center mr-4">
+                <div class="flex-shrink-0 w-10 h-10 bg-[#0a84ff]/20 rounded-full flex items-center justify-center sm:mr-1">
                   <span class="text-[#0a84ff] font-bold">{{ step.step }}</span>
                 </div>
-                <div class="flex-1">
-                  <div class="flex items-center mb-2">
-                    <h4 class="text-lg font-semibold text-white mr-3">
+                <div
+                  class="min-w-0 flex-1"
+                  :data-testid="`workflow-step-content-${step.step}`"
+                >
+                  <div
+                    class="mb-2 flex flex-col gap-2 sm:flex-row sm:items-center"
+                    :data-testid="`workflow-step-action-row-${step.step}`"
+                  >
+                    <h4
+                      class="text-lg font-semibold text-white break-words sm:mr-3"
+                      :data-testid="`workflow-step-action-${step.step}`"
+                    >
                       {{ step.action }}
                     </h4>
-                    <router-link
-                      v-if="resolveToolId(step.tool)"
-                      :to="{ name: 'tool-detail', params: { id: resolveToolId(step.tool) } }"
-                      class="px-2 py-1 bg-[#0a84ff]/20 text-[#0a84ff] text-xs rounded-full hover:bg-[#0a84ff]/30 transition-colors"
+                    <div
+                      v-if="resolveWorkflowStepTools(step).length"
+                      class="flex flex-wrap items-center gap-1.5"
                     >
-                      {{ step.tool }}
-                    </router-link>
+                      <template
+                        v-for="tool in resolveWorkflowStepTools(step)"
+                        :key="tool.id"
+                      >
+                        <router-link
+                          :to="{ name: 'tool-detail', params: { id: tool.id } }"
+                          class="break-words px-2 py-1 bg-[#0a84ff]/20 text-[#0a84ff] text-xs rounded-full hover:bg-[#0a84ff]/30 transition-colors"
+                          :data-testid="`workflow-step-${step.step}-tool-${tool.id}`"
+                        >
+                          {{ tool.name }}
+                        </router-link>
+                        <span
+                          :class="getWorkflowVerificationClass(tool)"
+                          :title="getWorkflowVerification(tool).description"
+                        >
+                          {{ getWorkflowVerification(tool).label }}
+                        </span>
+                      </template>
+                    </div>
                     <span
                       v-else
-                      class="px-2 py-1 bg-[#0a84ff]/20 text-[#0a84ff] text-xs rounded-full"
+                      class="break-words px-2 py-1 bg-[#0a84ff]/20 text-[#0a84ff] text-xs rounded-full"
                     >
                       {{ step.tool }}
                     </span>
                   </div>
-                  <p class="text-white/60 text-sm">
+                  <p class="text-white/60 text-sm break-words">
                     <Lightbulb class="w-4 h-4 inline text-yellow-500 mr-1" />
                     {{ step.tip }}
                   </p>
@@ -94,7 +172,7 @@
           <!-- Tips -->
           <div
             v-if="currentWorkflow.tips && currentWorkflow.tips.length"
-            class="glass-card p-4 border-l-2 border-[#0a84ff]"
+            class="rounded-lg border border-white/[0.06] border-l-2 border-l-[#0a84ff] bg-white/[0.03] p-4"
           >
             <h4 class="text-lg font-semibold text-blue-400 mb-3 flex items-center">
               <Info class="w-5 h-5 mr-2" />
@@ -121,7 +199,7 @@
               <ImageIcon class="w-5 h-5 text-[#0a84ff] mr-2" />
               流程图
             </h4>
-            <div class="glass-card p-4">
+            <div class="border-l-2 border-white/[0.12] py-2 pl-4">
               <img
                 :src="currentWorkflow.flowImage"
                 :alt="currentWorkflow.nameZh + ' 流程图'"
@@ -343,7 +421,8 @@ import {
 } from 'lucide-vue-next'
 import { useUIStore } from '../stores/ui'
 import { useToolsStore } from '../stores/tools'
-import { getCategoryLabel, resolveToolId as _resolveToolId } from '../utils/helpers'
+import { getCategoryLabel, resolveToolId as _resolveToolId, resolveToolLinks } from '../utils/helpers'
+import { getToolVerification, getVerificationBadgeClass } from '../utils/toolMetadata'
 import { workflows, pitfalls, promptTemplates } from '../data/workflows.js'
 
 const uiStore = useUIStore()
@@ -355,11 +434,41 @@ function resolveToolId(name) {
   return _resolveToolId(name, toolsStore.tools, WORKFLOW_EXCLUDE_NAMES)
 }
 
+function resolveWorkflowTool(name) {
+  const id = resolveToolId(name)
+  if (!id) return null
+  return toolsStore.getToolById(id) || null
+}
+
+function resolveWorkflowStepTools(step) {
+  return resolveToolLinks(step.tool, toolsStore.tools, step.toolIds)
+    .map(link => toolsStore.getToolById(link.id))
+    .filter(Boolean)
+}
+
 const selectedWorkflow = ref(workflows[0]?.id || 'daily-dev')
 
 const currentWorkflow = computed(() => {
   return workflows.find(w => w.id === selectedWorkflow.value)
 })
+
+const currentRecommendedStack = computed(() => {
+  return (currentWorkflow.value?.recommendedStack || []).map((item) => {
+    return {
+      ...item,
+      toolName: item.tool,
+      tool: resolveWorkflowTool(item.tool),
+    }
+  })
+})
+
+function getWorkflowVerification(tool) {
+  return getToolVerification(tool)
+}
+
+function getWorkflowVerificationClass(tool) {
+  return getVerificationBadgeClass(tool)
+}
 
 function getCategoryIcon(category) {
   const icons = {

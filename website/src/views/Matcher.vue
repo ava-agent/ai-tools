@@ -5,7 +5,6 @@
       <div class="text-center mb-10">
         <h1
           class="text-[28px] font-bold text-white mb-3"
-          style="letter-spacing: -0.8px"
         >
           AI 工具匹配器
         </h1>
@@ -19,6 +18,8 @@
         <button
           v-for="cat in categories"
           :key="cat.id"
+          type="button"
+          :aria-pressed="selectedCategory === cat.id"
           class="pill transition-all duration-200"
           :class="selectedCategory === cat.id ? 'pill-active' : 'pill-inactive'"
           @click="selectCategory(cat.id)"
@@ -26,6 +27,7 @@
           <component
             :is="getCategoryIcon(cat.icon)"
             class="w-4 h-4 mr-1.5"
+            aria-hidden="true"
           />
           {{ cat.nameZh }}
         </button>
@@ -36,7 +38,10 @@
         v-if="selectedCategory && currentDecision"
         class="mx-auto"
       >
-        <div class="glass-card p-5">
+        <div
+          class="glass-card p-5"
+          data-testid="matcher-decision-card"
+        >
           <h2 class="text-lg font-bold text-white mb-5">
             {{ currentDecision.title }}
           </h2>
@@ -46,7 +51,7 @@
             v-if="currentNode && !currentNode.result"
             class="mb-4"
           >
-            <div class="glass-card p-4 mb-4">
+            <div class="mb-4 border-l-2 border-primary/45 py-1 pl-4">
               <p class="text-[15px] text-white font-medium leading-relaxed">
                 {{ currentNode.question }}
               </p>
@@ -59,16 +64,26 @@
             >
               <button
                 class="pill pill-active py-3 text-sm"
+                type="button"
+                aria-label="回答 是"
                 @click="goTo('yes')"
               >
-                <Check class="w-4 h-4 mr-1.5 inline" />
+                <Check
+                  class="w-4 h-4 mr-1.5 inline"
+                  aria-hidden="true"
+                />
                 是
               </button>
               <button
                 class="pill pill-inactive py-3 text-sm"
+                type="button"
+                aria-label="回答 否"
                 @click="goTo('no')"
               >
-                <X class="w-4 h-4 mr-1.5 inline" />
+                <X
+                  class="w-4 h-4 mr-1.5 inline"
+                  aria-hidden="true"
+                />
                 否
               </button>
             </div>
@@ -76,11 +91,14 @@
             <!-- Multiple Options -->
             <div
               v-else-if="currentNode.options"
-              class="grid grid-cols-2 gap-3"
+              class="grid grid-cols-1 gap-3 sm:grid-cols-2"
+              data-testid="matcher-multi-options"
             >
               <button
                 v-for="option in currentNode.options"
                 :key="option.label"
+                type="button"
+                :aria-label="`选择 ${option.label}`"
                 class="pill pill-inactive py-3 text-sm"
                 @click="goToOption(option)"
               >
@@ -94,21 +112,58 @@
             v-else-if="currentNode && currentNode.result"
             class="text-center py-4"
           >
-            <div class="glass-card p-5 mb-5">
+            <div class="mb-5">
               <div class="inline-flex items-center justify-center w-14 h-14 bg-[rgba(48,209,88,0.1)] rounded-full mb-4">
-                <CheckCircle2 class="w-8 h-8 text-[#30d158]" />
+                <CheckCircle2
+                  class="w-8 h-8 text-[#30d158]"
+                  aria-hidden="true"
+                />
               </div>
               <h3 class="text-xl font-bold text-white mb-2">
                 推荐工具：
-                <router-link
-                  v-if="resolveToolId(currentNode.result)"
-                  :to="{ name: 'tool-detail', params: { id: resolveToolId(currentNode.result) } }"
-                  class="text-[#30d158] hover:text-[#30d158]/80 underline decoration-[#30d158]/30 hover:decoration-[#30d158] transition-all"
+                <span
+                  :data-testid="currentResultLinks.length ? 'matcher-result-label' : 'matcher-result-unlinked'"
                 >
                   {{ currentNode.result }}
-                </router-link>
-                <span v-else>{{ currentNode.result }}</span>
+                </span>
               </h3>
+              <div
+                v-if="currentResultLinks.length"
+                class="mb-3 flex flex-wrap justify-center gap-2"
+                data-testid="matcher-result-links"
+              >
+                <router-link
+                  v-for="link in currentResultLinks"
+                  :key="link.id"
+                  :to="{ name: 'tool-detail', params: { id: link.id } }"
+                  :data-testid="`matcher-result-tool-link-${link.id}`"
+                  class="pill pill-active text-xs py-1.5 px-3"
+                >
+                  {{ link.name }}
+                </router-link>
+              </div>
+              <div
+                v-if="currentResultVerificationLinks.length"
+                class="mb-3 flex flex-wrap justify-center gap-2"
+                data-testid="matcher-result-verification"
+              >
+                <span
+                  v-for="link in currentResultVerificationLinks"
+                  :key="link.id"
+                  :class="getVerificationBadgeClass(link.tool)"
+                  :title="getToolVerification(link.tool).description"
+                  :data-testid="`matcher-result-verification-${link.id}`"
+                >
+                  {{ getToolVerification(link.tool).label }}
+                </span>
+              </div>
+              <p
+                v-if="hasNeedsReview(currentResultVerificationLinks)"
+                class="mb-3 text-xs text-white/45"
+                data-testid="matcher-result-verification-note"
+              >
+                资料仍需复核，请点进详情页查看来源状态。
+              </p>
               <div class="inline-block px-3 py-1 rounded-full text-xs font-medium text-[#30d158] bg-[rgba(48,209,88,0.1)] mb-3">
                 最佳匹配
               </div>
@@ -116,17 +171,24 @@
                 {{ currentNode.reason }}
               </p>
             </div>
-            <div class="flex gap-3 justify-center">
+            <div
+              class="flex flex-wrap gap-3 justify-center"
+              data-testid="matcher-result-actions"
+            >
               <button
-                class="pill pill-inactive py-2.5 px-5 text-sm"
+                class="pill pill-inactive min-h-11 justify-center py-2.5 px-5 text-sm"
+                type="button"
                 @click="resetDecision"
               >
-                <RotateCcw class="w-4 h-4 mr-1.5 inline" />
+                <RotateCcw
+                  class="w-4 h-4 mr-1.5 inline"
+                  aria-hidden="true"
+                />
                 重新选择
               </button>
               <router-link
                 to="/"
-                class="btn-capsule text-sm"
+                class="btn-capsule min-h-11 justify-center text-sm"
               >
                 查看工具列表
               </router-link>
@@ -142,35 +204,53 @@
       >
         <h2
           class="text-lg font-bold text-white mb-4 flex items-center"
-          style="letter-spacing: -0.3px"
         >
-          <Lightbulb class="w-5 h-5 text-yellow-500 mr-2" />
+          <Lightbulb
+            class="w-5 h-5 text-yellow-500 mr-2"
+            aria-hidden="true"
+          />
           快速场景对照表
         </h2>
         <div class="space-y-2">
           <div
-            v-for="scenario in (scenarioGuide || [])"
+            v-for="scenario in scenarioRows"
             :key="scenario.scenario"
             class="info-cell"
           >
-            <div class="flex items-center justify-between flex-wrap gap-2">
-              <span class="text-sm text-white/90 font-medium">{{ scenario.scenario }}</span>
-              <div class="flex items-center gap-2">
-                <router-link
-                  v-if="resolveToolId(scenario.primary)"
-                  :to="{ name: 'tool-detail', params: { id: resolveToolId(scenario.primary) } }"
-                  class="pill pill-active text-xs py-1 px-3"
-                >
-                  {{ scenario.primary }}
-                </router-link>
+            <div class="flex items-center justify-between flex-wrap gap-2 min-w-0">
+              <span class="min-w-0 break-words text-sm text-white/90 font-medium">{{ scenario.scenario }}</span>
+              <div
+                class="flex flex-wrap items-center justify-end gap-2 min-w-0"
+                data-testid="matcher-scenario-link-row"
+              >
+                <template v-if="scenario.primaryLinks.length">
+                  <router-link
+                    v-for="link in scenario.primaryLinks"
+                    :key="link.id"
+                    :to="{ name: 'tool-detail', params: { id: link.id } }"
+                    :data-testid="`matcher-scenario-tool-link-${link.id}`"
+                    class="pill pill-active text-xs py-1 px-3"
+                  >
+                    {{ link.name }}
+                  </router-link>
+                  <span
+                    v-for="link in scenario.primaryVerificationLinks"
+                    :key="`verification-${link.id}`"
+                    :class="getVerificationBadgeClass(link.tool)"
+                    :title="getToolVerification(link.tool).description"
+                    :data-testid="`matcher-scenario-verification-${link.id}`"
+                  >
+                    {{ getToolVerification(link.tool).label }}
+                  </span>
+                </template>
                 <span
                   v-else
                   class="pill pill-active text-xs py-1 px-3"
                 >
                   {{ scenario.primary }}
                 </span>
-                <span class="text-xs text-white/40">{{ scenario.backup }}</span>
-                <span class="text-xs text-white/40">{{ scenario.budget }}</span>
+                <span class="min-w-0 break-words text-xs text-white/40">{{ scenario.backup }}</span>
+                <span class="min-w-0 break-words text-xs text-white/40">{{ scenario.budget }}</span>
               </div>
             </div>
           </div>
@@ -181,9 +261,11 @@
       <div class="mx-auto mt-10">
         <h2
           class="text-lg font-bold text-white mb-4 flex items-center"
-          style="letter-spacing: -0.3px"
         >
-          <Zap class="w-5 h-5 text-yellow-500 mr-2" />
+          <Zap
+            class="w-5 h-5 text-yellow-500 mr-2"
+            aria-hidden="true"
+          />
           快速选型指南
         </h2>
         <div class="grid md:grid-cols-2 gap-3">
@@ -205,7 +287,10 @@
                 <span class="text-white/50">备选: {{ guide.secondary }}</span>
               </div>
               <div class="flex items-start mt-2 pt-2 border-t border-white/[0.06]">
-                <Lightbulb class="w-3.5 h-3.5 text-yellow-500 mr-1.5 mt-0.5 flex-shrink-0" />
+                <Lightbulb
+                  class="w-3.5 h-3.5 text-yellow-500 mr-1.5 mt-0.5 flex-shrink-0"
+                  aria-hidden="true"
+                />
                 <span class="text-white/50 text-[11px] leading-relaxed">{{ guide.tip }}</span>
               </div>
             </div>
@@ -236,16 +321,27 @@ import {
 import { useToolsStore } from '../stores/tools'
 import { useGamificationStore } from '../stores/gamification'
 import { useAchievementsStore } from '../stores/achievements'
-import { resolveToolId as _resolveToolId } from '../utils/helpers'
-import { decisionTrees, scenarioGuide } from '../data/decisions.js'
+import { resolveToolLinks as _resolveToolLinks } from '../utils/helpers'
+import { getToolVerification, getVerificationBadgeClass } from '../utils/toolMetadata.js'
+import { getDecisionTree, scenarioGuide } from '../data/decisions.js'
 import { quickSelectionGuide, categories } from '../data/categories.js'
 
 const toolsStore = useToolsStore()
 const gamification = useGamificationStore()
 const achievements = useAchievementsStore()
 
-function resolveToolId(name) {
-  return _resolveToolId(name, toolsStore.tools)
+function resolveToolLinks(name, toolIds) {
+  return _resolveToolLinks(name, toolsStore.tools, toolIds)
+}
+
+function getToolsForLinks(links) {
+  return links
+    .map(link => ({ ...link, tool: toolsStore.tools.find(tool => tool.id === link.id) }))
+    .filter(link => link.tool)
+}
+
+function hasNeedsReview(links) {
+  return links.some(link => getToolVerification(link.tool).status !== 'verified')
 }
 
 const selectedCategory = ref('')
@@ -261,8 +357,27 @@ watch(currentNodeRef, (val) => {
 
 const currentDecision = computed(() => {
   if (!selectedCategory.value) return null
-  return decisionTrees[selectedCategory.value]
+  return getDecisionTree(selectedCategory.value)
 })
+
+const currentResultLinks = computed(() =>
+  resolveToolLinks(currentNode.value?.result, currentNode.value?.toolIds),
+)
+
+const currentResultVerificationLinks = computed(() =>
+  getToolsForLinks(currentResultLinks.value),
+)
+
+const scenarioRows = computed(() =>
+  (scenarioGuide || []).map((scenario) => {
+    const primaryLinks = resolveToolLinks(scenario.primary, scenario.primaryToolIds)
+    return {
+      ...scenario,
+      primaryLinks,
+      primaryVerificationLinks: getToolsForLinks(primaryLinks),
+    }
+  }),
+)
 
 const currentNode = computed(() => {
   if (!currentDecision.value) return null
@@ -293,7 +408,7 @@ function goTo(direction) {
       if (typeof next === 'string') {
         currentNodeRef.value = next
       } else if (next.result) {
-        currentNodeRef.value = { result: next.result, reason: next.reason }
+        currentNodeRef.value = { result: next.result, reason: next.reason, toolIds: next.toolIds }
       }
     }
   }
@@ -301,7 +416,7 @@ function goTo(direction) {
 
 function goToOption(option) {
   if (option.result) {
-    currentNodeRef.value = { result: option.result, reason: option.reason }
+    currentNodeRef.value = { result: option.result, reason: option.reason, toolIds: option.toolIds }
   } else if (option.next) {
     currentNodeRef.value = option.next
   }

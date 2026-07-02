@@ -1,4 +1,4 @@
-# AI工具全书 - 2026深度集成与实战教学版
+# AI工具全书 - 持续核验的实战选型指南
 
 > 125+ 款 AI 工具深度评测与选型指南，涵盖 AI IDE、LLM、CLI、多模态、Agent、MCP、AI 技能等 7 大类别
 
@@ -31,10 +31,13 @@ npm install         # 安装依赖
 npm run dev         # 开发服务器（:8765）
 npm run build       # 生产构建
 npm run preview     # 预览构建（:8766）
-npm run test        # 运行测试
+npm run test        # 运行一次性测试
+npm run test:watch  # 本地 watch 测试
 npm run lint        # 代码检查（自动修复）
 npm run format      # 代码格式化
 ```
+
+> 内容维护提示：工具价格、模型版本、免费额度和产品状态正在按 2026-06-25 的目标分批核验。未标明来源或核验日期的强时效信息，应先按“待核验”处理。
 
 ## 页面截图
 
@@ -99,13 +102,13 @@ website/
 | 技术 | 版本 | 用途 |
 |------|------|------|
 | Vue.js | 3.4 | 前端框架（Composition API + `<script setup>`） |
-| Vite | 5.1 | 构建工具 |
+| Vite | 8.1 | 构建工具 |
 | Tailwind CSS | 3.4 | 样式框架（深色主题） |
 | Pinia | 2.1 | 状态管理 |
 | Vue Router | 4.2 | 路由（Hash 模式） |
-| Lucide | latest | 图标库 |
-| Supabase | latest | 认证、数据库、云同步 |
-| Vitest | 1.2 | 测试框架 |
+| Lucide | 0.344 | 图标库 |
+| Supabase | 2.97 | 认证、数据库、云同步 |
+| Vitest | 4.1 | 测试框架 |
 | ESLint + Prettier | 8 / 3 | 代码质量 |
 
 ## 配置 Supabase（可选）
@@ -135,6 +138,9 @@ docker run -p 8080:80 ai-tools-website
   category: 'ide|cli|llm|multimodal|agent|mcp|skill',
   developer: 'Developer Name',
   versions: [{ type: 'CN/Global', pricing: '定价', models: '模型', link: 'URL' }],
+  verificationStatus: 'needs-review',
+  lastVerified: null,
+  sources: ['官方文档或价格页 URL'],
   personalExperience: { rating: 5, insights: '心得', pitfalls: ['注意事项'] },
   swot: { S: '优势', W: '劣势', O: '机会', T: '威胁' },
   radarChart: { 功能: 5, 性能: 4, 易用性: 5, 生态: 4, 性价比: 3 },

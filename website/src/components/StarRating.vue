@@ -1,10 +1,15 @@
 <template>
-  <span class="inline-flex items-center">
+  <span
+    class="inline-flex items-center"
+    role="img"
+    :aria-label="`${rating} / 5`"
+  >
     <span
       v-for="i in 5"
       :key="i"
       class="relative"
       :class="starSizeClass"
+      aria-hidden="true"
     ><template v-if="i <= fullStars">★</template><template v-else-if="i === fullStars + 1 && hasHalf"><span class="half-star">★</span><span class="text-white/15">★</span></template><template v-else><span class="text-white/15">★</span></template></span>
   </span>
 </template>

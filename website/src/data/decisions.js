@@ -13,21 +13,21 @@ export const decisionTrees = {
             },
             {
                 id: 'budget-yes',
-                question: '需要 Agent 能力最强？',
-                yes: { result: 'Cursor', reason: 'Composer-1.5 自研模型，8 个 Agent 并行处理' },
-                no: { result: 'Windsurf', reason: 'Cascade AI 超预期，性价比高，$15/月' }
+                question: '更重视成熟 Agent 协同？',
+                yes: { result: 'Cursor', toolIds: ['cursor'], reason: 'Agent 体验成熟，适合多文件协同；具体模型与额度以官方页面为准' },
+                no: { result: 'Windsurf', toolIds: ['windsurf'], reason: 'Cascade/Devin Desktop 生态，Pro $20/月起，需按新配额与 overage 评估' }
             },
             {
                 id: 'budget-no',
                 question: '需要快速原型？',
-                yes: { result: 'Trae', reason: 'Solo 双模式，免费层可用' },
+                yes: { result: 'Trae', toolIds: ['trae'], reason: 'Solo 双模式，免费层可用' },
                 no: 'budget-no-2'
             },
             {
                 id: 'budget-no-2',
                 question: '需要中文优化？',
-                yes: { result: 'Trae', reason: '国内生态友好，免费层+Pro $10/月' },
-                no: { result: 'Zed', reason: '开源免费，性能极佳' }
+                yes: { result: 'Trae', toolIds: ['trae'], reason: '国内生态友好，免费层+Pro $10/月' },
+                no: { result: 'Zed', toolIds: ['zed'], reason: '开源免费，性能极佳' }
             }
         ]
     },
@@ -37,20 +37,20 @@ export const decisionTrees = {
             {
                 id: 'start',
                 question: '预算充足？',
-                yes: { result: 'Claude Code', reason: '能力最强' },
+                yes: { result: 'Claude Code', toolIds: ['claude-code'], reason: '复杂代码理解和计划能力稳定' },
                 no: 'cli-free'
             },
             {
                 id: 'cli-free',
                 question: '需要长上下文？',
-                yes: { result: 'Gemini CLI', reason: '1M 上下文，1000/天免费' },
+                yes: { result: 'Gemini CLI', toolIds: ['gemini-cli'], reason: '长上下文友好，免费层额度以官方政策为准' },
                 no: 'cli-free-2'
             },
             {
                 id: 'cli-free-2',
                 question: '需要 Git 集成？',
-                yes: { result: 'Aider', reason: '开源，Git 工作流' },
-                no: { result: 'Qwen CLI', reason: '2000/天免费，中文优化' }
+                yes: { result: 'Aider', toolIds: ['aider'], reason: '开源，Git 工作流' },
+                no: { result: 'Qwen CLI', toolIds: ['qwen-cli'], reason: '中文生态友好，但当前需 Coding Plan、第三方 provider 或自带 API key；不再按免费层推荐' }
             }
         ]
     },
@@ -71,36 +71,36 @@ export const decisionTrees = {
                 id: 'code',
                 question: '预算情况？',
                 options: [
-                    { label: '充足', result: 'Claude 4.5 Sonnet', reason: '代码能力最强' },
-                    { label: '中文项目', result: 'Qwen3-Coder', reason: '中文代码优化' },
-                    { label: '免费', result: 'DeepSeek-V3', reason: '免费且强大' }
+                    { label: '充足', result: 'Claude / Claude Code', toolIds: ['claude', 'claude-code'], reason: '代码理解和复杂重构稳定' },
+                    { label: '中文项目', result: 'Qwen Coder', toolIds: ['qwen'], reason: '中文代码与国内云生态友好' },
+                    { label: '低成本', result: 'DeepSeek V4 Flash', toolIds: ['deepseek'], reason: '中文与批处理 API 性价比高' }
                 ]
             },
             {
                 id: 'reasoning',
                 question: '上下文需求？',
                 options: [
-                    { label: '超长（2M+）', result: 'Gemini 3 Pro', reason: '2M 上下文' },
-                    { label: '长（200K）', result: 'Claude 4.5', reason: '推理稳定' },
-                    { label: '复杂推理', result: 'o1/o3', reason: '推理最强但贵' }
+                    { label: '超长上下文', result: 'Gemini', toolIds: ['gemini'], reason: '长上下文与多模态生态强' },
+                    { label: '长（200K）', result: 'Claude', toolIds: ['claude'], reason: '推理和代码理解稳定' },
+                    { label: '复杂推理', result: 'OpenAI 推理模型', toolIds: ['gpt'], reason: '适合复杂推理，成本通常更高' }
                 ]
             },
             {
                 id: 'chat',
                 question: '语言偏好？',
                 options: [
-                    { label: '通用', result: 'GPT-5.2', reason: '生态最成熟' },
-                    { label: '中文', result: 'Qwen3 / DeepSeek', reason: '中文表现优异' },
-                    { label: '实时信息', result: 'Perplexity', reason: '带引用搜索' }
+                    { label: '通用', result: 'GPT / OpenAI', toolIds: ['gpt'], reason: '生态成熟，工具链完整' },
+                    { label: '中文', result: 'Qwen / DeepSeek', toolIds: ['qwen', 'deepseek'], reason: '中文表现优异，国内路径清晰' },
+                    { label: '实时信息', result: 'Perplexity', toolIds: ['perplexity'], reason: '带引用搜索' }
                 ]
             },
             {
                 id: 'vertical',
                 question: '领域？',
                 options: [
-                    { label: '医学', result: '氢离子', reason: '低幻觉、高循证' },
-                    { label: '法律', result: '通义法睿', reason: '中文法律优化' },
-                    { label: '编程专项', result: 'Qwen-Coder', reason: '代码专项优化' }
+                    { label: '医学', result: '氢离子', toolIds: ['qinglizi'], reason: '医学资料检索辅助，结论需人工复核' },
+                    { label: '法律', result: 'Qwen / 通用模型辅助', toolIds: ['qwen'], reason: '法律资料整理辅助，结论需人工复核' },
+                    { label: '编程专项', result: 'Qwen-Coder', toolIds: ['qwen'], reason: '代码专项优化' }
                 ]
             }
         ]
@@ -122,36 +122,36 @@ export const decisionTrees = {
                 id: 'image',
                 question: '需要什么风格？',
                 options: [
-                    { label: '艺术创作/高品质', result: 'Midjourney', reason: '艺术风格业界领先' },
-                    { label: '含文字的设计', result: 'GPT-5 图像生成', reason: '文字渲染最强，对话式迭代' },
-                    { label: '开源/本地部署', result: 'FLUX', reason: 'Schnell 完全免费开源' },
-                    { label: '中文/国产', result: '即梦', reason: '中文提示词最佳，免费友好' }
+                    { label: '艺术创作/高品质', result: 'Midjourney', toolIds: ['midjourney'], reason: '艺术风格成熟，适合高质感视觉探索' },
+                    { label: '含文字的设计', result: 'GPT Image / ChatGPT 图像', toolIds: ['dalle'], reason: '以 OpenAI Images 当前模型与 ChatGPT 图像入口为准，适合对话式迭代' },
+                    { label: '开源/本地部署', result: 'FLUX', toolIds: ['flux'], reason: 'FLUX.1 [schnell] 开放权重，本地硬件、API 和商用授权需分开核验' },
+                    { label: '中文/国产', result: '即梦', toolIds: ['jimeng'], reason: '中文创作链路完整，消费者积分/会员和火山 API 需按当前入口核算' }
                 ]
             },
             {
                 id: 'video',
                 question: '预算和质量要求？',
                 options: [
-                    { label: '最高画质', result: 'Sora', reason: '电影级质感，物理模拟最强' },
-                    { label: '性价比高', result: '可灵', reason: '动作连贯，免费额度慷慨' },
-                    { label: '专业影视', result: 'Runway Gen-4', reason: '精确运动控制，4K 输出' },
-                    { label: '创意短视频', result: 'Pika', reason: '价格亲民，创意特效丰富' }
+                    { label: '最高画质', result: 'Sora', toolIds: ['sora'], reason: '高质感视频生成，效果与额度需按当前入口核验' },
+                    { label: '性价比高', result: '可灵', toolIds: ['kling'], reason: '动作连贯，网页额度、订阅积分和 API Resource Packages 需分开核验' },
+                    { label: '专业影视', result: 'Runway', toolIds: ['runway'], reason: '专业视频编辑生态成熟，清晰度和控制能力以当前套餐为准' },
+                    { label: '创意短视频', result: 'Pika', toolIds: ['pika'], reason: '适合创意短视频，套餐与生成额度需按当前说明核验' }
                 ]
             },
             {
                 id: 'audio',
                 question: '音频类型？',
                 options: [
-                    { label: '音乐/歌曲', result: 'Suno', reason: '完整歌曲含人声，60 秒出歌' },
-                    { label: '配音/语音', result: 'ElevenLabs', reason: '语音质量最强，74 种语言' }
+                    { label: '音乐/歌曲', result: 'Suno', toolIds: ['suno'], reason: '完整歌曲含人声，60 秒出歌' },
+                    { label: '配音/语音', result: 'ElevenLabs', toolIds: ['elevenlabs'], reason: '多语言语音生态成熟，语言数量和额度以官方说明为准' }
                 ]
             },
             {
                 id: '3d',
                 question: '语言偏好？',
                 options: [
-                    { label: '英文/国际', result: 'Meshy', reason: '易用，支持 PBR 材质导出' },
-                    { label: '中文优先', result: '混元3D', reason: '中文提示词理解最佳' }
+                    { label: '英文/国际', result: 'Meshy', toolIds: ['meshy'], reason: '易用，支持 PBR 材质导出' },
+                    { label: '中文优先', result: '混元3D', toolIds: ['hunyuan3d'], reason: '中文提示词理解最佳' }
                 ]
             }
         ]
@@ -171,18 +171,18 @@ export const decisionTrees = {
                 id: 'nocode',
                 question: '主要用途？',
                 options: [
-                    { label: 'Bot/对话助手', result: 'Coze', reason: '无代码搭建，国内平台集成强' },
-                    { label: '工作流自动化', result: 'n8n', reason: '自托管免费，400+ 集成' },
-                    { label: '自主调研/数据分析', result: 'Manus', reason: '通用 AI Agent，自然语言驱动' }
+                    { label: 'Bot/对话助手', result: 'Coze', toolIds: ['coze'], reason: '无代码搭建，国内平台集成强' },
+                    { label: '工作流自动化', result: 'n8n', toolIds: ['n8n'], reason: '执行计费清晰，Community Edition 需看许可边界' },
+                    { label: '自主调研/数据分析', result: 'Manus', toolIds: ['manus'], reason: '通用 AI Agent，自然语言驱动' }
                 ]
             },
             {
                 id: 'developer',
                 question: '偏好哪个模型生态？',
                 options: [
-                    { label: 'Claude（代码最强）', result: 'Claude Agent SDK', reason: '代码能力最强，200K 上下文' },
-                    { label: 'OpenAI（生态最大）', result: 'OpenAI Agents SDK', reason: '官方出品，设计简洁' },
-                    { label: 'Gemini（上下文最长）', result: 'Google ADK', reason: '2M 上下文，Google 生态' },
+                    { label: 'Claude（代码任务）', result: 'Claude Agent SDK', toolIds: ['claude-agent-sdk'], reason: 'Claude Code agent loop 库化，适合代码任务' },
+                    { label: 'OpenAI（生态最大）', result: 'OpenAI Agents SDK', toolIds: ['openai-agents-sdk'], reason: '轻量多 Agent 框架，provider-agnostic' },
+                    { label: 'Gemini（Google 生态）', result: 'Google ADK', toolIds: ['google-adk'], reason: '多语言 ADK，Google/Gemini 工具能力' },
                     { label: '不绑定/自由选择', next: 'framework' }
                 ]
             },
@@ -190,9 +190,9 @@ export const decisionTrees = {
                 id: 'framework',
                 question: '需求复杂度？',
                 options: [
-                    { label: '复杂有状态 Agent', result: 'LangChain', reason: 'LangGraph 有状态编排最强' },
-                    { label: '多 Agent 协作', result: 'CrewAI', reason: '角色分工明确，多 Agent 协作' },
-                    { label: '自托管/私有部署', result: 'Dify', reason: '开源，Docker 一键部署' }
+                    { label: '复杂有状态 Agent', result: 'LangChain', toolIds: ['langchain'], reason: '适合有状态编排和复杂工作流' },
+                    { label: '多 Agent 协作', result: 'CrewAI', toolIds: ['crewai'], reason: '角色分工明确，多 Agent 协作' },
+                    { label: '自托管/私有部署', result: 'Dify', toolIds: ['dify'], reason: '开源，Docker 一键部署' }
                 ]
             }
         ]
@@ -214,38 +214,123 @@ export const decisionTrees = {
                 id: 'coding',
                 question: '具体需求？',
                 options: [
-                    { label: '查文档防幻觉', result: 'Context7', reason: '零配置，实时拉取最新文档' },
-                    { label: '浏览器自动化/测试', result: 'Playwright MCP', reason: '微软官方，E2E 测试完整支持' },
-                    { label: '增强推理能力', result: 'Sequential Thinking', reason: 'Anthropic 官方，分步推理' },
-                    { label: 'AI 记忆/偏好', result: 'OpenMemory MCP', reason: '跨会话持久化记忆' }
+                    { label: '查文档防幻觉', result: 'Context7', toolIds: ['context7'], reason: '零配置，实时拉取最新文档' },
+                    { label: '浏览器自动化/测试', result: 'Playwright MCP', toolIds: ['playwright-mcp'], reason: '微软官方，E2E 测试完整支持' },
+                    { label: '增强推理能力', result: 'Sequential Thinking', toolIds: ['sequential-thinking-mcp'], reason: 'MCP 参考 server，提供结构化分步推理工具' },
+                    { label: 'AI 记忆/偏好', result: 'OpenMemory MCP', toolIds: ['openmemory-mcp'], reason: '跨会话持久化记忆' }
                 ]
             },
             {
                 id: 'services',
                 question: '哪个平台？',
                 options: [
-                    { label: 'GitHub', result: 'GitHub MCP', reason: 'Issue/PR/Code Search 全覆盖' },
-                    { label: 'Supabase', result: 'Supabase MCP', reason: '数据库/Auth/存储/Functions' },
-                    { label: 'Vercel', result: 'Vercel MCP', reason: '部署管理、日志查询' },
-                    { label: 'Figma', result: 'Figma MCP', reason: '设计稿转代码' }
+                    { label: 'GitHub', result: 'GitHub MCP', toolIds: ['github-mcp'], reason: 'Issue/PR/Code Search 全覆盖' },
+                    { label: 'Supabase', result: 'Supabase MCP', toolIds: ['supabase-mcp'], reason: '数据库/Auth/存储/Functions' },
+                    { label: 'Vercel', result: 'Vercel MCP', toolIds: ['vercel-mcp'], reason: '部署管理、日志查询' },
+                    { label: 'Figma', result: 'Figma MCP', toolIds: ['figma-mcp'], reason: '设计稿转代码' }
                 ]
             },
             {
                 id: 'data',
                 question: '数据类型？',
                 options: [
-                    { label: '网站爬取', result: 'Firecrawl MCP', reason: '智能爬取转 Markdown' },
-                    { label: '图表可视化', result: 'AntV Chart MCP', reason: '25+ 种图表类型' },
-                    { label: '网络搜索', result: 'Brave Search MCP', reason: '隐私优先，独立索引' }
+                    { label: '网站爬取', result: 'Firecrawl MCP', toolIds: ['firecrawl-mcp'], reason: '智能爬取转 Markdown' },
+                    { label: '图表可视化', result: 'AntV Chart MCP', toolIds: ['antv-chart-mcp'], reason: '25+ 种图表类型' },
+                    { label: '网络搜索', result: 'Brave Search MCP', toolIds: ['brave-search-mcp'], reason: '隐私优先，独立索引' }
                 ]
             },
             {
                 id: 'collab',
                 question: '哪个平台？',
                 options: [
-                    { label: 'Notion', result: 'Notion MCP', reason: '官方出品，21 种操作' },
-                    { label: 'Jira/Confluence', result: 'Atlassian MCP', reason: '双平台集成' },
-                    { label: 'API 开发', result: 'Postman MCP', reason: '100+ 工具，API 全流程' }
+                    { label: 'Notion', result: 'Notion MCP', toolIds: ['notion-mcp'], reason: '官方出品，21 种操作' },
+                    { label: 'Jira/Confluence', result: 'Atlassian MCP', toolIds: ['atlassian-mcp'], reason: '双平台集成' },
+                    { label: 'API 开发', result: 'Postman MCP', toolIds: ['postman-mcp'], reason: '100+ 工具，API 全流程' }
+                ]
+            }
+        ]
+    },
+    skill: {
+        title: 'AI Skills 选型决策树',
+        nodes: [
+            {
+                id: 'start',
+                question: '你想增强哪类 Codex/Claude Code 能力？',
+                options: [
+                    { label: '前端/体验', next: 'frontend' },
+                    { label: '测试/质量', next: 'quality' },
+                    { label: '安全审计', next: 'security' },
+                    { label: '数据/内容', next: 'data-content' }
+                ]
+            },
+            {
+                id: 'frontend',
+                question: '前端工作重点是什么？',
+                options: [
+                    {
+                        label: '设计实现',
+                        result: 'frontend-app-builder',
+                        toolIds: ['frontend-design-skill'],
+                        reason: '已核验的前端应用与页面现代化工作流，适合把需求或设计转成页面，并用浏览器验证体验。'
+                    },
+                    {
+                        label: 'Web App 测试',
+                        result: 'webapp-testing',
+                        toolIds: ['webapp-testing-skill'],
+                        reason: '适合本地应用烟测、浏览器验证、交互回归和响应式问题定位。'
+                    }
+                ]
+            },
+            {
+                id: 'quality',
+                question: '更关注哪种质量保障？',
+                options: [
+                    {
+                        label: '第二视角审查',
+                        result: 'differential-review',
+                        toolIds: ['differential-review-skill'],
+                        reason: '适合让独立审查工作流检查 PR、commit 或 diff 的风险、blast radius 和 test coverage。'
+                    },
+                    {
+                        label: '测试策略',
+                        result: 'test-driven-development',
+                        reason: '适合为复杂输入、边界条件和不变量补测试，避免只测 happy path。'
+                    }
+                ]
+            },
+            {
+                id: 'security',
+                question: '安全检查重点是什么？',
+                options: [
+                    {
+                        label: '代码扫描',
+                        result: 'semgrep',
+                        toolIds: ['semgrep-skill'],
+                        reason: '适合用规则扫描常见安全问题，并把发现转成可审查的修复建议。'
+                    },
+                    {
+                        label: '默认配置风险',
+                        result: 'security-best-practices / threat-model',
+                        reason: '适合发现默认不安全配置、误用风险和容易踩坑的 API 设计；进入详情页前先按当前技术栈做安全复核。'
+                    }
+                ]
+            },
+            {
+                id: 'data-content',
+                question: '数据或内容任务类型？',
+                options: [
+                    {
+                        label: 'Supabase',
+                        result: 'supabase',
+                        toolIds: ['supabase-skill'],
+                        reason: '适合数据库、Auth、Realtime 和 Supabase 项目的实现与诊断。'
+                    },
+                    {
+                        label: '研究/周报',
+                        result: 'research',
+                        toolIds: ['research-skill'],
+                        reason: '适合资料研究、证据整理、周期性报告和结构化内容产出。'
+                    }
                 ]
             }
         ]
@@ -254,19 +339,23 @@ export const decisionTrees = {
 
 // 场景对照表（基于 AI工具全景图谱 v2.5 更新）
 export const scenarioGuide = [
-    { scenario: '日常开发主力', primary: 'Cursor', backup: 'Windsurf、Trae', budget: '$20/月' },
-    { scenario: '预算有限开发', primary: 'Trae', backup: 'Zed + Gemini CLI', budget: '免费-$15/月' },
-    { scenario: '快速原型验证', primary: 'Trae (Solo Builder)', backup: 'Replit', budget: '免费-$20/月' },
-    { scenario: '中大型后端项目', primary: 'Qoder + Cursor', backup: 'Aider + Gemini CLI', budget: '$20/月' },
-    { scenario: '关键方案/复杂重构', primary: 'Claude Code', backup: 'Gemini CLI', budget: '$20-200/月' },
-    { scenario: '长文档调研/代码分析', primary: 'Gemini CLI', backup: 'Qwen CLI', budget: '免费' },
-    { scenario: '企业团队协作', primary: 'Cursor Teams + Qoder', backup: 'Claude Code', budget: '$40-60/人/月' },
-    { scenario: '视频内容创作', primary: '可灵 (Kling)', backup: 'Sora、Runway Gen-3/Gen-4', budget: '免费-$20/月' },
-    { scenario: '图像设计/海报', primary: 'Midjourney', backup: 'GPT-5、即梦 (Jimeng)', budget: '免费-$30/月' },
-    { scenario: '音乐/配乐创作', primary: 'Suno', backup: 'ElevenLabs', budget: '免费-$30/月' },
-    { scenario: '构建 AI Agent', primary: 'Claude Agent SDK', backup: 'LangChain、Dify', budget: '按 API 用量' },
-    { scenario: '工作流自动化', primary: 'n8n', backup: 'Coze', budget: '免费-$50/月' },
-    { scenario: 'MCP 必装三件套', primary: 'Context7', backup: 'Playwright MCP、GitHub MCP', budget: '免费' }
+    { scenario: '日常开发主力', primary: 'Cursor', primaryToolIds: ['cursor'], backup: 'Windsurf、Trae', budget: '$20/月' },
+    { scenario: '预算有限开发', primary: 'Trae', primaryToolIds: ['trae'], backup: 'Zed + Gemini CLI', budget: '免费-$20/月' },
+    { scenario: '快速原型验证', primary: 'Trae (Solo Builder)', primaryToolIds: ['trae'], backup: 'Replit', budget: '免费-$20/月' },
+    { scenario: '中大型后端项目', primary: 'Qoder + Cursor', primaryToolIds: ['qoder', 'cursor'], backup: 'Aider + Gemini CLI', budget: '$20/月' },
+    { scenario: '关键方案/复杂重构', primary: 'Claude Code', primaryToolIds: ['claude-code'], backup: 'Gemini CLI', budget: '$20-200/月' },
+    { scenario: '长文档调研/代码分析', primary: 'Gemini CLI', primaryToolIds: ['gemini-cli'], backup: 'OpenCode；Qwen CLI 需 Coding Plan/API provider', budget: 'Gemini CLI 免费层；Qwen 需计划/API' },
+    { scenario: '企业团队协作', primary: 'Cursor Teams + Qoder', primaryToolIds: ['cursor', 'qoder'], backup: 'Claude Code', budget: '$40-60/人/月' },
+    { scenario: '视频内容创作', primary: '可灵 (Kling)', primaryToolIds: ['kling'], backup: 'Sora、Runway', budget: '免费-$20/月' },
+    { scenario: '图像设计/海报', primary: 'Midjourney', primaryToolIds: ['midjourney'], backup: 'GPT Image、即梦 (Jimeng)', budget: '免费-$30/月' },
+    { scenario: '音乐/配乐创作', primary: 'Suno', primaryToolIds: ['suno'], backup: 'ElevenLabs', budget: '免费-$30/月' },
+    { scenario: '构建 AI Agent', primary: 'Claude Agent SDK', primaryToolIds: ['claude-agent-sdk'], backup: 'LangChain、Dify', budget: '按 API 用量' },
+    { scenario: '工作流自动化', primary: 'n8n', primaryToolIds: ['n8n'], backup: 'Coze', budget: '20€/mo 起；自托管看许可' },
+    { scenario: 'MCP 必装三件套', primary: 'Context7', primaryToolIds: ['context7'], backup: 'Playwright MCP、GitHub MCP', budget: '免费' }
 ]
 
-export const getDecisionTree = (type) => decisionTrees[type]
+const decisionTreeAliases = {
+    llm: 'model'
+}
+
+export const getDecisionTree = (type) => decisionTrees[decisionTreeAliases[type] || type]

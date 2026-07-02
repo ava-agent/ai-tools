@@ -1,13 +1,15 @@
 import { createApp } from 'vue'
-import { createPinia } from 'pinia'
+import { createPinia, setActivePinia } from 'pinia'
 import { createLocalStoragePlugin } from './plugins/piniaLocalStorage'
 import App from './App.vue'
 import router from './router'
 import { useAuthStore } from './stores/auth.js'
+import { shouldRegisterServiceWorker } from './utils/serviceWorker.js'
 import './style.css'
 
 const app = createApp(App)
 const pinia = createPinia()
+setActivePinia(pinia)
 
 pinia.use(createLocalStoragePlugin({
   stores: ['gamification', 'achievements']
@@ -24,7 +26,10 @@ const authStore = useAuthStore()
 authStore.initialize()
 
 // 注册 Service Worker（PWA 支持）
-if ('serviceWorker' in navigator) {
+if (shouldRegisterServiceWorker({
+  hasServiceWorker: 'serviceWorker' in navigator,
+  mode: import.meta.env.MODE
+})) {
   window.addEventListener('load', () => {
     navigator.serviceWorker
       .register(`${import.meta.env.BASE_URL}sw.js`)

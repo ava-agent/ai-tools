@@ -12,7 +12,7 @@
       <div
         v-if="isOpen"
         class="fixed inset-0 bg-black/50 z-[60] backdrop-blur-sm"
-        @click="$emit('close')"
+        @click="requestClose"
       />
     </transition>
 
@@ -33,7 +33,7 @@
         aria-label="我的档案"
         tabindex="-1"
         class="fixed top-0 right-0 h-full w-full max-w-md z-[70] overflow-y-auto glass-elevated border-l border-white/[0.06]"
-        @keydown.esc="emit('close')"
+        @keydown="handlePanelKeydown"
       >
         <div class="p-6">
           <!-- Header -->
@@ -42,10 +42,17 @@
               我的档案
             </h2>
             <button
-              class="p-2 rounded-lg hover:bg-white/[0.04] text-white/60 hover:text-white transition-colors cursor-pointer"
-              @click="$emit('close')"
+              ref="closeButtonRef"
+              type="button"
+              class="flex min-h-11 min-w-11 items-center justify-center rounded-lg hover:bg-white/[0.04] text-white/60 hover:text-white transition-colors cursor-pointer"
+              aria-label="关闭我的档案"
+              data-testid="user-profile-close"
+              @click="requestClose"
             >
-              <X class="w-5 h-5" />
+              <X
+                class="w-5 h-5"
+                aria-hidden="true"
+              />
             </button>
           </div>
 
@@ -120,8 +127,9 @@
           <!-- Full Profile Link -->
           <router-link
             to="/profile"
+            data-testid="user-profile-full-link"
             class="block w-full text-center py-3 rounded-xl bg-[#0a84ff]/10 text-[#0a84ff] hover:bg-[#0a84ff]/20 transition-colors text-sm font-medium"
-            @click="$emit('close')"
+            @click="requestClose"
           >
             查看完整档案
           </router-link>
@@ -132,7 +140,7 @@
 </template>
 
 <script setup>
-import { computed, ref, watch, nextTick } from 'vue'
+import { computed, onBeforeUnmount, ref, watch, nextTick } from 'vue'
 import { X, Flame, Eye, HelpCircle, Swords, Target, GitCompare } from 'lucide-vue-next'
 import { useGamificationStore } from '../../stores/gamification.js'
 import LevelBadge from './LevelBadge.vue'
@@ -145,12 +153,99 @@ const props = defineProps({
 const emit = defineEmits(['close'])
 
 const panelRef = ref(null)
+const closeButtonRef = ref(null)
+let previouslyFocusedElement = null
+let previousBodyOverflow = ''
+
+const focusableSelector = [
+  'a[href]',
+  'button:not([disabled])',
+  'input:not([disabled])',
+  'select:not([disabled])',
+  'textarea:not([disabled])',
+  '[tabindex]:not([tabindex="-1"])',
+].join(',')
+
+function getFocusableElements() {
+  if (!panelRef.value) return []
+  return Array.from(panelRef.value.querySelectorAll(focusableSelector)).filter((element) => {
+    return !element.hasAttribute('disabled') && element.tabIndex !== -1
+  })
+}
+
+function focusInitialElement() {
+  const firstFocusable = closeButtonRef.value || getFocusableElements()[0] || panelRef.value
+  firstFocusable?.focus()
+}
+
+function restorePreviousFocus() {
+  const target = previouslyFocusedElement
+  previouslyFocusedElement = null
+  if (target && document.contains(target) && typeof target.focus === 'function') {
+    target.focus()
+  }
+}
+
+function requestClose() {
+  emit('close')
+}
+
+function lockBodyScroll() {
+  previousBodyOverflow = document.body.style.overflow
+  document.body.style.overflow = 'hidden'
+}
+
+function unlockBodyScroll() {
+  document.body.style.overflow = previousBodyOverflow
+  previousBodyOverflow = ''
+}
+
+function handlePanelKeydown(event) {
+  if (event.key === 'Escape') {
+    requestClose()
+    return
+  }
+
+  if (event.key !== 'Tab') return
+
+  const focusableElements = getFocusableElements()
+  if (!focusableElements.length) {
+    event.preventDefault()
+    panelRef.value?.focus()
+    return
+  }
+
+  const firstElement = focusableElements[0]
+  const lastElement = focusableElements[focusableElements.length - 1]
+
+  if (event.shiftKey && document.activeElement === firstElement) {
+    event.preventDefault()
+    lastElement.focus()
+  } else if (!event.shiftKey && document.activeElement === lastElement) {
+    event.preventDefault()
+    firstElement.focus()
+  }
+}
 
 // Auto-focus panel when opened for keyboard accessibility
 watch(() => props.isOpen, async (open) => {
   if (open) {
+    previouslyFocusedElement = document.activeElement
+    lockBodyScroll()
     await nextTick()
-    panelRef.value?.focus()
+    focusInitialElement()
+    return
+  }
+
+  unlockBodyScroll()
+  await nextTick()
+  restorePreviousFocus()
+})
+
+onBeforeUnmount(() => {
+  if (props.isOpen) {
+    unlockBodyScroll()
+    restorePreviousFocus()
   }
 })
 

@@ -10,15 +10,18 @@
     >
       <div
         v-if="currentToast"
-        class="fixed bottom-6 left-1/2 -translate-x-1/2 z-[100] max-w-sm w-full mx-4"
+        data-testid="achievement-toast"
+        class="fixed bottom-3 left-1/2 z-[100] w-[calc(100vw-2rem)] max-w-xs -translate-x-1/2 pointer-events-none sm:bottom-6 sm:max-w-sm"
+        style="padding-bottom: env(safe-area-inset-bottom);"
       >
         <div
-          class="flex items-center gap-4 px-5 py-4 rounded-2xl border backdrop-blur-lg shadow-2xl"
+          data-testid="achievement-toast-surface"
+          class="flex pointer-events-auto items-center gap-3 px-3 py-3 rounded-xl border backdrop-blur-lg shadow-2xl sm:gap-4 sm:px-5 sm:py-4 sm:rounded-2xl"
           :class="[currentToast.tierStyle.bg, currentToast.tierStyle.border]"
         >
           <div class="flex-shrink-0">
             <Trophy
-              class="w-8 h-8"
+              class="w-6 h-6 sm:w-8 sm:h-8"
               :class="currentToast.tierStyle.color"
             />
           </div>
@@ -26,16 +29,16 @@
             <p class="text-xs text-white/50 uppercase tracking-wider mb-0.5">
               成就解锁
             </p>
-            <p class="text-white font-bold truncate">
+            <p class="text-white text-sm font-bold truncate sm:text-base">
               {{ currentToast.name }}
             </p>
-            <p class="text-white/60 text-sm truncate">
+            <p class="text-white/60 text-xs truncate sm:text-sm">
               {{ currentToast.description }}
             </p>
           </div>
           <div class="flex-shrink-0 text-right">
             <span
-              class="text-sm font-bold"
+              class="text-xs font-bold sm:text-sm"
               :class="currentToast.tierStyle.color"
             >
               +{{ currentToast.xp }} XP

@@ -1,6 +1,6 @@
 <template>
   <footer
-    class="glass-nav border-t border-white/[0.06] py-12 mt-16"
+    class="footer-safe-bottom glass-nav border-t border-white/[0.06] pt-12 mt-16"
     role="contentinfo"
   >
     <div class="max-w-[960px] mx-auto px-4">
@@ -9,7 +9,7 @@
         <div>
           <router-link
             to="/"
-            class="flex items-center gap-2 mb-4 group"
+            class="flex min-h-11 items-center gap-2 mb-4 group"
           >
             <div class="relative">
               <Brain class="w-8 h-8 text-primary transition-transform duration-300 group-hover:scale-110" />
@@ -20,7 +20,7 @@
             </h3>
           </router-link>
           <p class="text-white/55 text-sm leading-relaxed">
-            2026深度集成与实战教学版 - AI工具选型指南
+            持续核验的实战 AI 工具选型指南
           </p>
         </div>
 
@@ -37,7 +37,7 @@
               >
                 <router-link
                   :to="item.to"
-                  class="text-white/55 hover:text-white transition-colors duration-200 inline-flex items-center gap-1 group"
+                  class="-mx-1 inline-flex min-h-11 items-center gap-1 rounded-lg px-1 text-white/55 transition-colors duration-200 hover:bg-white/[0.04] hover:text-white group"
                 >
                   <ChevronRight class="w-3 h-3 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-200" />
                   {{ item.label }}
@@ -61,7 +61,7 @@
                 :href="item.href"
                 :target="item.external ? '_blank' : undefined"
                 :rel="item.external ? 'noopener noreferrer' : undefined"
-                class="text-white/55 hover:text-white transition-colors duration-200 inline-flex items-center gap-1 group"
+                class="-mx-1 inline-flex min-h-11 items-center gap-1 rounded-lg px-1 text-white/55 transition-colors duration-200 hover:bg-white/[0.04] hover:text-white group"
               >
                 <component
                   :is="item.icon"
@@ -111,6 +111,16 @@ const footerResources = [
 </script>
 
 <style scoped>
+.footer-safe-bottom {
+  padding-bottom: calc(6.5rem + env(safe-area-inset-bottom));
+}
+
+@media (min-width: 640px) {
+  .footer-safe-bottom {
+    padding-bottom: 3rem;
+  }
+}
+
 .nav-link.router-link-active {
   color: white;
 }

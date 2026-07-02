@@ -23,7 +23,8 @@
             </p>
           </div>
           <button
-            class="px-3 py-1.5 text-sm text-white/40 hover:text-[#ff453a] rounded-lg hover:bg-white/[0.04] transition-colors cursor-pointer"
+            type="button"
+            class="min-h-11 px-3 py-1.5 text-sm text-white/40 hover:text-[#ff453a] rounded-lg hover:bg-white/[0.04] transition-colors cursor-pointer"
             @click="authStore.signOut"
           >
             退出
@@ -48,7 +49,6 @@
         <div class="text-center mb-8">
           <h1
             class="text-[28px] font-bold text-white mb-4"
-            style="letter-spacing: -0.8px"
           >
             我的档案
           </h1>
@@ -166,7 +166,9 @@
         <!-- 重置进度 -->
         <div class="text-center">
           <button
-            class="text-sm text-white/30 hover:text-[#ff453a] transition-colors cursor-pointer"
+            type="button"
+            class="min-h-11 px-3 text-sm text-white/30 hover:text-[#ff453a] transition-colors cursor-pointer"
+            data-testid="profile-reset-open"
             @click="confirmReset"
           >
             重置所有进度
@@ -201,13 +203,17 @@
                 </p>
                 <div class="flex gap-3">
                   <button
-                    class="flex-1 py-2 rounded-full bg-white/[0.04] text-white/60 hover:bg-white/[0.08] transition-colors cursor-pointer border border-white/[0.06]"
+                    type="button"
+                    class="flex-1 min-h-11 py-2 rounded-full bg-white/[0.04] text-white/60 hover:bg-white/[0.08] transition-colors cursor-pointer border border-white/[0.06]"
+                    data-testid="profile-reset-cancel"
                     @click="showResetConfirm = false"
                   >
                     取消
                   </button>
                   <button
-                    class="flex-1 py-2 rounded-full bg-[#ff453a]/20 text-[#ff453a] hover:bg-[#ff453a]/30 transition-colors cursor-pointer"
+                    type="button"
+                    class="flex-1 min-h-11 py-2 rounded-full bg-[#ff453a]/20 text-[#ff453a] hover:bg-[#ff453a]/30 transition-colors cursor-pointer"
+                    data-testid="profile-reset-confirm"
                     @click="doReset"
                   >
                     确认重置

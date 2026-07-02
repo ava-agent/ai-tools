@@ -5,7 +5,6 @@
       <div class="text-center mb-8">
         <h1
           class="text-[28px] font-bold text-white mb-4"
-          style="letter-spacing: -0.8px"
         >
           趣味竞猜
         </h1>
@@ -16,11 +15,17 @@
 
       <!-- Tabs -->
       <div class="max-w-2xl mx-auto mb-8">
-        <div class="flex gap-2 justify-center">
+        <div
+          class="flex flex-wrap gap-2 justify-center"
+          role="tablist"
+          aria-label="趣味竞猜模式"
+        >
           <button
             v-for="tab in tabs"
             :key="tab.id"
-            class="px-5 py-2.5 rounded-full transition-all flex items-center gap-2 cursor-pointer text-sm font-medium"
+            class="min-h-11 px-5 py-2.5 rounded-full transition-all flex items-center gap-2 cursor-pointer text-sm font-medium"
+            role="tab"
+            :aria-selected="activeTab === tab.id"
             :class="activeTab === tab.id
               ? 'bg-[#0a84ff] text-white shadow-lg shadow-[#0a84ff]/25'
               : 'bg-white/[0.04] text-white/60 hover:text-white hover:bg-white/[0.08] border border-white/[0.06]'"

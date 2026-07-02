@@ -6,33 +6,33 @@ export const funFacts = {
   'cursor': [
     'Cursor 的 Background Agent 功能可以同时运行多个 AI Agent 并行处理不同任务',
     'Cursor 是从 VS Code 分叉出来的，所以几乎所有 VS Code 插件都可以在 Cursor 中使用',
-    'Cursor 的 Tab 补全功能能预测你接下来要写的多行代码，准确率惊人',
+    'Cursor 的 Tab 补全功能面向多行补全和下一步编辑预测，适合高频日常编码',
   ],
   'trae': [
-    'Trae 是字节跳动推出的完全免费的 AI IDE，深度集成了国产大模型',
+    'Trae 是字节跳动推出的 AI IDE，提供 Free 层和付费能力，深度集成国产模型生态',
     'Trae 同时提供国际版和国内版，是少数能无障碍在国内使用的 AI IDE',
     'Trae 的 Builder 模式可以从零开始用自然语言构建完整项目',
   ],
   'windsurf': [
-    'Windsurf（原 Codeium）的 Cascade 功能是业界首个"超级自动补全"系统',
-    'Windsurf 的免费版提供无限的 AI 代码补全，这在付费 IDE 中非常少见',
+    'Windsurf（原 Codeium）的 Cascade 是其核心 agentic coding 工作流，当前应按 Devin Desktop 口径和配额规则评估',
+    'Windsurf 已并入 Devin Desktop 口径，免费和付费档位都需要按当前日/周配额与 overage 规则评估',
   ],
   'claude-code': [
     'Claude Code 是完全运行在终端中的 AI 编程助手，不需要 IDE',
-    'Claude Code 拥有 1M Token 的超大上下文窗口（Opus 4.6），可以一次理解整个项目',
+    'Claude Code 的上下文能力取决于当前可用 Claude 模型、订阅计划和 API/客户端路径，不应按固定旧模型号判断',
     'Claude Code 的 /compact 命令可以智能压缩对话历史，延长工作会话',
   ],
   'github-copilot': [
     'GitHub Copilot 是最早的 AI 编程助手之一，训练于数十亿行开源代码',
     'Copilot 现已支持 Agent 模式，可以自主完成多步骤编程任务',
-    'GitHub Copilot 的用户数已超过 100 万，是使用最广泛的 AI 编程工具',
+    'GitHub Copilot 已从补全插件扩展到 Agent mode、MCP 和多 IDE 工作流',
   ],
   'gemini-cli': [
     'Gemini CLI 是 Google 推出的开源命令行 AI 工具，支持 100 万 Token 上下文',
-    'Gemini CLI 支持 Gemini 3 Pro 模型，在代码推理方面表现突出',
+    'Gemini CLI 适合先读取仓库和长日志，再把明确任务交给更强的执行 Agent',
   ],
   'zed': [
-    'Zed 号称"世界最快的代码编辑器"，使用 Rust 编写，启动速度极快',
+    'Zed 使用 Rust 编写，重点卖点是高速编辑体验、多人协作和外部 Agent 接入',
     'Zed 的多人协作功能借鉴了 Google Docs，可以实时看到同事的光标',
     'Zed 支持同时使用多个 AI 模型，包括本地运行的 Ollama 模型',
   ],
@@ -41,13 +41,13 @@ export const funFacts = {
     'Cline 的 MCP 工具集成让它可以连接浏览器、数据库等外部工具',
   ],
   'deepseek': [
-    'DeepSeek 是目前性价比最高的 AI 模型之一，API 价格远低于 GPT-5 和 Claude',
-    'DeepSeek 的推理模型 R1 在数学和编程能力上可与顶级模型媲美',
-    'DeepSeek 是由中国团队开发的开源模型，代码完全公开可审计',
+    'DeepSeek V4 Flash/Pro API 价格适合把批量中文和轻量推理任务从高价模型中分流出来',
+    'DeepSeek 的 deepseek-chat / deepseek-reasoner 兼容别名需要按官方退役日期迁移',
+    'DeepSeek 由中国团队开发，API 选型应重点看当前模型、价格、上下文和兼容别名退役日期',
   ],
   'gpt': [
     'ChatGPT 在发布后 5 天内就突破了 100 万用户，是历史上增长最快的应用',
-    'GPT-5.2 支持多模态输入，可以同时处理文本、图片、音频和视频',
+    'OpenAI 模型生态覆盖文本、图片、音频、视频和代码 Agent 等多种工作流',
     'ChatGPT 的 Canvas 功能可以像白板一样协作编辑代码和文档',
   ],
   'claude': [
@@ -57,7 +57,7 @@ export const funFacts = {
   ],
   'gemini': [
     'Gemini 是 Google 将 DeepMind 和 Google Brain 合并后的旗舰模型',
-    'Gemini 3 Pro 拥有最长的上下文窗口，可达 200 万 Token',
+    'Gemini 的长上下文和 Google 生态整合适合长资料调研、文档处理和多模态任务',
     'Gemini 的 Deep Research 功能可以自动撰写带引用的深度研究报告',
   ],
   'perplexity': [
@@ -66,7 +66,7 @@ export const funFacts = {
   ],
   'grok': [
     'Grok 由 Elon Musk 的 xAI 公司开发，可以实时访问 X (Twitter) 数据',
-    'Grok-4 号称是"地球上最聪明的 AI"，在多个基准测试中领先',
+    'Grok 的模型、订阅和 API 入口变化很快，使用前应按 xAI 官方模型页和 pricing 核对',
   ],
 }
 

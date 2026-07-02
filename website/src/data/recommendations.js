@@ -2,26 +2,32 @@
 export const recommendations = [
   {
     id: 'daily-coding',
-    label: '日常编码',
-    tools: ['cursor'],
-    insight: '主力 IDE，Composer 跨文件重构是护城河，但不要让它一次改超过 10 个文件',
+    label: '日常开发',
+    tools: ['cursor', 'github-copilot'],
+    insight: '优先选主力 IDE 与低摩擦补全组合；高频写码先看免费额度、补全质量和团队 IDE 兼容性。',
   },
   {
     id: 'complex-refactor',
     label: '复杂重构',
-    tools: ['claude-code'],
-    insight: '超过 10 文件的改动切到 CLI，Agent 能力最强，终端里的架构师',
+    tools: ['claude-code', 'cursor'],
+    insight: '跨多文件、要改架构时优先看 CLI/Agent 能力；先小步验证，再放大到整个代码库。',
   },
   {
     id: 'free-stack',
-    label: '零成本方案',
+    label: '免费层优先',
     tools: ['trae', 'gemini-cli'],
-    insight: 'Trae 写代码 + Gemini CLI 做调研，1M 上下文分析长文档无敌',
+    insight: '预算敏感时先组合免费层、官方 CLI 和开源工具；注意额度刷新、排队、账号地区和模型可用性。',
   },
   {
-    id: 'visual-design',
-    label: '视觉设计',
-    tools: ['midjourney'],
-    insight: '艺术风格选 Midjourney，含文字的设计用 GPT-5 图像生成',
+    id: 'long-context',
+    label: '长上下文研究',
+    tools: ['gemini-cli', 'claude-code'],
+    insight: '读仓库、长日志和文档调研时优先看上下文窗口、检索能力、终端工作流和可复现引用。',
+  },
+  {
+    id: 'visual-generation',
+    label: '视觉生成',
+    tools: ['midjourney', 'sora', 'dalle'],
+    insight: '图像、视频和多模态生成要分开选型；先核对商用授权、文字生成质量和成本上限。',
   },
 ]

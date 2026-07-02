@@ -21,7 +21,7 @@
 </template>
 
 <script setup>
-import { computed, ref } from 'vue'
+import { computed, ref, watch } from 'vue'
 import { getToolLogo } from '../data/toolLogos.js'
 
 const props = defineProps({
@@ -34,6 +34,13 @@ const props = defineProps({
 const errorCount = ref(0)
 
 const logo = computed(() => getToolLogo(props.toolId))
+
+watch(
+  () => [props.toolId, logo.value?.logoUrl],
+  () => {
+    errorCount.value = 0
+  }
+)
 
 // Build fallback URL from DuckDuckGo URL by extracting the domain
 const googleFallbackUrl = computed(() => {

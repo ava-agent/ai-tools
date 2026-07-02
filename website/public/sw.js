@@ -1,12 +1,18 @@
 /* eslint-env serviceworker */
-const CACHE_NAME = 'ai-tools-v1';
+const CACHE_NAME = 'ai-tools-v2';
+const APP_SCOPE_URL = new URL(self.registration.scope);
+
+function resolveAppUrl(path = '') {
+  return new URL(String(path).replace(/^\/+/, ''), APP_SCOPE_URL).href;
+}
+
 const STATIC_ASSETS = [
-  '/',
-  '/index.html',
-  '/favicon.svg',
-  '/logo.svg',
-  '/manifest.json'
-];
+  '',
+  'index.html',
+  'favicon.svg',
+  'logo.svg',
+  'manifest.json'
+].map(resolveAppUrl);
 
 // 安装时缓存静态资源
 self.addEventListener('install', (event) => {
@@ -58,17 +64,23 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
-  // 缓存优先策略 - 带 hash 的静态资源，可长期缓存
-  if (request.destination === 'image' ||
-      request.destination === 'font' ||
-      request.destination === 'style' ||
+  // 脚本和样式网络优先，避免内容目录更新后仍命中旧 chunk
+  if (request.destination === 'style' ||
       request.destination === 'script') {
+    event.respondWith(networkFirst(request));
+    return;
+  }
+
+  // 图片和字体缓存优先，减少重复下载
+  if (request.destination === 'image' ||
+      request.destination === 'font') {
     event.respondWith(cacheFirst(request));
     return;
   }
 
   // 网络优先策略 - API 请求
-  if (url.pathname.startsWith('/api/')) {
+  const appApiPath = new URL('api/', APP_SCOPE_URL).pathname;
+  if (url.pathname.startsWith(appApiPath) || url.pathname.startsWith('/api/')) {
     event.respondWith(networkFirst(request));
     return;
   }
@@ -140,8 +152,8 @@ self.addEventListener('push', (event) => {
     event.waitUntil(
       self.registration.showNotification(data.title || 'AI工具全书', {
         body: data.body || '',
-        icon: '/icons/icon-192x192.svg',
-        badge: '/icons/icon-192x192.svg',
+        icon: resolveAppUrl('icons/icon-192x192.svg'),
+        badge: resolveAppUrl('icons/icon-192x192.svg'),
         tag: data.tag,
         requireInteraction: data.requireInteraction || false,
         actions: data.actions || []
@@ -155,6 +167,6 @@ self.addEventListener('notificationclick', (event) => {
   event.notification.close();
   
   event.waitUntil(
-    clients.openWindow(event.notification.data?.url || '/')
+    clients.openWindow(event.notification.data?.url || resolveAppUrl(''))
   );
 });

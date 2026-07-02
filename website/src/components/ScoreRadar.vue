@@ -70,6 +70,14 @@ const labelPositions = computed(() => {
     return { ...d, x: p.x, y: p.y }
   })
 })
+
+const radarLabel = computed(() => {
+  const toolName = props.tool.name || '\u5f53\u524d\u5de5\u5177'
+  const scores = dimensions.value
+    .map(d => `${d.label} ${Math.round(d.value)}/100`)
+    .join('\uff0c')
+  return `\u8bc4\u5206\u96f7\u8fbe\u56fe\uff1a${toolName}\uff0c${scores}`
+})
 </script>
 
 <template>
@@ -77,7 +85,11 @@ const labelPositions = computed(() => {
     <svg
       :viewBox="`0 0 ${size} ${size}`"
       class="w-48 h-48"
+      role="img"
+      :aria-label="radarLabel"
     >
+      <title>{{ props.tool.name || '\u5f53\u524d\u5de5\u5177' }} \u8bc4\u5206\u96f7\u8fbe\u56fe</title>
+      <desc>{{ radarLabel }}</desc>
       <!-- Grid lines -->
       <polygon
         v-for="level in gridLevels"

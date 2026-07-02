@@ -1,7 +1,10 @@
 <template>
   <div>
     <h3 class="text-lg font-bold text-white mb-4 flex items-center gap-2">
-      <MessageSquare class="w-5 h-5 text-[#0a84ff]" />
+      <MessageSquare
+        class="w-5 h-5 text-[#0a84ff]"
+        aria-hidden="true"
+      />
       社区评论
       <span
         v-if="reviews.length"
@@ -20,11 +23,13 @@
         <img
           v-if="authStore.avatarUrl"
           :src="authStore.avatarUrl"
+          :alt="`${authStore.displayName} \u5934\u50cf`"
           class="w-8 h-8 rounded-full border border-white/[0.06] flex-shrink-0 mt-1"
         >
         <div class="flex-1">
           <textarea
             v-model="newReviewContent"
+            :aria-label="WRITE_REVIEW_LABEL"
             placeholder="分享你的使用体验..."
             rows="3"
             maxlength="2000"
@@ -33,7 +38,9 @@
           <div class="flex items-center justify-between mt-2">
             <span class="text-xs text-white/30">{{ newReviewContent.length }}/2000</span>
             <button
-              class="px-4 py-1.5 text-sm rounded-full transition-colors"
+              type="button"
+              :aria-label="SUBMIT_REVIEW_LABEL"
+              class="min-h-11 px-4 py-2 text-sm rounded-full transition-colors"
               :class="
                 canSubmit
                   ? 'bg-[#0a84ff] hover:brightness-110 text-white cursor-pointer'
@@ -59,7 +66,9 @@
       class="mb-4 p-3 rounded-xl bg-white/[0.04] border border-white/[0.06] text-center"
     >
       <button
-        class="text-sm text-[#0a84ff] hover:text-[#0a84ff]/80 transition-colors cursor-pointer"
+        type="button"
+        :aria-label="LOGIN_REVIEW_LABEL"
+        class="min-h-11 px-4 py-2 text-sm text-[#0a84ff] hover:text-[#0a84ff]/80 transition-colors cursor-pointer"
         @click="authStore.openAuthModal"
       >
         登录后发表评论
@@ -92,10 +101,12 @@
           <img
             v-if="review.avatarUrl"
             :src="review.avatarUrl"
+            :alt="`${review.displayName || 'User'} \u5934\u50cf`"
             class="w-6 h-6 rounded-full border border-white/[0.06]"
           >
           <div
             v-else
+            aria-hidden="true"
             class="w-6 h-6 rounded-full bg-white/[0.06] flex items-center justify-center"
           >
             <span class="text-xs text-white/40">{{ (review.displayName || '?')[0] }}</span>
@@ -104,13 +115,18 @@
           <span class="text-xs text-white/20">{{ formatDate(review.createdAt) }}</span>
           <button
             v-if="review.userId === authStore.userId"
-            class="ml-auto text-xs text-white/20 hover:text-red-400 transition-colors cursor-pointer"
+            type="button"
+            :aria-label="getDeleteReviewLabel(review)"
+            class="ml-auto min-h-11 px-3 text-xs text-white/40 hover:text-red-400 transition-colors cursor-pointer"
             @click="handleDelete(review.id)"
           >
             删除
           </button>
         </div>
-        <p class="text-sm text-white/[0.55] whitespace-pre-wrap">
+        <p
+          class="break-words text-sm text-white/[0.55] whitespace-pre-wrap"
+          data-testid="review-content"
+        >
           {{ review.content }}
         </p>
       </div>
@@ -133,6 +149,10 @@ const authStore = useAuthStore()
 const communityStore = useCommunityStore()
 const uiStore = useUIStore()
 
+const WRITE_REVIEW_LABEL = '\u5206\u4eab\u4f60\u7684\u4f7f\u7528\u4f53\u9a8c'
+const SUBMIT_REVIEW_LABEL = '\u53d1\u5e03\u8bc4\u8bba'
+const LOGIN_REVIEW_LABEL = '\u767b\u5f55\u540e\u53d1\u8868\u8bc4\u8bba'
+
 const newReviewContent = ref('')
 const submitting = ref(false)
 const submitError = ref(null)
@@ -148,6 +168,10 @@ function formatDate(dateStr) {
   const d = new Date(dateStr)
   if (isNaN(d.getTime())) return ''
   return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`
+}
+
+function getDeleteReviewLabel(review) {
+  return `\u5220\u9664\u8bc4\u8bba ${review.id}`
 }
 
 async function handleSubmitReview() {

@@ -10,6 +10,7 @@
           v-for="i in 5"
           :key="i"
           class="relative w-4 h-4"
+          aria-hidden="true"
         >
           <Star
             class="w-4 h-4"
@@ -24,7 +25,10 @@
           </span>
         </span>
       </div>
-      <span class="text-sm text-white/60">
+      <span
+        class="text-sm text-white/60"
+        :aria-label="`社区平均评分 ${stats.avgRating} 分，共 ${stats.ratingCount} 次评分`"
+      >
         {{ stats.avgRating }} <span class="text-white/30">({{ stats.ratingCount }})</span>
       </span>
     </div>
@@ -41,17 +45,27 @@
       class="flex items-center gap-2"
     >
       <span class="text-xs text-white/40">我的评分:</span>
-      <div class="flex items-center gap-0.5">
+      <div
+        class="flex items-center gap-0.5"
+        role="radiogroup"
+        aria-label="我的评分"
+      >
         <button
           v-for="i in 5"
           :key="i"
-          class="cursor-pointer transition-transform hover:scale-125"
+          type="button"
+          class="min-h-11 min-w-11 cursor-pointer rounded-full transition-transform hover:scale-110 focus:outline-none focus:ring-2 focus:ring-[#ffd60a]/60 disabled:cursor-wait"
+          role="radio"
+          :aria-label="`评 ${i} 分`"
+          :aria-checked="myRating === i"
+          :disabled="submitting"
           @click="handleRate(i)"
           @mouseenter="hoverRating = i"
           @mouseleave="hoverRating = 0"
         >
           <Star
             class="w-4 h-4"
+            aria-hidden="true"
             :class="i <= displayRating ? 'text-[#ffd60a] fill-[#ffd60a]' : 'text-white/20'"
           />
         </button>
@@ -61,7 +75,7 @@
     <!-- 未登录提示 -->
     <button
       v-if="!authStore.isAuthenticated"
-      class="text-xs text-white/30 hover:text-[#0a84ff] transition-colors cursor-pointer"
+      class="min-h-11 px-3 text-xs text-white/50 hover:text-[#0a84ff] transition-colors cursor-pointer"
       @click="authStore.openAuthModal"
     >
       登录后评分

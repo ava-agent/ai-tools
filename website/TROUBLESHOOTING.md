@@ -1,34 +1,36 @@
 # AI-Tools Website 浏览器验证指南
 
 ## 服务器状态
-✅ **开发服务器正在运行**: `http://localhost:3000/`
+✅ **开发服务器默认运行地址**: `http://localhost:8765/`
 
-**重要**: 端口从 3000 更改了（之前可能是 3002）。请确保访问正确的端口。
+**重要**: 当前 `vite.config.js` 默认端口是 8765。历史文档中出现过 3000/3002，请以当前配置为准。
 
 ---
 
 ## 如何访问新页面
 
 ### 方法 1: 通过导航栏访问
-1. 打开浏览器访问: `http://localhost:3000/`
+1. 打开浏览器访问: `http://localhost:8765/`
 2. **强制刷新页面** (Ctrl+Shift+R 或 Cmd+Shift+R) 清除缓存
-3. 查看顶部导航栏，应该看到以下链接：
-   - 工具列表
-   - **工具匹配** ← 新增
-   - **订阅指南** ← 新增
-   - **工作流** ← 新增
-   - 对比分析
+3. 查看顶部导航栏，应该看到以下主导航：
+   - 首页
+   - 全景浏览
+   - 工具对比
+   - 工作流
 
 ### 方法 2: 直接访问 URL
-- **工具匹配器**: `http://localhost:3000/matcher`
-- **订阅指南**: `http://localhost:3000/pricing`
-- **工作流**: `http://localhost:3000/workflows`
+- **首页**: `http://localhost:8765/#/`
+- **全景浏览**: `http://localhost:8765/#/tools`
+- **工具对比**: `http://localhost:8765/#/comparison`
+- **工作流**: `http://localhost:8765/#/workflows`
+- **工具详情**: `http://localhost:8765/#/tool/cursor`（不是 `/#/tools/cursor`）
+- **工具匹配器/订阅指南**: `/#/matcher`、`/#/pricing` 仍是路由页面，但不在当前顶部主导航中
 
 ---
 
 ## 故障排除
 
-### 问题: 看不到新的导航链接
+### 问题: 看不到当前主导航
 
 **解决方案**:
 1. **清除浏览器缓存并强制刷新**
@@ -36,13 +38,18 @@
    - Mac: Cmd + Shift + R
 
 2. **检查是否访问正确的端口**
-   - 确保访问 `http://localhost:3000/` (不是 3002)
+   - 确保访问 `http://localhost:8765/`（不是历史文档里的 3000/3002）
 
 3. **清除浏览器缓存**
    - Chrome: F12 → Application → Clear storage → Clear site data
    - Firefox: Ctrl+Shift+Delete → 选择 "缓存" → 清除
 
-4. **尝试无痕/隐私模式**
+4. **如果本地曾注册过旧 Service Worker，清除站点数据**
+   - Chrome: F12 → Application → Service Workers → Unregister
+   - 再到 Application → Storage → Clear site data
+   - 旧版开发服务器会在 dev 模式注册 `sw.js`，可能导致 `8765` 显示旧组件；当前版本已限制为 production 才注册。
+
+5. **尝试无痕/隐私模式**
    - Chrome: Ctrl+Shift+N
    - Firefox: Ctrl+Shift+P
 
@@ -65,24 +72,24 @@
 ### 1. 验证服务器运行
 ```bash
 # 在浏览器访问
-http://localhost:3000/
+http://localhost:8765/
 ```
 
 应该看到首页标题 "AI工具全书"
 
 ### 2. 验证导航栏
-查看页面顶部，应该有 5 个导航链接：
-- ✅ 工具列表
-- ✅ 工具匹配
-- ✅ 订阅指南
+查看页面顶部，应该有 4 个主导航链接：
+- ✅ 首页
+- ✅ 全景浏览
+- ✅ 工具对比
 - ✅ 工作流
-- ✅ 对比分析
 
 ### 3. 验证新页面
 点击导航链接或直接访问：
-- `http://localhost:3000/matcher` - 应该看到 "AI 工具匹配器" 标题
-- `http://localhost:3000/pricing` - 应该看到 "AI 工具订阅指南" 标题
-- `http://localhost:3000/workflows` - 应该看到 "AI 工作流最佳实践" 标题
+- `http://localhost:8765/#/tools` - 应该看到工具全景浏览和筛选
+- `http://localhost:8765/#/comparison` - 应该看到 "工具对比" 标题
+- `http://localhost:8765/#/workflows` - 应该看到 "AI 工作流最佳实践" 标题
+- `http://localhost:8765/#/matcher`、`/#/pricing` - 仍可作为直接路由访问
 
 ### 4. 验证页面功能
 - **Matcher 页面**: 点击类别卡片，应该出现决策树问题
@@ -156,10 +163,10 @@ http://localhost:3000/
 
 ## 总结
 
-✅ 服务器正在 `http://localhost:3000/` 运行
+✅ 服务器默认在 `http://localhost:8765/` 运行
 ✅ 所有新页面已创建并正确配置
 ✅ 路由配置正确
 ✅ 构建成功无错误
 ✅ 导航栏已更新
 
-**下一步**: 请在浏览器中访问 `http://localhost:3000/` 并强制刷新 (Ctrl+Shift+R)
+**下一步**: 请在浏览器中访问 `http://localhost:8765/` 并强制刷新 (Ctrl+Shift+R)

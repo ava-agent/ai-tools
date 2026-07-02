@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { getTagColor } from '../helpers'
+import { getTagColor, resolveToolLinks } from '../helpers'
 
 describe('helpers', () => {
   describe('getTagColor', () => {
@@ -25,6 +25,31 @@ describe('helpers', () => {
 
     it('returns default color for unknown tags', () => {
       expect(getTagColor('UnknownTag')).toBe('bg-gray-500')
+    })
+  })
+
+  describe('resolveToolLinks', () => {
+    const tools = [
+      { id: 'claude', name: 'Claude' },
+      { id: 'claude-code', name: 'Claude Code' },
+      { id: 'dalle', name: 'GPT Image 2 / ChatGPT Images' },
+    ]
+
+    it('uses explicit tool ids for composite recommendation labels', () => {
+      expect(resolveToolLinks('Claude / Claude Code', tools, ['claude', 'claude-code'])).toEqual([
+        { id: 'claude', name: 'Claude' },
+        { id: 'claude-code', name: 'Claude Code' },
+      ])
+    })
+
+    it('falls back to safe single-name resolution when no explicit ids are provided', () => {
+      expect(resolveToolLinks('GPT Image / ChatGPT 图像', tools, ['dalle'])).toEqual([
+        { id: 'dalle', name: 'GPT Image 2 / ChatGPT Images' },
+      ])
+    })
+
+    it('does not guess a catalog link for unknown non-catalog labels', () => {
+      expect(resolveToolLinks('通义法睿', tools)).toEqual([])
     })
   })
 })

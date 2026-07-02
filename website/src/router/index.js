@@ -1,4 +1,17 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
+import { getToolById } from '../data/tools.js'
+
+const defaultTitle = 'AI工具全书 | 持续核验的实战选型指南'
+
+function resolveRouteTitle(to) {
+  if (to.name === 'tool-detail') {
+    const tool = getToolById(String(to.params.id || ''))
+    if (tool?.name) {
+      return `${tool.name} - AI工具全书`
+    }
+  }
+  return to.meta.title || defaultTitle
+}
 
 // 路由级代码分割 - Vue Router 原生懒加载（不要使用 defineAsyncComponent）
 const routes = [
@@ -7,8 +20,8 @@ const routes = [
     name: 'landing',
     component: () => import('../views/Landing.vue'),
     meta: {
-      title: 'AI工具全书 | 2026深度集成与实战教学版',
-      description: '基于真实项目经验的 AI 工具评测与选型指南'
+      title: 'AI工具全书 | 持续核验的实战选型指南',
+      description: '按场景、预算和核验状态筛选 AI 工具的决策指南'
     }
   },
   {
@@ -72,7 +85,7 @@ const routes = [
     component: () => import('../views/Resources.vue'),
     meta: {
       title: '资源中心 - AI工具全书',
-      description: 'PPT 演示文稿、深度解析视频 — 全方位了解 AI 开发工具生态'
+      description: '历史演示文稿与解析视频，辅助理解当时的 AI 开发工具生态'
     }
   },
   {
@@ -124,8 +137,7 @@ const router = createRouter({
 
 // 全局导航守卫 - 更新页面标题和元数据
 router.beforeEach((to, from, next) => {
-  const defaultTitle = 'AI工具全书 | 2026深度集成与实战教学版'
-  document.title = to.meta.title || defaultTitle
+  document.title = resolveRouteTitle(to)
 
   // 更新 meta description
   const metaDescription = document.querySelector('meta[name="description"]')

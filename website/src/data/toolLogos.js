@@ -28,7 +28,7 @@ export const toolLogos = {
   'opencode':        { initials: 'OC', colors: ['#a855f7', '#9333ea'], text: '#ffffff', logoUrl: 'https://icons.duckduckgo.com/ip3/opencode.ai.ico' },
   'codex':           { initials: 'Cx', colors: ['#10a37f', '#0d8c6c'], text: '#ffffff', logoUrl: 'https://icons.duckduckgo.com/ip3/openai.com.ico' },
   'goose':           { initials: 'Go', colors: ['#f59e0b', '#d97706'], text: '#ffffff', logoUrl: 'https://icons.duckduckgo.com/ip3/block.xyz.ico' },
-  'openhands':       { initials: 'OH', colors: ['#ef4444', '#dc2626'], text: '#ffffff', logoUrl: 'https://icons.duckduckgo.com/ip3/all-hands.dev.ico' },
+  'openhands':       { initials: 'OH', colors: ['#ef4444', '#dc2626'], text: '#ffffff', logoUrl: 'https://www.google.com/s2/favicons?domain=all-hands.dev&sz=128' },
 
   // === AI Models ===
   'claude':          { initials: 'Cl', colors: ['#d97706', '#b45309'], text: '#ffffff', logoUrl: 'https://icons.duckduckgo.com/ip3/anthropic.com.ico' },
@@ -37,7 +37,7 @@ export const toolLogos = {
   'deepseek':        { initials: 'DS', colors: ['#0066ff', '#0052cc'], text: '#ffffff', logoUrl: 'https://icons.duckduckgo.com/ip3/deepseek.com.ico' },
   'glm':             { initials: 'GL', colors: ['#1890ff', '#0070cc'], text: '#ffffff', logoUrl: 'https://icons.duckduckgo.com/ip3/bigmodel.cn.ico' },
   'kimi':            { initials: 'Ki', colors: ['#000000', '#1a1a2e'], text: '#36d7b7', logoUrl: 'https://icons.duckduckgo.com/ip3/moonshot.cn.ico' },
-  'minimax':         { initials: 'Mx', colors: ['#ff6b35', '#e65a2e'], text: '#ffffff', logoUrl: 'https://icons.duckduckgo.com/ip3/minimaxi.com.ico' },
+  'minimax':         { initials: 'Mx', colors: ['#ff6b35', '#e65a2e'], text: '#ffffff', logoUrl: 'https://www.google.com/s2/favicons?domain=minimaxi.com&sz=128' },
   'doubao':          { initials: 'Db', colors: ['#3b82f6', '#2563eb'], text: '#ffffff', logoUrl: 'https://icons.duckduckgo.com/ip3/doubao.com.ico' },
 
   // === Multimodal ===
@@ -61,7 +61,7 @@ export const toolLogos = {
   'perplexity':      { initials: 'Pp', colors: ['#20808d', '#1a6b76'], text: '#ffffff', logoUrl: 'https://icons.duckduckgo.com/ip3/perplexity.ai.ico' },
 
   // === AI 应用构建器 (新增) ===
-  'devin':           { initials: 'Dv', colors: ['#000000', '#1a1a2e'], text: '#ffffff', logoUrl: 'https://icons.duckduckgo.com/ip3/cognition.ai.ico' },
+  'devin':           { initials: 'Dv', colors: ['#000000', '#1a1a2e'], text: '#ffffff', logoUrl: 'https://www.google.com/s2/favicons?domain=cognition.com&sz=128' },
   'bolt-new':        { initials: 'Bn', colors: ['#0ea5e9', '#0284c7'], text: '#ffffff', logoUrl: 'https://icons.duckduckgo.com/ip3/bolt.new.ico' },
   'v0':              { initials: 'V0', colors: ['#000000', '#1a1a2e'], text: '#ffffff', logoUrl: 'https://icons.duckduckgo.com/ip3/v0.dev.ico' },
   'lovable':         { initials: 'Lv', colors: ['#ff6b9d', '#e91e63'], text: '#ffffff', logoUrl: 'https://icons.duckduckgo.com/ip3/lovable.dev.ico' },
@@ -135,7 +135,7 @@ export const toolLogos = {
   // === MCP 工具 (补充) ===
   'sequential-thinking-mcp': { initials: 'ST', colors: ['#d97706', '#b45309'], text: '#ffffff', logoUrl: 'https://icons.duckduckgo.com/ip3/anthropic.com.ico' },
   'antv-chart-mcp':          { initials: 'AC', colors: ['#1677ff', '#0958d9'], text: '#ffffff', logoUrl: 'https://icons.duckduckgo.com/ip3/antv.antgroup.com.ico' },
-  'openmemory-mcp':          { initials: 'OM', colors: ['#7c3aed', '#6d28d9'], text: '#ffffff', logoUrl: 'https://icons.duckduckgo.com/ip3/mem0.ai.ico' },
+  'openmemory-mcp':          { initials: 'OM', colors: ['#7c3aed', '#6d28d9'], text: '#ffffff', logoUrl: 'https://www.google.com/s2/favicons?domain=mem0.ai&sz=128' },
   'atlassian-mcp':           { initials: 'AM', colors: ['#0052cc', '#0747a6'], text: '#ffffff', logoUrl: 'https://icons.duckduckgo.com/ip3/atlassian.com.ico' },
 
   // === 新增 MCP 工具 ===

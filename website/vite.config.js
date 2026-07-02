@@ -1,15 +1,33 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
-import { resolve } from 'path'
+import { resolve } from 'node:path'
+
+const srcDir = resolve(process.cwd(), 'src')
+const vendorPackages = ['vue', 'vue-router', 'pinia']
+
+export function getBasePath(env = process.env) {
+  return env.GITHUB_ACTIONS ? '/ai-tools/' : '/'
+}
+
+export function manualChunks(id) {
+  const normalizedId = id.replace(/\\/g, '/')
+  if (vendorPackages.some((pkg) => normalizedId.includes(`/node_modules/${pkg}/`))) {
+    return 'vue-vendor'
+  }
+  if (normalizedId.includes('/node_modules/lucide-vue-next/')) {
+    return 'icons'
+  }
+  return undefined
+}
 
 export default defineConfig(({ mode }) => ({
-  base: process.env.GITHUB_ACTIONS ? '/ai-tools/' : '/',
+  base: getBasePath(),
   plugins: [
     vue()
   ],
   resolve: {
     alias: {
-      '@': resolve(__dirname, 'src')
+      '@': srcDir
     }
   },
   build: {
@@ -20,10 +38,7 @@ export default defineConfig(({ mode }) => ({
     cssMinify: true,
     rollupOptions: {
       output: {
-        manualChunks: {
-          'vue-vendor': ['vue', 'vue-router', 'pinia'],
-          'icons': ['lucide-vue-next']
-        },
+        manualChunks,
         chunkFileNames: 'assets/js/[name]-[hash].js',
         entryFileNames: 'assets/js/[name]-[hash].js',
         assetFileNames: (assetInfo) => {
@@ -38,7 +53,7 @@ export default defineConfig(({ mode }) => ({
       }
     },
     chunkSizeWarningLimit: 500,
-    // 优化构建性能
+    // Optimize build output for modern browsers.
     target: 'es2020',
     cssTarget: 'chrome80'
   },
@@ -48,7 +63,7 @@ export default defineConfig(({ mode }) => ({
     host: '127.0.0.1',
     open: false,
     cors: true,
-    // 开发服务器优化
+    // Development server defaults.
     hmr: {
       overlay: false
     }
@@ -57,12 +72,12 @@ export default defineConfig(({ mode }) => ({
     port: 8766,
     open: false
   },
-  // 优化依赖预构建
+  // Pre-bundle common app dependencies.
   optimizeDeps: {
     include: ['vue', 'vue-router', 'pinia', 'lucide-vue-next', '@supabase/supabase-js'],
     exclude: []
   },
-  // CSS 优化
+  // CSS debugging.
   css: {
     devSourcemap: true
   }
