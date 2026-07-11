@@ -28,7 +28,7 @@
       >
         <!-- Category background decoration -->
         <img
-          :src="'/images/landing/cat-' + cat.id + '.png'"
+          :src="publicAsset(`images/landing/cat-${cat.id}.png`)"
           alt=""
           aria-hidden="true"
           class="absolute right-0 top-0 h-full w-auto max-w-[40%] object-cover object-left pointer-events-none"
@@ -107,6 +107,7 @@ import { computed } from 'vue'
 import { useToolsStore } from '../../stores/tools'
 import { categories } from '../../data/categories.js'
 import { useReveal } from '../../composables/useReveal'
+import { publicAsset } from '../../utils/publicAsset.js'
 import ToolLogo from '../ToolLogo.vue'
 import { categoryIconMap } from './CategoryIcons.js'
 

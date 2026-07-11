@@ -9,6 +9,7 @@
 - 将 `npm run lint` 固定为只检查不写入，将自动修复拆分为 `npm run lint:fix`。
 - 将 Vitest 默认命令固定为单次运行，避免 CI 进入 watch 模式。
 - 补充仓库工作规则和部署说明。
+- 让 landing 页公共图片使用 `BASE_URL`，避免 GitHub Pages `/ai-tools/` 子路径下出现 404。
 
 ## 验证要求
 

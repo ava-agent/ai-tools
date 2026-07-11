@@ -3,7 +3,7 @@
   <section class="relative flex flex-col items-center justify-center min-h-[70vh] px-5 text-center overflow-hidden">
     <!-- AI-generated hero background image -->
     <img
-      src="/images/landing/hero-bg.png"
+      :src="publicAsset('images/landing/hero-bg.png')"
       alt=""
       aria-hidden="true"
       class="absolute inset-0 w-full h-full object-cover pointer-events-none"
@@ -116,6 +116,7 @@
 
 <script setup>
 import { useToolsStore } from '../../stores/tools'
+import { publicAsset } from '../../utils/publicAsset.js'
 import HeroConstellation from './HeroConstellation.vue'
 
 const toolsStore = useToolsStore()

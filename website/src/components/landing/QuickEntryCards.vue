@@ -48,12 +48,13 @@
 
 <script setup>
 import { useReveal } from '../../composables/useReveal'
+import { publicAsset } from '../../utils/publicAsset.js'
 
 const { sectionRef, isRevealed } = useReveal()
 
 const entries = [
-  { to: '/tools', label: '全景浏览', desc: '125+ 工具分类浏览与搜索', bgImage: '/images/landing/entry-browse.png' },
-  { to: '/comparison', label: '选型对比', desc: '最多 4 款工具横向对比', bgImage: '/images/landing/entry-compare.png' },
-  { to: '/workflows', label: '工作流指南', desc: '6 套实战工作流模板', bgImage: '/images/landing/entry-workflow.png' },
+  { to: '/tools', label: '全景浏览', desc: '125+ 工具分类浏览与搜索', bgImage: publicAsset('images/landing/entry-browse.png') },
+  { to: '/comparison', label: '选型对比', desc: '最多 4 款工具横向对比', bgImage: publicAsset('images/landing/entry-compare.png') },
+  { to: '/workflows', label: '工作流指南', desc: '6 套实战工作流模板', bgImage: publicAsset('images/landing/entry-workflow.png') },
 ]
 </script>

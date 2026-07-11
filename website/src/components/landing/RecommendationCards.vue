@@ -65,17 +65,18 @@
 import { recommendations } from '../../data/recommendations.js'
 import { useToolsStore } from '../../stores/tools'
 import { useReveal } from '../../composables/useReveal'
+import { publicAsset } from '../../utils/publicAsset.js'
 import ToolLogo from '../ToolLogo.vue'
 
 const toolsStore = useToolsStore()
 const { sectionRef, isRevealed } = useReveal()
 
 const recBgMap = {
-  'daily-coding': '/images/landing/rec-coding.png',
-  'complex-refactor': '/images/landing/rec-refactor.png',
-  'free-stack': '/images/landing/rec-free.png',
-  'long-context': '/images/landing/rec-refactor.png',
-  'visual-generation': '/images/landing/rec-design.png',
+  'daily-coding': publicAsset('images/landing/rec-coding.png'),
+  'complex-refactor': publicAsset('images/landing/rec-refactor.png'),
+  'free-stack': publicAsset('images/landing/rec-free.png'),
+  'long-context': publicAsset('images/landing/rec-refactor.png'),
+  'visual-generation': publicAsset('images/landing/rec-design.png'),
 }
 
 function getToolName(toolId) {
