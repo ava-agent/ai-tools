@@ -1,5 +1,5 @@
 /* eslint-env serviceworker */
-const CACHE_NAME = 'ai-tools-v2';
+const CACHE_NAME = 'ai-tools-v3';
 const APP_SCOPE_URL = new URL(self.registration.scope);
 
 function resolveAppUrl(path = '') {
