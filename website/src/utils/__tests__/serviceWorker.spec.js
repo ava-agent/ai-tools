@@ -19,7 +19,7 @@ describe('serviceWorker', () => {
   it('keeps script and style assets on a network-first update path', () => {
     const swSource = readFileSync(resolve(process.cwd(), 'public/sw.js'), 'utf8')
 
-    expect(swSource).toContain("const CACHE_NAME = 'ai-tools-v2'")
+    expect(swSource).toContain("const CACHE_NAME = 'ai-tools-v3'")
     expect(swSource).toContain("request.destination === 'style'")
     expect(swSource).toContain("request.destination === 'script'")
     expect(swSource).toContain('event.respondWith(networkFirst(request));')

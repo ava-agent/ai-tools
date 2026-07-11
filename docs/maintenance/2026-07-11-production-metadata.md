@@ -10,6 +10,7 @@
 - 将 Vitest 默认命令固定为单次运行，避免 CI 进入 watch 模式。
 - 补充仓库工作规则和部署说明。
 - 让 landing 页公共图片使用 `BASE_URL`，避免 GitHub Pages `/ai-tools/` 子路径下出现 404。
+- 将 Service Worker 缓存版本升级为 `ai-tools-v3`，使回访用户淘汰旧 landing chunk 缓存。
 
 ## 验证要求
 
