@@ -5,13 +5,13 @@ import ToolCard from '../ToolCard.vue'
 const stubs = {
   'router-link': {
     template: '<a :href="to"><slot /></a>',
-    props: ['to'],
+    props: ['to']
   },
   RouterLink: {
     template: '<a :href="to"><slot /></a>',
-    props: ['to'],
+    props: ['to']
   },
-  ToolLogo: { template: '<div class="tool-logo-stub" />' },
+  ToolLogo: { template: '<div class="tool-logo-stub" />' }
 }
 
 describe('ToolCard', () => {
@@ -20,13 +20,15 @@ describe('ToolCard', () => {
     name: 'Test Tool',
     category: 'ide',
     developer: 'Test Developer',
-    versions: [{ type: 'Global', pricing: 'Free', models: 'Test Model', link: 'https://example.com' }],
+    versions: [
+      { type: 'Global', pricing: 'Free', models: 'Test Model', link: 'https://example.com' }
+    ],
     pros: ['Test Pro 1', 'Test Pro 2'],
     cons: ['Test Con 1', 'Test Con 2'],
     bestFor: 'Testing purposes',
     personalExperience: { rating: 5, insights: 'Test insights', pitfalls: ['Test pitfall'] },
     swot: { S: 'Strength', W: 'Weakness', O: 'Opportunity', T: 'Threat' },
-    tags: ['Test', 'Demo'],
+    tags: ['Test', 'Demo']
   }
 
   const mountCard = (props = {}) =>
@@ -36,6 +38,16 @@ describe('ToolCard', () => {
     const wrapper = mountCard()
     expect(wrapper.text()).toContain('Test Tool')
     expect(wrapper.text()).toContain('Test Developer')
+  })
+
+  it('keeps the dense row layout for large screens to avoid tablet overflow', () => {
+    const wrapper = mountCard()
+    const row = wrapper.get('[data-testid="tool-card-row"]')
+
+    expect(row.classes()).toContain(
+      'lg:grid-cols-[minmax(220px,1.25fr)_minmax(180px,1fr)_minmax(180px,1fr)_minmax(120px,auto)]'
+    )
+    expect(row.classes().some((className) => className.startsWith('md:grid-cols-'))).toBe(false)
   })
 
   it('shows star rating', () => {
@@ -76,8 +88,8 @@ describe('ToolCard', () => {
         ...tool,
         verificationStatus: 'verified',
         lastVerified: '2026-06-25',
-        sources: ['https://example.com'],
-      },
+        sources: ['https://example.com']
+      }
     })
     expect(wrapper.text()).toContain('已核验')
   })

@@ -1,6 +1,9 @@
 <template>
-  <header class="sticky top-0 z-50 pt-[env(safe-area-inset-top)] glass-nav">
-    <div class="max-w-[960px] mx-auto flex items-center h-12 px-5 gap-3">
+  <header
+    class="sticky top-0 z-50 pt-[env(safe-area-inset-top)] glass-nav"
+    @keydown.esc="handleMobileMenuEscape"
+  >
+    <div class="max-w-[1180px] mx-auto flex items-center h-12 px-5 gap-3">
       <!-- Logo -->
       <router-link
         to="/"
@@ -9,7 +12,7 @@
       >
         <div
           class="w-6 h-6 rounded-md flex items-center justify-center text-xs"
-          style="background: linear-gradient(135deg, #0a84ff, #bf5af2);"
+          style="background: linear-gradient(135deg, #2f81f7, #238636)"
         >
           <Brain class="w-3.5 h-3.5 text-white" />
         </div>
@@ -21,7 +24,7 @@
       <!-- Segmented Control (desktop) -->
       <nav
         class="hidden md:flex segmented-control"
-        aria-label="Main navigation"
+        aria-label="主导航"
       >
         <router-link
           v-for="item in mainNav"
@@ -53,19 +56,36 @@
           type="button"
           aria-label="打开工具搜索"
           class="flex min-h-11 min-w-11 items-center justify-center gap-1.5 px-3 py-1.5 rounded-control text-xs cursor-pointer"
-          style="background: rgba(255,255,255,0.06);"
+          style="background: rgba(255, 255, 255, 0.06)"
           @click="$router.push('/tools')"
         >
           <Search class="w-3.5 h-3.5 text-white/55" />
           <span class="text-white/25 hidden sm:inline">搜索</span>
         </button>
 
+        <!-- Guest sign in (desktop) -->
+        <button
+          v-if="authAvailable && !authStore.isAuthenticated"
+          type="button"
+          data-testid="desktop-login"
+          class="hidden min-h-11 cursor-pointer items-center gap-2 rounded-lg px-3 text-xs font-medium text-white/70 transition-colors hover:bg-white/[0.06] hover:text-white md:inline-flex"
+          @click="openLogin"
+        >
+          <LogIn
+            class="h-4 w-4"
+            aria-hidden="true"
+          />
+          <span>登录</span>
+        </button>
+
         <!-- Auth avatar -->
         <button
           v-if="authStore.isAuthenticated"
+          type="button"
+          data-testid="desktop-profile"
           :aria-label="`打开 ${authStore.displayName || '用户'} 资料面板`"
           class="flex min-h-11 min-w-11 items-center justify-center p-1.5 rounded-lg hover:bg-white/5 transition-colors cursor-pointer"
-          @click="isProfileOpen = true"
+          @click="openProfile"
         >
           <img
             v-if="authStore.avatarUrl"
@@ -81,6 +101,7 @@
 
         <!-- Mobile menu button -->
         <button
+          ref="mobileMenuButtonRef"
           class="md:hidden min-h-11 min-w-11 p-2 rounded-lg text-white/60 hover:text-white hover:bg-white/5 transition-colors cursor-pointer"
           :aria-expanded="isMobileMenuVisible"
           aria-controls="mobile-navigation"
@@ -108,9 +129,11 @@
       leave-from-class="opacity-100 translate-y-0"
       leave-to-class="opacity-0 -translate-y-2"
     >
-      <div
+      <nav
         v-if="isMobileMenuVisible"
         id="mobile-navigation"
+        ref="mobileNavigationRef"
+        aria-label="移动导航"
         class="md:hidden px-5 pb-4 pt-2 border-t border-white/[0.06]"
       >
         <div class="flex flex-col gap-1">
@@ -127,8 +150,36 @@
             />
             {{ item.label }}
           </router-link>
+
+          <button
+            v-if="authAvailable && !authStore.isAuthenticated"
+            type="button"
+            data-testid="mobile-login"
+            class="flex min-h-11 w-full cursor-pointer items-center gap-3 rounded-lg px-3 py-2.5 text-left text-sm font-medium text-white/80 transition-colors hover:bg-white/5 hover:text-white"
+            @click="openLogin"
+          >
+            <LogIn
+              class="h-4 w-4"
+              aria-hidden="true"
+            />
+            <span>登录</span>
+          </button>
+
+          <button
+            v-else-if="authStore.isAuthenticated"
+            type="button"
+            data-testid="mobile-profile"
+            class="flex min-h-11 w-full cursor-pointer items-center gap-3 rounded-lg px-3 py-2.5 text-left text-sm font-medium text-white/80 transition-colors hover:bg-white/5 hover:text-white"
+            @click="openProfile"
+          >
+            <UserCircle
+              class="h-4 w-4"
+              aria-hidden="true"
+            />
+            <span>个人中心</span>
+          </button>
         </div>
-      </div>
+      </nav>
     </transition>
 
     <!-- User Profile Panel -->
@@ -140,65 +191,107 @@
 </template>
 
 <script setup>
-import { computed, onBeforeUnmount, onMounted, ref, watch } from 'vue'
+import { computed, nextTick, onBeforeUnmount, onMounted, ref, watch } from 'vue'
 import { useRouter } from 'vue-router'
-import { Brain, Menu, X, Search, LayoutGrid, GitCompare, Workflow, UserCircle, Sparkles, DollarSign, BookOpen } from 'lucide-vue-next'
+import {
+  Brain,
+  Menu,
+  X,
+  Search,
+  LayoutGrid,
+  GitCompare,
+  Workflow,
+  UserCircle,
+  LogIn,
+  Sparkles,
+  DollarSign,
+  BookOpen
+} from 'lucide-vue-next'
 import { useAuthStore } from '../stores/auth.js'
+import { isSupabaseConfigured } from '../lib/supabase.js'
 import UserProfilePanel from './gamification/UserProfilePanel.vue'
 
+const props = defineProps({
+  authAvailable: {
+    type: Boolean,
+    default: () => isSupabaseConfigured()
+  }
+})
+
 const authStore = useAuthStore()
+const authAvailable = computed(() => props.authAvailable)
 const router = useRouter()
 const isMobileMenuOpen = ref(false)
 const mobileMenuRoute = ref('')
+const mobileMenuButtonRef = ref(null)
+const mobileNavigationRef = ref(null)
 const isProfileOpen = ref(false)
 const isMobileMenuVisible = computed(
-  () => isMobileMenuOpen.value && mobileMenuRoute.value === router.currentRoute.value.fullPath,
+  () => isMobileMenuOpen.value && mobileMenuRoute.value === router.currentRoute.value.fullPath
 )
 
 const mainNav = [
   { to: '/', label: '首页', icon: Brain },
   { to: '/tools', label: '全景浏览', icon: LayoutGrid },
   { to: '/comparison', label: '工具对比', icon: GitCompare },
-  { to: '/workflows', label: '工作流', icon: Workflow },
+  { to: '/workflows', label: '工作流', icon: Workflow }
 ]
 
 const secondaryNav = [
   { to: '/matcher', label: '帮我选', icon: Sparkles },
   { to: '/pricing', label: '订阅指南', icon: DollarSign },
-  { to: '/resources', label: '资源库', icon: BookOpen },
+  { to: '/resources', label: '资源库', icon: BookOpen }
 ]
 
-const toggleMobileMenu = () => {
+const toggleMobileMenu = async () => {
   if (isMobileMenuVisible.value) {
-    closeMobileMenu()
+    closeMobileMenu({ restoreFocus: true })
     return
   }
   mobileMenuRoute.value = router.currentRoute.value.fullPath
   isMobileMenuOpen.value = true
+  await nextTick()
+  mobileNavigationRef.value?.querySelector('a, button')?.focus()
 }
 
-const closeMobileMenu = () => {
+const closeMobileMenu = (options = {}) => {
+  const restoreFocus = options?.restoreFocus === true
   isMobileMenuOpen.value = false
   mobileMenuRoute.value = ''
+  if (restoreFocus) {
+    nextTick(() => mobileMenuButtonRef.value?.focus())
+  }
+}
+
+const handleMobileMenuEscape = (event) => {
+  if (!isMobileMenuVisible.value) return
+  event.preventDefault()
+  event.stopPropagation()
+  closeMobileMenu({ restoreFocus: true })
+}
+
+const openLogin = () => {
+  closeMobileMenu()
+  authStore.openAuthModal()
+}
+
+const openProfile = () => {
+  closeMobileMenu()
+  isProfileOpen.value = true
 }
 
 const removeRouteGuard = router.afterEach(() => {
   closeMobileMenu()
 })
 
-watch(
-  () => router.currentRoute.value.fullPath,
-  closeMobileMenu,
-)
+watch(() => router.currentRoute.value.fullPath, closeMobileMenu)
 
 onMounted(() => {
-  window.addEventListener('hashchange', closeMobileMenu)
   window.addEventListener('popstate', closeMobileMenu)
 })
 
 onBeforeUnmount(() => {
   removeRouteGuard()
-  window.removeEventListener('hashchange', closeMobileMenu)
   window.removeEventListener('popstate', closeMobileMenu)
 })
 </script>

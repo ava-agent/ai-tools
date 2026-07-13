@@ -1,9 +1,10 @@
 import { describe, it, expect, beforeEach, vi } from 'vitest'
-import { mount } from '@vue/test-utils'
+import { flushPromises, mount } from '@vue/test-utils'
+import { nextTick } from 'vue'
 import { createPinia, setActivePinia } from 'pinia'
 import { createRouter, createMemoryHistory } from 'vue-router'
 import Comparison from '../Comparison.vue'
-import { useToolsStore } from '../../stores/tools'
+import { useComparisonStore } from '../../stores/comparison'
 
 const stubs = {
   ToolLogo: { template: '<div class="tool-logo-stub" />' },
@@ -121,16 +122,16 @@ const sampleTools = [
   },
 ]
 
-async function mountComparison(toolsInput = sampleTools) {
+async function mountComparison(toolsInput = sampleTools, initialRoute = '/comparison') {
   const pinia = createPinia()
   setActivePinia(pinia)
 
-  const toolsStore = useToolsStore()
+  const toolsStore = useComparisonStore()
   toolsStore.tools = toolsInput
   toolsStore.clearCompare()
 
   const router = makeRouter()
-  await router.push('/comparison')
+  await router.push(initialRoute)
   await router.isReady()
 
   const wrapper = mount(Comparison, {
@@ -140,7 +141,10 @@ async function mountComparison(toolsInput = sampleTools) {
     },
   })
 
-  return { wrapper, toolsStore }
+  await flushPromises()
+  await nextTick()
+
+  return { wrapper, toolsStore, router }
 }
 
 describe('Comparison', () => {
@@ -155,6 +159,7 @@ describe('Comparison', () => {
     expect(scenario.attributes('aria-pressed')).toBe('false')
 
     await scenario.trigger('click')
+    await flushPromises()
 
     expect(toolsStore.comparedToolIds).toEqual(['cursor', 'claude-code', 'github-copilot'])
     expect(scenario.attributes('aria-pressed')).toBe('true')
@@ -164,6 +169,83 @@ describe('Comparison', () => {
     expect(wrapper.text()).toContain('综合评分')
     expect(wrapper.text()).toContain('免费额度')
     expect(wrapper.text()).toContain('Cursor')
+  })
+
+  it('opens a shared comparison URL directly in the result state', async () => {
+    const { wrapper, toolsStore } = await mountComparison(
+      sampleTools,
+      '/comparison?tools=cursor,claude-code,github-copilot&start=1',
+    )
+
+    expect(toolsStore.comparedToolIds).toEqual(['cursor', 'claude-code', 'github-copilot'])
+    expect(wrapper.find('[data-testid="comparison-decision-summary"]').exists()).toBe(true)
+    expect(wrapper.text()).toContain('手动对比')
+  })
+
+  it('clears the selected tools when navigation removes the shared query', async () => {
+    const { router, toolsStore } = await mountComparison(
+      sampleTools,
+      '/comparison?tools=cursor,claude-code&start=1',
+    )
+
+    expect(toolsStore.comparedToolIds).toEqual(['cursor', 'claude-code'])
+
+    await router.push('/comparison')
+    await nextTick()
+
+    expect(toolsStore.comparedToolIds).toEqual([])
+  })
+
+  it('canonicalizes invalid shared parameters without losing unrelated query state', async () => {
+    const { router, toolsStore } = await mountComparison(
+      sampleTools,
+      '/comparison?tools=cursor,cursor,missing,claude-code,trae,opencode&q=keep&start=1&scenario=personal-dev',
+    )
+
+    expect(toolsStore.comparedToolIds).toEqual(['cursor', 'claude-code', 'trae', 'opencode'])
+    expect(router.currentRoute.value.query).toEqual({
+      tools: 'cursor,claude-code,trae,opencode',
+      q: 'keep',
+      start: '1',
+    })
+  })
+
+  it('removes start mode when fewer than two valid tools remain', async () => {
+    const { router, toolsStore } = await mountComparison(
+      sampleTools,
+      '/comparison?tools=cursor,missing&start=1',
+    )
+
+    expect(toolsStore.comparedToolIds).toEqual(['cursor'])
+    expect(router.currentRoute.value.query).toEqual({ tools: 'cursor' })
+  })
+
+  it('searches the comparison catalog and reports the result count', async () => {
+    const { wrapper } = await mountComparison()
+    const search = wrapper.get('[data-testid="comparison-tool-search"]')
+
+    await search.setValue('Gemini')
+
+    expect(wrapper.get('[data-testid="comparison-result-count"]').text()).toContain('1 个工具')
+    expect(wrapper.find('[data-testid="comparison-desktop-table"]').text()).toContain('Gemini CLI')
+    expect(wrapper.find('[data-testid="comparison-desktop-table"]').text()).not.toContain('Cursor')
+  })
+
+  it('renders a bounded first page and loads more tools on demand', async () => {
+    const manyTools = Array.from({ length: 30 }, (_, index) => ({
+      ...sampleTools[index % sampleTools.length],
+      id: `tool-${index}`,
+      name: `Tool ${String(index).padStart(2, '0')}`,
+    }))
+    const { wrapper } = await mountComparison(manyTools)
+
+    expect(wrapper.findAll('[data-testid^="comparison-mobile-card-"]')).toHaveLength(24)
+    expect(wrapper.get('[data-testid="comparison-visible-count"]').text()).toContain('24 / 30')
+
+    await wrapper.get('[data-testid="comparison-load-more"]').trigger('click')
+
+    expect(wrapper.findAll('[data-testid^="comparison-mobile-card-"]')).toHaveLength(30)
+    expect(wrapper.find('[data-testid="comparison-load-more"]').exists()).toBe(false)
   })
 
   it('shows dimension winners for a manual compare flow', async () => {
@@ -176,12 +258,25 @@ describe('Comparison', () => {
     await checkboxes[0].setValue(true)
     await checkboxes[3].setValue(true)
     await wrapper.get('[data-testid="start-manual-compare"]').trigger('click')
+    await flushPromises()
 
     expect(wrapper.text()).toContain('手动对比')
     expect(wrapper.text()).toContain('按维度胜出')
     expect(wrapper.text()).toContain('综合评分')
     expect(wrapper.text()).toContain('中文支持')
     expect(wrapper.text()).toContain('Trae')
+  })
+
+  it('drops a preset conclusion when the selection is changed manually', async () => {
+    const { wrapper } = await mountComparison()
+    await wrapper.get('[data-testid="comparison-scenario-personal-dev"]').trigger('click')
+    await flushPromises()
+
+    await wrapper.get('button[aria-label="移除 Cursor"]').trigger('click')
+
+    const summary = wrapper.get('[data-testid="comparison-decision-summary"]')
+    expect(summary.text()).not.toContain('个人主力开发')
+    expect(summary.text()).toContain('手动对比')
   })
 
   it('keeps the low-cost scenario from treating Qwen CLI as zero-cost', async () => {
@@ -192,6 +287,7 @@ describe('Comparison', () => {
     expect(scenario.text()).not.toContain('零成本试用')
 
     await scenario.trigger('click')
+    await flushPromises()
 
     expect(toolsStore.comparedToolIds).toEqual(['trae', 'gemini-cli', 'opencode'])
     expect(toolsStore.comparedToolIds).not.toContain('qwen-cli')

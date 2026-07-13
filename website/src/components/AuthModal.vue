@@ -8,7 +8,12 @@
         @keydown="handleModalKeydown"
       >
         <!-- Backdrop -->
-        <div class="absolute inset-0 bg-black/60 backdrop-blur-sm" />
+        <div
+          data-testid="auth-modal-backdrop"
+          class="absolute inset-0 bg-black/60 backdrop-blur-sm"
+          aria-hidden="true"
+          @click="authStore.closeAuthModal"
+        />
 
         <!-- Modal -->
         <div
@@ -38,109 +43,126 @@
             <div
               class="w-12 h-12 mx-auto mb-3 rounded-full bg-[#0a84ff]/20 flex items-center justify-center"
             >
-              <LogIn class="w-6 h-6 text-[#0a84ff]" />
+              <component
+                :is="isAuthAvailable ? LogIn : CloudOff"
+                class="w-6 h-6 text-[#0a84ff]"
+              />
             </div>
             <h2
               id="auth-modal-title"
               class="text-xl font-bold text-white"
             >
-              {{ isSignUp ? '创建账户' : '登录' }}
+              {{ isAuthAvailable ? (isSignUp ? '创建账户' : '登录') : '本地模式' }}
             </h2>
             <p class="text-sm text-white/50 mt-1">
-              登录后可同步进度、参与社区互动
+              {{ isAuthAvailable ? '登录后可同步进度、参与社区互动' : '账户与云同步暂未开放' }}
             </p>
           </div>
 
-          <!-- GitHub OAuth -->
-          <button
-            type="button"
-            data-testid="auth-modal-github"
-            class="w-full flex items-center justify-center gap-3 px-4 py-3 rounded-full bg-white/[0.08] hover:bg-white/[0.12] border border-white/[0.06] text-white font-medium transition-all duration-200 cursor-pointer"
-            :disabled="isLoading"
-            @click="handleGitHubLogin"
-          >
-            <Github class="w-5 h-5" />
-            使用 GitHub 登录
-          </button>
-
-          <!-- Divider -->
-          <div class="flex items-center gap-3 my-5">
-            <div class="flex-1 border-t border-white/[0.06]" />
-            <span class="text-xs text-white/30">或</span>
-            <div class="flex-1 border-t border-white/[0.06]" />
-          </div>
-
-          <!-- Email form -->
-          <form
-            class="space-y-3"
-            @submit.prevent="handleEmailSubmit"
-          >
-            <input
-              v-model="email"
-              type="email"
-              data-testid="auth-modal-email"
-              aria-label="邮箱"
-              placeholder="邮箱"
-              required
-              :disabled="isLoading"
-              class="input-field"
-            >
-            <input
-              v-model="password"
-              type="password"
-              data-testid="auth-modal-password"
-              aria-label="密码"
-              placeholder="密码"
-              required
-              minlength="6"
-              :disabled="isLoading"
-              class="input-field"
-            >
-            <button
-              type="submit"
-              data-testid="auth-modal-submit"
-              :disabled="isLoading"
-              :aria-busy="isLoading ? 'true' : 'false'"
-              class="btn-capsule w-full disabled:opacity-50"
-            >
-              {{ isLoading ? '处理中...' : (isSignUp ? '注册' : '登录') }}
-            </button>
-          </form>
-
-          <!-- Success message (for sign-up email confirmation) -->
-          <p
-            v-if="successMessage"
-            data-testid="auth-modal-success"
+          <div
+            v-if="!isAuthAvailable"
+            data-testid="auth-modal-unavailable"
             role="status"
             aria-live="polite"
-            class="mt-3 text-xs text-[#30d158] text-center"
+            class="rounded-lg border border-white/[0.08] bg-white/[0.04] p-4 text-center"
           >
-            {{ successMessage }}
-          </p>
+            <p class="text-sm leading-relaxed text-white/70">
+              你仍可使用浏览、筛选、对比和本地学习进度；账户功能开放后再进行同步。
+            </p>
+          </div>
 
-          <!-- Error message -->
-          <p
-            v-if="authStore.error"
-            data-testid="auth-modal-error"
-            role="alert"
-            aria-live="assertive"
-            class="mt-3 text-xs text-[#ff453a] text-center"
-          >
-            {{ authStore.error }}
-          </p>
-
-          <!-- Toggle sign up / sign in -->
-          <p class="mt-4 text-center text-xs text-white/40">
-            {{ isSignUp ? '已有账户？' : '没有账户？' }}
+          <template v-else>
+            <!-- GitHub OAuth -->
             <button
               type="button"
-              data-testid="auth-modal-toggle"
-              class="inline-flex min-h-11 items-center px-2 text-[#0a84ff] hover:text-[#0a84ff]/80 transition-colors"
-              @click="isSignUp = !isSignUp"
+              data-testid="auth-modal-github"
+              class="w-full flex items-center justify-center gap-3 px-4 py-3 rounded-full bg-white/[0.08] hover:bg-white/[0.12] border border-white/[0.06] text-white font-medium transition-all duration-200 cursor-pointer"
+              :disabled="isLoading"
+              @click="handleGitHubLogin"
             >
-              {{ isSignUp ? '去登录' : '注册' }}
+              <Github class="w-5 h-5" />
+              使用 GitHub 登录
             </button>
-          </p>
+
+            <!-- Divider -->
+            <div class="flex items-center gap-3 my-5">
+              <div class="flex-1 border-t border-white/[0.06]" />
+              <span class="text-xs text-white/30">或</span>
+              <div class="flex-1 border-t border-white/[0.06]" />
+            </div>
+
+            <!-- Email form -->
+            <form
+              class="space-y-3"
+              @submit.prevent="handleEmailSubmit"
+            >
+              <input
+                v-model="email"
+                type="email"
+                data-testid="auth-modal-email"
+                aria-label="邮箱"
+                placeholder="邮箱"
+                required
+                :disabled="isLoading"
+                class="input-field"
+              >
+              <input
+                v-model="password"
+                type="password"
+                data-testid="auth-modal-password"
+                aria-label="密码"
+                placeholder="密码"
+                required
+                minlength="6"
+                :disabled="isLoading"
+                class="input-field"
+              >
+              <button
+                type="submit"
+                data-testid="auth-modal-submit"
+                :disabled="isLoading"
+                :aria-busy="isLoading ? 'true' : 'false'"
+                class="btn-capsule w-full disabled:opacity-50"
+              >
+                {{ isLoading ? '处理中...' : (isSignUp ? '注册' : '登录') }}
+              </button>
+            </form>
+
+            <!-- Success message (for sign-up email confirmation) -->
+            <p
+              v-if="successMessage"
+              data-testid="auth-modal-success"
+              role="status"
+              aria-live="polite"
+              class="mt-3 text-xs text-[#30d158] text-center"
+            >
+              {{ successMessage }}
+            </p>
+
+            <!-- Error message -->
+            <p
+              v-if="authStore.error"
+              data-testid="auth-modal-error"
+              role="alert"
+              aria-live="assertive"
+              class="mt-3 text-xs text-[#ff453a] text-center"
+            >
+              {{ authStore.error }}
+            </p>
+
+            <!-- Toggle sign up / sign in -->
+            <p class="mt-4 text-center text-xs text-white/40">
+              {{ isSignUp ? '已有账户？' : '没有账户？' }}
+              <button
+                type="button"
+                data-testid="auth-modal-toggle"
+                class="inline-flex min-h-11 items-center px-2 text-[#0a84ff] hover:text-[#0a84ff]/80 transition-colors"
+                @click="isSignUp = !isSignUp"
+              >
+                {{ isSignUp ? '去登录' : '注册' }}
+              </button>
+            </p>
+          </template>
         </div>
       </div>
     </Transition>
@@ -148,11 +170,20 @@
 </template>
 
 <script setup>
-import { nextTick, ref, watch } from 'vue'
-import { X, LogIn, Github } from 'lucide-vue-next'
+import { computed, nextTick, ref, watch } from 'vue'
+import { CloudOff, X, LogIn, Github } from 'lucide-vue-next'
 import { useAuthStore } from '../stores/auth.js'
 
 const authStore = useAuthStore()
+const props = defineProps({
+  authAvailable: {
+    type: Boolean,
+    default: undefined
+  }
+})
+const isAuthAvailable = computed(
+  () => props.authAvailable ?? authStore.isAuthAvailable
+)
 
 const isSignUp = ref(false)
 const email = ref('')
@@ -223,8 +254,16 @@ watch(
   },
 )
 
-function handleGitHubLogin() {
-  authStore.signInWithGitHub()
+async function handleGitHubLogin() {
+  if (isLoading.value) return
+  isLoading.value = true
+  try {
+    await authStore.signInWithGitHub()
+  } catch {
+    authStore.error = '登录请求失败，请检查网络后重试'
+  } finally {
+    isLoading.value = false
+  }
 }
 
 function handleModalKeydown(event) {
@@ -254,22 +293,28 @@ function handleModalKeydown(event) {
 }
 
 async function handleEmailSubmit() {
+  if (isLoading.value) return
   isLoading.value = true
   successMessage.value = ''
-  if (isSignUp.value) {
-    await authStore.signUpWithEmail(email.value, password.value)
-    // For sign-up, show success message (user may need to confirm email)
-    if (!authStore.error) {
-      successMessage.value = '注册成功！请查收邮件确认账户'
-      email.value = ''
-      password.value = ''
-      isSignUp.value = false // Switch to login mode
+  try {
+    if (isSignUp.value) {
+      await authStore.signUpWithEmail(email.value, password.value)
+      // For sign-up, show success message (user may need to confirm email)
+      if (!authStore.error) {
+        successMessage.value = '注册成功！请查收邮件确认账户'
+        email.value = ''
+        password.value = ''
+        isSignUp.value = false // Switch to login mode
+      }
+    } else {
+      await authStore.signInWithEmail(email.value, password.value)
+      // For sign-in, the watch on isAuthenticated will close the modal
     }
-  } else {
-    await authStore.signInWithEmail(email.value, password.value)
-    // For sign-in, the watch on isAuthenticated will close the modal
+  } catch {
+    authStore.error = '登录请求失败，请检查网络后重试'
+  } finally {
+    isLoading.value = false
   }
-  isLoading.value = false
 }
 </script>
 

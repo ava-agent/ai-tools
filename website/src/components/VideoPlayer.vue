@@ -10,6 +10,7 @@
       <video
         ref="videoRef"
         class="video-element"
+        :aria-label="label"
         :poster="posterUrl"
         :controls="showControls"
         preload="metadata"
@@ -90,6 +91,47 @@
     </div>
 
     <div
+      v-else-if="videoError"
+      class="video-placeholder"
+      role="alert"
+    >
+      <AlertCircle class="w-12 h-12 text-[#ff453a]" />
+      <p class="mt-2 text-white">
+        视频加载失败
+      </p>
+      <p class="mt-1 text-sm text-muted">
+        请检查网络后重试
+      </p>
+      <button
+        type="button"
+        class="mt-4 inline-flex min-h-11 items-center gap-2 rounded-lg border border-white/10 px-4 text-sm text-white transition-colors hover:border-primary/40 hover:text-primary"
+        @click="retryVideo"
+      >
+        <RefreshCw class="h-4 w-4" />
+        重新加载
+      </button>
+    </div>
+
+    <div
+      v-else-if="deferLoad && src"
+      class="video-placeholder"
+    >
+      <Video class="w-12 h-12 text-muted" />
+      <button
+        type="button"
+        data-testid="video-load-trigger"
+        class="mt-3 inline-flex min-h-11 items-center gap-2 rounded-lg border border-white/10 px-4 text-sm text-white transition-colors hover:border-primary/40 hover:text-primary"
+        @click="loadVideo"
+      >
+        <Play class="h-4 w-4" />
+        加载视频
+      </button>
+      <p class="mt-2 text-xs text-muted">
+        点击后加载媒体，节省流量
+      </p>
+    </div>
+
+    <div
       v-else
       class="video-placeholder"
     >
@@ -103,7 +145,8 @@
 
 <script setup>
 import { ref, computed, onMounted, onUnmounted } from 'vue'
-import { Play, Pause, Maximize, Video } from 'lucide-vue-next'
+import { AlertCircle, Maximize, Pause, Play, RefreshCw, Video } from 'lucide-vue-next'
+import { resolvePublicAssetPath } from '../utils/publicAssets.js'
 
 const props = defineProps({
   src: {
@@ -125,6 +168,14 @@ const props = defineProps({
   autoplay: {
     type: Boolean,
     default: false
+  },
+  label: {
+    type: String,
+    default: '演示视频'
+  },
+  deferLoad: {
+    type: Boolean,
+    default: false
   }
 })
 
@@ -136,11 +187,14 @@ const currentTime = ref(0)
 const duration = ref(0)
 const showCustomControls = ref(false)
 const videoError = ref(false)
+const loadRequested = ref(!props.deferLoad)
 let hideControlsTimer = null
 let playPromise = null
 
-const videoSrc = computed(() => videoError.value ? null : props.src)
-const posterUrl = computed(() => props.thumbnail)
+const videoSrc = computed(() =>
+  !videoError.value && loadRequested.value ? resolvePublicAssetPath(props.src) : null
+)
+const posterUrl = computed(() => resolvePublicAssetPath(props.thumbnail))
 
 const progressPercent = computed(() => {
   if (duration.value === 0) return 0
@@ -188,6 +242,15 @@ const onLoadedMetadata = () => {
 
 const onVideoError = () => {
   videoError.value = true
+}
+
+const loadVideo = () => {
+  loadRequested.value = true
+}
+
+const retryVideo = () => {
+  videoError.value = false
+  loadRequested.value = true
 }
 
 const seekToValue = (event) => {

@@ -8,6 +8,7 @@ async function mountFooter() {
     history: createMemoryHistory(),
     routes: [
       { path: '/', name: 'landing', component: { template: '<div />' } },
+      { path: '/tools', name: 'tools', component: { template: '<div />' } },
       { path: '/matcher', name: 'matcher', component: { template: '<div />' } },
       { path: '/pricing', name: 'pricing', component: { template: '<div />' } },
       { path: '/workflows', name: 'workflows', component: { template: '<div />' } },
@@ -43,5 +44,12 @@ describe('Footer', () => {
 
     const githubLink = wrapper.get('a[href="https://github.com/ava-agent/ai-tools"]')
     expect(githubLink.classes()).toEqual(expect.arrayContaining(['min-h-11', 'items-center']))
+  })
+
+  it('routes the tool list link to the catalog instead of the landing page', async () => {
+    const wrapper = await mountFooter()
+    const catalogLink = wrapper.get('a[href="/tools"]')
+
+    expect(catalogLink.text()).toContain('工具列表')
   })
 })

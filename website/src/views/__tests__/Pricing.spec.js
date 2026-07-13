@@ -3,7 +3,7 @@ import { mount } from '@vue/test-utils'
 import { createPinia, setActivePinia } from 'pinia'
 import { createRouter, createMemoryHistory } from 'vue-router'
 import Pricing from '../Pricing.vue'
-import { useToolsStore } from '../../stores/tools'
+import { usePricingCatalogStore } from '../../stores/pricingCatalog'
 
 function makeRouter() {
   return createRouter({
@@ -66,11 +66,22 @@ const sampleTools = [
   },
 ]
 
+function makePricingTools(count, categoryForIndex = () => 'ide') {
+  return Array.from({ length: count }, (_, index) => ({
+    id: `tool-${index + 1}`,
+    name: `Tool ${index + 1}`,
+    category: categoryForIndex(index),
+    versions: [{ pricing: `$${index + 1}/月`, models: 'Test model', link: 'https://example.com' }],
+    freeQuota: '有限免费额度',
+    personalExperience: { rating: 3 },
+  }))
+}
+
 async function mountPricing(toolsInput = sampleTools) {
   const pinia = createPinia()
   setActivePinia(pinia)
 
-  const toolsStore = useToolsStore()
+  const toolsStore = usePricingCatalogStore()
   toolsStore.tools = toolsInput
 
   const router = makeRouter()
@@ -143,6 +154,47 @@ describe('Pricing', () => {
 
     const detailLink = wrapper.get('[data-testid="pricing-mobile-detail-cursor"]')
     expect(detailLink.classes()).toEqual(expect.arrayContaining(['min-h-11', 'justify-center']))
+  })
+
+  it('renders mobile pricing cards in batches while keeping every desktop row', async () => {
+    const { wrapper } = await mountPricing(makePricingTools(40))
+
+    expect(wrapper.findAll('[data-testid^="pricing-mobile-card-"]')).toHaveLength(16)
+    expect(wrapper.get('[data-testid="pricing-mobile-count"]').text()).toBe('已显示 16 / 40 个工具')
+    expect(wrapper.findAll('[data-testid="pricing-desktop-table"] tbody tr')).toHaveLength(40)
+
+    const loadMore = wrapper.get('[data-testid="pricing-mobile-load-more"]')
+    expect(loadMore.text()).toContain('再显示 16 个')
+    expect(loadMore.attributes('aria-controls')).toBe('pricing-mobile-results')
+
+    await loadMore.trigger('click')
+    expect(wrapper.findAll('[data-testid^="pricing-mobile-card-"]')).toHaveLength(32)
+    expect(wrapper.get('[data-testid="pricing-mobile-count"]').text()).toBe('已显示 32 / 40 个工具')
+    expect(wrapper.get('[data-testid="pricing-mobile-load-more"]').text()).toContain('再显示 8 个')
+
+    await wrapper.get('[data-testid="pricing-mobile-load-more"]').trigger('click')
+    expect(wrapper.findAll('[data-testid^="pricing-mobile-card-"]')).toHaveLength(40)
+    expect(wrapper.get('[data-testid="pricing-mobile-count"]').text()).toBe('已显示 40 / 40 个工具')
+    expect(wrapper.find('[data-testid="pricing-mobile-load-more"]').exists()).toBe(false)
+  })
+
+  it('resets the mobile batch when category or budget filters change', async () => {
+    const tools = makePricingTools(54, index => index < 30 ? 'ide' : 'llm')
+    const { wrapper } = await mountPricing(tools)
+
+    await wrapper.get('[data-testid="pricing-mobile-load-more"]').trigger('click')
+    expect(wrapper.findAll('[data-testid^="pricing-mobile-card-"]')).toHaveLength(32)
+
+    await wrapper.get('[data-testid="pricing-category-ide"]').trigger('click')
+    expect(wrapper.findAll('[data-testid^="pricing-mobile-card-"]')).toHaveLength(16)
+    expect(wrapper.get('[data-testid="pricing-mobile-count"]').text()).toBe('已显示 16 / 30 个工具')
+
+    await wrapper.get('[data-testid="pricing-mobile-load-more"]').trigger('click')
+    expect(wrapper.findAll('[data-testid^="pricing-mobile-card-"]')).toHaveLength(30)
+
+    await wrapper.get('[data-testid="pricing-budget-free"]').trigger('click')
+    expect(wrapper.findAll('[data-testid^="pricing-mobile-card-"]')).toHaveLength(16)
+    expect(wrapper.get('[data-testid="pricing-mobile-count"]').text()).toBe('已显示 16 / 30 个工具')
   })
 
   it('does not recommend Qwen CLI as a generic free daily-task option', async () => {

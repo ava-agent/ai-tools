@@ -2,14 +2,20 @@
   "name": "ai-tools-website",
   "version": "1.0.0",
   "type": "module",
-  "description": "AI工具全书 - 持续核验的实战选型指南",
+  "description": "AI 工具全书 - 持续核验的实战选型指南",
+  "packageManager": "npm@11.6.0",
   "scripts": {
     "dev": "vite",
+    "generate:data": "node scripts/generate-tool-indexes.mjs --write",
+    "check:data": "node scripts/generate-tool-indexes.mjs --check",
+    "check:assets": "node scripts/check-landing-assets.mjs",
+    "prebuild": "npm run check:data && npm run check:assets",
     "build": "vite build",
     "preview": "vite preview",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --ignore-path .gitignore",
     "lint:fix": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore",
     "format": "prettier --write src/",
+    "pretest": "npm run check:data",
     "test": "vitest run",
     "test:watch": "vitest",
     "test:coverage": "vitest run --coverage"
@@ -38,6 +44,6 @@
     "vitest": "^4.1.9"
   },
   "engines": {
-    "node": "^20.19.0 || >=22.13.0"
+    "node": "24.x"
   }
 }

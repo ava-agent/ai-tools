@@ -7,11 +7,13 @@ const pdfViewerPath = resolve(process.cwd(), 'src/components/PdfViewer.vue')
 
 async function collectVueFiles(dir) {
   const entries = await readdir(dir, { withFileTypes: true })
-  const files = await Promise.all(entries.map(async (entry) => {
-    const fullPath = resolve(dir, entry.name)
-    if (entry.isDirectory()) return collectVueFiles(fullPath)
-    return entry.isFile() && entry.name.endsWith('.vue') ? [fullPath] : []
-  }))
+  const files = await Promise.all(
+    entries.map(async (entry) => {
+      const fullPath = resolve(dir, entry.name)
+      if (entry.isDirectory()) return collectVueFiles(fullPath)
+      return entry.isFile() && entry.name.endsWith('.vue') ? [fullPath] : []
+    })
+  )
 
   return files.flat()
 }
@@ -20,7 +22,7 @@ describe('global styles', () => {
   it('defines shared interactive tokens used by utility classes', async () => {
     const css = await readFile(stylePath, 'utf8')
 
-    expect(css).toMatch(/--color-primary:\s*#0a84ff;/)
+    expect(css).toMatch(/--color-primary:\s*#2f81f7;/)
   })
 
   it('keeps segmented navigation targets touch friendly', async () => {
@@ -39,8 +41,12 @@ describe('global styles', () => {
   it('keeps the embedded PDF viewer height usable on short mobile screens', async () => {
     const source = await readFile(pdfViewerPath, 'utf8')
 
-    expect(source).toMatch(/\.pdf-container\s*\{[\s\S]*?height:\s*60vh;[\s\S]*?min-height:\s*280px;/)
-    expect(source).toMatch(/@media\s*\(min-width:\s*640px\)\s*\{[\s\S]*?\.pdf-container\s*\{[\s\S]*?height:\s*70vh;[\s\S]*?min-height:\s*400px;/)
+    expect(source).toMatch(
+      /\.pdf-container\s*\{[\s\S]*?height:\s*60vh;[\s\S]*?min-height:\s*280px;/
+    )
+    expect(source).toMatch(
+      /@media\s*\(min-width:\s*640px\)\s*\{[\s\S]*?\.pdf-container\s*\{[\s\S]*?height:\s*70vh;[\s\S]*?min-height:\s*400px;/
+    )
   })
 
   it('does not use negative letter spacing in Vue surfaces', async () => {

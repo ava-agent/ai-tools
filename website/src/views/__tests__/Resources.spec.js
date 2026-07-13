@@ -13,7 +13,10 @@ function mountResources() {
           props: ['src', 'title'],
           template: '<div data-testid="pdf-viewer-stub">{{ title }}</div>',
         },
-        VideoPlayer: true,
+        VideoPlayer: {
+          props: ['src', 'showControls', 'deferLoad'],
+          template: '<div data-testid="video-player-stub" :data-defer-load="deferLoad" />',
+        },
       },
     },
   })
@@ -122,5 +125,15 @@ describe('Resources', () => {
 
     const titleEn = wrapper.get('[data-testid="resource-video-title-en-ai-coding-tool-map"]')
     expect(titleEn.classes()).toContain('break-words')
+  })
+
+  it('defers every resource video until the user chooses to load it', () => {
+    const wrapper = mountResources()
+    const players = wrapper.findAll('[data-testid="video-player-stub"]')
+
+    expect(players).toHaveLength(resources.filter(resource => resource.type === 'video').length)
+    players.forEach((player) => {
+      expect(player.attributes('data-defer-load')).toBe('true')
+    })
   })
 })

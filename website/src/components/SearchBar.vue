@@ -1,14 +1,14 @@
 <template>
-  <div class="max-w-[960px] mx-auto px-5 py-4">
+  <div class="max-w-[1180px] mx-auto px-5 py-5">
     <!-- Search input -->
     <div class="relative mb-3">
-      <Search class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-white/25" />
+      <Search class="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
       <input
         v-model="localQuery"
         type="text"
         aria-label="搜索工具"
-        placeholder="搜索工具名称、开发者、标签..."
-        class="input-field w-full pl-9 pr-14 py-2.5"
+        placeholder="搜索工具、开发者、标签或结论..."
+        class="input-field w-full pl-11 pr-14 py-3 text-[13px]"
         @input="handleSearch"
       >
       <button
@@ -26,27 +26,30 @@
       <button
         v-for="category in categories"
         :key="category"
-        class="pill min-h-11"
+        class="pill min-h-11 px-3.5 text-xs"
         :class="selectedCategory === category ? 'pill-active' : 'pill-inactive'"
         :aria-pressed="selectedCategory === category"
         @click="selectCategory(category)"
       >
         {{ category === 'all' ? '全部' : getCategoryDisplayName(category) }}
-        <span
-          class="ml-1 text-[10px] opacity-60"
-        >{{ getCategoryCount(category) }}</span>
+        <span class="ml-1 text-[10px] opacity-60">{{ getCategoryCount(category) }}</span>
       </button>
     </div>
 
     <!-- Decision filters -->
     <div
-      class="mt-3 rounded-xl border border-white/[0.08] bg-white/[0.035] p-3"
+      class="mt-3 rounded-lg border border-[#2c352d]/80 bg-[#090b09]/55 p-3"
       data-testid="decision-filter-panel"
     >
       <div class="mb-3 flex flex-wrap items-center justify-between gap-2">
         <div class="flex items-center gap-2 text-sm font-semibold text-white">
-          <SlidersHorizontal class="h-4 w-4 text-[#0a84ff]" />
+          <SlidersHorizontal class="h-4 w-4 text-[#3fb950]" />
           按场景选工具
+          <span
+            class="rounded-md border border-[#2c352d] bg-[#111410] px-2 py-1 text-[11px] font-medium text-[#9aa596]"
+          >
+            {{ filteredCount }} / {{ totalCount }}
+          </span>
         </div>
         <button
           v-if="hasFilters"
@@ -71,7 +74,7 @@
         >
           <div
             :id="`decision-group-label-${group.id}`"
-            class="mb-2 text-[11px] font-medium text-white/45"
+            class="mb-2 text-[11px] font-semibold uppercase tracking-[0.08em] text-slate-500"
           >
             {{ group.label }}
           </div>
@@ -97,10 +100,10 @@
 <script setup>
 import { computed, ref, watch } from 'vue'
 import { RotateCcw, Search, SlidersHorizontal, X } from 'lucide-vue-next'
-import { useToolsStore } from '../stores/tools'
+import { useCatalogStore } from '../stores/catalog'
 import { getCategoryLabel } from '../utils/helpers'
 
-const toolsStore = useToolsStore()
+const toolsStore = useCatalogStore()
 
 const selectedCategory = computed(() => toolsStore.selectedCategory)
 const selectedScenario = computed(() => toolsStore.selectedScenario)
@@ -108,6 +111,8 @@ const selectedBudget = computed(() => toolsStore.selectedBudget)
 const selectedVerification = computed(() => toolsStore.selectedVerification)
 const categories = computed(() => toolsStore.categories)
 const hasFilters = computed(() => toolsStore.hasFilters)
+const totalCount = computed(() => toolsStore.tools.length)
+const filteredCount = computed(() => toolsStore.filteredTools.length)
 const localQuery = ref(toolsStore.searchQuery)
 
 const decisionFilterGroups = computed(() => [
@@ -116,28 +121,31 @@ const decisionFilterGroups = computed(() => [
     label: '场景',
     selected: selectedScenario.value,
     options: toolsStore.decisionScenarios,
-    select: toolsStore.setScenarioFilter,
+    select: toolsStore.setScenarioFilter
   },
   {
     id: 'budget',
     label: '预算',
     selected: selectedBudget.value,
     options: toolsStore.budgetOptions,
-    select: toolsStore.setBudgetFilter,
+    select: toolsStore.setBudgetFilter
   },
   {
     id: 'verification',
     label: '状态',
     selected: selectedVerification.value,
     options: toolsStore.verificationOptions,
-    select: toolsStore.setVerificationFilter,
-  },
+    select: toolsStore.setVerificationFilter
+  }
 ])
 
 // Sync store → local when store changes externally (e.g. clearFilters)
-watch(() => toolsStore.searchQuery, (val) => {
-  localQuery.value = val
-})
+watch(
+  () => toolsStore.searchQuery,
+  (val) => {
+    localQuery.value = val
+  }
+)
 
 let debounceTimer
 function handleSearch() {

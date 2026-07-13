@@ -3,6 +3,7 @@ const categoryLabels = {
   ide: 'AI IDE',
   cli: 'AI CLI',
   llm: 'AI 模型',
+  model: 'AI 模型',
   multimodal: '多模态',
   agent: 'Agent',
   mcp: 'MCP 工具',

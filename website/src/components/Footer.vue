@@ -29,7 +29,7 @@
           <h4 class="text-base font-semibold mb-4 text-white">
             快速链接
           </h4>
-          <nav aria-label="Footer navigation">
+          <nav aria-label="页脚导航">
             <ul class="space-y-2 text-sm">
               <li
                 v-for="item in navLinks"
@@ -82,9 +82,9 @@
       <div class="border-t border-white/[0.06] pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-white/55">
         <p>&copy; 2026 AI工具全书. 保留所有权利。</p>
         <p class="flex items-center gap-1">
-          Built with
+          基于
           <Heart class="w-3 h-3 text-[#ff453a] fill-[#ff453a]/20" />
-          using Vue 3 + Tailwind CSS
+          Vue 3 与 Tailwind CSS 构建
         </p>
       </div>
     </div>
@@ -95,7 +95,7 @@
 import { Brain, ChevronRight, Github, FileText, Mail, ExternalLink, Heart } from 'lucide-vue-next'
 
 const navLinks = [
-  { to: '/', label: '工具列表' },
+  { to: '/tools', label: '工具列表' },
   { to: '/matcher', label: '工具匹配' },
   { to: '/pricing', label: '订阅指南' },
   { to: '/workflows', label: '工作流' },

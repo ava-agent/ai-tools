@@ -35,7 +35,7 @@ self.addEventListener('activate', (event) => {
     caches.keys().then((cacheNames) => {
       return Promise.all(
         cacheNames
-          .filter((name) => name !== CACHE_NAME)
+          .filter((name) => name.startsWith('ai-tools-') && name !== CACHE_NAME)
           .map((name) => caches.delete(name))
       );
     })
@@ -60,7 +60,7 @@ self.addEventListener('fetch', (event) => {
 
   // 导航请求 (history mode): 网络优先，确保 Vercel 始终返回最新 index.html
   if (request.mode === 'navigate') {
-    event.respondWith(networkFirst(request));
+    event.respondWith(navigationNetworkFirst(request));
     return;
   }
 
@@ -71,9 +71,14 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
-  // 图片和字体缓存优先，减少重复下载
-  if (request.destination === 'image' ||
-      request.destination === 'font') {
+  // public/ 图片使用稳定 URL，先显示缓存并在后台刷新，避免长期命中旧图
+  if (request.destination === 'image') {
+    event.respondWith(staleWhileRevalidate(request, event));
+    return;
+  }
+
+  // 字体缓存优先，减少重复下载
+  if (request.destination === 'font') {
     event.respondWith(cacheFirst(request));
     return;
   }
@@ -108,6 +113,53 @@ async function cacheFirst(request) {
     console.error('Fetch failed:', error);
     return new Response('Network error', { status: 408 });
   }
+}
+
+async function navigationNetworkFirst(request) {
+  const cache = await caches.open(CACHE_NAME);
+
+  try {
+    const networkResponse = await fetch(request);
+    if (networkResponse.ok) {
+      cache.put(request, networkResponse.clone());
+      return networkResponse;
+    }
+    if (networkResponse.status !== 404) return networkResponse;
+    return (
+      await cache.match(resolveAppUrl('index.html')) ||
+      await cache.match(resolveAppUrl('')) ||
+      networkResponse
+    );
+  } catch {
+    return (
+      await cache.match(request) ||
+      await cache.match(resolveAppUrl('index.html')) ||
+      await cache.match(resolveAppUrl('')) ||
+      new Response('Network error', { status: 408 })
+    );
+  }
+}
+
+// 先返回缓存，同时刷新缓存；首次请求仍等待网络
+async function staleWhileRevalidate(request, event) {
+  const cache = await caches.open(CACHE_NAME);
+  const cached = await cache.match(request);
+  const networkRequest = fetch(request)
+    .then(async (response) => {
+      if (response.ok) {
+        await cache.put(request, response.clone());
+      }
+      return response;
+    })
+    .catch(() => null);
+
+  if (cached) {
+    event.waitUntil(networkRequest);
+    return cached;
+  }
+
+  const networkResponse = await networkRequest;
+  return networkResponse || new Response('Network error', { status: 408 });
 }
 
 // 网络优先策略

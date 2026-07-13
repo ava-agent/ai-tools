@@ -232,11 +232,11 @@
             <ul class="space-y-3 text-white/80">
               <li class="flex items-start">
                 <X class="w-5 h-5 text-red-500 mr-2 mt-0.5 flex-shrink-0" />
-                <span><strong class="text-white">避免重复订阅</strong>：Cursor 和 GitHub Copilot 功能重叠，二选一即可</span>
+                <span><strong class="text-white">评估功能重叠</strong>：Cursor 与 GitHub Copilot 在补全和 Agent 工作流上可能重叠，先按团队流程试用，再决定是否同时订阅</span>
               </li>
               <li class="flex items-start">
                 <X class="w-5 h-5 text-red-500 mr-2 mt-0.5 flex-shrink-0" />
-                <span><strong class="text-white">注意用量限制</strong>：Claude、GPT 等按量计费，关注月度账单</span>
+                <span><strong class="text-white">区分计费入口</strong>：Claude、GPT 同时存在订阅与 API/按量入口，分别核对额度、超额规则和团队计划</span>
               </li>
               <li class="flex items-start">
                 <X class="w-5 h-5 text-red-500 mr-2 mt-0.5 flex-shrink-0" />
@@ -265,6 +265,7 @@
               class="pill cursor-pointer transition-all min-h-11"
               :class="pricingCategory === cat ? 'pill-active' : 'pill-inactive'"
               :aria-pressed="pricingCategory === cat"
+              :data-testid="`pricing-category-${cat}`"
               @click="pricingCategory = cat"
             >
               {{ cat === 'all' ? '全部' : getCategoryLabel(cat) }}
@@ -344,11 +345,12 @@
           </div>
 
           <div
+            id="pricing-mobile-results"
             class="md:hidden"
             data-testid="pricing-mobile-list"
           >
             <article
-              v-for="tool in pricingComparison"
+              v-for="tool in mobilePricingComparison"
               :key="tool.id"
               class="border-b border-white/[0.06] p-4 transition-all"
               :class="{
@@ -418,6 +420,31 @@
                 查看详情
               </router-link>
             </article>
+
+            <div
+              class="border-t border-white/[0.06] p-4 text-center"
+              data-testid="pricing-mobile-pagination"
+            >
+              <p
+                class="text-sm text-white/60"
+                data-testid="pricing-mobile-count"
+                role="status"
+                aria-live="polite"
+              >
+                已显示 {{ mobilePricingComparison.length }} / {{ pricingComparison.length }} 个工具
+              </p>
+              <button
+                v-if="hasMoreMobilePricing"
+                type="button"
+                class="mt-3 inline-flex min-h-11 items-center justify-center rounded-lg border border-white/10 px-5 text-sm font-semibold text-primary transition-colors hover:bg-primary/10"
+                data-testid="pricing-mobile-load-more"
+                aria-controls="pricing-mobile-results"
+                @click="loadMorePricing"
+              >
+                <ChevronDown class="mr-2 h-4 w-4" />
+                加载更多（再显示 {{ nextMobileBatchSize }} 个）
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -449,7 +476,7 @@
 </template>
 
 <script setup>
-import { ref, computed } from 'vue'
+import { ref, computed, watch } from 'vue'
 import {
   DollarSign,
   Star,
@@ -460,20 +487,23 @@ import {
   X,
   Scale,
   Calculator,
-  Check
+  Check,
+  ChevronDown
 } from 'lucide-vue-next'
-import { useToolsStore } from '../stores/tools'
+import { usePricingCatalogStore } from '../stores/pricingCatalog'
 import { getCategoryLabel } from '../utils/helpers'
 import { analyzeToolPricing, matchesPricingBudget } from '../utils/pricing'
 import { formatMetricValue } from '../utils/toolMetadata'
 import { recommendedCombos as rawCombos } from '../data/categories.js'
 
-const toolsStore = useToolsStore()
+const toolsStore = usePricingCatalogStore()
 
 // Selection state
 const selectedBudgetTier = ref(null)
 const selectedCombo = ref(null)
 const pricingCategory = ref('all')
+const MOBILE_PAGE_SIZE = 16
+const mobileVisibleCount = ref(MOBILE_PAGE_SIZE)
 
 // Budget tiers overview
 const budgetTiers = [
@@ -558,6 +588,20 @@ const pricingComparison = computed(() => {
   }).sort((a, b) => b.value - a.value)
 })
 
+const mobilePricingComparison = computed(() =>
+  pricingComparison.value.slice(0, mobileVisibleCount.value)
+)
+const hasMoreMobilePricing = computed(() =>
+  mobileVisibleCount.value < pricingComparison.value.length
+)
+const nextMobileBatchSize = computed(() =>
+  Math.min(MOBILE_PAGE_SIZE, pricingComparison.value.length - mobileVisibleCount.value)
+)
+
+watch([pricingCategory, selectedBudgetTier], () => {
+  mobileVisibleCount.value = MOBILE_PAGE_SIZE
+})
+
 // 判断工具是否匹配所选预算层级
 function matchesBudget(tool) {
   if (!selectedBudgetTier.value) return true
@@ -587,5 +631,12 @@ function selectBudgetTier(tierId) {
 
 function selectCombo(comboName) {
   selectedCombo.value = selectedCombo.value === comboName ? null : comboName
+}
+
+function loadMorePricing() {
+  mobileVisibleCount.value = Math.min(
+    mobileVisibleCount.value + MOBILE_PAGE_SIZE,
+    pricingComparison.value.length
+  )
 }
 </script>

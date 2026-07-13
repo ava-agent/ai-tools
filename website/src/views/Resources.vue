@@ -268,18 +268,18 @@
                   >
                     {{ getResourceVerification(video).label }}
                   </span>
-                    <span
-                      v-if="video.assetCheckedAt"
-                      class="rounded-full border border-white/[0.06] bg-white/[0.04] px-2 py-0.5"
-                    >
-                      本地文件核验 {{ video.assetCheckedAt }}
-                    </span>
-                    <span
-                      v-if="video.freshnessNote"
-                      class="rounded-full border border-[#ffd60a]/15 bg-[#ffd60a]/[0.06] px-2 py-0.5 text-[#ffd60a]/80"
-                    >
-                      {{ video.freshnessNote }}
-                    </span>
+                  <span
+                    v-if="video.assetCheckedAt"
+                    class="rounded-full border border-white/[0.06] bg-white/[0.04] px-2 py-0.5"
+                  >
+                    本地文件核验 {{ video.assetCheckedAt }}
+                  </span>
+                  <span
+                    v-if="video.freshnessNote"
+                    class="rounded-full border border-[#ffd60a]/15 bg-[#ffd60a]/[0.06] px-2 py-0.5 text-[#ffd60a]/80"
+                  >
+                    {{ video.freshnessNote }}
+                  </span>
                   <template
                     v-for="(source, index) in getResourceVerification(video).sources"
                     :key="source"
@@ -311,7 +311,9 @@
               </div>
               <VideoPlayer
                 :src="video.src"
+                :label="`${video.title} 演示视频`"
                 :show-controls="true"
+                :defer-load="true"
               />
             </div>
           </div>
@@ -381,18 +383,18 @@
                   >
                     {{ getResourceVerification(video).label }}
                   </span>
-                    <span
-                      v-if="video.assetCheckedAt"
-                      class="rounded-full border border-white/[0.06] bg-white/[0.04] px-2 py-0.5"
-                    >
-                      本地文件核验 {{ video.assetCheckedAt }}
-                    </span>
-                    <span
-                      v-if="video.freshnessNote"
-                      class="rounded-full border border-[#ffd60a]/15 bg-[#ffd60a]/[0.06] px-2 py-0.5 text-[#ffd60a]/80"
-                    >
-                      {{ video.freshnessNote }}
-                    </span>
+                  <span
+                    v-if="video.assetCheckedAt"
+                    class="rounded-full border border-white/[0.06] bg-white/[0.04] px-2 py-0.5"
+                  >
+                    本地文件核验 {{ video.assetCheckedAt }}
+                  </span>
+                  <span
+                    v-if="video.freshnessNote"
+                    class="rounded-full border border-[#ffd60a]/15 bg-[#ffd60a]/[0.06] px-2 py-0.5 text-[#ffd60a]/80"
+                  >
+                    {{ video.freshnessNote }}
+                  </span>
                   <template
                     v-for="(source, index) in getResourceVerification(video).sources"
                     :key="source"
@@ -424,7 +426,9 @@
               </div>
               <VideoPlayer
                 :src="video.src"
+                :label="`${video.title} 演示视频`"
                 :show-controls="true"
+                :defer-load="true"
               />
             </div>
           </div>

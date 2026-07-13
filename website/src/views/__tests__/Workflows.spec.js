@@ -3,7 +3,7 @@ import { mount } from '@vue/test-utils'
 import { createPinia, setActivePinia } from 'pinia'
 import { createRouter, createMemoryHistory } from 'vue-router'
 import Workflows from '../Workflows.vue'
-import { useToolsStore } from '../../stores/tools'
+import { useWorkflowCatalogStore } from '../../stores/workflowCatalog'
 
 function makeRouter() {
   return createRouter({
@@ -68,7 +68,7 @@ async function mountWorkflows() {
   const pinia = createPinia()
   setActivePinia(pinia)
 
-  const toolsStore = useToolsStore()
+  const toolsStore = useWorkflowCatalogStore()
   toolsStore.tools = workflowTools
 
   const router = makeRouter()

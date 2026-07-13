@@ -2,15 +2,30 @@
   <Transition name="fade">
     <div
       v-if="show"
+      data-testid="intro-video-overlay"
       class="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-4"
       @click="close"
+      @keydown="handleDialogKeydown"
     >
       <div
+        ref="dialogRef"
         class="relative bg-black rounded-2xl overflow-hidden shadow-2xl ring-1 ring-white/10"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="intro-video-title"
+        tabindex="-1"
         @click.stop
       >
+        <h2
+          id="intro-video-title"
+          class="sr-only"
+        >
+          AI 工具全书介绍视频
+        </h2>
+
         <video
           ref="videoRef"
+          aria-labelledby="intro-video-title"
           autoplay
           muted
           playsinline
@@ -18,13 +33,15 @@
           @ended="close"
         >
           <source
-            src="/hero-network.mp4"
+            :src="introVideoSrc"
             type="video/mp4"
           >
         </video>
 
         <!-- Close Button -->
         <button
+          ref="closeButtonRef"
+          data-testid="intro-video-close"
           class="absolute top-4 right-4 z-10 flex min-h-11 min-w-11 items-center justify-center rounded-full bg-black/50 text-white/80 backdrop-blur-sm transition-colors hover:bg-black/70 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
           type="button"
           aria-label="关闭介绍视频"
@@ -56,20 +73,94 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onUnmounted } from 'vue'
+import { nextTick, onMounted, onUnmounted, ref, watch } from 'vue'
+import { resolvePublicAssetPath } from '../utils/publicAssets.js'
 
-defineProps({
+const props = defineProps({
   show: Boolean
 })
 
 const emit = defineEmits(['close'])
+const introVideoSrc = resolvePublicAssetPath('hero-network.mp4')
+const dialogRef = ref(null)
+const closeButtonRef = ref(null)
 const videoRef = ref(null)
 const progress = ref(0)
 let progressInterval
+let previouslyFocusedElement = null
+
+const focusableSelector = [
+  'a[href]',
+  'button:not([disabled])',
+  'input:not([disabled])',
+  'select:not([disabled])',
+  'textarea:not([disabled])',
+  '[tabindex]:not([tabindex="-1"])'
+].join(',')
 
 function close() {
   emit('close')
 }
+
+function getFocusableElements() {
+  if (!dialogRef.value) return []
+
+  return Array.from(dialogRef.value.querySelectorAll(focusableSelector)).filter((element) => {
+    return !element.hasAttribute('disabled') && element.tabIndex !== -1
+  })
+}
+
+function restorePreviousFocus() {
+  const target = previouslyFocusedElement
+  previouslyFocusedElement = null
+
+  if (target && document.contains(target) && typeof target.focus === 'function') {
+    target.focus()
+  }
+}
+
+function handleDialogKeydown(event) {
+  if (event.key === 'Escape') {
+    event.preventDefault()
+    close()
+    return
+  }
+
+  if (event.key !== 'Tab') return
+
+  const focusableElements = getFocusableElements()
+  if (!focusableElements.length) {
+    event.preventDefault()
+    dialogRef.value?.focus()
+    return
+  }
+
+  const firstElement = focusableElements[0]
+  const lastElement = focusableElements[focusableElements.length - 1]
+  const activeElement = document.activeElement
+
+  if (event.shiftKey && (activeElement === firstElement || !dialogRef.value?.contains(activeElement))) {
+    event.preventDefault()
+    lastElement.focus()
+  } else if (!event.shiftKey && (activeElement === lastElement || !dialogRef.value?.contains(activeElement))) {
+    event.preventDefault()
+    firstElement.focus()
+  }
+}
+
+watch(
+  () => props.show,
+  (isOpen) => {
+    if (isOpen) {
+      previouslyFocusedElement = document.activeElement
+      nextTick(() => closeButtonRef.value?.focus())
+      return
+    }
+
+    nextTick(restorePreviousFocus)
+  },
+  { immediate: true }
+)
 
 onMounted(() => {
   if (videoRef.value) {
@@ -89,6 +180,7 @@ onMounted(() => {
 
 onUnmounted(() => {
   clearInterval(progressInterval)
+  restorePreviousFocus()
 })
 </script>
 

@@ -24,6 +24,7 @@ async function mountToolLandscape() {
     history: createMemoryHistory(),
     routes: [
       { path: '/', name: 'landing', component: { template: '<div />' } },
+      { path: '/tools', name: 'tools', component: { template: '<div />' } },
       { path: '/tools/:id', name: 'tool-detail', component: { template: '<div />' } },
     ],
   })
@@ -60,5 +61,16 @@ describe('ToolLandscape', () => {
     const tooltip = wrapper.get(`#${tooltipId}`)
     expect(tooltip.classes()).toContain('group-focus-visible:opacity-100')
     expect(tooltip.classes()).toContain('group-focus-visible:scale-100')
+  })
+
+  it('shows a focused representative set with links to each full category', async () => {
+    const wrapper = await mountToolLandscape()
+
+    expect(wrapper.findAll('a.tool-bubble')).toHaveLength(42)
+    expect(wrapper.findAll('a[href^="/tools?category="]')).toHaveLength(7)
+    expect(wrapper.text()).toContain('每类展示 6 个代表工具')
+    wrapper.findAll('img[aria-hidden="true"]').forEach((image) => {
+      expect(image.attributes('src')).toMatch(/images\/landing\/cat-[a-z]+\.webp$/)
+    })
   })
 })

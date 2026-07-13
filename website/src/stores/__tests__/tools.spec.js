@@ -106,6 +106,15 @@ describe('tools store decision filters', () => {
     expect(store.filteredTools.map(tool => tool.id)).toEqual(['daily'])
   })
 
+  it('uses the shared pricing analysis for catalog free-tier decisions', () => {
+    const store = useToolsStore()
+    store.clearFilters()
+
+    store.setBudgetFilter('free')
+
+    expect(store.filteredTools.map((tool) => tool.id)).not.toContain('qwen-cli')
+  })
+
   it('does not classify warning copy about free outputs as a free-tier signal', () => {
     const store = makeStore()
 

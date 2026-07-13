@@ -2,7 +2,7 @@ import { beforeEach, describe, expect, it } from 'vitest'
 import { mount } from '@vue/test-utils'
 import { createPinia, setActivePinia } from 'pinia'
 import SearchBar from '../SearchBar.vue'
-import { useToolsStore } from '../../stores/tools'
+import { useCatalogStore } from '../../stores/catalog'
 
 describe('SearchBar decision filters', () => {
   beforeEach(() => {
@@ -12,7 +12,7 @@ describe('SearchBar decision filters', () => {
   function mountSearchBar() {
     const pinia = createPinia()
     setActivePinia(pinia)
-    const store = useToolsStore()
+    const store = useCatalogStore()
     const wrapper = mount(SearchBar, {
       global: {
         plugins: [pinia],

@@ -23,6 +23,7 @@
             </p>
           </div>
           <button
+            ref="resetOpenButtonRef"
             type="button"
             class="min-h-11 px-3 py-1.5 text-sm text-white/40 hover:text-[#ff453a] rounded-lg hover:bg-white/[0.04] transition-colors cursor-pointer"
             @click="authStore.signOut"
@@ -190,12 +191,18 @@
               class="fixed inset-0 bg-black/60 z-[80] flex items-center justify-center p-4 backdrop-blur-sm"
               role="dialog"
               aria-modal="true"
-              aria-label="确认重置"
-              @click.self="showResetConfirm = false"
-              @keydown.esc="showResetConfirm = false"
+              aria-labelledby="profile-reset-title"
+              @click.self="closeResetDialog"
+              @keydown="handleResetKeydown"
             >
-              <div class="glass-elevated rounded-2xl p-6 max-w-sm w-full">
-                <h3 class="text-lg font-bold text-white mb-2">
+              <div
+                ref="resetDialogRef"
+                class="glass-elevated rounded-2xl p-6 max-w-sm w-full"
+              >
+                <h3
+                  id="profile-reset-title"
+                  class="text-lg font-bold text-white mb-2"
+                >
                   确认重置？
                 </h3>
                 <p class="text-white/60 text-sm mb-6">
@@ -203,10 +210,11 @@
                 </p>
                 <div class="flex gap-3">
                   <button
+                    ref="resetCancelButtonRef"
                     type="button"
                     class="flex-1 min-h-11 py-2 rounded-full bg-white/[0.04] text-white/60 hover:bg-white/[0.08] transition-colors cursor-pointer border border-white/[0.06]"
                     data-testid="profile-reset-cancel"
-                    @click="showResetConfirm = false"
+                    @click="closeResetDialog"
                   >
                     取消
                   </button>
@@ -229,7 +237,7 @@
 </template>
 
 <script setup>
-import { ref, computed } from 'vue'
+import { computed, nextTick, ref, watch } from 'vue'
 import {
   Flame, Calendar, BarChart3, Eye, HelpCircle,
   Swords, Target, User, Trophy, Cloud
@@ -246,6 +254,31 @@ const gamification = useGamificationStore()
 const achievements = useAchievementsStore()
 
 const showResetConfirm = ref(false)
+const resetOpenButtonRef = ref(null)
+const resetDialogRef = ref(null)
+const resetCancelButtonRef = ref(null)
+let resetPreviouslyFocused = null
+
+const resetFocusableSelector = [
+  'button:not([disabled])',
+  'a[href]',
+  'input:not([disabled])',
+  '[tabindex]:not([tabindex="-1"])',
+].join(',')
+
+watch(showResetConfirm, async (isOpen) => {
+  if (isOpen) {
+    resetPreviouslyFocused = document.activeElement
+    await nextTick()
+    resetCancelButtonRef.value?.focus()
+    return
+  }
+
+  await nextTick()
+  const target = resetPreviouslyFocused || resetOpenButtonRef.value
+  resetPreviouslyFocused = null
+  target?.focus()
+})
 
 // Calendar: last 28 days (4 weeks, fits 7-col grid)
 const calendarDays = computed(() => {
@@ -285,9 +318,40 @@ function confirmReset() {
   showResetConfirm.value = true
 }
 
+function closeResetDialog() {
+  showResetConfirm.value = false
+}
+
+function handleResetKeydown(event) {
+  if (event.key === 'Escape') {
+    event.preventDefault()
+    closeResetDialog()
+    return
+  }
+
+  if (event.key !== 'Tab' || !resetDialogRef.value) return
+  const focusable = Array.from(
+    resetDialogRef.value.querySelectorAll(resetFocusableSelector)
+  ).filter((element) => !element.hasAttribute('disabled'))
+  if (!focusable.length) {
+    event.preventDefault()
+    return
+  }
+
+  const first = focusable[0]
+  const last = focusable[focusable.length - 1]
+  if (event.shiftKey && document.activeElement === first) {
+    event.preventDefault()
+    last.focus()
+  } else if (!event.shiftKey && document.activeElement === last) {
+    event.preventDefault()
+    first.focus()
+  }
+}
+
 function doReset() {
   gamification.resetAll()
   achievements.resetAll()
-  showResetConfirm.value = false
+  closeResetDialog()
 }
 </script>
