@@ -49,26 +49,21 @@ describe('ToolLandscape', () => {
     mockReducedMotion()
   })
 
-  it('makes bubble tooltips available to keyboard focus', async () => {
+  it('keeps representative tool names visible without hover', async () => {
     const wrapper = await mountToolLandscape()
-    const firstBubble = wrapper.get('a.tool-bubble')
-    const tooltipId = firstBubble.attributes('aria-describedby')
+    const firstTool = wrapper.get('article a[href^="/tools/"]')
 
-    expect(firstBubble.attributes('aria-label')).toContain('查看')
-    expect(firstBubble.attributes('aria-label')).toContain('详情')
-    expect(tooltipId).toMatch(/^tool-bubble-tip-/)
-
-    const tooltip = wrapper.get(`#${tooltipId}`)
-    expect(tooltip.classes()).toContain('group-focus-visible:opacity-100')
-    expect(tooltip.classes()).toContain('group-focus-visible:scale-100')
+    expect(firstTool.attributes('aria-label')).toContain('查看 Cursor 详情')
+    expect(firstTool.text()).toContain('Cursor')
+    expect(firstTool.text()).toContain('日常主力开发')
   })
 
   it('shows a focused representative set with links to each full category', async () => {
     const wrapper = await mountToolLandscape()
 
-    expect(wrapper.findAll('a.tool-bubble')).toHaveLength(42)
+    expect(wrapper.findAll('article a[href^="/tools/"]')).toHaveLength(42)
     expect(wrapper.findAll('a[href^="/tools?category="]')).toHaveLength(7)
-    expect(wrapper.text()).toContain('每类展示 6 个代表工具')
+    expect(wrapper.text()).toContain('先看代表工具')
     wrapper.findAll('img[aria-hidden="true"]').forEach((image) => {
       expect(image.attributes('src')).toMatch(/images\/landing\/cat-[a-z]+\.webp$/)
     })

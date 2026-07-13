@@ -3,27 +3,27 @@
   <section
     id="landscape"
     ref="sectionRef"
-    class="max-w-[960px] mx-auto px-5 py-16"
+    class="mx-auto max-w-[1080px] px-5 py-12 sm:py-16"
     :class="{ revealed: isRevealed }"
   >
     <h2
       class="reveal-item text-2xl font-bold text-white tracking-normal mb-2"
       style="--reveal-i: 0"
     >
-      工具版图
+      按能力浏览
     </h2>
     <p
-      class="reveal-item text-sm text-white/35 mb-8"
+      class="reveal-item mb-8 text-sm text-white/60"
       style="--reveal-i: 1"
     >
-      {{ LANDING_STATS.tools }} 款工具 · {{ LANDING_STATS.categories }} 大类别 · 每类展示 6 个代表工具
+      {{ LANDING_STATS.tools }} 款工具分为 {{ LANDING_STATS.categories }} 类，先看代表工具，再进入完整目录筛选。
     </p>
 
-    <div class="space-y-8">
-      <div
+    <div class="grid gap-4 lg:grid-cols-2">
+      <article
         v-for="(cat, catIndex) in groupedTools"
         :key="cat.id"
-        class="reveal-item relative overflow-visible rounded-xl p-4"
+        class="reveal-item relative overflow-hidden rounded-lg border border-white/[0.08] bg-white/[0.025] p-4"
         :style="{ '--reveal-i': catIndex + 2 }"
       >
         <!-- Category background decoration -->
@@ -31,14 +31,14 @@
           :src="landingImage(`cat-${cat.id}`)"
           alt=""
           aria-hidden="true"
-          class="absolute right-0 top-0 h-full w-auto max-w-[40%] object-cover object-left pointer-events-none"
+          class="pointer-events-none absolute right-0 top-0 h-full w-auto max-w-[45%] object-cover object-left"
           style="opacity: 0.08; mask-image: linear-gradient(to left, rgba(0,0,0,0.6), transparent); -webkit-mask-image: linear-gradient(to left, rgba(0,0,0,0.6), transparent)"
           loading="lazy"
         >
         <!-- Category header -->
-        <div class="flex items-center gap-2.5 mb-3">
+        <div class="relative z-10 mb-4 flex items-center gap-2.5">
           <div
-            class="w-6 h-6 rounded-lg flex items-center justify-center"
+            class="flex h-7 w-7 items-center justify-center rounded-lg"
             :style="{ background: cat.color + '15', border: '1px solid ' + cat.color + '25' }"
           >
             <component
@@ -46,7 +46,7 @@
               :color="cat.color"
             />
           </div>
-          <span class="text-sm font-semibold text-white/70">{{ cat.nameZh }}</span>
+          <span class="text-sm font-semibold text-white">{{ cat.nameZh }}</span>
           <router-link
             :to="{ name: 'tools', query: { category: cat.id } }"
             class="ml-auto inline-flex min-h-11 items-center rounded-lg px-2 text-xs text-primary transition-colors hover:bg-primary/10"
@@ -55,54 +55,30 @@
           </router-link>
         </div>
 
-        <!-- Tool bubbles -->
-        <div class="flex flex-wrap gap-2">
+        <div class="relative z-10 grid gap-1 sm:grid-cols-2">
           <router-link
             v-for="tool in cat.tools"
             :key="tool.id"
             :to="{ name: 'tool-detail', params: { id: tool.id } }"
-            class="tool-bubble group relative flex min-h-11 min-w-11 items-center justify-center rounded-full"
-            :style="{
-              width: bubbleSize(tool) + 'px',
-              height: bubbleSize(tool) + 'px',
-              background: cat.color + '18',
-              border: '1px solid ' + cat.color + '30',
-              '--bubble-glow': cat.color + '35',
-            }"
-            :title="tool.name + ' — ' + (tool.bestFor || '')"
+            class="group flex min-h-14 min-w-0 items-center gap-3 rounded-lg px-2 py-2 transition-colors hover:bg-white/[0.06] focus-visible:bg-white/[0.06]"
             :aria-label="`查看 ${tool.name} 详情：${tool.bestFor || '工具详情'}`"
-            :aria-describedby="`tool-bubble-tip-${tool.id}`"
           >
             <ToolLogo
               :tool-id="tool.id"
               :tool-name="tool.name"
-              :size="bubbleSize(tool) > 48 ? 'md' : 'sm'"
+              size="sm"
             />
-
-            <!-- Enhanced tooltip -->
-            <div
-              :id="`tool-bubble-tip-${tool.id}`"
-              class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2.5 max-w-[220px] px-3 py-2 rounded-lg text-xs opacity-0 group-hover:opacity-100 group-focus-visible:opacity-100 transition-all duration-200 pointer-events-none z-20 scale-95 group-hover:scale-100 group-focus-visible:scale-100"
-              :style="{
-                background: 'rgba(12, 12, 30, 0.95)',
-                border: '1px solid ' + cat.color + '25',
-                boxShadow: '0 8px 32px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255,255,255,0.03)',
-              }"
-            >
-              <div class="font-semibold text-white">
+            <div class="min-w-0 flex-1">
+              <div class="truncate text-sm font-semibold text-white/90 group-hover:text-white">
                 {{ tool.name }}
               </div>
-              <div
-                class="mt-0.5"
-                :style="{ color: cat.color + 'aa' }"
-              >
-                {{ tool.personalExperience?.rating?.toFixed(1) }} ·
-                {{ tool.bestFor?.substring(0, 30) }}
+              <div class="mt-0.5 line-clamp-1 text-xs text-white/55">
+                {{ tool.bestFor }}
               </div>
             </div>
           </router-link>
         </div>
-      </div>
+      </article>
     </div>
   </section>
 </template>
@@ -144,9 +120,4 @@ const groupedTools = computed(() => {
   }))
 })
 
-function bubbleSize(tool) {
-  const rating = tool.rating || 3
-  // Map rating 1-5 to a touch-safe 44-64px range.
-  return 44 + (rating - 1) * 5
-}
 </script>

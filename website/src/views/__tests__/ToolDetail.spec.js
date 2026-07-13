@@ -153,7 +153,7 @@ describe('ToolDetail', () => {
     expect(card.text()).toContain('Claude Code')
     expect(card.text()).toContain('Cursor')
 
-    expect(wrapper.text().indexOf('结论')).toBeLessThan(wrapper.text().indexOf('实战洞察'))
+    expect(wrapper.text().indexOf('结论')).toBeLessThan(wrapper.text().indexOf('编辑核验说明'))
   })
 
   it('uses semantic headings for the detail title and major sections', async () => {
@@ -168,11 +168,11 @@ describe('ToolDetail', () => {
       expect.arrayContaining([
         '结论',
         '核验来源',
-        '实战洞察',
+        '编辑核验说明',
         '下一步：比较相近方案',
-        '🔗 版本与链接',
-        '⭐ 社区评价',
-        '🔄 相关工具'
+        '版本与链接',
+        '社区评价',
+        '相关工具'
       ])
     )
   })

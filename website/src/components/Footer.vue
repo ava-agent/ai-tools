@@ -11,11 +11,15 @@
             to="/"
             class="flex min-h-11 items-center gap-2 mb-4 group"
           >
-            <div class="relative">
-              <Brain class="w-8 h-8 text-primary transition-transform duration-300 group-hover:scale-110" />
-              <div class="absolute inset-0 bg-primary/20 rounded-full blur-lg group-hover:bg-primary/30 transition-all duration-300" />
-            </div>
-            <h3 class="text-xl font-bold gradient-text">
+            <img
+              :src="brandMark"
+              alt=""
+              aria-hidden="true"
+              class="h-9 w-9 rounded-lg object-contain transition-transform duration-300 group-hover:scale-105"
+              width="36"
+              height="36"
+            >
+            <h3 class="text-xl font-bold text-white">
               AI工具全书
             </h3>
           </router-link>
@@ -37,7 +41,7 @@
               >
                 <router-link
                   :to="item.to"
-                  class="-mx-1 inline-flex min-h-11 items-center gap-1 rounded-lg px-1 text-white/55 transition-colors duration-200 hover:bg-white/[0.04] hover:text-white group"
+                  class="nav-link group -mx-1 inline-flex min-h-11 items-center gap-1 rounded-lg px-1 text-white/55 transition-colors duration-200 hover:bg-white/[0.04] hover:text-white"
                 >
                   <ChevronRight class="w-3 h-3 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-200" />
                   {{ item.label }}
@@ -92,7 +96,9 @@
 </template>
 
 <script setup>
-import { Brain, ChevronRight, Github, FileText, Mail, ExternalLink, Heart } from 'lucide-vue-next'
+import { ChevronRight, Github, FileText, Mail, ExternalLink, Heart } from 'lucide-vue-next'
+
+const brandMark = `${import.meta.env.BASE_URL}brand/ai-tools-mark-2026-64.png`
 
 const navLinks = [
   { to: '/tools', label: '工具列表' },

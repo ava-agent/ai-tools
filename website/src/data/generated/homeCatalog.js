@@ -101,8 +101,7 @@ export const homeCatalog = [
     "scenarioIds": [
       "daily-coding",
       "complex-refactor",
-      "free-stack",
-      "long-context"
+      "free-stack"
     ]
   },
   {
@@ -137,8 +136,7 @@ export const homeCatalog = [
     "scenarioIds": [
       "daily-coding",
       "complex-refactor",
-      "free-stack",
-      "long-context"
+      "free-stack"
     ]
   },
   {
@@ -171,9 +169,7 @@ export const homeCatalog = [
     "hasLowCostSignal": true,
     "hasPaidSignal": true,
     "scenarioIds": [
-      "daily-coding",
-      "complex-refactor",
-      "long-context"
+      "daily-coding"
     ]
   },
   {
@@ -207,7 +203,6 @@ export const homeCatalog = [
     "hasPaidSignal": true,
     "scenarioIds": [
       "daily-coding",
-      "complex-refactor",
       "free-stack"
     ]
   },
@@ -242,10 +237,7 @@ export const homeCatalog = [
     "hasPaidSignal": true,
     "scenarioIds": [
       "daily-coding",
-      "complex-refactor",
-      "free-stack",
-      "long-context",
-      "visual-generation"
+      "free-stack"
     ]
   },
   {
@@ -277,11 +269,7 @@ export const homeCatalog = [
     "hasFreeTier": false,
     "hasLowCostSignal": true,
     "hasPaidSignal": true,
-    "scenarioIds": [
-      "daily-coding",
-      "complex-refactor",
-      "long-context"
-    ]
+    "scenarioIds": []
   },
   {
     "id": "antigravity",
@@ -313,8 +301,6 @@ export const homeCatalog = [
     "hasLowCostSignal": true,
     "hasPaidSignal": true,
     "scenarioIds": [
-      "daily-coding",
-      "complex-refactor",
       "free-stack"
     ]
   },
@@ -385,8 +371,7 @@ export const homeCatalog = [
     "scenarioIds": [
       "daily-coding",
       "complex-refactor",
-      "free-stack",
-      "long-context"
+      "free-stack"
     ]
   },
   {
@@ -420,9 +405,7 @@ export const homeCatalog = [
     "hasPaidSignal": true,
     "scenarioIds": [
       "daily-coding",
-      "complex-refactor",
-      "free-stack",
-      "long-context"
+      "free-stack"
     ]
   },
   {
@@ -493,8 +476,7 @@ export const homeCatalog = [
       "daily-coding",
       "complex-refactor",
       "free-stack",
-      "long-context",
-      "visual-generation"
+      "long-context"
     ]
   },
   {
@@ -527,8 +509,7 @@ export const homeCatalog = [
     "hasLowCostSignal": false,
     "hasPaidSignal": true,
     "scenarioIds": [
-      "daily-coding",
-      "long-context"
+      "daily-coding"
     ]
   },
   {
@@ -563,8 +544,7 @@ export const homeCatalog = [
     "scenarioIds": [
       "daily-coding",
       "complex-refactor",
-      "free-stack",
-      "long-context"
+      "free-stack"
     ]
   },
   {
@@ -599,9 +579,7 @@ export const homeCatalog = [
     "scenarioIds": [
       "daily-coding",
       "complex-refactor",
-      "free-stack",
-      "long-context",
-      "visual-generation"
+      "free-stack"
     ]
   },
   {
@@ -634,9 +612,7 @@ export const homeCatalog = [
     "hasLowCostSignal": false,
     "hasPaidSignal": true,
     "scenarioIds": [
-      "daily-coding",
-      "complex-refactor",
-      "long-context"
+      "daily-coding"
     ]
   },
   {
@@ -671,8 +647,7 @@ export const homeCatalog = [
     "scenarioIds": [
       "daily-coding",
       "complex-refactor",
-      "free-stack",
-      "long-context"
+      "free-stack"
     ]
   },
   {
@@ -706,9 +681,9 @@ export const homeCatalog = [
     "hasPaidSignal": true,
     "scenarioIds": [
       "daily-coding",
+      "complex-refactor",
       "free-stack",
-      "long-context",
-      "visual-generation"
+      "long-context"
     ]
   },
   {
@@ -740,10 +715,7 @@ export const homeCatalog = [
     "hasFreeTier": false,
     "hasLowCostSignal": false,
     "hasPaidSignal": true,
-    "scenarioIds": [
-      "daily-coding",
-      "complex-refactor"
-    ]
+    "scenarioIds": []
   },
   {
     "id": "crush",
@@ -776,8 +748,7 @@ export const homeCatalog = [
     "hasPaidSignal": true,
     "scenarioIds": [
       "daily-coding",
-      "free-stack",
-      "long-context"
+      "free-stack"
     ]
   },
   {
@@ -810,9 +781,7 @@ export const homeCatalog = [
     "hasLowCostSignal": false,
     "hasPaidSignal": true,
     "scenarioIds": [
-      "daily-coding",
-      "complex-refactor",
-      "long-context"
+      "complex-refactor"
     ]
   },
   {
@@ -845,8 +814,6 @@ export const homeCatalog = [
     "hasLowCostSignal": true,
     "hasPaidSignal": true,
     "scenarioIds": [
-      "daily-coding",
-      "complex-refactor",
       "long-context",
       "visual-generation"
     ]
@@ -881,8 +848,7 @@ export const homeCatalog = [
     "hasLowCostSignal": false,
     "hasPaidSignal": true,
     "scenarioIds": [
-      "daily-coding",
-      "complex-refactor",
+      "long-context",
       "visual-generation"
     ]
   },
@@ -951,9 +917,7 @@ export const homeCatalog = [
     "hasLowCostSignal": true,
     "hasPaidSignal": true,
     "scenarioIds": [
-      "complex-refactor",
-      "free-stack",
-      "long-context"
+      "free-stack"
     ]
   },
   {
@@ -986,11 +950,7 @@ export const homeCatalog = [
     "hasLowCostSignal": true,
     "hasPaidSignal": true,
     "scenarioIds": [
-      "daily-coding",
-      "complex-refactor",
-      "free-stack",
-      "long-context",
-      "visual-generation"
+      "free-stack"
     ]
   },
   {
@@ -1023,8 +983,6 @@ export const homeCatalog = [
     "hasLowCostSignal": true,
     "hasPaidSignal": false,
     "scenarioIds": [
-      "daily-coding",
-      "complex-refactor",
       "free-stack"
     ]
   },
@@ -1058,10 +1016,8 @@ export const homeCatalog = [
     "hasLowCostSignal": true,
     "hasPaidSignal": true,
     "scenarioIds": [
-      "daily-coding",
       "free-stack",
-      "long-context",
-      "visual-generation"
+      "long-context"
     ]
   },
   {
@@ -1093,12 +1049,7 @@ export const homeCatalog = [
     "hasFreeTier": false,
     "hasLowCostSignal": true,
     "hasPaidSignal": true,
-    "scenarioIds": [
-      "daily-coding",
-      "complex-refactor",
-      "long-context",
-      "visual-generation"
-    ]
+    "scenarioIds": []
   },
   {
     "id": "doubao",
@@ -1130,11 +1081,7 @@ export const homeCatalog = [
     "hasLowCostSignal": true,
     "hasPaidSignal": true,
     "scenarioIds": [
-      "daily-coding",
-      "complex-refactor",
-      "free-stack",
-      "long-context",
-      "visual-generation"
+      "free-stack"
     ]
   },
   {
@@ -1201,8 +1148,6 @@ export const homeCatalog = [
     "hasLowCostSignal": true,
     "hasPaidSignal": true,
     "scenarioIds": [
-      "daily-coding",
-      "long-context",
       "visual-generation"
     ]
   },
@@ -1236,9 +1181,7 @@ export const homeCatalog = [
     "hasLowCostSignal": true,
     "hasPaidSignal": false,
     "scenarioIds": [
-      "daily-coding",
       "free-stack",
-      "long-context",
       "visual-generation"
     ]
   },
@@ -1272,9 +1215,7 @@ export const homeCatalog = [
     "hasLowCostSignal": true,
     "hasPaidSignal": true,
     "scenarioIds": [
-      "daily-coding",
       "free-stack",
-      "long-context",
       "visual-generation"
     ]
   },
@@ -1308,7 +1249,6 @@ export const homeCatalog = [
     "hasLowCostSignal": true,
     "hasPaidSignal": true,
     "scenarioIds": [
-      "daily-coding",
       "free-stack",
       "visual-generation"
     ]
@@ -1343,10 +1283,7 @@ export const homeCatalog = [
     "hasLowCostSignal": true,
     "hasPaidSignal": true,
     "scenarioIds": [
-      "daily-coding",
-      "complex-refactor",
       "free-stack",
-      "long-context",
       "visual-generation"
     ]
   },
@@ -1380,8 +1317,6 @@ export const homeCatalog = [
     "hasLowCostSignal": false,
     "hasPaidSignal": true,
     "scenarioIds": [
-      "daily-coding",
-      "long-context",
       "visual-generation"
     ]
   },
@@ -1415,7 +1350,6 @@ export const homeCatalog = [
     "hasLowCostSignal": true,
     "hasPaidSignal": true,
     "scenarioIds": [
-      "daily-coding",
       "free-stack",
       "visual-generation"
     ]
@@ -1484,9 +1418,7 @@ export const homeCatalog = [
     "hasLowCostSignal": true,
     "hasPaidSignal": true,
     "scenarioIds": [
-      "complex-refactor",
       "free-stack",
-      "long-context",
       "visual-generation"
     ]
   },
@@ -1520,7 +1452,6 @@ export const homeCatalog = [
     "hasLowCostSignal": true,
     "hasPaidSignal": true,
     "scenarioIds": [
-      "daily-coding",
       "free-stack",
       "long-context",
       "visual-generation"
@@ -1589,10 +1520,7 @@ export const homeCatalog = [
     "hasLowCostSignal": true,
     "hasPaidSignal": true,
     "scenarioIds": [
-      "daily-coding",
-      "complex-refactor",
-      "free-stack",
-      "long-context"
+      "free-stack"
     ]
   },
   {
@@ -1625,10 +1553,7 @@ export const homeCatalog = [
     "hasLowCostSignal": true,
     "hasPaidSignal": true,
     "scenarioIds": [
-      "complex-refactor",
-      "free-stack",
-      "long-context",
-      "visual-generation"
+      "free-stack"
     ]
   },
   {
@@ -1660,9 +1585,7 @@ export const homeCatalog = [
     "hasFreeTier": false,
     "hasLowCostSignal": true,
     "hasPaidSignal": true,
-    "scenarioIds": [
-      "daily-coding"
-    ]
+    "scenarioIds": []
   },
   {
     "id": "langchain",
@@ -1693,11 +1616,7 @@ export const homeCatalog = [
     "hasFreeTier": false,
     "hasLowCostSignal": true,
     "hasPaidSignal": true,
-    "scenarioIds": [
-      "daily-coding",
-      "complex-refactor",
-      "visual-generation"
-    ]
+    "scenarioIds": []
   },
   {
     "id": "nanobanana",
@@ -1729,9 +1648,6 @@ export const homeCatalog = [
     "hasLowCostSignal": false,
     "hasPaidSignal": true,
     "scenarioIds": [
-      "daily-coding",
-      "complex-refactor",
-      "long-context",
       "visual-generation"
     ]
   },
@@ -1766,8 +1682,7 @@ export const homeCatalog = [
     "hasPaidSignal": true,
     "scenarioIds": [
       "free-stack",
-      "long-context",
-      "visual-generation"
+      "long-context"
     ]
   },
   {
@@ -1800,10 +1715,8 @@ export const homeCatalog = [
     "hasLowCostSignal": true,
     "hasPaidSignal": true,
     "scenarioIds": [
-      "daily-coding",
       "complex-refactor",
-      "free-stack",
-      "long-context"
+      "free-stack"
     ]
   },
   {
@@ -1836,10 +1749,7 @@ export const homeCatalog = [
     "hasLowCostSignal": true,
     "hasPaidSignal": true,
     "scenarioIds": [
-      "complex-refactor",
-      "free-stack",
-      "long-context",
-      "visual-generation"
+      "free-stack"
     ]
   },
   {
@@ -1872,10 +1782,7 @@ export const homeCatalog = [
     "hasLowCostSignal": true,
     "hasPaidSignal": true,
     "scenarioIds": [
-      "daily-coding",
-      "complex-refactor",
-      "free-stack",
-      "visual-generation"
+      "free-stack"
     ]
   },
   {
@@ -1908,10 +1815,7 @@ export const homeCatalog = [
     "hasLowCostSignal": true,
     "hasPaidSignal": true,
     "scenarioIds": [
-      "daily-coding",
-      "complex-refactor",
-      "free-stack",
-      "long-context"
+      "free-stack"
     ]
   },
   {
@@ -1944,11 +1848,7 @@ export const homeCatalog = [
     "hasLowCostSignal": true,
     "hasPaidSignal": true,
     "scenarioIds": [
-      "daily-coding",
-      "complex-refactor",
-      "free-stack",
-      "long-context",
-      "visual-generation"
+      "free-stack"
     ]
   },
   {
@@ -1981,7 +1881,6 @@ export const homeCatalog = [
     "hasLowCostSignal": true,
     "hasPaidSignal": true,
     "scenarioIds": [
-      "daily-coding",
       "free-stack"
     ]
   },
@@ -2014,12 +1913,7 @@ export const homeCatalog = [
     "hasFreeTier": false,
     "hasLowCostSignal": false,
     "hasPaidSignal": true,
-    "scenarioIds": [
-      "daily-coding",
-      "complex-refactor",
-      "long-context",
-      "visual-generation"
-    ]
+    "scenarioIds": []
   },
   {
     "id": "mistral",
@@ -2051,9 +1945,7 @@ export const homeCatalog = [
     "hasLowCostSignal": true,
     "hasPaidSignal": true,
     "scenarioIds": [
-      "complex-refactor",
-      "free-stack",
-      "long-context"
+      "free-stack"
     ]
   },
   {
@@ -2086,9 +1978,7 @@ export const homeCatalog = [
     "hasLowCostSignal": true,
     "hasPaidSignal": true,
     "scenarioIds": [
-      "free-stack",
-      "long-context",
-      "visual-generation"
+      "free-stack"
     ]
   },
   {
@@ -2120,10 +2010,7 @@ export const homeCatalog = [
     "hasFreeTier": false,
     "hasLowCostSignal": false,
     "hasPaidSignal": true,
-    "scenarioIds": [
-      "daily-coding",
-      "long-context"
-    ]
+    "scenarioIds": []
   },
   {
     "id": "flux",
@@ -2155,8 +2042,6 @@ export const homeCatalog = [
     "hasLowCostSignal": true,
     "hasPaidSignal": true,
     "scenarioIds": [
-      "daily-coding",
-      "long-context",
       "visual-generation"
     ]
   },
@@ -2190,9 +2075,7 @@ export const homeCatalog = [
     "hasLowCostSignal": true,
     "hasPaidSignal": true,
     "scenarioIds": [
-      "complex-refactor",
       "free-stack",
-      "long-context",
       "visual-generation"
     ]
   },
@@ -2226,7 +2109,6 @@ export const homeCatalog = [
     "hasLowCostSignal": true,
     "hasPaidSignal": true,
     "scenarioIds": [
-      "daily-coding",
       "free-stack",
       "visual-generation"
     ]
@@ -2261,9 +2143,7 @@ export const homeCatalog = [
     "hasLowCostSignal": true,
     "hasPaidSignal": true,
     "scenarioIds": [
-      "daily-coding",
       "free-stack",
-      "long-context",
       "visual-generation"
     ]
   },
@@ -2298,7 +2178,6 @@ export const homeCatalog = [
     "hasPaidSignal": true,
     "scenarioIds": [
       "free-stack",
-      "long-context",
       "visual-generation"
     ]
   },
@@ -2332,7 +2211,6 @@ export const homeCatalog = [
     "hasLowCostSignal": true,
     "hasPaidSignal": true,
     "scenarioIds": [
-      "complex-refactor",
       "free-stack",
       "visual-generation"
     ]
@@ -2367,10 +2245,7 @@ export const homeCatalog = [
     "hasLowCostSignal": true,
     "hasPaidSignal": true,
     "scenarioIds": [
-      "daily-coding",
-      "complex-refactor",
       "free-stack",
-      "long-context",
       "visual-generation"
     ]
   },
@@ -2404,11 +2279,7 @@ export const homeCatalog = [
     "hasLowCostSignal": true,
     "hasPaidSignal": true,
     "scenarioIds": [
-      "daily-coding",
-      "complex-refactor",
-      "free-stack",
-      "long-context",
-      "visual-generation"
+      "free-stack"
     ]
   },
   {
@@ -2441,10 +2312,7 @@ export const homeCatalog = [
     "hasLowCostSignal": true,
     "hasPaidSignal": true,
     "scenarioIds": [
-      "complex-refactor",
-      "free-stack",
-      "long-context",
-      "visual-generation"
+      "free-stack"
     ]
   },
   {
@@ -2477,8 +2345,6 @@ export const homeCatalog = [
     "hasLowCostSignal": true,
     "hasPaidSignal": true,
     "scenarioIds": [
-      "daily-coding",
-      "complex-refactor",
       "free-stack"
     ]
   },
@@ -2512,11 +2378,7 @@ export const homeCatalog = [
     "hasLowCostSignal": true,
     "hasPaidSignal": true,
     "scenarioIds": [
-      "daily-coding",
-      "complex-refactor",
-      "free-stack",
-      "long-context",
-      "visual-generation"
+      "free-stack"
     ]
   },
   {
@@ -2549,10 +2411,7 @@ export const homeCatalog = [
     "hasLowCostSignal": true,
     "hasPaidSignal": true,
     "scenarioIds": [
-      "daily-coding",
-      "complex-refactor",
-      "free-stack",
-      "long-context"
+      "free-stack"
     ]
   },
   {
@@ -2585,11 +2444,7 @@ export const homeCatalog = [
     "hasLowCostSignal": true,
     "hasPaidSignal": true,
     "scenarioIds": [
-      "daily-coding",
-      "complex-refactor",
-      "free-stack",
-      "long-context",
-      "visual-generation"
+      "free-stack"
     ]
   },
   {
@@ -2622,7 +2477,6 @@ export const homeCatalog = [
     "hasLowCostSignal": true,
     "hasPaidSignal": true,
     "scenarioIds": [
-      "daily-coding",
       "free-stack",
       "long-context"
     ]
@@ -2656,12 +2510,7 @@ export const homeCatalog = [
     "hasFreeTier": false,
     "hasLowCostSignal": false,
     "hasPaidSignal": false,
-    "scenarioIds": [
-      "daily-coding",
-      "complex-refactor",
-      "long-context",
-      "visual-generation"
-    ]
+    "scenarioIds": []
   },
   {
     "id": "firecrawl-mcp",
@@ -2693,8 +2542,7 @@ export const homeCatalog = [
     "hasLowCostSignal": true,
     "hasPaidSignal": true,
     "scenarioIds": [
-      "free-stack",
-      "long-context"
+      "free-stack"
     ]
   },
   {
@@ -2726,10 +2574,7 @@ export const homeCatalog = [
     "hasFreeTier": false,
     "hasLowCostSignal": false,
     "hasPaidSignal": false,
-    "scenarioIds": [
-      "daily-coding",
-      "long-context"
-    ]
+    "scenarioIds": []
   },
   {
     "id": "sequential-thinking-mcp",
@@ -2760,10 +2605,7 @@ export const homeCatalog = [
     "hasFreeTier": false,
     "hasLowCostSignal": false,
     "hasPaidSignal": true,
-    "scenarioIds": [
-      "complex-refactor",
-      "long-context"
-    ]
+    "scenarioIds": []
   },
   {
     "id": "antv-chart-mcp",
@@ -2794,9 +2636,7 @@ export const homeCatalog = [
     "hasFreeTier": false,
     "hasLowCostSignal": false,
     "hasPaidSignal": false,
-    "scenarioIds": [
-      "visual-generation"
-    ]
+    "scenarioIds": []
   },
   {
     "id": "brave-search-mcp",
@@ -2828,10 +2668,7 @@ export const homeCatalog = [
     "hasLowCostSignal": true,
     "hasPaidSignal": true,
     "scenarioIds": [
-      "daily-coding",
-      "free-stack",
-      "long-context",
-      "visual-generation"
+      "free-stack"
     ]
   },
   {
@@ -2863,9 +2700,7 @@ export const homeCatalog = [
     "hasFreeTier": false,
     "hasLowCostSignal": false,
     "hasPaidSignal": true,
-    "scenarioIds": [
-      "long-context"
-    ]
+    "scenarioIds": []
   },
   {
     "id": "notion-mcp",
@@ -2896,11 +2731,7 @@ export const homeCatalog = [
     "hasFreeTier": false,
     "hasLowCostSignal": false,
     "hasPaidSignal": true,
-    "scenarioIds": [
-      "daily-coding",
-      "complex-refactor",
-      "long-context"
-    ]
+    "scenarioIds": []
   },
   {
     "id": "postman-mcp",
@@ -2932,9 +2763,7 @@ export const homeCatalog = [
     "hasLowCostSignal": true,
     "hasPaidSignal": false,
     "scenarioIds": [
-      "daily-coding",
-      "free-stack",
-      "long-context"
+      "free-stack"
     ]
   },
   {
@@ -2966,9 +2795,7 @@ export const homeCatalog = [
     "hasFreeTier": false,
     "hasLowCostSignal": true,
     "hasPaidSignal": true,
-    "scenarioIds": [
-      "long-context"
-    ]
+    "scenarioIds": []
   },
   {
     "id": "supabase-mcp",
@@ -2999,11 +2826,7 @@ export const homeCatalog = [
     "hasFreeTier": false,
     "hasLowCostSignal": false,
     "hasPaidSignal": true,
-    "scenarioIds": [
-      "daily-coding",
-      "long-context",
-      "visual-generation"
-    ]
+    "scenarioIds": []
   },
   {
     "id": "figma-mcp",
@@ -3035,10 +2858,7 @@ export const homeCatalog = [
     "hasLowCostSignal": true,
     "hasPaidSignal": true,
     "scenarioIds": [
-      "daily-coding",
-      "free-stack",
-      "long-context",
-      "visual-generation"
+      "free-stack"
     ]
   },
   {
@@ -3070,10 +2890,7 @@ export const homeCatalog = [
     "hasFreeTier": false,
     "hasLowCostSignal": false,
     "hasPaidSignal": true,
-    "scenarioIds": [
-      "daily-coding",
-      "long-context"
-    ]
+    "scenarioIds": []
   },
   {
     "id": "slack-mcp",
@@ -3105,9 +2922,7 @@ export const homeCatalog = [
     "hasLowCostSignal": true,
     "hasPaidSignal": true,
     "scenarioIds": [
-      "daily-coding",
-      "free-stack",
-      "long-context"
+      "free-stack"
     ]
   },
   {
@@ -3140,8 +2955,7 @@ export const homeCatalog = [
     "hasLowCostSignal": true,
     "hasPaidSignal": true,
     "scenarioIds": [
-      "free-stack",
-      "long-context"
+      "free-stack"
     ]
   },
   {
@@ -3174,10 +2988,7 @@ export const homeCatalog = [
     "hasLowCostSignal": true,
     "hasPaidSignal": true,
     "scenarioIds": [
-      "daily-coding",
-      "free-stack",
-      "long-context",
-      "visual-generation"
+      "free-stack"
     ]
   },
   {
@@ -3210,9 +3021,7 @@ export const homeCatalog = [
     "hasLowCostSignal": true,
     "hasPaidSignal": true,
     "scenarioIds": [
-      "daily-coding",
-      "free-stack",
-      "long-context"
+      "free-stack"
     ]
   },
   {
@@ -3244,10 +3053,7 @@ export const homeCatalog = [
     "hasFreeTier": false,
     "hasLowCostSignal": false,
     "hasPaidSignal": true,
-    "scenarioIds": [
-      "daily-coding",
-      "long-context"
-    ]
+    "scenarioIds": []
   },
   {
     "id": "cloudflare-mcp",
@@ -3279,10 +3085,7 @@ export const homeCatalog = [
     "hasLowCostSignal": true,
     "hasPaidSignal": true,
     "scenarioIds": [
-      "daily-coding",
-      "free-stack",
-      "long-context",
-      "visual-generation"
+      "free-stack"
     ]
   },
   {
@@ -3314,10 +3117,7 @@ export const homeCatalog = [
     "hasFreeTier": false,
     "hasLowCostSignal": false,
     "hasPaidSignal": true,
-    "scenarioIds": [
-      "daily-coding",
-      "long-context"
-    ]
+    "scenarioIds": []
   },
   {
     "id": "elasticsearch-mcp",
@@ -3348,10 +3148,7 @@ export const homeCatalog = [
     "hasFreeTier": false,
     "hasLowCostSignal": false,
     "hasPaidSignal": true,
-    "scenarioIds": [
-      "complex-refactor",
-      "long-context"
-    ]
+    "scenarioIds": []
   },
   {
     "id": "autogen",
@@ -3382,11 +3179,7 @@ export const homeCatalog = [
     "hasFreeTier": false,
     "hasLowCostSignal": false,
     "hasPaidSignal": false,
-    "scenarioIds": [
-      "daily-coding",
-      "complex-refactor",
-      "long-context"
-    ]
+    "scenarioIds": []
   },
   {
     "id": "zapier-ai",
@@ -3418,8 +3211,6 @@ export const homeCatalog = [
     "hasLowCostSignal": true,
     "hasPaidSignal": true,
     "scenarioIds": [
-      "daily-coding",
-      "complex-refactor",
       "free-stack"
     ]
   },
@@ -3453,10 +3244,7 @@ export const homeCatalog = [
     "hasLowCostSignal": true,
     "hasPaidSignal": true,
     "scenarioIds": [
-      "daily-coding",
-      "complex-refactor",
-      "free-stack",
-      "long-context"
+      "free-stack"
     ]
   },
   {
@@ -3488,12 +3276,7 @@ export const homeCatalog = [
     "hasFreeTier": false,
     "hasLowCostSignal": false,
     "hasPaidSignal": false,
-    "scenarioIds": [
-      "daily-coding",
-      "complex-refactor",
-      "long-context",
-      "visual-generation"
-    ]
+    "scenarioIds": []
   },
   {
     "id": "agentscope",
@@ -3524,11 +3307,7 @@ export const homeCatalog = [
     "hasFreeTier": false,
     "hasLowCostSignal": false,
     "hasPaidSignal": true,
-    "scenarioIds": [
-      "daily-coding",
-      "complex-refactor",
-      "visual-generation"
-    ]
+    "scenarioIds": []
   },
   {
     "id": "luma",
@@ -3593,7 +3372,6 @@ export const homeCatalog = [
     "hasLowCostSignal": true,
     "hasPaidSignal": true,
     "scenarioIds": [
-      "daily-coding",
       "free-stack",
       "visual-generation"
     ]
@@ -3661,10 +3439,7 @@ export const homeCatalog = [
     "hasFreeTier": false,
     "hasLowCostSignal": true,
     "hasPaidSignal": true,
-    "scenarioIds": [
-      "long-context",
-      "visual-generation"
-    ]
+    "scenarioIds": []
   },
   {
     "id": "amazon-nova",
@@ -3696,10 +3471,7 @@ export const homeCatalog = [
     "hasLowCostSignal": true,
     "hasPaidSignal": true,
     "scenarioIds": [
-      "daily-coding",
-      "free-stack",
-      "long-context",
-      "visual-generation"
+      "free-stack"
     ]
   },
   {
@@ -3732,10 +3504,7 @@ export const homeCatalog = [
     "hasLowCostSignal": true,
     "hasPaidSignal": true,
     "scenarioIds": [
-      "daily-coding",
-      "complex-refactor",
-      "free-stack",
-      "visual-generation"
+      "free-stack"
     ]
   },
   {
@@ -3767,10 +3536,7 @@ export const homeCatalog = [
     "hasFreeTier": false,
     "hasLowCostSignal": false,
     "hasPaidSignal": true,
-    "scenarioIds": [
-      "daily-coding",
-      "visual-generation"
-    ]
+    "scenarioIds": []
   },
   {
     "id": "webapp-testing-skill",
@@ -3801,9 +3567,7 @@ export const homeCatalog = [
     "hasFreeTier": false,
     "hasLowCostSignal": false,
     "hasPaidSignal": false,
-    "scenarioIds": [
-      "visual-generation"
-    ]
+    "scenarioIds": []
   },
   {
     "id": "mcp-builder-skill",
@@ -3834,11 +3598,7 @@ export const homeCatalog = [
     "hasFreeTier": false,
     "hasLowCostSignal": false,
     "hasPaidSignal": true,
-    "scenarioIds": [
-      "daily-coding",
-      "complex-refactor",
-      "visual-generation"
-    ]
+    "scenarioIds": []
   },
   {
     "id": "skill-creator-skill",
@@ -3869,12 +3629,7 @@ export const homeCatalog = [
     "hasFreeTier": false,
     "hasLowCostSignal": false,
     "hasPaidSignal": true,
-    "scenarioIds": [
-      "daily-coding",
-      "complex-refactor",
-      "long-context",
-      "visual-generation"
-    ]
+    "scenarioIds": []
   },
   {
     "id": "semgrep-skill",
@@ -3905,9 +3660,7 @@ export const homeCatalog = [
     "hasFreeTier": false,
     "hasLowCostSignal": false,
     "hasPaidSignal": true,
-    "scenarioIds": [
-      "daily-coding"
-    ]
+    "scenarioIds": []
   },
   {
     "id": "differential-review-skill",
@@ -3938,11 +3691,7 @@ export const homeCatalog = [
     "hasFreeTier": false,
     "hasLowCostSignal": false,
     "hasPaidSignal": false,
-    "scenarioIds": [
-      "daily-coding",
-      "complex-refactor",
-      "long-context"
-    ]
+    "scenarioIds": []
   },
   {
     "id": "insecure-defaults-skill",
@@ -3973,9 +3722,7 @@ export const homeCatalog = [
     "hasFreeTier": false,
     "hasLowCostSignal": false,
     "hasPaidSignal": false,
-    "scenarioIds": [
-      "daily-coding"
-    ]
+    "scenarioIds": []
   },
   {
     "id": "sharp-edges-skill",
@@ -4006,10 +3753,7 @@ export const homeCatalog = [
     "hasFreeTier": false,
     "hasLowCostSignal": false,
     "hasPaidSignal": true,
-    "scenarioIds": [
-      "daily-coding",
-      "visual-generation"
-    ]
+    "scenarioIds": []
   },
   {
     "id": "second-opinion-skill",
@@ -4040,11 +3784,7 @@ export const homeCatalog = [
     "hasFreeTier": false,
     "hasLowCostSignal": false,
     "hasPaidSignal": true,
-    "scenarioIds": [
-      "daily-coding",
-      "complex-refactor",
-      "long-context"
-    ]
+    "scenarioIds": []
   },
   {
     "id": "audit-context-building-skill",
@@ -4075,11 +3815,7 @@ export const homeCatalog = [
     "hasFreeTier": false,
     "hasLowCostSignal": false,
     "hasPaidSignal": true,
-    "scenarioIds": [
-      "daily-coding",
-      "complex-refactor",
-      "long-context"
-    ]
+    "scenarioIds": []
   },
   {
     "id": "git-cleanup-skill",
@@ -4110,10 +3846,7 @@ export const homeCatalog = [
     "hasFreeTier": false,
     "hasLowCostSignal": false,
     "hasPaidSignal": false,
-    "scenarioIds": [
-      "daily-coding",
-      "visual-generation"
-    ]
+    "scenarioIds": []
   },
   {
     "id": "ask-questions-skill",
@@ -4144,12 +3877,7 @@ export const homeCatalog = [
     "hasFreeTier": false,
     "hasLowCostSignal": false,
     "hasPaidSignal": true,
-    "scenarioIds": [
-      "daily-coding",
-      "complex-refactor",
-      "long-context",
-      "visual-generation"
-    ]
+    "scenarioIds": []
   },
   {
     "id": "property-based-testing-skill",
@@ -4180,9 +3908,7 @@ export const homeCatalog = [
     "hasFreeTier": false,
     "hasLowCostSignal": false,
     "hasPaidSignal": true,
-    "scenarioIds": [
-      "visual-generation"
-    ]
+    "scenarioIds": []
   },
   {
     "id": "supabase-skill",
@@ -4213,10 +3939,7 @@ export const homeCatalog = [
     "hasFreeTier": false,
     "hasLowCostSignal": false,
     "hasPaidSignal": false,
-    "scenarioIds": [
-      "daily-coding",
-      "long-context"
-    ]
+    "scenarioIds": []
   },
   {
     "id": "supabase-realtime-skill",
@@ -4247,11 +3970,7 @@ export const homeCatalog = [
     "hasFreeTier": false,
     "hasLowCostSignal": false,
     "hasPaidSignal": true,
-    "scenarioIds": [
-      "daily-coding",
-      "complex-refactor",
-      "long-context"
-    ]
+    "scenarioIds": []
   },
   {
     "id": "ui-ux-pro-max-skill",
@@ -4282,11 +4001,7 @@ export const homeCatalog = [
     "hasFreeTier": false,
     "hasLowCostSignal": false,
     "hasPaidSignal": true,
-    "scenarioIds": [
-      "daily-coding",
-      "long-context",
-      "visual-generation"
-    ]
+    "scenarioIds": []
   },
   {
     "id": "week-report-skill",
@@ -4317,9 +4032,7 @@ export const homeCatalog = [
     "hasFreeTier": false,
     "hasLowCostSignal": false,
     "hasPaidSignal": false,
-    "scenarioIds": [
-      "visual-generation"
-    ]
+    "scenarioIds": []
   },
   {
     "id": "think-harder-skill",
@@ -4350,10 +4063,7 @@ export const homeCatalog = [
     "hasFreeTier": false,
     "hasLowCostSignal": false,
     "hasPaidSignal": false,
-    "scenarioIds": [
-      "complex-refactor",
-      "visual-generation"
-    ]
+    "scenarioIds": []
   },
   {
     "id": "research-skill",
@@ -4384,10 +4094,7 @@ export const homeCatalog = [
     "hasFreeTier": false,
     "hasLowCostSignal": false,
     "hasPaidSignal": true,
-    "scenarioIds": [
-      "daily-coding",
-      "long-context"
-    ]
+    "scenarioIds": []
   }
 ]
 

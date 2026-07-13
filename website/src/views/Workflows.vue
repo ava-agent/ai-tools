@@ -6,10 +6,10 @@
         <h1
           class="text-[28px] font-bold text-white mb-4"
         >
-          AI 工作流最佳实践
+          AI 可编辑工作流模板
         </h1>
         <p class="text-xl text-white/80 max-w-2xl mx-auto">
-          基于真实项目经验总结的 AI 工作流方案，帮助您高效使用 AI 工具
+          可编辑工作流模板，基于公开产品能力整理，执行前按团队环境验证
         </p>
       </div>
 
@@ -47,6 +47,30 @@
             <p class="text-lg text-white/70">
               {{ currentWorkflow.description }}
             </p>
+            <div
+              v-if="currentWorkflow.lastReviewed || currentWorkflow.sources?.length"
+              class="mt-4 flex flex-col gap-3 border-t border-white/[0.06] pt-4 text-xs text-white/55 sm:flex-row sm:items-center sm:justify-between"
+              data-testid="workflow-review-meta"
+            >
+              <span v-if="currentWorkflow.lastReviewed">模板复核于 {{ currentWorkflow.lastReviewed }}</span>
+              <div
+                v-if="currentWorkflow.sources?.length"
+                class="flex flex-wrap items-center gap-x-3 gap-y-2"
+              >
+                <a
+                  v-for="(source, index) in currentWorkflow.sources"
+                  :key="source"
+                  :href="source"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center gap-1 text-[#0a84ff] hover:text-blue-300"
+                  :data-testid="`workflow-source-${currentWorkflow.id}-${index}`"
+                >
+                  官方来源 {{ index + 1 }}
+                  <ExternalLink class="h-3 w-3" />
+                </a>
+              </div>
+            </div>
           </div>
 
           <!-- Recommended Stack -->
@@ -79,7 +103,7 @@
                   :to="{ name: 'tool-detail', params: { id: item.tool.id } }"
                   class="text-base font-semibold text-white hover:text-primary transition-colors"
                 >
-                  {{ item.tool.name }}
+                  {{ item.toolName }}
                 </router-link>
                 <div
                   v-else
@@ -143,7 +167,7 @@
                           class="break-words px-2 py-1 bg-[#0a84ff]/20 text-[#0a84ff] text-xs rounded-full hover:bg-[#0a84ff]/30 transition-colors"
                           :data-testid="`workflow-step-${step.step}-tool-${tool.id}`"
                         >
-                          {{ tool.name }}
+                          {{ tool.workflowLabel }}
                         </router-link>
                         <span
                           :class="getWorkflowVerificationClass(tool)"
@@ -279,11 +303,11 @@
         </div>
       </div>
 
-      <!-- Best Practices -->
+      <!-- Workflow Principles -->
       <div>
         <h2 class="text-2xl font-bold text-white mb-6 flex items-center">
           <Award class="w-6 h-6 text-yellow-500 mr-2" />
-          最佳实践原则
+          工作流执行原则
         </h2>
         <div class="grid md:grid-cols-2 gap-6">
           <div class="glass-card p-4">
@@ -331,7 +355,7 @@
                 <div>
                   <strong class="text-white">版本控制</strong>
                   <p class="text-sm text-white/60">
-                    重要节点手动创建 Git tag 作为检查点
+                    在隔离分支中保持小提交；Git tag 仅用于稳定里程碑
                   </p>
                 </div>
               </li>
@@ -417,7 +441,8 @@ import {
   Lock,
   Eye,
   Save,
-  Ban
+  Ban,
+  ExternalLink
 } from 'lucide-vue-next'
 import { useUIStore } from '../stores/ui'
 import { useWorkflowCatalogStore } from '../stores/workflowCatalog'
@@ -442,8 +467,18 @@ function resolveWorkflowTool(name) {
 }
 
 function resolveWorkflowStepTools(step) {
-  return resolveToolLinks(step.tool, toolsStore.tools, step.toolIds)
-    .map(link => toolsStore.getToolById(link.id))
+  const links = resolveToolLinks(step.tool, toolsStore.tools, step.toolIds)
+
+  return links
+    .map((link) => {
+      const tool = toolsStore.getToolById(link.id)
+      if (!tool) return null
+
+      return {
+        ...tool,
+        workflowLabel: links.length === 1 ? step.tool : tool.name,
+      }
+    })
     .filter(Boolean)
 }
 

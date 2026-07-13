@@ -81,7 +81,6 @@ export const aiToolsData = [
     },
     tags: ['推荐', 'VS Code系', 'Agentic', '行业标杆'],
     video: { src: './videos/cursor.mp4' },
-    radarChart: 'images/cursor_radar_chart.png'
   },
   {
     id: 'trae',
@@ -146,7 +145,6 @@ export const aiToolsData = [
     },
     tags: ['推荐', '国产', '低价入门', 'SOLO', '云任务'],
     video: { src: './videos/trae.mp4' },
-    radarChart: 'images/trae_radar_chart.png'
   },
   {
     id: 'windsurf',
@@ -219,7 +217,6 @@ export const aiToolsData = [
     },
     tags: ['推荐', 'DevinDesktop', 'Cascade', '迁移期', '配额制'],
     video: { src: './videos/windsurf.mp4' },
-    radarChart: 'images/windsurf_radar_chart.png'
   },
   {
     id: 'qoder',
@@ -292,7 +289,6 @@ export const aiToolsData = [
     },
     tags: ['国产', '后端', 'Quest', 'KnowledgeEngine', 'Credits'],
     video: { src: './videos/qoder.mp4' },
-    radarChart: 'images/qoder_radar_chart.png'
   },
   {
     id: 'zed',
@@ -488,7 +484,6 @@ export const aiToolsData = [
     },
     tags: ['Amazon', 'Spec', '规范', 'Credits', 'ProMax', '待复核'],
     video: { src: './videos/kiro.mp4' },
-    radarChart: 'images/kiro_radar_chart.png'
   },
   {
     id: 'codebuddy',
@@ -564,7 +559,6 @@ export const aiToolsData = [
     },
     tags: ['国产', '腾讯', 'Credits', 'Team Plan', 'OpenAI interface format'],
     video: { src: './videos/codebuddy.mp4' },
-    radarChart: 'images/codebuddy_radar_chart.png'
   },
   {
     id: 'antigravity',
@@ -642,7 +636,6 @@ export const aiToolsData = [
     },
     tags: ['Google', 'Gemini', 'AgentFirst', 'Google AI Pro', 'Google AI Ultra', 'AI credits'],
     video: { src: './videos/antigravity.mp4' },
-    radarChart: 'images/antigravity_radar_chart.png'
   },
   {
     id: 'github-copilot',
@@ -915,7 +908,6 @@ export const aiToolsData = [
     swot: { S: '复杂任务能力突出', W: '价格高', O: '企业需求', T: '低成本替代' },
     tags: ['推荐', 'CLI', 'Claude', 'AgentTeams', 'ContextCompaction', 'AdaptiveThinking'],
     video: { src: './videos/claude-code.mp4' },
-    radarChart: 'images/claude_code.png'
   },
   {
     id: 'gemini-cli',
@@ -981,7 +973,6 @@ export const aiToolsData = [
     swot: { S: '1M 上下文、免费', W: '复杂工程一般', O: 'Google 生态', T: 'Claude Code 能力' },
     tags: ['推荐', 'CLI', '免费', '长上下文', 'Google', 'Gemini', 'MCP', 'FlashLite', 'Video'],
     video: { src: './videos/gemini-cli.mp4' },
-    radarChart: 'images/geminicli.png'
   },
   {
     id: 'qwen-cli',
@@ -1054,7 +1045,6 @@ export const aiToolsData = [
       T: 'Gemini CLI、Aider、OpenCode'
     },
     tags: ['推荐', 'CLI', '国产', '中文', 'Qwen', 'CodingPlan', '多模态', 'MCP'],
-    radarChart: 'images/qwencli.png'
   },
   {
     id: 'aider',
@@ -1323,7 +1313,6 @@ export const aiToolsData = [
     },
     tags: ['开源', 'CLI', '多模型', 'LSP', 'PrivacyFirst'],
     video: { src: './videos/opencode-cli.mp4' },
-    radarChart: 'images/opencode.png'
   },
   {
     id: 'codex',
@@ -1394,7 +1383,6 @@ export const aiToolsData = [
     swot: { S: '代码生成、生态', W: '价格、访问', O: '企业级市场', T: '开源替代' },
     tags: ['推荐', 'CLI', 'OpenAI', '代码生成', '多语言', 'GPT-5', 'Agent'],
     video: { src: './videos/codex-cli.mp4' },
-    radarChart: 'images/codex.png'
   },
   {
     id: 'goose',

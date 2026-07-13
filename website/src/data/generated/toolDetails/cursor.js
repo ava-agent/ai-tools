@@ -73,6 +73,5 @@ export default {
   ],
   "video": {
     "src": "./videos/cursor.mp4"
-  },
-  "radarChart": "images/cursor_radar_chart.png"
+  }
 }

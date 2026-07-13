@@ -1,6 +1,7 @@
 <!-- src/components/landing/RecommendationCards.vue -->
 <template>
   <section
+    id="scenarios"
     ref="sectionRef"
     class="max-w-[960px] mx-auto px-5 py-16"
     :class="{ revealed: isRevealed }"
@@ -12,7 +13,7 @@
       按场景选工具
     </h2>
     <p
-      class="reveal-item text-sm text-white/35 mb-8"
+      class="reveal-item mb-8 text-sm text-white/60"
       style="--reveal-i: 1"
     >
       先按任务缩小范围，再进入详情核对价格、风险和替代方案

@@ -78,6 +78,5 @@ export default {
   ],
   "video": {
     "src": "./videos/claude-code.mp4"
-  },
-  "radarChart": "images/claude_code.png"
+  }
 }

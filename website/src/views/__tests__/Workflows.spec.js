@@ -3,6 +3,7 @@ import { mount } from '@vue/test-utils'
 import { createPinia, setActivePinia } from 'pinia'
 import { createRouter, createMemoryHistory } from 'vue-router'
 import Workflows from '../Workflows.vue'
+import { pitfalls, workflows } from '../../data/workflows.js'
 import { useWorkflowCatalogStore } from '../../stores/workflowCatalog'
 
 function makeRouter() {
@@ -97,6 +98,18 @@ describe('Workflows', () => {
     expect(wrapper.text()).toContain('核验于 2026-06-25')
   })
 
+  it('presents reviewed workflow templates with direct official sources', async () => {
+    const wrapper = await mountWorkflows()
+    const dailyWorkflow = workflows.find(workflow => workflow.id === 'daily-dev')
+
+    expect(wrapper.text()).toContain('AI 可编辑工作流模板')
+    expect(wrapper.text()).toContain('可编辑工作流模板，基于公开产品能力整理，执行前按团队环境验证')
+    expect(wrapper.get('[data-testid="workflow-review-meta"]').text()).toContain('模板复核于 2026-07-13')
+    expect(wrapper.get('[data-testid="workflow-source-daily-dev-0"]').attributes('href')).toBe(
+      dailyWorkflow.sources[0]
+    )
+  })
+
   it('updates the recommended stack when switching workflow tabs', async () => {
     const wrapper = await mountWorkflows()
 
@@ -104,9 +117,37 @@ describe('Workflows', () => {
 
     expect(wrapper.text()).toContain('快速原型流')
     expect(wrapper.text()).toContain('0→1 原型')
-    expect(wrapper.text()).toContain('Trae')
+    expect(wrapper.text()).toContain('TRAE Work')
+    expect(wrapper.text()).toContain('SOLO Agent')
     expect(wrapper.text()).toContain('Windsurf')
+    expect(wrapper.text()).toContain('Cascade Plan/Code/Ask')
     expect(wrapper.text()).toContain('已核验')
+  })
+
+  it('keeps terminology, quality gates, and parallel-work guidance conservative', () => {
+    const rapidPrototype = workflows.find(workflow => workflow.id === 'rapid-prototype')
+    const refactorFlow = workflows.find(workflow => workflow.id === 'refactor-flow')
+    const criticalTask = workflows.find(workflow => workflow.id === 'critical-task')
+    const workflowText = JSON.stringify(workflows)
+
+    for (const workflow of workflows) {
+      expect(workflow.lastReviewed).toBe('2026-07-13')
+      expect(workflow.sources.length).toBeGreaterThan(0)
+      expect(workflow.sources.every(source => source.startsWith('https://'))).toBe(true)
+    }
+
+    expect(workflowText).toContain('Agent/Plan/Ask')
+    expect(workflowText).toContain('Cascade Plan/Code/Ask')
+    expect(workflowText).not.toMatch(/Composer|Solo Builder|Solo Coder|Flow 模式/)
+    expect(rapidPrototype.tips.join(' ')).toContain('安全、可运行、可回滚的最低质量线')
+    expect(criticalTask.steps[0].tip).toContain('experimental')
+    expect(criticalTask.steps[0].tip).toContain('默认关闭')
+    expect(criticalTask.steps[0].tip).toContain('可独立并行')
+    expect(criticalTask.steps[0].tip).toContain('单会话/子代理')
+    expect(refactorFlow.steps.at(-1).tip).toContain('隔离分支')
+    expect(refactorFlow.steps.at(-1).tip).toContain('小提交')
+    expect(refactorFlow.steps.at(-1).tip).toContain('tag 仅用于')
+    expect(pitfalls.cli.at(-1).solution).toContain('稳定里程碑')
   })
 
   it('does not nest glass cards inside the workflow detail card', async () => {

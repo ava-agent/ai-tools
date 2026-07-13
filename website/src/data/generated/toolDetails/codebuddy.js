@@ -78,6 +78,5 @@ export default {
   ],
   "video": {
     "src": "./videos/codebuddy.mp4"
-  },
-  "radarChart": "images/codebuddy_radar_chart.png"
+  }
 }

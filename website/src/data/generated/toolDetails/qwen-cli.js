@@ -76,6 +76,5 @@ export default {
     "CodingPlan",
     "多模态",
     "MCP"
-  ],
-  "radarChart": "images/qwencli.png"
+  ]
 }

@@ -14,6 +14,7 @@
       <main
         id="main-content"
         ref="mainContent"
+        class="min-h-[calc(100vh-3rem)]"
         tabindex="-1"
       >
         <router-view v-slot="{ Component }">

@@ -66,7 +66,7 @@
     <!-- Content area -->
     <div class="max-w-[720px] mx-auto px-5 pb-16">
       <!-- Tool header -->
-      <div class="glass-card p-5 mb-4">
+      <section class="mb-5 border-b border-white/[0.08] py-6">
         <div
           class="flex flex-col items-start gap-4 mb-6 sm:flex-row"
           data-testid="tool-detail-hero"
@@ -103,20 +103,18 @@
                 {{ verificationDateLabel }} {{ verification.lastVerified }}
               </span>
             </div>
-            <div class="flex items-center gap-3 mt-2">
+            <div
+              class="mt-3 flex flex-wrap items-center gap-2"
+              title="编辑推荐度用于辅助选型，不代表统一基准测试结果"
+            >
+              <span class="text-xs font-medium text-white/65">编辑推荐度</span>
               <StarRating
                 :rating="tool.personalExperience?.rating || 0"
                 size="md"
                 class="text-[#ffd60a]"
               />
-              <div class="text-[13px] text-[#30d158] font-semibold">
+              <div class="text-[13px] font-semibold text-[#30d158]">
                 {{ tool.personalExperience?.rating?.toFixed(1) }}
-              </div>
-              <div class="text-xs text-white/30">
-                |
-              </div>
-              <div class="text-xs text-white/40">
-                {{ tool.funRanking }}
               </div>
             </div>
           </div>
@@ -131,8 +129,8 @@
         </div>
 
         <!-- Info grid -->
-        <div class="grid grid-cols-1 sm:grid-cols-3 gap-[10px] mb-5">
-          <div class="info-cell text-left sm:text-center">
+        <dl class="mb-5 grid grid-cols-1 divide-y divide-white/[0.08] border-y border-white/[0.08] sm:grid-cols-3 sm:divide-x sm:divide-y-0">
+          <div class="py-3 text-left sm:px-4 sm:text-center">
             <div class="text-[11px] text-white/35 mb-1">
               定价
             </div>
@@ -140,7 +138,7 @@
               {{ pricingDisplay }}
             </div>
           </div>
-          <div class="info-cell text-left sm:text-center">
+          <div class="py-3 text-left sm:px-4 sm:text-center">
             <div class="text-[11px] text-white/35 mb-1">
               上下文
             </div>
@@ -148,7 +146,7 @@
               {{ contextWindowDisplay }}
             </div>
           </div>
-          <div class="info-cell text-left sm:text-center">
+          <div class="py-3 text-left sm:px-4 sm:text-center">
             <div class="text-[11px] text-white/35 mb-1">
               中文支持
             </div>
@@ -156,16 +154,8 @@
               {{ chineseSupportDisplay }}
             </div>
           </div>
-        </div>
-
-        <!-- Best for -->
-        <div
-          v-if="tool.bestFor"
-          class="text-[13px] text-white/50 leading-relaxed"
-        >
-          {{ tool.bestFor }}
-        </div>
-      </div>
+        </dl>
+      </section>
 
       <!-- Decision summary -->
       <div
@@ -278,14 +268,14 @@
         </div>
       </div>
 
-      <!-- Insight card (enhanced) -->
+      <!-- Editorial verification note -->
       <div
         v-if="tool.personalExperience?.insights"
-        class="rounded-xl p-4 mb-4"
+        class="mb-4 rounded-lg p-4"
         style="background: rgba(48, 209, 88, 0.04); border-left: 4px solid #30d158"
       >
         <h2 class="text-[13px] font-semibold text-[#30d158] mb-2">
-          实战洞察
+          编辑核验说明
         </h2>
         <div class="text-[13px] text-white/55 leading-relaxed">
           {{ tool.personalExperience.insights }}
@@ -297,8 +287,12 @@
         v-if="tool.personalExperience?.pitfalls?.length"
         class="glass-card p-4 mb-4"
       >
-        <h2 class="text-[13px] font-semibold text-[#ffd60a] mb-2">
-          ⚠️ 注意事项
+        <h2 class="mb-2 flex items-center gap-2 text-[13px] font-semibold text-[#ffd60a]">
+          <AlertTriangle
+            class="h-4 w-4"
+            aria-hidden="true"
+          />
+          注意事项
         </h2>
         <div class="text-xs text-white/50 leading-loose">
           <div
@@ -315,8 +309,12 @@
         v-if="tool.personalExperience"
         class="glass-card p-4 mb-4"
       >
-        <h2 class="text-[13px] font-semibold text-white mb-3">
-          📊 评分雷达
+        <h2 class="mb-3 flex items-center gap-2 text-[13px] font-semibold text-white">
+          <BarChart3
+            class="h-4 w-4 text-[#7dd3fc]"
+            aria-hidden="true"
+          />
+          编辑评估雷达
         </h2>
         <ScoreRadar :tool="tool" />
       </div>
@@ -326,8 +324,12 @@
         v-if="tool.swot"
         class="glass-card p-4 mb-4"
       >
-        <h2 class="text-[13px] font-semibold text-white mb-3">
-          📋 SWOT 分析
+        <h2 class="mb-3 flex items-center gap-2 text-[13px] font-semibold text-white">
+          <ClipboardList
+            class="h-4 w-4 text-[#bf5af2]"
+            aria-hidden="true"
+          />
+          SWOT 分析
         </h2>
         <div class="grid grid-cols-1 gap-2 sm:grid-cols-2">
           <div
@@ -418,8 +420,12 @@
         v-if="tool.versions?.length"
         class="glass-card p-4 mb-4"
       >
-        <h2 class="text-[13px] font-semibold text-white mb-3">
-          🔗 版本与链接
+        <h2 class="mb-3 flex items-center gap-2 text-[13px] font-semibold text-white">
+          <Link
+            class="h-4 w-4 text-[#64d2ff]"
+            aria-hidden="true"
+          />
+          版本与链接
         </h2>
         <div class="space-y-2">
           <component
@@ -455,8 +461,12 @@
 
       <!-- Community rating -->
       <div class="glass-card p-4 mb-4">
-        <h2 class="text-[13px] font-semibold text-white mb-3">
-          ⭐ 社区评价
+        <h2 class="mb-3 flex items-center gap-2 text-[13px] font-semibold text-white">
+          <Star
+            class="h-4 w-4 text-[#ffd60a]"
+            aria-hidden="true"
+          />
+          社区评价
         </h2>
         <ToolRating :tool-id="tool.id" />
       </div>
@@ -524,8 +534,12 @@
         v-if="relatedTools.length > 0"
         class="glass-card p-4"
       >
-        <h2 class="text-[13px] font-semibold text-white mb-3">
-          🔄 相关工具
+        <h2 class="mb-3 flex items-center gap-2 text-[13px] font-semibold text-white">
+          <RefreshCw
+            class="h-4 w-4 text-[#30d158]"
+            aria-hidden="true"
+          />
+          相关工具
         </h2>
         <div class="grid grid-cols-1 gap-2 sm:grid-cols-2">
           <router-link
@@ -579,7 +593,15 @@
 <script setup>
 import { computed, ref, watch } from 'vue'
 import { useRouter } from 'vue-router'
-import { GitCompareArrows } from 'lucide-vue-next'
+import {
+  AlertTriangle,
+  BarChart3,
+  ClipboardList,
+  GitCompareArrows,
+  Link,
+  RefreshCw,
+  Star
+} from 'lucide-vue-next'
 import { useGamificationStore } from '../stores/gamification'
 import { useAchievementsStore } from '../stores/achievements'
 import {

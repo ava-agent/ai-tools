@@ -73,6 +73,5 @@ export default {
   ],
   "video": {
     "src": "./videos/trae.mp4"
-  },
-  "radarChart": "images/trae_radar_chart.png"
+  }
 }

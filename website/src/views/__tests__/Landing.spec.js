@@ -1,14 +1,20 @@
-import { describe, expect, it } from 'vitest'
+import { beforeEach, describe, expect, it, vi } from 'vitest'
 import { mount } from '@vue/test-utils'
 import Landing from '../Landing.vue'
+
+const pushMock = vi.fn()
+
+vi.mock('vue-router', () => ({
+  useRouter: () => ({ push: pushMock })
+}))
 
 function mountLanding() {
   return mount(Landing, {
     global: {
       stubs: {
         HeroSection: {
-          emits: ['play-intro'],
-          template: '<button data-testid="open-intro" @click="$emit(\'play-intro\')">播放</button>',
+          emits: ['play-intro', 'search'],
+          template: '<div><button data-testid="open-intro" @click="$emit(\'play-intro\')">播放</button><button data-testid="search-tools" @click="$emit(\'search\', \'复杂重构\')">搜索</button></div>',
         },
         IntroVideo: {
           props: ['show'],
@@ -25,6 +31,10 @@ function mountLanding() {
 }
 
 describe('Landing media introduction', () => {
+  beforeEach(() => {
+    pushMock.mockReset()
+  })
+
   it('opens the introduction from the hero and closes it from the dialog', async () => {
     const wrapper = mountLanding()
 
@@ -35,5 +45,13 @@ describe('Landing media introduction', () => {
 
     await wrapper.get('[data-testid="close-intro"]').trigger('click')
     expect(wrapper.get('[data-testid="intro-state"]').attributes('data-show')).toBe('false')
+  })
+
+  it('routes hero searches into the catalog query', async () => {
+    const wrapper = mountLanding()
+
+    await wrapper.get('[data-testid="search-tools"]').trigger('click')
+
+    expect(pushMock).toHaveBeenCalledWith({ name: 'tools', query: { q: '复杂重构' } })
   })
 })
