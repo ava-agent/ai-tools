@@ -1,7 +1,7 @@
 // Generated from src/data/tools.js.
 export default {
   "verificationStatus": "verified",
-  "lastVerified": "2026-07-08",
+  "lastVerified": "2026-07-13",
   "sources": [
     "https://github.com/semgrep/skills",
     "https://github.com/semgrep/skills/blob/main/skills/semgrep/SKILL.md",
@@ -15,7 +15,7 @@ export default {
   "name": "semgrep",
   "category": "skill",
   "subcategory": "安全审计",
-  "developer": "Semgrep / Semgrep Skills",
+  "developer": "Semgrep",
   "logo": null,
   "versions": [
     {

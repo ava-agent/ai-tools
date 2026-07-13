@@ -1,7 +1,7 @@
 // Generated from src/data/tools.js.
 export default {
-  "verificationStatus": "verified",
-  "lastVerified": "2026-07-07",
+  "verificationStatus": "needs-review",
+  "lastVerified": "2026-07-13",
   "sources": [
     "https://app.klingai.com",
     "https://kling.ai/document-api/quickStart/productIntroduction/overview",
@@ -39,10 +39,10 @@ export default {
     "真人、品牌、版权角色和广告素材仍需人工合规审查"
   ],
   "bestFor": "短视频创作、动作连贯",
-  "funRanking": "夯夯",
+  "funRanking": "待复核",
   "personalExperience": {
     "rating": 5,
-    "insights": "截至 2026-07-07，可灵官方 API 文档主入口已经迁到 kling.ai/document-api，API guide 和 updates 继续围绕 Kling 3.0 series、Text-to-Video、Image-to-Video、Extend with Prompts、运镜和关键帧等能力更新。本站不再把旧轻雀文档作为主来源，而是区分网页端额度、订阅积分和 API Resource Packages。",
+    "insights": "截至 2026-07-13，可灵官方 API 文档主入口已经迁到 kling.ai/document-api，API guide 和 updates 继续围绕 Kling 3.0 series、Text-to-Video、Image-to-Video、Extend with Prompts、运镜和关键帧等能力更新。本站不再把旧轻雀文档作为主来源，而是区分网页端额度、订阅积分和 API Resource Packages。",
     "pitfalls": [
       "先确认走网页端还是 API 端",
       "Kling 3.0 series 参数按最新规格文档实现",
@@ -67,10 +67,9 @@ export default {
     "T": "Sora、Runway、Luma"
   },
   "tags": [
-    "推荐",
     "视频",
     "国产",
     "Kling 3.0",
-    "已核验"
+    "待复核"
   ]
 }

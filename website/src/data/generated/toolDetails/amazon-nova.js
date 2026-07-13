@@ -1,7 +1,7 @@
 // Generated from src/data/tools.js.
 export default {
   "verificationStatus": "verified",
-  "lastVerified": "2026-07-07",
+  "lastVerified": "2026-07-13",
   "sources": [
     "https://docs.aws.amazon.com/nova/latest/nova2-userguide/what-is-nova-2.html",
     "https://docs.aws.amazon.com/nova/latest/nova2-userguide/whats-new.html",
@@ -21,7 +21,7 @@ export default {
     {
       "type": "Global",
       "pricing": "通过 Amazon Bedrock / Nova pricing 按 tier、区域、模型和 modality 计费；Nova 2 能力以 nova2 user guide 为准",
-      "models": "Amazon Nova 2 Lite, Nova 2 multimodal embeddings, Nova Premier/Pro/Lite/Micro, Nova Canvas/Reel/Sonic",
+      "models": "Amazon Nova 2 Lite, Amazon Nova Multimodal Embeddings, Nova Premier/Pro/Lite/Micro, Nova Canvas/Reel/Sonic",
       "link": "https://docs.aws.amazon.com/nova/latest/nova2-userguide/what-is-nova-2.html"
     }
   ],
@@ -32,7 +32,7 @@ export default {
     "Amazon Nova 2 文档已经列出 extended thinking and reasoning、built-in tools、AI agent building、enhanced document/video understanding",
     "Nova 2 Lite 支持 extended thinking，面向多步骤推理、agentic workflows、数学、规划和代码生成",
     "Nova 2 built-in tools 包含 web grounding 和 code interpreter，减少外部集成成本",
-    "Nova Multimodal Embeddings 支持文本、文档、图像、视频和音频的统一语义空间",
+    "Amazon Nova Multimodal Embeddings 支持文本、文档、图像、视频和音频的统一语义空间",
     "与 Bedrock Knowledge Bases、Agents、Guardrails、评估和批处理能力衔接",
     "Nova v1 系列仍包含 Premier、Pro、Lite、Micro、Canvas、Reel、Sonic，老项目需要按模型线区分"
   ],
@@ -46,7 +46,7 @@ export default {
   "funRanking": "夯",
   "personalExperience": {
     "rating": 3.5,
-    "insights": "截至 2026-07-07，AWS Nova 2 文档已经把 Nova 2 描述为支持 up to 1M context、advanced reasoning、built-in tools、AI agent building、document/video understanding 与 multimodal embeddings 的新路线。本站不再只按 Nova v1 Premier/Pro/Lite/Micro 口径展示，而是把 Nova 2 与 Bedrock 生态一起评估。",
+    "insights": "截至 2026-07-13，AWS Nova 2 文档已经把 Nova 2 描述为支持 up to 1M context、advanced reasoning、built-in tools、AI agent building、document/video understanding 与 multimodal embeddings 的新路线。本站不再只按 Nova v1 Premier/Pro/Lite/Micro 口径展示，而是把 Nova 2 与 Bedrock 生态一起评估。",
     "pitfalls": [
       "先确认目标区域是否支持",
       "用 Bedrock pricing 按模型和 tier 估算成本",

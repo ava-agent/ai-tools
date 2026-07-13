@@ -1,7 +1,7 @@
 // Generated from src/data/tools.js.
 export default {
   "verificationStatus": "verified",
-  "lastVerified": "2026-07-08",
+  "lastVerified": "2026-07-13",
   "sources": [
     "https://learning.postman.com/docs/reference/postman-api/postman-mcp-server/overview",
     "https://learning.postman.com/docs/reference/postman-api/postman-mcp-server/postman-mcp-remote-server",
@@ -17,7 +17,7 @@ export default {
     {
       "type": "Global",
       "pricing": "Postman 官方 MCP Server；Postman 工作区、计划和 API 权限另行适用",
-      "models": "Minimal / Code / Full tool configurations, 100+ Postman tools",
+      "models": "Minimal / Code / Full / Learn tool configurations, 100+ Postman tools",
       "link": "https://learning.postman.com/docs/reference/postman-api/postman-mcp-server/overview"
     },
     {
@@ -38,7 +38,7 @@ export default {
   "chineseSupport": 3,
   "pros": [
     "Postman 官方 MCP Server，可让 Agent 管理 collections、specs、environments、workspaces 等 Postman 资源",
-    "提供 Minimal、Code、Full 三种配置，Full 覆盖 100+ tools，日常可先用 Minimal 降低工具面",
+    "提供 Minimal、Code、Full、Learn 四种配置，Full 覆盖 100+ tools，日常可先用 Minimal 降低工具面",
     "remote MCP 支持 OAuth、DCR 和 PKCE，US/EU endpoint 与认证方式需要分开配置",
     "US remote server 支持 OAuth，官方说明 OAuth 不需要手动 API key，且符合 MCP Authorization specification",
     "EU remote server only supports API key authentication，local server 也需要 API key",
@@ -54,7 +54,7 @@ export default {
   "funRanking": "夯",
   "personalExperience": {
     "rating": 3.5,
-    "insights": "截至 2026-07-08，Postman MCP 已有官方文档和 remote server。选型重点不是“能不能免费启动”，而是 Minimal/Code/Full 的工具面、OAuth/DCR/PKCE/API key 的区域差异，以及 Agent 是否会改动共享工作区资源。",
+    "insights": "截至 2026-07-13，Postman MCP 已有官方文档和 remote server。选型重点不是“能不能免费启动”，而是 Minimal/Code/Full 的工具面、OAuth/DCR/PKCE/API key 的区域差异，以及 Agent 是否会改动共享工作区资源。",
     "pitfalls": [
       "默认先用 Minimal",
       "API key 放 secrets",

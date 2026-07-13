@@ -1,7 +1,7 @@
 // Generated from src/data/tools.js.
 export default {
   "verificationStatus": "verified",
-  "lastVerified": "2026-07-07",
+  "lastVerified": "2026-07-13",
   "sources": [
     "https://platform.kimi.ai/docs/models",
     "https://platform.kimi.ai/docs/pricing/chat",
@@ -39,7 +39,7 @@ export default {
   "funRanking": "夯夯",
   "personalExperience": {
     "rating": 4.5,
-    "insights": "截至 2026-07-07，Kimi API 官方文档已显示 kimi-k2.7-code、kimi-k2.7-code-highspeed、kimi-k2.6、kimi-k2.5 和 Moonshot V1，并标记旧 kimi-k2 系列、kimi-latest、kimi-thinking-preview 已停用。长文档和中文仍是强项，但 API 价格、缓存和代码模型要按官方 pricing 单独核算。",
+    "insights": "截至 2026-07-13，Kimi API 官方文档已显示 kimi-k2.7-code、kimi-k2.7-code-highspeed、kimi-k2.6、kimi-k2.5 和 Moonshot V1，并标记旧 kimi-k2 系列、kimi-latest、kimi-thinking-preview 已停用。长文档和中文仍是强项，但 API 价格、缓存和代码模型要按官方 pricing 单独核算。",
     "pitfalls": [
       "不要把 Chat 免费入口等同于 API 免费",
       "代码模型和 Thinking 模型先按 pricing 核价",

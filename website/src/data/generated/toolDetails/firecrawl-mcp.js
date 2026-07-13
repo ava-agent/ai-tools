@@ -1,7 +1,7 @@
 // Generated from src/data/tools.js.
 export default {
   "verificationStatus": "verified",
-  "lastVerified": "2026-07-08",
+  "lastVerified": "2026-07-13",
   "sources": [
     "https://www.firecrawl.dev/pricing",
     "https://github.com/firecrawl/firecrawl-mcp-server"

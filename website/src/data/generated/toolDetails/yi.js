@@ -1,7 +1,7 @@
 // Generated from src/data/tools.js.
 export default {
-  "verificationStatus": "verified",
-  "lastVerified": "2026-07-08",
+  "verificationStatus": "needs-review",
+  "lastVerified": "2026-07-13",
   "sources": [
     "https://www.01.ai/",
     "https://www.01.ai/yi-models",
@@ -57,10 +57,10 @@ export default {
     "开放权重、01.AI platform API、NVIDIA API trial 和企业 WorldWise 授权需要分开评估"
   ],
   "bestFor": "跟踪 01.AI 企业 Agent、Yi 开放模型和中文场景备选",
-  "funRanking": "夯",
+  "funRanking": "待复核",
   "personalExperience": {
     "rating": 3,
-    "insights": "截至 2026-07-08，01.AI 官网可确认 Yi-Lightning、Yi Open-source 和 WorldWise 企业方向仍在展示；Yi Foundation Models、Hugging Face 与 GitHub 能核验开放模型线，platform 入口能核验 Billing / Payment 等账号路径。公开资料仍不足以给出 API 价格、托管模型 SLA 或生产采购结论。",
+    "insights": "截至 2026-07-13，01.AI 官网可确认 Yi-Lightning、Yi Open-source 和 WorldWise 企业方向仍在展示；Yi Foundation Models、Hugging Face 与 GitHub 能核验开放模型线，platform 入口能核验 Billing / Payment 等账号路径。公开资料仍不足以给出 API 价格、托管模型 SLA 或生产采购结论。",
     "pitfalls": [
       "价格和额度要登录 platform billing 确认",
       "分清开放权重、01.AI platform API、NVIDIA API trial 和企业 WorldWise 授权",
@@ -90,6 +90,6 @@ export default {
     "企业",
     "中文",
     "开放权重",
-    "已核验"
+    "待复核"
   ]
 }

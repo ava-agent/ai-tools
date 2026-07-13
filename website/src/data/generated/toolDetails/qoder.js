@@ -1,10 +1,10 @@
 // Generated from src/data/tools.js.
 export default {
   "verificationStatus": "verified",
-  "lastVerified": "2026-07-07",
+  "lastVerified": "2026-07-13",
   "sources": [
     "https://docs.qoder.com/account/pricing",
-    "https://docs.qoder.com/account/credits",
+    "https://docs.qoder.com/Credits",
     "https://qoder.com/pricing",
     "https://qoder.com/en"
   ],
@@ -42,7 +42,7 @@ export default {
   "funRanking": "夯",
   "personalExperience": {
     "rating": 4.5,
-    "insights": "截至 2026-07-07，Qoder docs 已给出 Community Free、Pro $20、Pro+ $60、Ultra $200 和 Teams 计划。它适合 Quest/Repo Wiki/Knowledge Card 这类代码库理解与长任务，但采购判断必须按 credits、premium/basic models 降级和 top-up 规则一起算。",
+    "insights": "截至 2026-07-13，Qoder docs 已给出 Community Free、Pro $20、Pro+ $60、Ultra $200 和 Teams 计划。它适合 Quest/Repo Wiki/Knowledge Card 这类代码库理解与长任务，但采购判断必须按 credits、premium/basic models 降级和 top-up 规则一起算。",
     "pitfalls": [
       "按 credits 而不是月费单点估算",
       "留意 credits 到期和 basic models 降级",

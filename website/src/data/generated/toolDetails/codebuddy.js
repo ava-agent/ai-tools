@@ -1,7 +1,7 @@
 // Generated from src/data/tools.js.
 export default {
   "verificationStatus": "verified",
-  "lastVerified": "2026-07-07",
+  "lastVerified": "2026-07-13",
   "sources": [
     "https://www.codebuddy.ai/docs/ide/Account/pricing",
     "https://www.codebuddy.ai/docs/ide/Account/credits",
@@ -55,7 +55,7 @@ export default {
   "funRanking": "夯",
   "personalExperience": {
     "rating": 2.5,
-    "insights": "截至 2026-07-07，官方文档将 CodeBuddy 计费写成 Pro / Team Plan + credits / top-ups 的口径，并说明 Credits 会按模型 tier、任务复杂度和上下文长度消耗。旧的固定免费 token/月说法不再适合作为当前推荐理由。",
+    "insights": "截至 2026-07-13，官方文档将 CodeBuddy 计费写成 Pro / Team Plan + credits / top-ups 的口径，并说明 Credits 会按模型 tier、任务复杂度和上下文长度消耗。旧的固定免费 token/月说法不再适合作为当前推荐理由。",
     "pitfalls": [
       "先用真实项目测 credits 消耗",
       "不要把 add-on credits 当成无限额度",

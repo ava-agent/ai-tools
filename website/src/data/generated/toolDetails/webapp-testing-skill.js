@@ -1,20 +1,20 @@
 // Generated from src/data/tools.js.
 export default {
   "verificationStatus": "verified",
-  "lastVerified": "2026-07-08",
+  "lastVerified": "2026-07-13",
   "sources": [
-    "本地 skill: build-web-apps:frontend-testing-debugging"
+    "https://github.com/openai/plugins/blob/main/plugins/build-web-apps/skills/frontend-testing-debugging/SKILL.md"
   ],
   "id": "webapp-testing-skill",
   "name": "frontend-testing-debugging",
   "category": "skill",
   "subcategory": "测试",
-  "developer": "OpenAI curated build-web-apps plugin",
+  "developer": "OpenAI",
   "logo": null,
   "versions": [
     {
-      "type": "Installed skill",
-      "pricing": "随当前 Codex 插件环境可用；无独立免费额度声明",
+      "type": "Public plugin skill",
+      "pricing": "需要安装并启用 OpenAI Build Web Apps plugin；无独立免费额度声明",
       "models": "优先使用 Browser 插件；仅在 Browser 不可用或受阻时降级到 Playwright",
       "link": "https://openai.com/codex/"
     }

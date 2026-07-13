@@ -1,7 +1,7 @@
 // Generated from src/data/tools.js.
 export default {
-  "verificationStatus": "verified",
-  "lastVerified": "2026-07-08",
+  "verificationStatus": "needs-review",
+  "lastVerified": "2026-07-13",
   "sources": [
     "本地 skill: product-design:research",
     "本地 skill: anycap-deepresearch"
@@ -10,7 +10,7 @@ export default {
   "name": "research",
   "category": "skill",
   "subcategory": "研究分析",
-  "developer": "Product Design / AnyCap",
+  "developer": "Multiple unrelated skill sources",
   "logo": null,
   "versions": [
     {
@@ -42,7 +42,7 @@ export default {
     "公开来源信号可能弱，必须说明来源访问缺失或证据较弱"
   ],
   "bestFor": "产品 UX 研究、用户痛点聚类、竞品/市场/技术深度研究的证据化报告",
-  "funRanking": "夯夯",
+  "funRanking": "待复核",
   "personalExperience": {
     "rating": 4.5,
     "insights": "research 现在应拆成两层：Product Design 的 research 负责当前用户痛点和体验摩擦；AnyCap Deep Research 负责更广的多源研究报告。共同边界是必须引用来源、区分证据和推断。",
@@ -74,6 +74,7 @@ export default {
     "研究",
     "UX",
     "引用",
-    "本地核验"
+    "待拆分",
+    "needs-review"
   ]
 }

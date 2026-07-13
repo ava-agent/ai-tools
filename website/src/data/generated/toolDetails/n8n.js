@@ -1,7 +1,7 @@
 // Generated from src/data/tools.js.
 export default {
   "verificationStatus": "verified",
-  "lastVerified": "2026-07-08",
+  "lastVerified": "2026-07-13",
   "sources": [
     "https://n8n.io/pricing/",
     "https://docs.n8n.io/sustainable-use-license/",
@@ -38,9 +38,9 @@ export default {
   "pros": [
     "Cloud 计划包含 unlimited users、unlimited workflows 和 every integration",
     "按完整 workflow execution 计费，而不是按每一步计费",
-    "Starter 年付 20€/mo 含 2.5K executions 与 50 AI Workflow Builder credits",
-    "Pro 年付 50€/mo 含 10K executions 与 150 AI Workflow Builder credits",
-    "Business self-hosted 年付 667€/mo 起，Enterprise cloud 可含 1000 AI Workflow Builder credits",
+    "Starter 年付 20€/mo 含 2.5K executions；AI Assistant preview 当前提供每月 2,300 credits",
+    "Pro 年付 50€/mo 含 10K executions；AI Assistant preview 当前最高提供每月 13,700 credits",
+    "Business self-hosted 年付 667€/mo 起；AI Assistant preview 的额度与可用性需按当前计划表核对",
     "Community Edition 可自托管，适合内部自动化和技术团队控制数据位置",
     "支持 JS/Python code steps、API、webhooks、queues、credentials 和多种集成节点"
   ],
@@ -55,7 +55,7 @@ export default {
   "funRanking": "夯夯",
   "personalExperience": {
     "rating": 4,
-    "insights": "截至 2026-07-08，n8n 仍是技术团队做自动化和 AI 工作流的强选择，但当前页面应按官方 pricing、AI Workflow Builder credits 与 Sustainable Use License 来解释。Cloud 价格以完整 workflow executions、并发和 AI Workflow Builder credits 为核心；Community Edition 更适合内部业务或个人场景，面向客户的商业嵌入要先看许可。",
+    "insights": "截至 2026-07-13，n8n 仍是技术团队做自动化和 AI 工作流的强选择，但当前页面应按官方 pricing、AI Workflow Builder credits 与 Sustainable Use License 来解释。Cloud 价格以完整 workflow executions、并发和 AI Workflow Builder credits 为核心；Community Edition 更适合内部业务或个人场景，面向客户的商业嵌入要先看许可。",
     "pitfalls": [
       "先确认 Cloud 还是 Community Edition 路径",
       "商业嵌入和再分发要核对 Sustainable Use License",

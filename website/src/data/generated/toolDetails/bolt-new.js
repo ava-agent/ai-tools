@@ -1,7 +1,7 @@
 // Generated from src/data/tools.js.
 export default {
   "verificationStatus": "verified",
-  "lastVerified": "2026-07-07",
+  "lastVerified": "2026-07-13",
   "sources": [
     "https://bolt.new/pricing",
     "https://github.com/stackblitz/bolt.new",
@@ -41,7 +41,7 @@ export default {
   "funRanking": "夯夯",
   "personalExperience": {
     "rating": 4,
-    "insights": "截至 2026-07-07，Bolt 官方价格页显示 Free、Pro $25、Teams $30/成员、Enterprise 定制，并以 token 额度管理使用；Free 是 300K/day、1M/month，Pro 从 10M/month 起且取消 daily token limit。它的独特点仍是 WebContainers 里的可运行全栈环境，适合快速把网页和应用原型跑起来。",
+    "insights": "截至 2026-07-13，Bolt 官方价格页显示 Free、Pro $25、Teams $30/成员、Enterprise 定制，并以 token 额度管理使用；Free 是 300K/day、1M/month，Pro 从 10M/month 起且取消 daily token limit。它的独特点仍是 WebContainers 里的可运行全栈环境，适合快速把网页和应用原型跑起来。",
     "pitfalls": [
       "先控制项目体量，文件越多越耗 token",
       "Free 触顶后会暂停 AI 交互",

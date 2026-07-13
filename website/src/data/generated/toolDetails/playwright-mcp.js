@@ -1,7 +1,7 @@
 // Generated from src/data/tools.js.
 export default {
   "verificationStatus": "verified",
-  "lastVerified": "2026-07-08",
+  "lastVerified": "2026-07-13",
   "sources": [
     "https://playwright.dev/docs/getting-started-mcp",
     "https://github.com/microsoft/playwright-mcp"

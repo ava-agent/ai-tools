@@ -1,7 +1,7 @@
 // Generated from src/data/tools.js.
 export default {
   "verificationStatus": "verified",
-  "lastVerified": "2026-07-07",
+  "lastVerified": "2026-07-13",
   "sources": [
     "https://www.volcengine.com/docs/82379/1330310",
     "https://www.volcengine.com/docs/82379/2549861?lang=zh",
@@ -16,7 +16,7 @@ export default {
   "versions": [
     {
       "type": "CN",
-      "pricing": "火山方舟模型价格页 2026-07-06 更新；按模型、输入/输出 token、缓存和产品能力计费",
+      "pricing": "火山方舟按模型、输入/输出 token、缓存和产品能力计费；具体单价以当前价格页为准",
       "models": "doubao-seed-2-1-pro / doubao-seed-2-1-turbo 为当前 Seed 2.1 主线；Seedance、Seedream 等按能力分开核价",
       "link": "https://www.volcengine.com/docs/82379/1330310"
     }
@@ -25,7 +25,7 @@ export default {
   "contextWindow": "取决于 doubao-seed-2-1-pro / turbo、长上下文和缓存配置",
   "chineseSupport": 5,
   "pros": [
-    "火山方舟模型列表于 2026-07-07 更新，并把最新模型指向 Seed 2.1",
+    "火山方舟当前主线包含 Seed 2.1 Pro / Turbo，适合 Coding、Agent 和长上下文任务",
     "Seed 2.1 面向 Coding、Agent、深度思考和长上下文任务，有 Pro/Turbo 路径",
     "字节生态、豆包 App 和企业 API 入口完整",
     "Responses API、缓存、深度思考、视频/图片生成能力需按官方分项核价",
@@ -40,7 +40,7 @@ export default {
   "funRanking": "夯",
   "personalExperience": {
     "rating": 3,
-    "insights": "截至 2026-07-07，火山方舟模型列表已经更新并指向 Seed 2.1，模型价格页在 2026-07-06 更新。本站不再把 Doubao 写成 Seed Code/Thinking/1.6 旧主线，而是优先按 doubao-seed-2-1-pro / turbo、App 与 API、缓存和多模态能力拆分。",
+    "insights": "截至 2026-07-13，火山方舟当前主线指向 Seed 2.1。本站不再保留无法稳定核验的页面更新时间断言，而是按 doubao-seed-2-1-pro / turbo、App 与 API、缓存和多模态能力拆分。",
     "pitfalls": [
       "区分豆包 App 和火山方舟 API",
       "Seed Code、Thinking、长上下文和缓存分别核价",

@@ -1,7 +1,7 @@
 // Generated from src/data/tools.js.
 export default {
   "verificationStatus": "verified",
-  "lastVerified": "2026-07-07",
+  "lastVerified": "2026-07-13",
   "sources": [
     "https://api-docs.deepseek.com/quick_start/pricing",
     "https://api-docs.deepseek.com/news/news260424",
@@ -37,7 +37,7 @@ export default {
     "mainRisk": "deepseek-chat / deepseek-reasoner 仍可兼容路由，但官方预告这些旧别名将在 2026-07-24 下线，生产迁移应改用 deepseek-v4-flash / deepseek-v4-pro",
     "alternatives": [
       "Qwen",
-      "GPT-5.5 / OpenAI",
+      "GPT-5.6 / OpenAI",
       "Claude"
     ]
   },
@@ -58,7 +58,7 @@ export default {
   "funRanking": "夯夯夯",
   "personalExperience": {
     "rating": 4,
-    "insights": "截至 2026-07-07，DeepSeek 官方价格页将 API 主模型列为 deepseek-v4-flash 与 deepseek-v4-pro：两者均支持 1M 上下文、384K 最大输出，价格分别为输入 $0.14/$0.435、输出 $0.28/$0.87（每 1M tokens，缓存命中另计）。deepseek-chat 与 deepseek-reasoner 是兼容别名，官方预告将在 2026-07-24 下线；新项目应直接使用 V4 Flash/Pro 模型名。",
+    "insights": "截至 2026-07-13，DeepSeek 官方价格页将 API 主模型列为 deepseek-v4-flash 与 deepseek-v4-pro：两者均支持 1M 上下文、384K 最大输出，价格分别为输入 $0.14/$0.435、输出 $0.28/$0.87（每 1M tokens，缓存命中另计）。deepseek-chat 与 deepseek-reasoner 是兼容别名，官方预告将在 2026-07-24 下线；新项目应直接使用 V4 Flash/Pro 模型名。",
     "pitfalls": [
       "新项目直接用 deepseek-v4-flash / deepseek-v4-pro",
       "旧 deepseek-chat/reasoner 调用要按官方预告日期迁移",

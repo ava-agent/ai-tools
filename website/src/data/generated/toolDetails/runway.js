@@ -1,7 +1,7 @@
 // Generated from src/data/tools.js.
 export default {
   "verificationStatus": "verified",
-  "lastVerified": "2026-07-07",
+  "lastVerified": "2026-07-13",
   "sources": [
     "https://runwayml.com/pricing",
     "https://help.runwayml.com/hc/en-us/articles/46974685288467-Creating-with-Gen-4-5",
@@ -44,7 +44,7 @@ export default {
   "funRanking": "夯夯",
   "personalExperience": {
     "rating": 4,
-    "insights": "截至 2026-07-07，Runway pricing 页显示 Free 一次性 125 credits、Standard/Pro/Max/Enterprise 计划，并明确 Gen-4.5 约 60 credits/5s；Gen-4.5 帮助文档标注 12 credits per second。Runway API 另按 developer portal credits 计费，$0.01/credit，不能和 Web app 计划混算。",
+    "insights": "截至 2026-07-13，Runway pricing 页显示 Free 一次性 125 credits、Standard/Pro/Max/Enterprise 计划，并明确 Gen-4.5 约 60 credits/5s；Gen-4.5 帮助文档标注 12 credits per second。Runway API 另按 developer portal credits 计费，$0.01/credit，不能和 Web app 计划混算。",
     "pitfalls": [
       "按 seconds * credits rate 估算每条视频成本",
       "Free plan 不会刷新 credits",

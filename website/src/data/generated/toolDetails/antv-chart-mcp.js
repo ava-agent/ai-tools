@@ -1,7 +1,7 @@
 // Generated from src/data/tools.js.
 export default {
   "verificationStatus": "verified",
-  "lastVerified": "2026-07-08",
+  "lastVerified": "2026-07-13",
   "sources": [
     "https://github.com/antvis/mcp-server-chart",
     "https://www.npmjs.com/package/@antv/mcp-server-chart",
@@ -26,7 +26,7 @@ export default {
   "chineseSupport": 5,
   "pros": [
     "@antv/mcp-server-chart 是基于 AntV 的 TypeScript MCP server，用于图表生成和数据分析",
-    "server 暴露 25+ 图表类型，包括 generate_word_cloud_chart、generate_spreadsheet 等工具",
+    "server 暴露 26+ 图表类型，包括 generate_word_cloud_chart、generate_spreadsheet 等工具",
     "支持通过 npx 安装接入桌面 MCP 客户端，Windows 场景需要 cmd 包装",
     "也可在 Dify 中使用，并支持 HTTP、SSE 或 Streamable transport",
     "配套 chart-visualization skill 可根据数据描述辅助选择合适图表类型"
@@ -41,7 +41,7 @@ export default {
   "funRanking": "夯夯",
   "personalExperience": {
     "rating": 4,
-    "insights": "截至 2026-07-08，AntV Chart MCP 是具体的可视化 MCP server，而不是泛泛的数据分析承诺。它最适合数据已经结构化、用户需要通过 MCP host 或 Dify 工作流生成图表 artifact 的场景。",
+    "insights": "截至 2026-07-13，AntV Chart MCP 是具体的可视化 MCP server，而不是泛泛的数据分析承诺。它最适合数据已经结构化、用户需要通过 MCP host 或 Dify 工作流生成图表 artifact 的场景。",
     "pitfalls": [
       "生成图表前验证数据 schema 与聚合口径",
       "不要把中国地图工具用于其支持范围之外",
@@ -70,7 +70,7 @@ export default {
     "推荐",
     "MCP",
     "AntV",
-    "25+ chart types",
+    "26+ chart types",
     "Dify",
     "chart-visualization",
     "已核验"

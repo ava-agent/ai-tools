@@ -1,7 +1,7 @@
 // Generated from src/data/tools.js.
 export default {
   "verificationStatus": "verified",
-  "lastVerified": "2026-07-07",
+  "lastVerified": "2026-07-13",
   "sources": [
     "https://devin.ai/pricing/",
     "https://cognition.com/blog/new-self-serve-plans-for-devin",
@@ -19,7 +19,7 @@ export default {
     {
       "type": "Global",
       "pricing": "Free $0 / Pro $20/月 / Max $200/月 / Teams $80/月 plan + $40/月每 full dev seat / Enterprise 定制",
-      "models": "Devin Desktop、Devin Cloud、SWE 1.6、OpenAI/Claude/Gemini frontier models 与开源模型（以官方计划可用为准）",
+      "models": "Devin Desktop、Devin Cloud、SWE 1.7、OpenAI/Claude/Gemini frontier models 与开源模型（以官方计划可用为准）",
       "link": "https://devin.ai/pricing/"
     }
   ],
@@ -29,7 +29,7 @@ export default {
   "pros": [
     "官方 pricing 已把 Devin Desktop/Cloud 与 Windsurf 迁移后的计划放在同一 Devin 口径下",
     "Free 提供轻量 agent quota、有限模型、无限 inline edits 与 Tab completions",
-    "Pro $20 可访问 OpenAI、Claude、Gemini frontier models、SWE 1.6、Devin Cloud 和 extra usage",
+    "Pro $20 可访问 OpenAI、Claude、Gemini frontier models、SWE 1.7、Devin Cloud 和 extra usage",
     "Teams 是 $80/月 plan + $40/月每 full dev seat，并支持 unlimited team members 与集中管理",
     "DeepWiki/Ask Devin/Devin Review/Integrations 扩展了代码库理解和 PR 审查场景"
   ],
@@ -44,7 +44,7 @@ export default {
   "funRanking": "夯夯",
   "personalExperience": {
     "rating": 4,
-    "insights": "截至 2026-07-07，Devin pricing 明确展示 Free、Pro $20、Max $200、Teams $80/月 plan + $40/月每 full dev seat、Enterprise，并说明 Windsurf 已迁入 Devin Desktop。它仍适合团队 backlog、迁移、PR Review 和多工具集成，而不是个人随手补全。",
+    "insights": "截至 2026-07-13，Devin pricing 明确展示 Free、Pro $20、Max $200、Teams $80/月 plan + $40/月每 full dev seat、Enterprise，并说明 Windsurf 已迁入 Devin Desktop。它仍适合团队 backlog、迁移、PR Review 和多工具集成，而不是个人随手补全。",
     "pitfalls": [
       "不要再按旧 $500 Team 入门价判断",
       "先用小任务测算 quota 和额外用量",

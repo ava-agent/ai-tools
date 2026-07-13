@@ -21,7 +21,7 @@ export const toolDetailCatalog = [
     "name": "Trae",
     "category": "ide",
     "subcategory": "AI原生IDE",
-    "developer": "字节跳动",
+    "developer": "深圳市脸萌科技有限公司（字节跳动旗下）",
     "tags": [
       "推荐",
       "国产",
@@ -112,7 +112,8 @@ export const toolDetailCatalog = [
       "Spec",
       "规范",
       "Credits",
-      "ProMax"
+      "ProMax",
+      "待复核"
     ],
     "personalExperience": {
       "rating": 4
@@ -175,7 +176,7 @@ export const toolDetailCatalog = [
     "name": "Verdent",
     "category": "ide",
     "subcategory": "多Agent IDE",
-    "developer": "Verdent Team",
+    "developer": "Verdent AI, Inc.",
     "tags": [
       "多Agent",
       "Eco Mode",
@@ -287,7 +288,7 @@ export const toolDetailCatalog = [
     "name": "Cline",
     "category": "cli",
     "subcategory": "VS Code插件",
-    "developer": "开源社区",
+    "developer": "Cline Bot Inc.",
     "tags": [
       "CLI",
       "VS Code",
@@ -306,7 +307,7 @@ export const toolDetailCatalog = [
     "name": "Continue",
     "category": "cli",
     "subcategory": "开源平台",
-    "developer": "开源社区",
+    "developer": "Continue team; now Cursor/Anysphere",
     "tags": [
       "开源",
       "CLI",
@@ -380,7 +381,7 @@ export const toolDetailCatalog = [
     "name": "Crush",
     "category": "cli",
     "subcategory": "开源CLI",
-    "developer": "Charm Bracelet",
+    "developer": "Charmbracelet, Inc. (Charm)",
     "tags": [
       "开源",
       "CLI",
@@ -398,7 +399,7 @@ export const toolDetailCatalog = [
     "name": "OpenHands",
     "category": "cli",
     "subcategory": "开源CLI",
-    "developer": "OpenHands Community",
+    "developer": "OpenHands Community / All Hands AI, Inc.",
     "tags": [
       "开源",
       "CLI",
@@ -433,7 +434,7 @@ export const toolDetailCatalog = [
   },
   {
     "id": "gpt",
-    "name": "GPT-5.5 / OpenAI",
+    "name": "GPT-5.6 / OpenAI",
     "category": "llm",
     "subcategory": "通用大模型",
     "developer": "OpenAI",
@@ -443,7 +444,7 @@ export const toolDetailCatalog = [
       "OpenAI",
       "生态",
       "推理",
-      "GPT-5.5",
+      "GPT-5.6",
       "已核验"
     ],
     "personalExperience": {
@@ -573,7 +574,7 @@ export const toolDetailCatalog = [
     "name": "Grok / xAI",
     "category": "llm",
     "subcategory": "通用大模型",
-    "developer": "xAI",
+    "developer": "SpaceXAI (xAI)",
     "tags": [
       "LLM",
       "xAI",
@@ -675,11 +676,10 @@ export const toolDetailCatalog = [
     "subcategory": "视频生成",
     "developer": "快手",
     "tags": [
-      "推荐",
       "视频",
       "国产",
       "Kling 3.0",
-      "已核验"
+      "待复核"
     ],
     "personalExperience": {
       "rating": 5
@@ -687,10 +687,10 @@ export const toolDetailCatalog = [
   },
   {
     "id": "jianying",
-    "name": "剪映",
+    "name": "剪映 / CapCut",
     "category": "multimodal",
     "subcategory": "视频编辑",
-    "developer": "字节跳动",
+    "developer": "ByteDance",
     "tags": [
       "视频",
       "编辑",
@@ -757,7 +757,7 @@ export const toolDetailCatalog = [
     "name": "氢离子 / 阿里健康",
     "category": "llm",
     "subcategory": "医学垂直助手",
-    "developer": "阿里健康 / 杭州智循建模科技",
+    "developer": "杭州智循建模科技有限公司（阿里健康氢离子）",
     "tags": [
       "医学",
       "AI",
@@ -774,12 +774,12 @@ export const toolDetailCatalog = [
     "name": "Coze",
     "category": "agent",
     "subcategory": "无代码平台",
-    "developer": "字节跳动",
+    "developer": "Global: SPRING (SG) PTE. LTD. / CN: 字节跳动（扣子）",
     "tags": [
-      "推荐",
       "Agent",
       "无代码",
-      "字节"
+      "字节",
+      "待复核"
     ],
     "personalExperience": {
       "rating": 4
@@ -790,7 +790,7 @@ export const toolDetailCatalog = [
     "name": "Dify",
     "category": "agent",
     "subcategory": "开源平台",
-    "developer": "开源社区",
+    "developer": "LangGenius, Inc.",
     "tags": [
       "开源",
       "Agent",
@@ -823,7 +823,7 @@ export const toolDetailCatalog = [
     "name": "LangChain",
     "category": "agent",
     "subcategory": "开发框架",
-    "developer": "开源社区",
+    "developer": "LangChain, Inc.",
     "tags": [
       "开源",
       "Agent",
@@ -992,7 +992,7 @@ export const toolDetailCatalog = [
   },
   {
     "id": "mistral",
-    "name": "Mistral / Le Chat",
+    "name": "Mistral / Vibe (former Le Chat)",
     "category": "llm",
     "subcategory": "通用大模型",
     "developer": "Mistral AI (法国)",
@@ -1019,7 +1019,7 @@ export const toolDetailCatalog = [
       "企业",
       "中文",
       "开放权重",
-      "已核验"
+      "待复核"
     ],
     "personalExperience": {
       "rating": 3
@@ -1371,7 +1371,7 @@ export const toolDetailCatalog = [
       "推荐",
       "MCP",
       "AntV",
-      "25+ chart types",
+      "26+ chart types",
       "Dify",
       "chart-visualization",
       "已核验"
@@ -1400,7 +1400,7 @@ export const toolDetailCatalog = [
   },
   {
     "id": "openmemory-mcp",
-    "name": "OpenMemory / Mem0 MCP",
+    "name": "Mem0 MCP",
     "category": "mcp",
     "subcategory": "AI增强",
     "developer": "Mem0",
@@ -1456,7 +1456,7 @@ export const toolDetailCatalog = [
     "name": "Atlassian Rovo MCP",
     "category": "mcp",
     "subcategory": "协作工具",
-    "developer": "Atlassian / Sooperset community alternative",
+    "developer": "Atlassian",
     "tags": [
       "MCP",
       "Atlassian",
@@ -1478,7 +1478,6 @@ export const toolDetailCatalog = [
     "tags": [
       "推荐",
       "MCP",
-      "免费",
       "开源",
       "Supabase",
       "全栈",
@@ -1581,7 +1580,7 @@ export const toolDetailCatalog = [
   },
   {
     "id": "docker-mcp",
-    "name": "Docker MCP",
+    "name": "Docker MCP Toolkit",
     "category": "mcp",
     "subcategory": "DevOps",
     "developer": "Docker",
@@ -1652,7 +1651,7 @@ export const toolDetailCatalog = [
   },
   {
     "id": "elasticsearch-mcp",
-    "name": "Elasticsearch MCP",
+    "name": "Elastic Agent Builder MCP server",
     "category": "mcp",
     "subcategory": "数据工具",
     "developer": "Elastic",
@@ -1674,7 +1673,7 @@ export const toolDetailCatalog = [
     "name": "AutoGen",
     "category": "agent",
     "subcategory": "开发框架",
-    "developer": "Microsoft",
+    "developer": "Microsoft Research / community-managed",
     "tags": [
       "Agent",
       "免费",
@@ -1689,7 +1688,7 @@ export const toolDetailCatalog = [
   },
   {
     "id": "zapier-ai",
-    "name": "Zapier AI Automation",
+    "name": "Zapier",
     "category": "agent",
     "subcategory": "工作流自动化",
     "developer": "Zapier",
@@ -1728,7 +1727,7 @@ export const toolDetailCatalog = [
     "name": "CAMEL-AI",
     "category": "agent",
     "subcategory": "开发框架",
-    "developer": "CAMEL-AI.org",
+    "developer": "CAMEL-AI open-source community",
     "tags": [
       "Agent",
       "开源",
@@ -1746,7 +1745,7 @@ export const toolDetailCatalog = [
     "name": "AgentScope",
     "category": "agent",
     "subcategory": "开发框架",
-    "developer": "agentscope-ai / open-source community",
+    "developer": "AgentScope / Alibaba Tongyi Lab",
     "tags": [
       "Agent",
       "开源",
@@ -1870,7 +1869,7 @@ export const toolDetailCatalog = [
     "name": "frontend-app-builder",
     "category": "skill",
     "subcategory": "UI/UX设计",
-    "developer": "OpenAI curated build-web-apps plugin",
+    "developer": "OpenAI",
     "tags": [
       "Skills",
       "UI/UX",
@@ -1887,7 +1886,7 @@ export const toolDetailCatalog = [
     "name": "frontend-testing-debugging",
     "category": "skill",
     "subcategory": "测试",
-    "developer": "OpenAI curated build-web-apps plugin",
+    "developer": "OpenAI",
     "tags": [
       "Skills",
       "测试",
@@ -1904,7 +1903,7 @@ export const toolDetailCatalog = [
     "name": "building-mcp-server-on-cloudflare",
     "category": "skill",
     "subcategory": "MCP开发",
-    "developer": "Cloudflare / OpenAI curated plugin",
+    "developer": "Cloudflare",
     "tags": [
       "Skills",
       "MCP",
@@ -1938,7 +1937,7 @@ export const toolDetailCatalog = [
     "name": "semgrep",
     "category": "skill",
     "subcategory": "安全审计",
-    "developer": "Semgrep / Semgrep Skills",
+    "developer": "Semgrep",
     "tags": [
       "Skills",
       "安全",
@@ -2030,7 +2029,7 @@ export const toolDetailCatalog = [
       "Skills",
       "代码审计",
       "安全",
-      "deprecated"
+      "public-upstream"
     ],
     "personalExperience": {
       "rating": 3.5
@@ -2092,7 +2091,7 @@ export const toolDetailCatalog = [
     "name": "supabase",
     "category": "skill",
     "subcategory": "数据库",
-    "developer": "Supabase / OpenAI curated plugin",
+    "developer": "Supabase",
     "tags": [
       "Skills",
       "Supabase",
@@ -2125,15 +2124,16 @@ export const toolDetailCatalog = [
     "name": "ui-ux-pro-max",
     "category": "skill",
     "subcategory": "UI/UX设计",
-    "developer": "历史概念 / 公开来源不足",
+    "developer": "nextlevelbuilder",
     "tags": [
       "Skills",
       "UI/UX",
       "设计系统",
-      "deprecated"
+      "第三方",
+      "已核验"
     ],
     "personalExperience": {
-      "rating": 2.5
+      "rating": 4
     }
   },
   {
@@ -2146,7 +2146,7 @@ export const toolDetailCatalog = [
       "Skills",
       "周报",
       "自动化",
-      "deprecated"
+      "historical"
     ],
     "personalExperience": {
       "rating": 2.5
@@ -2161,7 +2161,7 @@ export const toolDetailCatalog = [
     "tags": [
       "Skills",
       "推理",
-      "deprecated"
+      "historical"
     ],
     "personalExperience": {
       "rating": 2.5
@@ -2172,13 +2172,14 @@ export const toolDetailCatalog = [
     "name": "research",
     "category": "skill",
     "subcategory": "研究分析",
-    "developer": "Product Design / AnyCap",
+    "developer": "Multiple unrelated skill sources",
     "tags": [
       "Skills",
       "研究",
       "UX",
       "引用",
-      "本地核验"
+      "待拆分",
+      "needs-review"
     ],
     "personalExperience": {
       "rating": 4.5

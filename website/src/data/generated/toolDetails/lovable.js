@@ -1,7 +1,7 @@
 // Generated from src/data/tools.js.
 export default {
   "verificationStatus": "verified",
-  "lastVerified": "2026-07-07",
+  "lastVerified": "2026-07-13",
   "sources": [
     "https://lovable.dev/pricing",
     "https://docs.lovable.dev/introduction/subscription-plans",
@@ -44,7 +44,7 @@ export default {
   "funRanking": "夯",
   "personalExperience": {
     "rating": 3.5,
-    "insights": "截至 2026-07-07，Lovable 官方文档显示其正在滚动到一个 credit balance：building、Lovable Cloud hosting/running 和部署后 AI gateway usage 都会从 credits 扣除。Free 有 5 daily build credits（每月最多 30）、20 Cloud credits/月和 4 AI credits/月；Plan mode 每条消息 1 credit，Build mode 随复杂度浮动。",
+    "insights": "截至 2026-07-13，Lovable 官方文档显示其正在滚动到一个 credit balance：building、Lovable Cloud hosting/running 和部署后 AI gateway usage 都会从 credits 扣除。Free 有 5 daily build credits（每月最多 30）、20 Cloud credits/月和 4 AI credits/月；Plan mode 每条消息 1 credit，Build mode 随复杂度浮动。",
     "pitfalls": [
       "先估算 build/cloud/AI 都会吃同一 credit balance",
       "credits 用尽会阻断继续构建甚至影响托管应用",

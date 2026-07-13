@@ -1,7 +1,7 @@
 // Generated from src/data/tools.js.
 export default {
   "verificationStatus": "verified",
-  "lastVerified": "2026-07-07",
+  "lastVerified": "2026-07-13",
   "sources": [
     "https://lumalabs.ai/pricing",
     "https://lumalabs.ai/llm-info",
@@ -42,7 +42,7 @@ export default {
   "funRanking": "夯夯",
   "personalExperience": {
     "rating": 4,
-    "insights": "截至 2026-07-07，Luma 已把个人计划整理为 Plus $30/月、Pro $90/月、Ultra $300/月，并强调 Luma Agents 与按模型/输出规格变化的 credits。官方说明中 Dream Machine 已是 retired terminology，页面应转向 Luma、Ray3、Photon、Luma Agents 和多模型成本表。",
+    "insights": "截至 2026-07-13，Luma 已把个人计划整理为 Plus $30/月、Pro $90/月、Ultra $300/月，并强调 Luma Agents 与按模型/输出规格变化的 credits。官方说明中 Dream Machine 已是 retired terminology，页面应转向 Luma、Ray3、Photon、Luma Agents 和多模型成本表。",
     "pitfalls": [
       "先确认是订阅内 credits、API 用量还是团队/企业计划",
       "按 Ray3、Photon 或第三方模型分别估算消耗",

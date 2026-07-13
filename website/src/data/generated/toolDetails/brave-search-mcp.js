@@ -1,7 +1,7 @@
 // Generated from src/data/tools.js.
 export default {
   "verificationStatus": "verified",
-  "lastVerified": "2026-07-08",
+  "lastVerified": "2026-07-13",
   "sources": [
     "https://brave.com/search/api/",
     "https://github.com/brave/brave-search-mcp-server",
@@ -42,7 +42,7 @@ export default {
   "funRanking": "夯",
   "personalExperience": {
     "rating": 3.5,
-    "insights": "截至 2026-07-08，Brave Search API 已按 credits 和请求数展示价格：Search 是 $5/1,000 requests，Answers 是 $4/1,000 requests 外加 token 费用。Brave MCP Server 本身是官方仓库，但真实成本取决于 API key 用量。",
+    "insights": "截至 2026-07-13，Brave Search API 已按 credits 和请求数展示价格：Search 是 $5/1,000 requests，Answers 是 $4/1,000 requests 外加 token 费用。Brave MCP Server 本身是官方仓库，但真实成本取决于 API key 用量。",
     "pitfalls": [
       "不要再写 2,000 免费查询/月",
       "先设置 usage limits",

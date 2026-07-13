@@ -1,7 +1,7 @@
 // Generated from src/data/tools.js.
 export default {
   "verificationStatus": "verified",
-  "lastVerified": "2026-07-08",
+  "lastVerified": "2026-07-13",
   "sources": [
     "https://trailofbits.com/skills/second-opinion/",
     "邻近本地 skill: superpowers:requesting-code-review",
@@ -48,7 +48,7 @@ export default {
   "funRanking": "归档",
   "personalExperience": {
     "rating": 3.5,
-    "insights": "截至 2026-07-08，second-opinion 有 Trail of Bits 公开上游，定位是通过 Codex CLI / Gemini CLI 对 diff 做外部第二意见；页面按公开上游说明展示，并提醒 Gemini --yolo 风险和工具/订阅前置条件。",
+    "insights": "截至 2026-07-13，second-opinion 有 Trail of Bits 公开上游，定位是通过 Codex CLI / Gemini CLI 对 diff 做外部第二意见；页面按公开上游说明展示，并提醒 Gemini --yolo 风险和工具/订阅前置条件。",
     "pitfalls": [
       "先确认同名 Skill 上游",
       "不要把外部模型调用写成默认能力",

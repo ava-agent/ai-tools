@@ -99,7 +99,7 @@ describe('toolMetadata', () => {
   it('distinguishes local-only verification from public-source verification', () => {
     const tool = {
       verificationStatus: 'verified',
-      lastVerified: '2026-07-08',
+      lastVerified: '2026-07-13',
       sources: ['本地 skill: skill-creator']
     }
 
@@ -130,8 +130,8 @@ describe('toolMetadata', () => {
     Object.entries(expectedSources).forEach(([id, sources]) => {
       const tool = aiToolsData.find((item) => item.id === id)
 
-      expect(tool?.verificationStatus).toBe('verified')
-      expect(tool?.lastVerified).toBe(id === 'github-copilot' ? '2026-07-13' : '2026-07-07')
+      expect(tool?.verificationStatus).toBe(id === 'kiro' ? 'needs-review' : 'verified')
+      expect(tool?.lastVerified).toBe(id === 'github-copilot' ? '2026-07-13' : '2026-07-13')
       expect(tool?.decisionSummary?.verdict).toBeTruthy()
       expect(tool?.decisionSummary?.alternatives?.length).toBeGreaterThan(0)
       sources.forEach((source) => {
@@ -165,8 +165,8 @@ describe('toolMetadata', () => {
     Object.entries(expectedSources).forEach(([id, sources]) => {
       const tool = aiToolsData.find((item) => item.id === id)
 
-      expect(tool?.verificationStatus).toBe('verified')
-      expect(tool?.lastVerified).toBe('2026-07-07')
+      expect(tool?.verificationStatus).toBe(id === 'kiro' ? 'needs-review' : 'verified')
+      expect(tool?.lastVerified).toBe('2026-07-13')
       expect(tool?.decisionSummary?.verdict).toBeTruthy()
       expect(tool?.decisionSummary?.alternatives?.length).toBeGreaterThan(0)
       sources.forEach((source) => {
@@ -197,7 +197,7 @@ describe('toolMetadata', () => {
       const tool = aiToolsData.find((item) => item.id === id)
 
       expect(tool?.verificationStatus).toBe('verified')
-      expect(tool?.lastVerified).toBe('2026-07-07')
+      expect(tool?.lastVerified).toBe('2026-07-13')
       expect(tool?.decisionSummary?.verdict).toBeTruthy()
       expect(tool?.decisionSummary?.alternatives?.length).toBeGreaterThan(0)
       sources.forEach((source) => {
@@ -242,7 +242,7 @@ describe('toolMetadata', () => {
       const tool = aiToolsData.find((item) => item.id === id)
 
       expect(tool?.verificationStatus).toBe('verified')
-      expect(tool?.lastVerified).toBe('2026-07-07')
+      expect(tool?.lastVerified).toBe('2026-07-13')
       expect(tool?.decisionSummary?.verdict).toBeTruthy()
       expect(tool?.decisionSummary?.alternatives?.length).toBeGreaterThan(0)
       sources.forEach((source) => {
@@ -254,7 +254,7 @@ describe('toolMetadata', () => {
   it('tracks official-source metadata for the priority multimodal verification wave', () => {
     const expected = {
       midjourney: {
-        lastVerified: '2026-07-07',
+        lastVerified: '2026-07-13',
         sources: [
           'https://docs.midjourney.com/hc/en-us/articles/27870484040333-Comparing-Midjourney-Plans',
           'https://docs.midjourney.com/hc/en-us/articles/32199405667853-Version',
@@ -265,7 +265,7 @@ describe('toolMetadata', () => {
         forbidden: /MJ v6|\$10-60|需要 Discord|V7 已是官方默认/
       },
       'stable-diffusion': {
-        lastVerified: '2026-07-07',
+        lastVerified: '2026-07-13',
         sources: [
           'https://stability.ai/license',
           'https://platform.stability.ai/pricing',
@@ -275,7 +275,7 @@ describe('toolMetadata', () => {
         forbidden: /完全免费|无内容审核|SD 3, SDXL/
       },
       kling: {
-        lastVerified: '2026-07-07',
+        lastVerified: '2026-07-13',
         sources: [
           'https://app.klingai.com',
           'https://kling.ai/document-api/quickStart/productIntroduction/overview',
@@ -286,7 +286,7 @@ describe('toolMetadata', () => {
         forbidden: /可灵 2\.0|日常使用零成本|业界领先|最长 10 秒/
       },
       runway: {
-        lastVerified: '2026-07-07',
+        lastVerified: '2026-07-13',
         sources: [
           'https://runwayml.com/pricing',
           'https://help.runwayml.com/hc/en-us/articles/46974685288467-Creating-with-Gen-4-5',
@@ -296,7 +296,7 @@ describe('toolMetadata', () => {
         forbidden: /Gen-3 Alpha|业界领先|团队成员按 editor/
       },
       suno: {
-        lastVerified: '2026-07-07',
+        lastVerified: '2026-07-13',
         sources: [
           'https://suno.com/pricing',
           'https://help.suno.com/en/articles/2746945',
@@ -306,7 +306,7 @@ describe('toolMetadata', () => {
         forbidden: /Suno v4|4690 万|60 秒内/
       },
       elevenlabs: {
-        lastVerified: '2026-07-07',
+        lastVerified: '2026-07-13',
         sources: [
           'https://elevenlabs.io/docs/overview/models',
           'https://elevenlabs.io/docs/changelog/2026/6/8',
@@ -323,7 +323,7 @@ describe('toolMetadata', () => {
         const tool = aiToolsData.find((item) => item.id === id)
         const text = JSON.stringify(tool)
 
-        expect(tool?.verificationStatus).toBe('verified')
+        expect(tool?.verificationStatus).toBe(id === 'kling' ? 'needs-review' : 'verified')
         expect(tool?.lastVerified).toBe(lastVerified)
         expect(tool?.decisionSummary?.verdict).toBeTruthy()
         expect(tool?.decisionSummary?.mainRisk).toBeTruthy()
@@ -342,7 +342,7 @@ describe('toolMetadata', () => {
     const expected = {
       'qwen-cli': {
         status: 'verified',
-        lastVerified: '2026-07-07',
+        lastVerified: '2026-07-13',
         sources: [
           'https://qwenlm.github.io/qwen-code-docs/en/users/configuration/auth/',
           'https://www.alibabacloud.com/help/en/model-studio/coding-plan',
@@ -351,7 +351,7 @@ describe('toolMetadata', () => {
       },
       cline: {
         status: 'verified',
-        lastVerified: '2026-07-07',
+        lastVerified: '2026-07-13',
         sources: [
           'https://cline.bot/pricing',
           'https://docs.cline.bot/getting-started/cline-provider',
@@ -360,7 +360,7 @@ describe('toolMetadata', () => {
       },
       continue: {
         status: 'historical',
-        lastVerified: '2026-07-08',
+        lastVerified: '2026-07-13',
         sources: [
           'https://www.continue.dev/',
           'https://github.com/continuedev/continue',
@@ -370,7 +370,7 @@ describe('toolMetadata', () => {
       },
       goose: {
         status: 'verified',
-        lastVerified: '2026-07-07',
+        lastVerified: '2026-07-13',
         sources: [
           'https://goose-docs.ai/',
           'https://github.com/aaif-goose/goose',
@@ -379,12 +379,12 @@ describe('toolMetadata', () => {
       },
       openhands: {
         status: 'verified',
-        lastVerified: '2026-07-07',
+        lastVerified: '2026-07-13',
         sources: ['https://www.openhands.dev/pricing', 'https://github.com/OpenHands/OpenHands']
       },
       'jetbrains-ai': {
         status: 'verified',
-        lastVerified: '2026-07-07',
+        lastVerified: '2026-07-13',
         sources: [
           'https://www.jetbrains.com/help/ai-assistant/licensing-and-subscriptions.html',
           'https://www.jetbrains.com/ai-ides/buy/'
@@ -416,12 +416,12 @@ describe('toolMetadata', () => {
   it('tracks official-source metadata for the continued LLM verification wave', () => {
     const expected = {
       glm: {
-        lastVerified: '2026-07-07',
+        lastVerified: '2026-07-13',
         sources: ['https://docs.z.ai/guides/overview/pricing', 'https://bigmodel.cn/pricing'],
         mustInclude: ['GLM-5.2']
       },
       kimi: {
-        lastVerified: '2026-07-07',
+        lastVerified: '2026-07-13',
         sources: [
           'https://platform.kimi.ai/docs/models',
           'https://platform.kimi.ai/docs/pricing/chat',
@@ -430,7 +430,7 @@ describe('toolMetadata', () => {
         mustInclude: ['kimi-k2.7-code', 'kimi-k2.6', 'kimi-latest']
       },
       minimax: {
-        lastVerified: '2026-07-07',
+        lastVerified: '2026-07-13',
         sources: [
           'https://platform.minimax.io/docs/guides/text-generation',
           'https://platform.minimax.io/docs/guides/pricing-paygo',
@@ -439,16 +439,16 @@ describe('toolMetadata', () => {
         mustInclude: ['MiniMax-M3', '1,000,000', 'permanent 50% off']
       },
       doubao: {
-        lastVerified: '2026-07-07',
+        lastVerified: '2026-07-13',
         sources: [
           'https://www.volcengine.com/docs/82379/1330310',
           'https://www.volcengine.com/docs/82379/2549861?lang=zh',
           'https://www.volcengine.com/docs/82379/1544106'
         ],
-        mustInclude: ['doubao-seed-2-1-pro', '2026-07-06', 'Seed 2.1']
+        mustInclude: ['doubao-seed-2-1-pro', '具体单价以当前价格页为准', 'Seed 2.1']
       },
       grok: {
-        lastVerified: '2026-07-07',
+        lastVerified: '2026-07-13',
         sources: [
           'https://docs.x.ai/developers/models',
           'https://x.ai/pricing',
@@ -492,14 +492,17 @@ describe('toolMetadata', () => {
     const expected = {
       qinglizi: {
         status: 'verified',
-        lastVerified: '2026-07-08',
+        lastVerified: '2026-07-13',
         sources: [
           'https://ali-doctor.com/login',
           'https://apps.apple.com/cn/app/%E6%B0%A2%E7%A6%BB%E5%AD%90-%E5%8C%BB%E5%AD%A6ai%E5%8A%A9%E6%89%8B/id6738349403'
         ],
         mustInclude: [
           'App 内购买',
-          '当前商店页及产品内为准',
+          '¥9.90',
+          '¥49',
+          '¥118',
+          '¥360',
           '不作为诊断、确诊和治疗依据',
           '不能代替医生面诊',
           '医疗行业专业用户参考'
@@ -508,7 +511,7 @@ describe('toolMetadata', () => {
       },
       llama: {
         status: 'verified',
-        lastVerified: '2026-07-08',
+        lastVerified: '2026-07-13',
         sources: [
           'https://www.llama.com/models/llama-4/',
           'https://www.llama.com/docs/model-cards-and-prompt-formats/llama4/',
@@ -520,18 +523,18 @@ describe('toolMetadata', () => {
       },
       mistral: {
         status: 'verified',
-        lastVerified: '2026-07-07',
+        lastVerified: '2026-07-13',
         sources: [
           'https://docs.mistral.ai/models/overview',
           'https://docs.mistral.ai/models/model-cards/mistral-large-3-25-12',
           'https://docs.mistral.ai/resources/known-limitations'
         ],
-        mustInclude: ['Mistral Medium 3.5', 'Mistral Large 3', 'Ministral 3'],
-        forbidden: /GPT-5|\$14\.99|\u6700\u4fbf\u5b9c|\u6b27\u6d32\u6700\u5f3a/
+        mustInclude: ['Vibe', '$14.99', 'Mistral Medium 3.5', 'Mistral Large 3', 'Ministral 3'],
+        forbidden: /GPT-5|\u6700\u4fbf\u5b9c|\u6b27\u6d32\u6700\u5f3a/
       },
       yi: {
-        status: 'verified',
-        lastVerified: '2026-07-08',
+        status: 'needs-review',
+        lastVerified: '2026-07-13',
         sources: [
           'https://www.01.ai/',
           'https://www.01.ai/yi-models',
@@ -557,7 +560,7 @@ describe('toolMetadata', () => {
       },
       ernie: {
         status: 'verified',
-        lastVerified: '2026-07-08',
+        lastVerified: '2026-07-13',
         sources: [
           'https://cloud.baidu.com/product-s/qianfan_home',
           'https://cloud.baidu.com/doc/qianfan-docs/s/7m95lyy43',
@@ -578,7 +581,7 @@ describe('toolMetadata', () => {
       },
       cohere: {
         status: 'verified',
-        lastVerified: '2026-07-07',
+        lastVerified: '2026-07-13',
         sources: [
           'https://docs.cohere.com/docs/models',
           'https://docs.cohere.com/docs/how-does-cohere-pricing-work',
@@ -590,7 +593,7 @@ describe('toolMetadata', () => {
       },
       'amazon-nova': {
         status: 'verified',
-        lastVerified: '2026-07-07',
+        lastVerified: '2026-07-13',
         sources: [
           'https://docs.aws.amazon.com/nova/latest/nova2-userguide/what-is-nova-2.html',
           'https://docs.aws.amazon.com/nova/latest/nova2-userguide/whats-new.html',
@@ -603,7 +606,7 @@ describe('toolMetadata', () => {
       },
       hunyuan: {
         status: 'verified',
-        lastVerified: '2026-07-07',
+        lastVerified: '2026-07-13',
         sources: [
           'https://cloud.tencent.com/product/tclm',
           'https://cloud.tencent.com/document/product/1729/104753',
@@ -637,7 +640,7 @@ describe('toolMetadata', () => {
   it('tracks official-source metadata for the continued developer-tool verification wave', () => {
     const expected = {
       zed: {
-        lastVerified: '2026-07-07',
+        lastVerified: '2026-07-13',
         sources: ['https://zed.dev/pricing', 'https://zed.dev/docs/ai/overview'],
         mustInclude: [
           '$20 token credits',
@@ -649,14 +652,14 @@ describe('toolMetadata', () => {
         forbidden: /\u5b8c\u5168\u514d\u8d39\u5f00\u6e90|\u5b8c\u5168\u8de8\u5e73\u53f0/
       },
       tabnine: {
-        lastVerified: '2026-07-08',
+        lastVerified: '2026-07-13',
         sources: ['https://www.tabnine.com/pricing/', 'https://www.tabnine.com/'],
         mustInclude: ['Code Assistant', '$39', 'Agentic Platform', '$59', 'MCP', '5% handling fee'],
         forbidden:
           /\$12|\u514d\u8d39\u7248\u57fa\u7840\u4ee3\u7801\u8865\u5168|\$39\u7528\u6237\u6708\(Enterprise\)/
       },
       warp: {
-        lastVerified: '2026-07-08',
+        lastVerified: '2026-07-13',
         sources: [
           'https://www.warp.dev/pricing',
           'https://docs.warp.dev/support-and-community/plans-and-billing/plans-pricing-refunds/'
@@ -672,7 +675,7 @@ describe('toolMetadata', () => {
         forbidden: /150 AI \u8bf7\u6c42|150\u8bf7\u6c42|Pro\)|Turbo|Lightspeed/
       },
       crush: {
-        lastVerified: '2026-07-07',
+        lastVerified: '2026-07-13',
         sources: [
           'https://github.com/charmbracelet/crush',
           'https://charm.land/blog/crush-comes-home/',
@@ -684,7 +687,7 @@ describe('toolMetadata', () => {
     }
 
     Object.entries(expected).forEach(
-      ([id, { lastVerified = '2026-07-08', sources, mustInclude, forbidden }]) => {
+      ([id, { lastVerified = '2026-07-13', sources, mustInclude, forbidden }]) => {
         const tool = aiToolsData.find((item) => item.id === id)
         const text = JSON.stringify(tool)
 
@@ -755,7 +758,7 @@ describe('toolMetadata', () => {
       const text = JSON.stringify(tool)
 
       expect(tool?.verificationStatus).toBe('verified')
-      expect(tool?.lastVerified).toBe('2026-07-08')
+      expect(tool?.lastVerified).toBe('2026-07-13')
       expect(tool?.decisionSummary?.verdict).toBeTruthy()
       expect(tool?.decisionSummary?.mainRisk).toBeTruthy()
       sources.forEach((source) => {
@@ -771,7 +774,7 @@ describe('toolMetadata', () => {
   it('tracks official-source metadata for the agent framework verification wave', () => {
     const expected = {
       n8n: {
-        lastVerified: '2026-07-08',
+        lastVerified: '2026-07-13',
         sources: [
           'https://n8n.io/pricing/',
           'https://docs.n8n.io/sustainable-use-license/',
@@ -781,7 +784,8 @@ describe('toolMetadata', () => {
           '20€/mo',
           '50€/mo',
           '2.5K executions',
-          '50 AI Workflow Builder credits',
+          '2,300 credits',
+          '13,700 credits',
           '667€/mo',
           'Community Edition',
           'Sustainable Use License'
@@ -789,7 +793,7 @@ describe('toolMetadata', () => {
         forbidden: /自托管完全免费|\$20月|\$50月|开源社区|400\+ 集成/
       },
       'openai-agents-sdk': {
-        lastVerified: '2026-07-08',
+        lastVerified: '2026-07-13',
         sources: [
           'https://openai.github.io/openai-agents-python/',
           'https://developers.openai.com/api/docs/guides/agents',
@@ -806,7 +810,7 @@ describe('toolMetadata', () => {
         forbidden: /仅支持 OpenAI 模型|GPT-5, o1, o3|2025 年发布/
       },
       'claude-agent-sdk': {
-        lastVerified: '2026-07-08',
+        lastVerified: '2026-07-13',
         sources: [
           'https://code.claude.com/docs/en/agent-sdk/overview',
           'https://github.com/anthropics/claude-agent-sdk-python',
@@ -826,7 +830,7 @@ describe('toolMetadata', () => {
         forbidden: /200K|业界最强|无缝集成|文档持续完善中/
       },
       'google-adk': {
-        lastVerified: '2026-07-08',
+        lastVerified: '2026-07-13',
         sources: [
           'https://adk.dev/',
           'https://adk.dev/agents/models/google-gemini/',
@@ -846,7 +850,7 @@ describe('toolMetadata', () => {
     }
 
     Object.entries(expected).forEach(
-      ([id, { lastVerified = '2026-07-08', sources, mustInclude, forbidden }]) => {
+      ([id, { lastVerified = '2026-07-13', sources, mustInclude, forbidden }]) => {
         const tool = aiToolsData.find((item) => item.id === id)
         const text = JSON.stringify(tool)
 
@@ -868,7 +872,7 @@ describe('toolMetadata', () => {
   it('tracks official-source metadata for the AI IDE cleanup verification wave', () => {
     const expected = {
       codebuddy: {
-        lastVerified: '2026-07-07',
+        lastVerified: '2026-07-13',
         sources: [
           'https://www.codebuddy.ai/docs/ide/Account/pricing',
           'https://www.codebuddy.ai/docs/ide/Account/credits',
@@ -884,7 +888,7 @@ describe('toolMetadata', () => {
         forbidden: /个人版完全免费|10万token|200K\+|混元 \+ DeepSeek 双模型架构/
       },
       antigravity: {
-        lastVerified: '2026-07-07',
+        lastVerified: '2026-07-13',
         sources: [
           'https://antigravity.google/pricing',
           'https://gemini.google/subscriptions/',
@@ -894,15 +898,15 @@ describe('toolMetadata', () => {
         mustInclude: [
           'Google AI Pro',
           'Google AI Ultra',
-          '$99.99',
-          '$199.99',
+          '价格按所在地区',
+          '5x 或 20x quota',
           'highest usage limits',
           'baseline quota'
         ],
         forbidden: /Public Preview期间免费|每 5 小时刷新配额|2026年1月14日|Beta免费/
       },
       verdent: {
-        lastVerified: '2026-07-07',
+        lastVerified: '2026-07-13',
         sources: [
           'https://www.verdent.ai/pricing',
           'https://www.verdent.ai/blog/swe-bench-verified-technical-report',
@@ -923,7 +927,7 @@ describe('toolMetadata', () => {
     }
 
     Object.entries(expected).forEach(
-      ([id, { lastVerified = '2026-07-08', sources, mustInclude, forbidden }]) => {
+      ([id, { lastVerified = '2026-07-13', sources, mustInclude, forbidden }]) => {
         const tool = aiToolsData.find((item) => item.id === id)
         const text = JSON.stringify(tool)
 
@@ -945,7 +949,7 @@ describe('toolMetadata', () => {
   it('tracks official-source metadata for the agent and creative-tool verification wave', () => {
     const expected = {
       manus: {
-        lastVerified: '2026-07-07',
+        lastVerified: '2026-07-13',
         sources: [
           'https://manus.im/',
           'https://help.manus.im/en/articles/11711111-what-is-the-current-membership-pricing-for-manus',
@@ -965,7 +969,7 @@ describe('toolMetadata', () => {
           /订阅制（具体定价待定）|等待名单近百万|2025 年 12 月|20亿|MIT Technology Review|不建议专业业务使用|年化收入/
       },
       crewai: {
-        lastVerified: '2026-07-08',
+        lastVerified: '2026-07-13',
         sources: [
           'https://crewai.com/pricing',
           'https://docs.crewai.com/',
@@ -984,7 +988,7 @@ describe('toolMetadata', () => {
         forbidden: /\$99|6000\/年|不支持按量付费|文档和社区在建设中|免费\(50次\/月\)\/\$99月/
       },
       flux: {
-        lastVerified: '2026-07-07',
+        lastVerified: '2026-07-13',
         sources: [
           'https://bfl.ai/pricing',
           'https://docs.bfl.ai/quick_start/pricing',
@@ -1003,7 +1007,7 @@ describe('toolMetadata', () => {
         forbidden: /完全免费|堪比 Midjourney|首个真正超越 Midjourney|最佳选择|最流行/
       },
       pika: {
-        lastVerified: '2026-07-08',
+        lastVerified: '2026-07-13',
         sources: ['https://pika.art/pricing', 'https://pika.art/', 'https://pika.art/api'],
         mustInclude: [
           'Pika 2.5',
@@ -1022,7 +1026,7 @@ describe('toolMetadata', () => {
           /免费版每日有限 credits|已接近 Runway 水平|性价比在视频生成工具中数一数二|免费\/\$8\/\$28\/月|Basic \$8|Standard \$28|Pro \$76/
       },
       jimeng: {
-        lastVerified: '2026-07-08',
+        lastVerified: '2026-07-13',
         sources: [
           'https://jimeng.jianying.com/',
           'https://www.volcengine.com/docs/85621/1544714?lang=zh',
@@ -1045,7 +1049,7 @@ describe('toolMetadata', () => {
           /¥69月|每日 80-100 积分|中文提示词支持最佳|质量已接近 Midjourney|极为慷慨|12种电影级/
       },
       luma: {
-        lastVerified: '2026-07-07',
+        lastVerified: '2026-07-13',
         sources: [
           'https://lumalabs.ai/pricing',
           'https://lumalabs.ai/llm-info',
@@ -1065,7 +1069,7 @@ describe('toolMetadata', () => {
           /免费\(30代\/月\)|\$29\/\$99\/\$499|Dream Machine 2\.0|与 Sora 相比生成速度更快|免费额度也更友好/
       },
       udio: {
-        lastVerified: '2026-07-07',
+        lastVerified: '2026-07-13',
         sources: [
           'https://www.udio.com/pricing',
           'https://help.udio.com/en/articles/10739134-credits-and-credit-limits',
@@ -1089,7 +1093,7 @@ describe('toolMetadata', () => {
     }
 
     Object.entries(expected).forEach(
-      ([id, { lastVerified = '2026-07-08', sources, mustInclude, forbidden }]) => {
+      ([id, { lastVerified = '2026-07-13', sources, mustInclude, forbidden }]) => {
         const tool = aiToolsData.find((item) => item.id === id)
         const text = JSON.stringify(tool)
 
@@ -1111,7 +1115,7 @@ describe('toolMetadata', () => {
   it('tracks official-source metadata for the knowledge and agent platform verification wave', () => {
     const expected = {
       notebooklm: {
-        lastVerified: '2026-07-07',
+        lastVerified: '2026-07-13',
         sources: [
           'https://support.google.com/notebooklm/answer/16269187?hl=en',
           'https://support.google.com/notebooklm/answer/16213268?hl=en',
@@ -1130,18 +1134,16 @@ describe('toolMetadata', () => {
         forbidden: /完全免费|PPT\/视频\/音频生成|9 种输出格式|汇报材料神器|Google 出品，完全免费/
       },
       coze: {
-        lastVerified: '2026-07-08',
+        status: 'needs-review',
+        lastVerified: '2026-07-13',
         sources: [
           'https://www.coze.com/premium',
           'https://www.coze.com/open/docs/guides/subscription',
           'https://www.coze.com/open/docs/guides/message_credits'
         ],
         mustInclude: [
-          '10 credits/day',
-          '100 credits/day',
-          '$19',
-          '$39',
-          '3-day free trial',
+          'SPRING (SG) PTE. LTD.',
+          '登录后的订阅与账单页',
           'message credits',
           'Coze tokens',
           'API/Web SDK'
@@ -1149,7 +1151,7 @@ describe('toolMetadata', () => {
         forbidden: /免费额度慷慨|飞书\/微信|深度集成|免费\/订阅|入门门槛极低/
       },
       dify: {
-        lastVerified: '2026-07-07',
+        lastVerified: '2026-07-13',
         sources: [
           'https://dify.ai/pricing',
           'https://docs.dify.ai/en/cloud/use-dify/workspace/subscription-management',
@@ -1159,7 +1161,7 @@ describe('toolMetadata', () => {
         forbidden: /开源免费|完全开源|完全免费|Docker 一键部署|几乎所有主流 LLM/
       },
       langchain: {
-        lastVerified: '2026-07-08',
+        lastVerified: '2026-07-13',
         sources: [
           'https://www.langchain.com/',
           'https://www.langchain.com/pricing',
@@ -1179,7 +1181,7 @@ describe('toolMetadata', () => {
         forbidden: /最流行|生态最完善|首选|API 变化频繁|完全免费/
       },
       perplexity: {
-        lastVerified: '2026-07-07',
+        lastVerified: '2026-07-13',
         sources: [
           'https://www.perplexity.ai/hub',
           'https://www.perplexity.ai/help-center/en/articles/11680686-perplexity-max',
@@ -1198,7 +1200,8 @@ describe('toolMetadata', () => {
         forbidden: /免费\/\$20\/月|每天有一定|代码能力一般|搜索引擎的标杆|可信度远高于/
       },
       autogen: {
-        lastVerified: '2026-07-08',
+        status: 'historical',
+        lastVerified: '2026-07-13',
         sources: [
           'https://microsoft.github.io/autogen/stable/',
           'https://microsoft.github.io/autogen/stable/user-guide/agentchat-user-guide/migration-guide.html',
@@ -1218,11 +1221,11 @@ describe('toolMetadata', () => {
     }
 
     Object.entries(expected).forEach(
-      ([id, { lastVerified = '2026-07-08', sources, mustInclude, forbidden }]) => {
+      ([id, { status = 'verified', lastVerified = '2026-07-13', sources, mustInclude, forbidden }]) => {
         const tool = aiToolsData.find((item) => item.id === id)
         const text = JSON.stringify(tool)
 
-        expect(tool?.verificationStatus).toBe('verified')
+        expect(tool?.verificationStatus).toBe(status)
         expect(tool?.lastVerified).toBe(lastVerified)
         expect(tool?.decisionSummary?.verdict).toBeTruthy()
         expect(tool?.decisionSummary?.mainRisk).toBeTruthy()
@@ -1370,7 +1373,8 @@ describe('toolMetadata', () => {
         ],
         mustInclude: [
           'Availability: Beta',
-          '300+ verified',
+          'server 数量以当前 Catalog 为准',
+          'Docker Desktop 4.62',
           'profiles',
           '隔离 Docker 容器',
           '限制权限',
@@ -1390,7 +1394,7 @@ describe('toolMetadata', () => {
       const text = JSON.stringify(tool)
 
       expect(tool?.verificationStatus).toBe('verified')
-      expect(tool?.lastVerified).toBe('2026-07-08')
+      expect(tool?.lastVerified).toBe('2026-07-13')
       expect(tool?.decisionSummary?.verdict).toBeTruthy()
       expect(tool?.decisionSummary?.mainRisk).toBeTruthy()
       sources.forEach((source) => {
@@ -1406,7 +1410,7 @@ describe('toolMetadata', () => {
   it('tracks current metadata for memory, collaboration, and automation platforms', () => {
     const expected = {
       'openmemory-mcp': {
-        lastVerified: '2026-07-08',
+        lastVerified: '2026-07-13',
         sources: [
           'https://mem0.ai/blog/introducing-openmemory-mcp',
           'https://docs.mem0.ai/platform/mem0-mcp',
@@ -1418,11 +1422,9 @@ describe('toolMetadata', () => {
           'cloud-hosted MCP server requires no local installation',
           'Mem0 Platform account',
           'API key',
-          'self-hostable',
-          'user-owned memory',
           'add_memory',
           'delete_memory',
-          '9 memory tools',
+          '11 memory tools',
           'archived',
           'MEM0_API_KEY',
           'memory persistence risk'
@@ -1430,7 +1432,7 @@ describe('toolMetadata', () => {
         forbidden: /云端版待定|自托管免费|无缝集成|显著减少|创新性极强|Qdrant/
       },
       'atlassian-mcp': {
-        lastVerified: '2026-07-08',
+        lastVerified: '2026-07-13',
         sources: [
           'https://www.atlassian.com/platform/remote-mcp-server',
           'https://github.com/atlassian/atlassian-mcp-server',
@@ -1452,29 +1454,29 @@ describe('toolMetadata', () => {
           /完全免费|企业级团队协作利器|适合生产环境|只读模式保护生产数据|官方 MCP 出现|无缝|效率利器/
       },
       'zapier-ai': {
-        lastVerified: '2026-07-08',
+        lastVerified: '2026-07-13',
         sources: ['https://zapier.com/pricing', 'https://zapier.com/apps'],
         mustInclude: [
           '9,000+ apps',
           '100 tasks per month',
           '$19.99/月',
           'task-based pricing',
-          'AI steps, code, and SDK',
-          'Zapier MCP Beta',
-          'shared task pool',
-          'Each successful action'
+          'MCP 每次调用计 2 tasks',
+          'AI steps 按步骤复杂度计 1/3/5 tasks',
+          'SDK Beta 当前不计 tasks'
         ],
         forbidden:
           /7000\+|\$29\.99|8M\+|老牌王者|应用集成数量最多|企业级可靠性和安全性|复杂流程建议用 n8n|AI Actions API/
       },
       make: {
-        lastVerified: '2026-07-08',
+        lastVerified: '2026-07-13',
         sources: ['https://www.make.com/en/pricing', 'https://www.make.com/en/integrations'],
         mustInclude: [
           '1,000 credits/month',
-          '$9/mo',
-          '$16/mo',
-          '$29/mo',
+          '统一 Make Plan',
+          '$9/月',
+          '5,000 credits',
+          'Company 定制',
           '3000+ apps',
           '350+ AI apps',
           'Make MCP Server',
@@ -1487,7 +1489,7 @@ describe('toolMetadata', () => {
     }
 
     Object.entries(expected).forEach(
-      ([id, { lastVerified = '2026-07-08', sources, mustInclude, forbidden }]) => {
+      ([id, { lastVerified = '2026-07-13', sources, mustInclude, forbidden }]) => {
         const tool = aiToolsData.find((item) => item.id === id)
         const text = JSON.stringify(tool)
 
@@ -1627,7 +1629,7 @@ describe('toolMetadata', () => {
       const text = JSON.stringify(tool)
 
       expect(tool?.verificationStatus).toBe('verified')
-      expect(tool?.lastVerified).toBe(id === 'figma-mcp' ? '2026-07-13' : '2026-07-08')
+      expect(tool?.lastVerified).toBe(id === 'figma-mcp' ? '2026-07-13' : '2026-07-13')
       expect(tool?.decisionSummary?.verdict).toBeTruthy()
       expect(tool?.decisionSummary?.mainRisk).toBeTruthy()
       sources.forEach((source) => {
@@ -1643,7 +1645,7 @@ describe('toolMetadata', () => {
   it('tracks current metadata for multimodal creator tools with pricing and credit risks', () => {
     const expected = {
       'meitu-ai': {
-        lastVerified: '2026-07-08',
+        lastVerified: '2026-07-13',
         sources: [
           'https://www.meituxiuxiu.com',
           'https://pc.meitu.com/en/pc',
@@ -1663,7 +1665,7 @@ describe('toolMetadata', () => {
           /免费版功能已经很够用|VIP 价格也很亲民|完全不需要设计基础|电商、社交媒体运营|非开发者工具/
       },
       jianying: {
-        lastVerified: '2026-07-08',
+        lastVerified: '2026-07-13',
         sources: [
           'https://www.capcut.com/help/how-much-does-capcut-pro-cost',
           'https://www.capcut.com/help/pricing-change',
@@ -1681,7 +1683,7 @@ describe('toolMetadata', () => {
           /免费版功能强大|与抖音深度集成|国内短视频创作者的标配|智能字幕识别准确率极高|免费版功能已非常强大/
       },
       hailuo: {
-        lastVerified: '2026-07-07',
+        lastVerified: '2026-07-13',
         sources: [
           'https://hailuoai.video/',
           'https://hailuoai.video/doc/payment-policy.html',
@@ -1708,7 +1710,7 @@ describe('toolMetadata', () => {
           /免费\(每日额度\)|每日免费额度|免费使用是最大亮点|国际知名度较低|人物动态表现自然/
       },
       ideogram: {
-        lastVerified: '2026-07-07',
+        lastVerified: '2026-07-13',
         sources: [
           'https://ideogram.ai/',
           'https://docs.ideogram.ai/plans-and-pricing/available-plans',
@@ -1739,7 +1741,7 @@ describe('toolMetadata', () => {
           /\$8\/\$20\/月|Ideogram 2\.0\/3\.0|免费版每日有限生成|每天可生成约 10 张图|\$8\/月专业版性价比高|文字渲染能力业界最强/
       },
       meshy: {
-        lastVerified: '2026-07-08',
+        lastVerified: '2026-07-13',
         sources: [
           'https://www.meshy.ai/pricing',
           'https://docs.meshy.ai/en/api/pricing',
@@ -1765,7 +1767,7 @@ describe('toolMetadata', () => {
         forbidden: /免费\/订阅|有免费额度|Meshy-4|专业版 \$20\/月性价比不错|免费版每月有生成额度/
       },
       hunyuan3d: {
-        lastVerified: '2026-07-08',
+        lastVerified: '2026-07-13',
         sources: [
           'https://www.tencent.com/en-us/articles/2202235.html',
           'https://cloud.tencent.com/document/product/1804/123461',
@@ -1773,9 +1775,8 @@ describe('toolMetadata', () => {
           'https://huggingface.co/tencent/Hunyuan3D-2'
         ],
         mustInclude: [
-          '腾讯云混元生3D API',
+          'TokenHub 新入口',
           '100 积分',
-          '1,000 积分 100 元',
           '0.12 元/积分',
           '20 积分/次',
           '25',
@@ -1796,7 +1797,7 @@ describe('toolMetadata', () => {
     }
 
     Object.entries(expected).forEach(
-      ([id, { lastVerified = '2026-07-08', sources, mustInclude, forbidden }]) => {
+      ([id, { lastVerified = '2026-07-13', sources, mustInclude, forbidden }]) => {
         const tool = aiToolsData.find((item) => item.id === id)
         const text = JSON.stringify(tool)
 
@@ -1818,7 +1819,7 @@ describe('toolMetadata', () => {
   it('tracks current metadata for agent frameworks, MCP utilities, and Gemini image generation', () => {
     const expected = {
       autogpt: {
-        lastVerified: '2026-07-08',
+        lastVerified: '2026-07-13',
         sources: [
           'https://agpt.co/pricing/',
           'https://agpt.co/docs/platform',
@@ -1841,7 +1842,7 @@ describe('toolMetadata', () => {
         forbidden: /完全免费|开源免费|自主任务分解和执行能力|概念验证|稳定性一般|复杂任务易失控/
       },
       nanobanana: {
-        lastVerified: '2026-07-07',
+        lastVerified: '2026-07-13',
         sources: [
           'https://gemini.google/overview/image-generation/',
           'https://ai.google.dev/gemini-api/docs/image-generation',
@@ -1865,7 +1866,7 @@ describe('toolMetadata', () => {
           /图表生成|https:\/\/nanobanana\.google|完全免费|无需注册|架构图|流程图|ER 图|技术文档配图/
       },
       'sequential-thinking-mcp': {
-        lastVerified: '2026-07-08',
+        lastVerified: '2026-07-13',
         sources: [
           'https://github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking',
           'https://www.npmjs.com/package/@modelcontextprotocol/server-sequential-thinking',
@@ -1886,7 +1887,7 @@ describe('toolMetadata', () => {
           /Anthropic \(MCP 官方\)|思维链构建透明可观测|显著提升|杀鸡用牛刀|Claude Code 内置深度思考能力|完全免费/
       },
       'antv-chart-mcp': {
-        lastVerified: '2026-07-08',
+        lastVerified: '2026-07-13',
         sources: [
           'https://github.com/antvis/mcp-server-chart',
           'https://www.npmjs.com/package/@antv/mcp-server-chart',
@@ -1906,7 +1907,7 @@ describe('toolMetadata', () => {
           /完全免费|无需LLM|质量有保障|输出格式美观|SDK 支持程序化调用|图表交互性有限|国际化文档较少/
       },
       'camel-ai': {
-        lastVerified: '2026-07-08',
+        lastVerified: '2026-07-13',
         sources: [
           'https://github.com/camel-ai/camel',
           'https://docs.camel-ai.org/',
@@ -1927,7 +1928,7 @@ describe('toolMetadata', () => {
           /首个 LLM 多 Agent 框架|学术界广泛引用|生产部署经验有限|文档不够工程化|工程化程度不如|完全免费/
       },
       agentscope: {
-        lastVerified: '2026-07-08',
+        lastVerified: '2026-07-13',
         sources: [
           'https://github.com/agentscope-ai/agentscope',
           'https://docs.agentscope.io/',
@@ -1952,7 +1953,7 @@ describe('toolMetadata', () => {
     }
 
     Object.entries(expected).forEach(
-      ([id, { lastVerified = '2026-07-08', sources, mustInclude, forbidden }]) => {
+      ([id, { lastVerified = '2026-07-13', sources, mustInclude, forbidden }]) => {
         const tool = aiToolsData.find((item) => item.id === id)
         const text = JSON.stringify(tool)
 
@@ -2026,7 +2027,7 @@ describe('toolMetadata', () => {
       const text = JSON.stringify(tool)
 
       expect(tool?.verificationStatus).toBe(status)
-      expect(tool?.lastVerified).toBe('2026-07-08')
+      expect(tool?.lastVerified).toBe('2026-07-13')
       expect(tool?.decisionSummary?.verdict).toBeTruthy()
       expect(tool?.decisionSummary?.mainRisk).toBeTruthy()
       sources.forEach((source) => {
@@ -2043,8 +2044,10 @@ describe('toolMetadata', () => {
     const expected = {
       'frontend-design-skill': {
         status: 'verified',
-        lastVerified: '2026-07-07',
-        sources: ['本地 skill: build-web-apps:frontend-app-builder'],
+        lastVerified: '2026-07-13',
+        sources: [
+          'https://github.com/openai/plugins/blob/main/plugins/build-web-apps/skills/frontend-app-builder/SKILL.md'
+        ],
         mustInclude: [
           'frontend-app-builder',
           'redesign/restyle/modernization',
@@ -2057,8 +2060,10 @@ describe('toolMetadata', () => {
       },
       'webapp-testing-skill': {
         status: 'verified',
-        lastVerified: '2026-07-08',
-        sources: ['本地 skill: build-web-apps:frontend-testing-debugging'],
+        lastVerified: '2026-07-13',
+        sources: [
+          'https://github.com/openai/plugins/blob/main/plugins/build-web-apps/skills/frontend-testing-debugging/SKILL.md'
+        ],
         mustInclude: [
           'frontend-testing-debugging',
           'Browser plugin',
@@ -2072,9 +2077,9 @@ describe('toolMetadata', () => {
       },
       'mcp-builder-skill': {
         status: 'verified',
-        lastVerified: '2026-07-08',
+        lastVerified: '2026-07-13',
         sources: [
-          '本地 skill: cloudflare:building-mcp-server-on-cloudflare',
+          'https://github.com/cloudflare/skills/blob/main/skills/building-mcp-server-on-cloudflare/SKILL.md',
           'https://modelcontextprotocol.io/docs/learn/architecture',
           'https://modelcontextprotocol.io/specification/2025-06-18/server/tools'
         ],
@@ -2090,8 +2095,10 @@ describe('toolMetadata', () => {
       },
       'skill-creator-skill': {
         status: 'verified',
-        lastVerified: '2026-07-08',
-        sources: ['本地 skill: skill-creator'],
+        lastVerified: '2026-07-13',
+        sources: [
+          'https://github.com/openai/skills/blob/main/skills/.system/skill-creator/SKILL.md'
+        ],
         mustInclude: [
           'skill-creator',
           'SKILL.md',
@@ -2104,7 +2111,7 @@ describe('toolMetadata', () => {
       },
       'insecure-defaults-skill': {
         status: 'verified',
-        lastVerified: '2026-07-08',
+        lastVerified: '2026-07-13',
         sources: [
           'https://trailofbits.com/skills/insecure-defaults/',
           '邻近本地 skill: security-best-practices'
@@ -2122,7 +2129,7 @@ describe('toolMetadata', () => {
       },
       'sharp-edges-skill': {
         status: 'verified',
-        lastVerified: '2026-07-08',
+        lastVerified: '2026-07-13',
         sources: [
           'https://trailofbits.com/skills/sharp-edges/',
           '邻近本地 skill: security-best-practices'
@@ -2140,7 +2147,7 @@ describe('toolMetadata', () => {
     }
 
     Object.entries(expected).forEach(
-      ([id, { status, lastVerified = '2026-07-08', sources, mustInclude, forbidden }]) => {
+      ([id, { status, lastVerified = '2026-07-13', sources, mustInclude, forbidden }]) => {
         const tool = aiToolsData.find((item) => item.id === id)
         const text = JSON.stringify(tool)
 
@@ -2247,8 +2254,8 @@ describe('toolMetadata', () => {
       'supabase-skill': {
         status: 'verified',
         sources: [
-          '本地 skill: supabase',
-          '本地 skill: build-web-apps:supabase-postgres-best-practices',
+          'https://github.com/supabase/agent-skills/blob/main/skills/supabase/SKILL.md',
+          'https://supabase.com/docs/guides/getting-started/ai-skills',
           'https://supabase.com/docs'
         ],
         mustInclude: [
@@ -2264,7 +2271,7 @@ describe('toolMetadata', () => {
       'supabase-realtime-skill': {
         status: 'historical',
         sources: [
-          '公开来源不足：未发现同名 supabase-realtime skill（检查于 2026-07-08）',
+          '公开来源不足：未发现同名 supabase-realtime skill（检查于 2026-07-13）',
           '邻近本地 skill: supabase'
         ],
         mustInclude: [
@@ -2279,25 +2286,24 @@ describe('toolMetadata', () => {
           /完全免费|Claude Code 内置|postgres_changes 到 broadcast 迁移指南|可扩展模式设计|实时功能专精/
       },
       'ui-ux-pro-max-skill': {
-        status: 'deprecated',
+        status: 'verified',
         sources: [
-          '公开来源不足：未发现同名 ui-ux-pro-max skill（检查于 2026-07-08）',
-          '邻近本地 skill: build-web-apps:frontend-app-builder',
-          '邻近本地 skill: product-design:ideate'
+          'https://github.com/nextlevelbuilder/ui-ux-pro-max-skill',
+          'https://github.com/nextlevelbuilder/ui-ux-pro-max-skill/blob/main/.claude/skills/ui-ux-pro-max/SKILL.md',
+          'https://github.com/nextlevelbuilder/ui-ux-pro-max-skill/blob/main/LICENSE'
         ],
         mustInclude: [
-          '公开来源不足',
-          '未找到可公开核验的同名 ui-ux-pro-max Skill',
-          '历史概念',
-          'frontend-app-builder',
-          'ideate'
+          'NextLevelBuilder',
+          'Basic 版 MIT',
+          'Premium 版采用商业许可',
+          '设计系统生成',
+          '多种技术栈'
         ],
-        forbidden:
-          /完全免费|Claude Code 内置|67 种设计风格|96 种调色板|57 种字体配对|13 种技术栈覆盖|shadcn\/ui MCP 深度集成/
+        forbidden: /完全免费|Claude Code 内置|未找到可公开核验|历史概念/
       },
       'week-report-skill': {
-        status: 'deprecated',
-        sources: ['公开来源不足：未发现同名 week-report-generator skill（检查于 2026-07-08）'],
+        status: 'historical',
+        sources: ['公开来源不足：未发现同名 week-report-generator skill（检查于 2026-07-13）'],
         mustInclude: [
           '公开来源不足',
           '未找到可公开核验的同名 week-report-generator Skill',
@@ -2307,9 +2313,9 @@ describe('toolMetadata', () => {
         forbidden: /完全免费|Claude Code 内置|BigEyes 平台集成|自动化企业周报生成|中文优化到位/
       },
       'think-harder-skill': {
-        status: 'deprecated',
+        status: 'historical',
         sources: [
-          '公开来源不足：未发现同名 think-harder skill（检查于 2026-07-08）',
+          '公开来源不足：未发现同名 think-harder skill（检查于 2026-07-13）',
           '邻近本地 skill: superpowers:brainstorming',
           '邻近本地 skill: superpowers:systematic-debugging'
         ],
@@ -2323,7 +2329,7 @@ describe('toolMetadata', () => {
         forbidden: /完全免费|Claude Code 内置|增强分析推理能力|多角度思考复杂问题|模型自身推理增强/
       },
       'research-skill': {
-        status: 'verified',
+        status: 'needs-review',
         sources: ['本地 skill: product-design:research', '本地 skill: anycap-deepresearch'],
         mustInclude: [
           '基于来源的 UX 研究',
@@ -2343,7 +2349,7 @@ describe('toolMetadata', () => {
       const text = JSON.stringify(tool)
 
       expect(tool?.verificationStatus).toBe(status)
-      expect(tool?.lastVerified).toBe('2026-07-08')
+      expect(tool?.lastVerified).toBe('2026-07-13')
       expect(tool?.decisionSummary?.verdict).toBeTruthy()
       expect(tool?.decisionSummary?.mainRisk).toBeTruthy()
       sources.forEach((source) => {

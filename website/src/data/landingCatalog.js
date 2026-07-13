@@ -1,7 +1,7 @@
 export const LANDING_STATS = {
   tools: 125,
   categories: 7,
-  insights: 1719,
+  insights: 1723,
 }
 
 export const LANDING_CATEGORY_SUMMARY = {
@@ -11,9 +11,9 @@ export const LANDING_CATEGORY_SUMMARY = {
       { id: 'cursor', name: 'Cursor', bestFor: '日常主力开发、复杂架构重构与高频编码', rating: 5 },
       { id: 'trae', name: 'Trae', bestFor: '国内开发者、预算有限团队、快速原型', rating: 5 },
       { id: 'qoder', name: 'Qoder', bestFor: '中大型后端项目、工作项目开发', rating: 4.5 },
-      { id: 'kiro', name: 'Kiro', bestFor: '需求拆解、规格文档、任务分解', rating: 4 },
       { id: 'windsurf', name: 'Windsurf', bestFor: '复杂逻辑重构、多文件协作、预算敏感', rating: 4 },
       { id: 'antigravity', name: 'Antigravity', bestFor: 'Google 生态用户、尝鲜新品', rating: 3.5 },
+      { id: 'verdent', name: 'Verdent', bestFor: '复杂任务分解、多 Agent 协作、代码审查', rating: 3.5 },
     ],
   },
   cli: {
@@ -32,7 +32,7 @@ export const LANDING_CATEGORY_SUMMARY = {
     featured: [
       { id: 'claude', name: 'Claude', bestFor: '代码审查、方案设计、长上下文任务、多模态任务、复杂推理', rating: 5 },
       { id: 'gemini', name: 'Gemini', bestFor: '长文档处理、多模态任务、方案设计', rating: 5 },
-      { id: 'gpt', name: 'GPT-5.5 / OpenAI', bestFor: '通用任务、生态集成、推理任务、插件生态', rating: 5 },
+      { id: 'gpt', name: 'GPT-5.6 / OpenAI', bestFor: '通用任务、生态集成、推理任务、插件生态', rating: 5 },
       { id: 'glm', name: 'GLM / Z.AI', bestFor: '前端开发、完整 demo、Agent 场景', rating: 4.5 },
       { id: 'grok', name: 'Grok / xAI', bestFor: '实时信息、推理任务、X 平台用户、特定内容', rating: 4.5 },
       { id: 'kimi', name: 'Kimi / Moonshot', bestFor: '长文档、中文对话、方案调研', rating: 4.5 },
@@ -41,12 +41,12 @@ export const LANDING_CATEGORY_SUMMARY = {
   multimodal: {
     total: 21,
     featured: [
-      { id: 'kling', name: '可灵 (Kling)', bestFor: '短视频创作、动作连贯', rating: 5 },
       { id: 'midjourney', name: 'Midjourney', bestFor: '艺术创作、概念设计', rating: 5 },
       { id: 'flux', name: 'FLUX', bestFor: '开源/开放权重图像工作流、API 图像生成、本地 ComfyUI 探索', rating: 4.5 },
       { id: 'dalle', name: 'GPT Image 2 / ChatGPT Images', bestFor: '与 ChatGPT 配合使用，快速出图', rating: 4.5 },
       { id: 'hailuo', name: '海螺AI (Hailuo)', bestFor: '中文场景视频生成、短视频内容创作', rating: 4 },
       { id: 'hunyuan3d', name: '混元3D', bestFor: '中文 3D 创作', rating: 4 },
+      { id: 'jimeng', name: '即梦 (Jimeng)', bestFor: '中文图像/视频创作、国潮设计、社交媒体内容', rating: 4 },
     ],
   },
   agent: {
@@ -55,9 +55,9 @@ export const LANDING_CATEGORY_SUMMARY = {
       { id: 'claude-agent-sdk', name: 'Claude Agent SDK', bestFor: '构建代码智能体、复杂推理 Agent', rating: 4.5 },
       { id: 'agentscope', name: 'AgentScope', bestFor: '需要事件流、权限、沙箱、多租户和服务化的 Agent 应用', rating: 4 },
       { id: 'bolt-new', name: 'Bolt.new', bestFor: '快速原型、全栈 Web 应用构建、MVP 验证', rating: 4 },
-      { id: 'coze', name: 'Coze', bestFor: '快速搭建 Bot、轻量工作流和可发布的 Agent 应用', rating: 4 },
       { id: 'devin', name: 'Devin', bestFor: '自主化开发任务、端到端功能实现、Bug 修复自动化', rating: 4 },
       { id: 'dify', name: 'Dify', bestFor: '团队搭建 RAG、Agentic workflow 和可观测的 AI 应用', rating: 4 },
+      { id: 'langchain', name: 'LangChain', bestFor: '开发者构建可观测、可评估、可部署的 Agent 应用', rating: 4 },
     ],
   },
   mcp: {
@@ -74,12 +74,12 @@ export const LANDING_CATEGORY_SUMMARY = {
   skill: {
     total: 19,
     featured: [
-      { id: 'research-skill', name: 'research', bestFor: '产品 UX、用户痛点、竞品、市场和技术的证据化研究', rating: 4.5 },
       { id: 'supabase-skill', name: 'supabase', bestFor: 'Supabase 开发、Auth/RLS 复核、CLI/MCP 排障和性能优化', rating: 4.5 },
       { id: 'ask-questions-skill', name: 'ask-questions-if-underspecified', bestFor: '复杂需求前的 brief 澄清和上下文确认', rating: 4 },
       { id: 'frontend-design-skill', name: 'frontend-app-builder', bestFor: '页面改版、视觉现代化和真实浏览器验收', rating: 4 },
       { id: 'webapp-testing-skill', name: 'frontend-testing-debugging', bestFor: '前端烟测、渲染排查、交互回归和响应式验证', rating: 4 },
       { id: 'semgrep-skill', name: 'semgrep', bestFor: '代码安全扫描、规则化漏洞检查和 PR 辅助审计', rating: 4 },
+      { id: 'skill-creator-skill', name: 'skill-creator', bestFor: '创建新的 Codex Skill、维护已有 Skill、为可重复工作流沉淀脚本和参考资料', rating: 4 },
     ],
   },
 }

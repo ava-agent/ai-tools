@@ -1,7 +1,7 @@
 // Generated from src/data/tools.js.
 export default {
   "verificationStatus": "verified",
-  "lastVerified": "2026-07-07",
+  "lastVerified": "2026-07-13",
   "sources": [
     "https://www.perplexity.ai/hub",
     "https://www.perplexity.ai/help-center/en/articles/11680686-perplexity-max",
@@ -43,7 +43,7 @@ export default {
   "funRanking": "夯夯",
   "personalExperience": {
     "rating": 4,
-    "insights": "截至 2026-07-07，Perplexity 应定位为 web-first research/answer engine：强项是实时网页研究、inline citations、多模型路由和 Comet/Computer 工作流。Max 帮助页当天更新，新增/强调 Max Assistant on Comet、Brain Research Preview、Create files/apps 与 API 另行计费；Pro/Max/Enterprise 的差异不建议只用“免费/$20”概括。",
+    "insights": "截至 2026-07-13，Perplexity 应定位为 web-first research/answer engine：强项是实时网页研究、inline citations、多模型路由和 Comet/Computer 工作流。Max 帮助页当天更新，新增/强调 Max Assistant on Comet、Brain Research Preview、Create files/apps 与 API 另行计费；Pro/Max/Enterprise 的差异不建议只用“免费/$20”概括。",
     "pitfalls": [
       "引用仍需抽查原文",
       "高级功能多在付费档",

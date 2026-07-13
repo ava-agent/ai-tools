@@ -7,7 +7,7 @@ export const comparisonCatalog = [
     "developer": "Anysphere",
     "versions": [
       {
-        "pricing": "Hobby 免费 / Individual $20/月 / Teams $40/用户/月 / Enterprise 定制；高级模型和额外用量按官方模型与用量池规则核算",
+        "pricing": "Hobby 免费 / Pro $20/月 / Pro+ $60/月 / Ultra $200/月 / Teams $40/用户/月 / Enterprise 定制；高级模型和额外用量按官方模型与用量池规则核算",
         "models": "前沿模型、Auto、Composer 系列与第三方模型（以官方 Models & Pricing 当前表为准）"
       }
     ],
@@ -23,7 +23,7 @@ export const comparisonCatalog = [
     "id": "trae",
     "name": "Trae",
     "category": "ide",
-    "developer": "字节跳动",
+    "developer": "深圳市脸萌科技有限公司（字节跳动旗下）",
     "versions": [
       {
         "pricing": "Free / Lite $3/月 / Pro 7 天试用后 $10/月 / Pro+ $30/月 / Ultra $100/月",
@@ -122,7 +122,7 @@ export const comparisonCatalog = [
     "versions": [
       {
         "pricing": "Free 50 credits / Pro $20/用户/月 / Pro+ $40/用户/月 / Pro Max $100/用户/月 / Power $200/用户/月",
-        "models": "Auto、open-weight models 与 premium models；Free 含 open-weight models 和 Claude Sonnet 4.6（按计划限制）"
+        "models": "Auto、open-weight models 与 premium models；具体 Claude 版本和计划可用性以当前模型选择器与官方说明为准"
       }
     ],
     "personalExperience": {
@@ -159,7 +159,7 @@ export const comparisonCatalog = [
     "developer": "Google",
     "versions": [
       {
-        "pricing": "Free / Google AI Pro $19.99/month / Google AI Ultra $99.99 或 $199.99/month；Antigravity 具体限额按官方 Plans 页面与 Google AI 订阅说明",
+        "pricing": "Free / Google AI Pro / Google AI Ultra；价格按所在地区与当前 Google AI 订阅页确认，Antigravity 具体限额按官方 Plans 页面与订阅说明",
         "models": "Gemini 与第三方模型接入范围以 Antigravity 当前 Plans 和模型选择器为准"
       }
     ],
@@ -194,11 +194,11 @@ export const comparisonCatalog = [
     "id": "verdent",
     "name": "Verdent",
     "category": "ide",
-    "developer": "Verdent Team",
+    "developer": "Verdent AI, Inc.",
     "versions": [
       {
         "pricing": "免费试用：7 天 100 credits；Starter $19/月；Pro $59/月；Max $179/月；Teams $20/用户/月；Top-ups 约 1 credit = $0.059，当前标注 No Markup on Model Costs",
-        "models": "Pricing 页展示 Claude Fable/Opus/Sonnet、GPT-5.5、Gemini 3.1 Pro、GLM-5.2、Kimi K2.7 Code 等；模型与 provider pricing 以官方模型价格页为准"
+        "models": "Pricing 页展示 Claude Fable/Opus/Sonnet、GPT-5.6、Gemini 3.1 Pro、GLM-5.2、Kimi K2.7 Code 等；模型与 provider pricing 以官方模型价格页为准"
       }
     ],
     "personalExperience": {
@@ -216,7 +216,7 @@ export const comparisonCatalog = [
     "developer": "JetBrains",
     "versions": [
       {
-        "pricing": "AI Free / AI Pro / AI Ultimate；具体价格和 credit 额度按官方账号与地区页面为准",
+        "pricing": "AI Free（3 AI credits/30 天）/ AI Pro $10/月（10 credits）/ AI Ultimate $30/月（35 credits）；企业和地区价格按官方结账页确认",
         "models": "云端大模型 + 本地 AI（Ollama/LM Studio 等路径以官方 IDE 支持为准）"
       }
     ],
@@ -308,7 +308,7 @@ export const comparisonCatalog = [
     "id": "cline",
     "name": "Cline",
     "category": "cli",
-    "developer": "开源社区",
+    "developer": "Cline Bot Inc.",
     "versions": [
       {
         "pricing": "插件开源；Cline (usage-billing) 按 credits 付费；ClinePass $9.99/月；自带 API key / provider 另计",
@@ -327,7 +327,7 @@ export const comparisonCatalog = [
     "id": "continue",
     "name": "Continue",
     "category": "cli",
-    "developer": "开源社区",
+    "developer": "Continue team; now Cursor/Anysphere",
     "versions": [
       {
         "pricing": "仓库已不再主动维护且对用户 read-only；历史开源版本仍可参考，模型/provider 自付",
@@ -403,7 +403,7 @@ export const comparisonCatalog = [
     "id": "crush",
     "name": "Crush",
     "category": "cli",
-    "developer": "Charm Bracelet",
+    "developer": "Charmbracelet, Inc. (Charm)",
     "versions": [
       {
         "pricing": "Crush 工具开源；模型可 BYOK / provider 自付 / Charm Hyper credits",
@@ -422,7 +422,7 @@ export const comparisonCatalog = [
     "id": "openhands",
     "name": "OpenHands",
     "category": "cli",
-    "developer": "OpenHands Community",
+    "developer": "OpenHands Community / All Hands AI, Inc.",
     "versions": [
       {
         "pricing": "Local / Individual / Enterprise；本地自托管与云端计划能力不同，价格以官方 pricing 为准",
@@ -458,13 +458,13 @@ export const comparisonCatalog = [
   },
   {
     "id": "gpt",
-    "name": "GPT-5.5 / OpenAI",
+    "name": "GPT-5.6 / OpenAI",
     "category": "llm",
     "developer": "OpenAI",
     "versions": [
       {
         "pricing": "ChatGPT Free/Go/Plus/Pro/Business/Edu/Enterprise；API 按模型、工具、服务层和缓存计费",
-        "models": "gpt-5.5, gpt-5.5-pro, GPT-5 family, reasoning/audio/image/video models"
+        "models": "gpt-5.6-sol、gpt-5.6-terra、gpt-5.6-luna 与 OpenAI reasoning/audio/image/video models"
       }
     ],
     "personalExperience": {
@@ -540,7 +540,7 @@ export const comparisonCatalog = [
     "versions": [
       {
         "pricing": "Z.AI / BigModel API 按模型、输入、输出和缓存计费，需按官方 pricing 逐项核价",
-        "models": "GLM-5.2 / GLM-4.7 / GLM-4.6 / GLM-Z1 等，以官方当前列表为准"
+        "models": "GLM-5.2 / GLM-5.1 / GLM-5 / GLM-5-Turbo / GLM-4.7 等，以官方当前列表为准"
       }
     ],
     "personalExperience": {
@@ -596,7 +596,7 @@ export const comparisonCatalog = [
     "developer": "字节跳动",
     "versions": [
       {
-        "pricing": "火山方舟模型价格页 2026-07-06 更新；按模型、输入/输出 token、缓存和产品能力计费",
+        "pricing": "火山方舟按模型、输入/输出 token、缓存和产品能力计费；具体单价以当前价格页为准",
         "models": "doubao-seed-2-1-pro / doubao-seed-2-1-turbo 为当前 Seed 2.1 主线；Seedance、Seedream 等按能力分开核价"
       }
     ],
@@ -612,11 +612,11 @@ export const comparisonCatalog = [
     "id": "grok",
     "name": "Grok / xAI",
     "category": "llm",
-    "developer": "xAI",
+    "developer": "SpaceXAI (xAI)",
     "versions": [
       {
         "pricing": "Grok App / X / xAI API 分入口；订阅和 API 价格以 xAI 官方页面为准",
-        "models": "Grok 4.3 / Grok 4 / Grok Build 等，以官方模型页为准"
+        "models": "Grok 4.5（500K）、Grok 4.3（1M）、grok-build-0.1（256K）等，以官方模型页为准"
       }
     ],
     "personalExperience": {
@@ -635,7 +635,7 @@ export const comparisonCatalog = [
     "versions": [
       {
         "pricing": "Basic $10 / Standard $30 / Pro $60 / Mega $120；Fast/Relax/Turbo GPU time、HD、video 和 Stealth 能力按计划消耗",
-        "models": "Midjourney V8.1 default, V7/V6.1 legacy options"
+        "models": "Midjourney V8.1 default；V7/V6/V6.1 可选；Niji 7；仅 V8.0 Alpha 已弃用"
       }
     ],
     "personalExperience": {
@@ -737,19 +737,19 @@ export const comparisonCatalog = [
       "rating": 5
     },
     "tags": [
-      "推荐",
-      "视频"
+      "视频",
+      "国产"
     ]
   },
   {
     "id": "jianying",
-    "name": "剪映",
+    "name": "剪映 / CapCut",
     "category": "multimodal",
-    "developer": "字节跳动",
+    "developer": "ByteDance",
     "versions": [
       {
-        "pricing": "CapCut Pro 和 Teams 价格会随地区、设备、计费周期和促销变化",
-        "models": "CapCut / 剪映 AI 编辑套件"
+        "pricing": "剪映会员与 AI 权益以中国站和产品内为准",
+        "models": "剪映 AI 编辑套件"
       }
     ],
     "personalExperience": {
@@ -786,7 +786,7 @@ export const comparisonCatalog = [
     "developer": "腾讯",
     "versions": [
       {
-        "pricing": "消费端、腾讯云 API 和开源模型分开核算；腾讯云 API 首次开通可领 100 积分，预付 1,000 积分 100 元，后付 0.12 元/积分",
+        "pricing": "消费端、腾讯云 API、TokenHub 新入口和开源模型分开核算；旧平台已停止新购，存量服务按官方迁移说明继续使用",
         "models": "Hunyuan 3D 3.0、Hunyuan3D 2.0、Hunyuan3D-2.1 Series"
       }
     ],
@@ -821,10 +821,10 @@ export const comparisonCatalog = [
     "id": "qinglizi",
     "name": "氢离子 / 阿里健康",
     "category": "llm",
-    "developer": "阿里健康 / 杭州智循建模科技",
+    "developer": "杭州智循建模科技有限公司（阿里健康氢离子）",
     "versions": [
       {
-        "pricing": "App Store / 产品内页面曾列出免费 App 与若干内购档位；具体价格、权益和机构权限以当前商店页及产品内为准",
+        "pricing": "App 免费下载；App 内购当前列出新人/月 ¥9.90、月卡 ¥49、季卡 ¥118、年卡 ¥360，权益以产品内为准",
         "models": "医学文献检索、指南阅读、AI 翻译和智能问答助手"
       }
     ],
@@ -840,10 +840,10 @@ export const comparisonCatalog = [
     "id": "coze",
     "name": "Coze",
     "category": "agent",
-    "developer": "字节跳动",
+    "developer": "Global: SPRING (SG) PTE. LTD. / CN: 字节跳动（扣子）",
     "versions": [
       {
-        "pricing": "免费版每天 10 积分；Premium Lite 每天 100 积分；Premium $19；Premium Plus $39",
+        "pricing": "Global 计划和 credits 以登录后的订阅与账单页为准；公开页面不足以稳定核验固定价格",
         "models": "多模型 Agent / Workflow / Plugin"
       }
     ],
@@ -851,15 +851,15 @@ export const comparisonCatalog = [
       "rating": 4
     },
     "tags": [
-      "推荐",
-      "Agent"
+      "Agent",
+      "无代码"
     ]
   },
   {
     "id": "dify",
     "name": "Dify",
     "category": "agent",
-    "developer": "开源社区",
+    "developer": "LangGenius, Inc.",
     "versions": [
       {
         "pricing": "Sandbox Free；Professional $59/月或 $590/year；Team $159/月或 $1590/year；Enterprise 定制；Self-hosted Community Edition",
@@ -897,7 +897,7 @@ export const comparisonCatalog = [
     "id": "langchain",
     "name": "LangChain",
     "category": "agent",
-    "developer": "开源社区",
+    "developer": "LangChain, Inc.",
     "versions": [
       {
         "pricing": "LangChain/LangGraph 为开源软件；LangSmith 开发者版每席位 $0，Plus 每席位 $39，企业版定制",
@@ -958,7 +958,7 @@ export const comparisonCatalog = [
     "versions": [
       {
         "pricing": "Free $0 / Pro $20/月 / Max $200/月 / Teams $80/月 plan + $40/月每 full dev seat / Enterprise 定制",
-        "models": "Devin Desktop、Devin Cloud、SWE 1.6、OpenAI/Claude/Gemini frontier models 与开源模型（以官方计划可用为准）"
+        "models": "Devin Desktop、Devin Cloud、SWE 1.7、OpenAI/Claude/Gemini frontier models 与开源模型（以官方计划可用为准）"
       }
     ],
     "personalExperience": {
@@ -1085,12 +1085,12 @@ export const comparisonCatalog = [
   },
   {
     "id": "mistral",
-    "name": "Mistral / Le Chat",
+    "name": "Mistral / Vibe (former Le Chat)",
     "category": "llm",
     "developer": "Mistral AI (法国)",
     "versions": [
       {
-        "pricing": "API 按模型 token 计费；Large 3 官方模型卡列出 $0.5/M input、$1.5/M output",
+        "pricing": "Vibe：Free / Pro $14.99/月 / Team $24.99/用户/月 / Enterprise 定制；API 按模型 token 另计",
         "models": "Mistral Medium 3.5, Mistral Small 4, Mistral Large 3, Ministral 3"
       }
     ],
@@ -1356,7 +1356,7 @@ export const comparisonCatalog = [
     "developer": "Anthropic",
     "versions": [
       {
-        "pricing": "MIT 开源 SDK；运行成本取决于 Claude Code / Anthropic API / 订阅或自定义 CLI 路径",
+        "pricing": "MIT 开源 SDK；模型用量按 Anthropic API、Amazon Bedrock、Google Cloud 或 Microsoft Foundry 计费",
         "models": "Claude Code as a library；Python and TypeScript SDK 暴露 Claude Code 的工具、agent loop 和 context management"
       }
     ],
@@ -1395,7 +1395,7 @@ export const comparisonCatalog = [
     "versions": [
       {
         "pricing": "Free for personal use：1,000 API calls/月；Pro $10/seat/月，含 5,000 free API calls/seat/月，额外 $10/1,000 calls",
-        "models": "无需 LLM，提供远程 MCP、CLI + Skills 与私有仓库/团队计划"
+        "models": "远程端点 https://mcp.context7.com/mcp；当前推荐用 npx ctx7 setup 配置 MCP 或 Skills"
       }
     ],
     "personalExperience": {
@@ -1452,7 +1452,7 @@ export const comparisonCatalog = [
     "versions": [
       {
         "pricing": "MIT 开源本地 server；远程 OAuth 入口随 GitHub Copilot/IDE 支持而定，GitHub API 仍受权限与 rate limits 约束",
-        "models": "无需 LLM，封装 GitHub API 的 remote/local MCP server"
+        "models": "远程端点 https://api.githubcopilot.com/mcp/；也支持本地 Docker/二进制 server"
       }
     ],
     "personalExperience": {
@@ -1522,7 +1522,7 @@ export const comparisonCatalog = [
   },
   {
     "id": "openmemory-mcp",
-    "name": "OpenMemory / Mem0 MCP",
+    "name": "Mem0 MCP",
     "category": "mcp",
     "developer": "Mem0",
     "versions": [
@@ -1566,7 +1566,7 @@ export const comparisonCatalog = [
     "versions": [
       {
         "pricing": "Postman 官方 MCP Server；Postman 工作区、计划和 API 权限另行适用",
-        "models": "Minimal / Code / Full tool configurations, 100+ Postman tools"
+        "models": "Minimal / Code / Full / Learn tool configurations, 100+ Postman tools"
       }
     ],
     "personalExperience": {
@@ -1581,7 +1581,7 @@ export const comparisonCatalog = [
     "id": "atlassian-mcp",
     "name": "Atlassian Rovo MCP",
     "category": "mcp",
-    "developer": "Atlassian / Sooperset community alternative",
+    "developer": "Atlassian",
     "versions": [
       {
         "pricing": "官方 Atlassian Rovo MCP Server；当前 Remote MCP 不单独消耗 Rovo credits，但 Beta tools 未来可能计入 Rovo credits",
@@ -1604,7 +1604,7 @@ export const comparisonCatalog = [
     "versions": [
       {
         "pricing": "官方 Remote MCP Server；使用受 Supabase 项目、组织权限和计划限制；server pre-1.0",
-        "models": "Database, docs, debugging, development, functions, storage, branching feature groups"
+        "models": "Account management, database, docs, debugging, development, functions, storage and branching feature groups；Storage 默认禁用"
       }
     ],
     "personalExperience": {
@@ -1712,7 +1712,7 @@ export const comparisonCatalog = [
   },
   {
     "id": "docker-mcp",
-    "name": "Docker MCP",
+    "name": "Docker MCP Toolkit",
     "category": "mcp",
     "developer": "Docker",
     "versions": [
@@ -1756,7 +1756,7 @@ export const comparisonCatalog = [
     "versions": [
       {
         "pricing": "Cloudflare managed remote MCP servers；实际资源按 Cloudflare 产品与计划计费",
-        "models": "Cloudflare API Code Mode server and product-specific MCP servers"
+        "models": "Cloudflare API Code Mode server https://mcp.cloudflare.com/mcp and product-specific MCP servers"
       }
     ],
     "personalExperience": {
@@ -1788,7 +1788,7 @@ export const comparisonCatalog = [
   },
   {
     "id": "elasticsearch-mcp",
-    "name": "Elasticsearch MCP",
+    "name": "Elastic Agent Builder MCP server",
     "category": "mcp",
     "developer": "Elastic",
     "versions": [
@@ -1809,7 +1809,7 @@ export const comparisonCatalog = [
     "id": "autogen",
     "name": "AutoGen",
     "category": "agent",
-    "developer": "Microsoft",
+    "developer": "Microsoft Research / community-managed",
     "versions": [
       {
         "pricing": "开源代码可用；模型/API 成本另计；GitHub 仓库标注为维护模式",
@@ -1826,13 +1826,13 @@ export const comparisonCatalog = [
   },
   {
     "id": "zapier-ai",
-    "name": "Zapier AI Automation",
+    "name": "Zapier",
     "category": "agent",
     "developer": "Zapier",
     "versions": [
       {
         "pricing": "免费版 $0/月，每月含 100 个任务；专业版 $19.99/月起；团队版 $69/月起",
-        "models": "Zap 工作流、Zapier MCP Beta、SDK、Agents、Chatbots、Tables 与 Forms"
+        "models": "Zap 工作流、Zapier MCP、SDK Beta、Agents、Chatbots、Tables 与 Forms"
       }
     ],
     "personalExperience": {
@@ -1850,7 +1850,7 @@ export const comparisonCatalog = [
     "developer": "Make",
     "versions": [
       {
-        "pricing": "Free $0/mo，最多 1,000 credits/month；Core $9/mo、Pro $16/mo、Teams $29/mo 默认按 10k credits/mo 展示",
+        "pricing": "Free $0，1,000 credits/month；统一 Make Plan 从 $9/月起（默认 5,000 credits）；Company 定制",
         "models": "可视化工作流构建器、3000+ apps、350+ AI apps"
       }
     ],
@@ -1866,7 +1866,7 @@ export const comparisonCatalog = [
     "id": "camel-ai",
     "name": "CAMEL-AI",
     "category": "agent",
-    "developer": "CAMEL-AI.org",
+    "developer": "CAMEL-AI open-source community",
     "versions": [
       {
         "pricing": "Apache 2.0 开源框架；模型 API、向量库、工具和部署成本另计",
@@ -1885,7 +1885,7 @@ export const comparisonCatalog = [
     "id": "agentscope",
     "name": "AgentScope",
     "category": "agent",
-    "developer": "agentscope-ai / open-source community",
+    "developer": "AgentScope / Alibaba Tongyi Lab",
     "versions": [
       {
         "pricing": "Apache License 2.0 开源框架；模型供应商和工具运行时成本另计",
@@ -1964,7 +1964,7 @@ export const comparisonCatalog = [
     "developer": "Cohere",
     "versions": [
       {
-        "pricing": "Command A / R+ 按 input/output token 计费；A 与 R+ 当前均列出 $2.5/M input、$10/M output",
+        "pricing": "Command A+ 提供 Apache 2.0 open weights；API 可在 rate limits 内试用，生产通过 Model Vault / enterprise 路径核价",
         "models": "Command A+ 05-2026, Command A 03-2025, Command R+ 08-2024, Command R 08-2024"
       }
     ],
@@ -1984,7 +1984,7 @@ export const comparisonCatalog = [
     "versions": [
       {
         "pricing": "通过 Amazon Bedrock / Nova pricing 按 tier、区域、模型和 modality 计费；Nova 2 能力以 nova2 user guide 为准",
-        "models": "Amazon Nova 2 Lite, Nova 2 multimodal embeddings, Nova Premier/Pro/Lite/Micro, Nova Canvas/Reel/Sonic"
+        "models": "Amazon Nova 2 Lite, Amazon Nova Multimodal Embeddings, Nova Premier/Pro/Lite/Micro, Nova Canvas/Reel/Sonic"
       }
     ],
     "personalExperience": {
@@ -2002,7 +2002,7 @@ export const comparisonCatalog = [
     "developer": "腾讯",
     "versions": [
       {
-        "pricing": "Hy3 preview / TokenHub 新入口优先确认；旧平台免费资源包和后付费规则仍适用于存量模型",
+        "pricing": "Hy3 正式版 / TokenHub 新入口优先确认；旧平台免费资源包和后付费规则仅适用于存量模型",
         "models": "Hy3：192K 最大输入、128K 最大输出、295B/21B MoE、no_think/think_low/think_high"
       }
     ],
@@ -2018,10 +2018,10 @@ export const comparisonCatalog = [
     "id": "frontend-design-skill",
     "name": "frontend-app-builder",
     "category": "skill",
-    "developer": "OpenAI curated build-web-apps plugin",
+    "developer": "OpenAI",
     "versions": [
       {
-        "pricing": "随当前 Codex 插件环境可用；无独立免费额度声明",
+        "pricing": "需要安装并启用 OpenAI Build Web Apps plugin；无独立免费额度声明",
         "models": "frontend-app-builder 处理新前端应用、dashboard、game、creative website 和 redesign/restyle/modernization"
       }
     ],
@@ -2037,10 +2037,10 @@ export const comparisonCatalog = [
     "id": "webapp-testing-skill",
     "name": "frontend-testing-debugging",
     "category": "skill",
-    "developer": "OpenAI curated build-web-apps plugin",
+    "developer": "OpenAI",
     "versions": [
       {
-        "pricing": "随当前 Codex 插件环境可用；无独立免费额度声明",
+        "pricing": "需要安装并启用 OpenAI Build Web Apps plugin；无独立免费额度声明",
         "models": "优先使用 Browser 插件；仅在 Browser 不可用或受阻时降级到 Playwright"
       }
     ],
@@ -2056,10 +2056,10 @@ export const comparisonCatalog = [
     "id": "mcp-builder-skill",
     "name": "building-mcp-server-on-cloudflare",
     "category": "skill",
-    "developer": "Cloudflare / OpenAI curated plugin",
+    "developer": "Cloudflare",
     "versions": [
       {
-        "pricing": "随当前 Cloudflare/Codex 插件环境可用；Cloudflare Workers 和外部 API 成本需单独评估",
+        "pricing": "需要单独安装并启用；Cloudflare Workers 和外部 API 成本需单独评估",
         "models": "building-mcp-server-on-cloudflare 聚焦 remote MCP servers on Cloudflare Workers"
       }
     ],
@@ -2094,7 +2094,7 @@ export const comparisonCatalog = [
     "id": "semgrep-skill",
     "name": "semgrep",
     "category": "skill",
-    "developer": "Semgrep / Semgrep Skills",
+    "developer": "Semgrep",
     "versions": [
       {
         "pricing": "semgrep/skills 公开仓库提供 semgrep Skill；需要通过 semgrep/skills 或技能管理器单独安装，无独立额度承诺",
@@ -2265,10 +2265,10 @@ export const comparisonCatalog = [
     "id": "supabase-skill",
     "name": "supabase",
     "category": "skill",
-    "developer": "Supabase / OpenAI curated plugin",
+    "developer": "Supabase",
     "versions": [
       {
-        "pricing": "随当前 Supabase 插件环境可用；Supabase 项目和外部服务按官方账户计费",
+        "pricing": "MIT 开源，需要单独安装；Supabase 项目和外部服务按官方账户计费",
         "models": "Supabase Database, Auth, Edge Functions, Realtime, Storage, Vectors, Cron, Queues, CLI and MCP server"
       }
     ],
@@ -2303,15 +2303,15 @@ export const comparisonCatalog = [
     "id": "ui-ux-pro-max-skill",
     "name": "ui-ux-pro-max",
     "category": "skill",
-    "developer": "历史概念 / 公开来源不足",
+    "developer": "nextlevelbuilder",
     "versions": [
       {
-        "pricing": "未发现可公开核验的同名 Skill；建议并入 frontend-app-builder / Product Design ideate",
-        "models": "历史概念；UI 构思和实现应使用真实设计工作流 Skill"
+        "pricing": "Basic 版 MIT 开源；Premium 版采用商业许可，安装与升级以官方仓库说明为准",
+        "models": "设计系统生成、UI styles、color palettes、font pairings、charts、tech stacks 与 UX guidelines"
       }
     ],
     "personalExperience": {
-      "rating": 2.5
+      "rating": 4
     },
     "tags": [
       "Skills",
@@ -2360,7 +2360,7 @@ export const comparisonCatalog = [
     "id": "research-skill",
     "name": "research",
     "category": "skill",
-    "developer": "Product Design / AnyCap",
+    "developer": "Multiple unrelated skill sources",
     "versions": [
       {
         "pricing": "随 Product Design 插件环境可用；需要公共或内部来源访问",

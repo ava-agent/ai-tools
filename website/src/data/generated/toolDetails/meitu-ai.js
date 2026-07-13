@@ -1,7 +1,7 @@
 // Generated from src/data/tools.js.
 export default {
   "verificationStatus": "verified",
-  "lastVerified": "2026-07-08",
+  "lastVerified": "2026-07-13",
   "sources": [
     "https://www.meituxiuxiu.com",
     "https://pc.meitu.com/en/pc",
@@ -41,7 +41,7 @@ export default {
   "funRanking": "夯",
   "personalExperience": {
     "rating": 4,
-    "insights": "截至 2026-07-08，美图更适合描述为带有明确 AI 工具的消费级图像编辑套件，而不是泛泛的低价修图软件。官方页面突出 AI 消除、AI 抠图、照片扩展、人像和绘画能力，订阅条款则显示多个付费权益包并存。",
+    "insights": "截至 2026-07-13，美图更适合描述为带有明确 AI 工具的消费级图像编辑套件，而不是泛泛的低价修图软件。官方页面突出 AI 消除、AI 抠图、照片扩展、人像和绘画能力，订阅条款则显示多个付费权益包并存。",
     "pitfalls": [
       "付费前在产品内确认具体美图 VIP 或 PC 权益",
       "不要默认一个订阅能解锁移动端、PC 和 AI Agent 的全部工作流",

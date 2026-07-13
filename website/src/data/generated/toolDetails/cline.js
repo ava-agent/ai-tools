@@ -1,7 +1,7 @@
 // Generated from src/data/tools.js.
 export default {
   "verificationStatus": "verified",
-  "lastVerified": "2026-07-07",
+  "lastVerified": "2026-07-13",
   "sources": [
     "https://cline.bot/pricing",
     "https://docs.cline.bot/getting-started/cline-provider",
@@ -11,7 +11,7 @@ export default {
   "name": "Cline",
   "category": "cli",
   "subcategory": "VS Code插件",
-  "developer": "开源社区",
+  "developer": "Cline Bot Inc.",
   "logo": null,
   "versions": [
     {
@@ -22,7 +22,7 @@ export default {
     }
   ],
   "freeQuota": "个人开源扩展免费；模型调用、Cline credits、ClinePass 或自带 provider 费用另计",
-  "contextWindow": "200K-400K+ (取决于模型)",
+  "contextWindow": "取决于模型，部分 provider/model 支持最高 1M context",
   "chineseSupport": 3,
   "pros": [
     "VS Code 扩展与 CLI 路径成熟，JetBrains 扩展需按当前企业/产品页确认",
@@ -46,7 +46,7 @@ export default {
   "funRanking": "夯",
   "personalExperience": {
     "rating": 3,
-    "insights": "截至 2026-07-07，Cline 官方价格页说明个人开源扩展免费、只按 AI inference 付费；文档将 Cline (usage-billing) 和 ClinePass 明确拆成两个 provider。它仍是强力的 VS Code/CLI Agent，但预算应按 credits、ClinePass 或自带 provider 分开管理。",
+    "insights": "截至 2026-07-13，Cline 官方价格页说明个人开源扩展免费、只按 AI inference 付费；文档将 Cline (usage-billing) 和 ClinePass 明确拆成两个 provider。它仍是强力的 VS Code/CLI Agent，但预算应按 credits、ClinePass 或自带 provider 分开管理。",
     "pitfalls": [
       "先确认使用 Cline (usage-billing)、ClinePass 还是自带 API key",
       "学习曲线",

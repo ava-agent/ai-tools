@@ -1,7 +1,7 @@
 // Generated from src/data/tools.js.
 export default {
   "verificationStatus": "verified",
-  "lastVerified": "2026-07-07",
+  "lastVerified": "2026-07-13",
   "sources": [
     "https://platform.minimax.io/docs/guides/text-generation",
     "https://platform.minimax.io/docs/guides/pricing-paygo",
@@ -41,7 +41,7 @@ export default {
   "funRanking": "夯夯",
   "personalExperience": {
     "rating": 4.5,
-    "insights": "截至 2026-07-07，MiniMax 官方文档显示 MiniMax-M3 是最新 M-series language model，支持 1M context，并按 ≤512k / >512k 输入和 Standard / Priority 分档计费。它适合多语言文本、语音和多模态应用组合，但不要再用 M2.1 旧型号和单一低价口径做预算。",
+    "insights": "截至 2026-07-13，MiniMax 官方文档显示 MiniMax-M3 是最新 M-series language model，支持 1M context，并按 ≤512k / >512k 输入和 Standard / Priority 分档计费。它适合多语言文本、语音和多模态应用组合，但不要再用 M2.1 旧型号和单一低价口径做预算。",
     "pitfalls": [
       "按文本、语音、视频等产品分别核价",
       "不要继续用 M2.1 作为当前主模型口径",

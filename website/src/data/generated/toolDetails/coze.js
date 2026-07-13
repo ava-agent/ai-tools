@@ -1,7 +1,7 @@
 // Generated from src/data/tools.js.
 export default {
-  "verificationStatus": "verified",
-  "lastVerified": "2026-07-08",
+  "verificationStatus": "needs-review",
+  "lastVerified": "2026-07-13",
   "sources": [
     "https://www.coze.com/premium",
     "https://www.coze.com/open/docs/guides/subscription",
@@ -11,12 +11,12 @@ export default {
   "name": "Coze",
   "category": "agent",
   "subcategory": "无代码平台",
-  "developer": "字节跳动",
+  "developer": "Global: SPRING (SG) PTE. LTD. / CN: 字节跳动（扣子）",
   "logo": null,
   "versions": [
     {
       "type": "Global",
-      "pricing": "免费版每天 10 积分；Premium Lite 每天 100 积分；Premium $19；Premium Plus $39",
+      "pricing": "Global 计划和 credits 以登录后的订阅与账单页为准；公开页面不足以稳定核验固定价格",
       "models": "多模型 Agent / Workflow / Plugin",
       "link": "https://www.coze.com"
     },
@@ -27,13 +27,13 @@ export default {
       "link": "https://coze.cn"
     }
   ],
-  "freeQuota": "Global Free：10 credits/day；Premium plans 标注 3-day free trial，额度按模型调用和能力消耗",
+  "freeQuota": "Global/CN 免费额度和付费 credits 以登录后的当前计划页为准，额度按模型调用和能力消耗",
   "contextWindow": "取决于模型",
   "chineseSupport": 5,
   "pros": [
     "面向 AI Agent 的低代码/无代码构建平台",
-    "Global 版 Free 每日 10 credits，Premium Lite 每日 100 credits",
-    "Premium 和 Premium Plus 分别提供更高日额度，官方页列出 $19 和 $39 档",
+    "Global 与 CN 由不同法律主体和产品入口运营，采购时应分别确认条款",
+    "计划名、credits 与价格以登录后的订阅和账单页为准",
     "官方文档将 Premium plan、message credits、Coze tokens、API/Web SDK 与非 SDK 场景计费分开说明",
     "工作流、插件、知识库和 API/Web SDK 可组合",
     "适合快速把 Bot、Workflow 和外部工具串成可发布应用"
@@ -45,10 +45,10 @@ export default {
     "复杂多步骤 Agent 仍需要日志、回放和人工验收"
   ],
   "bestFor": "快速搭建 Bot、轻量工作流和可发布的 Agent 应用",
-  "funRanking": "夯",
+  "funRanking": "待复核",
   "personalExperience": {
     "rating": 4,
-    "insights": "截至 2026-07-08，Coze 更适合当作低代码 Agent 发布平台评估：先用 Free 10 credits/day 做原型，再按 Premium Lite 100 credits/day 或更高档估算真实调用成本。官方 docs 同时区分 message credits、Coze tokens、API/Web SDK 和非 SDK 场景费用，不要只看“能搭起来”，要看账单页、日志、异常恢复和渠道发布后的维护成本。",
+    "insights": "截至 2026-07-13，Coze 更适合当作低代码 Agent 发布平台评估。公开页面不足以稳定核验固定计划价格，且 Global 与 CN 法律主体不同；正式选型应以登录后账单页、日志、异常恢复和渠道发布后的维护成本为准。",
     "pitfalls": [
       "credit 模型需要实测",
       "CN/Global 计费和能力可能不同",
@@ -73,9 +73,9 @@ export default {
     "T": "Dify、n8n、Make 等平台"
   },
   "tags": [
-    "推荐",
     "Agent",
     "无代码",
-    "字节"
+    "字节",
+    "待复核"
   ]
 }

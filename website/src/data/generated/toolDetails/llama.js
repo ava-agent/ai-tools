@@ -1,7 +1,7 @@
 // Generated from src/data/tools.js.
 export default {
   "verificationStatus": "verified",
-  "lastVerified": "2026-07-08",
+  "lastVerified": "2026-07-13",
   "sources": [
     "https://www.llama.com/models/llama-4/",
     "https://www.llama.com/docs/model-cards-and-prompt-formats/llama4/",
@@ -42,7 +42,7 @@ export default {
   "funRanking": "夯夯",
   "personalExperience": {
     "rating": 4,
-    "insights": "截至 2026-07-08，Meta 官方 Llama 4 页面、模型卡和 Meta AI 博客列出 Scout 与 Maverick：两者都是多模态 MoE 模型，Scout 标注 10M context，Maverick 标注 1M context；Behemoth 仍应作为 preview/teacher model 线索而非已发布主力。本站不再把它描述成无条件免费开源，而改为开放权重 + 自托管/云成本 + 许可约束的口径。",
+    "insights": "截至 2026-07-13，Meta 官方 Llama 4 页面、模型卡和 Meta AI 博客列出 Scout 与 Maverick：两者都是多模态 MoE 模型，Scout 标注 10M context，Maverick 标注 1M context；Behemoth 仍应作为 preview/teacher model 线索而非已发布主力。本站不再把它描述成无条件免费开源，而改为开放权重 + 自托管/云成本 + 许可约束的口径。",
     "pitfalls": [
       "先核 Meta Llama 许可与使用场景",
       "长上下文能力要在目标部署上实测",

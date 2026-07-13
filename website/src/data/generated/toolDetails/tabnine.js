@@ -1,7 +1,7 @@
 // Generated from src/data/tools.js.
 export default {
   "verificationStatus": "verified",
-  "lastVerified": "2026-07-08",
+  "lastVerified": "2026-07-13",
   "sources": [
     "https://www.tabnine.com/pricing/",
     "https://www.tabnine.com/"
@@ -41,7 +41,7 @@ export default {
   "funRanking": "夯",
   "personalExperience": {
     "rating": 3,
-    "insights": "截至 2026-07-08，Tabnine 官方 pricing 将 Code Assistant 标为 $39/用户/月（Annual subscription），Agentic Platform 标为 $59/用户/月，并强调私有部署、Context Engine、CLI、MCP 工具调用和合规能力；Tabnine-provided LLM access 另按实际 provider price + 5% handling fee 计。它更像企业 AI coding platform，而不是个人低价补全插件。",
+    "insights": "截至 2026-07-13，Tabnine 官方 pricing 将 Code Assistant 标为 $39/用户/月（Annual subscription），Agentic Platform 标为 $59/用户/月，并强调私有部署、Context Engine、CLI、MCP 工具调用和合规能力；Tabnine-provided LLM access 另按实际 provider price + 5% handling fee 计。它更像企业 AI coding platform，而不是个人低价补全插件。",
     "pitfalls": [
       "先确认合同价格、LLM access 计费和部署形态",
       "不要继续用旧的 Dev 低价档或免费版口径做采购预算"

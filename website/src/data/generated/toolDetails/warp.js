@@ -1,7 +1,7 @@
 // Generated from src/data/tools.js.
 export default {
   "verificationStatus": "verified",
-  "lastVerified": "2026-07-08",
+  "lastVerified": "2026-07-13",
   "sources": [
     "https://www.warp.dev/pricing",
     "https://docs.warp.dev/support-and-community/plans-and-billing/plans-pricing-refunds/"
@@ -41,7 +41,7 @@ export default {
   "funRanking": "夯",
   "personalExperience": {
     "rating": 3.5,
-    "insights": "截至 2026-07-08，Warp 官方 pricing 是 Free、Build、Max、Business、Enterprise，并用 credits 管理 cloud/local agents。Free 可 BYOK，但 docs 明确不含 Warp Agent bundled AI usage；如果要完整 Agent 能力，至少应按 Build $20/月、1,500 credits 和 reload/spend cap 估算。",
+    "insights": "截至 2026-07-13，Warp 官方 pricing 是 Free、Build、Max、Business、Enterprise，并用 credits 管理 cloud/local agents。Free 可 BYOK，但 docs 明确不含 Warp Agent bundled AI usage；如果要完整 Agent 能力，至少应按 Build $20/月、1,500 credits 和 reload/spend cap 估算。",
     "pitfalls": [
       "不要再用旧请求数或旧档位口径预算",
       "先估算 Build credits 是否覆盖真实 cloud/local agent 用量"

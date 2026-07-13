@@ -1,7 +1,7 @@
 // Generated from src/data/tools.js.
 export default {
   "verificationStatus": "verified",
-  "lastVerified": "2026-07-07",
+  "lastVerified": "2026-07-13",
   "sources": [
     "https://developers.openai.com/api/docs/guides/video-generation",
     "https://developers.openai.com/api/docs/pricing",
@@ -53,7 +53,7 @@ export default {
   "funRanking": "夯夯",
   "personalExperience": {
     "rating": 3,
-    "insights": "截至 2026-07-07，OpenAI 官方 Video generation 文档明确提示 Sora 2 video generation models 与 Videos API 已 deprecated，并将于 2026-09-24 shut down；模型页仍列出 sora-2 / sora-2-pro 与按秒计费信息。现阶段它更适合短期概念验证和迁移评估，而不是新建长期视频 API 依赖。",
+    "insights": "截至 2026-07-13，OpenAI 官方 Video generation 文档明确提示 Sora 2 video generation models 与 Videos API 已 deprecated，并将于 2026-09-24 shut down；模型页仍列出 sora-2 / sora-2-pro 与按秒计费信息。现阶段它更适合短期概念验证和迁移评估，而不是新建长期视频 API 依赖。",
     "pitfalls": [
       "不要把 Sora 2 作为新的长期 API 依赖",
       "先按 2026-09-24 下线日期制定迁移计划",

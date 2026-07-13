@@ -1,7 +1,7 @@
 // Generated from src/data/tools.js.
 export default {
   "verificationStatus": "verified",
-  "lastVerified": "2026-07-07",
+  "lastVerified": "2026-07-13",
   "sources": [
     "https://elevenlabs.io/docs/overview/models",
     "https://elevenlabs.io/docs/changelog/2026/6/8",
@@ -57,7 +57,7 @@ export default {
     "verdict": "适合专业配音、多语言旁白和语音产品原型，商用必须进入付费授权和 credits 成本核算。",
     "bestFor": "有声书、视频旁白、产品语音、多语言配音、语音 Agent",
     "avoidIf": "你只想用免费层做商业素材，或需要完全离线的声纹/数据控制",
-    "mainRisk": "Free 10,000 credits 不含 commercial license；旧 scribe_v1、eleven_monolingual_v1、eleven_multilingual_v1 将于 2026-07-09 移除，且 TTS/API/Agents/Studio 的计费口径不同。",
+    "mainRisk": "Free 10,000 credits 不含 commercial license；旧 scribe_v1、eleven_monolingual_v1、eleven_multilingual_v1 已到官方移除日期，且 TTS/API/Agents/Studio 的计费口径不同。",
     "alternatives": [
       "Suno",
       "Udio",

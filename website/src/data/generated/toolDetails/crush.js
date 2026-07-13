@@ -1,7 +1,7 @@
 // Generated from src/data/tools.js.
 export default {
   "verificationStatus": "verified",
-  "lastVerified": "2026-07-07",
+  "lastVerified": "2026-07-13",
   "sources": [
     "https://github.com/charmbracelet/crush",
     "https://charm.land/blog/crush-comes-home/",
@@ -11,7 +11,7 @@ export default {
   "name": "Crush",
   "category": "cli",
   "subcategory": "开源CLI",
-  "developer": "Charm Bracelet",
+  "developer": "Charmbracelet, Inc. (Charm)",
   "logo": null,
   "versions": [
     {
@@ -42,7 +42,7 @@ export default {
   "funRanking": "夯夯",
   "personalExperience": {
     "rating": 4,
-    "insights": "截至 2026-07-07，Charm 官方 GitHub 将 Crush 描述为可在终端中运行的 AI coding companion，支持 Multi-Model、session-based context、LSP 和 MCP。Charm Hyper 另有 Free 100 Hypercredits/月、$20/月订阅、预付 bundles 和 1 Hypercredit = 5¢ 口径，因此应把 Crush 本体、BYOK/provider 成本和 Hyper credits 分开评估。",
+    "insights": "截至 2026-07-13，Charm 官方 GitHub 将 Crush 描述为可在终端中运行的 AI coding companion，支持 Multi-Model、session-based context、LSP 和 MCP。Charm Hyper 另有 Free 100 Hypercredits/月、$20/月订阅、预付 bundles 和 1 Hypercredit = 5¢ 口径，因此应把 Crush 本体、BYOK/provider 成本和 Hyper credits 分开评估。",
     "pitfalls": [
       "不要把开源工具本体等同于免费推理",
       "先确认走 BYOK、provider API 还是 Charm Hyper credits"

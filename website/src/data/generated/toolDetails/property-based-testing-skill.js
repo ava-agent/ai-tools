@@ -1,7 +1,7 @@
 // Generated from src/data/tools.js.
 export default {
   "verificationStatus": "verified",
-  "lastVerified": "2026-07-08",
+  "lastVerified": "2026-07-13",
   "sources": [
     "https://trailofbits.com/skills/property-based-testing/",
     "邻近本地 skill: superpowers:test-driven-development",
@@ -41,7 +41,7 @@ export default {
   "funRanking": "归档",
   "personalExperience": {
     "rating": 3.5,
-    "insights": "截至 2026-07-08，property-based-testing 有 Trail of Bits 公开上游，覆盖 Hypothesis、fast-check、proptest、Echidna 和 roundtrip property 等模式；实际落地仍要按语言生态选择库并固定失败样本。",
+    "insights": "截至 2026-07-13，property-based-testing 有 Trail of Bits 公开上游，覆盖 Hypothesis、fast-check、proptest、Echidna 和 roundtrip property 等模式；实际落地仍要按语言生态选择库并固定失败样本。",
     "pitfalls": [
       "先选择语言对应测试库",
       "固定随机种子",

@@ -1,7 +1,7 @@
 // Generated from src/data/tools.js.
 export default {
   "verificationStatus": "verified",
-  "lastVerified": "2026-07-07",
+  "lastVerified": "2026-07-13",
   "sources": [
     "https://www.udio.com/pricing",
     "https://help.udio.com/en/articles/10739134-credits-and-credit-limits",
@@ -34,17 +34,18 @@ export default {
     "a la carte credits 可在 pricing 页购买且不会过期"
   ],
   "cons": [
+    "与 UMG 协议变更后，Udio 已禁用音频、视频和 stems 下载，不适合需要导出文件的生产流程",
     "免费账号 130 秒歌曲有每日 3 首限制",
     "subscription trials 不提高 credit limit，试用和正式订阅权益不同",
     "trial 不能用来验证 Pro 额度或高产量生产能力",
     "credits 不结转，订阅结束会回到 free-account credit limits",
     "商用、版权和平台分发仍需按 Udio 条款和内容用途审查"
   ],
-  "bestFor": "原创音乐创作、BGM 生成、歌曲制作",
+  "bestFor": "平台内音乐创意试验、歌曲草稿和编辑探索",
   "funRanking": "夯夯",
   "personalExperience": {
     "rating": 4,
-    "insights": "截至 2026-07-07，Udio 官方帮助中心比 pricing 页更适合核验 credits：Free 是每日 10 credits + 每月 100 credits 上限，Standard 是每月 2,400 credits，Pro 是每月 6,000 credits；subscription trial 最长 7 天但不提高额度，也没有 Pro trial。页面不再用“每月 10 首”或主观质量对比做选型结论。",
+    "insights": "截至 2026-07-13，Udio 官方帮助中心比 pricing 页更适合核验 credits：Free 是每日 10 credits + 每月 100 credits 上限，Standard 是每月 2,400 credits，Pro 是每月 6,000 credits；subscription trial 最长 7 天但不提高额度，也没有 Pro trial。页面不再用“每月 10 首”或主观质量对比做选型结论。",
     "pitfalls": [
       "按 32 秒/130 秒歌曲长度估算 credits",
       "trial 不等于正式订阅额度，也不能代表 Pro 额度",

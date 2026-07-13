@@ -1,7 +1,7 @@
 // Generated from src/data/tools.js.
 export default {
   "verificationStatus": "verified",
-  "lastVerified": "2026-07-08",
+  "lastVerified": "2026-07-13",
   "sources": [
     "https://openai.github.io/openai-agents-python/",
     "https://developers.openai.com/api/docs/guides/agents",
@@ -53,7 +53,7 @@ export default {
   "funRanking": "夯",
   "personalExperience": {
     "rating": 4,
-    "insights": "截至 2026-07-08，OpenAI Agents SDK 的价值在于 code-first、抽象少、上手快，同时把 Handoffs、Guardrails 和 Tracing 这些生产 Agent 必需件放进官方路径。旧文案把它写成只支持 OpenAI 模型已经不准确；现在应按 provider-agnostic 框架来描述，并提醒成本取决于具体 provider。",
+    "insights": "截至 2026-07-13，OpenAI Agents SDK 的价值在于 code-first、抽象少、上手快，同时把 Handoffs、Guardrails 和 Tracing 这些生产 Agent 必需件放进官方路径。旧文案把它写成只支持 OpenAI 模型已经不准确；现在应按 provider-agnostic 框架来描述，并提醒成本取决于具体 provider。",
     "pitfalls": [
       "不要把 provider-agnostic 理解成所有模型能力一致",
       "Tracing 和 Guardrails 要按生产隐私与安全策略配置",

@@ -1,7 +1,7 @@
 // Generated from src/data/tools.js.
 export default {
   "verificationStatus": "verified",
-  "lastVerified": "2026-07-07",
+  "lastVerified": "2026-07-13",
   "sources": [
     "https://platform.claude.com/docs/en/about-claude/models/overview",
     "https://claude.com/pricing",
@@ -22,7 +22,7 @@ export default {
     }
   ],
   "freeQuota": "Claude.ai Free 有限使用；API 无固定永久免费额度，按官方价格页计费",
-  "contextWindow": "默认 200K；部分模型和 API 路径支持更长上下文，以上线文档为准",
+  "contextWindow": "Claude Fable 5 / Opus 4.8 / Sonnet 5 为 1M；Claude Haiku 4.5 为 200K",
   "chineseSupport": 4,
   "decisionSummary": {
     "verdict": "强代码、强推理、长上下文的一线通用模型，适合复杂工程和严肃写作，但成本和额度要按计划管理。",
@@ -30,7 +30,7 @@ export default {
     "avoidIf": "你需要极低 API 成本、国内无障碍访问，或只做轻量日常问答",
     "mainRisk": "Claude.ai 计划、API 价格和具体可用模型变化快，不能按旧 Sonnet/Opus 版本号做长期判断",
     "alternatives": [
-      "GPT-5.5 / OpenAI",
+      "GPT-5.6 / OpenAI",
       "Gemini",
       "DeepSeek"
     ]
@@ -52,7 +52,7 @@ export default {
   "funRanking": "夯夯夯",
   "personalExperience": {
     "rating": 5,
-    "insights": "截至 2026-07-07，Anthropic 模型页显示 Claude Fable 5、Opus 4.8、Sonnet 5、Haiku 4.5，并把 API 价格、context 和模型 ID 分开说明；Claude.com pricing 也将 Free/Pro/Max、Team 标准席/Premium 席和 Enterprise 分层。Claude 仍是复杂代码、长上下文方案和严肃写作的强选，但要按 seat、usage 和 API 价格管理成本。",
+    "insights": "截至 2026-07-13，Anthropic 模型页显示 Claude Fable 5、Opus 4.8、Sonnet 5、Haiku 4.5，并把 API 价格、context 和模型 ID 分开说明；Claude.com pricing 也将 Free/Pro/Max、Team 标准席/Premium 席和 Enterprise 分层。Claude 仍是复杂代码、长上下文方案和严肃写作的强选，但要按 seat、usage 和 API 价格管理成本。",
     "pitfalls": [
       "按官方模型页确认当前可用型号",
       "输出成本高，长任务先估算 token",
@@ -63,7 +63,7 @@ export default {
     "S": "代码能力、推理稳定、长上下文",
     "W": "成本和额度管理压力",
     "O": "企业知识工作和工程 Agent",
-    "T": "GPT-5.5、Gemini、国产低价模型"
+    "T": "GPT-5.6、Gemini、国产低价模型"
   },
   "tags": [
     "推荐",

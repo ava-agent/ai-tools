@@ -1,7 +1,7 @@
 // Generated from src/data/tools.js.
 export default {
   "verificationStatus": "verified",
-  "lastVerified": "2026-07-08",
+  "lastVerified": "2026-07-13",
   "sources": [
     "https://docs.gitlab.com/user/gitlab_duo/model_context_protocol/mcp_server/",
     "https://docs.gitlab.com/user/gitlab_duo/model_context_protocol/mcp_server_tools/",
@@ -47,7 +47,7 @@ export default {
   "funRanking": "夯",
   "personalExperience": {
     "rating": 4,
-    "insights": "截至 2026-07-08，GitLab MCP 已有官方 Beta 文档，应按 Premium, Ultimate、GitLab.com, Self-Managed and Dedicated、OAuth DCR、HTTP /api/v4/mcp 和工具权限来评估。它能触达真实 MR、issue 和 pipeline，因此风险管理比“能不能连上”更重要。",
+    "insights": "截至 2026-07-13，GitLab MCP 已有官方 Beta 文档，应按 Premium, Ultimate、GitLab.com, Self-Managed and Dedicated、OAuth DCR、HTTP /api/v4/mcp 和工具权限来评估。它能触达真实 MR、issue 和 pipeline，因此风险管理比“能不能连上”更重要。",
     "pitfalls": [
       "确认 Premium/Ultimate 和 Beta 限制",
       "OAuth/PAT 最小权限",

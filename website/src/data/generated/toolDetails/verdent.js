@@ -1,7 +1,7 @@
 // Generated from src/data/tools.js.
 export default {
   "verificationStatus": "verified",
-  "lastVerified": "2026-07-07",
+  "lastVerified": "2026-07-13",
   "sources": [
     "https://www.verdent.ai/pricing",
     "https://www.verdent.ai/blog/swe-bench-verified-technical-report",
@@ -12,13 +12,13 @@ export default {
   "name": "Verdent",
   "category": "ide",
   "subcategory": "多Agent IDE",
-  "developer": "Verdent Team",
+  "developer": "Verdent AI, Inc.",
   "logo": null,
   "versions": [
     {
       "type": "Global",
       "pricing": "免费试用：7 天 100 credits；Starter $19/月；Pro $59/月；Max $179/月；Teams $20/用户/月；Top-ups 约 1 credit = $0.059，当前标注 No Markup on Model Costs",
-      "models": "Pricing 页展示 Claude Fable/Opus/Sonnet、GPT-5.5、Gemini 3.1 Pro、GLM-5.2、Kimi K2.7 Code 等；模型与 provider pricing 以官方模型价格页为准",
+      "models": "Pricing 页展示 Claude Fable/Opus/Sonnet、GPT-5.6、Gemini 3.1 Pro、GLM-5.2、Kimi K2.7 Code 等；模型与 provider pricing 以官方模型价格页为准",
       "link": "https://www.verdent.ai/pricing"
     }
   ],
@@ -55,7 +55,7 @@ export default {
   "funRanking": "夯",
   "personalExperience": {
     "rating": 3.5,
-    "insights": "截至 2026-07-07，Verdent 的亮点是多 Agent 工作流和成本控制组合，而不是单一 benchmark 分数。官方 pricing 仍显示 7 天 100 credits、Starter/Pro/Max/Teams、No Markup on Model Costs 和 top-ups；2026-04-02 博文则说明 Eco Mode、BYOK、PAYG 与 subscription credits 并存。",
+    "insights": "截至 2026-07-13，Verdent 的亮点是多 Agent 工作流和成本控制组合，而不是单一 benchmark 分数。官方 pricing 仍显示 7 天 100 credits、Starter/Pro/Max/Teams、No Markup on Model Costs 和 top-ups；2026-04-02 博文则说明 Eco Mode、BYOK、PAYG 与 subscription credits 并存。",
     "pitfalls": [
       "先看任务类型会消耗多少 credits",
       "注意限时 bonus 变化",

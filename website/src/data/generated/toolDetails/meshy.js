@@ -1,7 +1,7 @@
 // Generated from src/data/tools.js.
 export default {
   "verificationStatus": "verified",
-  "lastVerified": "2026-07-08",
+  "lastVerified": "2026-07-13",
   "sources": [
     "https://www.meshy.ai/pricing",
     "https://docs.meshy.ai/en/api/pricing",
@@ -42,7 +42,7 @@ export default {
   "funRanking": "夯",
   "personalExperience": {
     "rating": 4,
-    "insights": "截至 2026-07-08，Meshy 官方 pricing 页确认 Free $0、Pro $20/月、Studio $60/月和 Enterprise 定制；Free 每月 100 credits，Pro 每月 1,000 credits，且免费输出按 CC BY 4.0。API 定价已把 Meshy-6 Text to 3D Preview、Image to 3D、Retexture、Remesh、Rigging、Animation 等拆成 credits per call，采购时要按资产类型和后处理链路估算。",
+    "insights": "截至 2026-07-13，Meshy 官方 pricing 页确认 Free $0、Pro $20/月、Studio $60/月和 Enterprise 定制；Free 每月 100 credits，Pro 每月 1,000 credits，且免费输出按 CC BY 4.0。API 定价已把 Meshy-6 Text to 3D Preview、Image to 3D、Retexture、Remesh、Rigging、Animation 等拆成 credits per call，采购时要按资产类型和后处理链路估算。",
     "pitfalls": [
       "免费输出要计入 CC BY 4.0 署名要求",
       "自动化前按资产类型估算 API credits per call",

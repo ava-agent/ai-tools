@@ -1,7 +1,7 @@
 // Generated from src/data/tools.js.
 export default {
   "verificationStatus": "verified",
-  "lastVerified": "2026-07-08",
+  "lastVerified": "2026-07-13",
   "sources": [
     "https://vercel.com/docs/agent-resources/vercel-mcp",
     "https://vercel.com/docs/agent-resources/vercel-mcp/tools"
@@ -40,7 +40,7 @@ export default {
   "funRanking": "夯",
   "personalExperience": {
     "rating": 4,
-    "insights": "截至 2026-07-08，Vercel MCP 是官方 Beta remote MCP。它适合让 Agent 查 docs、项目、部署和日志，但 authenticated tools 已经接近运维入口，且官方客户端支持有 approved clients 限制；必须把 human confirmation、prompt injection 和账单边界放在第一层。",
+    "insights": "截至 2026-07-13，Vercel MCP 是官方 Beta remote MCP。它适合让 Agent 查 docs、项目、部署和日志，但 authenticated tools 已经接近运维入口，且官方客户端支持有 approved clients 限制；必须把 human confirmation、prompt injection 和账单边界放在第一层。",
     "pitfalls": [
       "开启 human confirmation",
       "限制 OAuth 账号权限",

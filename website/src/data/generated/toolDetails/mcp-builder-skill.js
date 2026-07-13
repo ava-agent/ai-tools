@@ -1,9 +1,9 @@
 // Generated from src/data/tools.js.
 export default {
   "verificationStatus": "verified",
-  "lastVerified": "2026-07-08",
+  "lastVerified": "2026-07-13",
   "sources": [
-    "本地 skill: cloudflare:building-mcp-server-on-cloudflare",
+    "https://github.com/cloudflare/skills/blob/main/skills/building-mcp-server-on-cloudflare/SKILL.md",
     "https://modelcontextprotocol.io/docs/learn/architecture",
     "https://modelcontextprotocol.io/specification/2025-06-18/server/tools"
   ],
@@ -11,12 +11,12 @@ export default {
   "name": "building-mcp-server-on-cloudflare",
   "category": "skill",
   "subcategory": "MCP开发",
-  "developer": "Cloudflare / OpenAI curated plugin",
+  "developer": "Cloudflare",
   "logo": null,
   "versions": [
     {
-      "type": "Installed skill",
-      "pricing": "随当前 Cloudflare/Codex 插件环境可用；Cloudflare Workers 和外部 API 成本需单独评估",
+      "type": "Public Skill",
+      "pricing": "需要单独安装并启用；Cloudflare Workers 和外部 API 成本需单独评估",
       "models": "building-mcp-server-on-cloudflare 聚焦 remote MCP servers on Cloudflare Workers",
       "link": "https://modelcontextprotocol.io/docs/learn/architecture"
     },

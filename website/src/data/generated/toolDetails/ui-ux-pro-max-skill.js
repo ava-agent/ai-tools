@@ -1,57 +1,57 @@
 // Generated from src/data/tools.js.
 export default {
-  "verificationStatus": "deprecated",
-  "lastVerified": "2026-07-08",
+  "verificationStatus": "verified",
+  "lastVerified": "2026-07-13",
   "sources": [
-    "公开来源不足：未发现同名 ui-ux-pro-max skill（检查于 2026-07-08）",
-    "邻近本地 skill: build-web-apps:frontend-app-builder",
-    "邻近本地 skill: product-design:ideate"
+    "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill",
+    "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill/blob/main/.claude/skills/ui-ux-pro-max/SKILL.md",
+    "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill/blob/main/LICENSE"
   ],
   "id": "ui-ux-pro-max-skill",
   "name": "ui-ux-pro-max",
   "category": "skill",
   "subcategory": "UI/UX设计",
-  "developer": "历史概念 / 公开来源不足",
+  "developer": "nextlevelbuilder",
   "logo": null,
   "versions": [
     {
-      "type": "历史概念",
-      "pricing": "未发现可公开核验的同名 Skill；建议并入 frontend-app-builder / Product Design ideate",
-      "models": "历史概念；UI 构思和实现应使用真实设计工作流 Skill",
-      "link": "https://openai.com/codex/"
+      "type": "Public third-party Skill",
+      "pricing": "Basic 版 MIT 开源；Premium 版采用商业许可，安装与升级以官方仓库说明为准",
+      "models": "设计系统生成、UI styles、color palettes、font pairings、charts、tech stacks 与 UX guidelines",
+      "link": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill"
     }
   ],
-  "freeQuota": "暂无独立免费额度证据；取决于实际使用的设计/图像/模型能力",
+  "freeQuota": "Basic 版可按 MIT 许可使用；Premium 能力需商业许可，模型调用成本另计",
   "contextWindow": "N/A",
   "chineseSupport": 5,
   "pros": [
-    "公开来源不足，旧条目可作为 UI/UX 设计增强概念留档",
-    "frontend-app-builder 是真实前端设计与实现工作流",
-    "Product Design ideate 可在 get-context 后生成视觉方向",
-    "历史概念，不能继续使用未证实的数字化风格库卖点",
-    "可把设计系统、概念探索和浏览器验收拆给真实 Skill"
+    "官方 GitHub 仓库持续维护，并提供面向多种 Agent 和前端技术栈的安装路径",
+    "v2.0 提供基于项目需求生成设计系统的工作流",
+    "公开 README 列出 UI styles、color palettes、font pairings、chart types、tech stacks 和 UX guidelines",
+    "支持 Vue、React、Next.js、Svelte、Astro、SwiftUI、Flutter 等多种技术栈",
+    "Basic 与 Premium 许可边界公开，可按团队需求选择"
   ],
   "cons": [
-    "未找到可公开核验的同名 ui-ux-pro-max Skill",
-    "旧文案数字化卖点未找到来源",
-    "与 frontend-design/frontend-app-builder 职责重复"
+    "第三方 Skill，不属于 OpenAI/Codex 内置能力，需自行安装和审查更新",
+    "Premium 版采用商业许可，不能把所有能力都视为 MIT 开源",
+    "设计建议仍需结合真实产品约束和浏览器验收"
   ],
-  "bestFor": "历史内容迁移时的合并候选；新任务应转用 frontend-app-builder 或 Product Design ideate",
-  "funRanking": "归档",
+  "bestFor": "需要设计系统建议、多技术栈 UI 实现和 UX 检查清单的前端团队",
+  "funRanking": "夯",
   "personalExperience": {
-    "rating": 2.5,
-    "insights": "这个条目的旧文案最像过时宣传页。没有同名来源时，应标为历史概念，并把用户导向 frontend-app-builder / ideate 这些实际存在的设计流程。",
+    "rating": 4,
+    "insights": "截至 2026-07-13，ui-ux-pro-max 是 NextLevelBuilder 持续维护的公开第三方 Skill，Basic 版 MIT、Premium 版商业许可。它适合提供设计系统和技术栈建议，但仍需结合产品 brief、现有设计系统和真实浏览器验收。",
     "pitfalls": [
-      "不要引用未证实的风格/调色板数量",
-      "避免和 frontend-design 重复",
-      "需要真实视觉 brief 和截图验收"
+      "安装前核对 Basic 与 Premium 许可",
+      "不要把第三方 Skill 当成 Codex 内置能力",
+      "生成结果仍需真实视觉 brief 和截图验收"
     ]
   },
   "decisionSummary": {
-    "verdict": "不建议继续作为独立 active Skill 展示；应作为过时 UI/UX 概念并入真实设计工作流。",
-    "bestFor": "清理旧目录时提示用户转向 frontend-app-builder 或 Product Design ideate",
-    "avoidIf": "你需要可验证的风格库、调色板库或跨技术栈生成能力",
-    "mainRisk": "旧数字卖点没有来源，继续展示会误导用户认为存在全能 UI/UX Skill。",
+    "verdict": "可作为已核验的第三方 UI/UX Skill 展示，但必须明确需要安装，并区分 MIT Basic 与商业 Premium。",
+    "bestFor": "需要快速生成设计系统方向、多技术栈实现建议和 UX 检查清单的团队",
+    "avoidIf": "你只接受官方内置 Skill，或不愿审查第三方依赖与商业许可",
+    "mainRisk": "第三方更新和 Premium 许可可能变化，生成建议也不能替代产品研究、设计系统和浏览器验收。",
     "alternatives": [
       "frontend-app-builder",
       "Product Design ideate",
@@ -68,6 +68,7 @@ export default {
     "Skills",
     "UI/UX",
     "设计系统",
-    "deprecated"
+    "第三方",
+    "已核验"
   ]
 }

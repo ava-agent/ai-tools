@@ -1,7 +1,7 @@
 // Generated from src/data/tools.js.
 export default {
   "verificationStatus": "verified",
-  "lastVerified": "2026-07-07",
+  "lastVerified": "2026-07-13",
   "sources": [
     "https://opencode.ai/",
     "https://github.com/anomalyco/opencode",
@@ -42,7 +42,7 @@ export default {
   "funRanking": "夯",
   "personalExperience": {
     "rating": 3,
-    "insights": "截至 2026-07-07，OpenCode 官方站仍将其定位为开源 AI coding agent，覆盖 terminal、IDE 和 desktop beta；OpenCode Go 文档最后更新于 2026-07-05，列出 $5 首月后 $10/月、5h/weekly/monthly dollar-value limits 和一批 open coding models。旧的“已归档、迁移至 Crush”说法应移除。",
+    "insights": "截至 2026-07-13，OpenCode 官方站仍将其定位为开源 AI coding agent，覆盖 terminal、IDE 和 desktop beta；OpenCode Go 文档最后更新于 2026-07-05，列出 $5 首月后 $10/月、5h/weekly/monthly dollar-value limits 和一批 open coding models。旧的“已归档、迁移至 Crush”说法应移除。",
     "pitfalls": [
       "不要再链接旧 opencode-ai/opencode 归档仓库",
       "OpenCode Go 是可选订阅而非必选",

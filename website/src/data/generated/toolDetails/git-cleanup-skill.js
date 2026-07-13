@@ -1,7 +1,7 @@
 // Generated from src/data/tools.js.
 export default {
   "verificationStatus": "verified",
-  "lastVerified": "2026-07-08",
+  "lastVerified": "2026-07-13",
   "sources": [
     "https://trailofbits.com/skills/git-cleanup/",
     "邻近本地 skill: superpowers:using-git-worktrees"
@@ -40,7 +40,7 @@ export default {
   "funRanking": "归档",
   "personalExperience": {
     "rating": 3,
-    "insights": "截至 2026-07-08，git-cleanup 有 Trail of Bits 公开上游，定位是清理 local branches and worktrees；它强调 local cleanup only、two confirmation gates 和人工确认，适合作为谨慎的 Git 维护流程入口。",
+    "insights": "截至 2026-07-13，git-cleanup 有 Trail of Bits 公开上游，定位是清理 local branches and worktrees；它强调 local cleanup only、two confirmation gates 和人工确认，适合作为谨慎的 Git 维护流程入口。",
     "pitfalls": [
       "先列出目标和理由",
       "不要自动删除本地分支",

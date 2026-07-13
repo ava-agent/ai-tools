@@ -1,7 +1,7 @@
 // Generated from src/data/tools.js.
 export default {
   "verificationStatus": "verified",
-  "lastVerified": "2026-07-08",
+  "lastVerified": "2026-07-13",
   "sources": [
     "https://trailofbits.com/skills/audit-context-building/",
     "邻近本地 skill: security-threat-model",
@@ -47,7 +47,7 @@ export default {
   "funRanking": "归档",
   "personalExperience": {
     "rating": 3.5,
-    "insights": "截至 2026-07-08，audit-context-building 有 Trail of Bits 公开上游，定位是审计前用 line-by-line 分析建立 deep architectural context；它不负责直接给漏洞结论，实际使用前需单独安装。",
+    "insights": "截至 2026-07-13，audit-context-building 有 Trail of Bits 公开上游，定位是审计前用 line-by-line 分析建立 deep architectural context；它不负责直接给漏洞结论，实际使用前需单独安装。",
     "pitfalls": [
       "先确认审计范围",
       "所有架构判断都要有仓库证据",
@@ -75,6 +75,6 @@ export default {
     "Skills",
     "代码审计",
     "安全",
-    "deprecated"
+    "public-upstream"
   ]
 }

@@ -1,20 +1,20 @@
 // Generated from src/data/tools.js.
 export default {
   "verificationStatus": "verified",
-  "lastVerified": "2026-07-07",
+  "lastVerified": "2026-07-13",
   "sources": [
-    "本地 skill: build-web-apps:frontend-app-builder"
+    "https://github.com/openai/plugins/blob/main/plugins/build-web-apps/skills/frontend-app-builder/SKILL.md"
   ],
   "id": "frontend-design-skill",
   "name": "frontend-app-builder",
   "category": "skill",
   "subcategory": "UI/UX设计",
-  "developer": "OpenAI curated build-web-apps plugin",
+  "developer": "OpenAI",
   "logo": null,
   "versions": [
     {
-      "type": "Installed skill",
-      "pricing": "随当前 Codex 插件环境可用；无独立免费额度声明",
+      "type": "Public plugin skill",
+      "pricing": "需要安装并启用 OpenAI Build Web Apps plugin；无独立免费额度声明",
       "models": "frontend-app-builder 处理新前端应用、dashboard、game、creative website 和 redesign/restyle/modernization",
       "link": "https://openai.com/codex/"
     },

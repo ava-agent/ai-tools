@@ -1,7 +1,7 @@
 // Generated from src/data/tools.js.
 export default {
   "verificationStatus": "verified",
-  "lastVerified": "2026-07-07",
+  "lastVerified": "2026-07-13",
   "sources": [
     "https://ideogram.ai/",
     "https://docs.ideogram.ai/plans-and-pricing/available-plans",
@@ -46,7 +46,7 @@ export default {
   "funRanking": "夯",
   "personalExperience": {
     "rating": 4,
-    "insights": "截至 2026-07-07，Ideogram 应围绕 Ideogram 4.0、当前计划梯度、API pricing 和 MCP/开发者入口来介绍。它仍然是文字密集型图像任务的强候选，但比较重点应放在 credits、自动充值、API 单图价格和输出权利政策，而不是旧低价层级。",
+    "insights": "截至 2026-07-13，Ideogram 应围绕 Ideogram 4.0、当前计划梯度、API pricing 和 MCP/开发者入口来介绍。它仍然是文字密集型图像任务的强候选，但比较重点应放在 credits、自动充值、API 单图价格和输出权利政策，而不是旧低价层级。",
     "pitfalls": [
       "分开跟踪 Priority credits 与 slow credits",
       "只有配置支出提醒后再开启自动充值",

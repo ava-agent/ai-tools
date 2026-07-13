@@ -34,7 +34,7 @@ export const interactiveCatalog = [
   {
     "id": "trae",
     "name": "Trae",
-    "developer": "字节跳动",
+    "developer": "深圳市脸萌科技有限公司（字节跳动旗下）",
     "category": "ide",
     "tags": [
       "推荐",
@@ -201,7 +201,8 @@ export const interactiveCatalog = [
       "Spec",
       "规范",
       "Credits",
-      "ProMax"
+      "ProMax",
+      "待复核"
     ],
     "freeQuota": "Free：50 credits；付费档按月 credits，超额 $0.04/credit",
     "contextWindow": "取决于模型",
@@ -209,7 +210,7 @@ export const interactiveCatalog = [
     "pros": [
       "Spec 驱动工作流适合把需求、设计和任务拆成可追踪交付物",
       "价格页明确列出 Free、Pro、Pro+、Pro Max、Power 档位",
-      "Free 可用 50 credits、open-weight models 和受限 Claude Sonnet 4.6",
+      "Free 可用 50 credits 和受限模型；具体 Claude 版本以当前模型选择器为准",
       "付费档可使用 open-weight 与 premium models，并支持 add-on credits",
       "按 credits 计费，适合先用低档验证团队工作流"
     ],
@@ -275,8 +276,8 @@ export const interactiveCatalog = [
     "bestFor": "Google 生态用户、尝鲜新品",
     "pros": [
       "Google 官方 agentic development platform",
-      "Google AI Pro $19.99/month 提供 Antigravity higher rate limits",
-      "Google AI Ultra $99.99/month 与 $199.99/month 层级提供更高 limits，官方 Help 写明相对 Pro 可达 5x 或 20x quota",
+      "Google AI Pro 提供 Antigravity higher rate limits，订阅价格按地区确认",
+      "Google AI Ultra 提供更高 limits，官方 Help 写明相对 Pro 可达 5x 或 20x quota",
       "Google One Help 明确 Ultra 有最高 limits、prioritized traffic、first access to new models 与 baseline quota / AI credits 两层机制",
       "支持通过 AI credits 扩展 Antigravity 用量",
       "适合与 Gemini、Jules、AI Studio 等 Google 开发生态联动"
@@ -329,7 +330,7 @@ export const interactiveCatalog = [
   {
     "id": "verdent",
     "name": "Verdent",
-    "developer": "Verdent Team",
+    "developer": "Verdent AI, Inc.",
     "category": "ide",
     "tags": [
       "多Agent",
@@ -373,7 +374,7 @@ export const interactiveCatalog = [
       "插件",
       "本地AI"
     ],
-    "freeQuota": "AI Free 提供有限 AI credits；本地补全和云端功能额度按官方计划区分",
+    "freeQuota": "AI Free 每 30 天提供 3 AI credits；本地补全和云端功能额度按官方计划区分",
     "contextWindow": "取决于模型",
     "bestFor": "JetBrains 生态系统用户、企业团队",
     "pros": [
@@ -386,7 +387,7 @@ export const interactiveCatalog = [
     "cons": [
       "主要价值绑定 JetBrains IDE",
       "云端 AI credits 和本地补全不是同一种额度",
-      "不同地区和账号类型的价格/税费需要按结账页确认",
+      "AI Free 与 AI Ultimate 在中国大陆不可用；其他地区和账号类型的税费仍需按结账页确认",
       "上下文理解不如专用 Agent IDE 激进",
       "非 JetBrains 用户迁移成本高"
     ],
@@ -537,7 +538,7 @@ export const interactiveCatalog = [
   {
     "id": "cline",
     "name": "Cline",
-    "developer": "开源社区",
+    "developer": "Cline Bot Inc.",
     "category": "cli",
     "tags": [
       "CLI",
@@ -549,7 +550,7 @@ export const interactiveCatalog = [
       "ComputerUse"
     ],
     "freeQuota": "个人开源扩展免费；模型调用、Cline credits、ClinePass 或自带 provider 费用另计",
-    "contextWindow": "200K-400K+ (取决于模型)",
+    "contextWindow": "取决于模型，部分 provider/model 支持最高 1M context",
     "bestFor": "VS Code 用户、自主执行任务",
     "pros": [
       "VS Code 扩展与 CLI 路径成熟，JetBrains 扩展需按当前企业/产品页确认",
@@ -576,7 +577,7 @@ export const interactiveCatalog = [
   {
     "id": "continue",
     "name": "Continue",
-    "developer": "开源社区",
+    "developer": "Continue team; now Cursor/Anysphere",
     "category": "cli",
     "tags": [
       "开源",
@@ -715,7 +716,7 @@ export const interactiveCatalog = [
   {
     "id": "crush",
     "name": "Crush",
-    "developer": "Charm Bracelet",
+    "developer": "Charmbracelet, Inc. (Charm)",
     "category": "cli",
     "tags": [
       "开源",
@@ -749,7 +750,7 @@ export const interactiveCatalog = [
   {
     "id": "openhands",
     "name": "OpenHands",
-    "developer": "OpenHands Community",
+    "developer": "OpenHands Community / All Hands AI, Inc.",
     "category": "cli",
     "tags": [
       "开源",
@@ -761,7 +762,7 @@ export const interactiveCatalog = [
       "企业级",
       "RBAC"
     ],
-    "freeQuota": "本地自托管和云端 Individual/Enterprise 路径分开；模型/API/托管资源成本需单独确认",
+    "freeQuota": "Local 可自托管；云端 Individual 当前为每日 10 次 conversations，模型/API 与托管资源成本仍需单独确认",
     "contextWindow": "取决于所选模型/provider",
     "bestFor": "开源用户、多模型切换",
     "pros": [
@@ -796,7 +797,7 @@ export const interactiveCatalog = [
       "已核验"
     ],
     "freeQuota": "Claude.ai Free 有限使用；API 无固定永久免费额度，按官方价格页计费",
-    "contextWindow": "默认 200K；部分模型和 API 路径支持更长上下文，以上线文档为准",
+    "contextWindow": "Claude Fable 5 / Opus 4.8 / Sonnet 5 为 1M；Claude Haiku 4.5 为 200K",
     "bestFor": "代码审查、方案设计、长上下文任务、多模态任务、复杂推理",
     "pros": [
       "Claude Fable 5 是 Anthropic 当前高能力模型之一，适合长任务 Agent 和复杂执行",
@@ -817,7 +818,7 @@ export const interactiveCatalog = [
   },
   {
     "id": "gpt",
-    "name": "GPT-5.5 / OpenAI",
+    "name": "GPT-5.6 / OpenAI",
     "developer": "OpenAI",
     "category": "llm",
     "tags": [
@@ -826,14 +827,14 @@ export const interactiveCatalog = [
       "OpenAI",
       "生态",
       "推理",
-      "GPT-5.5",
+      "GPT-5.6",
       "已核验"
     ],
     "freeQuota": "ChatGPT Free 有限；API 无固定永久免费额度，按官方价格页计费",
     "contextWindow": "取决于模型、API 与工具配置；以官方模型和价格文档为准",
     "bestFor": "通用任务、生态集成、推理任务、插件生态",
     "pros": [
-      "官方 GPT-5.5 文档定位为复杂生产工作流、工具型 Agent、长上下文检索和代码场景",
+      "GPT-5.6 sol/terra/luna 覆盖不同性能和成本层级，适合复杂生产工作流、工具型 Agent 与代码场景",
       "Responses API、托管工具、结构化输出、推理 effort 和 verbosity 控制完整",
       "ChatGPT 生态成熟，覆盖对话、文件、数据分析、图像、视频和自定义 GPT/应用入口",
       "OpenAI API 平台和 Codex/Agents SDK 生态衔接强",
@@ -959,7 +960,7 @@ export const interactiveCatalog = [
       "低价",
       "Agent"
     ],
-    "freeQuota": "清言/开放平台可能有试用或促销；API 免费额度以控制台和官方 pricing 为准",
+    "freeQuota": "GLM-4.7-Flash 与 GLM-4.5-Flash 提供免费调用路径；其他额度和活动以控制台为准",
     "contextWindow": "取决于模型；GLM-5.2 等上下文和输出上限以官方模型页/价格页为准",
     "bestFor": "前端开发、完整 demo、Agent 场景",
     "pros": [
@@ -1052,7 +1053,7 @@ export const interactiveCatalog = [
     "contextWindow": "取决于 doubao-seed-2-1-pro / turbo、长上下文和缓存配置",
     "bestFor": "前端开发、Bug 修复",
     "pros": [
-      "火山方舟模型列表于 2026-07-07 更新，并把最新模型指向 Seed 2.1",
+      "火山方舟当前主线包含 Seed 2.1 Pro / Turbo，适合 Coding、Agent 和长上下文任务",
       "Seed 2.1 面向 Coding、Agent、深度思考和长上下文任务，有 Pro/Turbo 路径",
       "字节生态、豆包 App 和企业 API 入口完整",
       "Responses API、缓存、深度思考、视频/图片生成能力需按官方分项核价",
@@ -1070,7 +1071,7 @@ export const interactiveCatalog = [
   {
     "id": "grok",
     "name": "Grok / xAI",
-    "developer": "xAI",
+    "developer": "SpaceXAI (xAI)",
     "category": "llm",
     "tags": [
       "LLM",
@@ -1079,7 +1080,7 @@ export const interactiveCatalog = [
       "推理"
     ],
     "freeQuota": "Grok App/X 订阅与 xAI API 分开；免费或试用入口以官方 Grok/pricing 页面为准",
-    "contextWindow": "取决于 Grok 4.3、Grok Build 等具体模型和 API 入口",
+    "contextWindow": "Grok 4.5 500K；Grok 4.3 1M；grok-build-0.1 256K",
     "bestFor": "实时信息、推理任务、X 平台用户、特定内容（成人内容等）",
     "pros": [
       "官方模型页已列出 Grok 4.3、Grok Build 等当前模型路线",
@@ -1173,13 +1174,13 @@ export const interactiveCatalog = [
       "本地",
       "已核验"
     ],
-    "freeQuota": "核心模型可在许可范围内使用；商业收入超过 USD $1M 等情况需看 Stability AI license",
+    "freeQuota": "核心模型可在许可范围内使用；Stability API 新账号当前提供 25 free credits；商业收入超过 USD $1M 等情况需看 Stability AI license",
     "contextWindow": "N/A",
     "bestFor": "本地部署、定制需求",
     "pros": [
       "Stable Diffusion 3.5 仍是本地和私有化图像生成的重要路线",
       "Core Models license 对低于 USD $1M 年收入的商业主体更友好，但不是无条件无限制",
-      "Stability API 以 credits 计费，1 credit = $0.01，适合把自托管和 API 成本分开估算",
+      "Stability API 新账号当前提供 25 free credits，之后以 credits 计费，1 credit = $0.01",
       "ComfyUI、LoRA、ControlNet 等生态适合定制化工作流",
       "可在自托管、API 和 Stable Assistant 等入口之间选择"
     ],
@@ -1264,11 +1265,10 @@ export const interactiveCatalog = [
     "developer": "快手",
     "category": "multimodal",
     "tags": [
-      "推荐",
       "视频",
       "国产",
       "Kling 3.0",
-      "已核验"
+      "待复核"
     ],
     "freeQuota": "网页端活动额度和 API 资源包分属不同入口，按账号页与 API billing 页面确认",
     "contextWindow": "N/A",
@@ -1292,8 +1292,8 @@ export const interactiveCatalog = [
   },
   {
     "id": "jianying",
-    "name": "剪映",
-    "developer": "字节跳动",
+    "name": "剪映 / CapCut",
+    "developer": "ByteDance",
     "category": "multimodal",
     "tags": [
       "视频",
@@ -1372,7 +1372,7 @@ export const interactiveCatalog = [
     "bestFor": "中文 3D 创作",
     "pros": [
       "腾讯将 Hunyuan 3D 3.0 定位为全球 3D 创作引擎，支持 text-to-3D、image-to-3D 和 Sketch-to-3D 输入",
-      "腾讯云混元生3D API 文档列出一次性 100 积分免费包、1,000 积分 100 元、10,000 积分 980 元、后付费 0.12 元/积分",
+      "新模型服务正在迁移至 TokenHub；旧平台停止新购后，存量账号应按官方迁移说明处理",
       "腾讯云 API 扣减规则显示专业版 Normal 20 积分/次、LowPoly/Sketch 25、Geometry 15；极速版文/图生 3D 默认 15 积分/次",
       "开源 Hunyuan3D 2.0 与 Hunyuan3D-2.1 Series 提供消费站点之外的本地和研究路径",
       "消费端和开源/本地路线要按具体入口确认 OBJ 和 GLB 等导出格式",
@@ -1380,7 +1380,7 @@ export const interactiveCatalog = [
       "当格式和质量要求匹配时，输出可进入 Unity、Unreal、Blender 等常见 3D 工作流"
     ],
     "cons": [
-      "消费云端、腾讯云 API、GitHub 和 Hugging Face 路线的许可、成本和运维假设不同",
+      "TokenHub 新入口、旧平台存量服务、消费云端、GitHub 和 Hugging Face 路线的许可、成本与运维假设不同",
       "不能把消费端免费次数或 credits 直接套用到腾讯云 API 计费",
       "本地运行需要 GPU 显存和依赖管理，不只是开一个网页账号",
       "商用要按所选路线复核许可和生成资产权利",
@@ -1426,7 +1426,7 @@ export const interactiveCatalog = [
   {
     "id": "qinglizi",
     "name": "氢离子 / 阿里健康",
-    "developer": "阿里健康 / 杭州智循建模科技",
+    "developer": "杭州智循建模科技有限公司（阿里健康氢离子）",
     "category": "llm",
     "tags": [
       "医学",
@@ -1457,21 +1457,21 @@ export const interactiveCatalog = [
   {
     "id": "coze",
     "name": "Coze",
-    "developer": "字节跳动",
+    "developer": "Global: SPRING (SG) PTE. LTD. / CN: 字节跳动（扣子）",
     "category": "agent",
     "tags": [
-      "推荐",
       "Agent",
       "无代码",
-      "字节"
+      "字节",
+      "待复核"
     ],
-    "freeQuota": "Global Free：10 credits/day；Premium plans 标注 3-day free trial，额度按模型调用和能力消耗",
+    "freeQuota": "Global/CN 免费额度和付费 credits 以登录后的当前计划页为准，额度按模型调用和能力消耗",
     "contextWindow": "取决于模型",
     "bestFor": "快速搭建 Bot、轻量工作流和可发布的 Agent 应用",
     "pros": [
       "面向 AI Agent 的低代码/无代码构建平台",
-      "Global 版 Free 每日 10 credits，Premium Lite 每日 100 credits",
-      "Premium 和 Premium Plus 分别提供更高日额度，官方页列出 $19 和 $39 档",
+      "Global 与 CN 由不同法律主体和产品入口运营，采购时应分别确认条款",
+      "计划名、credits 与价格以登录后的订阅和账单页为准",
       "官方文档将 Premium plan、message credits、Coze tokens、API/Web SDK 与非 SDK 场景计费分开说明",
       "工作流、插件、知识库和 API/Web SDK 可组合",
       "适合快速把 Bot、Workflow 和外部工具串成可发布应用"
@@ -1489,7 +1489,7 @@ export const interactiveCatalog = [
   {
     "id": "dify",
     "name": "Dify",
-    "developer": "开源社区",
+    "developer": "LangGenius, Inc.",
     "category": "agent",
     "tags": [
       "开源",
@@ -1504,13 +1504,14 @@ export const interactiveCatalog = [
       "Professional 当前价格页展示 $590/workspace/year，含 5,000 message credits/month",
       "Team 当前价格页展示 $1590/workspace/year，含 10,000 message credits/month",
       "Sandbox Free 含 200 message credits、5 apps、50 knowledge documents 和 30 days log history",
-      "Community Edition 支持免费自托管的受控部署",
+      "Community Edition 可自托管，采用 Dify modified Apache 2.0 license，部署前需核对附加条款",
       "产品定位覆盖 agentic workflows、RAG pipelines、integrations 和 observability"
     ],
     "cons": [
       "Cloud 额度受 workspace 订阅限制，自托管也需要模型、向量库和运维成本",
       "生产环境要关注知识库数据存储、日志、权限和 API rate limit",
-      "插件和模型供应商配置会影响实际部署复杂度"
+      "插件和模型供应商配置会影响实际部署复杂度",
+      "Community Edition 不是未经修改的标准 Apache 2.0，分发和多租户场景需审查附加许可条款"
     ],
     "personalExperience": {
       "rating": 4
@@ -1553,7 +1554,7 @@ export const interactiveCatalog = [
   {
     "id": "langchain",
     "name": "LangChain",
-    "developer": "开源社区",
+    "developer": "LangChain, Inc.",
     "category": "agent",
     "tags": [
       "开源",
@@ -1667,7 +1668,7 @@ export const interactiveCatalog = [
     "pros": [
       "官方 pricing 已把 Devin Desktop/Cloud 与 Windsurf 迁移后的计划放在同一 Devin 口径下",
       "Free 提供轻量 agent quota、有限模型、无限 inline edits 与 Tab completions",
-      "Pro $20 可访问 OpenAI、Claude、Gemini frontier models、SWE 1.6、Devin Cloud 和 extra usage",
+      "Pro $20 可访问 OpenAI、Claude、Gemini frontier models、SWE 1.7、Devin Cloud 和 extra usage",
       "Teams 是 $80/月 plan + $40/月每 full dev seat，并支持 unlimited team members 与集中管理",
       "DeepWiki/Ask Devin/Devin Review/Integrations 扩展了代码库理解和 PR 审查场景"
     ],
@@ -1882,7 +1883,7 @@ export const interactiveCatalog = [
   },
   {
     "id": "mistral",
-    "name": "Mistral / Le Chat",
+    "name": "Mistral / Vibe (former Le Chat)",
     "developer": "Mistral AI (法国)",
     "category": "llm",
     "tags": [
@@ -1892,7 +1893,7 @@ export const interactiveCatalog = [
       "API",
       "已核验"
     ],
-    "freeQuota": "账号和 API tier 以 Mistral 控制台为准；生产用量按模型计费",
+    "freeQuota": "Vibe 提供 Free 计划；API tier 以 Mistral 控制台为准，生产用量按模型另计",
     "contextWindow": "Large 3 / Medium 3.5 / Small 4 / Ministral 3 最高 256K",
     "bestFor": "性价比优先、开源部署、欧洲合规场景",
     "pros": [
@@ -1922,7 +1923,7 @@ export const interactiveCatalog = [
       "企业",
       "中文",
       "开放权重",
-      "已核验"
+      "待复核"
     ],
     "freeQuota": "公开来源未核到稳定免费额度",
     "contextWindow": "Yi-1.5 页面展示 4K/16K/32K，Yi-Coder 页面展示 128K；当前托管 API 可用上下文需以 platform/docs 为准",
@@ -2299,9 +2300,9 @@ export const interactiveCatalog = [
     "pros": [
       "Cloud 计划包含 unlimited users、unlimited workflows 和 every integration",
       "按完整 workflow execution 计费，而不是按每一步计费",
-      "Starter 年付 20€/mo 含 2.5K executions 与 50 AI Workflow Builder credits",
-      "Pro 年付 50€/mo 含 10K executions 与 150 AI Workflow Builder credits",
-      "Business self-hosted 年付 667€/mo 起，Enterprise cloud 可含 1000 AI Workflow Builder credits",
+      "Starter 年付 20€/mo 含 2.5K executions；AI Assistant preview 当前提供每月 2,300 credits",
+      "Pro 年付 50€/mo 含 10K executions；AI Assistant preview 当前最高提供每月 13,700 credits",
+      "Business self-hosted 年付 667€/mo 起；AI Assistant preview 的额度与可用性需按当前计划表核对",
       "Community Edition 可自托管，适合内部自动化和技术团队控制数据位置",
       "支持 JS/Python code steps、API、webhooks、queues、credentials 和多种集成节点"
     ],
@@ -2365,7 +2366,7 @@ export const interactiveCatalog = [
       "Claude Code as a library",
       "Python and TypeScript"
     ],
-    "freeQuota": "SDK 免费，API 按量计费",
+    "freeQuota": "SDK 免费；模型与云平台调用按对应 Anthropic 或云服务计费",
     "contextWindow": "取决于 Claude Code / 模型配置",
     "bestFor": "构建代码智能体、复杂推理 Agent",
     "pros": [
@@ -2381,7 +2382,7 @@ export const interactiveCatalog = [
     "cons": [
       "模型与运行路径主要围绕 Claude Code / Anthropic 生态",
       "具备文件和命令能力，权限边界必须明确",
-      "成本取决于 Claude Code/Anthropic 当前计划与用量",
+      "成本取决于 Anthropic API 或所选云平台的当前价格与用量",
       "本地/CI 集成前要确认 CLI 路径、工作目录和沙箱策略"
     ],
     "personalExperience": {
@@ -2417,7 +2418,8 @@ export const interactiveCatalog = [
       "主要优势在 Google/Gemini 生态，跨 provider 抽象不如部分独立框架",
       "部分生产部署、企业治理和观测能力依赖 Google Cloud / Gemini Enterprise",
       "内置工具组合有已知限制，需要按文档规避",
-      "模型和云资源成本要单独核算"
+      "模型和云资源成本要单独核算",
+      "ADK 2.0 包含破坏性变更，1.x 项目升级前需要按官方迁移指南验证"
     ],
     "personalExperience": {
       "rating": 3.5
@@ -2440,8 +2442,8 @@ export const interactiveCatalog = [
     "contextWindow": "按需查询",
     "bestFor": "开发时实时查阅最新 API 文档、减少过期代码示例和 hallucinated API",
     "pros": [
-      "提供远程 MCP 服务和本地 npx MCP Server 两种接入",
-      "支持 CLI + Skills 与 MCP 双模式",
+      "提供远程 MCP 服务，当前推荐通过 npx ctx7 setup 配置客户端",
+      "支持 CLI + Skills 与 MCP 双模式，远程端点为 https://mcp.context7.com/mcp",
       "可查询版本化文档和代码示例",
       "支持 Cursor / Claude Code / Codex / Gemini CLI 等多种客户端配置",
       "API key 可提升限额并支持私有仓库能力",
@@ -2547,7 +2549,7 @@ export const interactiveCatalog = [
     "bestFor": "在 AI IDE 中直接管理 GitHub 仓库、Issue、PR",
     "pros": [
       "GitHub 官方 MCP Server",
-      "remote GitHub MCP server 已进入官方主路径，适合 repo、Issue、PR、Actions 的受控 AI 工作流",
+      "remote GitHub MCP server https://api.githubcopilot.com/mcp/ 已进入官方主路径，适合 repo、Issue、PR、Actions 的受控 AI 工作流",
       "支持远程 OAuth 与本地 Docker/二进制部署路径",
       "覆盖 repos、issues、pull_requests、actions、code_security 等 toolsets",
       "可用 --toolsets 或 GITHUB_TOOLSETS 缩小暴露能力",
@@ -2606,7 +2608,7 @@ export const interactiveCatalog = [
       "推荐",
       "MCP",
       "AntV",
-      "25+ chart types",
+      "26+ chart types",
       "Dify",
       "chart-visualization",
       "已核验"
@@ -2616,7 +2618,7 @@ export const interactiveCatalog = [
     "bestFor": "数据可视化、生成报表图表、项目进度展示",
     "pros": [
       "@antv/mcp-server-chart 是基于 AntV 的 TypeScript MCP server，用于图表生成和数据分析",
-      "server 暴露 25+ 图表类型，包括 generate_word_cloud_chart、generate_spreadsheet 等工具",
+      "server 暴露 26+ 图表类型，包括 generate_word_cloud_chart、generate_spreadsheet 等工具",
       "支持通过 npx 安装接入桌面 MCP 客户端，Windows 场景需要 cmd 包装",
       "也可在 Dify 中使用，并支持 HTTP、SSE 或 Streamable transport",
       "配套 chart-visualization skill 可根据数据描述辅助选择合适图表类型"
@@ -2667,7 +2669,7 @@ export const interactiveCatalog = [
   },
   {
     "id": "openmemory-mcp",
-    "name": "OpenMemory / Mem0 MCP",
+    "name": "Mem0 MCP",
     "developer": "Mem0",
     "category": "mcp",
     "tags": [
@@ -2677,21 +2679,21 @@ export const interactiveCatalog = [
       "Mem0",
       "已核验"
     ],
-    "freeQuota": "云端按 Mem0 Platform pricing 和 API key 额度；OSS/本地部署仍需自行承担 LLM、embedding、vector store 与 hosting 成本",
+    "freeQuota": "云端按 Mem0 Platform pricing 和 API key 额度；旧本地 server 已归档，不作为新项目路径",
     "contextWindow": "N/A",
     "bestFor": "跨 AI 客户端保存长期偏好、项目上下文和可复用工作方式",
     "pros": [
       "Mem0 MCP 官方文档要求 Mem0 Platform account 和 API key，可通过托管端点接入 Claude、Claude Code、Codex、Cursor、Windsurf、VS Code 等客户端",
       "cloud-hosted MCP server requires no local installation，适合先验证跨会话记忆工作流",
-      "OpenMemory 强调 self-hostable、user-owned memory；Mem0 MCP API 路径适合 add_memory、search_memories、get_memories 和 delete_memory",
-      "可暴露 add_memory、search_memories、get_memories、get_memory、update_memory、delete_memory、delete_all_memories 等 9 memory tools",
+      "Mem0 MCP API 路径适合 add_memory、search_memories、get_memories 和 delete_memory 等跨会话记忆工作流",
+      "当前官方托管集成提供 11 个 memory tools；旧本地仓库已归档，不再作为新项目主路径",
       "Claude Code 集成可用 MEM0_API_KEY、MCP server、lifecycle hooks 和 SDK skill",
       "旧 mem0-mcp-server 已 archived，新项目应优先看官方托管 MCP 文档"
     ],
     "cons": [
       "memory persistence risk：记忆可能包含敏感偏好、客户信息、项目结构或过时结论，需要删除、更新和作用域治理",
       "云端版依赖 Mem0 Platform 账号、API key 和 pricing/free tier 额度",
-      "本地/OSS 路径仍要维护 LLM、embedding、vector store、storage、backup 和访问控制",
+      "旧本地 server 已归档，不能把历史 OSS 路径当作当前官方托管能力",
       "记忆召回质量取决于写入粒度、embedding、过滤器和用户清理习惯",
       "跨客户端共享记忆前要明确哪些内容允许长期保存"
     ],
@@ -2750,7 +2752,7 @@ export const interactiveCatalog = [
     "bestFor": "让 Agent 在受控工作区内辅助维护 Postman collections、specs、environments 和 API 文档",
     "pros": [
       "Postman 官方 MCP Server，可让 Agent 管理 collections、specs、environments、workspaces 等 Postman 资源",
-      "提供 Minimal、Code、Full 三种配置，Full 覆盖 100+ tools，日常可先用 Minimal 降低工具面",
+      "提供 Minimal、Code、Full、Learn 四种配置，Full 覆盖 100+ tools，日常可先用 Minimal 降低工具面",
       "remote MCP 支持 OAuth、DCR 和 PKCE，US/EU endpoint 与认证方式需要分开配置",
       "US remote server 支持 OAuth，官方说明 OAuth 不需要手动 API key，且符合 MCP Authorization specification",
       "EU remote server only supports API key authentication，local server 也需要 API key",
@@ -2769,7 +2771,7 @@ export const interactiveCatalog = [
   {
     "id": "atlassian-mcp",
     "name": "Atlassian Rovo MCP",
-    "developer": "Atlassian / Sooperset community alternative",
+    "developer": "Atlassian",
     "category": "mcp",
     "tags": [
       "MCP",
@@ -2808,7 +2810,6 @@ export const interactiveCatalog = [
     "tags": [
       "推荐",
       "MCP",
-      "免费",
       "开源",
       "Supabase",
       "全栈",
@@ -2823,7 +2824,7 @@ export const interactiveCatalog = [
       "可用 read_only=true 让 SQL 以 read-only Postgres user 执行并禁用 mutating tools",
       "可用 project_ref 限定单个项目，避免访问组织内所有项目",
       "可用 features=database,docs 等参数只启用必要工具组",
-      "覆盖 database、debugging、development、functions、docs、storage、branching 等 feature groups"
+      "覆盖 account、database、debugging、development、functions、docs、storage、branching 等 feature groups；Storage 默认禁用"
     ],
     "cons": [
       "官方明确提示切勿将 MCP 服务器连接到生产数据；仅用于开发和测试",
@@ -2999,7 +3000,8 @@ export const interactiveCatalog = [
       "production error data 可能包含 PII、请求参数、客户标识或内部路径，接入 Agent 前需确认数据脱敏和保留策略",
       "Auth Token scopes 过大时可访问组织或项目级敏感数据",
       "AI 给出的根因和修复建议仍需复现、测试和人工审查",
-      "完整 API 能力和历史数据受 Sentry plan 与组织权限影响"
+      "完整 API 能力和历史数据受 Sentry plan 与组织权限影响",
+      "自托管路径中的 AI 搜索工具可能还需要单独配置和支付 LLM provider"
     ],
     "personalExperience": {
       "rating": 4.5
@@ -3007,7 +3009,7 @@ export const interactiveCatalog = [
   },
   {
     "id": "docker-mcp",
-    "name": "Docker MCP",
+    "name": "Docker MCP Toolkit",
     "developer": "Docker",
     "category": "mcp",
     "tags": [
@@ -3022,14 +3024,14 @@ export const interactiveCatalog = [
     "bestFor": "在 Docker Desktop 管理的开发环境中运行和治理容器化 MCP servers",
     "pros": [
       "Docker MCP Toolkit 官方文档标注 Availability: Beta",
-      "Docker MCP Catalog 提供 300+ verified servers，并通过 profiles 组织不同项目的 server 配置",
+      "Docker MCP Catalog 通过 profiles 组织不同项目的 server 配置，server 数量以当前 Catalog 为准",
       "MCP Gateway 将 MCP servers 运行在隔离 Docker 容器中，并限制权限、网络访问和资源使用",
       "内置 logging 与 call-tracing，便于治理 AI 工具活动",
       "Docker MCP Toolkit 结合 passive 和 active security，减少 MCP server 运行时攻击面",
       "运行时限制包括 1 CPU 和 2 GB memory allocation"
     ],
     "cons": [
-      "Beta 阶段界面和工具行为可能变化，需匹配 Docker Desktop 版本",
+      "Beta 阶段界面和工具行为可能变化，当前官方文档要求 Docker Desktop 4.62 或更高版本",
       "容器隔离降低风险但不等于可放心操作生产 Docker host",
       "MCP servers 仍可能接触本地文件、网络、凭据或 Docker socket，应按 profile 和权限逐项审查",
       "第三方 MCP server 的供应链和权限边界仍需单独评估"
@@ -3091,7 +3093,7 @@ export const interactiveCatalog = [
     "pros": [
       "Cloudflare 官方 managed remote MCP servers，可通过 OAuth 接入",
       "Cloudflare API MCP server 覆盖 over 2,500 endpoints across DNS, Workers, R2, Zero Trust 等",
-      "Code Mode 仅暴露 search() 和 execute() 两个工具，约 1,000 tokens 即可覆盖大量 API",
+      "当前 Code Mode 暴露 docs()、search() 和 execute() 三个工具，以较小工具面覆盖大量 API",
       "生成代码在 isolated Dynamic Worker sandbox 中执行",
       "CI/CD 或 automation 可用 Cloudflare API token，并只授予所需 permissions",
       "managed remote MCP servers 支持 streamable-http transport；SSE transport 已标注 deprecated",
@@ -3143,7 +3145,7 @@ export const interactiveCatalog = [
   },
   {
     "id": "elasticsearch-mcp",
-    "name": "Elasticsearch MCP",
+    "name": "Elastic Agent Builder MCP server",
     "developer": "Elastic",
     "category": "mcp",
     "tags": [
@@ -3166,7 +3168,7 @@ export const interactiveCatalog = [
       "适合把日志、索引 mapping、ES|QL/search 辅助带入受控 Agent 流程"
     ],
     "cons": [
-      "旧 mcp-server-elasticsearch 已不应作为新项目首选，主要适合老版本或迁移期",
+      "旧 mcp-server-elasticsearch 已弃用且仅接收关键安全更新，只适合老版本迁移期",
       "API_KEY 权限过大可能暴露大量日志、PII、业务数据或高成本查询面",
       "必须按最小权限原则、索引范围、只读查询和查询成本限制来配置",
       "大规模搜索/ES|QL 查询可能影响集群性能与费用"
@@ -3178,7 +3180,7 @@ export const interactiveCatalog = [
   {
     "id": "autogen",
     "name": "AutoGen",
-    "developer": "Microsoft",
+    "developer": "Microsoft Research / community-managed",
     "category": "agent",
     "tags": [
       "Agent",
@@ -3210,7 +3212,7 @@ export const interactiveCatalog = [
   },
   {
     "id": "zapier-ai",
-    "name": "Zapier AI Automation",
+    "name": "Zapier",
     "developer": "Zapier",
     "category": "agent",
     "tags": [
@@ -3227,13 +3229,13 @@ export const interactiveCatalog = [
     "pros": [
       "Zapier MCP 可把 AI 客户端连接到 9,000+ apps 和 40,000+ actions",
       "Free 计划包含 100 tasks per month，适合低频验证",
-      "定价页显示 AI steps, code, and SDK 采用统一 task-based pricing，便于跨产品估算成本",
+      "Zapier MCP 当前每次调用计 2 tasks；AI steps 按步骤复杂度计 1/3/5 tasks",
       "MCP、SDK、Agents、Chatbots、Tables 和 Forms 已纳入统一平台叙事",
       "Each successful action in a Zap counts as a separate task，MCP/AI 调用也要按任务池管理"
     ],
     "cons": [
-      "AI Actions is no longer being developed and supported，新项目应优先评估 Zapier MCP Beta、SDK 或 Agents",
-      "shared task pool 意味着 Zap workflows、AI steps、code、MCP、SDK 会共同消耗任务额度",
+      "AI Actions is no longer being developed and supported，新项目应优先评估 Zapier MCP、SDK Beta 或 Agents",
+      "SDK 仍为 Beta 且当前不计 tasks，正式计费口径可能变化",
       "自动化一旦连接真实 SaaS 账号，AI 工具调用可能发送邮件、改 CRM、建 issue 或更新表格，需要权限和确认策略",
       "高级治理、SSO、审计、app controls 等能力集中在 Team/Enterprise 档位",
       "国内访问、SaaS 授权和数据出境要按企业环境实测"
@@ -3260,8 +3262,8 @@ export const interactiveCatalog = [
     "bestFor": "可视化编排、复杂分支、跨 SaaS 流程、AI agent/MCP 与自动化结合",
     "pros": [
       "Free 计划含 1,000 credits/month、无代码可视化工作流构建器和 3000+ apps",
-      "Core $9/mo、Pro $16/mo、Teams $29/mo 都以 10k credits/mo 为页面默认价格口径",
-      "Make + AI 覆盖 350+ AI apps、Make MCP Server、AI Content Extractor、AI Web Search beta、Make AI Agents beta 和 Make AI Toolkit",
+      "统一 Make Plan 从 $9/月起，价格页默认按 5,000 credits 展示；Company 走定制采购",
+      "Make + AI 覆盖 350+ AI apps、Make MCP Server、AI Content Extractor、AI Web Search、Make AI Agents 和 Make AI Toolkit",
       "credits 是计费单位，常见模块动作通常 1 credit，便于从场景执行量估算成本",
       "可视化 scenario、routers、filters、error handlers 和 scheduled scenarios 适合复杂业务流程建模"
     ],
@@ -3279,7 +3281,7 @@ export const interactiveCatalog = [
   {
     "id": "camel-ai",
     "name": "CAMEL-AI",
-    "developer": "CAMEL-AI.org",
+    "developer": "CAMEL-AI open-source community",
     "category": "agent",
     "tags": [
       "Agent",
@@ -3313,7 +3315,7 @@ export const interactiveCatalog = [
   {
     "id": "agentscope",
     "name": "AgentScope",
-    "developer": "agentscope-ai / open-source community",
+    "developer": "AgentScope / Alibaba Tongyi Lab",
     "category": "agent",
     "tags": [
       "Agent",
@@ -3426,7 +3428,7 @@ export const interactiveCatalog = [
     ],
     "freeQuota": "Free：每日 10 credits，另有每月 100 credits 上限；Standard 每月 2,400 credits，Pro 每月 6,000 credits",
     "contextWindow": "N/A",
-    "bestFor": "原创音乐创作、BGM 生成、歌曲制作",
+    "bestFor": "平台内音乐创意试验、歌曲草稿和编辑探索",
     "pros": [
       "官方帮助中心明确 credit limits：Free 每日 10 credits + 每月 100 credits 上限",
       "Standard subscription 每月最多 2,400 credits，Pro subscription 每月最多 6,000 credits",
@@ -3436,6 +3438,7 @@ export const interactiveCatalog = [
       "a la carte credits 可在 pricing 页购买且不会过期"
     ],
     "cons": [
+      "与 UMG 协议变更后，Udio 已禁用音频、视频和 stems 下载，不适合需要导出文件的生产流程",
       "免费账号 130 秒歌曲有每日 3 首限制",
       "subscription trials 不提高 credit limit，试用和正式订阅权益不同",
       "trial 不能用来验证 Pro 额度或高产量生产能力",
@@ -3458,11 +3461,11 @@ export const interactiveCatalog = [
       "多语言",
       "已核验"
     ],
-    "freeQuota": "Trial / production usage 以 Cohere dashboard 和 pricing docs 为准",
+    "freeQuota": "API 在官方 trial rate limits 内可用；生产 usage tier、Model Vault 与企业部署以 Cohere dashboard 为准",
     "contextWindow": "Command A 256K；Command A+ / Command R+ 128K",
     "bestFor": "企业 RAG 应用、知识库检索、多语言业务",
     "pros": [
-      "Command A+ 是 2026 年 Cohere Command A family 最新模型之一，支持图像、Agent、reasoning 和翻译能力",
+      "Command A+ 是 2026 年 Cohere Command A family 最新模型之一，提供 Apache 2.0 open weights，并支持图像、Agent、reasoning 和翻译能力",
       "Command A 官方定位为企业 Agent、tool use、RAG 和多语言任务",
       "Command R / R+ 仍适合 RAG 与多步工具调用场景",
       "官方文档列出模型 ID、上下文、输出上限和计费方式",
@@ -3497,7 +3500,7 @@ export const interactiveCatalog = [
       "Amazon Nova 2 文档已经列出 extended thinking and reasoning、built-in tools、AI agent building、enhanced document/video understanding",
       "Nova 2 Lite 支持 extended thinking，面向多步骤推理、agentic workflows、数学、规划和代码生成",
       "Nova 2 built-in tools 包含 web grounding 和 code interpreter，减少外部集成成本",
-      "Nova Multimodal Embeddings 支持文本、文档、图像、视频和音频的统一语义空间",
+      "Amazon Nova Multimodal Embeddings 支持文本、文档、图像、视频和音频的统一语义空间",
       "与 Bedrock Knowledge Bases、Agents、Guardrails、评估和批处理能力衔接",
       "Nova v1 系列仍包含 Premier、Pro、Lite、Micro、Canvas、Reel、Sonic，老项目需要按模型线区分"
     ],
@@ -3529,14 +3532,14 @@ export const interactiveCatalog = [
     "bestFor": "腾讯生态应用、中文内容生成、企业微信集成",
     "pros": [
       "腾讯云官方页面将混元描述为通用与多模态大模型家族，覆盖文本、图像、视频、3D 等模态",
-      "Hy3 于 2026-07-06 更新，强化 Coding、长文、推理和 Agent 能力",
+      "Hy3 正式版强化 Coding、长文、推理和 Agent 能力",
       "Hy3 采用 295B 总参数、21B 激活 MoE 架构，并提供 no_think / think_low / think_high",
       "产品概述列出角色扮演、翻译、视觉理解等专项模型",
       "购买指南列出免费资源包、后付费、预付费和 token 单价",
       "与腾讯云、腾讯元器和企业微信等生态更易衔接"
     ],
     "cons": [
-      "原混元平台新购/新增能力正在向 TokenHub 迁移，入口和计费路径需要确认",
+      "原混元平台已停止新购并向 TokenHub 迁移，官方计划于 2026-09-30 全面停止服务",
       "国际生态和第三方教程不如 AWS/OpenAI/Anthropic 丰富",
       "腾讯生态外的独立开发体验需要实测",
       "旧模型命名和新 TokenHub 资源容易混淆"
@@ -3548,7 +3551,7 @@ export const interactiveCatalog = [
   {
     "id": "frontend-design-skill",
     "name": "frontend-app-builder",
-    "developer": "OpenAI curated build-web-apps plugin",
+    "developer": "OpenAI",
     "category": "skill",
     "tags": [
       "Skills",
@@ -3579,7 +3582,7 @@ export const interactiveCatalog = [
   {
     "id": "webapp-testing-skill",
     "name": "frontend-testing-debugging",
-    "developer": "OpenAI curated build-web-apps plugin",
+    "developer": "OpenAI",
     "category": "skill",
     "tags": [
       "Skills",
@@ -3610,7 +3613,7 @@ export const interactiveCatalog = [
   {
     "id": "mcp-builder-skill",
     "name": "building-mcp-server-on-cloudflare",
-    "developer": "Cloudflare / OpenAI curated plugin",
+    "developer": "Cloudflare",
     "category": "skill",
     "tags": [
       "Skills",
@@ -3672,7 +3675,7 @@ export const interactiveCatalog = [
   {
     "id": "semgrep-skill",
     "name": "semgrep",
-    "developer": "Semgrep / Semgrep Skills",
+    "developer": "Semgrep",
     "category": "skill",
     "tags": [
       "Skills",
@@ -3843,7 +3846,7 @@ export const interactiveCatalog = [
       "Skills",
       "代码审计",
       "安全",
-      "deprecated"
+      "public-upstream"
     ],
     "freeQuota": "暂无独立免费额度证据；取决于 Codex 会话和外部安全工具",
     "contextWindow": "N/A",
@@ -3964,7 +3967,7 @@ export const interactiveCatalog = [
   {
     "id": "supabase-skill",
     "name": "supabase",
-    "developer": "Supabase / OpenAI curated plugin",
+    "developer": "Supabase",
     "category": "skill",
     "tags": [
       "Skills",
@@ -3977,7 +3980,7 @@ export const interactiveCatalog = [
     "contextWindow": "N/A",
     "bestFor": "Supabase 项目开发、Auth/RLS 安全复核、CLI/MCP 排障、Postgres schema 和性能优化",
     "pros": [
-      "当前核验环境中的 supabase Skill 覆盖 Database、Auth、Edge Functions、Realtime、Storage、Vectors、Cron、Queues、CLI 和 MCP server",
+      "Supabase 官方公开 Agent Skill 覆盖 Database、Auth、Edge Functions、Realtime、Storage、Vectors、Cron、Queues、CLI 和 MCP server",
       "明确提醒 Supabase changes frequently，需要 verify against changelog 和当前 docs",
       "安全清单覆盖 RLS、service_role 暴露、JWT metadata、views、SECURITY DEFINER 和 storage upsert",
       "Supabase CLI 命令要求通过 --help 发现，避免记忆过时",
@@ -4025,31 +4028,32 @@ export const interactiveCatalog = [
   {
     "id": "ui-ux-pro-max-skill",
     "name": "ui-ux-pro-max",
-    "developer": "历史概念 / 公开来源不足",
+    "developer": "nextlevelbuilder",
     "category": "skill",
     "tags": [
       "Skills",
       "UI/UX",
       "设计系统",
-      "deprecated"
+      "第三方",
+      "已核验"
     ],
-    "freeQuota": "暂无独立免费额度证据；取决于实际使用的设计/图像/模型能力",
+    "freeQuota": "Basic 版可按 MIT 许可使用；Premium 能力需商业许可，模型调用成本另计",
     "contextWindow": "N/A",
-    "bestFor": "历史内容迁移时的合并候选；新任务应转用 frontend-app-builder 或 Product Design ideate",
+    "bestFor": "需要设计系统建议、多技术栈 UI 实现和 UX 检查清单的前端团队",
     "pros": [
-      "公开来源不足，旧条目可作为 UI/UX 设计增强概念留档",
-      "frontend-app-builder 是真实前端设计与实现工作流",
-      "Product Design ideate 可在 get-context 后生成视觉方向",
-      "历史概念，不能继续使用未证实的数字化风格库卖点",
-      "可把设计系统、概念探索和浏览器验收拆给真实 Skill"
+      "官方 GitHub 仓库持续维护，并提供面向多种 Agent 和前端技术栈的安装路径",
+      "v2.0 提供基于项目需求生成设计系统的工作流",
+      "公开 README 列出 UI styles、color palettes、font pairings、chart types、tech stacks 和 UX guidelines",
+      "支持 Vue、React、Next.js、Svelte、Astro、SwiftUI、Flutter 等多种技术栈",
+      "Basic 与 Premium 许可边界公开，可按团队需求选择"
     ],
     "cons": [
-      "未找到可公开核验的同名 ui-ux-pro-max Skill",
-      "旧文案数字化卖点未找到来源",
-      "与 frontend-design/frontend-app-builder 职责重复"
+      "第三方 Skill，不属于 OpenAI/Codex 内置能力，需自行安装和审查更新",
+      "Premium 版采用商业许可，不能把所有能力都视为 MIT 开源",
+      "设计建议仍需结合真实产品约束和浏览器验收"
     ],
     "personalExperience": {
-      "rating": 2.5
+      "rating": 4
     }
   },
   {
@@ -4061,7 +4065,7 @@ export const interactiveCatalog = [
       "Skills",
       "周报",
       "自动化",
-      "deprecated"
+      "historical"
     ],
     "freeQuota": "暂无独立免费额度证据；内部数据源、告警平台和模型调用成本需单独确认",
     "contextWindow": "N/A",
@@ -4090,7 +4094,7 @@ export const interactiveCatalog = [
     "tags": [
       "Skills",
       "推理",
-      "deprecated"
+      "historical"
     ],
     "freeQuota": "暂无独立免费额度证据；增加推理深度通常意味着更多模型用量",
     "contextWindow": "N/A",
@@ -4114,14 +4118,15 @@ export const interactiveCatalog = [
   {
     "id": "research-skill",
     "name": "research",
-    "developer": "Product Design / AnyCap",
+    "developer": "Multiple unrelated skill sources",
     "category": "skill",
     "tags": [
       "Skills",
       "研究",
       "UX",
       "引用",
-      "本地核验"
+      "待拆分",
+      "needs-review"
     ],
     "freeQuota": "无独立免费额度证据；取决于 Product Design / AnyCap / 搜索和模型调用环境",
     "contextWindow": "N/A",

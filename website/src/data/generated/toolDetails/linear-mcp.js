@@ -1,7 +1,7 @@
 // Generated from src/data/tools.js.
 export default {
   "verificationStatus": "verified",
-  "lastVerified": "2026-07-08",
+  "lastVerified": "2026-07-13",
   "sources": [
     "https://linear.app/docs/mcp",
     "https://linear.app/pricing"
@@ -40,7 +40,7 @@ export default {
   "funRanking": "夯",
   "personalExperience": {
     "rating": 4,
-    "insights": "截至 2026-07-08，Linear MCP 应按官方 remote MCP 和 workspace 计划来判断：它很适合让 Agent 处理 issues/projects/comments，但费用、AI credits、API limits 和 token scopes 都跟 Linear workspace 治理绑定。",
+    "insights": "截至 2026-07-13，Linear MCP 应按官方 remote MCP 和 workspace 计划来判断：它很适合让 Agent 处理 issues/projects/comments，但费用、AI credits、API limits 和 token scopes 都跟 Linear workspace 治理绑定。",
     "pitfalls": [
       "OAuth/API key 最小权限",
       "写操作人工确认",

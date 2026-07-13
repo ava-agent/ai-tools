@@ -1,7 +1,7 @@
 // Generated from src/data/tools.js.
 export default {
   "verificationStatus": "verified",
-  "lastVerified": "2026-07-07",
+  "lastVerified": "2026-07-13",
   "sources": [
     "https://www.jetbrains.com/help/ai-assistant/licensing-and-subscriptions.html",
     "https://www.jetbrains.com/ai-ides/buy/"
@@ -15,12 +15,12 @@ export default {
   "versions": [
     {
       "type": "Global",
-      "pricing": "AI Free / AI Pro / AI Ultimate；具体价格和 credit 额度按官方账号与地区页面为准",
+      "pricing": "AI Free（3 AI credits/30 天）/ AI Pro $10/月（10 credits）/ AI Ultimate $30/月（35 credits）；企业和地区价格按官方结账页确认",
       "models": "云端大模型 + 本地 AI（Ollama/LM Studio 等路径以官方 IDE 支持为准）",
       "link": "https://www.jetbrains.com/help/ai-assistant/licensing-and-subscriptions.html"
     }
   ],
-  "freeQuota": "AI Free 提供有限 AI credits；本地补全和云端功能额度按官方计划区分",
+  "freeQuota": "AI Free 每 30 天提供 3 AI credits；本地补全和云端功能额度按官方计划区分",
   "contextWindow": "取决于模型",
   "chineseSupport": 3,
   "pros": [
@@ -33,7 +33,7 @@ export default {
   "cons": [
     "主要价值绑定 JetBrains IDE",
     "云端 AI credits 和本地补全不是同一种额度",
-    "不同地区和账号类型的价格/税费需要按结账页确认",
+    "AI Free 与 AI Ultimate 在中国大陆不可用；其他地区和账号类型的税费仍需按结账页确认",
     "上下文理解不如专用 Agent IDE 激进",
     "非 JetBrains 用户迁移成本高"
   ],
@@ -41,7 +41,7 @@ export default {
   "funRanking": "夯",
   "personalExperience": {
     "rating": 3,
-    "insights": "截至 2026-07-07，JetBrains 官方说明仍将 AI Assistant 归入 AI Free、AI Pro、AI Ultimate 计划，并用 AI credits 管理云端能力。本地补全、云端聊天、企业购买和 IDE 支持范围需要分开评估，不再用旧的固定欧元年费做当前口径。",
+    "insights": "截至 2026-07-13，JetBrains 官方说明将 AI Assistant 分为 AI Free（3 credits/30 天）、AI Pro $10/月（10 credits）和 AI Ultimate $30/月（35 credits）；AI Free 与 AI Ultimate 在中国大陆不可用。本地补全、云端聊天和企业购买仍需分开评估。",
     "pitfalls": [
       "先确认账号所在地区的价格和税费",
       "区分本地补全与云端 AI credits",

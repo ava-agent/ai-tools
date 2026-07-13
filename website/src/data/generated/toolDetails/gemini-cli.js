@@ -1,7 +1,7 @@
 // Generated from src/data/tools.js.
 export default {
   "verificationStatus": "verified",
-  "lastVerified": "2026-07-07",
+  "lastVerified": "2026-07-13",
   "sources": [
     "https://github.com/google-gemini/gemini-cli",
     "https://github.com/google-gemini/gemini-cli/blob/main/docs/resources/quota-and-pricing.md",
@@ -42,7 +42,7 @@ export default {
   "funRanking": "夯夯",
   "personalExperience": {
     "rating": 4.5,
-    "insights": "截至 2026-07-07，官方 README 仍确认个人 Google 账号 OAuth 路径可用 60 RPM / 1,000 RPD 免费额度、Gemini 3 models、1M token context、内置工具与 MCP。适合先读懂项目，再决定是否交给更贵的 Agent 执行。",
+    "insights": "截至 2026-07-13，官方 README 仍确认个人 Google 账号 OAuth 路径可用 60 RPM / 1,000 RPD 免费额度、Gemini 3 models、1M token context、内置工具与 MCP。适合先读懂项目，再决定是否交给更贵的 Agent 执行。",
     "pitfalls": [
       "有请求数和日额度上限",
       "高阶模型和付费 license 可用性要按当前账号确认",

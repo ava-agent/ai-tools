@@ -1,7 +1,7 @@
 // Generated from src/data/tools.js.
 export default {
   "verificationStatus": "verified",
-  "lastVerified": "2026-07-08",
+  "lastVerified": "2026-07-13",
   "sources": [
     "https://cloud.baidu.com/product-s/qianfan_home",
     "https://cloud.baidu.com/doc/qianfan-docs/s/7m95lyy43",
@@ -49,7 +49,7 @@ export default {
   "funRanking": "夯",
   "personalExperience": {
     "rating": 3.5,
-    "insights": "截至 2026-07-08，百度千帆官方页面已列出 ERNIE 5.1、ERNIE 5.0、ERNIE-5.0-Thinking-Preview、ERNIE 4.5 Turbo、ERNIE 4.5 Turbo VL 和 ERNIE X1.1 Preview，并给出 API 接入点、上下文和价格。千帆首页现在更强调以 Agent 为核心的一站式企业级大模型服务平台，本站去掉消费者端永久免费和对标 GPT 的强结论，改为百度千帆 API/Agent 平台选型口径。",
+    "insights": "截至 2026-07-13，百度千帆官方页面已列出 ERNIE 5.1、ERNIE 5.0、ERNIE-5.0-Thinking-Preview、ERNIE 4.5 Turbo、ERNIE 4.5 Turbo VL 和 ERNIE X1.1 Preview，并给出 API 接入点、上下文和价格。千帆首页现在更强调以 Agent 为核心的一站式企业级大模型服务平台，本站去掉消费者端永久免费和对标 GPT 的强结论，改为百度千帆 API/Agent 平台选型口径。",
     "pitfalls": [
       "按 API/消费者入口分别核算费用",
       "中文任务先做自有数据评测",

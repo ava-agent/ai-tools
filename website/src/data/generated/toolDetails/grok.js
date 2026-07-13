@@ -1,7 +1,7 @@
 // Generated from src/data/tools.js.
 export default {
   "verificationStatus": "verified",
-  "lastVerified": "2026-07-07",
+  "lastVerified": "2026-07-13",
   "sources": [
     "https://docs.x.ai/developers/models",
     "https://x.ai/pricing",
@@ -11,18 +11,18 @@ export default {
   "name": "Grok / xAI",
   "category": "llm",
   "subcategory": "通用大模型",
-  "developer": "xAI",
+  "developer": "SpaceXAI (xAI)",
   "logo": null,
   "versions": [
     {
       "type": "Global",
       "pricing": "Grok App / X / xAI API 分入口；订阅和 API 价格以 xAI 官方页面为准",
-      "models": "Grok 4.3 / Grok 4 / Grok Build 等，以官方模型页为准",
+      "models": "Grok 4.5（500K）、Grok 4.3（1M）、grok-build-0.1（256K）等，以官方模型页为准",
       "link": "https://docs.x.ai/developers/models"
     }
   ],
   "freeQuota": "Grok App/X 订阅与 xAI API 分开；免费或试用入口以官方 Grok/pricing 页面为准",
-  "contextWindow": "取决于 Grok 4.3、Grok Build 等具体模型和 API 入口",
+  "contextWindow": "Grok 4.5 500K；Grok 4.3 1M；grok-build-0.1 256K",
   "chineseSupport": 3,
   "pros": [
     "官方模型页已列出 Grok 4.3、Grok Build 等当前模型路线",
@@ -40,7 +40,7 @@ export default {
   "funRanking": "夯夯",
   "personalExperience": {
     "rating": 4.5,
-    "insights": "截至 2026-07-07，xAI 官方模型页已展示 Grok 4.3、Grok Build 等模型，pricing 页面区分 Grok App/订阅和 xAI API。本站不再把 Grok 固定写成旧系列名和单一 X 订阅口径，而是强调入口和计费路径需要按官方当前页确认。",
+    "insights": "截至 2026-07-13，xAI 官方模型页已展示 Grok 4.3、Grok Build 等模型，pricing 页面区分 Grok App/订阅和 xAI API。本站不再把 Grok 固定写成旧系列名和单一 X 订阅口径，而是强调入口和计费路径需要按官方当前页确认。",
     "pitfalls": [
       "区分 Grok App/X 订阅和 xAI API",
       "模型与价格变化快",
@@ -53,7 +53,7 @@ export default {
     "avoidIf": "你需要稳定企业生态、国内可用性，或不想处理 Grok App/X/API 多入口",
     "mainRisk": "Grok 4.3、Grok Build、App 订阅和 API pricing 变化快，旧单一 X 订阅口径会误导预算",
     "alternatives": [
-      "GPT-5.5 / OpenAI",
+      "GPT-5.6 / OpenAI",
       "Gemini",
       "Claude"
     ]

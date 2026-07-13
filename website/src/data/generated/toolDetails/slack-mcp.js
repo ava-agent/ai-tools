@@ -1,7 +1,7 @@
 // Generated from src/data/tools.js.
 export default {
   "verificationStatus": "verified",
-  "lastVerified": "2026-07-08",
+  "lastVerified": "2026-07-13",
   "sources": [
     "https://docs.slack.dev/ai/slack-mcp-server",
     "https://slack.com/help/articles/48855576908307-Guide-to-Model-Context-Protocol-in-Slack",
@@ -43,7 +43,7 @@ export default {
   "funRanking": "夯",
   "personalExperience": {
     "rating": 4,
-    "insights": "截至 2026-07-08，Slack 已有官方 MCP Server 文档。它的关键价值是把 Slack 搜索、频道/线程、消息发送和 Canvas 变成 Agent 上下文；关键风险是同一个连接可能读取或发送消息，所以应按工作区策略、管理员审批和 OAuth 权限范围进行最小授权。",
+    "insights": "截至 2026-07-13，Slack 已有官方 MCP Server 文档。它的关键价值是把 Slack 搜索、频道/线程、消息发送和 Canvas 变成 Agent 上下文；关键风险是同一个连接可能读取或发送消息，所以应按工作区策略、管理员审批和 OAuth 权限范围进行最小授权。",
     "pitfalls": [
       "最小化 OAuth scopes",
       "写消息前人工确认",

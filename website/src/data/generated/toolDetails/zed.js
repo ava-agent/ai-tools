@@ -1,7 +1,7 @@
 // Generated from src/data/tools.js.
 export default {
   "verificationStatus": "verified",
-  "lastVerified": "2026-07-07",
+  "lastVerified": "2026-07-13",
   "sources": [
     "https://zed.dev/pricing",
     "https://zed.dev/docs/ai/overview"
@@ -42,7 +42,7 @@ export default {
   "funRanking": "夯",
   "personalExperience": {
     "rating": 3,
-    "insights": "截至 2026-07-07，Zed 官方 pricing 将 Personal、Pro、Business 分层展示：Personal $0 并含 2,000 accepted edit predictions，Pro $10/月含 $5 token credits，Business $30/席/月提供组织控制。Pro trial 为两周或 $20 token credits；它更适合把高速编辑器、BYOK 和外部 Agent 组合起来，而不是把所有 AI 能力理解成免费无限。",
+    "insights": "截至 2026-07-13，Zed 官方 pricing 将 Personal、Pro、Business 分层展示：Personal $0 并含 2,000 accepted edit predictions，Pro $10/月含 $5 token credits，Business $30/席/月提供组织控制。Pro trial 为两周或 $20 token credits；它更适合把高速编辑器、BYOK 和外部 Agent 组合起来，而不是把所有 AI 能力理解成免费无限。",
     "pitfalls": [
       "先确认是 Personal/BYOK 路径还是 Pro 托管模型路径",
       "团队治理能力需要按 Business controls 和当前 SSO 状态核对"

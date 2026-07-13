@@ -1,8 +1,9 @@
 // Generated from src/data/tools.js.
 export default {
   "verificationStatus": "verified",
-  "lastVerified": "2026-07-07",
+  "lastVerified": "2026-07-13",
   "sources": [
+    "https://learn.chatgpt.com/docs/pricing",
     "https://developers.openai.com/codex/pricing",
     "https://developers.openai.com/codex/cli/features",
     "https://developers.openai.com/codex/models",
@@ -44,7 +45,7 @@ export default {
   "funRanking": "夯夯夯",
   "personalExperience": {
     "rating": 5,
-    "insights": "截至 2026-07-07，OpenAI 官方 Codex pricing 页明确 Codex 包含在 ChatGPT Free、Go、Plus、Pro、Business、Edu、Enterprise 中；Help Center 说明不同计划的 usage limits 和 credit options 不同。采购或部署时应按官方 Codex pricing、models 和 credits 文档核验。",
+    "insights": "截至 2026-07-13，OpenAI 官方 Codex pricing 页明确 Codex 包含在 ChatGPT Free、Go、Plus、Pro、Business、Edu、Enterprise 中；Help Center 说明不同计划的 usage limits 和 credit options 不同。采购或部署时应按官方 Codex pricing、models 和 credits 文档核验。",
     "pitfalls": [
       "模型名和额度变化快，使用前看官方 Codex docs",
       "不要沿用旧的固定 Codex 型号和价格断言",

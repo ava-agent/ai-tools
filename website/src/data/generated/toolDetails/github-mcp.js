@@ -1,7 +1,7 @@
 // Generated from src/data/tools.js.
 export default {
   "verificationStatus": "verified",
-  "lastVerified": "2026-07-08",
+  "lastVerified": "2026-07-13",
   "sources": [
     "https://github.com/github/github-mcp-server",
     "https://docs.github.com/en/copilot/how-tos/provide-context/use-mcp-in-your-ide/set-up-the-github-mcp-server",
@@ -17,7 +17,7 @@ export default {
     {
       "type": "Global",
       "pricing": "MIT 开源本地 server；远程 OAuth 入口随 GitHub Copilot/IDE 支持而定，GitHub API 仍受权限与 rate limits 约束",
-      "models": "无需 LLM，封装 GitHub API 的 remote/local MCP server",
+      "models": "远程端点 https://api.githubcopilot.com/mcp/；也支持本地 Docker/二进制 server",
       "link": "https://github.com/github/github-mcp-server"
     }
   ],
@@ -37,7 +37,7 @@ export default {
   "chineseSupport": 3,
   "pros": [
     "GitHub 官方 MCP Server",
-    "remote GitHub MCP server 已进入官方主路径，适合 repo、Issue、PR、Actions 的受控 AI 工作流",
+    "remote GitHub MCP server https://api.githubcopilot.com/mcp/ 已进入官方主路径，适合 repo、Issue、PR、Actions 的受控 AI 工作流",
     "支持远程 OAuth 与本地 Docker/二进制部署路径",
     "覆盖 repos、issues、pull_requests、actions、code_security 等 toolsets",
     "可用 --toolsets 或 GITHUB_TOOLSETS 缩小暴露能力",

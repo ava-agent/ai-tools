@@ -1,7 +1,7 @@
 // Generated from src/data/tools.js.
 export default {
   "verificationStatus": "verified",
-  "lastVerified": "2026-07-07",
+  "lastVerified": "2026-07-13",
   "sources": [
     "https://docs.z.ai/guides/overview/pricing",
     "https://bigmodel.cn/pricing"
@@ -16,11 +16,11 @@ export default {
     {
       "type": "CN",
       "pricing": "Z.AI / BigModel API 按模型、输入、输出和缓存计费，需按官方 pricing 逐项核价",
-      "models": "GLM-5.2 / GLM-4.7 / GLM-4.6 / GLM-Z1 等，以官方当前列表为准",
+      "models": "GLM-5.2 / GLM-5.1 / GLM-5 / GLM-5-Turbo / GLM-4.7 等，以官方当前列表为准",
       "link": "https://docs.z.ai/guides/overview/pricing"
     }
   ],
-  "freeQuota": "清言/开放平台可能有试用或促销；API 免费额度以控制台和官方 pricing 为准",
+  "freeQuota": "GLM-4.7-Flash 与 GLM-4.5-Flash 提供免费调用路径；其他额度和活动以控制台为准",
   "contextWindow": "取决于模型；GLM-5.2 等上下文和输出上限以官方模型页/价格页为准",
   "chineseSupport": 5,
   "pros": [
@@ -38,7 +38,7 @@ export default {
   "funRanking": "夯夯",
   "personalExperience": {
     "rating": 4.5,
-    "insights": "截至 2026-07-07，Z.AI/BigModel 官方 pricing 已把 GLM 拆成 GLM-5.2、GLM-4.7、GLM-4.6、GLM-Z1 等多档。本站不再把 GLM 固定写成 GLM-4.7 单一版本，而是按“GLM / Z.AI 模型家族”展示，使用前应按实际模型和 token 计费核算。",
+    "insights": "截至 2026-07-13，Z.AI/BigModel 官方 pricing 已把 GLM 拆成 GLM-5.2、GLM-4.7、GLM-4.6、GLM-Z1 等多档。本站不再把 GLM 固定写成 GLM-4.7 单一版本，而是按“GLM / Z.AI 模型家族”展示，使用前应按实际模型和 token 计费核算。",
     "pitfalls": [
       "先按官方 pricing 选择具体 GLM 型号",
       "极复杂任务建议和 Claude/GPT/Gemini 交叉评测",

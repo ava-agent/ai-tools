@@ -1,7 +1,7 @@
 // Generated from src/data/tools.js.
 export default {
   "verificationStatus": "verified",
-  "lastVerified": "2026-07-07",
+  "lastVerified": "2026-07-13",
   "sources": [
     "https://www.trae.ai/pricing",
     "https://docs.trae.ai/ide/new-plans-and-billing",
@@ -12,7 +12,7 @@ export default {
   "name": "Trae",
   "category": "ide",
   "subcategory": "AI原生IDE",
-  "developer": "字节跳动",
+  "developer": "深圳市脸萌科技有限公司（字节跳动旗下）",
   "logo": null,
   "versions": [
     {
@@ -41,7 +41,7 @@ export default {
   "funRanking": "夯",
   "personalExperience": {
     "rating": 5,
-    "insights": "截至 2026-07-07，Trae 官方 pricing 明确展示 Free、Lite、Pro、Pro+、Ultra，多档 Basic usage、Bonus usage、Autocompletion 和并发云任务限制。它仍适合预算敏感团队，但不能再按“免费无限”理解。",
+    "insights": "截至 2026-07-13，Trae 官方 pricing 明确展示 Free、Lite、Pro、Pro+、Ultra，多档 Basic usage、Bonus usage、Autocompletion 和并发云任务限制。它仍适合预算敏感团队，但不能再按“免费无限”理解。",
     "pitfalls": [
       "不要再按“完全免费”做采购判断",
       "敏感代码先确认数据处理和企业管控能力"

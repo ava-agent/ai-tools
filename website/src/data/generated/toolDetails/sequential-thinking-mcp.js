@@ -1,7 +1,7 @@
 // Generated from src/data/tools.js.
 export default {
   "verificationStatus": "verified",
-  "lastVerified": "2026-07-08",
+  "lastVerified": "2026-07-13",
   "sources": [
     "https://github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking",
     "https://www.npmjs.com/package/@modelcontextprotocol/server-sequential-thinking",
@@ -41,7 +41,7 @@ export default {
   "funRanking": "夯",
   "personalExperience": {
     "rating": 4,
-    "insights": "截至 2026-07-08，Sequential Thinking 更准确的定位是一个提供结构化推理工具的参考 MCP server。它的价值不是“神奇提质”，而是让复杂多步推理能被 MCP host 多次调用并显式记录。",
+    "insights": "截至 2026-07-13，Sequential Thinking 更准确的定位是一个提供结构化推理工具的参考 MCP server。它的价值不是“神奇提质”，而是让复杂多步推理能被 MCP host 多次调用并显式记录。",
     "pitfalls": [
       "确认 MCP host 真的展示 sequential_thinking 调用",
       "避免不必要地记录敏感推理轨迹",

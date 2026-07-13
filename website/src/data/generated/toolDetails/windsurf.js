@@ -1,7 +1,7 @@
 // Generated from src/data/tools.js.
 export default {
   "verificationStatus": "verified",
-  "lastVerified": "2026-07-07",
+  "lastVerified": "2026-07-13",
   "sources": [
     "https://windsurf.com/pricing",
     "https://devin.ai/pricing/",
@@ -42,7 +42,7 @@ export default {
   "funRanking": "夯",
   "personalExperience": {
     "rating": 4,
-    "insights": "截至 2026-07-07，Windsurf/Devin Desktop 官方 pricing 展示 Free $0、Pro $20/月、Max $200/月、Teams $80/月起 + $40/月每 full dev seat、Enterprise 定制。旧的 $15/月、Teams $40/席/月和 credits 主叙事都要避免。",
+    "insights": "截至 2026-07-13，Windsurf/Devin Desktop 官方 pricing 展示 Free $0、Pro $20/月、Max $200/月、Teams $80/月起 + $40/月每 full dev seat、Enterprise 定制。旧的 $15/月、Teams $40/席/月和 credits 主叙事都要避免。",
     "pitfalls": [
       "不要沿用旧 Codeium/Windsurf 价格",
       "Teams 采购要按 base fee + full dev seat 计算",

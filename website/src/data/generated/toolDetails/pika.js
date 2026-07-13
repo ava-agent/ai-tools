@@ -1,7 +1,7 @@
 // Generated from src/data/tools.js.
 export default {
   "verificationStatus": "verified",
-  "lastVerified": "2026-07-08",
+  "lastVerified": "2026-07-13",
   "sources": [
     "https://pika.art/pricing",
     "https://pika.art/",
@@ -44,7 +44,7 @@ export default {
   "funRanking": "夯",
   "personalExperience": {
     "rating": 3.5,
-    "insights": "截至 2026-07-08，Pika 官方 pricing 页显示 Basic $0/80 monthly video credits、Standard $8/700、Pro $28/2,300、Fancy $76/6,000（年付口径），并列出 Pika 2.5、Pikascenes、Pikadditions、Pikaswaps、Pikatwists 和 Pikaffects 的 credit 消耗。API 页面把 Pika 视频模型入口指向 Fal.ai，采购判断要把 Web 订阅和 API 路径分开。",
+    "insights": "截至 2026-07-13，Pika 官方 pricing 页显示 Basic $0/80 monthly video credits、Standard $8/700、Pro $28/2,300、Fancy $76/6,000（年付口径），并列出 Pika 2.5、Pikascenes、Pikadditions、Pikaswaps、Pikatwists 和 Pikaffects 的 credit 消耗。API 页面把 Pika 视频模型入口指向 Fal.ai，采购判断要把 Web 订阅和 API 路径分开。",
     "pitfalls": [
       "先按目标功能估算每条视频 credits",
       "Basic $0 分辨率和功能范围有限",

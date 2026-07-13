@@ -1,24 +1,30 @@
 // Generated from src/data/tools.js.
 export default {
   "verificationStatus": "verified",
-  "lastVerified": "2026-07-08",
+  "lastVerified": "2026-07-13",
   "sources": [
     "https://www.capcut.com/help/how-much-does-capcut-pro-cost",
     "https://www.capcut.com/help/pricing-change",
     "https://www.capcut.com/help/capcut-teams-price"
   ],
   "id": "jianying",
-  "name": "剪映",
+  "name": "剪映 / CapCut",
   "category": "multimodal",
   "subcategory": "视频编辑",
-  "developer": "字节跳动",
+  "developer": "ByteDance",
   "logo": null,
   "versions": [
     {
-      "type": "CN/Global",
+      "type": "CN",
+      "pricing": "剪映会员与 AI 权益以中国站和产品内为准",
+      "models": "剪映 AI 编辑套件",
+      "link": "https://www.capcut.cn/"
+    },
+    {
+      "type": "Global",
       "pricing": "CapCut Pro 和 Teams 价格会随地区、设备、计费周期和促销变化",
-      "models": "CapCut / 剪映 AI 编辑套件",
-      "link": "https://www.capcut.com"
+      "models": "CapCut AI 编辑套件",
+      "link": "https://www.capcut.com/"
     }
   ],
   "freeQuota": "免费版和 Pro 能力随市场变化；当前 Pro 页面展示月付与年付订阅",
@@ -41,7 +47,7 @@ export default {
   "funRanking": "夯",
   "personalExperience": {
     "rating": 4,
-    "insights": "截至 2026-07-08，CapCut/剪映不应再被简单写成通用免费编辑器，而应视为跨设备视频编辑器：Pro、Teams、存储和 AI points 规则都需要按地区和设备核对。最新帮助页已经明确提示价格和计划权益会变化。",
+    "insights": "截至 2026-07-13，CapCut/剪映不应再被简单写成通用免费编辑器，而应视为跨设备视频编辑器：Pro、Teams、存储和 AI points 规则都需要按地区和设备核对。最新帮助页已经明确提示价格和计划权益会变化。",
     "pitfalls": [
       "报价前确认目标地区和设备上的实际价格",
       "个人 Pro 和 Teams Standard Plan 要分开决策",

@@ -27,7 +27,7 @@ export const aiToolsData = [
       {
         type: 'Global',
         pricing:
-          'Hobby 免费 / Individual $20/月 / Teams $40/用户/月 / Enterprise 定制；高级模型和额外用量按官方模型与用量池规则核算',
+          'Hobby 免费 / Pro $20/月 / Pro+ $60/月 / Ultra $200/月 / Teams $40/用户/月 / Enterprise 定制；高级模型和额外用量按官方模型与用量池规则核算',
         models: '前沿模型、Auto、Composer 系列与第三方模型（以官方 Models & Pricing 当前表为准）',
         link: 'https://cursor.com/pricing'
       }
@@ -54,11 +54,11 @@ export const aiToolsData = [
     personalExperience: {
       rating: 5,
       insights:
-        '截至 2026-07-07，官方 pricing 与 Models & Pricing 页仍确认 Cursor 是多档订阅的 AI 原生 IDE：Hobby 免费，Individual $20/月，Teams $40/用户/月，Enterprise 定制。适合作为主力，但要按 usage pool、高级模型消耗、Cloud Agents/Bugbot 与隐私策略一起核算。',
+        '截至 2026-07-13，官方 pricing 与 Models & Pricing 页确认 Cursor 提供 Hobby、Pro $20/月、Pro+ $60/月、Ultra $200/月、Teams $40/用户/月和 Enterprise。适合作为主力，但要按 usage pool、高级模型消耗、Cloud Agents/Bugbot 与隐私策略一起核算。',
       pitfalls: ['不要让它一次性改超过 10 个文件', '敏感项目先确认 Privacy Mode 与代码处理策略']
     },
     verificationStatus: 'verified',
-    lastVerified: '2026-07-07',
+    lastVerified: '2026-07-13',
     sources: [
       'https://cursor.com/pricing',
       'https://cursor.com/docs/models-and-pricing',
@@ -88,7 +88,7 @@ export const aiToolsData = [
     name: 'Trae',
     category: 'ide',
     subcategory: 'AI原生IDE',
-    developer: '字节跳动',
+    developer: '深圳市脸萌科技有限公司（字节跳动旗下）',
     logo: null,
     versions: [
       {
@@ -119,11 +119,11 @@ export const aiToolsData = [
     personalExperience: {
       rating: 5,
       insights:
-        '截至 2026-07-07，Trae 官方 pricing 明确展示 Free、Lite、Pro、Pro+、Ultra，多档 Basic usage、Bonus usage、Autocompletion 和并发云任务限制。它仍适合预算敏感团队，但不能再按“免费无限”理解。',
+        '截至 2026-07-13，Trae 官方 pricing 明确展示 Free、Lite、Pro、Pro+、Ultra，多档 Basic usage、Bonus usage、Autocompletion 和并发云任务限制。它仍适合预算敏感团队，但不能再按“免费无限”理解。',
       pitfalls: ['不要再按“完全免费”做采购判断', '敏感代码先确认数据处理和企业管控能力']
     },
     verificationStatus: 'verified',
-    lastVerified: '2026-07-07',
+    lastVerified: '2026-07-13',
     sources: [
       'https://www.trae.ai/pricing',
       'https://docs.trae.ai/ide/new-plans-and-billing',
@@ -185,7 +185,7 @@ export const aiToolsData = [
     personalExperience: {
       rating: 4,
       insights:
-        '截至 2026-07-07，Windsurf/Devin Desktop 官方 pricing 展示 Free $0、Pro $20/月、Max $200/月、Teams $80/月起 + $40/月每 full dev seat、Enterprise 定制。旧的 $15/月、Teams $40/席/月和 credits 主叙事都要避免。',
+        '截至 2026-07-13，Windsurf/Devin Desktop 官方 pricing 展示 Free $0、Pro $20/月、Max $200/月、Teams $80/月起 + $40/月每 full dev seat、Enterprise 定制。旧的 $15/月、Teams $40/席/月和 credits 主叙事都要避免。',
       pitfalls: [
         '不要沿用旧 Codeium/Windsurf 价格',
         'Teams 采购要按 base fee + full dev seat 计算',
@@ -194,7 +194,7 @@ export const aiToolsData = [
       ]
     },
     verificationStatus: 'verified',
-    lastVerified: '2026-07-07',
+    lastVerified: '2026-07-13',
     sources: [
       'https://windsurf.com/pricing',
       'https://devin.ai/pricing/',
@@ -260,7 +260,7 @@ export const aiToolsData = [
     personalExperience: {
       rating: 4.5,
       insights:
-        '截至 2026-07-07，Qoder docs 已给出 Community Free、Pro $20、Pro+ $60、Ultra $200 和 Teams 计划。它适合 Quest/Repo Wiki/Knowledge Card 这类代码库理解与长任务，但采购判断必须按 credits、premium/basic models 降级和 top-up 规则一起算。',
+        '截至 2026-07-13，Qoder docs 已给出 Community Free、Pro $20、Pro+ $60、Ultra $200 和 Teams 计划。它适合 Quest/Repo Wiki/Knowledge Card 这类代码库理解与长任务，但采购判断必须按 credits、premium/basic models 降级和 top-up 规则一起算。',
       pitfalls: [
         '按 credits 而不是月费单点估算',
         '留意 credits 到期和 basic models 降级',
@@ -268,10 +268,10 @@ export const aiToolsData = [
       ]
     },
     verificationStatus: 'verified',
-    lastVerified: '2026-07-07',
+    lastVerified: '2026-07-13',
     sources: [
       'https://docs.qoder.com/account/pricing',
-      'https://docs.qoder.com/account/credits',
+      'https://docs.qoder.com/Credits',
       'https://qoder.com/pricing',
       'https://qoder.com/en'
     ],
@@ -335,14 +335,14 @@ export const aiToolsData = [
     personalExperience: {
       rating: 3,
       insights:
-        '截至 2026-07-07，Zed 官方 pricing 将 Personal、Pro、Business 分层展示：Personal $0 并含 2,000 accepted edit predictions，Pro $10/月含 $5 token credits，Business $30/席/月提供组织控制。Pro trial 为两周或 $20 token credits；它更适合把高速编辑器、BYOK 和外部 Agent 组合起来，而不是把所有 AI 能力理解成免费无限。',
+        '截至 2026-07-13，Zed 官方 pricing 将 Personal、Pro、Business 分层展示：Personal $0 并含 2,000 accepted edit predictions，Pro $10/月含 $5 token credits，Business $30/席/月提供组织控制。Pro trial 为两周或 $20 token credits；它更适合把高速编辑器、BYOK 和外部 Agent 组合起来，而不是把所有 AI 能力理解成免费无限。',
       pitfalls: [
         '先确认是 Personal/BYOK 路径还是 Pro 托管模型路径',
         '团队治理能力需要按 Business controls 和当前 SSO 状态核对'
       ]
     },
     verificationStatus: 'verified',
-    lastVerified: '2026-07-07',
+    lastVerified: '2026-07-13',
     sources: ['https://zed.dev/pricing', 'https://zed.dev/docs/ai/overview'],
     decisionSummary: {
       verdict:
@@ -399,7 +399,7 @@ export const aiToolsData = [
     personalExperience: {
       rating: 3,
       insights:
-        '截至 2026-07-07，Replit pricing 仍以 Starter、Core、Pro、Enterprise 展示，并把 Agent/Assistant/部署能力放进 credits 体系。它适合快速把想法跑起来，但要用 budget、usage dashboard 和小任务试跑控制成本。',
+        '截至 2026-07-13，Replit pricing 仍以 Starter、Core、Pro、Enterprise 展示，并把 Agent/Assistant/部署能力放进 credits 体系。它适合快速把想法跑起来，但要用 budget、usage dashboard 和小任务试跑控制成本。',
       pitfalls: [
         '复杂任务先拆小，避免一次性烧太多 credits',
         '上线前设置 usage alerts 和 budget limits',
@@ -407,7 +407,7 @@ export const aiToolsData = [
       ]
     },
     verificationStatus: 'verified',
-    lastVerified: '2026-07-07',
+    lastVerified: '2026-07-13',
     sources: ['https://replit.com/pricing', 'https://docs.replit.com/billing/ai-billing'],
     decisionSummary: {
       verdict:
@@ -438,7 +438,7 @@ export const aiToolsData = [
         pricing:
           'Free 50 credits / Pro $20/用户/月 / Pro+ $40/用户/月 / Pro Max $100/用户/月 / Power $200/用户/月',
         models:
-          'Auto、open-weight models 与 premium models；Free 含 open-weight models 和 Claude Sonnet 4.6（按计划限制）',
+          'Auto、open-weight models 与 premium models；具体 Claude 版本和计划可用性以当前模型选择器与官方说明为准',
         link: 'https://kiro.dev/pricing/'
       }
     ],
@@ -448,7 +448,7 @@ export const aiToolsData = [
     pros: [
       'Spec 驱动工作流适合把需求、设计和任务拆成可追踪交付物',
       '价格页明确列出 Free、Pro、Pro+、Pro Max、Power 档位',
-      'Free 可用 50 credits、open-weight models 和受限 Claude Sonnet 4.6',
+      'Free 可用 50 credits 和受限模型；具体 Claude 版本以当前模型选择器为准',
       '付费档可使用 open-weight 与 premium models，并支持 add-on credits',
       '按 credits 计费，适合先用低档验证团队工作流'
     ],
@@ -458,26 +458,26 @@ export const aiToolsData = [
       'Spec 驱动对轻量临时代码任务会显得偏重'
     ],
     bestFor: '需求拆解、规格文档、任务分解',
-    funRanking: '夯',
+    funRanking: '待复核',
     personalExperience: {
       rating: 4,
       insights:
-        '截至 2026-07-07，Kiro 官方 pricing 页显示 Free 50 credits，付费档从 Pro $20 到 Power $200，Pro Max $100 保留。Free 当前口径包含 open-weight models 与受限 Claude Sonnet 4.6；优势仍是 Spec 驱动，而不是最快的自由写码 IDE。',
+        '截至 2026-07-13，Kiro 官方 pricing 页显示 Free 50 credits，付费档从 Pro $20 到 Power $200。官方不同页面对具体 Claude 小版本存在冲突，因此只保留模型类别并标记待复核；优势仍是 Spec 驱动，而不是最快的自由写码 IDE。',
       pitfalls: [
         'Free credits 太少',
         '高阶模型和超额 credits 要提前估算',
         '轻量修修补补不一定值得上 Spec 流程'
       ]
     },
-    verificationStatus: 'verified',
-    lastVerified: '2026-07-07',
+    verificationStatus: 'needs-review',
+    lastVerified: '2026-07-13',
     sources: ['https://kiro.dev/pricing/'],
     decisionSummary: {
       verdict:
         '适合把需求拆成规格和任务的团队，但 Free 很小，正式使用应按 credits 和模型档位估算。',
       bestFor: '需求拆解、规格文档、任务分解、偏规范化的团队开发',
       avoidIf: '你只需要轻量补全、快速原型，或不想引入 Spec 驱动流程',
-      mainRisk: 'Free credits 很少，复杂任务可能快速进入付费或超额 credits',
+      mainRisk: 'Free credits 很少，复杂任务可能快速进入付费或超额 credits；官方页面对具体模型小版本的口径仍需复核',
       alternatives: ['Cursor', 'Trae', 'Qoder']
     },
     swot: {
@@ -486,7 +486,7 @@ export const aiToolsData = [
       O: '企业规范化开发',
       T: '轻量 AI IDE 和 CLI 工具'
     },
-    tags: ['Amazon', 'Spec', '规范', 'Credits', 'ProMax'],
+    tags: ['Amazon', 'Spec', '规范', 'Credits', 'ProMax', '待复核'],
     video: { src: './videos/kiro.mp4' },
     radarChart: 'images/kiro_radar_chart.png'
   },
@@ -512,7 +512,7 @@ export const aiToolsData = [
       '取决于所选内置/自定义模型；models.json 可配置 maxInputTokens 与 maxOutputTokens',
     chineseSupport: 5,
     verificationStatus: 'verified',
-    lastVerified: '2026-07-07',
+    lastVerified: '2026-07-13',
     sources: [
       'https://www.codebuddy.ai/docs/ide/Account/pricing',
       'https://www.codebuddy.ai/docs/ide/Account/credits',
@@ -548,7 +548,7 @@ export const aiToolsData = [
     personalExperience: {
       rating: 2.5,
       insights:
-        '截至 2026-07-07，官方文档将 CodeBuddy 计费写成 Pro / Team Plan + credits / top-ups 的口径，并说明 Credits 会按模型 tier、任务复杂度和上下文长度消耗。旧的固定免费 token/月说法不再适合作为当前推荐理由。',
+        '截至 2026-07-13，官方文档将 CodeBuddy 计费写成 Pro / Team Plan + credits / top-ups 的口径，并说明 Credits 会按模型 tier、任务复杂度和上下文长度消耗。旧的固定免费 token/月说法不再适合作为当前推荐理由。',
       pitfalls: [
         '先用真实项目测 credits 消耗',
         '不要把 add-on credits 当成无限额度',
@@ -577,7 +577,7 @@ export const aiToolsData = [
       {
         type: 'Global',
         pricing:
-          'Free / Google AI Pro $19.99/month / Google AI Ultra $99.99 或 $199.99/month；Antigravity 具体限额按官方 Plans 页面与 Google AI 订阅说明',
+          'Free / Google AI Pro / Google AI Ultra；价格按所在地区与当前 Google AI 订阅页确认，Antigravity 具体限额按官方 Plans 页面与订阅说明',
         models: 'Gemini 与第三方模型接入范围以 Antigravity 当前 Plans 和模型选择器为准',
         link: 'https://antigravity.google/pricing'
       }
@@ -588,7 +588,7 @@ export const aiToolsData = [
       '取决于所选 agent model；Antigravity 限额按订阅层级、任务复杂度和 AI credits 机制管理',
     chineseSupport: 3,
     verificationStatus: 'verified',
-    lastVerified: '2026-07-07',
+    lastVerified: '2026-07-13',
     sources: [
       'https://antigravity.google/pricing',
       'https://gemini.google/subscriptions/',
@@ -607,8 +607,8 @@ export const aiToolsData = [
     },
     pros: [
       'Google 官方 agentic development platform',
-      'Google AI Pro $19.99/month 提供 Antigravity higher rate limits',
-      'Google AI Ultra $99.99/month 与 $199.99/month 层级提供更高 limits，官方 Help 写明相对 Pro 可达 5x 或 20x quota',
+      'Google AI Pro 提供 Antigravity higher rate limits，订阅价格按地区确认',
+      'Google AI Ultra 提供更高 limits，官方 Help 写明相对 Pro 可达 5x 或 20x quota',
       'Google One Help 明确 Ultra 有最高 limits、prioritized traffic、first access to new models 与 baseline quota / AI credits 两层机制',
       '支持通过 AI credits 扩展 Antigravity 用量',
       '适合与 Gemini、Jules、AI Studio 等 Google 开发生态联动'
@@ -625,7 +625,7 @@ export const aiToolsData = [
     personalExperience: {
       rating: 3.5,
       insights:
-        '截至 2026-07-07，Antigravity 已不应只按“Public Preview 免费”描述。Google AI Pro / Ultra 订阅页和 Google One Help 都把 Antigravity 放进订阅权益与 AI credits 体系里，重点是 baseline quota、限额层级、优先流量、英文提示限制和超额续用机制。',
+        '截至 2026-07-13，Antigravity 已不应只按“Public Preview 免费”描述。Google AI Pro / Ultra 订阅页和 Google One Help 都把 Antigravity 放进订阅权益与 AI credits 体系里，重点是 baseline quota、限额层级、优先流量、英文提示限制和超额续用机制。',
       pitfalls: [
         '先确认所在地区和账号能否使用对应计划',
         '把 baseline quota 与 AI credits 分开估算',
@@ -717,7 +717,7 @@ export const aiToolsData = [
     name: 'Verdent',
     category: 'ide',
     subcategory: '多Agent IDE',
-    developer: 'Verdent Team',
+    developer: 'Verdent AI, Inc.',
     logo: null,
     versions: [
       {
@@ -725,7 +725,7 @@ export const aiToolsData = [
         pricing:
           '免费试用：7 天 100 credits；Starter $19/月；Pro $59/月；Max $179/月；Teams $20/用户/月；Top-ups 约 1 credit = $0.059，当前标注 No Markup on Model Costs',
         models:
-          'Pricing 页展示 Claude Fable/Opus/Sonnet、GPT-5.5、Gemini 3.1 Pro、GLM-5.2、Kimi K2.7 Code 等；模型与 provider pricing 以官方模型价格页为准',
+          'Pricing 页展示 Claude Fable/Opus/Sonnet、GPT-5.6、Gemini 3.1 Pro、GLM-5.2、Kimi K2.7 Code 等；模型与 provider pricing 以官方模型价格页为准',
         link: 'https://www.verdent.ai/pricing'
       }
     ],
@@ -733,7 +733,7 @@ export const aiToolsData = [
     contextWindow: '取决于模型',
     chineseSupport: 4,
     verificationStatus: 'verified',
-    lastVerified: '2026-07-07',
+    lastVerified: '2026-07-13',
     sources: [
       'https://www.verdent.ai/pricing',
       'https://www.verdent.ai/blog/swe-bench-verified-technical-report',
@@ -769,7 +769,7 @@ export const aiToolsData = [
     personalExperience: {
       rating: 3.5,
       insights:
-        '截至 2026-07-07，Verdent 的亮点是多 Agent 工作流和成本控制组合，而不是单一 benchmark 分数。官方 pricing 仍显示 7 天 100 credits、Starter/Pro/Max/Teams、No Markup on Model Costs 和 top-ups；2026-04-02 博文则说明 Eco Mode、BYOK、PAYG 与 subscription credits 并存。',
+        '截至 2026-07-13，Verdent 的亮点是多 Agent 工作流和成本控制组合，而不是单一 benchmark 分数。官方 pricing 仍显示 7 天 100 credits、Starter/Pro/Max/Teams、No Markup on Model Costs 和 top-ups；2026-04-02 博文则说明 Eco Mode、BYOK、PAYG 与 subscription credits 并存。',
       pitfalls: [
         '先看任务类型会消耗多少 credits',
         '注意限时 bonus 变化',
@@ -796,12 +796,12 @@ export const aiToolsData = [
     versions: [
       {
         type: 'Global',
-        pricing: 'AI Free / AI Pro / AI Ultimate；具体价格和 credit 额度按官方账号与地区页面为准',
+        pricing: 'AI Free（3 AI credits/30 天）/ AI Pro $10/月（10 credits）/ AI Ultimate $30/月（35 credits）；企业和地区价格按官方结账页确认',
         models: '云端大模型 + 本地 AI（Ollama/LM Studio 等路径以官方 IDE 支持为准）',
         link: 'https://www.jetbrains.com/help/ai-assistant/licensing-and-subscriptions.html'
       }
     ],
-    freeQuota: 'AI Free 提供有限 AI credits；本地补全和云端功能额度按官方计划区分',
+    freeQuota: 'AI Free 每 30 天提供 3 AI credits；本地补全和云端功能额度按官方计划区分',
     contextWindow: '取决于模型',
     chineseSupport: 3,
     pros: [
@@ -814,7 +814,7 @@ export const aiToolsData = [
     cons: [
       '主要价值绑定 JetBrains IDE',
       '云端 AI credits 和本地补全不是同一种额度',
-      '不同地区和账号类型的价格/税费需要按结账页确认',
+      'AI Free 与 AI Ultimate 在中国大陆不可用；其他地区和账号类型的税费仍需按结账页确认',
       '上下文理解不如专用 Agent IDE 激进',
       '非 JetBrains 用户迁移成本高'
     ],
@@ -823,7 +823,7 @@ export const aiToolsData = [
     personalExperience: {
       rating: 3,
       insights:
-        '截至 2026-07-07，JetBrains 官方说明仍将 AI Assistant 归入 AI Free、AI Pro、AI Ultimate 计划，并用 AI credits 管理云端能力。本地补全、云端聊天、企业购买和 IDE 支持范围需要分开评估，不再用旧的固定欧元年费做当前口径。',
+        '截至 2026-07-13，JetBrains 官方说明将 AI Assistant 分为 AI Free（3 credits/30 天）、AI Pro $10/月（10 credits）和 AI Ultimate $30/月（35 credits）；AI Free 与 AI Ultimate 在中国大陆不可用。本地补全、云端聊天和企业购买仍需分开评估。',
       pitfalls: [
         '先确认账号所在地区的价格和税费',
         '区分本地补全与云端 AI credits',
@@ -831,7 +831,7 @@ export const aiToolsData = [
       ]
     },
     verificationStatus: 'verified',
-    lastVerified: '2026-07-07',
+    lastVerified: '2026-07-13',
     sources: [
       'https://www.jetbrains.com/help/ai-assistant/licensing-and-subscriptions.html',
       'https://www.jetbrains.com/ai-ides/buy/'
@@ -888,7 +888,7 @@ export const aiToolsData = [
     personalExperience: {
       rating: 5,
       insights:
-        '截至 2026-07-07，Claude Code 仍适合把高难任务交给 Claude 在终端或 IDE 里推进。官方成本文档强调 API 路径按 token 消耗计费，订阅计划价格应回到 claude.com/pricing；Pro/Max 订阅路径和 API 路径要分开管理。',
+        '截至 2026-07-13，Claude Code 仍适合把高难任务交给 Claude 在终端或 IDE 里推进。官方成本文档强调 API 路径按 token 消耗计费，订阅计划价格应回到 claude.com/pricing；Pro/Max 订阅路径和 API 路径要分开管理。',
       pitfalls: [
         '先确认是 Pro/Max 订阅路径还是 API token 路径',
         '关键任务再用',
@@ -897,7 +897,7 @@ export const aiToolsData = [
       ]
     },
     verificationStatus: 'verified',
-    lastVerified: '2026-07-07',
+    lastVerified: '2026-07-13',
     sources: [
       'https://support.claude.com/en/articles/11145838-use-claude-code-with-your-pro-or-max-plan',
       'https://support.claude.com/en/articles/11049741-what-is-the-max-plan',
@@ -955,7 +955,7 @@ export const aiToolsData = [
     personalExperience: {
       rating: 4.5,
       insights:
-        '截至 2026-07-07，官方 README 仍确认个人 Google 账号 OAuth 路径可用 60 RPM / 1,000 RPD 免费额度、Gemini 3 models、1M token context、内置工具与 MCP。适合先读懂项目，再决定是否交给更贵的 Agent 执行。',
+        '截至 2026-07-13，官方 README 仍确认个人 Google 账号 OAuth 路径可用 60 RPM / 1,000 RPD 免费额度、Gemini 3 models、1M token context、内置工具与 MCP。适合先读懂项目，再决定是否交给更贵的 Agent 执行。',
       pitfalls: [
         '有请求数和日额度上限',
         '高阶模型和付费 license 可用性要按当前账号确认',
@@ -964,7 +964,7 @@ export const aiToolsData = [
       ]
     },
     verificationStatus: 'verified',
-    lastVerified: '2026-07-07',
+    lastVerified: '2026-07-13',
     sources: [
       'https://github.com/google-gemini/gemini-cli',
       'https://github.com/google-gemini/gemini-cli/blob/main/docs/resources/quota-and-pricing.md',
@@ -1023,7 +1023,7 @@ export const aiToolsData = [
     personalExperience: {
       rating: 4,
       insights:
-        '截至 2026-07-07，Qwen Code 官方认证文档明确旧 OAuth free tier 已于 2026-04-15 停止；当前 /auth 应在 Alibaba ModelStudio、第三方 provider 或自定义 provider 中选择。Coding Plan 适合个人开发者做固定成本路径，Token Plan/API Key 则要按 Model Studio 当前模型价格核算。',
+        '截至 2026-07-13，Qwen Code 官方认证文档明确旧 OAuth free tier 已于 2026-04-15 停止；当前 /auth 应在 Alibaba ModelStudio、第三方 provider 或自定义 provider 中选择。Coding Plan 适合个人开发者做固定成本路径，Token Plan/API Key 则要按 Model Studio 当前模型价格核算。',
       pitfalls: [
         '旧 OAuth 免费额度不可再作为预算依据',
         '先确认 Coding Plan 或 API provider',
@@ -1031,7 +1031,7 @@ export const aiToolsData = [
       ]
     },
     verificationStatus: 'verified',
-    lastVerified: '2026-07-07',
+    lastVerified: '2026-07-13',
     sources: [
       'https://qwenlm.github.io/qwen-code-docs/en/users/configuration/auth/',
       'https://www.alibabacloud.com/help/en/model-studio/coding-plan',
@@ -1093,7 +1093,7 @@ export const aiToolsData = [
     personalExperience: {
       rating: 3,
       insights:
-        '截至 2026-07-07，Aider 官方文档仍强调“连接多数 LLM”，并建议查看 LLM leaderboards 选择更会返回 code edits 的模型。它的核心价值是 Git-first、终端内可审计修改和多 provider 灵活性，不应写成某个固定模型绑定工具。',
+        '截至 2026-07-13，Aider 官方文档仍强调“连接多数 LLM”，并建议查看 LLM leaderboards 选择更会返回 code edits 的模型。它的核心价值是 Git-first、终端内可审计修改和多 provider 灵活性，不应写成某个固定模型绑定工具。',
       pitfalls: [
         '需要自带 API key 或配置本地模型',
         '仅终端无完整 GUI',
@@ -1102,7 +1102,7 @@ export const aiToolsData = [
       ]
     },
     verificationStatus: 'verified',
-    lastVerified: '2026-07-07',
+    lastVerified: '2026-07-13',
     sources: [
       'https://github.com/aider-ai/aider',
       'https://aider.chat/docs/llms.html',
@@ -1128,7 +1128,7 @@ export const aiToolsData = [
     name: 'Cline',
     category: 'cli',
     subcategory: 'VS Code插件',
-    developer: '开源社区',
+    developer: 'Cline Bot Inc.',
     logo: null,
     versions: [
       {
@@ -1141,7 +1141,7 @@ export const aiToolsData = [
       }
     ],
     freeQuota: '个人开源扩展免费；模型调用、Cline credits、ClinePass 或自带 provider 费用另计',
-    contextWindow: '200K-400K+ (取决于模型)',
+    contextWindow: '取决于模型，部分 provider/model 支持最高 1M context',
     chineseSupport: 3,
     pros: [
       'VS Code 扩展与 CLI 路径成熟，JetBrains 扩展需按当前企业/产品页确认',
@@ -1166,7 +1166,7 @@ export const aiToolsData = [
     personalExperience: {
       rating: 3,
       insights:
-        '截至 2026-07-07，Cline 官方价格页说明个人开源扩展免费、只按 AI inference 付费；文档将 Cline (usage-billing) 和 ClinePass 明确拆成两个 provider。它仍是强力的 VS Code/CLI Agent，但预算应按 credits、ClinePass 或自带 provider 分开管理。',
+        '截至 2026-07-13，Cline 官方价格页说明个人开源扩展免费、只按 AI inference 付费；文档将 Cline (usage-billing) 和 ClinePass 明确拆成两个 provider。它仍是强力的 VS Code/CLI Agent，但预算应按 credits、ClinePass 或自带 provider 分开管理。',
       pitfalls: [
         '先确认使用 Cline (usage-billing)、ClinePass 还是自带 API key',
         '学习曲线',
@@ -1175,7 +1175,7 @@ export const aiToolsData = [
       ]
     },
     verificationStatus: 'verified',
-    lastVerified: '2026-07-07',
+    lastVerified: '2026-07-13',
     sources: [
       'https://cline.bot/pricing',
       'https://docs.cline.bot/getting-started/cline-provider',
@@ -1198,7 +1198,7 @@ export const aiToolsData = [
     name: 'Continue',
     category: 'cli',
     subcategory: '开源平台',
-    developer: '开源社区',
+    developer: 'Continue team; now Cursor/Anysphere',
     logo: null,
     versions: [
       {
@@ -1227,11 +1227,11 @@ export const aiToolsData = [
       '历史文档和当前 Cursor 生态之间需要区分'
     ],
     bestFor: '多 IDE 用户、自托管需求',
-    funRanking: '夯',
+    funRanking: '历史',
     personalExperience: {
       rating: 3,
       insights:
-        '截至 2026-07-08，Continue 官方首页显示团队已加入 Cursor，GitHub 仓库 README 明确该仓库已不再主动维护、对所有用户只读，并有 final 2.0.0 release 覆盖 VS Code extension、CLI 和 JetBrains plugin。它仍适合做历史参考或迁移评估，但不应继续作为“正在快速演进的开源主力平台”推荐。',
+        '截至 2026-07-13，Continue 官方首页显示团队已加入 Cursor，GitHub 仓库 README 明确该仓库已不再主动维护、对所有用户只读，并有 final 2.0.0 release 覆盖 VS Code extension、CLI 和 JetBrains plugin。它仍适合做历史参考或迁移评估，但不应继续作为“正在快速演进的开源主力平台”推荐。',
       pitfalls: [
         '新项目优先评估 Cursor 或其他活跃替代',
         '区分历史 Continue 文档与当前 Cursor 生态',
@@ -1239,7 +1239,7 @@ export const aiToolsData = [
       ]
     },
     verificationStatus: 'historical',
-    lastVerified: '2026-07-08',
+    lastVerified: '2026-07-13',
     sources: [
       'https://www.continue.dev/',
       'https://github.com/continuedev/continue',
@@ -1294,7 +1294,7 @@ export const aiToolsData = [
     personalExperience: {
       rating: 3,
       insights:
-        '截至 2026-07-07，OpenCode 官方站仍将其定位为开源 AI coding agent，覆盖 terminal、IDE 和 desktop beta；OpenCode Go 文档最后更新于 2026-07-05，列出 $5 首月后 $10/月、5h/weekly/monthly dollar-value limits 和一批 open coding models。旧的“已归档、迁移至 Crush”说法应移除。',
+        '截至 2026-07-13，OpenCode 官方站仍将其定位为开源 AI coding agent，覆盖 terminal、IDE 和 desktop beta；OpenCode Go 文档最后更新于 2026-07-05，列出 $5 首月后 $10/月、5h/weekly/monthly dollar-value limits 和一批 open coding models。旧的“已归档、迁移至 Crush”说法应移除。',
       pitfalls: [
         '不要再链接旧 opencode-ai/opencode 归档仓库',
         'OpenCode Go 是可选订阅而非必选',
@@ -1302,7 +1302,7 @@ export const aiToolsData = [
       ]
     },
     verificationStatus: 'verified',
-    lastVerified: '2026-07-07',
+    lastVerified: '2026-07-13',
     sources: [
       'https://opencode.ai/',
       'https://github.com/anomalyco/opencode',
@@ -1364,7 +1364,7 @@ export const aiToolsData = [
     personalExperience: {
       rating: 5,
       insights:
-        '截至 2026-07-07，OpenAI 官方 Codex pricing 页明确 Codex 包含在 ChatGPT Free、Go、Plus、Pro、Business、Edu、Enterprise 中；Help Center 说明不同计划的 usage limits 和 credit options 不同。采购或部署时应按官方 Codex pricing、models 和 credits 文档核验。',
+        '截至 2026-07-13，OpenAI 官方 Codex pricing 页明确 Codex 包含在 ChatGPT Free、Go、Plus、Pro、Business、Edu、Enterprise 中；Help Center 说明不同计划的 usage limits 和 credit options 不同。采购或部署时应按官方 Codex pricing、models 和 credits 文档核验。',
       pitfalls: [
         '模型名和额度变化快，使用前看官方 Codex docs',
         '不要沿用旧的固定 Codex 型号和价格断言',
@@ -1373,8 +1373,9 @@ export const aiToolsData = [
       ]
     },
     verificationStatus: 'verified',
-    lastVerified: '2026-07-07',
+    lastVerified: '2026-07-13',
     sources: [
+      'https://learn.chatgpt.com/docs/pricing',
       'https://developers.openai.com/codex/pricing',
       'https://developers.openai.com/codex/cli/features',
       'https://developers.openai.com/codex/models',
@@ -1434,7 +1435,7 @@ export const aiToolsData = [
     personalExperience: {
       rating: 3,
       insights:
-        '截至 2026-07-07，Goose 官方 README 明确项目已从 block/goose 迁到 AAIF，并定位为 desktop app、CLI、API 都可用的本地开源 AI agent。它适合本地优先、多 provider 和可扩展 Agent 场景，但预算仍应按所选模型/API/云环境核算。',
+        '截至 2026-07-13，Goose 官方 README 明确项目已从 block/goose 迁到 AAIF，并定位为 desktop app、CLI、API 都可用的本地开源 AI agent。它适合本地优先、多 provider 和可扩展 Agent 场景，但预算仍应按所选模型/API/云环境核算。',
       pitfalls: [
         '不要再把旧 block/goose 当作当前主仓库',
         '需要配置模型 provider 或本地模型',
@@ -1442,7 +1443,7 @@ export const aiToolsData = [
       ]
     },
     verificationStatus: 'verified',
-    lastVerified: '2026-07-07',
+    lastVerified: '2026-07-13',
     sources: [
       'https://goose-docs.ai/',
       'https://github.com/aaif-goose/goose',
@@ -1464,7 +1465,7 @@ export const aiToolsData = [
     name: 'Crush',
     category: 'cli',
     subcategory: '开源CLI',
-    developer: 'Charm Bracelet',
+    developer: 'Charmbracelet, Inc. (Charm)',
     logo: null,
     versions: [
       {
@@ -1498,14 +1499,14 @@ export const aiToolsData = [
     personalExperience: {
       rating: 4,
       insights:
-        '截至 2026-07-07，Charm 官方 GitHub 将 Crush 描述为可在终端中运行的 AI coding companion，支持 Multi-Model、session-based context、LSP 和 MCP。Charm Hyper 另有 Free 100 Hypercredits/月、$20/月订阅、预付 bundles 和 1 Hypercredit = 5¢ 口径，因此应把 Crush 本体、BYOK/provider 成本和 Hyper credits 分开评估。',
+        '截至 2026-07-13，Charm 官方 GitHub 将 Crush 描述为可在终端中运行的 AI coding companion，支持 Multi-Model、session-based context、LSP 和 MCP。Charm Hyper 另有 Free 100 Hypercredits/月、$20/月订阅、预付 bundles 和 1 Hypercredit = 5¢ 口径，因此应把 Crush 本体、BYOK/provider 成本和 Hyper credits 分开评估。',
       pitfalls: [
         '不要把开源工具本体等同于免费推理',
         '先确认走 BYOK、provider API 还是 Charm Hyper credits'
       ]
     },
     verificationStatus: 'verified',
-    lastVerified: '2026-07-07',
+    lastVerified: '2026-07-13',
     sources: [
       'https://github.com/charmbracelet/crush',
       'https://charm.land/blog/crush-comes-home/',
@@ -1533,7 +1534,7 @@ export const aiToolsData = [
     name: 'OpenHands',
     category: 'cli',
     subcategory: '开源CLI',
-    developer: 'OpenHands Community',
+    developer: 'OpenHands Community / All Hands AI, Inc.',
     logo: null,
     versions: [
       {
@@ -1544,7 +1545,7 @@ export const aiToolsData = [
         link: 'https://www.openhands.dev/pricing'
       }
     ],
-    freeQuota: '本地自托管和云端 Individual/Enterprise 路径分开；模型/API/托管资源成本需单独确认',
+    freeQuota: 'Local 可自托管；云端 Individual 当前为每日 10 次 conversations，模型/API 与托管资源成本仍需单独确认',
     contextWindow: '取决于所选模型/provider',
     chineseSupport: 3,
     pros: [
@@ -1566,7 +1567,7 @@ export const aiToolsData = [
     personalExperience: {
       rating: 3.5,
       insights:
-        '截至 2026-07-07，OpenHands 官方 pricing 将 Local、Individual、Enterprise 分层展示：Local open source 免费，Individual SaaS 免费但 BYOK 或 at-cost provider 另计，Enterprise 定制价格。它仍是开源软件开发 Agent 的重要选择，但要避免把本地自托管、云端计划和模型/API 成本合并成一个简单“免费版”。',
+        '截至 2026-07-13，OpenHands 官方 pricing 将 Local、Individual、Enterprise 分层展示：Local open source 免费，Individual SaaS 免费但 BYOK 或 at-cost provider 另计，Enterprise 定制价格。它仍是开源软件开发 Agent 的重要选择，但要避免把本地自托管、云端计划和模型/API 成本合并成一个简单“免费版”。',
       pitfalls: [
         '先选 Local、Individual 还是 Enterprise 路径',
         '模型/API 和托管资源成本另算',
@@ -1574,7 +1575,7 @@ export const aiToolsData = [
       ]
     },
     verificationStatus: 'verified',
-    lastVerified: '2026-07-07',
+    lastVerified: '2026-07-13',
     sources: ['https://www.openhands.dev/pricing', 'https://github.com/OpenHands/OpenHands'],
     decisionSummary: {
       verdict:
@@ -1606,10 +1607,10 @@ export const aiToolsData = [
       }
     ],
     freeQuota: 'Claude.ai Free 有限使用；API 无固定永久免费额度，按官方价格页计费',
-    contextWindow: '默认 200K；部分模型和 API 路径支持更长上下文，以上线文档为准',
+    contextWindow: 'Claude Fable 5 / Opus 4.8 / Sonnet 5 为 1M；Claude Haiku 4.5 为 200K',
     chineseSupport: 4,
     verificationStatus: 'verified',
-    lastVerified: '2026-07-07',
+    lastVerified: '2026-07-13',
     sources: [
       'https://platform.claude.com/docs/en/about-claude/models/overview',
       'https://claude.com/pricing',
@@ -1622,7 +1623,7 @@ export const aiToolsData = [
       avoidIf: '你需要极低 API 成本、国内无障碍访问，或只做轻量日常问答',
       mainRisk:
         'Claude.ai 计划、API 价格和具体可用模型变化快，不能按旧 Sonnet/Opus 版本号做长期判断',
-      alternatives: ['GPT-5.5 / OpenAI', 'Gemini', 'DeepSeek']
+      alternatives: ['GPT-5.6 / OpenAI', 'Gemini', 'DeepSeek']
     },
     pros: [
       'Claude Fable 5 是 Anthropic 当前高能力模型之一，适合长任务 Agent 和复杂执行',
@@ -1642,7 +1643,7 @@ export const aiToolsData = [
     personalExperience: {
       rating: 5,
       insights:
-        '截至 2026-07-07，Anthropic 模型页显示 Claude Fable 5、Opus 4.8、Sonnet 5、Haiku 4.5，并把 API 价格、context 和模型 ID 分开说明；Claude.com pricing 也将 Free/Pro/Max、Team 标准席/Premium 席和 Enterprise 分层。Claude 仍是复杂代码、长上下文方案和严肃写作的强选，但要按 seat、usage 和 API 价格管理成本。',
+        '截至 2026-07-13，Anthropic 模型页显示 Claude Fable 5、Opus 4.8、Sonnet 5、Haiku 4.5，并把 API 价格、context 和模型 ID 分开说明；Claude.com pricing 也将 Free/Pro/Max、Team 标准席/Premium 席和 Enterprise 分层。Claude 仍是复杂代码、长上下文方案和严肃写作的强选，但要按 seat、usage 和 API 价格管理成本。',
       pitfalls: [
         '按官方模型页确认当前可用型号',
         '输出成本高，长任务先估算 token',
@@ -1653,13 +1654,13 @@ export const aiToolsData = [
       S: '代码能力、推理稳定、长上下文',
       W: '成本和额度管理压力',
       O: '企业知识工作和工程 Agent',
-      T: 'GPT-5.5、Gemini、国产低价模型'
+      T: 'GPT-5.6、Gemini、国产低价模型'
     },
     tags: ['推荐', 'LLM', '代码', '长上下文', '多模态', '已核验']
   },
   {
     id: 'gpt',
-    name: 'GPT-5.5 / OpenAI',
+    name: 'GPT-5.6 / OpenAI',
     category: 'llm',
     subcategory: '通用大模型',
     developer: 'OpenAI',
@@ -1669,7 +1670,7 @@ export const aiToolsData = [
         type: 'Global',
         pricing:
           'ChatGPT Free/Go/Plus/Pro/Business/Edu/Enterprise；API 按模型、工具、服务层和缓存计费',
-        models: 'gpt-5.5, gpt-5.5-pro, GPT-5 family, reasoning/audio/image/video models',
+        models: 'gpt-5.6-sol、gpt-5.6-terra、gpt-5.6-luna 与 OpenAI reasoning/audio/image/video models',
         link: 'https://developers.openai.com/api/docs/guides/latest-model'
       }
     ],
@@ -1677,7 +1678,7 @@ export const aiToolsData = [
     contextWindow: '取决于模型、API 与工具配置；以官方模型和价格文档为准',
     chineseSupport: 3,
     verificationStatus: 'verified',
-    lastVerified: '2026-07-07',
+    lastVerified: '2026-07-13',
     sources: [
       'https://developers.openai.com/api/docs/guides/latest-model',
       'https://developers.openai.com/api/docs/pricing',
@@ -1685,14 +1686,14 @@ export const aiToolsData = [
     ],
     decisionSummary: {
       verdict:
-        '生态最完整的通用 AI 平台，GPT-5.5 适合复杂生产工作流和 Agent，但价格/工具计费要精细控制。',
+        '生态完整的通用 AI 平台，GPT-5.6 系列适合复杂生产工作流和 Agent，但价格、工具与服务层计费要精细控制。',
       bestFor: '通用任务、生态集成、推理任务、Agent 工作流、多模态工具链',
       avoidIf: '你需要固定低成本、国内无障碍访问，或只做简单批量文本任务',
       mainRisk: '模型、ChatGPT 计划、API 工具和服务层计费变化快，旧固定 GPT 口径会误导成本判断',
       alternatives: ['Claude', 'Gemini', 'DeepSeek']
     },
     pros: [
-      '官方 GPT-5.5 文档定位为复杂生产工作流、工具型 Agent、长上下文检索和代码场景',
+      'GPT-5.6 sol/terra/luna 覆盖不同性能和成本层级，适合复杂生产工作流、工具型 Agent 与代码场景',
       'Responses API、托管工具、结构化输出、推理 effort 和 verbosity 控制完整',
       'ChatGPT 生态成熟，覆盖对话、文件、数据分析、图像、视频和自定义 GPT/应用入口',
       'OpenAI API 平台和 Codex/Agents SDK 生态衔接强',
@@ -1709,7 +1710,7 @@ export const aiToolsData = [
     personalExperience: {
       rating: 5,
       insights:
-        '截至 2026-07-07，OpenAI 官方开发者文档的最新模型指南仍指向 GPT-5.5，并强调不要把它当作旧 GPT-5.x 提示词栈的直接替换。本站采用 GPT-5.5 / OpenAI 生态口径：适合复杂生产工作流、工具型 Agent、长上下文检索和代码任务，但必须按模型、工具、缓存、服务层和实际 token 用量控制成本。',
+        '截至 2026-07-13，当前 OpenAI 模型入口以 GPT-5.6 sol/terra/luna 分层。本站采用 GPT-5.6 / OpenAI 生态口径：适合复杂生产工作流、工具型 Agent 和代码任务，但必须按模型、工具、缓存、服务层和实际用量控制成本。',
       pitfalls: [
         '不要沿用旧固定 GPT 提示词和价格判断',
         '控制 reasoning effort、verbosity 和工具调用',
@@ -1722,7 +1723,7 @@ export const aiToolsData = [
       O: 'Agent 和企业流程自动化',
       T: 'Claude、Gemini、国产低价模型'
     },
-    tags: ['推荐', 'LLM', 'OpenAI', '生态', '推理', 'GPT-5.5', '已核验']
+    tags: ['推荐', 'LLM', 'OpenAI', '生态', '推理', 'GPT-5.6', '已核验']
   },
   {
     id: 'gemini',
@@ -1745,7 +1746,7 @@ export const aiToolsData = [
     contextWindow: '取决于模型；Gemini 系列主打长上下文，具体 token limit 以官方模型页为准',
     chineseSupport: 4,
     verificationStatus: 'verified',
-    lastVerified: '2026-07-07',
+    lastVerified: '2026-07-13',
     sources: [
       'https://ai.google.dev/gemini-api/docs/models',
       'https://ai.google.dev/gemini-api/docs/pricing',
@@ -1757,7 +1758,7 @@ export const aiToolsData = [
       bestFor: '长文档处理、多模态任务、方案设计、Google 生态工作流',
       avoidIf: '你需要固定低延迟、完全脱离 Google 账号/云生态，或非常明确的国内可用性',
       mainRisk: 'Gemini app 订阅、API 免费层、模型上下文和数据使用政策分属不同入口，容易混淆',
-      alternatives: ['GPT-5.5 / OpenAI', 'Claude', 'Qwen']
+      alternatives: ['GPT-5.6 / OpenAI', 'Claude', 'Qwen']
     },
     pros: [
       '官方 Gemini API 提供多型号选择，当前 pricing 将 Gemini 3.5 Flash、3.1 Pro Preview、3.1 Flash-Lite 等分档展示',
@@ -1777,7 +1778,7 @@ export const aiToolsData = [
     personalExperience: {
       rating: 5,
       insights:
-        '截至 2026-07-07，Google 官方 Gemini API pricing 将 Free、Paid、Enterprise、Gemini 3.5 Flash、3.1 Pro Preview、3.1 Flash-Lite、Omni Flash Preview 等入口和价格分开说明。本站不再把 Gemini 固定写成单一系列结论，而是强调长上下文、多模态、Google 生态和不同计费路径的边界。',
+        '截至 2026-07-13，Google 官方 Gemini API pricing 将 Free、Paid、Enterprise、Gemini 3.5 Flash、3.1 Pro Preview、3.1 Flash-Lite、Omni Flash Preview 等入口和价格分开说明。本站不再把 Gemini 固定写成单一系列结论，而是强调长上下文、多模态、Google 生态和不同计费路径的边界。',
       pitfalls: [
         '区分 Gemini app 订阅和 API 计费',
         '免费层数据和额度按官方条款确认',
@@ -1819,7 +1820,7 @@ export const aiToolsData = [
     contextWindow: '官方 pricing 页展示 V4-Flash / V4-Pro 均为 1M 上下文，最大输出 384K tokens',
     chineseSupport: 5,
     verificationStatus: 'verified',
-    lastVerified: '2026-07-07',
+    lastVerified: '2026-07-13',
     sources: [
       'https://api-docs.deepseek.com/quick_start/pricing',
       'https://api-docs.deepseek.com/news/news260424',
@@ -1832,7 +1833,7 @@ export const aiToolsData = [
       avoidIf: '你需要最成熟的企业生态、强多模态工具链，或严格 SLA 的全球服务',
       mainRisk:
         'deepseek-chat / deepseek-reasoner 仍可兼容路由，但官方预告这些旧别名将在 2026-07-24 下线，生产迁移应改用 deepseek-v4-flash / deepseek-v4-pro',
-      alternatives: ['Qwen', 'GPT-5.5 / OpenAI', 'Claude']
+      alternatives: ['Qwen', 'GPT-5.6 / OpenAI', 'Claude']
     },
     pros: [
       '官方 pricing 页列出 DeepSeek-V4-Flash 与 DeepSeek-V4-Pro 两档，输入/输出价格明显适合批量 API 任务',
@@ -1852,7 +1853,7 @@ export const aiToolsData = [
     personalExperience: {
       rating: 4,
       insights:
-        '截至 2026-07-07，DeepSeek 官方价格页将 API 主模型列为 deepseek-v4-flash 与 deepseek-v4-pro：两者均支持 1M 上下文、384K 最大输出，价格分别为输入 $0.14/$0.435、输出 $0.28/$0.87（每 1M tokens，缓存命中另计）。deepseek-chat 与 deepseek-reasoner 是兼容别名，官方预告将在 2026-07-24 下线；新项目应直接使用 V4 Flash/Pro 模型名。',
+        '截至 2026-07-13，DeepSeek 官方价格页将 API 主模型列为 deepseek-v4-flash 与 deepseek-v4-pro：两者均支持 1M 上下文、384K 最大输出，价格分别为输入 $0.14/$0.435、输出 $0.28/$0.87（每 1M tokens，缓存命中另计）。deepseek-chat 与 deepseek-reasoner 是兼容别名，官方预告将在 2026-07-24 下线；新项目应直接使用 V4 Flash/Pro 模型名。',
       pitfalls: [
         '新项目直接用 deepseek-v4-flash / deepseek-v4-pro',
         '旧 deepseek-chat/reasoner 调用要按官方预告日期迁移',
@@ -1887,7 +1888,7 @@ export const aiToolsData = [
     contextWindow: '取决于模型；长上下文、思考模型、视觉模型分档计费',
     chineseSupport: 5,
     verificationStatus: 'verified',
-    lastVerified: '2026-07-07',
+    lastVerified: '2026-07-13',
     sources: [
       'https://www.alibabacloud.com/help/en/model-studio/model-pricing',
       'https://www.alibabacloud.com/help/en/model-studio/models',
@@ -1900,7 +1901,7 @@ export const aiToolsData = [
       avoidIf: '你主要做英文复杂推理、海外 SaaS 集成，或希望完全脱离云厂商控制台',
       mainRisk:
         'Qwen 模型名、长上下文和 thinking/VL/coder 档位很多，旧固定 Qwen 单一口径会误导选型和成本',
-      alternatives: ['DeepSeek', 'Gemini', 'GPT-5.5 / OpenAI']
+      alternatives: ['DeepSeek', 'Gemini', 'GPT-5.6 / OpenAI']
     },
     pros: [
       '中文理解和生成能力强，国内用户入口多',
@@ -1920,7 +1921,7 @@ export const aiToolsData = [
     personalExperience: {
       rating: 4.5,
       insights:
-        '截至 2026-07-07，阿里云 Model Studio 官方价格页将 Qwen API 明确放在 pay-as-you-go 体系里，并列出 qwen3.7-max 等模型的国际/中国大陆部署价格、1M token 级别价格和免费 quota 适用范围。本站不再把 Qwen 固定写成单个型号，而是按中文/代码/视觉/云生态的模型家族来选型。',
+        '截至 2026-07-13，阿里云 Model Studio 官方价格页将 Qwen API 明确放在 pay-as-you-go 体系里，并列出 qwen3.7-max 等模型的国际/中国大陆部署价格、1M token 级别价格和免费 quota 适用范围。本站不再把 Qwen 固定写成单个型号，而是按中文/代码/视觉/云生态的模型家族来选型。',
       pitfalls: [
         '先按模型价格表核对输入、输出和 long-context 单价',
         '不要把通义千问 App 免费入口等同于 API 免费',
@@ -1946,11 +1947,11 @@ export const aiToolsData = [
       {
         type: 'CN',
         pricing: 'Z.AI / BigModel API 按模型、输入、输出和缓存计费，需按官方 pricing 逐项核价',
-        models: 'GLM-5.2 / GLM-4.7 / GLM-4.6 / GLM-Z1 等，以官方当前列表为准',
+        models: 'GLM-5.2 / GLM-5.1 / GLM-5 / GLM-5-Turbo / GLM-4.7 等，以官方当前列表为准',
         link: 'https://docs.z.ai/guides/overview/pricing'
       }
     ],
-    freeQuota: '清言/开放平台可能有试用或促销；API 免费额度以控制台和官方 pricing 为准',
+    freeQuota: 'GLM-4.7-Flash 与 GLM-4.5-Flash 提供免费调用路径；其他额度和活动以控制台为准',
     contextWindow: '取决于模型；GLM-5.2 等上下文和输出上限以官方模型页/价格页为准',
     chineseSupport: 5,
     pros: [
@@ -1969,7 +1970,7 @@ export const aiToolsData = [
     personalExperience: {
       rating: 4.5,
       insights:
-        '截至 2026-07-07，Z.AI/BigModel 官方 pricing 已把 GLM 拆成 GLM-5.2、GLM-4.7、GLM-4.6、GLM-Z1 等多档。本站不再把 GLM 固定写成 GLM-4.7 单一版本，而是按“GLM / Z.AI 模型家族”展示，使用前应按实际模型和 token 计费核算。',
+        '截至 2026-07-13，Z.AI/BigModel 官方 pricing 已把 GLM 拆成 GLM-5.2、GLM-4.7、GLM-4.6、GLM-Z1 等多档。本站不再把 GLM 固定写成 GLM-4.7 单一版本，而是按“GLM / Z.AI 模型家族”展示，使用前应按实际模型和 token 计费核算。',
       pitfalls: [
         '先按官方 pricing 选择具体 GLM 型号',
         '极复杂任务建议和 Claude/GPT/Gemini 交叉评测',
@@ -1977,7 +1978,7 @@ export const aiToolsData = [
       ]
     },
     verificationStatus: 'verified',
-    lastVerified: '2026-07-07',
+    lastVerified: '2026-07-13',
     sources: ['https://docs.z.ai/guides/overview/pricing', 'https://bigmodel.cn/pricing'],
     decisionSummary: {
       verdict:
@@ -2025,7 +2026,7 @@ export const aiToolsData = [
     personalExperience: {
       rating: 4.5,
       insights:
-        '截至 2026-07-07，Kimi API 官方文档已显示 kimi-k2.7-code、kimi-k2.7-code-highspeed、kimi-k2.6、kimi-k2.5 和 Moonshot V1，并标记旧 kimi-k2 系列、kimi-latest、kimi-thinking-preview 已停用。长文档和中文仍是强项，但 API 价格、缓存和代码模型要按官方 pricing 单独核算。',
+        '截至 2026-07-13，Kimi API 官方文档已显示 kimi-k2.7-code、kimi-k2.7-code-highspeed、kimi-k2.6、kimi-k2.5 和 Moonshot V1，并标记旧 kimi-k2 系列、kimi-latest、kimi-thinking-preview 已停用。长文档和中文仍是强项，但 API 价格、缓存和代码模型要按官方 pricing 单独核算。',
       pitfalls: [
         '不要把 Chat 免费入口等同于 API 免费',
         '代码模型和 Thinking 模型先按 pricing 核价',
@@ -2033,7 +2034,7 @@ export const aiToolsData = [
       ]
     },
     verificationStatus: 'verified',
-    lastVerified: '2026-07-07',
+    lastVerified: '2026-07-13',
     sources: [
       'https://platform.kimi.ai/docs/models',
       'https://platform.kimi.ai/docs/pricing/chat',
@@ -2089,7 +2090,7 @@ export const aiToolsData = [
     personalExperience: {
       rating: 4.5,
       insights:
-        '截至 2026-07-07，MiniMax 官方文档显示 MiniMax-M3 是最新 M-series language model，支持 1M context，并按 ≤512k / >512k 输入和 Standard / Priority 分档计费。它适合多语言文本、语音和多模态应用组合，但不要再用 M2.1 旧型号和单一低价口径做预算。',
+        '截至 2026-07-13，MiniMax 官方文档显示 MiniMax-M3 是最新 M-series language model，支持 1M context，并按 ≤512k / >512k 输入和 Standard / Priority 分档计费。它适合多语言文本、语音和多模态应用组合，但不要再用 M2.1 旧型号和单一低价口径做预算。',
       pitfalls: [
         '按文本、语音、视频等产品分别核价',
         '不要继续用 M2.1 作为当前主模型口径',
@@ -2097,7 +2098,7 @@ export const aiToolsData = [
       ]
     },
     verificationStatus: 'verified',
-    lastVerified: '2026-07-07',
+    lastVerified: '2026-07-13',
     sources: [
       'https://platform.minimax.io/docs/guides/text-generation',
       'https://platform.minimax.io/docs/guides/pricing-paygo',
@@ -2125,7 +2126,7 @@ export const aiToolsData = [
     versions: [
       {
         type: 'CN',
-        pricing: '火山方舟模型价格页 2026-07-06 更新；按模型、输入/输出 token、缓存和产品能力计费',
+        pricing: '火山方舟按模型、输入/输出 token、缓存和产品能力计费；具体单价以当前价格页为准',
         models:
           'doubao-seed-2-1-pro / doubao-seed-2-1-turbo 为当前 Seed 2.1 主线；Seedance、Seedream 等按能力分开核价',
         link: 'https://www.volcengine.com/docs/82379/1330310'
@@ -2135,7 +2136,7 @@ export const aiToolsData = [
     contextWindow: '取决于 doubao-seed-2-1-pro / turbo、长上下文和缓存配置',
     chineseSupport: 5,
     pros: [
-      '火山方舟模型列表于 2026-07-07 更新，并把最新模型指向 Seed 2.1',
+      '火山方舟当前主线包含 Seed 2.1 Pro / Turbo，适合 Coding、Agent 和长上下文任务',
       'Seed 2.1 面向 Coding、Agent、深度思考和长上下文任务，有 Pro/Turbo 路径',
       '字节生态、豆包 App 和企业 API 入口完整',
       'Responses API、缓存、深度思考、视频/图片生成能力需按官方分项核价',
@@ -2151,7 +2152,7 @@ export const aiToolsData = [
     personalExperience: {
       rating: 3,
       insights:
-        '截至 2026-07-07，火山方舟模型列表已经更新并指向 Seed 2.1，模型价格页在 2026-07-06 更新。本站不再把 Doubao 写成 Seed Code/Thinking/1.6 旧主线，而是优先按 doubao-seed-2-1-pro / turbo、App 与 API、缓存和多模态能力拆分。',
+        '截至 2026-07-13，火山方舟当前主线指向 Seed 2.1。本站不再保留无法稳定核验的页面更新时间断言，而是按 doubao-seed-2-1-pro / turbo、App 与 API、缓存和多模态能力拆分。',
       pitfalls: [
         '区分豆包 App 和火山方舟 API',
         'Seed Code、Thinking、长上下文和缓存分别核价',
@@ -2159,7 +2160,7 @@ export const aiToolsData = [
       ]
     },
     verificationStatus: 'verified',
-    lastVerified: '2026-07-07',
+    lastVerified: '2026-07-13',
     sources: [
       'https://www.volcengine.com/docs/82379/1330310',
       'https://www.volcengine.com/docs/82379/2549861?lang=zh',
@@ -2182,18 +2183,18 @@ export const aiToolsData = [
     name: 'Grok / xAI',
     category: 'llm',
     subcategory: '通用大模型',
-    developer: 'xAI',
+    developer: 'SpaceXAI (xAI)',
     logo: null,
     versions: [
       {
         type: 'Global',
         pricing: 'Grok App / X / xAI API 分入口；订阅和 API 价格以 xAI 官方页面为准',
-        models: 'Grok 4.3 / Grok 4 / Grok Build 等，以官方模型页为准',
+        models: 'Grok 4.5（500K）、Grok 4.3（1M）、grok-build-0.1（256K）等，以官方模型页为准',
         link: 'https://docs.x.ai/developers/models'
       }
     ],
     freeQuota: 'Grok App/X 订阅与 xAI API 分开；免费或试用入口以官方 Grok/pricing 页面为准',
-    contextWindow: '取决于 Grok 4.3、Grok Build 等具体模型和 API 入口',
+    contextWindow: 'Grok 4.5 500K；Grok 4.3 1M；grok-build-0.1 256K',
     chineseSupport: 3,
     pros: [
       '官方模型页已列出 Grok 4.3、Grok Build 等当前模型路线',
@@ -2212,11 +2213,11 @@ export const aiToolsData = [
     personalExperience: {
       rating: 4.5,
       insights:
-        '截至 2026-07-07，xAI 官方模型页已展示 Grok 4.3、Grok Build 等模型，pricing 页面区分 Grok App/订阅和 xAI API。本站不再把 Grok 固定写成旧系列名和单一 X 订阅口径，而是强调入口和计费路径需要按官方当前页确认。',
+        '截至 2026-07-13，xAI 官方模型页已展示 Grok 4.3、Grok Build 等模型，pricing 页面区分 Grok App/订阅和 xAI API。本站不再把 Grok 固定写成旧系列名和单一 X 订阅口径，而是强调入口和计费路径需要按官方当前页确认。',
       pitfalls: ['区分 Grok App/X 订阅和 xAI API', '模型与价格变化快', '中文和企业场景先实测']
     },
     verificationStatus: 'verified',
-    lastVerified: '2026-07-07',
+    lastVerified: '2026-07-13',
     sources: ['https://docs.x.ai/developers/models', 'https://x.ai/pricing', 'https://x.ai/grok'],
     decisionSummary: {
       verdict:
@@ -2224,7 +2225,7 @@ export const aiToolsData = [
       bestFor: '实时信息、X 平台用户、热点研究、开放创意写作',
       avoidIf: '你需要稳定企业生态、国内可用性，或不想处理 Grok App/X/API 多入口',
       mainRisk: 'Grok 4.3、Grok Build、App 订阅和 API pricing 变化快，旧单一 X 订阅口径会误导预算',
-      alternatives: ['GPT-5.5 / OpenAI', 'Gemini', 'Claude']
+      alternatives: ['GPT-5.6 / OpenAI', 'Gemini', 'Claude']
     },
     swot: { S: '实时信息、推理', W: '生态新', O: 'X 整合', T: 'GPT/Claude' },
     tags: ['LLM', 'xAI', '实时', '推理']
@@ -2243,7 +2244,7 @@ export const aiToolsData = [
         type: 'Global',
         pricing:
           'Basic $10 / Standard $30 / Pro $60 / Mega $120；Fast/Relax/Turbo GPU time、HD、video 和 Stealth 能力按计划消耗',
-        models: 'Midjourney V8.1 default, V7/V6.1 legacy options',
+        models: 'Midjourney V8.1 default；V7/V6/V6.1 可选；Niji 7；仅 V8.0 Alpha 已弃用',
         link: 'https://docs.midjourney.com/hc/en-us/articles/27870484040333-Comparing-Midjourney-Plans'
       }
     ],
@@ -2251,7 +2252,7 @@ export const aiToolsData = [
     contextWindow: 'N/A',
     chineseSupport: 2,
     verificationStatus: 'verified',
-    lastVerified: '2026-07-07',
+    lastVerified: '2026-07-13',
     sources: [
       'https://docs.midjourney.com/hc/en-us/articles/27870484040333-Comparing-Midjourney-Plans',
       'https://docs.midjourney.com/hc/en-us/articles/32199405667853-Version',
@@ -2279,7 +2280,7 @@ export const aiToolsData = [
     personalExperience: {
       rating: 5,
       insights:
-        '截至 2026-07-07，Midjourney 官方更新页显示 V8.1 已成为默认模型；Version 文档说明 V8.1 HD 图像和 SD/HD GPU time，Video 文档也给出 batch size 对 GPU 成本的影响。本站不再按 V7 默认口径展示，而改为按 V8.1、GPU time、HD/video 和计划能力做采购判断。',
+        '截至 2026-07-13，Midjourney 官方更新页显示 V8.1 已成为默认模型；Version 文档说明 V8.1 HD 图像和 SD/HD GPU time，Video 文档也给出 batch size 对 GPU 成本的影响。本站不再按 V7 默认口径展示，而改为按 V8.1、GPU time、HD/video 和计划能力做采购判断。',
       pitfalls: [
         '先按 Fast/Relax GPU time 估算月用量',
         '确认是否需要 V8.1 HD、Video、Stealth 和更高并发',
@@ -2322,7 +2323,7 @@ export const aiToolsData = [
     contextWindow: 'N/A',
     chineseSupport: 4,
     verificationStatus: 'verified',
-    lastVerified: '2026-07-07',
+    lastVerified: '2026-07-13',
     sources: [
       'https://developers.openai.com/api/docs/guides/images-vision',
       'https://developers.openai.com/api/docs/models/gpt-image-2',
@@ -2346,7 +2347,7 @@ export const aiToolsData = [
     personalExperience: {
       rating: 4.5,
       insights:
-        '截至 2026-07-07，OpenAI 官方 Images 文档仍将 API 图像能力表述为 GPT Image models，并列出最新模型 gpt-image-2；ChatGPT 产品侧对应 ChatGPT Images 2.0。本站不再展示 “DALL-E 4” 或固定 “GPT-5 图像生成” 口径，改为按官方 Images API/ChatGPT 图像入口核验。',
+        '截至 2026-07-13，OpenAI 官方 Images 文档仍将 API 图像能力表述为 GPT Image models，并列出最新模型 gpt-image-2；ChatGPT 产品侧对应 ChatGPT Images 2.0。本站不再展示 “DALL-E 4” 或固定 “GPT-5 图像生成” 口径，改为按官方 Images API/ChatGPT 图像入口核验。',
       pitfalls: [
         '入口和额度按 ChatGPT 计划或 API 路径区分',
         '生成成本按官方 calculator 估算',
@@ -2386,11 +2387,11 @@ export const aiToolsData = [
         link: 'https://stability.ai/license'
       }
     ],
-    freeQuota: '核心模型可在许可范围内使用；商业收入超过 USD $1M 等情况需看 Stability AI license',
+    freeQuota: '核心模型可在许可范围内使用；Stability API 新账号当前提供 25 free credits；商业收入超过 USD $1M 等情况需看 Stability AI license',
     contextWindow: 'N/A',
     chineseSupport: 3,
     verificationStatus: 'verified',
-    lastVerified: '2026-07-07',
+    lastVerified: '2026-07-13',
     sources: [
       'https://stability.ai/license',
       'https://platform.stability.ai/pricing',
@@ -2399,7 +2400,7 @@ export const aiToolsData = [
     pros: [
       'Stable Diffusion 3.5 仍是本地和私有化图像生成的重要路线',
       'Core Models license 对低于 USD $1M 年收入的商业主体更友好，但不是无条件无限制',
-      'Stability API 以 credits 计费，1 credit = $0.01，适合把自托管和 API 成本分开估算',
+      'Stability API 新账号当前提供 25 free credits，之后以 credits 计费，1 credit = $0.01',
       'ComfyUI、LoRA、ControlNet 等生态适合定制化工作流',
       '可在自托管、API 和 Stable Assistant 等入口之间选择'
     ],
@@ -2414,7 +2415,7 @@ export const aiToolsData = [
     personalExperience: {
       rating: 4,
       insights:
-        '截至 2026-07-07，Stability AI 官方许可页把 Stable Diffusion 3.5 Suite 放在 Core Models 许可框架内，并明确 USD $1M 年收入门槛；开发者平台 pricing 则按 credits 计费。本站不再把它写成无条件免费、无限制或无审核，而改为“自托管许可 + API credits + 本地算力”的三段式判断。',
+        '截至 2026-07-13，Stability AI 官方许可页把 Stable Diffusion 3.5 Suite 放在 Core Models 许可框架内，并明确 USD $1M 年收入门槛；开发者平台 pricing 则按 credits 计费。本站不再把它写成无条件免费、无限制或无审核，而改为“自托管许可 + API credits + 本地算力”的三段式判断。',
       pitfalls: [
         '先确认收入规模和用途是否落在许可范围内',
         'API 成本按 credits 和具体模型估算',
@@ -2456,7 +2457,7 @@ export const aiToolsData = [
     contextWindow: 'N/A',
     chineseSupport: 5,
     verificationStatus: 'verified',
-    lastVerified: '2026-07-08',
+    lastVerified: '2026-07-13',
     sources: [
       'https://www.meituxiuxiu.com',
       'https://pc.meitu.com/en/pc',
@@ -2480,7 +2481,7 @@ export const aiToolsData = [
     personalExperience: {
       rating: 4,
       insights:
-        '截至 2026-07-08，美图更适合描述为带有明确 AI 工具的消费级图像编辑套件，而不是泛泛的低价修图软件。官方页面突出 AI 消除、AI 抠图、照片扩展、人像和绘画能力，订阅条款则显示多个付费权益包并存。',
+        '截至 2026-07-13，美图更适合描述为带有明确 AI 工具的消费级图像编辑套件，而不是泛泛的低价修图软件。官方页面突出 AI 消除、AI 抠图、照片扩展、人像和绘画能力，订阅条款则显示多个付费权益包并存。',
       pitfalls: [
         '付费前在产品内确认具体美图 VIP 或 PC 权益',
         '不要默认一个订阅能解锁移动端、PC 和 AI Agent 的全部工作流',
@@ -2524,7 +2525,7 @@ export const aiToolsData = [
     contextWindow: 'N/A',
     chineseSupport: 3,
     verificationStatus: 'verified',
-    lastVerified: '2026-07-07',
+    lastVerified: '2026-07-13',
     sources: [
       'https://developers.openai.com/api/docs/guides/video-generation',
       'https://developers.openai.com/api/docs/pricing',
@@ -2558,7 +2559,7 @@ export const aiToolsData = [
     personalExperience: {
       rating: 3,
       insights:
-        '截至 2026-07-07，OpenAI 官方 Video generation 文档明确提示 Sora 2 video generation models 与 Videos API 已 deprecated，并将于 2026-09-24 shut down；模型页仍列出 sora-2 / sora-2-pro 与按秒计费信息。现阶段它更适合短期概念验证和迁移评估，而不是新建长期视频 API 依赖。',
+        '截至 2026-07-13，OpenAI 官方 Video generation 文档明确提示 Sora 2 video generation models 与 Videos API 已 deprecated，并将于 2026-09-24 shut down；模型页仍列出 sora-2 / sora-2-pro 与按秒计费信息。现阶段它更适合短期概念验证和迁移评估，而不是新建长期视频 API 依赖。',
       pitfalls: [
         '不要把 Sora 2 作为新的长期 API 依赖',
         '先按 2026-09-24 下线日期制定迁移计划',
@@ -2591,8 +2592,8 @@ export const aiToolsData = [
     freeQuota: '网页端活动额度和 API 资源包分属不同入口，按账号页与 API billing 页面确认',
     contextWindow: 'N/A',
     chineseSupport: 5,
-    verificationStatus: 'verified',
-    lastVerified: '2026-07-07',
+    verificationStatus: 'needs-review',
+    lastVerified: '2026-07-13',
     sources: [
       'https://app.klingai.com',
       'https://kling.ai/document-api/quickStart/productIntroduction/overview',
@@ -2613,11 +2614,11 @@ export const aiToolsData = [
       '真人、品牌、版权角色和广告素材仍需人工合规审查'
     ],
     bestFor: '短视频创作、动作连贯',
-    funRanking: '夯夯',
+    funRanking: '待复核',
     personalExperience: {
       rating: 5,
       insights:
-        '截至 2026-07-07，可灵官方 API 文档主入口已经迁到 kling.ai/document-api，API guide 和 updates 继续围绕 Kling 3.0 series、Text-to-Video、Image-to-Video、Extend with Prompts、运镜和关键帧等能力更新。本站不再把旧轻雀文档作为主来源，而是区分网页端额度、订阅积分和 API Resource Packages。',
+        '截至 2026-07-13，可灵官方 API 文档主入口已经迁到 kling.ai/document-api，API guide 和 updates 继续围绕 Kling 3.0 series、Text-to-Video、Image-to-Video、Extend with Prompts、运镜和关键帧等能力更新。本站不再把旧轻雀文档作为主来源，而是区分网页端额度、订阅积分和 API Resource Packages。',
       pitfalls: [
         '先确认走网页端还是 API 端',
         'Kling 3.0 series 参数按最新规格文档实现',
@@ -2638,28 +2639,34 @@ export const aiToolsData = [
       O: '短视频和电商内容',
       T: 'Sora、Runway、Luma'
     },
-    tags: ['推荐', '视频', '国产', 'Kling 3.0', '已核验']
+    tags: ['视频', '国产', 'Kling 3.0', '待复核']
   },
   {
     id: 'jianying',
-    name: '剪映',
+    name: '剪映 / CapCut',
     category: 'multimodal',
     subcategory: '视频编辑',
-    developer: '字节跳动',
+    developer: 'ByteDance',
     logo: null,
     versions: [
       {
-        type: 'CN/Global',
+        type: 'CN',
+        pricing: '剪映会员与 AI 权益以中国站和产品内为准',
+        models: '剪映 AI 编辑套件',
+        link: 'https://www.capcut.cn/'
+      },
+      {
+        type: 'Global',
         pricing: 'CapCut Pro 和 Teams 价格会随地区、设备、计费周期和促销变化',
-        models: 'CapCut / 剪映 AI 编辑套件',
-        link: 'https://www.capcut.com'
+        models: 'CapCut AI 编辑套件',
+        link: 'https://www.capcut.com/'
       }
     ],
     freeQuota: '免费版和 Pro 能力随市场变化；当前 Pro 页面展示月付与年付订阅',
     contextWindow: 'N/A',
     chineseSupport: 5,
     verificationStatus: 'verified',
-    lastVerified: '2026-07-08',
+    lastVerified: '2026-07-13',
     sources: [
       'https://www.capcut.com/help/how-much-does-capcut-pro-cost',
       'https://www.capcut.com/help/pricing-change',
@@ -2683,7 +2690,7 @@ export const aiToolsData = [
     personalExperience: {
       rating: 4,
       insights:
-        '截至 2026-07-08，CapCut/剪映不应再被简单写成通用免费编辑器，而应视为跨设备视频编辑器：Pro、Teams、存储和 AI points 规则都需要按地区和设备核对。最新帮助页已经明确提示价格和计划权益会变化。',
+        '截至 2026-07-13，CapCut/剪映不应再被简单写成通用免费编辑器，而应视为跨设备视频编辑器：Pro、Teams、存储和 AI points 规则都需要按地区和设备核对。最新帮助页已经明确提示价格和计划权益会变化。',
       pitfalls: [
         '报价前确认目标地区和设备上的实际价格',
         '个人 Pro 和 Teams Standard Plan 要分开决策',
@@ -2726,7 +2733,7 @@ export const aiToolsData = [
     contextWindow: 'N/A',
     chineseSupport: 3,
     verificationStatus: 'verified',
-    lastVerified: '2026-07-08',
+    lastVerified: '2026-07-13',
     sources: [
       'https://www.meshy.ai/pricing',
       'https://docs.meshy.ai/en/api/pricing',
@@ -2751,7 +2758,7 @@ export const aiToolsData = [
     personalExperience: {
       rating: 4,
       insights:
-        '截至 2026-07-08，Meshy 官方 pricing 页确认 Free $0、Pro $20/月、Studio $60/月和 Enterprise 定制；Free 每月 100 credits，Pro 每月 1,000 credits，且免费输出按 CC BY 4.0。API 定价已把 Meshy-6 Text to 3D Preview、Image to 3D、Retexture、Remesh、Rigging、Animation 等拆成 credits per call，采购时要按资产类型和后处理链路估算。',
+        '截至 2026-07-13，Meshy 官方 pricing 页确认 Free $0、Pro $20/月、Studio $60/月和 Enterprise 定制；Free 每月 100 credits，Pro 每月 1,000 credits，且免费输出按 CC BY 4.0。API 定价已把 Meshy-6 Text to 3D Preview、Image to 3D、Retexture、Remesh、Rigging、Animation 等拆成 credits per call，采购时要按资产类型和后处理链路估算。',
       pitfalls: [
         '免费输出要计入 CC BY 4.0 署名要求',
         '自动化前按资产类型估算 API credits per call',
@@ -2784,7 +2791,7 @@ export const aiToolsData = [
       {
         type: 'CN/Open Source',
         pricing:
-          '消费端、腾讯云 API 和开源模型分开核算；腾讯云 API 首次开通可领 100 积分，预付 1,000 积分 100 元，后付 0.12 元/积分',
+          '消费端、腾讯云 API、TokenHub 新入口和开源模型分开核算；旧平台已停止新购，存量服务按官方迁移说明继续使用',
         models: 'Hunyuan 3D 3.0、Hunyuan3D 2.0、Hunyuan3D-2.1 Series',
         link: 'https://3d.hunyuan.tencent.com'
       }
@@ -2794,7 +2801,7 @@ export const aiToolsData = [
     contextWindow: 'N/A',
     chineseSupport: 5,
     verificationStatus: 'verified',
-    lastVerified: '2026-07-08',
+    lastVerified: '2026-07-13',
     sources: [
       'https://www.tencent.com/en-us/articles/2202235.html',
       'https://cloud.tencent.com/document/product/1804/123461',
@@ -2803,7 +2810,7 @@ export const aiToolsData = [
     ],
     pros: [
       '腾讯将 Hunyuan 3D 3.0 定位为全球 3D 创作引擎，支持 text-to-3D、image-to-3D 和 Sketch-to-3D 输入',
-      '腾讯云混元生3D API 文档列出一次性 100 积分免费包、1,000 积分 100 元、10,000 积分 980 元、后付费 0.12 元/积分',
+      '新模型服务正在迁移至 TokenHub；旧平台停止新购后，存量账号应按官方迁移说明处理',
       '腾讯云 API 扣减规则显示专业版 Normal 20 积分/次、LowPoly/Sketch 25、Geometry 15；极速版文/图生 3D 默认 15 积分/次',
       '开源 Hunyuan3D 2.0 与 Hunyuan3D-2.1 Series 提供消费站点之外的本地和研究路径',
       '消费端和开源/本地路线要按具体入口确认 OBJ 和 GLB 等导出格式',
@@ -2811,7 +2818,7 @@ export const aiToolsData = [
       '当格式和质量要求匹配时，输出可进入 Unity、Unreal、Blender 等常见 3D 工作流'
     ],
     cons: [
-      '消费云端、腾讯云 API、GitHub 和 Hugging Face 路线的许可、成本和运维假设不同',
+      'TokenHub 新入口、旧平台存量服务、消费云端、GitHub 和 Hugging Face 路线的许可、成本与运维假设不同',
       '不能把消费端免费次数或 credits 直接套用到腾讯云 API 计费',
       '本地运行需要 GPU 显存和依赖管理，不只是开一个网页账号',
       '商用要按所选路线复核许可和生成资产权利',
@@ -2822,7 +2829,7 @@ export const aiToolsData = [
     personalExperience: {
       rating: 4,
       insights:
-        '截至 2026-07-08，混元 3D 应拆成三条路线看：Hunyuan 3D 3.0 消费/云端产品、腾讯云混元生3D API，以及开源 Hunyuan3D 2.0 / Hunyuan3D-2.1 Series 模型。腾讯云 API 现有一次性 100 积分免费包、预付积分包和 0.12 元/积分后付费，且不同生成类型会按 15/20/25/30/50 等积分扣减；这个区分比“国产 3D 工具”标签更影响成本、许可和部署判断。',
+        '截至 2026-07-13，混元 3D 应拆成三条路线看：Hunyuan 3D 3.0 消费/云端产品、腾讯云混元生3D API，以及开源 Hunyuan3D 2.0 / Hunyuan3D-2.1 Series 模型。腾讯云 API 现有一次性 100 积分免费包、预付积分包和 0.12 元/积分后付费，且不同生成类型会按 15/20/25/30/50 等积分扣减；这个区分比“国产 3D 工具”标签更影响成本、许可和部署判断。',
       pitfalls: [
         '比较成本前先选定网页、腾讯云 API 或开源路线',
         '不要把消费端免费次数套用到腾讯云 API',
@@ -2887,7 +2894,7 @@ export const aiToolsData = [
     personalExperience: {
       rating: 4,
       insights:
-        '截至 2026-07-07，NotebookLM 更适合被定位为“基于资料源的研究/写作助手”。标准版仍是 100 notebooks、50 sources/notebook、50 chat queries/day 的个人资料整理入口；如果团队需要 Video Overviews、Deep Research、Slide Decks、Infographics、Watermark Removal 或更高 source limits，应核对 Plus/Pro/Ultra、Cloud 或 Workspace 权益。',
+        '截至 2026-07-13，NotebookLM 更适合被定位为“基于资料源的研究/写作助手”。标准版仍是 100 notebooks、50 sources/notebook、50 chat queries/day 的个人资料整理入口；如果团队需要 Video Overviews、Deep Research、Slide Decks、Infographics、Watermark Removal 或更高 source limits，应核对 Plus/Pro/Ultra、Cloud 或 Workspace 权益。',
       pitfalls: [
         '不是通用对话模型',
         '高级额度与功能受 Google 计划、地区和账号类型影响',
@@ -2896,7 +2903,7 @@ export const aiToolsData = [
       ]
     },
     verificationStatus: 'verified',
-    lastVerified: '2026-07-07',
+    lastVerified: '2026-07-13',
     sources: [
       'https://support.google.com/notebooklm/answer/16269187?hl=en',
       'https://support.google.com/notebooklm/answer/16213268?hl=en',
@@ -2926,13 +2933,13 @@ export const aiToolsData = [
     name: '氢离子 / 阿里健康',
     category: 'llm',
     subcategory: '医学垂直助手',
-    developer: '阿里健康 / 杭州智循建模科技',
+    developer: '杭州智循建模科技有限公司（阿里健康氢离子）',
     logo: null,
     versions: [
       {
         type: 'CN',
         pricing:
-          'App Store / 产品内页面曾列出免费 App 与若干内购档位；具体价格、权益和机构权限以当前商店页及产品内为准',
+          'App 免费下载；App 内购当前列出新人/月 ¥9.90、月卡 ¥49、季卡 ¥118、年卡 ¥360，权益以产品内为准',
         models: '医学文献检索、指南阅读、AI 翻译和智能问答助手',
         link: 'https://ali-doctor.com/login'
       }
@@ -2957,7 +2964,7 @@ export const aiToolsData = [
     personalExperience: {
       rating: 3.5,
       insights:
-        '截至 2026-07-08，可以通过阿里健康/氢离子入口和 App Store 确认其医学 AI 助手定位，主要围绕搜文献、查指南、查药品、AI 翻译和原文总结。本站只核验产品存在、免费 App + App 内购买线索和免责声明；当前价格权益、模型卡、临床效果或机构权限仍需以商店页及产品内为准。',
+        '截至 2026-07-13，可以通过阿里健康/氢离子入口和 App Store 确认其医学 AI 助手定位，主要围绕搜文献、查指南、查药品、AI 翻译和原文总结。本站只核验产品存在、免费 App + App 内购买线索和免责声明；当前价格权益、模型卡、临床效果或机构权限仍需以商店页及产品内为准。',
       pitfalls: [
         '不要把回答当作诊断或处方',
         '价格、额度和机构权限以产品内为准',
@@ -2965,7 +2972,7 @@ export const aiToolsData = [
       ]
     },
     verificationStatus: 'verified',
-    lastVerified: '2026-07-08',
+    lastVerified: '2026-07-13',
     sources: [
       'https://ali-doctor.com/login',
       'https://apps.apple.com/cn/app/%E6%B0%A2%E7%A6%BB%E5%AD%90-%E5%8C%BB%E5%AD%A6ai%E5%8A%A9%E6%89%8B/id6738349403'
@@ -2977,7 +2984,7 @@ export const aiToolsData = [
       avoidIf: '你需要经过临床验证的诊疗决策系统或明确 API 价格',
       mainRisk:
         'App Store 免责声明限定其仅供医疗行业专业用户参考，不能代替医生面诊和医院诊断；公开来源暂未给出完整模型卡和机构权限边界。',
-      alternatives: ['Perplexity', 'GPT-5.5 / OpenAI', 'Claude']
+      alternatives: ['Perplexity', 'GPT-5.6 / OpenAI', 'Claude']
     },
     swot: {
       S: '医学资料检索入口清晰',
@@ -2992,12 +2999,12 @@ export const aiToolsData = [
     name: 'Coze',
     category: 'agent',
     subcategory: '无代码平台',
-    developer: '字节跳动',
+    developer: 'Global: SPRING (SG) PTE. LTD. / CN: 字节跳动（扣子）',
     logo: null,
     versions: [
       {
         type: 'Global',
-        pricing: '免费版每天 10 积分；Premium Lite 每天 100 积分；Premium $19；Premium Plus $39',
+        pricing: 'Global 计划和 credits 以登录后的订阅与账单页为准；公开页面不足以稳定核验固定价格',
         models: '多模型 Agent / Workflow / Plugin',
         link: 'https://www.coze.com'
       },
@@ -3009,13 +3016,13 @@ export const aiToolsData = [
       }
     ],
     freeQuota:
-      'Global Free：10 credits/day；Premium plans 标注 3-day free trial，额度按模型调用和能力消耗',
+      'Global/CN 免费额度和付费 credits 以登录后的当前计划页为准，额度按模型调用和能力消耗',
     contextWindow: '取决于模型',
     chineseSupport: 5,
     pros: [
       '面向 AI Agent 的低代码/无代码构建平台',
-      'Global 版 Free 每日 10 credits，Premium Lite 每日 100 credits',
-      'Premium 和 Premium Plus 分别提供更高日额度，官方页列出 $19 和 $39 档',
+      'Global 与 CN 由不同法律主体和产品入口运营，采购时应分别确认条款',
+      '计划名、credits 与价格以登录后的订阅和账单页为准',
       '官方文档将 Premium plan、message credits、Coze tokens、API/Web SDK 与非 SDK 场景计费分开说明',
       '工作流、插件、知识库和 API/Web SDK 可组合',
       '适合快速把 Bot、Workflow 和外部工具串成可发布应用'
@@ -3027,15 +3034,15 @@ export const aiToolsData = [
       '复杂多步骤 Agent 仍需要日志、回放和人工验收'
     ],
     bestFor: '快速搭建 Bot、轻量工作流和可发布的 Agent 应用',
-    funRanking: '夯',
+    funRanking: '待复核',
     personalExperience: {
       rating: 4,
       insights:
-        '截至 2026-07-08，Coze 更适合当作低代码 Agent 发布平台评估：先用 Free 10 credits/day 做原型，再按 Premium Lite 100 credits/day 或更高档估算真实调用成本。官方 docs 同时区分 message credits、Coze tokens、API/Web SDK 和非 SDK 场景费用，不要只看“能搭起来”，要看账单页、日志、异常恢复和渠道发布后的维护成本。',
+        '截至 2026-07-13，Coze 更适合当作低代码 Agent 发布平台评估。公开页面不足以稳定核验固定计划价格，且 Global 与 CN 法律主体不同；正式选型应以登录后账单页、日志、异常恢复和渠道发布后的维护成本为准。',
       pitfalls: ['credit 模型需要实测', 'CN/Global 计费和能力可能不同', '复杂流程要保留人工兜底']
     },
-    verificationStatus: 'verified',
-    lastVerified: '2026-07-08',
+    verificationStatus: 'needs-review',
+    lastVerified: '2026-07-13',
     sources: [
       'https://www.coze.com/premium',
       'https://www.coze.com/open/docs/guides/subscription',
@@ -3055,14 +3062,14 @@ export const aiToolsData = [
       O: '业务自动化和 Bot 分发',
       T: 'Dify、n8n、Make 等平台'
     },
-    tags: ['推荐', 'Agent', '无代码', '字节']
+    tags: ['Agent', '无代码', '字节', '待复核']
   },
   {
     id: 'dify',
     name: 'Dify',
     category: 'agent',
     subcategory: '开源平台',
-    developer: '开源社区',
+    developer: 'LangGenius, Inc.',
     logo: null,
     versions: [
       {
@@ -3082,20 +3089,21 @@ export const aiToolsData = [
       'Professional 当前价格页展示 $590/workspace/year，含 5,000 message credits/month',
       'Team 当前价格页展示 $1590/workspace/year，含 10,000 message credits/month',
       'Sandbox Free 含 200 message credits、5 apps、50 knowledge documents 和 30 days log history',
-      'Community Edition 支持免费自托管的受控部署',
+      'Community Edition 可自托管，采用 Dify modified Apache 2.0 license，部署前需核对附加条款',
       '产品定位覆盖 agentic workflows、RAG pipelines、integrations 和 observability'
     ],
     cons: [
       'Cloud 额度受 workspace 订阅限制，自托管也需要模型、向量库和运维成本',
       '生产环境要关注知识库数据存储、日志、权限和 API rate limit',
-      '插件和模型供应商配置会影响实际部署复杂度'
+      '插件和模型供应商配置会影响实际部署复杂度',
+      'Community Edition 不是未经修改的标准 Apache 2.0，分发和多租户场景需审查附加许可条款'
     ],
     bestFor: '团队搭建 RAG、Agentic workflow 和可观测的 AI 应用',
     funRanking: '夯',
     personalExperience: {
       rating: 4,
       insights:
-        '截至 2026-07-07，Dify 的价值不只是“可自托管”，而是把 RAG、Workflow、Agent、插件和观测做成一套产品化工作台。当前 pricing 页默认展示 Professional $590/year、Team $1590/year 与 Sandbox Free 200 message credits；选型时应把 Cloud workspace 额度、annual/monthly billing 和 Community Edition 的运维成本分开算。',
+        '截至 2026-07-13，Dify 的价值不只是“可自托管”，而是把 RAG、Workflow、Agent、插件和观测做成一套产品化工作台。当前 pricing 页默认展示 Professional $590/year、Team $1590/year 与 Sandbox Free 200 message credits；选型时应把 Cloud workspace 额度、annual/monthly billing 和 Community Edition 的运维成本分开算。',
       pitfalls: [
         'Cloud 额度不是无限',
         '自托管仍要承担模型和基础设施成本',
@@ -3103,7 +3111,7 @@ export const aiToolsData = [
       ]
     },
     verificationStatus: 'verified',
-    lastVerified: '2026-07-07',
+    lastVerified: '2026-07-13',
     sources: [
       'https://dify.ai/pricing',
       'https://docs.dify.ai/en/cloud/use-dify/workspace/subscription-management',
@@ -3152,7 +3160,7 @@ export const aiToolsData = [
     contextWindow: '取决于模型',
     chineseSupport: 3,
     verificationStatus: 'verified',
-    lastVerified: '2026-07-08',
+    lastVerified: '2026-07-13',
     sources: [
       'https://agpt.co/pricing/',
       'https://agpt.co/docs/platform',
@@ -3177,7 +3185,7 @@ export const aiToolsData = [
     personalExperience: {
       rating: 3.5,
       insights:
-        '截至 2026-07-08，AutoGPT 更应该按平台型 Agent 自动化工具评估，而不是只看早期经典 autonomous-agent demo。关键问题是你的流程是否需要云端运行管理、可视化积木、marketplace agents、定时任务、MCP 集成、AutoPilot Chat 和 pay-as-you-go credits，还是自托管加模型成本更合适。',
+        '截至 2026-07-13，AutoGPT 更应该按平台型 Agent 自动化工具评估，而不是只看早期经典 autonomous-agent demo。关键问题是你的流程是否需要云端运行管理、可视化积木、marketplace agents、定时任务、MCP 集成、AutoPilot Chat 和 pay-as-you-go credits，还是自托管加模型成本更合适。',
       pitfalls: [
         '分开核算托管订阅和自托管成本',
         '再分发或平台复用前核对 Polyform Shield License 边界',
@@ -3207,7 +3215,7 @@ export const aiToolsData = [
     name: 'LangChain',
     category: 'agent',
     subcategory: '开发框架',
-    developer: '开源社区',
+    developer: 'LangChain, Inc.',
     logo: null,
     versions: [
       {
@@ -3240,11 +3248,11 @@ export const aiToolsData = [
     personalExperience: {
       rating: 4,
       insights:
-        '截至 2026-07-08，LangChain 条目应拆成“开源框架 + LangSmith 平台”来理解：LangGraph 适合需要明确状态和控制流的 Agent，LangSmith 则解决追踪、评测和部署。团队选型时要同时评估代码复杂度、每月 5,000/10,000 条基础追踪阶梯、大模型用量另行计费和可观测性预算。',
+        '截至 2026-07-13，LangChain 条目应拆成“开源框架 + LangSmith 平台”来理解：LangGraph 适合需要明确状态和控制流的 Agent，LangSmith 则解决追踪、评测和部署。团队选型时要同时评估代码复杂度、每月 5,000/10,000 条基础追踪阶梯、大模型用量另行计费和可观测性预算。',
       pitfalls: ['需要工程化能力', 'LangSmith 超额按量', '框架组合要避免过度设计']
     },
     verificationStatus: 'verified',
-    lastVerified: '2026-07-08',
+    lastVerified: '2026-07-13',
     sources: [
       'https://www.langchain.com/',
       'https://www.langchain.com/pricing',
@@ -3292,7 +3300,7 @@ export const aiToolsData = [
     contextWindow: 'N/A',
     chineseSupport: 4,
     verificationStatus: 'verified',
-    lastVerified: '2026-07-07',
+    lastVerified: '2026-07-13',
     sources: [
       'https://gemini.google/overview/image-generation/',
       'https://ai.google.dev/gemini-api/docs/image-generation',
@@ -3318,7 +3326,7 @@ export const aiToolsData = [
     personalExperience: {
       rating: 4,
       insights:
-        '截至 2026-07-07，这个条目应指向 Gemini 图像生成，而不是一个独立轻量图表服务。Nano Banana 是 Google 在 Gemini app 与 Gemini API 场景中的图像模型族昵称，当前选型重点是 Nano Banana 2 Lite、Nano Banana 2 与 Nano Banana Pro；旧的 gemini-2.5-flash-image 已进入 legacy 迁移口径。',
+        '截至 2026-07-13，这个条目应指向 Gemini 图像生成，而不是一个独立轻量图表服务。Nano Banana 是 Google 在 Gemini app 与 Gemini API 场景中的图像模型族昵称，当前选型重点是 Nano Banana 2 Lite、Nano Banana 2 与 Nano Banana Pro；旧的 gemini-2.5-flash-image 已进入 legacy 迁移口径。',
       pitfalls: [
         '使用 Gemini 或 Google AI Studio 官方入口',
         '明确选择 API 模型 ID',
@@ -3383,7 +3391,7 @@ export const aiToolsData = [
     personalExperience: {
       rating: 4,
       insights:
-        '截至 2026-07-07，Perplexity 应定位为 web-first research/answer engine：强项是实时网页研究、inline citations、多模型路由和 Comet/Computer 工作流。Max 帮助页当天更新，新增/强调 Max Assistant on Comet、Brain Research Preview、Create files/apps 与 API 另行计费；Pro/Max/Enterprise 的差异不建议只用“免费/$20”概括。',
+        '截至 2026-07-13，Perplexity 应定位为 web-first research/answer engine：强项是实时网页研究、inline citations、多模型路由和 Comet/Computer 工作流。Max 帮助页当天更新，新增/强调 Max Assistant on Comet、Brain Research Preview、Create files/apps 与 API 另行计费；Pro/Max/Enterprise 的差异不建议只用“免费/$20”概括。',
       pitfalls: [
         '引用仍需抽查原文',
         '高级功能多在付费档',
@@ -3392,7 +3400,7 @@ export const aiToolsData = [
       ]
     },
     verificationStatus: 'verified',
-    lastVerified: '2026-07-07',
+    lastVerified: '2026-07-13',
     sources: [
       'https://www.perplexity.ai/hub',
       'https://www.perplexity.ai/help-center/en/articles/11680686-perplexity-max',
@@ -3429,7 +3437,7 @@ export const aiToolsData = [
         pricing:
           'Free $0 / Pro $20/月 / Max $200/月 / Teams $80/月 plan + $40/月每 full dev seat / Enterprise 定制',
         models:
-          'Devin Desktop、Devin Cloud、SWE 1.6、OpenAI/Claude/Gemini frontier models 与开源模型（以官方计划可用为准）',
+          'Devin Desktop、Devin Cloud、SWE 1.7、OpenAI/Claude/Gemini frontier models 与开源模型（以官方计划可用为准）',
         link: 'https://devin.ai/pricing/'
       }
     ],
@@ -3440,7 +3448,7 @@ export const aiToolsData = [
     pros: [
       '官方 pricing 已把 Devin Desktop/Cloud 与 Windsurf 迁移后的计划放在同一 Devin 口径下',
       'Free 提供轻量 agent quota、有限模型、无限 inline edits 与 Tab completions',
-      'Pro $20 可访问 OpenAI、Claude、Gemini frontier models、SWE 1.6、Devin Cloud 和 extra usage',
+      'Pro $20 可访问 OpenAI、Claude、Gemini frontier models、SWE 1.7、Devin Cloud 和 extra usage',
       'Teams 是 $80/月 plan + $40/月每 full dev seat，并支持 unlimited team members 与集中管理',
       'DeepWiki/Ask Devin/Devin Review/Integrations 扩展了代码库理解和 PR 审查场景'
     ],
@@ -3456,7 +3464,7 @@ export const aiToolsData = [
     personalExperience: {
       rating: 4,
       insights:
-        '截至 2026-07-07，Devin pricing 明确展示 Free、Pro $20、Max $200、Teams $80/月 plan + $40/月每 full dev seat、Enterprise，并说明 Windsurf 已迁入 Devin Desktop。它仍适合团队 backlog、迁移、PR Review 和多工具集成，而不是个人随手补全。',
+        '截至 2026-07-13，Devin pricing 明确展示 Free、Pro $20、Max $200、Teams $80/月 plan + $40/月每 full dev seat、Enterprise，并说明 Windsurf 已迁入 Devin Desktop。它仍适合团队 backlog、迁移、PR Review 和多工具集成，而不是个人随手补全。',
       pitfalls: [
         '不要再按旧 $500 Team 入门价判断',
         '先用小任务测算 quota 和额外用量',
@@ -3464,7 +3472,7 @@ export const aiToolsData = [
       ]
     },
     verificationStatus: 'verified',
-    lastVerified: '2026-07-07',
+    lastVerified: '2026-07-13',
     sources: [
       'https://devin.ai/pricing/',
       'https://cognition.com/blog/new-self-serve-plans-for-devin',
@@ -3526,7 +3534,7 @@ export const aiToolsData = [
     personalExperience: {
       rating: 4,
       insights:
-        '截至 2026-07-07，Bolt 官方价格页显示 Free、Pro $25、Teams $30/成员、Enterprise 定制，并以 token 额度管理使用；Free 是 300K/day、1M/month，Pro 从 10M/month 起且取消 daily token limit。它的独特点仍是 WebContainers 里的可运行全栈环境，适合快速把网页和应用原型跑起来。',
+        '截至 2026-07-13，Bolt 官方价格页显示 Free、Pro $25、Teams $30/成员、Enterprise 定制，并以 token 额度管理使用；Free 是 300K/day、1M/month，Pro 从 10M/month 起且取消 daily token limit。它的独特点仍是 WebContainers 里的可运行全栈环境，适合快速把网页和应用原型跑起来。',
       pitfalls: [
         '先控制项目体量，文件越多越耗 token',
         'Free 触顶后会暂停 AI 交互',
@@ -3534,7 +3542,7 @@ export const aiToolsData = [
       ]
     },
     verificationStatus: 'verified',
-    lastVerified: '2026-07-07',
+    lastVerified: '2026-07-13',
     sources: [
       'https://bolt.new/pricing',
       'https://github.com/stackblitz/bolt.new',
@@ -3595,7 +3603,7 @@ export const aiToolsData = [
     personalExperience: {
       rating: 4,
       insights:
-        '截至 2026-07-07，v0 官方 pricing 显示 Free、Team、Business、Enterprise，并列出 v0 Mini/Pro/Max/Max Fast 的 token 价格。Free 含 $5 monthly credits 和 7 messages/day，Team/Business 是 $30/$100 每用户每月且每用户含 $30 monthly credits。旧的 Premium $20 和具体 GPT-5/AutoFix 断言不应再保留。',
+        '截至 2026-07-13，v0 官方 pricing 显示 Free、Team、Business、Enterprise，并列出 v0 Mini/Pro/Max/Max Fast 的 token 价格。Free 含 $5 monthly credits 和 7 messages/day，Team/Business 是 $30/$100 每用户每月且每用户含 $30 monthly credits。旧的 Premium $20 和具体 GPT-5/AutoFix 断言不应再保留。',
       pitfalls: [
         '预算按 credits 和 token 单价估算',
         '复杂 UI 和业务逻辑仍要人工改',
@@ -3603,7 +3611,7 @@ export const aiToolsData = [
       ]
     },
     verificationStatus: 'verified',
-    lastVerified: '2026-07-07',
+    lastVerified: '2026-07-13',
     sources: ['https://v0.app/pricing', 'https://v0.app/', 'https://v0.app/docs'],
     decisionSummary: {
       verdict:
@@ -3659,7 +3667,7 @@ export const aiToolsData = [
     personalExperience: {
       rating: 3.5,
       insights:
-        '截至 2026-07-07，Lovable 官方文档显示其正在滚动到一个 credit balance：building、Lovable Cloud hosting/running 和部署后 AI gateway usage 都会从 credits 扣除。Free 有 5 daily build credits（每月最多 30）、20 Cloud credits/月和 4 AI credits/月；Plan mode 每条消息 1 credit，Build mode 随复杂度浮动。',
+        '截至 2026-07-13，Lovable 官方文档显示其正在滚动到一个 credit balance：building、Lovable Cloud hosting/running 和部署后 AI gateway usage 都会从 credits 扣除。Free 有 5 daily build credits（每月最多 30）、20 Cloud credits/月和 4 AI credits/月；Plan mode 每条消息 1 credit，Build mode 随复杂度浮动。',
       pitfalls: [
         '先估算 build/cloud/AI 都会吃同一 credit balance',
         'credits 用尽会阻断继续构建甚至影响托管应用',
@@ -3667,7 +3675,7 @@ export const aiToolsData = [
       ]
     },
     verificationStatus: 'verified',
-    lastVerified: '2026-07-07',
+    lastVerified: '2026-07-13',
     sources: [
       'https://lovable.dev/pricing',
       'https://docs.lovable.dev/introduction/subscription-plans',
@@ -3730,14 +3738,14 @@ export const aiToolsData = [
     personalExperience: {
       rating: 3,
       insights:
-        '截至 2026-07-08，Tabnine 官方 pricing 将 Code Assistant 标为 $39/用户/月（Annual subscription），Agentic Platform 标为 $59/用户/月，并强调私有部署、Context Engine、CLI、MCP 工具调用和合规能力；Tabnine-provided LLM access 另按实际 provider price + 5% handling fee 计。它更像企业 AI coding platform，而不是个人低价补全插件。',
+        '截至 2026-07-13，Tabnine 官方 pricing 将 Code Assistant 标为 $39/用户/月（Annual subscription），Agentic Platform 标为 $59/用户/月，并强调私有部署、Context Engine、CLI、MCP 工具调用和合规能力；Tabnine-provided LLM access 另按实际 provider price + 5% handling fee 计。它更像企业 AI coding platform，而不是个人低价补全插件。',
       pitfalls: [
         '先确认合同价格、LLM access 计费和部署形态',
         '不要继续用旧的 Dev 低价档或免费版口径做采购预算'
       ]
     },
     verificationStatus: 'verified',
-    lastVerified: '2026-07-08',
+    lastVerified: '2026-07-13',
     sources: ['https://www.tabnine.com/pricing/', 'https://www.tabnine.com/'],
     decisionSummary: {
       verdict:
@@ -3798,14 +3806,14 @@ export const aiToolsData = [
     personalExperience: {
       rating: 3.5,
       insights:
-        '截至 2026-07-08，Warp 官方 pricing 是 Free、Build、Max、Business、Enterprise，并用 credits 管理 cloud/local agents。Free 可 BYOK，但 docs 明确不含 Warp Agent bundled AI usage；如果要完整 Agent 能力，至少应按 Build $20/月、1,500 credits 和 reload/spend cap 估算。',
+        '截至 2026-07-13，Warp 官方 pricing 是 Free、Build、Max、Business、Enterprise，并用 credits 管理 cloud/local agents。Free 可 BYOK，但 docs 明确不含 Warp Agent bundled AI usage；如果要完整 Agent 能力，至少应按 Build $20/月、1,500 credits 和 reload/spend cap 估算。',
       pitfalls: [
         '不要再用旧请求数或旧档位口径预算',
         '先估算 Build credits 是否覆盖真实 cloud/local agent 用量'
       ]
     },
     verificationStatus: 'verified',
-    lastVerified: '2026-07-08',
+    lastVerified: '2026-07-13',
     sources: [
       'https://www.warp.dev/pricing',
       'https://docs.warp.dev/support-and-community/plans-and-billing/plans-pricing-refunds/'
@@ -3867,7 +3875,7 @@ export const aiToolsData = [
     personalExperience: {
       rating: 4,
       insights:
-        '截至 2026-07-08，Meta 官方 Llama 4 页面、模型卡和 Meta AI 博客列出 Scout 与 Maverick：两者都是多模态 MoE 模型，Scout 标注 10M context，Maverick 标注 1M context；Behemoth 仍应作为 preview/teacher model 线索而非已发布主力。本站不再把它描述成无条件免费开源，而改为开放权重 + 自托管/云成本 + 许可约束的口径。',
+        '截至 2026-07-13，Meta 官方 Llama 4 页面、模型卡和 Meta AI 博客列出 Scout 与 Maverick：两者都是多模态 MoE 模型，Scout 标注 10M context，Maverick 标注 1M context；Behemoth 仍应作为 preview/teacher model 线索而非已发布主力。本站不再把它描述成无条件免费开源，而改为开放权重 + 自托管/云成本 + 许可约束的口径。',
       pitfalls: [
         '先核 Meta Llama 许可与使用场景',
         '长上下文能力要在目标部署上实测',
@@ -3875,7 +3883,7 @@ export const aiToolsData = [
       ]
     },
     verificationStatus: 'verified',
-    lastVerified: '2026-07-08',
+    lastVerified: '2026-07-13',
     sources: [
       'https://www.llama.com/models/llama-4/',
       'https://www.llama.com/docs/model-cards-and-prompt-formats/llama4/',
@@ -3899,7 +3907,7 @@ export const aiToolsData = [
   },
   {
     id: 'mistral',
-    name: 'Mistral / Le Chat',
+    name: 'Mistral / Vibe (former Le Chat)',
     category: 'llm',
     subcategory: '通用大模型',
     developer: 'Mistral AI (法国)',
@@ -3907,12 +3915,12 @@ export const aiToolsData = [
     versions: [
       {
         type: 'Global',
-        pricing: 'API 按模型 token 计费；Large 3 官方模型卡列出 $0.5/M input、$1.5/M output',
+        pricing: 'Vibe：Free / Pro $14.99/月 / Team $24.99/用户/月 / Enterprise 定制；API 按模型 token 另计',
         models: 'Mistral Medium 3.5, Mistral Small 4, Mistral Large 3, Ministral 3',
         link: 'https://docs.mistral.ai/models/overview'
       }
     ],
-    freeQuota: '账号和 API tier 以 Mistral 控制台为准；生产用量按模型计费',
+    freeQuota: 'Vibe 提供 Free 计划；API tier 以 Mistral 控制台为准，生产用量按模型另计',
     contextWindow: 'Large 3 / Medium 3.5 / Small 4 / Ministral 3 最高 256K',
     chineseSupport: 3,
     pros: [
@@ -3932,7 +3940,7 @@ export const aiToolsData = [
     personalExperience: {
       rating: 4,
       insights:
-        '截至 2026-07-07，Mistral 官方模型页的主线已经不只是 Large 3，还包括 Medium 3.5、Small 4、Devstral 2 和 Ministral 3；known limitations 仍提醒按具体模型能力和限制选型。本站改为 Mistral / Le Chat 生态口径：适合想在开放权重、欧洲合规和 API 成本之间找平衡的团队，但不要用未经验证的榜单或订阅价做采购判断。',
+        '截至 2026-07-13，Mistral 的托管产品现以 Vibe（原 Le Chat）展示 Free、Pro、Team 与 Enterprise，API 仍按模型另计。模型主线包括 Medium 3.5、Small 4、Large 3、Devstral 2 和 Ministral 3；选型应同时核对计划、模型卡与限制。',
       pitfalls: [
         '按具体模型卡核上下文和价格',
         '中文/国内场景先做小样本评测',
@@ -3940,7 +3948,7 @@ export const aiToolsData = [
       ]
     },
     verificationStatus: 'verified',
-    lastVerified: '2026-07-07',
+    lastVerified: '2026-07-13',
     sources: [
       'https://docs.mistral.ai/models/overview',
       'https://docs.mistral.ai/models/model-cards/mistral-large-3-25-12',
@@ -4009,19 +4017,19 @@ export const aiToolsData = [
       '开放权重、01.AI platform API、NVIDIA API trial 和企业 WorldWise 授权需要分开评估'
     ],
     bestFor: '跟踪 01.AI 企业 Agent、Yi 开放模型和中文场景备选',
-    funRanking: '夯',
+    funRanking: '待复核',
     personalExperience: {
       rating: 3,
       insights:
-        '截至 2026-07-08，01.AI 官网可确认 Yi-Lightning、Yi Open-source 和 WorldWise 企业方向仍在展示；Yi Foundation Models、Hugging Face 与 GitHub 能核验开放模型线，platform 入口能核验 Billing / Payment 等账号路径。公开资料仍不足以给出 API 价格、托管模型 SLA 或生产采购结论。',
+        '截至 2026-07-13，01.AI 官网可确认 Yi-Lightning、Yi Open-source 和 WorldWise 企业方向仍在展示；Yi Foundation Models、Hugging Face 与 GitHub 能核验开放模型线，platform 入口能核验 Billing / Payment 等账号路径。公开资料仍不足以给出 API 价格、托管模型 SLA 或生产采购结论。',
       pitfalls: [
         '价格和额度要登录 platform billing 确认',
         '分清开放权重、01.AI platform API、NVIDIA API trial 和企业 WorldWise 授权',
         '不要沿用旧 benchmark、速度或无限制许可数字'
       ]
     },
-    verificationStatus: 'verified',
-    lastVerified: '2026-07-08',
+    verificationStatus: 'needs-review',
+    lastVerified: '2026-07-13',
     sources: [
       'https://www.01.ai/',
       'https://www.01.ai/yi-models',
@@ -4048,7 +4056,7 @@ export const aiToolsData = [
       O: '可继续观察企业 Agent 和中文场景',
       T: 'Qwen、DeepSeek、百度千帆竞争'
     },
-    tags: ['国产', 'Yi', '企业', '中文', '开放权重', '已核验']
+    tags: ['国产', 'Yi', '企业', '中文', '开放权重', '待复核']
   },
   {
     id: 'ernie',
@@ -4093,7 +4101,7 @@ export const aiToolsData = [
     personalExperience: {
       rating: 3.5,
       insights:
-        '截至 2026-07-08，百度千帆官方页面已列出 ERNIE 5.1、ERNIE 5.0、ERNIE-5.0-Thinking-Preview、ERNIE 4.5 Turbo、ERNIE 4.5 Turbo VL 和 ERNIE X1.1 Preview，并给出 API 接入点、上下文和价格。千帆首页现在更强调以 Agent 为核心的一站式企业级大模型服务平台，本站去掉消费者端永久免费和对标 GPT 的强结论，改为百度千帆 API/Agent 平台选型口径。',
+        '截至 2026-07-13，百度千帆官方页面已列出 ERNIE 5.1、ERNIE 5.0、ERNIE-5.0-Thinking-Preview、ERNIE 4.5 Turbo、ERNIE 4.5 Turbo VL 和 ERNIE X1.1 Preview，并给出 API 接入点、上下文和价格。千帆首页现在更强调以 Agent 为核心的一站式企业级大模型服务平台，本站去掉消费者端永久免费和对标 GPT 的强结论，改为百度千帆 API/Agent 平台选型口径。',
       pitfalls: [
         '按 API/消费者入口分别核算费用',
         '中文任务先做自有数据评测',
@@ -4101,7 +4109,7 @@ export const aiToolsData = [
       ]
     },
     verificationStatus: 'verified',
-    lastVerified: '2026-07-08',
+    lastVerified: '2026-07-13',
     sources: [
       'https://cloud.baidu.com/product-s/qianfan_home',
       'https://cloud.baidu.com/doc/qianfan-docs/s/7m95lyy43',
@@ -4166,7 +4174,7 @@ export const aiToolsData = [
     personalExperience: {
       rating: 4.5,
       insights:
-        '截至 2026-07-07，Black Forest Labs 官方文档把 FLUX.2 作为推荐模型家族：FLUX.2 [klein] 面向实时/高量，[pro] 面向生产，[flex] 面向精细控制，[max] 面向最高质量。价格页和 API 文档都强调按生成计费，FLUX MCP 与开放权重路线也要按授权和 host 权限单独评估。',
+        '截至 2026-07-13，Black Forest Labs 官方文档把 FLUX.2 作为推荐模型家族：FLUX.2 [klein] 面向实时/高量，[pro] 面向生产，[flex] 面向精细控制，[max] 面向最高质量。价格页和 API 文档都强调按生成计费，FLUX MCP 与开放权重路线也要按授权和 host 权限单独评估。',
       pitfalls: [
         '先区分 API、Playground、本地权重和商业授权路径',
         'FLUX.2 [dev] 的 non-commercial 限制要在商用前核对',
@@ -4174,7 +4182,7 @@ export const aiToolsData = [
       ]
     },
     verificationStatus: 'verified',
-    lastVerified: '2026-07-07',
+    lastVerified: '2026-07-13',
     sources: [
       'https://bfl.ai/pricing',
       'https://docs.bfl.ai/quick_start/pricing',
@@ -4219,7 +4227,7 @@ export const aiToolsData = [
     contextWindow: 'N/A',
     chineseSupport: 2,
     verificationStatus: 'verified',
-    lastVerified: '2026-07-07',
+    lastVerified: '2026-07-13',
     sources: [
       'https://runwayml.com/pricing',
       'https://help.runwayml.com/hc/en-us/articles/46974685288467-Creating-with-Gen-4-5',
@@ -4246,7 +4254,7 @@ export const aiToolsData = [
     personalExperience: {
       rating: 4,
       insights:
-        '截至 2026-07-07，Runway pricing 页显示 Free 一次性 125 credits、Standard/Pro/Max/Enterprise 计划，并明确 Gen-4.5 约 60 credits/5s；Gen-4.5 帮助文档标注 12 credits per second。Runway API 另按 developer portal credits 计费，$0.01/credit，不能和 Web app 计划混算。',
+        '截至 2026-07-13，Runway pricing 页显示 Free 一次性 125 credits、Standard/Pro/Max/Enterprise 计划，并明确 Gen-4.5 约 60 credits/5s；Gen-4.5 帮助文档标注 12 credits per second。Runway API 另按 developer portal credits 计费，$0.01/credit，不能和 Web app 计划混算。',
       pitfalls: [
         '按 seconds * credits rate 估算每条视频成本',
         'Free plan 不会刷新 credits',
@@ -4311,7 +4319,7 @@ export const aiToolsData = [
     personalExperience: {
       rating: 3.5,
       insights:
-        '截至 2026-07-08，Pika 官方 pricing 页显示 Basic $0/80 monthly video credits、Standard $8/700、Pro $28/2,300、Fancy $76/6,000（年付口径），并列出 Pika 2.5、Pikascenes、Pikadditions、Pikaswaps、Pikatwists 和 Pikaffects 的 credit 消耗。API 页面把 Pika 视频模型入口指向 Fal.ai，采购判断要把 Web 订阅和 API 路径分开。',
+        '截至 2026-07-13，Pika 官方 pricing 页显示 Basic $0/80 monthly video credits、Standard $8/700、Pro $28/2,300、Fancy $76/6,000（年付口径），并列出 Pika 2.5、Pikascenes、Pikadditions、Pikaswaps、Pikatwists 和 Pikaffects 的 credit 消耗。API 页面把 Pika 视频模型入口指向 Fal.ai，采购判断要把 Web 订阅和 API 路径分开。',
       pitfalls: [
         '先按目标功能估算每条视频 credits',
         'Basic $0 分辨率和功能范围有限',
@@ -4320,7 +4328,7 @@ export const aiToolsData = [
       ]
     },
     verificationStatus: 'verified',
-    lastVerified: '2026-07-08',
+    lastVerified: '2026-07-13',
     sources: ['https://pika.art/pricing', 'https://pika.art/', 'https://pika.art/api'],
     decisionSummary: {
       verdict:
@@ -4360,7 +4368,7 @@ export const aiToolsData = [
     contextWindow: 'N/A',
     chineseSupport: 3,
     verificationStatus: 'verified',
-    lastVerified: '2026-07-07',
+    lastVerified: '2026-07-13',
     sources: [
       'https://ideogram.ai/',
       'https://docs.ideogram.ai/plans-and-pricing/available-plans',
@@ -4389,7 +4397,7 @@ export const aiToolsData = [
     personalExperience: {
       rating: 4,
       insights:
-        '截至 2026-07-07，Ideogram 应围绕 Ideogram 4.0、当前计划梯度、API pricing 和 MCP/开发者入口来介绍。它仍然是文字密集型图像任务的强候选，但比较重点应放在 credits、自动充值、API 单图价格和输出权利政策，而不是旧低价层级。',
+        '截至 2026-07-13，Ideogram 应围绕 Ideogram 4.0、当前计划梯度、API pricing 和 MCP/开发者入口来介绍。它仍然是文字密集型图像任务的强候选，但比较重点应放在 credits、自动充值、API 单图价格和输出权利政策，而不是旧低价层级。',
       pitfalls: [
         '分开跟踪 Priority credits 与 slow credits',
         '只有配置支出提醒后再开启自动充值',
@@ -4452,7 +4460,7 @@ export const aiToolsData = [
     personalExperience: {
       rating: 4,
       insights:
-        '截至 2026-07-08，可官方确认的是即梦AI官网的一站式创作定位、火山引擎的即梦AI图片/视频 API 文档，以及付费服务协议中的积分/会员规则。页面不再写死第三方整理的消费者会员价或每日积分数；API 预算则按图片 0.2/0.22 元每张、视频 3.0 Pro 1 元/秒、1080p 0.63 元/秒、720p 0.28 元/秒这类火山引擎计费口径估算。',
+        '截至 2026-07-13，可官方确认的是即梦AI官网的一站式创作定位、火山引擎的即梦AI图片/视频 API 文档，以及付费服务协议中的积分/会员规则。页面不再写死第三方整理的消费者会员价或每日积分数；API 预算则按图片 0.2/0.22 元每张、视频 3.0 Pro 1 元/秒、1080p 0.63 元/秒、720p 0.28 元/秒这类火山引擎计费口径估算。',
       pitfalls: [
         '消费者端会员价和权益以订单结算页价格为准',
         'API 计费与 App/网页积分体系分开核算',
@@ -4460,7 +4468,7 @@ export const aiToolsData = [
       ]
     },
     verificationStatus: 'verified',
-    lastVerified: '2026-07-08',
+    lastVerified: '2026-07-13',
     sources: [
       'https://jimeng.jianying.com/',
       'https://www.volcengine.com/docs/85621/1544714?lang=zh',
@@ -4504,7 +4512,7 @@ export const aiToolsData = [
     contextWindow: 'N/A',
     chineseSupport: 3,
     verificationStatus: 'verified',
-    lastVerified: '2026-07-07',
+    lastVerified: '2026-07-13',
     sources: [
       'https://suno.com/pricing',
       'https://help.suno.com/en/articles/2746945',
@@ -4530,7 +4538,7 @@ export const aiToolsData = [
     personalExperience: {
       rating: 3.5,
       insights:
-        '截至 2026-07-07，Suno 官方 pricing 显示 Free $0、Pro $10 月付或 $8/月年付、Premier $30 月付或 $24/月年付；Free 使用 v4.5-all 且每日 50 credits，付费档使用 v5.5 并给新歌商业使用权。官方帮助页同时说明 Free/Basic 生成歌曲只可非商业使用。',
+        '截至 2026-07-13，Suno 官方 pricing 显示 Free $0、Pro $10 月付或 $8/月年付、Premier $30 月付或 $24/月年付；Free 使用 v4.5-all 且每日 50 credits，付费档使用 v5.5 并给新歌商业使用权。官方帮助页同时说明 Free/Basic 生成歌曲只可非商业使用。',
       pitfalls: [
         '商业用途优先确认是否来自付费计划',
         '按 monthly credits 和歌曲数量估算产能',
@@ -4573,7 +4581,7 @@ export const aiToolsData = [
     contextWindow: 'N/A',
     chineseSupport: 4,
     verificationStatus: 'verified',
-    lastVerified: '2026-07-07',
+    lastVerified: '2026-07-13',
     sources: [
       'https://elevenlabs.io/docs/overview/models',
       'https://elevenlabs.io/docs/changelog/2026/6/8',
@@ -4614,7 +4622,7 @@ export const aiToolsData = [
       bestFor: '有声书、视频旁白、产品语音、多语言配音、语音 Agent',
       avoidIf: '你只想用免费层做商业素材，或需要完全离线的声纹/数据控制',
       mainRisk:
-        'Free 10,000 credits 不含 commercial license；旧 scribe_v1、eleven_monolingual_v1、eleven_multilingual_v1 将于 2026-07-09 移除，且 TTS/API/Agents/Studio 的计费口径不同。',
+        'Free 10,000 credits 不含 commercial license；旧 scribe_v1、eleven_monolingual_v1、eleven_multilingual_v1 已到官方移除日期，且 TTS/API/Agents/Studio 的计费口径不同。',
       alternatives: ['Suno', 'Udio', '开源 TTS']
     },
     swot: {
@@ -4666,7 +4674,7 @@ export const aiToolsData = [
     personalExperience: {
       rating: 3,
       insights:
-        '截至 2026-07-07，Manus 官网已显示其属于 Meta，并公开 Free、Pro、Team 的 credits 与并发任务口径。帮助中心把 Free 写成每日 300 credits、1 个并发任务；Pro 有 $20 起 4,000 monthly credits 和 $40 起 8,000 monthly credits 两类入口。页面不再保留未经官方来源支持的交易金额、收入和媒体评价，选型重点改为 credits、团队隐私和任务可交付性。',
+        '截至 2026-07-13，Manus 官网已显示其属于 Meta，并公开 Free、Pro、Team 的 credits 与并发任务口径。帮助中心把 Free 写成每日 300 credits、1 个并发任务；Pro 有 $20 起 4,000 monthly credits 和 $40 起 8,000 monthly credits 两类入口。页面不再保留未经官方来源支持的交易金额、收入和媒体评价，选型重点改为 credits、团队隐私和任务可交付性。',
       pitfalls: [
         '先用低风险任务估算 credit 消耗',
         '团队使用前确认 Data Training Opt-Out、SSO 和共享权限',
@@ -4674,7 +4682,7 @@ export const aiToolsData = [
       ]
     },
     verificationStatus: 'verified',
-    lastVerified: '2026-07-07',
+    lastVerified: '2026-07-13',
     sources: [
       'https://manus.im/',
       'https://help.manus.im/en/articles/11711111-what-is-the-current-membership-pricing-for-manus',
@@ -4735,7 +4743,7 @@ export const aiToolsData = [
     personalExperience: {
       rating: 3.5,
       insights:
-        '截至 2026-07-08，CrewAI 应按“开源 Python 编排框架 + 商业控制平面”理解。官方 pricing 当前突出 Basic Free 与 Enterprise Custom，不再沿用旧的固定月费/年费档描述；企业页强调 private infrastructure 与 63% of the Fortune 500。适合会写代码、需要 Crews/Flows 和观测治理的团队。',
+        '截至 2026-07-13，CrewAI 应按“开源 Python 编排框架 + 商业控制平面”理解。官方 pricing 当前突出 Basic Free 与 Enterprise Custom，不再沿用旧的固定月费/年费档描述；企业页强调 private infrastructure 与 63% of the Fortune 500。适合会写代码、需要 Crews/Flows 和观测治理的团队。',
       pitfalls: [
         '把开源框架成本和 CrewAI 云端 workflow executions 分开算',
         '生产工作流先接 tracing/observability',
@@ -4743,7 +4751,7 @@ export const aiToolsData = [
       ]
     },
     verificationStatus: 'verified',
-    lastVerified: '2026-07-08',
+    lastVerified: '2026-07-13',
     sources: [
       'https://crewai.com/pricing',
       'https://docs.crewai.com/',
@@ -4785,7 +4793,7 @@ export const aiToolsData = [
       }
     ],
     verificationStatus: 'verified',
-    lastVerified: '2026-07-08',
+    lastVerified: '2026-07-13',
     sources: [
       'https://n8n.io/pricing/',
       'https://docs.n8n.io/sustainable-use-license/',
@@ -4807,9 +4815,9 @@ export const aiToolsData = [
     pros: [
       'Cloud 计划包含 unlimited users、unlimited workflows 和 every integration',
       '按完整 workflow execution 计费，而不是按每一步计费',
-      'Starter 年付 20€/mo 含 2.5K executions 与 50 AI Workflow Builder credits',
-      'Pro 年付 50€/mo 含 10K executions 与 150 AI Workflow Builder credits',
-      'Business self-hosted 年付 667€/mo 起，Enterprise cloud 可含 1000 AI Workflow Builder credits',
+      'Starter 年付 20€/mo 含 2.5K executions；AI Assistant preview 当前提供每月 2,300 credits',
+      'Pro 年付 50€/mo 含 10K executions；AI Assistant preview 当前最高提供每月 13,700 credits',
+      'Business self-hosted 年付 667€/mo 起；AI Assistant preview 的额度与可用性需按当前计划表核对',
       'Community Edition 可自托管，适合内部自动化和技术团队控制数据位置',
       '支持 JS/Python code steps、API、webhooks、queues、credentials 和多种集成节点'
     ],
@@ -4825,7 +4833,7 @@ export const aiToolsData = [
     personalExperience: {
       rating: 4,
       insights:
-        '截至 2026-07-08，n8n 仍是技术团队做自动化和 AI 工作流的强选择，但当前页面应按官方 pricing、AI Workflow Builder credits 与 Sustainable Use License 来解释。Cloud 价格以完整 workflow executions、并发和 AI Workflow Builder credits 为核心；Community Edition 更适合内部业务或个人场景，面向客户的商业嵌入要先看许可。',
+        '截至 2026-07-13，n8n 仍是技术团队做自动化和 AI 工作流的强选择，但当前页面应按官方 pricing、AI Workflow Builder credits 与 Sustainable Use License 来解释。Cloud 价格以完整 workflow executions、并发和 AI Workflow Builder credits 为核心；Community Edition 更适合内部业务或个人场景，面向客户的商业嵌入要先看许可。',
       pitfalls: [
         '先确认 Cloud 还是 Community Edition 路径',
         '商业嵌入和再分发要核对 Sustainable Use License',
@@ -4858,7 +4866,7 @@ export const aiToolsData = [
       }
     ],
     verificationStatus: 'verified',
-    lastVerified: '2026-07-08',
+    lastVerified: '2026-07-13',
     sources: [
       'https://openai.github.io/openai-agents-python/',
       'https://developers.openai.com/api/docs/guides/agents',
@@ -4896,7 +4904,7 @@ export const aiToolsData = [
     personalExperience: {
       rating: 4,
       insights:
-        '截至 2026-07-08，OpenAI Agents SDK 的价值在于 code-first、抽象少、上手快，同时把 Handoffs、Guardrails 和 Tracing 这些生产 Agent 必需件放进官方路径。旧文案把它写成只支持 OpenAI 模型已经不准确；现在应按 provider-agnostic 框架来描述，并提醒成本取决于具体 provider。',
+        '截至 2026-07-13，OpenAI Agents SDK 的价值在于 code-first、抽象少、上手快，同时把 Handoffs、Guardrails 和 Tracing 这些生产 Agent 必需件放进官方路径。旧文案把它写成只支持 OpenAI 模型已经不准确；现在应按 provider-agnostic 框架来描述，并提醒成本取决于具体 provider。',
       pitfalls: [
         '不要把 provider-agnostic 理解成所有模型能力一致',
         'Tracing 和 Guardrails 要按生产隐私与安全策略配置',
@@ -4921,14 +4929,14 @@ export const aiToolsData = [
     versions: [
       {
         type: 'Global',
-        pricing: 'MIT 开源 SDK；运行成本取决于 Claude Code / Anthropic API / 订阅或自定义 CLI 路径',
+        pricing: 'MIT 开源 SDK；模型用量按 Anthropic API、Amazon Bedrock、Google Cloud 或 Microsoft Foundry 计费',
         models:
           'Claude Code as a library；Python and TypeScript SDK 暴露 Claude Code 的工具、agent loop 和 context management',
         link: 'https://code.claude.com/docs/en/agent-sdk/overview'
       }
     ],
     verificationStatus: 'verified',
-    lastVerified: '2026-07-08',
+    lastVerified: '2026-07-13',
     sources: [
       'https://code.claude.com/docs/en/agent-sdk/overview',
       'https://github.com/anthropics/claude-agent-sdk-python',
@@ -4943,7 +4951,7 @@ export const aiToolsData = [
         'SDK 会把 Claude Code 的文件、命令和编辑能力库化，生产使用必须限制工具权限、工作目录和成本路径。',
       alternatives: ['OpenAI Agents SDK', 'Google ADK', 'LangChain']
     },
-    freeQuota: 'SDK 免费，API 按量计费',
+    freeQuota: 'SDK 免费；模型与云平台调用按对应 Anthropic 或云服务计费',
     contextWindow: '取决于 Claude Code / 模型配置',
     chineseSupport: 3,
     pros: [
@@ -4959,7 +4967,7 @@ export const aiToolsData = [
     cons: [
       '模型与运行路径主要围绕 Claude Code / Anthropic 生态',
       '具备文件和命令能力，权限边界必须明确',
-      '成本取决于 Claude Code/Anthropic 当前计划与用量',
+      '成本取决于 Anthropic API 或所选云平台的当前价格与用量',
       '本地/CI 集成前要确认 CLI 路径、工作目录和沙箱策略'
     ],
     bestFor: '构建代码智能体、复杂推理 Agent',
@@ -4967,7 +4975,7 @@ export const aiToolsData = [
     personalExperience: {
       rating: 4.5,
       insights:
-        '截至 2026-07-08，Claude Agent SDK 更像是把 Claude Code 的 agent loop 变成可编程库。它适合代码任务自动化，但能力强也意味着权限风险更高：读写文件、运行命令、搜索网页、MCP 和 Permissions 都要在明确边界内使用。旧的上下文数字和泛化能力排行不如官方 SDK/CLI 能力描述可靠。',
+        '截至 2026-07-13，Claude Agent SDK 更像是把 Claude Code 的 agent loop 变成可编程库。它适合代码任务自动化，但能力强也意味着权限风险更高：读写文件、运行命令、搜索网页、MCP 和 Permissions 都要在明确边界内使用。旧的上下文数字和泛化能力排行不如官方 SDK/CLI 能力描述可靠。',
       pitfalls: [
         '限制工作目录和工具权限',
         '确认 Python 3.10+ 或 TypeScript 包路径',
@@ -5008,7 +5016,7 @@ export const aiToolsData = [
       }
     ],
     verificationStatus: 'verified',
-    lastVerified: '2026-07-08',
+    lastVerified: '2026-07-13',
     sources: [
       'https://adk.dev/',
       'https://adk.dev/agents/models/google-gemini/',
@@ -5039,14 +5047,15 @@ export const aiToolsData = [
       '主要优势在 Google/Gemini 生态，跨 provider 抽象不如部分独立框架',
       '部分生产部署、企业治理和观测能力依赖 Google Cloud / Gemini Enterprise',
       '内置工具组合有已知限制，需要按文档规避',
-      '模型和云资源成本要单独核算'
+      '模型和云资源成本要单独核算',
+      'ADK 2.0 包含破坏性变更，1.x 项目升级前需要按官方迁移指南验证'
     ],
     bestFor: '利用 Gemini 长上下文构建复杂 Agent',
     funRanking: '夯',
     personalExperience: {
       rating: 3.5,
       insights:
-        '截至 2026-07-08，Google ADK 当前更应按官方多语言 production agents 框架来介绍，而不是只强调某个上下文数字。ADK 2.0、Graph Workflows、几乎任意生成式模型接入、Google Search / Code Execution 等 Gemini 工具能力，以及后续部署到企业平台的路径，是当前选型重点。',
+        '截至 2026-07-13，Google ADK 当前更应按官方多语言 production agents 框架来介绍，而不是只强调某个上下文数字。ADK 2.0、Graph Workflows、几乎任意生成式模型接入、Google Search / Code Execution 等 Gemini 工具能力，以及后续部署到企业平台的路径，是当前选型重点。',
       pitfalls: [
         '先确认是本地 SDK、Vertex AI 还是 Gemini Enterprise 路径',
         '模型和云资源成本分开核算',
@@ -5082,12 +5091,12 @@ export const aiToolsData = [
         type: 'Global',
         pricing:
           'Free for personal use：1,000 API calls/月；Pro $10/seat/月，含 5,000 free API calls/seat/月，额外 $10/1,000 calls',
-        models: '无需 LLM，提供远程 MCP、CLI + Skills 与私有仓库/团队计划',
+        models: '远程端点 https://mcp.context7.com/mcp；当前推荐用 npx ctx7 setup 配置 MCP 或 Skills',
         link: 'https://context7.com/plans'
       }
     ],
     verificationStatus: 'verified',
-    lastVerified: '2026-07-08',
+    lastVerified: '2026-07-13',
     sources: [
       'https://context7.com/plans',
       'https://context7.com/docs/installation',
@@ -5109,8 +5118,8 @@ export const aiToolsData = [
     contextWindow: '按需查询',
     chineseSupport: 3,
     pros: [
-      '提供远程 MCP 服务和本地 npx MCP Server 两种接入',
-      '支持 CLI + Skills 与 MCP 双模式',
+      '提供远程 MCP 服务，当前推荐通过 npx ctx7 setup 配置客户端',
+      '支持 CLI + Skills 与 MCP 双模式，远程端点为 https://mcp.context7.com/mcp',
       '可查询版本化文档和代码示例',
       '支持 Cursor / Claude Code / Codex / Gemini CLI 等多种客户端配置',
       'API key 可提升限额并支持私有仓库能力',
@@ -5129,7 +5138,7 @@ export const aiToolsData = [
     personalExperience: {
       rating: 5,
       insights:
-        '截至 2026-07-08，MCP Core 核心工具之一。它把最新、版本化的库文档拉进 AI 编码上下文，尤其适合处理训练数据落后的 API 用法。当前不能再按“无限免费”理解：个人公开仓库有免费层，团队、私有仓库、较高调用量、Enterprise seat pricing 和解析私有源都要看 Context7 Plans。',
+        '截至 2026-07-13，MCP Core 核心工具之一。它把最新、版本化的库文档拉进 AI 编码上下文，尤其适合处理训练数据落后的 API 用法。当前不能再按“无限免费”理解：个人公开仓库有免费层，团队、私有仓库、较高调用量、Enterprise seat pricing 和解析私有源都要看 Context7 Plans。',
       pitfalls: [
         '免费层 API calls 有月度上限',
         '私有仓库解析和团队空间会产生额外成本',
@@ -5160,7 +5169,7 @@ export const aiToolsData = [
       }
     ],
     verificationStatus: 'verified',
-    lastVerified: '2026-07-08',
+    lastVerified: '2026-07-13',
     sources: [
       'https://playwright.dev/docs/getting-started-mcp',
       'https://github.com/microsoft/playwright-mcp'
@@ -5228,7 +5237,7 @@ export const aiToolsData = [
       }
     ],
     verificationStatus: 'verified',
-    lastVerified: '2026-07-08',
+    lastVerified: '2026-07-13',
     sources: [
       'https://www.firecrawl.dev/pricing',
       'https://github.com/firecrawl/firecrawl-mcp-server'
@@ -5293,12 +5302,12 @@ export const aiToolsData = [
         type: 'Global',
         pricing:
           'MIT 开源本地 server；远程 OAuth 入口随 GitHub Copilot/IDE 支持而定，GitHub API 仍受权限与 rate limits 约束',
-        models: '无需 LLM，封装 GitHub API 的 remote/local MCP server',
+        models: '远程端点 https://api.githubcopilot.com/mcp/；也支持本地 Docker/二进制 server',
         link: 'https://github.com/github/github-mcp-server'
       }
     ],
     verificationStatus: 'verified',
-    lastVerified: '2026-07-08',
+    lastVerified: '2026-07-13',
     sources: [
       'https://github.com/github/github-mcp-server',
       'https://docs.github.com/en/copilot/how-tos/provide-context/use-mcp-in-your-ide/set-up-the-github-mcp-server',
@@ -5319,7 +5328,7 @@ export const aiToolsData = [
     chineseSupport: 3,
     pros: [
       'GitHub 官方 MCP Server',
-      'remote GitHub MCP server 已进入官方主路径，适合 repo、Issue、PR、Actions 的受控 AI 工作流',
+      'remote GitHub MCP server https://api.githubcopilot.com/mcp/ 已进入官方主路径，适合 repo、Issue、PR、Actions 的受控 AI 工作流',
       '支持远程 OAuth 与本地 Docker/二进制部署路径',
       '覆盖 repos、issues、pull_requests、actions、code_security 等 toolsets',
       '可用 --toolsets 或 GITHUB_TOOLSETS 缩小暴露能力',
@@ -5372,7 +5381,7 @@ export const aiToolsData = [
     contextWindow: 'N/A',
     chineseSupport: 3,
     verificationStatus: 'verified',
-    lastVerified: '2026-07-08',
+    lastVerified: '2026-07-13',
     sources: [
       'https://github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking',
       'https://www.npmjs.com/package/@modelcontextprotocol/server-sequential-thinking',
@@ -5396,7 +5405,7 @@ export const aiToolsData = [
     personalExperience: {
       rating: 4,
       insights:
-        '截至 2026-07-08，Sequential Thinking 更准确的定位是一个提供结构化推理工具的参考 MCP server。它的价值不是“神奇提质”，而是让复杂多步推理能被 MCP host 多次调用并显式记录。',
+        '截至 2026-07-13，Sequential Thinking 更准确的定位是一个提供结构化推理工具的参考 MCP server。它的价值不是“神奇提质”，而是让复杂多步推理能被 MCP host 多次调用并显式记录。',
       pitfalls: [
         '确认 MCP host 真的展示 sequential_thinking 调用',
         '避免不必要地记录敏感推理轨迹',
@@ -5439,7 +5448,7 @@ export const aiToolsData = [
     contextWindow: 'N/A',
     chineseSupport: 5,
     verificationStatus: 'verified',
-    lastVerified: '2026-07-08',
+    lastVerified: '2026-07-13',
     sources: [
       'https://github.com/antvis/mcp-server-chart',
       'https://www.npmjs.com/package/@antv/mcp-server-chart',
@@ -5447,7 +5456,7 @@ export const aiToolsData = [
     ],
     pros: [
       '@antv/mcp-server-chart 是基于 AntV 的 TypeScript MCP server，用于图表生成和数据分析',
-      'server 暴露 25+ 图表类型，包括 generate_word_cloud_chart、generate_spreadsheet 等工具',
+      'server 暴露 26+ 图表类型，包括 generate_word_cloud_chart、generate_spreadsheet 等工具',
       '支持通过 npx 安装接入桌面 MCP 客户端，Windows 场景需要 cmd 包装',
       '也可在 Dify 中使用，并支持 HTTP、SSE 或 Streamable transport',
       '配套 chart-visualization skill 可根据数据描述辅助选择合适图表类型'
@@ -5463,7 +5472,7 @@ export const aiToolsData = [
     personalExperience: {
       rating: 4,
       insights:
-        '截至 2026-07-08，AntV Chart MCP 是具体的可视化 MCP server，而不是泛泛的数据分析承诺。它最适合数据已经结构化、用户需要通过 MCP host 或 Dify 工作流生成图表 artifact 的场景。',
+        '截至 2026-07-13，AntV Chart MCP 是具体的可视化 MCP server，而不是泛泛的数据分析承诺。它最适合数据已经结构化、用户需要通过 MCP host 或 Dify 工作流生成图表 artifact 的场景。',
       pitfalls: [
         '生成图表前验证数据 schema 与聚合口径',
         '不要把中国地图工具用于其支持范围之外',
@@ -5485,7 +5494,7 @@ export const aiToolsData = [
       O: '适用于 AI 辅助报告和 Dify 工作流',
       T: '面临 BI 工具和自定义可视化技术栈的竞争'
     },
-    tags: ['推荐', 'MCP', 'AntV', '25+ chart types', 'Dify', 'chart-visualization', '已核验']
+    tags: ['推荐', 'MCP', 'AntV', '26+ chart types', 'Dify', 'chart-visualization', '已核验']
   },
   {
     id: 'brave-search-mcp',
@@ -5526,7 +5535,7 @@ export const aiToolsData = [
     personalExperience: {
       rating: 3.5,
       insights:
-        '截至 2026-07-08，Brave Search API 已按 credits 和请求数展示价格：Search 是 $5/1,000 requests，Answers 是 $4/1,000 requests 外加 token 费用。Brave MCP Server 本身是官方仓库，但真实成本取决于 API key 用量。',
+        '截至 2026-07-13，Brave Search API 已按 credits 和请求数展示价格：Search 是 $5/1,000 requests，Answers 是 $4/1,000 requests 外加 token 费用。Brave MCP Server 本身是官方仓库，但真实成本取决于 API key 用量。',
       pitfalls: [
         '不要再写 2,000 免费查询/月',
         '先设置 usage limits',
@@ -5534,7 +5543,7 @@ export const aiToolsData = [
       ]
     },
     verificationStatus: 'verified',
-    lastVerified: '2026-07-08',
+    lastVerified: '2026-07-13',
     sources: [
       'https://brave.com/search/api/',
       'https://github.com/brave/brave-search-mcp-server',
@@ -5559,7 +5568,7 @@ export const aiToolsData = [
   },
   {
     id: 'openmemory-mcp',
-    name: 'OpenMemory / Mem0 MCP',
+    name: 'Mem0 MCP',
     category: 'mcp',
     subcategory: 'AI增强',
     developer: 'Mem0',
@@ -5574,7 +5583,7 @@ export const aiToolsData = [
       {
         type: 'Claude Code plugin',
         pricing: 'Plugin + MCP + lifecycle hooks；需要 MEM0_API_KEY',
-        models: '9 memory tools plus lifecycle hooks and SDK skill',
+        models: '11 memory tools plus lifecycle hooks and SDK skill',
         link: 'https://docs.mem0.ai/integrations/claude-code'
       },
       {
@@ -5584,22 +5593,21 @@ export const aiToolsData = [
         link: 'https://github.com/mem0ai/mem0-mcp'
       }
     ],
-    freeQuota:
-      '云端按 Mem0 Platform pricing 和 API key 额度；OSS/本地部署仍需自行承担 LLM、embedding、vector store 与 hosting 成本',
+    freeQuota: '云端按 Mem0 Platform pricing 和 API key 额度；旧本地 server 已归档，不作为新项目路径',
     contextWindow: 'N/A',
     chineseSupport: 2,
     pros: [
       'Mem0 MCP 官方文档要求 Mem0 Platform account 和 API key，可通过托管端点接入 Claude、Claude Code、Codex、Cursor、Windsurf、VS Code 等客户端',
       'cloud-hosted MCP server requires no local installation，适合先验证跨会话记忆工作流',
-      'OpenMemory 强调 self-hostable、user-owned memory；Mem0 MCP API 路径适合 add_memory、search_memories、get_memories 和 delete_memory',
-      '可暴露 add_memory、search_memories、get_memories、get_memory、update_memory、delete_memory、delete_all_memories 等 9 memory tools',
+      'Mem0 MCP API 路径适合 add_memory、search_memories、get_memories 和 delete_memory 等跨会话记忆工作流',
+      '当前官方托管集成提供 11 个 memory tools；旧本地仓库已归档，不再作为新项目主路径',
       'Claude Code 集成可用 MEM0_API_KEY、MCP server、lifecycle hooks 和 SDK skill',
       '旧 mem0-mcp-server 已 archived，新项目应优先看官方托管 MCP 文档'
     ],
     cons: [
       'memory persistence risk：记忆可能包含敏感偏好、客户信息、项目结构或过时结论，需要删除、更新和作用域治理',
       '云端版依赖 Mem0 Platform 账号、API key 和 pricing/free tier 额度',
-      '本地/OSS 路径仍要维护 LLM、embedding、vector store、storage、backup 和访问控制',
+      '旧本地 server 已归档，不能把历史 OSS 路径当作当前官方托管能力',
       '记忆召回质量取决于写入粒度、embedding、过滤器和用户清理习惯',
       '跨客户端共享记忆前要明确哪些内容允许长期保存'
     ],
@@ -5608,11 +5616,11 @@ export const aiToolsData = [
     personalExperience: {
       rating: 3.5,
       insights:
-        '截至 2026-07-08，OpenMemory/Mem0 的关键变化是托管 Mem0 MCP 已明确可用，同时 OpenMemory 强调 self-hostable、user-owned memory。选型时应把“本地 OpenMemory / OSS 依赖”和“Mem0 cloud MCP / API key / pricing”分开评估。',
+        '截至 2026-07-13，Mem0 MCP 的当前主路径是托管服务和 11 个 memory tools；旧本地 mem0-mcp-server 已归档。选型时应重点评估 API key、平台额度、记忆删除与敏感信息治理。',
       pitfalls: ['先确认保存哪些记忆', '敏感项目默认不开长期记忆', '定期清理过期或错误记忆']
     },
     verificationStatus: 'verified',
-    lastVerified: '2026-07-08',
+    lastVerified: '2026-07-13',
     sources: [
       'https://mem0.ai/blog/introducing-openmemory-mcp',
       'https://docs.mem0.ai/platform/mem0-mcp',
@@ -5653,8 +5661,8 @@ export const aiToolsData = [
         link: 'https://developers.notion.com/guides/mcp/overview'
       },
       {
-        type: 'Local legacy',
-        pricing: 'local MCP server repository 不再是优先支持路径',
+        type: 'Local (not actively supported)',
+        pricing: 'local MCP server repository 仍可参考，但官方不再积极支持或监控',
         models: 'local MCP server repository；remote MCP 和 OAuth 入口优先',
         link: 'https://github.com/makenotion/notion-mcp-server'
       }
@@ -5681,11 +5689,11 @@ export const aiToolsData = [
     personalExperience: {
       rating: 4,
       insights:
-        '截至 2026-07-08，Notion MCP 的准确口径应从旧本地包转向官方 hosted server：remote MCP + standard OAuth，Agent 能在用户 access and permissions 范围内 read and write。选型重点是权限、限流、Notion AI/计划门槛和写操作确认。',
+        '截至 2026-07-13，Notion MCP 的准确口径应从旧本地包转向官方 hosted server：remote MCP + standard OAuth，Agent 能在用户 access and permissions 范围内 read and write。选型重点是权限、限流、Notion AI/计划门槛和写操作确认。',
       pitfalls: ['限定 workspace/page 权限', '写入前人工确认', '不要按旧本地包口径采购']
     },
     verificationStatus: 'verified',
-    lastVerified: '2026-07-08',
+    lastVerified: '2026-07-13',
     sources: [
       'https://developers.notion.com/guides/mcp/overview',
       'https://developers.notion.com/guides/mcp/get-started-with-mcp',
@@ -5720,7 +5728,7 @@ export const aiToolsData = [
       {
         type: 'Global',
         pricing: 'Postman 官方 MCP Server；Postman 工作区、计划和 API 权限另行适用',
-        models: 'Minimal / Code / Full tool configurations, 100+ Postman tools',
+        models: 'Minimal / Code / Full / Learn tool configurations, 100+ Postman tools',
         link: 'https://learning.postman.com/docs/reference/postman-api/postman-mcp-server/overview'
       },
       {
@@ -5742,7 +5750,7 @@ export const aiToolsData = [
     chineseSupport: 3,
     pros: [
       'Postman 官方 MCP Server，可让 Agent 管理 collections、specs、environments、workspaces 等 Postman 资源',
-      '提供 Minimal、Code、Full 三种配置，Full 覆盖 100+ tools，日常可先用 Minimal 降低工具面',
+      '提供 Minimal、Code、Full、Learn 四种配置，Full 覆盖 100+ tools，日常可先用 Minimal 降低工具面',
       'remote MCP 支持 OAuth、DCR 和 PKCE，US/EU endpoint 与认证方式需要分开配置',
       'US remote server 支持 OAuth，官方说明 OAuth 不需要手动 API key，且符合 MCP Authorization specification',
       'EU remote server only supports API key authentication，local server 也需要 API key',
@@ -5759,11 +5767,11 @@ export const aiToolsData = [
     personalExperience: {
       rating: 3.5,
       insights:
-        '截至 2026-07-08，Postman MCP 已有官方文档和 remote server。选型重点不是“能不能免费启动”，而是 Minimal/Code/Full 的工具面、OAuth/DCR/PKCE/API key 的区域差异，以及 Agent 是否会改动共享工作区资源。',
+        '截至 2026-07-13，Postman MCP 已有官方文档和 remote server。选型重点不是“能不能免费启动”，而是 Minimal/Code/Full 的工具面、OAuth/DCR/PKCE/API key 的区域差异，以及 Agent 是否会改动共享工作区资源。',
       pitfalls: ['默认先用 Minimal', 'API key 放 secrets', 'Full 模式写操作要人工确认']
     },
     verificationStatus: 'verified',
-    lastVerified: '2026-07-08',
+    lastVerified: '2026-07-13',
     sources: [
       'https://learning.postman.com/docs/reference/postman-api/postman-mcp-server/overview',
       'https://learning.postman.com/docs/reference/postman-api/postman-mcp-server/postman-mcp-remote-server',
@@ -5791,7 +5799,7 @@ export const aiToolsData = [
     name: 'Atlassian Rovo MCP',
     category: 'mcp',
     subcategory: '协作工具',
-    developer: 'Atlassian / Sooperset community alternative',
+    developer: 'Atlassian',
     logo: null,
     versions: [
       {
@@ -5832,7 +5840,7 @@ export const aiToolsData = [
     personalExperience: {
       rating: 3.5,
       insights:
-        '截至 2026-07-08，Atlassian 已有官方 Atlassian Rovo MCP Server，旧条目不能再按“仅有社区版、未来才可能有官方方案”的口径推荐。现在的重点是选择官方云端 Rovo MCP 还是 Sooperset 自托管替代，并把写权限、审计、API rate limits 和 Rovo credits 风险说清楚。',
+        '截至 2026-07-13，Atlassian 已有官方 Atlassian Rovo MCP Server，旧条目不能再按“仅有社区版、未来才可能有官方方案”的口径推荐。现在的重点是选择官方云端 Rovo MCP 还是 Sooperset 自托管替代，并把写权限、审计、API rate limits 和 Rovo credits 风险说清楚。',
       pitfalls: [
         '默认限制 Read/Search',
         '写入 Jira/Confluence 前人工确认',
@@ -5840,7 +5848,7 @@ export const aiToolsData = [
       ]
     },
     verificationStatus: 'verified',
-    lastVerified: '2026-07-08',
+    lastVerified: '2026-07-13',
     sources: [
       'https://www.atlassian.com/platform/remote-mcp-server',
       'https://github.com/atlassian/atlassian-mcp-server',
@@ -5877,7 +5885,7 @@ export const aiToolsData = [
         type: 'Global',
         pricing: '官方 Remote MCP Server；使用受 Supabase 项目、组织权限和计划限制；server pre-1.0',
         models:
-          'Database, docs, debugging, development, functions, storage, branching feature groups',
+          'Account management, database, docs, debugging, development, functions, storage and branching feature groups；Storage 默认禁用',
         link: 'https://supabase.com/docs/guides/ai-tools/mcp'
       }
     ],
@@ -5891,7 +5899,7 @@ export const aiToolsData = [
       '可用 read_only=true 让 SQL 以 read-only Postgres user 执行并禁用 mutating tools',
       '可用 project_ref 限定单个项目，避免访问组织内所有项目',
       '可用 features=database,docs 等参数只启用必要工具组',
-      '覆盖 database、debugging、development、functions、docs、storage、branching 等 feature groups'
+      '覆盖 account、database、debugging、development、functions、docs、storage、branching 等 feature groups；Storage 默认禁用'
     ],
     cons: [
       '官方明确提示切勿将 MCP 服务器连接到生产数据；仅用于开发和测试',
@@ -5905,7 +5913,7 @@ export const aiToolsData = [
     personalExperience: {
       rating: 4.5,
       insights:
-        '截至 2026-07-08，Supabase 官方文档已经把安全边界写得很清楚：默认建议 project_ref + read_only=true，并可用 features 限制工具组。它适合开发和测试，不应直接连生产数据。',
+        '截至 2026-07-13，Supabase 官方文档已经把安全边界写得很清楚：默认建议 project_ref + read_only=true，并可用 features 限制工具组。它适合开发和测试，不应直接连生产数据。',
       pitfalls: [
         '默认加 project_ref 和 read_only=true',
         '生产数据不要直连',
@@ -5913,7 +5921,7 @@ export const aiToolsData = [
       ]
     },
     verificationStatus: 'verified',
-    lastVerified: '2026-07-08',
+    lastVerified: '2026-07-13',
     sources: ['https://supabase.com/docs/guides/ai-tools/mcp', 'https://github.com/supabase/mcp'],
     decisionSummary: {
       verdict:
@@ -5930,7 +5938,7 @@ export const aiToolsData = [
       O: 'AI 辅助全栈开发',
       T: 'Postgres/Firebase/Neon MCP'
     },
-    tags: ['推荐', 'MCP', '免费', '开源', 'Supabase', '全栈', '官方']
+    tags: ['推荐', 'MCP', '开源', 'Supabase', '全栈', '官方']
   },
   {
     id: 'figma-mcp',
@@ -6044,11 +6052,11 @@ export const aiToolsData = [
     personalExperience: {
       rating: 4,
       insights:
-        '截至 2026-07-08，Vercel MCP 是官方 Beta remote MCP。它适合让 Agent 查 docs、项目、部署和日志，但 authenticated tools 已经接近运维入口，且官方客户端支持有 approved clients 限制；必须把 human confirmation、prompt injection 和账单边界放在第一层。',
+        '截至 2026-07-13，Vercel MCP 是官方 Beta remote MCP。它适合让 Agent 查 docs、项目、部署和日志，但 authenticated tools 已经接近运维入口，且官方客户端支持有 approved clients 限制；必须把 human confirmation、prompt injection 和账单边界放在第一层。',
       pitfalls: ['开启 human confirmation', '限制 OAuth 账号权限', '高风险操作先在预览环境验证']
     },
     verificationStatus: 'verified',
-    lastVerified: '2026-07-08',
+    lastVerified: '2026-07-13',
     sources: [
       'https://vercel.com/docs/agent-resources/vercel-mcp',
       'https://vercel.com/docs/agent-resources/vercel-mcp/tools'
@@ -6111,11 +6119,11 @@ export const aiToolsData = [
     personalExperience: {
       rating: 4,
       insights:
-        '截至 2026-07-08，Slack 已有官方 MCP Server 文档。它的关键价值是把 Slack 搜索、频道/线程、消息发送和 Canvas 变成 Agent 上下文；关键风险是同一个连接可能读取或发送消息，所以应按工作区策略、管理员审批和 OAuth 权限范围进行最小授权。',
+        '截至 2026-07-13，Slack 已有官方 MCP Server 文档。它的关键价值是把 Slack 搜索、频道/线程、消息发送和 Canvas 变成 Agent 上下文；关键风险是同一个连接可能读取或发送消息，所以应按工作区策略、管理员审批和 OAuth 权限范围进行最小授权。',
       pitfalls: ['最小化 OAuth scopes', '写消息前人工确认', '敏感频道先排除']
     },
     verificationStatus: 'verified',
-    lastVerified: '2026-07-08',
+    lastVerified: '2026-07-13',
     sources: [
       'https://docs.slack.dev/ai/slack-mcp-server',
       'https://slack.com/help/articles/48855576908307-Guide-to-Model-Context-Protocol-in-Slack',
@@ -6172,11 +6180,11 @@ export const aiToolsData = [
     personalExperience: {
       rating: 4,
       insights:
-        '截至 2026-07-08，Linear MCP 应按官方 remote MCP 和 workspace 计划来判断：它很适合让 Agent 处理 issues/projects/comments，但费用、AI credits、API limits 和 token scopes 都跟 Linear workspace 治理绑定。',
+        '截至 2026-07-13，Linear MCP 应按官方 remote MCP 和 workspace 计划来判断：它很适合让 Agent 处理 issues/projects/comments，但费用、AI credits、API limits 和 token scopes 都跟 Linear workspace 治理绑定。',
       pitfalls: ['OAuth/API key 最小权限', '写操作人工确认', '复核 plan 与 AI credits']
     },
     verificationStatus: 'verified',
-    lastVerified: '2026-07-08',
+    lastVerified: '2026-07-13',
     sources: ['https://linear.app/docs/mcp', 'https://linear.app/pricing'],
     decisionSummary: {
       verdict:
@@ -6226,18 +6234,19 @@ export const aiToolsData = [
       'production error data 可能包含 PII、请求参数、客户标识或内部路径，接入 Agent 前需确认数据脱敏和保留策略',
       'Auth Token scopes 过大时可访问组织或项目级敏感数据',
       'AI 给出的根因和修复建议仍需复现、测试和人工审查',
-      '完整 API 能力和历史数据受 Sentry plan 与组织权限影响'
+      '完整 API 能力和历史数据受 Sentry plan 与组织权限影响',
+      '自托管路径中的 AI 搜索工具可能还需要单独配置和支付 LLM provider'
     ],
     bestFor: '在 AI IDE 中只读检索 Sentry 错误上下文，并辅助生成可验证的修复方案',
     funRanking: '夯夯',
     personalExperience: {
       rating: 4.5,
       insights:
-        '截至 2026-07-08，Sentry MCP 的选型重点是错误数据治理：OAuth/Auth Token 如何授权、哪些 project scopes 可见、production error data 中是否含 PII，以及 Agent 输出是否有测试闭环。它更适合 human-in-the-loop coding agents，不应当成 general-purpose MCP server。',
+        '截至 2026-07-13，Sentry MCP 的选型重点是错误数据治理：OAuth/Auth Token 如何授权、哪些 project scopes 可见、production error data 中是否含 PII，以及 Agent 输出是否有测试闭环。它更适合 human-in-the-loop coding agents，不应当成 general-purpose MCP server。',
       pitfalls: ['优先只读和最小 scopes', '确认 PII 脱敏', '修复建议必须复现和测试']
     },
     verificationStatus: 'verified',
-    lastVerified: '2026-07-08',
+    lastVerified: '2026-07-13',
     sources: [
       'https://mcp.sentry.dev/',
       'https://github.com/getsentry/sentry-mcp',
@@ -6259,7 +6268,7 @@ export const aiToolsData = [
   },
   {
     id: 'docker-mcp',
-    name: 'Docker MCP',
+    name: 'Docker MCP Toolkit',
     category: 'mcp',
     subcategory: 'DevOps',
     developer: 'Docker',
@@ -6279,14 +6288,14 @@ export const aiToolsData = [
     chineseSupport: 2,
     pros: [
       'Docker MCP Toolkit 官方文档标注 Availability: Beta',
-      'Docker MCP Catalog 提供 300+ verified servers，并通过 profiles 组织不同项目的 server 配置',
+      'Docker MCP Catalog 通过 profiles 组织不同项目的 server 配置，server 数量以当前 Catalog 为准',
       'MCP Gateway 将 MCP servers 运行在隔离 Docker 容器中，并限制权限、网络访问和资源使用',
       '内置 logging 与 call-tracing，便于治理 AI 工具活动',
       'Docker MCP Toolkit 结合 passive 和 active security，减少 MCP server 运行时攻击面',
       '运行时限制包括 1 CPU 和 2 GB memory allocation'
     ],
     cons: [
-      'Beta 阶段界面和工具行为可能变化，需匹配 Docker Desktop 版本',
+      'Beta 阶段界面和工具行为可能变化，当前官方文档要求 Docker Desktop 4.62 或更高版本',
       '容器隔离降低风险但不等于可放心操作生产 Docker host',
       'MCP servers 仍可能接触本地文件、网络、凭据或 Docker socket，应按 profile 和权限逐项审查',
       '第三方 MCP server 的供应链和权限边界仍需单独评估'
@@ -6296,7 +6305,7 @@ export const aiToolsData = [
     personalExperience: {
       rating: 3.5,
       insights:
-        '截至 2026-07-08，Docker MCP 更准确的定位是 Catalog/Toolkit/Gateway：用 300+ verified servers、profiles、容器隔离、资源限制和调用追踪来管理 MCP server，而不是让 Agent 直接随意控制 Docker 主机。',
+        '截至 2026-07-13，Docker MCP Toolkit 更准确的定位是 Catalog/Toolkit/Gateway：用 profiles、容器隔离、资源限制和调用追踪来管理 MCP server，而不是让 Agent 直接随意控制 Docker 主机。Catalog 数量会变化，不再写死固定 server 数。',
       pitfalls: [
         '只在开发 profile 试点',
         '审查 server 权限和镜像来源',
@@ -6304,7 +6313,7 @@ export const aiToolsData = [
       ]
     },
     verificationStatus: 'verified',
-    lastVerified: '2026-07-08',
+    lastVerified: '2026-07-13',
     sources: [
       'https://docs.docker.com/ai/mcp-catalog-and-toolkit/toolkit/',
       'https://docs.docker.com/ai/mcp-catalog-and-toolkit/mcp-gateway/'
@@ -6361,7 +6370,7 @@ export const aiToolsData = [
     personalExperience: {
       rating: 3.5,
       insights:
-        '截至 2026-07-08，Stripe MCP 是官方 remote MCP server，不应再指向泛 Claude Code 仓库。支付类 MCP 的重点是权限治理：OAuth 优先，Agent 用 restricted API keys，写工具必须 human confirmation，并且 sandbox/live mode 分开管理。',
+        '截至 2026-07-13，Stripe MCP 是官方 remote MCP server，不应再指向泛 Claude Code 仓库。支付类 MCP 的重点是权限治理：OAuth 优先，Agent 用 restricted API keys，写工具必须 human confirmation，并且 sandbox/live mode 分开管理。',
       pitfalls: [
         '优先 OAuth 和 restricted API keys',
         '启用 human confirmation',
@@ -6369,7 +6378,7 @@ export const aiToolsData = [
       ]
     },
     verificationStatus: 'verified',
-    lastVerified: '2026-07-08',
+    lastVerified: '2026-07-13',
     sources: [
       'https://docs.stripe.com/mcp',
       'https://github.com/stripe/ai',
@@ -6403,7 +6412,7 @@ export const aiToolsData = [
       {
         type: 'Global',
         pricing: 'Cloudflare managed remote MCP servers；实际资源按 Cloudflare 产品与计划计费',
-        models: 'Cloudflare API Code Mode server and product-specific MCP servers',
+        models: 'Cloudflare API Code Mode server https://mcp.cloudflare.com/mcp and product-specific MCP servers',
         link: 'https://developers.cloudflare.com/agents/model-context-protocol/cloudflare/servers-for-cloudflare/'
       }
     ],
@@ -6414,7 +6423,7 @@ export const aiToolsData = [
     pros: [
       'Cloudflare 官方 managed remote MCP servers，可通过 OAuth 接入',
       'Cloudflare API MCP server 覆盖 over 2,500 endpoints across DNS, Workers, R2, Zero Trust 等',
-      'Code Mode 仅暴露 search() 和 execute() 两个工具，约 1,000 tokens 即可覆盖大量 API',
+      '当前 Code Mode 暴露 docs()、search() 和 execute() 三个工具，以较小工具面覆盖大量 API',
       '生成代码在 isolated Dynamic Worker sandbox 中执行',
       'CI/CD 或 automation 可用 Cloudflare API token，并只授予所需 permissions',
       'managed remote MCP servers 支持 streamable-http transport；SSE transport 已标注 deprecated',
@@ -6431,7 +6440,7 @@ export const aiToolsData = [
     personalExperience: {
       rating: 4,
       insights:
-        '截至 2026-07-08，Cloudflare MCP 分为广覆盖的 API Code Mode server 和更收敛的 product-specific MCP servers。它很强，但应按权限治理来用：OAuth 选择最小权限，CI/CD 用 API token，并优先选择具体产品 server 降低误操作面；当前文档以 streamable-http 为主，SSE 属 deprecated transport。',
+        '截至 2026-07-13，Cloudflare MCP 分为广覆盖的 API Code Mode server 和更收敛的 product-specific MCP servers。它很强，但应按权限治理来用：OAuth 选择最小权限，CI/CD 用 API token，并优先选择具体产品 server 降低误操作面；当前文档以 streamable-http 为主，SSE 属 deprecated transport。',
       pitfalls: [
         'OAuth/API token 只给必要权限',
         'DNS/Workers/R2/D1 写操作要人工确认',
@@ -6439,7 +6448,7 @@ export const aiToolsData = [
       ]
     },
     verificationStatus: 'verified',
-    lastVerified: '2026-07-08',
+    lastVerified: '2026-07-13',
     sources: [
       'https://developers.cloudflare.com/agents/model-context-protocol/cloudflare/servers-for-cloudflare/',
       'https://github.com/cloudflare/mcp',
@@ -6507,7 +6516,7 @@ export const aiToolsData = [
     personalExperience: {
       rating: 4,
       insights:
-        '截至 2026-07-08，GitLab MCP 已有官方 Beta 文档，应按 Premium, Ultimate、GitLab.com, Self-Managed and Dedicated、OAuth DCR、HTTP /api/v4/mcp 和工具权限来评估。它能触达真实 MR、issue 和 pipeline，因此风险管理比“能不能连上”更重要。',
+        '截至 2026-07-13，GitLab MCP 已有官方 Beta 文档，应按 Premium, Ultimate、GitLab.com, Self-Managed and Dedicated、OAuth DCR、HTTP /api/v4/mcp 和工具权限来评估。它能触达真实 MR、issue 和 pipeline，因此风险管理比“能不能连上”更重要。',
       pitfalls: [
         '确认 Premium/Ultimate 和 Beta 限制',
         'OAuth/PAT 最小权限',
@@ -6515,7 +6524,7 @@ export const aiToolsData = [
       ]
     },
     verificationStatus: 'verified',
-    lastVerified: '2026-07-08',
+    lastVerified: '2026-07-13',
     sources: [
       'https://docs.gitlab.com/user/gitlab_duo/model_context_protocol/mcp_server/',
       'https://docs.gitlab.com/user/gitlab_duo/model_context_protocol/mcp_server_tools/',
@@ -6541,7 +6550,7 @@ export const aiToolsData = [
   },
   {
     id: 'elasticsearch-mcp',
-    name: 'Elasticsearch MCP',
+    name: 'Elastic Agent Builder MCP server',
     category: 'mcp',
     subcategory: '数据工具',
     developer: 'Elastic',
@@ -6555,8 +6564,8 @@ export const aiToolsData = [
         link: 'https://www.elastic.co/docs/explore-analyze/ai-features/agent-builder/mcp-server'
       },
       {
-        type: 'Legacy server',
-        pricing: '旧版 mcp-server-elasticsearch 可自托管，官方定位为较早 Elasticsearch 版本的受限路径',
+        type: 'Deprecated legacy server',
+        pricing: '旧版 mcp-server-elasticsearch 已弃用，仅接收关键安全更新，不再作为新项目路径',
         models: '提供两种 MCP 服务器方案；访问范围由 API 密钥被授予的权限决定',
         link: 'https://github.com/elastic/mcp-server-elasticsearch'
       }
@@ -6573,7 +6582,7 @@ export const aiToolsData = [
       '适合把日志、索引 mapping、ES|QL/search 辅助带入受控 Agent 流程'
     ],
     cons: [
-      '旧 mcp-server-elasticsearch 已不应作为新项目首选，主要适合老版本或迁移期',
+      '旧 mcp-server-elasticsearch 已弃用且仅接收关键安全更新，只适合老版本迁移期',
       'API_KEY 权限过大可能暴露大量日志、PII、业务数据或高成本查询面',
       '必须按最小权限原则、索引范围、只读查询和查询成本限制来配置',
       '大规模搜索/ES|QL 查询可能影响集群性能与费用'
@@ -6584,11 +6593,11 @@ export const aiToolsData = [
     personalExperience: {
       rating: 3.5,
       insights:
-        '截至 2026-07-08，Elastic MCP 选型要先区分 Agent Builder MCP server 与 legacy server。新 Elastic 9.2+ 与 Serverless projects 优先走 Agent Builder；旧 server 适合有限只读排查，并且 API_KEY 必须最小权限。',
+        '截至 2026-07-13，Elastic MCP 选型要先区分 Agent Builder MCP server 与 legacy server。新 Elastic 9.2+ 与 Serverless projects 优先走 Agent Builder；旧 server 适合有限只读排查，并且 API_KEY 必须最小权限。',
       pitfalls: ['优先 Agent Builder', 'API_KEY 最小 scope', '限制索引与查询成本']
     },
     verificationStatus: 'verified',
-    lastVerified: '2026-07-08',
+    lastVerified: '2026-07-13',
     sources: [
       'https://www.elastic.co/docs/explore-analyze/ai-features',
       'https://www.elastic.co/docs/explore-analyze/ai-features/agent-builder/mcp-server',
@@ -6619,7 +6628,7 @@ export const aiToolsData = [
     name: 'AutoGen',
     category: 'agent',
     subcategory: '开发框架',
-    developer: 'Microsoft',
+    developer: 'Microsoft Research / community-managed',
     logo: null,
     versions: [
       {
@@ -6646,19 +6655,19 @@ export const aiToolsData = [
       '新项目需要评估是否采用后续 Microsoft Agent Framework 或其他活跃框架'
     ],
     bestFor: '学习多 Agent 架构、维护历史 AutoGen 项目、迁移 v0.2 到 v0.4',
-    funRanking: '夯夯',
+    funRanking: '历史',
     personalExperience: {
       rating: 3,
       insights:
-        '截至 2026-07-08，AutoGen 更适合“历史项目维护与多 Agent 架构学习”而不是默认新项目首选。官方稳定版文档仍覆盖 AutoGen Studio、autogen-agentchat、Core 和 v0.4 迁移，但 GitHub 仓库已标注为维护模式，并建议新项目评估 Microsoft Agent Framework；后续维护更偏向社区。',
+        '截至 2026-07-13，AutoGen 更适合“历史项目维护与多 Agent 架构学习”而不是默认新项目首选。官方稳定版文档仍覆盖 AutoGen Studio、autogen-agentchat、Core 和 v0.4 迁移，但 GitHub 仓库已标注为维护模式，并建议新项目评估 Microsoft Agent Framework；后续维护更偏向社区。',
       pitfalls: [
         '维护模式会影响长期路线',
         'v0.2/v0.4 迁移成本不可忽略',
         '生产项目需评估替代框架活跃度'
       ]
     },
-    verificationStatus: 'verified',
-    lastVerified: '2026-07-08',
+    verificationStatus: 'historical',
+    lastVerified: '2026-07-13',
     sources: [
       'https://microsoft.github.io/autogen/stable/',
       'https://microsoft.github.io/autogen/stable/user-guide/agentchat-user-guide/migration-guide.html',
@@ -6681,7 +6690,7 @@ export const aiToolsData = [
   },
   {
     id: 'zapier-ai',
-    name: 'Zapier AI Automation',
+    name: 'Zapier',
     category: 'agent',
     subcategory: '工作流自动化',
     developer: 'Zapier',
@@ -6691,12 +6700,12 @@ export const aiToolsData = [
         type: 'Platform',
         pricing:
           '免费版 $0/月，每月含 100 个任务；专业版 $19.99/月起；团队版 $69/月起',
-        models: 'Zap 工作流、Zapier MCP Beta、SDK、Agents、Chatbots、Tables 与 Forms',
+        models: 'Zap 工作流、Zapier MCP、SDK Beta、Agents、Chatbots、Tables 与 Forms',
         link: 'https://zapier.com/pricing'
       },
       {
         type: 'Zapier MCP',
-        pricing: '按任务量计费；AI 步骤、代码和 SDK 共用同一个任务额度池',
+        pricing: 'Zapier MCP 每次调用计 2 tasks；AI steps 按步骤计 1/3/5 tasks；SDK Beta 当前不计 tasks',
         models: '9,000+ apps, 40,000+ actions, dynamic tool discovery',
         link: 'https://docs.zapier.com/mcp/home'
       },
@@ -6713,13 +6722,13 @@ export const aiToolsData = [
     pros: [
       'Zapier MCP 可把 AI 客户端连接到 9,000+ apps 和 40,000+ actions',
       'Free 计划包含 100 tasks per month，适合低频验证',
-      '定价页显示 AI steps, code, and SDK 采用统一 task-based pricing，便于跨产品估算成本',
+      'Zapier MCP 当前每次调用计 2 tasks；AI steps 按步骤复杂度计 1/3/5 tasks',
       'MCP、SDK、Agents、Chatbots、Tables 和 Forms 已纳入统一平台叙事',
       'Each successful action in a Zap counts as a separate task，MCP/AI 调用也要按任务池管理'
     ],
     cons: [
-      'AI Actions is no longer being developed and supported，新项目应优先评估 Zapier MCP Beta、SDK 或 Agents',
-      'shared task pool 意味着 Zap workflows、AI steps、code、MCP、SDK 会共同消耗任务额度',
+      'AI Actions is no longer being developed and supported，新项目应优先评估 Zapier MCP、SDK Beta 或 Agents',
+      'SDK 仍为 Beta 且当前不计 tasks，正式计费口径可能变化',
       '自动化一旦连接真实 SaaS 账号，AI 工具调用可能发送邮件、改 CRM、建 issue 或更新表格，需要权限和确认策略',
       '高级治理、SSO、审计、app controls 等能力集中在 Team/Enterprise 档位',
       '国内访问、SaaS 授权和数据出境要按企业环境实测'
@@ -6729,7 +6738,7 @@ export const aiToolsData = [
     personalExperience: {
       rating: 3.5,
       insights:
-        '截至 2026-07-08，Zapier 条目不应再以 AI Actions 为主。官方帮助页说明 AI Actions 已停止开发和支持；当前选型应看 Zapier MCP Beta、SDK、Agents 和统一任务计费。',
+        '截至 2026-07-13，Zapier 条目不应再以 AI Actions 为主，MCP 也已不再标 Beta。当前口径是 MCP 每次调用 2 tasks、AI steps 计 1/3/5 tasks，SDK Beta 暂不计 tasks。',
       pitfalls: [
         '先按真实动作数估算 tasks',
         'AI 调用真实 SaaS 前设置人工确认',
@@ -6737,7 +6746,7 @@ export const aiToolsData = [
       ]
     },
     verificationStatus: 'verified',
-    lastVerified: '2026-07-08',
+    lastVerified: '2026-07-13',
     sources: [
       'https://zapier.com/pricing',
       'https://zapier.com/apps',
@@ -6773,7 +6782,7 @@ export const aiToolsData = [
       {
         type: 'Global',
         pricing:
-          'Free $0/mo，最多 1,000 credits/month；Core $9/mo、Pro $16/mo、Teams $29/mo 默认按 10k credits/mo 展示',
+          'Free $0，1,000 credits/month；统一 Make Plan 从 $9/月起（默认 5,000 credits）；Company 定制',
         models: '可视化工作流构建器、3000+ apps、350+ AI apps',
         link: 'https://www.make.com/en/pricing'
       },
@@ -6781,7 +6790,7 @@ export const aiToolsData = [
         type: 'Make + AI',
         pricing: 'AI Provider 可在所有计划使用；部分 AI/advanced apps 动态消耗 credits',
         models:
-          'Make AI Agents beta、Make MCP Server、AI Toolkit、AI Web Search beta、AI Content Extractor',
+          'Make AI Agents、Make MCP Server、AI Toolkit、AI Web Search、AI Content Extractor',
         link: 'https://help.make.com/credits'
       }
     ],
@@ -6791,8 +6800,8 @@ export const aiToolsData = [
     chineseSupport: 2,
     pros: [
       'Free 计划含 1,000 credits/month、无代码可视化工作流构建器和 3000+ apps',
-      'Core $9/mo、Pro $16/mo、Teams $29/mo 都以 10k credits/mo 为页面默认价格口径',
-      'Make + AI 覆盖 350+ AI apps、Make MCP Server、AI Content Extractor、AI Web Search beta、Make AI Agents beta 和 Make AI Toolkit',
+      '统一 Make Plan 从 $9/月起，价格页默认按 5,000 credits 展示；Company 走定制采购',
+      'Make + AI 覆盖 350+ AI apps、Make MCP Server、AI Content Extractor、AI Web Search、Make AI Agents 和 Make AI Toolkit',
       'credits 是计费单位，常见模块动作通常 1 credit，便于从场景执行量估算成本',
       '可视化 scenario、routers、filters、error handlers 和 scheduled scenarios 适合复杂业务流程建模'
     ],
@@ -6808,7 +6817,7 @@ export const aiToolsData = [
     personalExperience: {
       rating: 3.5,
       insights:
-        '截至 2026-07-08，Make 已把旧 operations 口径更新为 credits。它适合偏可视化编排和复杂 scenario 的团队，但 credits、AI Provider token/model 用量和 billing toggle 会影响真实成本，不能和 Zapier tasks 直接一比一比较。',
+        '截至 2026-07-13，Make 已把旧 Core/Pro/Teams 梯度收敛为统一 Make Plan，从默认 5,000 credits 的 $9/月起，Company 定制。它仍按 credits 计费，不能和 Zapier tasks 一比一比较。',
       pitfalls: [
         '按 scenario 逐步估算 credits',
         'AI Provider 费用单独看 tokens/model',
@@ -6816,7 +6825,7 @@ export const aiToolsData = [
       ]
     },
     verificationStatus: 'verified',
-    lastVerified: '2026-07-08',
+    lastVerified: '2026-07-13',
     sources: [
       'https://www.make.com/en/pricing',
       'https://www.make.com/en/integrations',
@@ -6846,7 +6855,7 @@ export const aiToolsData = [
     name: 'CAMEL-AI',
     category: 'agent',
     subcategory: '开发框架',
-    developer: 'CAMEL-AI.org',
+    developer: 'CAMEL-AI open-source community',
     logo: null,
     versions: [
       {
@@ -6860,7 +6869,7 @@ export const aiToolsData = [
     contextWindow: '取决于模型',
     chineseSupport: 3,
     verificationStatus: 'verified',
-    lastVerified: '2026-07-08',
+    lastVerified: '2026-07-13',
     sources: [
       'https://github.com/camel-ai/camel',
       'https://docs.camel-ai.org/',
@@ -6885,7 +6894,7 @@ export const aiToolsData = [
     personalExperience: {
       rating: 3.5,
       insights:
-        '截至 2026-07-08，CAMEL-AI 更像一个宽口径的多 Agent 研究与工程框架，而不是简单的角色扮演 demo。它在 agent societies、数据生成、RAG、工具和实验上很有潜力；当前 v0.2.90 仍提示生产用户需要为模型/工具调用和快速依赖演进预留预算。',
+        '截至 2026-07-13，CAMEL-AI 更像一个宽口径的多 Agent 研究与工程框架，而不是简单的角色扮演 demo。它在 agent societies、数据生成、RAG、工具和实验上很有潜力；当前 v0.2.90 仍提示生产用户需要为模型/工具调用和快速依赖演进预留预算。',
       pitfalls: [
         '锁定框架和供应商版本',
         '多 Agent 生产运行前补齐 traces 与测试',
@@ -6914,7 +6923,7 @@ export const aiToolsData = [
     name: 'AgentScope',
     category: 'agent',
     subcategory: '开发框架',
-    developer: 'agentscope-ai / open-source community',
+    developer: 'AgentScope / Alibaba Tongyi Lab',
     logo: null,
     versions: [
       {
@@ -6928,7 +6937,7 @@ export const aiToolsData = [
     contextWindow: '取决于模型',
     chineseSupport: 5,
     verificationStatus: 'verified',
-    lastVerified: '2026-07-08',
+    lastVerified: '2026-07-13',
     sources: [
       'https://github.com/agentscope-ai/agentscope',
       'https://docs.agentscope.io/',
@@ -6953,7 +6962,7 @@ export const aiToolsData = [
     personalExperience: {
       rating: 4,
       insights:
-        '截至 2026-07-08，更有用的理解方式是 AgentScope 2.0：事件流、权限控制、多会话服务、workspace/sandbox 支持、long-term memory 和 Agent Team。这让它更适合生产形态实验，但也带来迁移和治理工作。',
+        '截至 2026-07-13，更有用的理解方式是 AgentScope 2.0：事件流、权限控制、多会话服务、workspace/sandbox 支持、long-term memory 和 Agent Team。这让它更适合生产形态实验，但也带来迁移和治理工作。',
       pitfalls: [
         '把 2.0 当作迁移边界处理',
         '授予工具写权限前先设计权限和沙箱策略',
@@ -7018,7 +7027,7 @@ export const aiToolsData = [
     personalExperience: {
       rating: 4,
       insights:
-        '截至 2026-07-07，Luma 已把个人计划整理为 Plus $30/月、Pro $90/月、Ultra $300/月，并强调 Luma Agents 与按模型/输出规格变化的 credits。官方说明中 Dream Machine 已是 retired terminology，页面应转向 Luma、Ray3、Photon、Luma Agents 和多模型成本表。',
+        '截至 2026-07-13，Luma 已把个人计划整理为 Plus $30/月、Pro $90/月、Ultra $300/月，并强调 Luma Agents 与按模型/输出规格变化的 credits。官方说明中 Dream Machine 已是 retired terminology，页面应转向 Luma、Ray3、Photon、Luma Agents 和多模型成本表。',
       pitfalls: [
         '先确认是订阅内 credits、API 用量还是团队/企业计划',
         '按 Ray3、Photon 或第三方模型分别估算消耗',
@@ -7026,7 +7035,7 @@ export const aiToolsData = [
       ]
     },
     verificationStatus: 'verified',
-    lastVerified: '2026-07-07',
+    lastVerified: '2026-07-13',
     sources: [
       'https://lumalabs.ai/pricing',
       'https://lumalabs.ai/llm-info',
@@ -7070,7 +7079,7 @@ export const aiToolsData = [
     contextWindow: 'N/A',
     chineseSupport: 5,
     verificationStatus: 'verified',
-    lastVerified: '2026-07-07',
+    lastVerified: '2026-07-13',
     sources: [
       'https://hailuoai.video/',
       'https://hailuoai.video/doc/payment-policy.html',
@@ -7097,7 +7106,7 @@ export const aiToolsData = [
     personalExperience: {
       rating: 4,
       insights:
-        '截至 2026-07-07，Hailuo 应作为 MiniMax 视频栈评估：既有消费者 app 入口，也有 Open Platform API 入口。当前需要保留的关键事实是 Hailuo 2.3、Media Agent、多档会员价格、Membership Credits、Purchased Credits、Bonus credits 和 API pay-go 价格。',
+        '截至 2026-07-13，Hailuo 应作为 MiniMax 视频栈评估：既有消费者 app 入口，也有 Open Platform API 入口。当前需要保留的关键事实是 Hailuo 2.3、Media Agent、多档会员价格、Membership Credits、Purchased Credits、Bonus credits 和 API pay-go 价格。',
       pitfalls: [
         '分开核算消费者 credits 与 Open Platform API 计费',
         '不要把活动/Bonus credits 视为稳定生产预算',
@@ -7151,18 +7160,19 @@ export const aiToolsData = [
       'a la carte credits 可在 pricing 页购买且不会过期'
     ],
     cons: [
+      '与 UMG 协议变更后，Udio 已禁用音频、视频和 stems 下载，不适合需要导出文件的生产流程',
       '免费账号 130 秒歌曲有每日 3 首限制',
       'subscription trials 不提高 credit limit，试用和正式订阅权益不同',
       'trial 不能用来验证 Pro 额度或高产量生产能力',
       'credits 不结转，订阅结束会回到 free-account credit limits',
       '商用、版权和平台分发仍需按 Udio 条款和内容用途审查'
     ],
-    bestFor: '原创音乐创作、BGM 生成、歌曲制作',
+    bestFor: '平台内音乐创意试验、歌曲草稿和编辑探索',
     funRanking: '夯夯',
     personalExperience: {
       rating: 4,
       insights:
-        '截至 2026-07-07，Udio 官方帮助中心比 pricing 页更适合核验 credits：Free 是每日 10 credits + 每月 100 credits 上限，Standard 是每月 2,400 credits，Pro 是每月 6,000 credits；subscription trial 最长 7 天但不提高额度，也没有 Pro trial。页面不再用“每月 10 首”或主观质量对比做选型结论。',
+        '截至 2026-07-13，Udio 官方帮助中心比 pricing 页更适合核验 credits：Free 是每日 10 credits + 每月 100 credits 上限，Standard 是每月 2,400 credits，Pro 是每月 6,000 credits；subscription trial 最长 7 天但不提高额度，也没有 Pro trial。页面不再用“每月 10 首”或主观质量对比做选型结论。',
       pitfalls: [
         '按 32 秒/130 秒歌曲长度估算 credits',
         'trial 不等于正式订阅额度，也不能代表 Pro 额度',
@@ -7170,7 +7180,7 @@ export const aiToolsData = [
       ]
     },
     verificationStatus: 'verified',
-    lastVerified: '2026-07-07',
+    lastVerified: '2026-07-13',
     sources: [
       'https://www.udio.com/pricing',
       'https://help.udio.com/en/articles/10739134-credits-and-credit-limits',
@@ -7207,16 +7217,16 @@ export const aiToolsData = [
       {
         type: 'Global',
         pricing:
-          'Command A / R+ 按 input/output token 计费；A 与 R+ 当前均列出 $2.5/M input、$10/M output',
+          'Command A+ 提供 Apache 2.0 open weights；API 可在 rate limits 内试用，生产通过 Model Vault / enterprise 路径核价',
         models: 'Command A+ 05-2026, Command A 03-2025, Command R+ 08-2024, Command R 08-2024',
         link: 'https://docs.cohere.com/docs/models'
       }
     ],
-    freeQuota: 'Trial / production usage 以 Cohere dashboard 和 pricing docs 为准',
+    freeQuota: 'API 在官方 trial rate limits 内可用；生产 usage tier、Model Vault 与企业部署以 Cohere dashboard 为准',
     contextWindow: 'Command A 256K；Command A+ / Command R+ 128K',
     chineseSupport: 2,
     pros: [
-      'Command A+ 是 2026 年 Cohere Command A family 最新模型之一，支持图像、Agent、reasoning 和翻译能力',
+      'Command A+ 是 2026 年 Cohere Command A family 最新模型之一，提供 Apache 2.0 open weights，并支持图像、Agent、reasoning 和翻译能力',
       'Command A 官方定位为企业 Agent、tool use、RAG 和多语言任务',
       'Command R / R+ 仍适合 RAG 与多步工具调用场景',
       '官方文档列出模型 ID、上下文、输出上限和计费方式',
@@ -7232,7 +7242,7 @@ export const aiToolsData = [
     personalExperience: {
       rating: 3.5,
       insights:
-        '截至 2026-07-07，Cohere 官方模型页已经把 Command A+、Command A、Command A Reasoning/Vision 与 Command R/R+ 并列展示，并提供 rate limits / pricing docs 供生产前核验。本站不再把 Cohere 简化为 Command R+，而按企业 RAG、Agent、tool use 和多语言场景来定位。',
+        '截至 2026-07-13，Cohere 官方模型页已经把 Command A+、Command A、Command A Reasoning/Vision 与 Command R/R+ 并列展示，并提供 rate limits / pricing docs 供生产前核验。本站不再把 Cohere 简化为 Command R+，而按企业 RAG、Agent、tool use 和多语言场景来定位。',
       pitfalls: [
         '新项目优先比较 Command A 系列',
         'RAG 效果要结合自有知识库评测',
@@ -7240,7 +7250,7 @@ export const aiToolsData = [
       ]
     },
     verificationStatus: 'verified',
-    lastVerified: '2026-07-07',
+    lastVerified: '2026-07-13',
     sources: [
       'https://docs.cohere.com/docs/models',
       'https://docs.cohere.com/docs/how-does-cohere-pricing-work',
@@ -7251,7 +7261,7 @@ export const aiToolsData = [
       bestFor: '企业知识库、tool use、Agent、多语言检索增强',
       avoidIf: '你需要中文生态优先、消费级聊天入口或国内部署便利性',
       mainRisk: '旧 Command R+ 口径容易低估新模型线；试用、限额和私有部署要账户级确认。',
-      alternatives: ['Claude', 'GPT-5.5 / OpenAI', 'Amazon Nova']
+      alternatives: ['Claude', 'GPT-5.6 / OpenAI', 'Amazon Nova']
     },
     swot: {
       S: '企业 RAG 和 Agent 定位清晰',
@@ -7274,7 +7284,7 @@ export const aiToolsData = [
         pricing:
           '通过 Amazon Bedrock / Nova pricing 按 tier、区域、模型和 modality 计费；Nova 2 能力以 nova2 user guide 为准',
         models:
-          'Amazon Nova 2 Lite, Nova 2 multimodal embeddings, Nova Premier/Pro/Lite/Micro, Nova Canvas/Reel/Sonic',
+          'Amazon Nova 2 Lite, Amazon Nova Multimodal Embeddings, Nova Premier/Pro/Lite/Micro, Nova Canvas/Reel/Sonic',
         link: 'https://docs.aws.amazon.com/nova/latest/nova2-userguide/what-is-nova-2.html'
       }
     ],
@@ -7286,7 +7296,7 @@ export const aiToolsData = [
       'Amazon Nova 2 文档已经列出 extended thinking and reasoning、built-in tools、AI agent building、enhanced document/video understanding',
       'Nova 2 Lite 支持 extended thinking，面向多步骤推理、agentic workflows、数学、规划和代码生成',
       'Nova 2 built-in tools 包含 web grounding 和 code interpreter，减少外部集成成本',
-      'Nova Multimodal Embeddings 支持文本、文档、图像、视频和音频的统一语义空间',
+      'Amazon Nova Multimodal Embeddings 支持文本、文档、图像、视频和音频的统一语义空间',
       '与 Bedrock Knowledge Bases、Agents、Guardrails、评估和批处理能力衔接',
       'Nova v1 系列仍包含 Premier、Pro、Lite、Micro、Canvas、Reel、Sonic，老项目需要按模型线区分'
     ],
@@ -7301,7 +7311,7 @@ export const aiToolsData = [
     personalExperience: {
       rating: 3.5,
       insights:
-        '截至 2026-07-07，AWS Nova 2 文档已经把 Nova 2 描述为支持 up to 1M context、advanced reasoning、built-in tools、AI agent building、document/video understanding 与 multimodal embeddings 的新路线。本站不再只按 Nova v1 Premier/Pro/Lite/Micro 口径展示，而是把 Nova 2 与 Bedrock 生态一起评估。',
+        '截至 2026-07-13，AWS Nova 2 文档已经把 Nova 2 描述为支持 up to 1M context、advanced reasoning、built-in tools、AI agent building、document/video understanding 与 multimodal embeddings 的新路线。本站不再只按 Nova v1 Premier/Pro/Lite/Micro 口径展示，而是把 Nova 2 与 Bedrock 生态一起评估。',
       pitfalls: [
         '先确认目标区域是否支持',
         '用 Bedrock pricing 按模型和 tier 估算成本',
@@ -7309,7 +7319,7 @@ export const aiToolsData = [
       ]
     },
     verificationStatus: 'verified',
-    lastVerified: '2026-07-07',
+    lastVerified: '2026-07-13',
     sources: [
       'https://docs.aws.amazon.com/nova/latest/nova2-userguide/what-is-nova-2.html',
       'https://docs.aws.amazon.com/nova/latest/nova2-userguide/whats-new.html',
@@ -7348,13 +7358,13 @@ export const aiToolsData = [
       {
         type: 'CN',
         pricing:
-          'Hy3 preview / TokenHub 新入口优先确认；旧平台免费资源包和后付费规则仍适用于存量模型',
+          'Hy3 正式版 / TokenHub 新入口优先确认；旧平台免费资源包和后付费规则仅适用于存量模型',
         models: 'Hy3：192K 最大输入、128K 最大输出、295B/21B MoE、no_think/think_low/think_high',
         link: 'https://cloud.tencent.com/product/tclm'
       },
       {
         type: 'CN',
-        pricing: '新模型能力逐步迁移至 TokenHub，原平台不再新增模型能力',
+        pricing: '新模型能力迁移至 TokenHub；旧平台已停止新购，并计划于 2026-09-30 全面停止服务',
         models: 'TokenHub / hunyuan-a13b / Tencent HY Vision 1.5 / translation / role 等存量路径',
         link: 'https://cloud.tencent.com/document/product/1729/97731'
       }
@@ -7365,14 +7375,14 @@ export const aiToolsData = [
     chineseSupport: 5,
     pros: [
       '腾讯云官方页面将混元描述为通用与多模态大模型家族，覆盖文本、图像、视频、3D 等模态',
-      'Hy3 于 2026-07-06 更新，强化 Coding、长文、推理和 Agent 能力',
+      'Hy3 正式版强化 Coding、长文、推理和 Agent 能力',
       'Hy3 采用 295B 总参数、21B 激活 MoE 架构，并提供 no_think / think_low / think_high',
       '产品概述列出角色扮演、翻译、视觉理解等专项模型',
       '购买指南列出免费资源包、后付费、预付费和 token 单价',
       '与腾讯云、腾讯元器和企业微信等生态更易衔接'
     ],
     cons: [
-      '原混元平台新购/新增能力正在向 TokenHub 迁移，入口和计费路径需要确认',
+      '原混元平台已停止新购并向 TokenHub 迁移，官方计划于 2026-09-30 全面停止服务',
       '国际生态和第三方教程不如 AWS/OpenAI/Anthropic 丰富',
       '腾讯生态外的独立开发体验需要实测',
       '旧模型命名和新 TokenHub 资源容易混淆'
@@ -7382,7 +7392,7 @@ export const aiToolsData = [
     personalExperience: {
       rating: 3.5,
       insights:
-        '截至 2026-07-07，腾讯云混元产品页已将 Hy3 preview 放到主推位置，标注 192K 输入、128K 输出、295B/21B MoE 和多档思考模式；购买指南仍提示旧平台能力逐步迁移至 TokenHub。本站不再以 hunyuan-a13b 作为唯一主线，而是把 Hy3/TokenHub 与旧平台存量模型分开展示。',
+        '截至 2026-07-13，腾讯云混元产品页已将 Hy3 正式版放到主推位置，标注 192K 输入、128K 输出、295B/21B MoE 和多档思考模式；旧平台已停止新购并计划于 2026-09-30 停服。本站把 Hy3/TokenHub 与旧平台存量模型分开展示。',
       pitfalls: [
         '先确认是否走 Hy3 / TokenHub 新入口',
         '免费资源包耗尽后默认不一定自动转后付费',
@@ -7390,7 +7400,7 @@ export const aiToolsData = [
       ]
     },
     verificationStatus: 'verified',
-    lastVerified: '2026-07-07',
+    lastVerified: '2026-07-13',
     sources: [
       'https://cloud.tencent.com/product/tclm',
       'https://cloud.tencent.com/document/product/1729/104753',
@@ -7419,12 +7429,12 @@ export const aiToolsData = [
     name: 'frontend-app-builder',
     category: 'skill',
     subcategory: 'UI/UX设计',
-    developer: 'OpenAI curated build-web-apps plugin',
+    developer: 'OpenAI',
     logo: null,
     versions: [
       {
-        type: 'Installed skill',
-        pricing: '随当前 Codex 插件环境可用；无独立免费额度声明',
+        type: 'Public plugin skill',
+        pricing: '需要安装并启用 OpenAI Build Web Apps plugin；无独立免费额度声明',
         models:
           'frontend-app-builder 处理新前端应用、dashboard、game、creative website 和 redesign/restyle/modernization',
         link: 'https://openai.com/codex/'
@@ -7465,8 +7475,10 @@ export const aiToolsData = [
       ]
     },
     verificationStatus: 'verified',
-    lastVerified: '2026-07-07',
-    sources: ['本地 skill: build-web-apps:frontend-app-builder'],
+    lastVerified: '2026-07-13',
+    sources: [
+      'https://github.com/openai/plugins/blob/main/plugins/build-web-apps/skills/frontend-app-builder/SKILL.md'
+    ],
     decisionSummary: {
       verdict:
         '当前核验环境已确认 frontend-app-builder，可作为页面现代化和前端视觉实现的已核验工作流入口。',
@@ -7492,12 +7504,12 @@ export const aiToolsData = [
     name: 'frontend-testing-debugging',
     category: 'skill',
     subcategory: '测试',
-    developer: 'OpenAI curated build-web-apps plugin',
+    developer: 'OpenAI',
     logo: null,
     versions: [
       {
-        type: 'Installed skill',
-        pricing: '随当前 Codex 插件环境可用；无独立免费额度声明',
+        type: 'Public plugin skill',
+        pricing: '需要安装并启用 OpenAI Build Web Apps plugin；无独立免费额度声明',
         models: '优先使用 Browser 插件；仅在 Browser 不可用或受阻时降级到 Playwright',
         link: 'https://openai.com/codex/'
       }
@@ -7530,8 +7542,10 @@ export const aiToolsData = [
       ]
     },
     verificationStatus: 'verified',
-    lastVerified: '2026-07-08',
-    sources: ['本地 skill: build-web-apps:frontend-testing-debugging'],
+    lastVerified: '2026-07-13',
+    sources: [
+      'https://github.com/openai/plugins/blob/main/plugins/build-web-apps/skills/frontend-testing-debugging/SKILL.md'
+    ],
     decisionSummary: {
       verdict:
         '当前核验环境已确认 frontend-testing-debugging，可作为前端渲染、响应式和交互 QA 的已核验工作流。',
@@ -7554,13 +7568,13 @@ export const aiToolsData = [
     name: 'building-mcp-server-on-cloudflare',
     category: 'skill',
     subcategory: 'MCP开发',
-    developer: 'Cloudflare / OpenAI curated plugin',
+    developer: 'Cloudflare',
     logo: null,
     versions: [
       {
-        type: 'Installed skill',
+        type: 'Public Skill',
         pricing:
-          '随当前 Cloudflare/Codex 插件环境可用；Cloudflare Workers 和外部 API 成本需单独评估',
+          '需要单独安装并启用；Cloudflare Workers 和外部 API 成本需单独评估',
         models: 'building-mcp-server-on-cloudflare 聚焦 remote MCP servers on Cloudflare Workers',
         link: 'https://modelcontextprotocol.io/docs/learn/architecture'
       },
@@ -7601,9 +7615,9 @@ export const aiToolsData = [
       ]
     },
     verificationStatus: 'verified',
-    lastVerified: '2026-07-08',
+    lastVerified: '2026-07-13',
     sources: [
-      '本地 skill: cloudflare:building-mcp-server-on-cloudflare',
+      'https://github.com/cloudflare/skills/blob/main/skills/building-mcp-server-on-cloudflare/SKILL.md',
       'https://modelcontextprotocol.io/docs/learn/architecture',
       'https://modelcontextprotocol.io/specification/2025-06-18/server/tools'
     ],
@@ -7664,8 +7678,10 @@ export const aiToolsData = [
       pitfalls: ['先明确真实使用样例', '资源只放必要内容', '修改后运行 quick_validate.py']
     },
     verificationStatus: 'verified',
-    lastVerified: '2026-07-08',
-    sources: ['本地 skill: skill-creator'],
+    lastVerified: '2026-07-13',
+    sources: [
+      'https://github.com/openai/skills/blob/main/skills/.system/skill-creator/SKILL.md'
+    ],
     decisionSummary: {
       verdict:
         '当前核验环境已安装并读取 skill-creator，可作为 Codex Skill 创建/维护工作流保留为已核验条目。',
@@ -7690,7 +7706,7 @@ export const aiToolsData = [
     name: 'semgrep',
     category: 'skill',
     subcategory: '安全审计',
-    developer: 'Semgrep / Semgrep Skills',
+    developer: 'Semgrep',
     logo: null,
     versions: [
       {
@@ -7742,7 +7758,7 @@ export const aiToolsData = [
       ]
     },
     verificationStatus: 'verified',
-    lastVerified: '2026-07-08',
+    lastVerified: '2026-07-13',
     sources: [
       'https://github.com/semgrep/skills',
       'https://github.com/semgrep/skills/blob/main/skills/semgrep/SKILL.md',
@@ -7823,7 +7839,7 @@ export const aiToolsData = [
       ]
     },
     verificationStatus: 'verified',
-    lastVerified: '2026-07-08',
+    lastVerified: '2026-07-13',
     sources: [
       'https://github.com/trailofbits/skills/tree/main/plugins/differential-review',
       'https://github.com/trailofbits/skills/blob/main/plugins/differential-review/skills/differential-review/SKILL.md',
@@ -7890,11 +7906,11 @@ export const aiToolsData = [
     personalExperience: {
       rating: 3.5,
       insights:
-        '截至 2026-07-08，insecure-defaults 有 Trail of Bits 公开上游，适合定位 fail-open defaults、hardcoded secrets、weak auth 等生产可达配置风险；实际使用前需安装 Trail of Bits plugin 并人工复核。',
+        '截至 2026-07-13，insecure-defaults 有 Trail of Bits 公开上游，适合定位 fail-open defaults、hardcoded secrets、weak auth 等生产可达配置风险；实际使用前需安装 Trail of Bits plugin 并人工复核。',
       pitfalls: ['先补充同名 Skill 的上游仓库', '按实际技术栈加载安全参考', '所有发现都要人工复核']
     },
     verificationStatus: 'verified',
-    lastVerified: '2026-07-08',
+    lastVerified: '2026-07-13',
     sources: [
       'https://trailofbits.com/skills/insecure-defaults/',
       '邻近本地 skill: security-best-practices'
@@ -7957,11 +7973,11 @@ export const aiToolsData = [
     personalExperience: {
       rating: 3.5,
       insights:
-        '截至 2026-07-08，sharp-edges 有 Trail of Bits 公开上游，定位是发现 footgun designs、危险配置和缺乏 misuse resistance 的 API design；推荐时要说明需单独安装并结合人工复核。',
+        '截至 2026-07-13，sharp-edges 有 Trail of Bits 公开上游，定位是发现 footgun designs、危险配置和缺乏 misuse resistance 的 API design；推荐时要说明需单独安装并结合人工复核。',
       pitfalls: ['先确认同名 Skill 来源', '结合威胁模型判断', '安全结论需要人工复核']
     },
     verificationStatus: 'verified',
-    lastVerified: '2026-07-08',
+    lastVerified: '2026-07-13',
     sources: [
       'https://trailofbits.com/skills/sharp-edges/',
       '邻近本地 skill: security-best-practices'
@@ -8028,7 +8044,7 @@ export const aiToolsData = [
     personalExperience: {
       rating: 3.5,
       insights:
-        '截至 2026-07-08，second-opinion 有 Trail of Bits 公开上游，定位是通过 Codex CLI / Gemini CLI 对 diff 做外部第二意见；页面按公开上游说明展示，并提醒 Gemini --yolo 风险和工具/订阅前置条件。',
+        '截至 2026-07-13，second-opinion 有 Trail of Bits 公开上游，定位是通过 Codex CLI / Gemini CLI 对 diff 做外部第二意见；页面按公开上游说明展示，并提醒 Gemini --yolo 风险和工具/订阅前置条件。',
       pitfalls: [
         '先确认同名 Skill 上游',
         '不要把外部模型调用写成默认能力',
@@ -8036,7 +8052,7 @@ export const aiToolsData = [
       ]
     },
     verificationStatus: 'verified',
-    lastVerified: '2026-07-08',
+    lastVerified: '2026-07-13',
     sources: [
       'https://trailofbits.com/skills/second-opinion/',
       '邻近本地 skill: superpowers:requesting-code-review',
@@ -8102,11 +8118,11 @@ export const aiToolsData = [
     personalExperience: {
       rating: 3.5,
       insights:
-        '截至 2026-07-08，audit-context-building 有 Trail of Bits 公开上游，定位是审计前用 line-by-line 分析建立 deep architectural context；它不负责直接给漏洞结论，实际使用前需单独安装。',
+        '截至 2026-07-13，audit-context-building 有 Trail of Bits 公开上游，定位是审计前用 line-by-line 分析建立 deep architectural context；它不负责直接给漏洞结论，实际使用前需单独安装。',
       pitfalls: ['先确认审计范围', '所有架构判断都要有仓库证据', '不要把上下文构建当作漏洞扫描']
     },
     verificationStatus: 'verified',
-    lastVerified: '2026-07-08',
+    lastVerified: '2026-07-13',
     sources: [
       'https://trailofbits.com/skills/audit-context-building/',
       '邻近本地 skill: security-threat-model',
@@ -8126,7 +8142,7 @@ export const aiToolsData = [
       O: '可并入 threat model / security-best-practices',
       T: 'SAST 和专业威胁建模工具竞争'
     },
-    tags: ['Skills', '代码审计', '安全', 'deprecated']
+    tags: ['Skills', '代码审计', '安全', 'public-upstream']
   },
 
   // --- 开发工具 Skills ---
@@ -8167,11 +8183,11 @@ export const aiToolsData = [
     personalExperience: {
       rating: 3,
       insights:
-        '截至 2026-07-08，git-cleanup 有 Trail of Bits 公开上游，定位是清理 local branches and worktrees；它强调 local cleanup only、two confirmation gates 和人工确认，适合作为谨慎的 Git 维护流程入口。',
+        '截至 2026-07-13，git-cleanup 有 Trail of Bits 公开上游，定位是清理 local branches and worktrees；它强调 local cleanup only、two confirmation gates 和人工确认，适合作为谨慎的 Git 维护流程入口。',
       pitfalls: ['先列出目标和理由', '不要自动删除本地分支', '确认是否有 worktree 或未推送提交']
     },
     verificationStatus: 'verified',
-    lastVerified: '2026-07-08',
+    lastVerified: '2026-07-13',
     sources: [
       'https://trailofbits.com/skills/git-cleanup/',
       '邻近本地 skill: superpowers:using-git-worktrees'
@@ -8230,7 +8246,7 @@ export const aiToolsData = [
     personalExperience: {
       rating: 4,
       insights:
-        '截至 2026-07-08，ask-questions-if-underspecified 有 Trail of Bits 公开上游，定位是用 minimum set of clarifying questions 找出 must-have questions；它应与 brainstorming 和 get-context 搭配，避免过度提问。',
+        '截至 2026-07-13，ask-questions-if-underspecified 有 Trail of Bits 公开上游，定位是用 minimum set of clarifying questions 找出 must-have questions；它应与 brainstorming 和 get-context 搭配，避免过度提问。',
       pitfalls: [
         '只问阻塞决策的问题',
         '能用安全默认值推进时不要过度等待',
@@ -8238,7 +8254,7 @@ export const aiToolsData = [
       ]
     },
     verificationStatus: 'verified',
-    lastVerified: '2026-07-08',
+    lastVerified: '2026-07-13',
     sources: [
       'https://trailofbits.com/skills/ask-questions-if-underspecified/',
       '邻近本地 skill: superpowers:brainstorming',
@@ -8299,11 +8315,11 @@ export const aiToolsData = [
     personalExperience: {
       rating: 3.5,
       insights:
-        '截至 2026-07-08，property-based-testing 有 Trail of Bits 公开上游，覆盖 Hypothesis、fast-check、proptest、Echidna 和 roundtrip property 等模式；实际落地仍要按语言生态选择库并固定失败样本。',
+        '截至 2026-07-13，property-based-testing 有 Trail of Bits 公开上游，覆盖 Hypothesis、fast-check、proptest、Echidna 和 roundtrip property 等模式；实际落地仍要按语言生态选择库并固定失败样本。',
       pitfalls: ['先选择语言对应测试库', '固定随机种子', '把失败样本转成回归测试']
     },
     verificationStatus: 'verified',
-    lastVerified: '2026-07-08',
+    lastVerified: '2026-07-13',
     sources: [
       'https://trailofbits.com/skills/property-based-testing/',
       '邻近本地 skill: superpowers:test-driven-development',
@@ -8335,12 +8351,12 @@ export const aiToolsData = [
     name: 'supabase',
     category: 'skill',
     subcategory: '数据库',
-    developer: 'Supabase / OpenAI curated plugin',
+    developer: 'Supabase',
     logo: null,
     versions: [
       {
-        type: 'Installed skill',
-        pricing: '随当前 Supabase 插件环境可用；Supabase 项目和外部服务按官方账户计费',
+        type: 'Public official Agent Skill',
+        pricing: 'MIT 开源，需要单独安装；Supabase 项目和外部服务按官方账户计费',
         models:
           'Supabase Database, Auth, Edge Functions, Realtime, Storage, Vectors, Cron, Queues, CLI and MCP server',
         link: 'https://supabase.com/docs'
@@ -8357,7 +8373,7 @@ export const aiToolsData = [
     contextWindow: 'N/A',
     chineseSupport: 3,
     pros: [
-      '当前核验环境中的 supabase Skill 覆盖 Database、Auth、Edge Functions、Realtime、Storage、Vectors、Cron、Queues、CLI 和 MCP server',
+      'Supabase 官方公开 Agent Skill 覆盖 Database、Auth、Edge Functions、Realtime、Storage、Vectors、Cron、Queues、CLI 和 MCP server',
       '明确提醒 Supabase changes frequently，需要 verify against changelog 和当前 docs',
       '安全清单覆盖 RLS、service_role 暴露、JWT metadata、views、SECURITY DEFINER 和 storage upsert',
       'Supabase CLI 命令要求通过 --help 发现，避免记忆过时',
@@ -8373,7 +8389,7 @@ export const aiToolsData = [
     personalExperience: {
       rating: 4.5,
       insights:
-        '这是本批里证据更充分的条目之一：当前核验环境有精确 supabase Skill，也有 Supabase Postgres best practices。推荐时重点应放在“先查 changelog / docs、做真实 SQL 或 CLI 验证、严守 RLS 安全清单”。',
+        'Supabase 已公开官方 agent-skills 仓库，supabase 与 supabase-postgres-best-practices 都需要单独安装。推荐时重点应放在先查 changelog/docs、做真实 SQL 或 CLI 验证、严守 RLS 安全清单。',
       pitfalls: [
         '先查 changelog 和 docs',
         'RLS/权限变更必须验证',
@@ -8381,10 +8397,10 @@ export const aiToolsData = [
       ]
     },
     verificationStatus: 'verified',
-    lastVerified: '2026-07-08',
+    lastVerified: '2026-07-13',
     sources: [
-      '本地 skill: supabase',
-      '本地 skill: build-web-apps:supabase-postgres-best-practices',
+      'https://github.com/supabase/agent-skills/blob/main/skills/supabase/SKILL.md',
+      'https://supabase.com/docs/guides/getting-started/ai-skills',
       'https://supabase.com/docs'
     ],
     decisionSummary: {
@@ -8450,9 +8466,9 @@ export const aiToolsData = [
       pitfalls: ['先确认项目 Realtime 设置', 'RLS/授权和频道订阅要一起测', '不要承诺具体迁移路线']
     },
     verificationStatus: 'historical',
-    lastVerified: '2026-07-08',
+    lastVerified: '2026-07-13',
     sources: [
-      '公开来源不足：未发现同名 supabase-realtime skill（检查于 2026-07-08）',
+      '公开来源不足：未发现同名 supabase-realtime skill（检查于 2026-07-13）',
       '邻近本地 skill: supabase',
       'https://supabase.com/docs/guides/realtime'
     ],
@@ -8479,56 +8495,55 @@ export const aiToolsData = [
     name: 'ui-ux-pro-max',
     category: 'skill',
     subcategory: 'UI/UX设计',
-    developer: '历史概念 / 公开来源不足',
+    developer: 'nextlevelbuilder',
     logo: null,
     versions: [
       {
-        type: '历史概念',
-        pricing:
-          '未发现可公开核验的同名 Skill；建议并入 frontend-app-builder / Product Design ideate',
-        models: '历史概念；UI 构思和实现应使用真实设计工作流 Skill',
-        link: 'https://openai.com/codex/'
+        type: 'Public third-party Skill',
+        pricing: 'Basic 版 MIT 开源；Premium 版采用商业许可，安装与升级以官方仓库说明为准',
+        models: '设计系统生成、UI styles、color palettes、font pairings、charts、tech stacks 与 UX guidelines',
+        link: 'https://github.com/nextlevelbuilder/ui-ux-pro-max-skill'
       }
     ],
-    freeQuota: '暂无独立免费额度证据；取决于实际使用的设计/图像/模型能力',
+    freeQuota: 'Basic 版可按 MIT 许可使用；Premium 能力需商业许可，模型调用成本另计',
     contextWindow: 'N/A',
     chineseSupport: 5,
     pros: [
-      '公开来源不足，旧条目可作为 UI/UX 设计增强概念留档',
-      'frontend-app-builder 是真实前端设计与实现工作流',
-      'Product Design ideate 可在 get-context 后生成视觉方向',
-      '历史概念，不能继续使用未证实的数字化风格库卖点',
-      '可把设计系统、概念探索和浏览器验收拆给真实 Skill'
+      '官方 GitHub 仓库持续维护，并提供面向多种 Agent 和前端技术栈的安装路径',
+      'v2.0 提供基于项目需求生成设计系统的工作流',
+      '公开 README 列出 UI styles、color palettes、font pairings、chart types、tech stacks 和 UX guidelines',
+      '支持 Vue、React、Next.js、Svelte、Astro、SwiftUI、Flutter 等多种技术栈',
+      'Basic 与 Premium 许可边界公开，可按团队需求选择'
     ],
     cons: [
-      '未找到可公开核验的同名 ui-ux-pro-max Skill',
-      '旧文案数字化卖点未找到来源',
-      '与 frontend-design/frontend-app-builder 职责重复'
+      '第三方 Skill，不属于 OpenAI/Codex 内置能力，需自行安装和审查更新',
+      'Premium 版采用商业许可，不能把所有能力都视为 MIT 开源',
+      '设计建议仍需结合真实产品约束和浏览器验收'
     ],
-    bestFor: '历史内容迁移时的合并候选；新任务应转用 frontend-app-builder 或 Product Design ideate',
-    funRanking: '归档',
+    bestFor: '需要设计系统建议、多技术栈 UI 实现和 UX 检查清单的前端团队',
+    funRanking: '夯',
     personalExperience: {
-      rating: 2.5,
+      rating: 4,
       insights:
-        '这个条目的旧文案最像过时宣传页。没有同名来源时，应标为历史概念，并把用户导向 frontend-app-builder / ideate 这些实际存在的设计流程。',
+        '截至 2026-07-13，ui-ux-pro-max 是 NextLevelBuilder 持续维护的公开第三方 Skill，Basic 版 MIT、Premium 版商业许可。它适合提供设计系统和技术栈建议，但仍需结合产品 brief、现有设计系统和真实浏览器验收。',
       pitfalls: [
-        '不要引用未证实的风格/调色板数量',
-        '避免和 frontend-design 重复',
-        '需要真实视觉 brief 和截图验收'
+        '安装前核对 Basic 与 Premium 许可',
+        '不要把第三方 Skill 当成 Codex 内置能力',
+        '生成结果仍需真实视觉 brief 和截图验收'
       ]
     },
-    verificationStatus: 'deprecated',
-    lastVerified: '2026-07-08',
+    verificationStatus: 'verified',
+    lastVerified: '2026-07-13',
     sources: [
-      '公开来源不足：未发现同名 ui-ux-pro-max skill（检查于 2026-07-08）',
-      '邻近本地 skill: build-web-apps:frontend-app-builder',
-      '邻近本地 skill: product-design:ideate'
+      'https://github.com/nextlevelbuilder/ui-ux-pro-max-skill',
+      'https://github.com/nextlevelbuilder/ui-ux-pro-max-skill/blob/main/.claude/skills/ui-ux-pro-max/SKILL.md',
+      'https://github.com/nextlevelbuilder/ui-ux-pro-max-skill/blob/main/LICENSE'
     ],
     decisionSummary: {
-      verdict: '不建议继续作为独立 active Skill 展示；应作为过时 UI/UX 概念并入真实设计工作流。',
-      bestFor: '清理旧目录时提示用户转向 frontend-app-builder 或 Product Design ideate',
-      avoidIf: '你需要可验证的风格库、调色板库或跨技术栈生成能力',
-      mainRisk: '旧数字卖点没有来源，继续展示会误导用户认为存在全能 UI/UX Skill。',
+      verdict: '可作为已核验的第三方 UI/UX Skill 展示，但必须明确需要安装，并区分 MIT Basic 与商业 Premium。',
+      bestFor: '需要快速生成设计系统方向、多技术栈实现建议和 UX 检查清单的团队',
+      avoidIf: '你只接受官方内置 Skill，或不愿审查第三方依赖与商业许可',
+      mainRisk: '第三方更新和 Premium 许可可能变化，生成建议也不能替代产品研究、设计系统和浏览器验收。',
       alternatives: ['frontend-app-builder', 'Product Design ideate', 'Product Design audit']
     },
     swot: {
@@ -8537,7 +8552,7 @@ export const aiToolsData = [
       O: '设计工作流可转向真实 Skill',
       T: 'Figma / v0 / Product Design 插件竞争'
     },
-    tags: ['Skills', 'UI/UX', '设计系统', 'deprecated']
+    tags: ['Skills', 'UI/UX', '设计系统', '第三方', '已核验']
   },
 
   // --- 内容生成 Skills ---
@@ -8579,9 +8594,9 @@ export const aiToolsData = [
         '这是典型的“自研想法遗留项”：没有安装环境 Skill 或数据源证据时，应先弃用公开推荐，只保留为后续补模板和数据接入的候选。',
       pitfalls: ['先补真实数据源', '提供样例周报模板', '明确访问权限和脱敏规则']
     },
-    verificationStatus: 'deprecated',
-    lastVerified: '2026-07-08',
-    sources: ['公开来源不足：未发现同名 week-report-generator skill（检查于 2026-07-08）'],
+    verificationStatus: 'historical',
+    lastVerified: '2026-07-13',
+    sources: ['公开来源不足：未发现同名 week-report-generator skill（检查于 2026-07-13）'],
     decisionSummary: {
       verdict: '当前不建议作为 active Skill 展示；需要补齐内部数据源、模板和运行证据后再恢复。',
       bestFor: '内部监控/告警/工单数据已经可访问，且有固定周报模板的团队',
@@ -8595,7 +8610,7 @@ export const aiToolsData = [
       O: '可并入已有 BI/监控报告流程',
       T: 'BI/监控平台自带报告'
     },
-    tags: ['Skills', '周报', '自动化', 'deprecated']
+    tags: ['Skills', '周报', '自动化', 'historical']
   },
 
   // --- 思维增强 Skills ---
@@ -8643,10 +8658,10 @@ export const aiToolsData = [
         '以产物和验证衡量效果'
       ]
     },
-    verificationStatus: 'deprecated',
-    lastVerified: '2026-07-08',
+    verificationStatus: 'historical',
+    lastVerified: '2026-07-13',
     sources: [
-      '公开来源不足：未发现同名 think-harder skill（检查于 2026-07-08）',
+      '公开来源不足：未发现同名 think-harder skill（检查于 2026-07-13）',
       '邻近本地 skill: superpowers:brainstorming',
       '邻近本地 skill: superpowers:systematic-debugging'
     ],
@@ -8663,14 +8678,14 @@ export const aiToolsData = [
       O: '可转向具体流程 Skill',
       T: '模型原生推理能力和任务专用 Skill'
     },
-    tags: ['Skills', '推理', 'deprecated']
+    tags: ['Skills', '推理', 'historical']
   },
   {
     id: 'research-skill',
     name: 'research',
     category: 'skill',
     subcategory: '研究分析',
-    developer: 'Product Design / AnyCap',
+    developer: 'Multiple unrelated skill sources',
     logo: null,
     versions: [
       {
@@ -8702,15 +8717,15 @@ export const aiToolsData = [
       '公开来源信号可能弱，必须说明来源访问缺失或证据较弱'
     ],
     bestFor: '产品 UX 研究、用户痛点聚类、竞品/市场/技术深度研究的证据化报告',
-    funRanking: '夯夯',
+    funRanking: '待复核',
     personalExperience: {
       rating: 4.5,
       insights:
         'research 现在应拆成两层：Product Design 的 research 负责当前用户痛点和体验摩擦；AnyCap Deep Research 负责更广的多源研究报告。共同边界是必须引用来源、区分证据和推断。',
       pitfalls: ['先确认研究范围和时间窗口', '来源弱时要明说', '不要把轶事当频率结论']
     },
-    verificationStatus: 'verified',
-    lastVerified: '2026-07-08',
+    verificationStatus: 'needs-review',
+    lastVerified: '2026-07-13',
     sources: ['本地 skill: product-design:research', '本地 skill: anycap-deepresearch'],
     decisionSummary: {
       verdict:
@@ -8726,7 +8741,7 @@ export const aiToolsData = [
       O: '可支撑产品决策和竞品研究流程',
       T: 'Perplexity、Glean、Notion AI 等研究工具竞争'
     },
-    tags: ['Skills', '研究', 'UX', '引用', '本地核验']
+    tags: ['Skills', '研究', 'UX', '引用', '待拆分', 'needs-review']
   }
 ].map(withDefaultVerificationMetadata)
 

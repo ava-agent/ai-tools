@@ -1,7 +1,7 @@
 // Generated from src/data/tools.js.
 export default {
   "verificationStatus": "verified",
-  "lastVerified": "2026-07-07",
+  "lastVerified": "2026-07-13",
   "sources": [
     "https://goose-docs.ai/",
     "https://github.com/aaif-goose/goose",
@@ -43,7 +43,7 @@ export default {
   "funRanking": "夯",
   "personalExperience": {
     "rating": 3,
-    "insights": "截至 2026-07-07，Goose 官方 README 明确项目已从 block/goose 迁到 AAIF，并定位为 desktop app、CLI、API 都可用的本地开源 AI agent。它适合本地优先、多 provider 和可扩展 Agent 场景，但预算仍应按所选模型/API/云环境核算。",
+    "insights": "截至 2026-07-13，Goose 官方 README 明确项目已从 block/goose 迁到 AAIF，并定位为 desktop app、CLI、API 都可用的本地开源 AI agent。它适合本地优先、多 provider 和可扩展 Agent 场景，但预算仍应按所选模型/API/云环境核算。",
     "pitfalls": [
       "不要再把旧 block/goose 当作当前主仓库",
       "需要配置模型 provider 或本地模型",

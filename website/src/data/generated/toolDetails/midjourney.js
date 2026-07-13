@@ -1,7 +1,7 @@
 // Generated from src/data/tools.js.
 export default {
   "verificationStatus": "verified",
-  "lastVerified": "2026-07-07",
+  "lastVerified": "2026-07-13",
   "sources": [
     "https://docs.midjourney.com/hc/en-us/articles/27870484040333-Comparing-Midjourney-Plans",
     "https://docs.midjourney.com/hc/en-us/articles/32199405667853-Version",
@@ -20,7 +20,7 @@ export default {
     {
       "type": "Global",
       "pricing": "Basic $10 / Standard $30 / Pro $60 / Mega $120；Fast/Relax/Turbo GPU time、HD、video 和 Stealth 能力按计划消耗",
-      "models": "Midjourney V8.1 default, V7/V6.1 legacy options",
+      "models": "Midjourney V8.1 default；V7/V6/V6.1 可选；Niji 7；仅 V8.0 Alpha 已弃用",
       "link": "https://docs.midjourney.com/hc/en-us/articles/27870484040333-Comparing-Midjourney-Plans"
     }
   ],
@@ -45,7 +45,7 @@ export default {
   "funRanking": "夯夯",
   "personalExperience": {
     "rating": 5,
-    "insights": "截至 2026-07-07，Midjourney 官方更新页显示 V8.1 已成为默认模型；Version 文档说明 V8.1 HD 图像和 SD/HD GPU time，Video 文档也给出 batch size 对 GPU 成本的影响。本站不再按 V7 默认口径展示，而改为按 V8.1、GPU time、HD/video 和计划能力做采购判断。",
+    "insights": "截至 2026-07-13，Midjourney 官方更新页显示 V8.1 已成为默认模型；Version 文档说明 V8.1 HD 图像和 SD/HD GPU time，Video 文档也给出 batch size 对 GPU 成本的影响。本站不再按 V7 默认口径展示，而改为按 V8.1、GPU time、HD/video 和计划能力做采购判断。",
     "pitfalls": [
       "先按 Fast/Relax GPU time 估算月用量",
       "确认是否需要 V8.1 HD、Video、Stealth 和更高并发",

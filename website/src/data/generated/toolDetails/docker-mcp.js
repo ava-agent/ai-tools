@@ -1,13 +1,13 @@
 // Generated from src/data/tools.js.
 export default {
   "verificationStatus": "verified",
-  "lastVerified": "2026-07-08",
+  "lastVerified": "2026-07-13",
   "sources": [
     "https://docs.docker.com/ai/mcp-catalog-and-toolkit/toolkit/",
     "https://docs.docker.com/ai/mcp-catalog-and-toolkit/mcp-gateway/"
   ],
   "id": "docker-mcp",
-  "name": "Docker MCP",
+  "name": "Docker MCP Toolkit",
   "category": "mcp",
   "subcategory": "DevOps",
   "developer": "Docker",
@@ -25,14 +25,14 @@ export default {
   "chineseSupport": 2,
   "pros": [
     "Docker MCP Toolkit 官方文档标注 Availability: Beta",
-    "Docker MCP Catalog 提供 300+ verified servers，并通过 profiles 组织不同项目的 server 配置",
+    "Docker MCP Catalog 通过 profiles 组织不同项目的 server 配置，server 数量以当前 Catalog 为准",
     "MCP Gateway 将 MCP servers 运行在隔离 Docker 容器中，并限制权限、网络访问和资源使用",
     "内置 logging 与 call-tracing，便于治理 AI 工具活动",
     "Docker MCP Toolkit 结合 passive 和 active security，减少 MCP server 运行时攻击面",
     "运行时限制包括 1 CPU 和 2 GB memory allocation"
   ],
   "cons": [
-    "Beta 阶段界面和工具行为可能变化，需匹配 Docker Desktop 版本",
+    "Beta 阶段界面和工具行为可能变化，当前官方文档要求 Docker Desktop 4.62 或更高版本",
     "容器隔离降低风险但不等于可放心操作生产 Docker host",
     "MCP servers 仍可能接触本地文件、网络、凭据或 Docker socket，应按 profile 和权限逐项审查",
     "第三方 MCP server 的供应链和权限边界仍需单独评估"
@@ -41,7 +41,7 @@ export default {
   "funRanking": "夯",
   "personalExperience": {
     "rating": 3.5,
-    "insights": "截至 2026-07-08，Docker MCP 更准确的定位是 Catalog/Toolkit/Gateway：用 300+ verified servers、profiles、容器隔离、资源限制和调用追踪来管理 MCP server，而不是让 Agent 直接随意控制 Docker 主机。",
+    "insights": "截至 2026-07-13，Docker MCP Toolkit 更准确的定位是 Catalog/Toolkit/Gateway：用 profiles、容器隔离、资源限制和调用追踪来管理 MCP server，而不是让 Agent 直接随意控制 Docker 主机。Catalog 数量会变化，不再写死固定 server 数。",
     "pitfalls": [
       "只在开发 profile 试点",
       "审查 server 权限和镜像来源",

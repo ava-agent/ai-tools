@@ -1,7 +1,7 @@
 // Generated from src/data/tools.js.
 export default {
   "verificationStatus": "verified",
-  "lastVerified": "2026-07-07",
+  "lastVerified": "2026-07-13",
   "sources": [
     "https://docs.cohere.com/docs/models",
     "https://docs.cohere.com/docs/how-does-cohere-pricing-work",
@@ -16,16 +16,16 @@ export default {
   "versions": [
     {
       "type": "Global",
-      "pricing": "Command A / R+ 按 input/output token 计费；A 与 R+ 当前均列出 $2.5/M input、$10/M output",
+      "pricing": "Command A+ 提供 Apache 2.0 open weights；API 可在 rate limits 内试用，生产通过 Model Vault / enterprise 路径核价",
       "models": "Command A+ 05-2026, Command A 03-2025, Command R+ 08-2024, Command R 08-2024",
       "link": "https://docs.cohere.com/docs/models"
     }
   ],
-  "freeQuota": "Trial / production usage 以 Cohere dashboard 和 pricing docs 为准",
+  "freeQuota": "API 在官方 trial rate limits 内可用；生产 usage tier、Model Vault 与企业部署以 Cohere dashboard 为准",
   "contextWindow": "Command A 256K；Command A+ / Command R+ 128K",
   "chineseSupport": 2,
   "pros": [
-    "Command A+ 是 2026 年 Cohere Command A family 最新模型之一，支持图像、Agent、reasoning 和翻译能力",
+    "Command A+ 是 2026 年 Cohere Command A family 最新模型之一，提供 Apache 2.0 open weights，并支持图像、Agent、reasoning 和翻译能力",
     "Command A 官方定位为企业 Agent、tool use、RAG 和多语言任务",
     "Command R / R+ 仍适合 RAG 与多步工具调用场景",
     "官方文档列出模型 ID、上下文、输出上限和计费方式",
@@ -40,7 +40,7 @@ export default {
   "funRanking": "夯",
   "personalExperience": {
     "rating": 3.5,
-    "insights": "截至 2026-07-07，Cohere 官方模型页已经把 Command A+、Command A、Command A Reasoning/Vision 与 Command R/R+ 并列展示，并提供 rate limits / pricing docs 供生产前核验。本站不再把 Cohere 简化为 Command R+，而按企业 RAG、Agent、tool use 和多语言场景来定位。",
+    "insights": "截至 2026-07-13，Cohere 官方模型页已经把 Command A+、Command A、Command A Reasoning/Vision 与 Command R/R+ 并列展示，并提供 rate limits / pricing docs 供生产前核验。本站不再把 Cohere 简化为 Command R+，而按企业 RAG、Agent、tool use 和多语言场景来定位。",
     "pitfalls": [
       "新项目优先比较 Command A 系列",
       "RAG 效果要结合自有知识库评测",
@@ -54,7 +54,7 @@ export default {
     "mainRisk": "旧 Command R+ 口径容易低估新模型线；试用、限额和私有部署要账户级确认。",
     "alternatives": [
       "Claude",
-      "GPT-5.5 / OpenAI",
+      "GPT-5.6 / OpenAI",
       "Amazon Nova"
     ]
   },

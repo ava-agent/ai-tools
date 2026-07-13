@@ -1,7 +1,7 @@
 // Generated from src/data/tools.js.
 export default {
   "verificationStatus": "verified",
-  "lastVerified": "2026-07-08",
+  "lastVerified": "2026-07-13",
   "sources": [
     "https://adk.dev/",
     "https://adk.dev/agents/models/google-gemini/",
@@ -48,13 +48,14 @@ export default {
     "主要优势在 Google/Gemini 生态，跨 provider 抽象不如部分独立框架",
     "部分生产部署、企业治理和观测能力依赖 Google Cloud / Gemini Enterprise",
     "内置工具组合有已知限制，需要按文档规避",
-    "模型和云资源成本要单独核算"
+    "模型和云资源成本要单独核算",
+    "ADK 2.0 包含破坏性变更，1.x 项目升级前需要按官方迁移指南验证"
   ],
   "bestFor": "利用 Gemini 长上下文构建复杂 Agent",
   "funRanking": "夯",
   "personalExperience": {
     "rating": 3.5,
-    "insights": "截至 2026-07-08，Google ADK 当前更应按官方多语言 production agents 框架来介绍，而不是只强调某个上下文数字。ADK 2.0、Graph Workflows、几乎任意生成式模型接入、Google Search / Code Execution 等 Gemini 工具能力，以及后续部署到企业平台的路径，是当前选型重点。",
+    "insights": "截至 2026-07-13，Google ADK 当前更应按官方多语言 production agents 框架来介绍，而不是只强调某个上下文数字。ADK 2.0、Graph Workflows、几乎任意生成式模型接入、Google Search / Code Execution 等 Gemini 工具能力，以及后续部署到企业平台的路径，是当前选型重点。",
     "pitfalls": [
       "先确认是本地 SDK、Vertex AI 还是 Gemini Enterprise 路径",
       "模型和云资源成本分开核算",

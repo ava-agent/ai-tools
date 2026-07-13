@@ -1,7 +1,7 @@
 // Generated from src/data/tools.js.
 export default {
   "verificationStatus": "verified",
-  "lastVerified": "2026-07-07",
+  "lastVerified": "2026-07-13",
   "sources": [
     "https://qwenlm.github.io/qwen-code-docs/en/users/configuration/auth/",
     "https://www.alibabacloud.com/help/en/model-studio/coding-plan",
@@ -43,7 +43,7 @@ export default {
   "funRanking": "夯",
   "personalExperience": {
     "rating": 4,
-    "insights": "截至 2026-07-07，Qwen Code 官方认证文档明确旧 OAuth free tier 已于 2026-04-15 停止；当前 /auth 应在 Alibaba ModelStudio、第三方 provider 或自定义 provider 中选择。Coding Plan 适合个人开发者做固定成本路径，Token Plan/API Key 则要按 Model Studio 当前模型价格核算。",
+    "insights": "截至 2026-07-13，Qwen Code 官方认证文档明确旧 OAuth free tier 已于 2026-04-15 停止；当前 /auth 应在 Alibaba ModelStudio、第三方 provider 或自定义 provider 中选择。Coding Plan 适合个人开发者做固定成本路径，Token Plan/API Key 则要按 Model Studio 当前模型价格核算。",
     "pitfalls": [
       "旧 OAuth 免费额度不可再作为预算依据",
       "先确认 Coding Plan 或 API provider",

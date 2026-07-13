@@ -1,7 +1,7 @@
 // Generated from src/data/tools.js.
 export default {
   "verificationStatus": "verified",
-  "lastVerified": "2026-07-07",
+  "lastVerified": "2026-07-13",
   "sources": [
     "https://replit.com/pricing",
     "https://docs.replit.com/billing/ai-billing"
@@ -40,7 +40,7 @@ export default {
   "funRanking": "夯",
   "personalExperience": {
     "rating": 3,
-    "insights": "截至 2026-07-07，Replit pricing 仍以 Starter、Core、Pro、Enterprise 展示，并把 Agent/Assistant/部署能力放进 credits 体系。它适合快速把想法跑起来，但要用 budget、usage dashboard 和小任务试跑控制成本。",
+    "insights": "截至 2026-07-13，Replit pricing 仍以 Starter、Core、Pro、Enterprise 展示，并把 Agent/Assistant/部署能力放进 credits 体系。它适合快速把想法跑起来，但要用 budget、usage dashboard 和小任务试跑控制成本。",
     "pitfalls": [
       "复杂任务先拆小，避免一次性烧太多 credits",
       "上线前设置 usage alerts 和 budget limits",

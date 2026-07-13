@@ -271,6 +271,12 @@
               {{ cat === 'all' ? '全部' : getCategoryLabel(cat) }}
             </button>
           </div>
+          <p
+            class="border-b border-white/[0.06] px-4 py-3 text-xs leading-relaxed text-white/45"
+            data-testid="pricing-score-methodology"
+          >
+            目录参考分仅按是否有免费层与本站体验评分计算，用于排序浏览，不代表官方价格评测或客观性价比结论。
+          </p>
           <div
             class="hidden overflow-x-auto md:block"
             data-testid="pricing-desktop-table"
@@ -288,7 +294,7 @@
                     定价
                   </th>
                   <th class="text-left p-4 text-white font-semibold">
-                    性价比
+                    目录参考分
                   </th>
                 </tr>
               </thead>
@@ -398,7 +404,7 @@
                 </div>
                 <div>
                   <div class="mb-2 text-xs font-semibold text-white/45">
-                    性价比
+                    目录参考分
                   </div>
                   <div class="flex items-center">
                     <div class="mr-2 h-2 flex-1 rounded-full bg-white/[0.04]">
@@ -459,13 +465,13 @@
                 订阅成本计算建议
               </h3>
               <p class="text-white/80 mb-4">
-                建议每月订阅成本控制在收入的 1-3% 之间。例如：
+                先设月度上限并记录真实使用率，再决定是否升级或增加席位：
               </p>
               <ul class="space-y-2 text-white/70 text-sm">
-                <li>• 个人开发者（月入 1-2 万）：推荐 $0-50/月 的方案</li>
-                <li>• 重度 AI 用户：Claude Code Max $200/月起提供更高用量档，但仍需按当前计划、模型和时段/会话限制核验</li>
-                <li>• 小团队（5 人）：推荐 $100-300/月的团队方案</li>
-                <li>• 中型团队（20 人）：推荐 $500-1000/月的企业方案</li>
+                <li>• 个人开发者：先保留一个主力付费工具，其余用免费层、开源或按量入口补充</li>
+                <li>• 重度用户：把订阅额度、API 按量费和可购买 credits 分开记账，并设置硬上限</li>
+                <li>• 团队：先用小范围试点核对席位利用率、权限治理和实际节省时间，再逐步扩容</li>
+                <li>• 每月复盘一次闲置订阅、重复能力和超额费用；价格变更后重新核对官方页面</li>
               </ul>
             </div>
           </div>
@@ -549,13 +555,21 @@ const comboToolIds = computed(() => {
 
 // 分类列表
 const pricingCategories = computed(() => {
-  const cats = new Set(toolsStore.tools.map(t => t.category))
+  const cats = new Set(
+    toolsStore.tools
+      .filter(t => !t.verificationStatus || t.verificationStatus === 'verified')
+      .map(t => t.category)
+  )
   return ['all', ...Array.from(cats)]
 })
 
 // 从真实工具数据生成价格表
 const pricingComparison = computed(() => {
-  let tools = toolsStore.tools.filter(t => t.versions && t.versions.length > 0)
+  let tools = toolsStore.tools.filter(t =>
+    (!t.verificationStatus || t.verificationStatus === 'verified') &&
+    t.versions &&
+    t.versions.length > 0
+  )
 
   if (pricingCategory.value !== 'all') {
     tools = tools.filter(t => t.category === pricingCategory.value)

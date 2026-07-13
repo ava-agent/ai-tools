@@ -1,7 +1,7 @@
 // Generated from src/data/tools.js.
 export default {
   "verificationStatus": "verified",
-  "lastVerified": "2026-07-07",
+  "lastVerified": "2026-07-13",
   "sources": [
     "https://v0.app/pricing",
     "https://v0.app/",
@@ -41,7 +41,7 @@ export default {
   "funRanking": "夯夯",
   "personalExperience": {
     "rating": 4,
-    "insights": "截至 2026-07-07，v0 官方 pricing 显示 Free、Team、Business、Enterprise，并列出 v0 Mini/Pro/Max/Max Fast 的 token 价格。Free 含 $5 monthly credits 和 7 messages/day，Team/Business 是 $30/$100 每用户每月且每用户含 $30 monthly credits。旧的 Premium $20 和具体 GPT-5/AutoFix 断言不应再保留。",
+    "insights": "截至 2026-07-13，v0 官方 pricing 显示 Free、Team、Business、Enterprise，并列出 v0 Mini/Pro/Max/Max Fast 的 token 价格。Free 含 $5 monthly credits 和 7 messages/day，Team/Business 是 $30/$100 每用户每月且每用户含 $30 monthly credits。旧的 Premium $20 和具体 GPT-5/AutoFix 断言不应再保留。",
     "pitfalls": [
       "预算按 credits 和 token 单价估算",
       "复杂 UI 和业务逻辑仍要人工改",

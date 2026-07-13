@@ -1,7 +1,7 @@
 // Generated from src/data/tools.js.
 export default {
   "verificationStatus": "verified",
-  "lastVerified": "2026-07-07",
+  "lastVerified": "2026-07-13",
   "sources": [
     "https://gemini.google/overview/image-generation/",
     "https://ai.google.dev/gemini-api/docs/image-generation",
@@ -49,7 +49,7 @@ export default {
   "funRanking": "夯",
   "personalExperience": {
     "rating": 4,
-    "insights": "截至 2026-07-07，这个条目应指向 Gemini 图像生成，而不是一个独立轻量图表服务。Nano Banana 是 Google 在 Gemini app 与 Gemini API 场景中的图像模型族昵称，当前选型重点是 Nano Banana 2 Lite、Nano Banana 2 与 Nano Banana Pro；旧的 gemini-2.5-flash-image 已进入 legacy 迁移口径。",
+    "insights": "截至 2026-07-13，这个条目应指向 Gemini 图像生成，而不是一个独立轻量图表服务。Nano Banana 是 Google 在 Gemini app 与 Gemini API 场景中的图像模型族昵称，当前选型重点是 Nano Banana 2 Lite、Nano Banana 2 与 Nano Banana Pro；旧的 gemini-2.5-flash-image 已进入 legacy 迁移口径。",
     "pitfalls": [
       "使用 Gemini 或 Google AI Studio 官方入口",
       "明确选择 API 模型 ID",

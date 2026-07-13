@@ -78,6 +78,7 @@ describe('HeroSection', () => {
     expect(stats.classes()).toEqual(expect.arrayContaining(['grid', 'grid-cols-3', 'max-w-lg']))
     expect(firstStat.classes()).toContain('min-w-0')
     expect(firstLabel.classes()).toEqual(expect.arrayContaining(['leading-tight', 'break-words']))
+    expect(wrapper.text()).not.toMatch(/125\+|7\+/)
   })
 
   it('loads the optimized hero artwork with high priority', () => {

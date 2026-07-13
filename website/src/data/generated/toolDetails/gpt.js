@@ -1,14 +1,14 @@
 // Generated from src/data/tools.js.
 export default {
   "verificationStatus": "verified",
-  "lastVerified": "2026-07-07",
+  "lastVerified": "2026-07-13",
   "sources": [
     "https://developers.openai.com/api/docs/guides/latest-model",
     "https://developers.openai.com/api/docs/pricing",
     "https://openai.com/chatgpt/pricing/"
   ],
   "id": "gpt",
-  "name": "GPT-5.5 / OpenAI",
+  "name": "GPT-5.6 / OpenAI",
   "category": "llm",
   "subcategory": "通用大模型",
   "developer": "OpenAI",
@@ -17,7 +17,7 @@ export default {
     {
       "type": "Global",
       "pricing": "ChatGPT Free/Go/Plus/Pro/Business/Edu/Enterprise；API 按模型、工具、服务层和缓存计费",
-      "models": "gpt-5.5, gpt-5.5-pro, GPT-5 family, reasoning/audio/image/video models",
+      "models": "gpt-5.6-sol、gpt-5.6-terra、gpt-5.6-luna 与 OpenAI reasoning/audio/image/video models",
       "link": "https://developers.openai.com/api/docs/guides/latest-model"
     }
   ],
@@ -25,7 +25,7 @@ export default {
   "contextWindow": "取决于模型、API 与工具配置；以官方模型和价格文档为准",
   "chineseSupport": 3,
   "decisionSummary": {
-    "verdict": "生态最完整的通用 AI 平台，GPT-5.5 适合复杂生产工作流和 Agent，但价格/工具计费要精细控制。",
+    "verdict": "生态完整的通用 AI 平台，GPT-5.6 系列适合复杂生产工作流和 Agent，但价格、工具与服务层计费要精细控制。",
     "bestFor": "通用任务、生态集成、推理任务、Agent 工作流、多模态工具链",
     "avoidIf": "你需要固定低成本、国内无障碍访问，或只做简单批量文本任务",
     "mainRisk": "模型、ChatGPT 计划、API 工具和服务层计费变化快，旧固定 GPT 口径会误导成本判断",
@@ -36,7 +36,7 @@ export default {
     ]
   },
   "pros": [
-    "官方 GPT-5.5 文档定位为复杂生产工作流、工具型 Agent、长上下文检索和代码场景",
+    "GPT-5.6 sol/terra/luna 覆盖不同性能和成本层级，适合复杂生产工作流、工具型 Agent 与代码场景",
     "Responses API、托管工具、结构化输出、推理 effort 和 verbosity 控制完整",
     "ChatGPT 生态成熟，覆盖对话、文件、数据分析、图像、视频和自定义 GPT/应用入口",
     "OpenAI API 平台和 Codex/Agents SDK 生态衔接强",
@@ -52,7 +52,7 @@ export default {
   "funRanking": "夯夯夯",
   "personalExperience": {
     "rating": 5,
-    "insights": "截至 2026-07-07，OpenAI 官方开发者文档的最新模型指南仍指向 GPT-5.5，并强调不要把它当作旧 GPT-5.x 提示词栈的直接替换。本站采用 GPT-5.5 / OpenAI 生态口径：适合复杂生产工作流、工具型 Agent、长上下文检索和代码任务，但必须按模型、工具、缓存、服务层和实际 token 用量控制成本。",
+    "insights": "截至 2026-07-13，当前 OpenAI 模型入口以 GPT-5.6 sol/terra/luna 分层。本站采用 GPT-5.6 / OpenAI 生态口径：适合复杂生产工作流、工具型 Agent 和代码任务，但必须按模型、工具、缓存、服务层和实际用量控制成本。",
     "pitfalls": [
       "不要沿用旧固定 GPT 提示词和价格判断",
       "控制 reasoning effort、verbosity 和工具调用",
@@ -71,7 +71,7 @@ export default {
     "OpenAI",
     "生态",
     "推理",
-    "GPT-5.5",
+    "GPT-5.6",
     "已核验"
   ]
 }

@@ -84,6 +84,7 @@ describe('content freshness safeguards', () => {
         id: tool.id,
         name: tool.name,
         category: tool.category,
+        verificationStatus: tool.verificationStatus,
         versions: (tool.versions || []).map((version) => ({ pricing: version.pricing })),
         freeQuota: tool.freeQuota,
         personalExperience: { rating: tool.personalExperience?.rating || 0 }
@@ -159,7 +160,8 @@ describe('content freshness safeguards', () => {
 
     for (const category of categories) {
       const categoryTools = aiToolsData.filter((tool) => tool.category === category.id)
-      const expectedFeaturedIds = [...categoryTools]
+      const expectedFeaturedIds = categoryTools
+        .filter((tool) => tool.verificationStatus === 'verified')
         .sort(
           (a, b) =>
             (b.personalExperience?.rating || 0) - (a.personalExperience?.rating || 0) ||
@@ -212,7 +214,7 @@ describe('content freshness safeguards', () => {
         'https://api-docs.deepseek.com/updates'
       ])
     )
-    expect(deepseek.lastVerified).toBe('2026-07-07')
+    expect(deepseek.lastVerified).toBe('2026-07-13')
     expect(deepseek.decisionSummary.mainRisk).toMatch(/官方预告|2026-07-24|兼容别名|下线/)
     expect(deepseek.decisionSummary.mainRisk).not.toContain('退役')
   })
@@ -229,11 +231,11 @@ describe('content freshness safeguards', () => {
     expect(text).toContain('20,000 monthly credits')
     expect(text).toContain('$0.02/credit')
     expect(text).toContain('300 credits')
-    expect(qoder.lastVerified).toBe('2026-07-07')
+    expect(qoder.lastVerified).toBe('2026-07-13')
     expect(qoder.sources).toEqual(
       expect.arrayContaining([
         'https://docs.qoder.com/account/pricing',
-        'https://docs.qoder.com/account/credits'
+        'https://docs.qoder.com/Credits'
       ])
     )
     expect(qoder.decisionSummary.mainRisk).toMatch(/credits|降级|真实成本/)
@@ -248,7 +250,7 @@ describe('content freshness safeguards', () => {
     expect(text).toContain('2026-09-24')
     expect(text).toContain('shut down')
     expect(text).toContain('短期')
-    expect(sora.lastVerified).toBe('2026-07-07')
+    expect(sora.lastVerified).toBe('2026-07-13')
     expect(sora.personalExperience.rating).toBeLessThan(4)
     expect(sora.decisionSummary.avoidIf).toContain('长期稳定 API')
   })
@@ -277,7 +279,7 @@ describe('content freshness safeguards', () => {
       const text = JSON.stringify(tool)
 
       expect(tool, id).toBeTruthy()
-      expect(tool.lastVerified, id).toBe('2026-07-07')
+      expect(tool.lastVerified, id).toBe('2026-07-13')
       terms.forEach((term) => {
         expect(text, `${id} includes ${term}`).toContain(term)
       })
@@ -461,7 +463,7 @@ describe('content freshness safeguards', () => {
     const videoNode = decisionTrees.multimodal.nodes.find((node) => node.id === 'video')
     const fluxOption = imageNode.options.find((option) => option.toolIds?.includes('flux'))
     const jimengOption = imageNode.options.find((option) => option.toolIds?.includes('jimeng'))
-    const klingOption = videoNode.options.find((option) => option.toolIds?.includes('kling'))
+    const hailuoOption = videoNode.options.find((option) => option.toolIds?.includes('hailuo'))
 
     expect(fluxOption.reason).toContain('开放权重')
     expect(fluxOption.reason).toContain('商用授权')
@@ -469,9 +471,9 @@ describe('content freshness safeguards', () => {
     expect(jimengOption.reason).toContain('当前入口')
     expect(jimengOption.reason).toContain('核算')
     expect(jimengOption.reason).not.toMatch(/中文提示词最佳|免费友好/)
-    expect(klingOption.reason).toContain('订阅积分')
-    expect(klingOption.reason).toContain('API Resource Packages')
-    expect(klingOption.reason).not.toContain('免费层')
+    expect(hailuoOption.reason).toContain('credits')
+    expect(hailuoOption.reason).toContain('API')
+    expect(hailuoOption.reason).not.toContain('免费层')
   })
 
   it('keeps medical matcher recommendations conservative', () => {
@@ -581,7 +583,7 @@ describe('content freshness safeguards', () => {
       multimodalImage.options.find((option) => option.result === 'GPT Image / ChatGPT 图像').toolIds
     ).toEqual(['dalle'])
     expect(prototypeScenario.primaryToolIds).toEqual(['trae'])
-    expect(videoScenario.primaryToolIds).toEqual(['kling'])
+    expect(videoScenario.primaryToolIds).toEqual(['runway'])
 
     const decisionToolIds = Object.values(decisionTrees)
       .flatMap((tree) => tree.nodes)
@@ -631,19 +633,25 @@ describe('content freshness safeguards', () => {
     )
     const deprecatedTools = aiToolsData.filter((tool) => tool.verificationStatus === 'deprecated')
     const historicalTools = aiToolsData.filter((tool) => tool.verificationStatus === 'historical')
-    const expectedNeedsReviewIds = []
-    const expectedDeprecatedIds = ['ui-ux-pro-max-skill', 'week-report-skill', 'think-harder-skill']
-    const expectedHistoricalIds = ['continue', 'supabase-realtime-skill']
-    const reviewBoundaryTools = [...needsReviewTools, ...deprecatedTools]
+    const expectedNeedsReviewIds = ['kiro', 'kling', 'coze', 'yi', 'research-skill']
+    const expectedDeprecatedIds = []
+    const expectedHistoricalIds = [
+      'continue',
+      'autogen',
+      'supabase-realtime-skill',
+      'week-report-skill',
+      'think-harder-skill'
+    ]
+    const reviewBoundaryTools = [...needsReviewTools, ...deprecatedTools, ...historicalTools]
     const uncertaintyPattern =
       /公开来源不足|未发现|未核到|待复核|以产品内为准|取决于|暂无|不能|未确认|未验证|需要|需按/
     const overpromisePattern =
       /永久免费|完全免费|无限额度|效率提升远超成本|最强|价格最低|业界领先|杜绝|完全公开可审计|free forever|completely free|unlimited|strongest|best-in-class|best overall|the best/i
-    const reviewBoundaryForbiddenPattern = /一键循证|夯夯|夯夯夯/
+    const reviewBoundaryForbiddenPattern = /一键循证|夯夯|夯夯夯|(?:^|\s)夯(?:\s|$)/
     const reviewBoundarySwotPromotionPattern =
       /需求增长|需求高|生态增长|价值明确|需求真实|需求强|流程可标准化|方法价值高/
-    const riskBoundaryPattern = /公开来源|不足|未|没有|不能|需|缺少|依赖|风险|边界/
-    const currentVerificationDate = new Date('2026-07-08T23:59:59Z')
+    const riskBoundaryPattern = /公开来源|不足|未|不再|没有|不能|需|缺少|依赖|风险|边界|归档|历史/
+    const currentVerificationDate = new Date('2026-07-13T23:59:59Z')
 
     expect(needsReviewTools.map((tool) => tool.id)).toEqual(expectedNeedsReviewIds)
     expect(deprecatedTools.map((tool) => tool.id)).toEqual(expectedDeprecatedIds)

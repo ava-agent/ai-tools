@@ -1,7 +1,7 @@
 // Generated from src/data/tools.js.
 export default {
   "verificationStatus": "verified",
-  "lastVerified": "2026-07-08",
+  "lastVerified": "2026-07-13",
   "sources": [
     "https://github.com/agentscope-ai/agentscope",
     "https://docs.agentscope.io/",
@@ -11,7 +11,7 @@ export default {
   "name": "AgentScope",
   "category": "agent",
   "subcategory": "开发框架",
-  "developer": "agentscope-ai / open-source community",
+  "developer": "AgentScope / Alibaba Tongyi Lab",
   "logo": null,
   "versions": [
     {
@@ -42,7 +42,7 @@ export default {
   "funRanking": "夯",
   "personalExperience": {
     "rating": 4,
-    "insights": "截至 2026-07-08，更有用的理解方式是 AgentScope 2.0：事件流、权限控制、多会话服务、workspace/sandbox 支持、long-term memory 和 Agent Team。这让它更适合生产形态实验，但也带来迁移和治理工作。",
+    "insights": "截至 2026-07-13，更有用的理解方式是 AgentScope 2.0：事件流、权限控制、多会话服务、workspace/sandbox 支持、long-term memory 和 Agent Team。这让它更适合生产形态实验，但也带来迁移和治理工作。",
     "pitfalls": [
       "把 2.0 当作迁移边界处理",
       "授予工具写权限前先设计权限和沙箱策略",

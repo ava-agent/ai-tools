@@ -1,7 +1,7 @@
 // Generated from src/data/tools.js.
 export default {
   "verificationStatus": "verified",
-  "lastVerified": "2026-07-08",
+  "lastVerified": "2026-07-13",
   "sources": [
     "https://www.tencent.com/en-us/articles/2202235.html",
     "https://cloud.tencent.com/document/product/1804/123461",
@@ -17,7 +17,7 @@ export default {
   "versions": [
     {
       "type": "CN/Open Source",
-      "pricing": "消费端、腾讯云 API 和开源模型分开核算；腾讯云 API 首次开通可领 100 积分，预付 1,000 积分 100 元，后付 0.12 元/积分",
+      "pricing": "消费端、腾讯云 API、TokenHub 新入口和开源模型分开核算；旧平台已停止新购，存量服务按官方迁移说明继续使用",
       "models": "Hunyuan 3D 3.0、Hunyuan3D 2.0、Hunyuan3D-2.1 Series",
       "link": "https://3d.hunyuan.tencent.com"
     }
@@ -27,7 +27,7 @@ export default {
   "chineseSupport": 5,
   "pros": [
     "腾讯将 Hunyuan 3D 3.0 定位为全球 3D 创作引擎，支持 text-to-3D、image-to-3D 和 Sketch-to-3D 输入",
-    "腾讯云混元生3D API 文档列出一次性 100 积分免费包、1,000 积分 100 元、10,000 积分 980 元、后付费 0.12 元/积分",
+    "新模型服务正在迁移至 TokenHub；旧平台停止新购后，存量账号应按官方迁移说明处理",
     "腾讯云 API 扣减规则显示专业版 Normal 20 积分/次、LowPoly/Sketch 25、Geometry 15；极速版文/图生 3D 默认 15 积分/次",
     "开源 Hunyuan3D 2.0 与 Hunyuan3D-2.1 Series 提供消费站点之外的本地和研究路径",
     "消费端和开源/本地路线要按具体入口确认 OBJ 和 GLB 等导出格式",
@@ -35,7 +35,7 @@ export default {
     "当格式和质量要求匹配时，输出可进入 Unity、Unreal、Blender 等常见 3D 工作流"
   ],
   "cons": [
-    "消费云端、腾讯云 API、GitHub 和 Hugging Face 路线的许可、成本和运维假设不同",
+    "TokenHub 新入口、旧平台存量服务、消费云端、GitHub 和 Hugging Face 路线的许可、成本与运维假设不同",
     "不能把消费端免费次数或 credits 直接套用到腾讯云 API 计费",
     "本地运行需要 GPU 显存和依赖管理，不只是开一个网页账号",
     "商用要按所选路线复核许可和生成资产权利",
@@ -45,7 +45,7 @@ export default {
   "funRanking": "夯",
   "personalExperience": {
     "rating": 4,
-    "insights": "截至 2026-07-08，混元 3D 应拆成三条路线看：Hunyuan 3D 3.0 消费/云端产品、腾讯云混元生3D API，以及开源 Hunyuan3D 2.0 / Hunyuan3D-2.1 Series 模型。腾讯云 API 现有一次性 100 积分免费包、预付积分包和 0.12 元/积分后付费，且不同生成类型会按 15/20/25/30/50 等积分扣减；这个区分比“国产 3D 工具”标签更影响成本、许可和部署判断。",
+    "insights": "截至 2026-07-13，混元 3D 应拆成三条路线看：Hunyuan 3D 3.0 消费/云端产品、腾讯云混元生3D API，以及开源 Hunyuan3D 2.0 / Hunyuan3D-2.1 Series 模型。腾讯云 API 现有一次性 100 积分免费包、预付积分包和 0.12 元/积分后付费，且不同生成类型会按 15/20/25/30/50 等积分扣减；这个区分比“国产 3D 工具”标签更影响成本、许可和部署判断。",
     "pitfalls": [
       "比较成本前先选定网页、腾讯云 API 或开源路线",
       "不要把消费端免费次数套用到腾讯云 API",

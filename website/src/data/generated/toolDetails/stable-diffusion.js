@@ -1,7 +1,7 @@
 // Generated from src/data/tools.js.
 export default {
   "verificationStatus": "verified",
-  "lastVerified": "2026-07-07",
+  "lastVerified": "2026-07-13",
   "sources": [
     "https://stability.ai/license",
     "https://platform.stability.ai/pricing",
@@ -21,13 +21,13 @@ export default {
       "link": "https://stability.ai/license"
     }
   ],
-  "freeQuota": "核心模型可在许可范围内使用；商业收入超过 USD $1M 等情况需看 Stability AI license",
+  "freeQuota": "核心模型可在许可范围内使用；Stability API 新账号当前提供 25 free credits；商业收入超过 USD $1M 等情况需看 Stability AI license",
   "contextWindow": "N/A",
   "chineseSupport": 3,
   "pros": [
     "Stable Diffusion 3.5 仍是本地和私有化图像生成的重要路线",
     "Core Models license 对低于 USD $1M 年收入的商业主体更友好，但不是无条件无限制",
-    "Stability API 以 credits 计费，1 credit = $0.01，适合把自托管和 API 成本分开估算",
+    "Stability API 新账号当前提供 25 free credits，之后以 credits 计费，1 credit = $0.01",
     "ComfyUI、LoRA、ControlNet 等生态适合定制化工作流",
     "可在自托管、API 和 Stable Assistant 等入口之间选择"
   ],
@@ -41,7 +41,7 @@ export default {
   "funRanking": "夯",
   "personalExperience": {
     "rating": 4,
-    "insights": "截至 2026-07-07，Stability AI 官方许可页把 Stable Diffusion 3.5 Suite 放在 Core Models 许可框架内，并明确 USD $1M 年收入门槛；开发者平台 pricing 则按 credits 计费。本站不再把它写成无条件免费、无限制或无审核，而改为“自托管许可 + API credits + 本地算力”的三段式判断。",
+    "insights": "截至 2026-07-13，Stability AI 官方许可页把 Stable Diffusion 3.5 Suite 放在 Core Models 许可框架内，并明确 USD $1M 年收入门槛；开发者平台 pricing 则按 credits 计费。本站不再把它写成无条件免费、无限制或无审核，而改为“自托管许可 + API credits + 本地算力”的三段式判断。",
     "pitfalls": [
       "先确认收入规模和用途是否落在许可范围内",
       "API 成本按 credits 和具体模型估算",

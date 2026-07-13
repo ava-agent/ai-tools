@@ -1,9 +1,9 @@
 // Generated from src/data/tools.js.
 export default {
-  "verificationStatus": "deprecated",
-  "lastVerified": "2026-07-08",
+  "verificationStatus": "historical",
+  "lastVerified": "2026-07-13",
   "sources": [
-    "公开来源不足：未发现同名 week-report-generator skill（检查于 2026-07-08）"
+    "公开来源不足：未发现同名 week-report-generator skill（检查于 2026-07-13）"
   ],
   "id": "week-report-skill",
   "name": "week-report-generator",
@@ -66,6 +66,6 @@ export default {
     "Skills",
     "周报",
     "自动化",
-    "deprecated"
+    "historical"
   ]
 }

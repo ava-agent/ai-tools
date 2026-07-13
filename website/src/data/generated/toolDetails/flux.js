@@ -1,7 +1,7 @@
 // Generated from src/data/tools.js.
 export default {
   "verificationStatus": "verified",
-  "lastVerified": "2026-07-07",
+  "lastVerified": "2026-07-13",
   "sources": [
     "https://bfl.ai/pricing",
     "https://docs.bfl.ai/quick_start/pricing",
@@ -44,7 +44,7 @@ export default {
   "funRanking": "夯夯",
   "personalExperience": {
     "rating": 4.5,
-    "insights": "截至 2026-07-07，Black Forest Labs 官方文档把 FLUX.2 作为推荐模型家族：FLUX.2 [klein] 面向实时/高量，[pro] 面向生产，[flex] 面向精细控制，[max] 面向最高质量。价格页和 API 文档都强调按生成计费，FLUX MCP 与开放权重路线也要按授权和 host 权限单独评估。",
+    "insights": "截至 2026-07-13，Black Forest Labs 官方文档把 FLUX.2 作为推荐模型家族：FLUX.2 [klein] 面向实时/高量，[pro] 面向生产，[flex] 面向精细控制，[max] 面向最高质量。价格页和 API 文档都强调按生成计费，FLUX MCP 与开放权重路线也要按授权和 host 权限单独评估。",
     "pitfalls": [
       "先区分 API、Playground、本地权重和商业授权路径",
       "FLUX.2 [dev] 的 non-commercial 限制要在商用前核对",

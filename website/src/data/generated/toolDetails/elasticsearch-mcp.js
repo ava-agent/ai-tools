@@ -1,14 +1,14 @@
 // Generated from src/data/tools.js.
 export default {
   "verificationStatus": "verified",
-  "lastVerified": "2026-07-08",
+  "lastVerified": "2026-07-13",
   "sources": [
     "https://www.elastic.co/docs/explore-analyze/ai-features",
     "https://www.elastic.co/docs/explore-analyze/ai-features/agent-builder/mcp-server",
     "https://github.com/elastic/mcp-server-elasticsearch"
   ],
   "id": "elasticsearch-mcp",
-  "name": "Elasticsearch MCP",
+  "name": "Elastic Agent Builder MCP server",
   "category": "mcp",
   "subcategory": "数据工具",
   "developer": "Elastic",
@@ -21,8 +21,8 @@ export default {
       "link": "https://www.elastic.co/docs/explore-analyze/ai-features/agent-builder/mcp-server"
     },
     {
-      "type": "Legacy server",
-      "pricing": "旧版 mcp-server-elasticsearch 可自托管，官方定位为较早 Elasticsearch 版本的受限路径",
+      "type": "Deprecated legacy server",
+      "pricing": "旧版 mcp-server-elasticsearch 已弃用，仅接收关键安全更新，不再作为新项目路径",
       "models": "提供两种 MCP 服务器方案；访问范围由 API 密钥被授予的权限决定",
       "link": "https://github.com/elastic/mcp-server-elasticsearch"
     }
@@ -38,7 +38,7 @@ export default {
     "适合把日志、索引 mapping、ES|QL/search 辅助带入受控 Agent 流程"
   ],
   "cons": [
-    "旧 mcp-server-elasticsearch 已不应作为新项目首选，主要适合老版本或迁移期",
+    "旧 mcp-server-elasticsearch 已弃用且仅接收关键安全更新，只适合老版本迁移期",
     "API_KEY 权限过大可能暴露大量日志、PII、业务数据或高成本查询面",
     "必须按最小权限原则、索引范围、只读查询和查询成本限制来配置",
     "大规模搜索/ES|QL 查询可能影响集群性能与费用"
@@ -47,7 +47,7 @@ export default {
   "funRanking": "夯",
   "personalExperience": {
     "rating": 3.5,
-    "insights": "截至 2026-07-08，Elastic MCP 选型要先区分 Agent Builder MCP server 与 legacy server。新 Elastic 9.2+ 与 Serverless projects 优先走 Agent Builder；旧 server 适合有限只读排查，并且 API_KEY 必须最小权限。",
+    "insights": "截至 2026-07-13，Elastic MCP 选型要先区分 Agent Builder MCP server 与 legacy server。新 Elastic 9.2+ 与 Serverless projects 优先走 Agent Builder；旧 server 适合有限只读排查，并且 API_KEY 必须最小权限。",
     "pitfalls": [
       "优先 Agent Builder",
       "API_KEY 最小 scope",

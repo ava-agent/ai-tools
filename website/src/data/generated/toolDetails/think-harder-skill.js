@@ -1,9 +1,9 @@
 // Generated from src/data/tools.js.
 export default {
-  "verificationStatus": "deprecated",
-  "lastVerified": "2026-07-08",
+  "verificationStatus": "historical",
+  "lastVerified": "2026-07-13",
   "sources": [
-    "公开来源不足：未发现同名 think-harder skill（检查于 2026-07-08）",
+    "公开来源不足：未发现同名 think-harder skill（检查于 2026-07-13）",
     "邻近本地 skill: superpowers:brainstorming",
     "邻近本地 skill: superpowers:systematic-debugging"
   ],
@@ -67,6 +67,6 @@ export default {
   "tags": [
     "Skills",
     "推理",
-    "deprecated"
+    "historical"
   ]
 }

@@ -1,7 +1,7 @@
 // Generated from src/data/tools.js.
 export default {
   "verificationStatus": "verified",
-  "lastVerified": "2026-07-07",
+  "lastVerified": "2026-07-13",
   "sources": [
     "https://support.google.com/notebooklm/answer/16269187?hl=en",
     "https://support.google.com/notebooklm/answer/16213268?hl=en",
@@ -43,7 +43,7 @@ export default {
   "funRanking": "夯夯",
   "personalExperience": {
     "rating": 4,
-    "insights": "截至 2026-07-07，NotebookLM 更适合被定位为“基于资料源的研究/写作助手”。标准版仍是 100 notebooks、50 sources/notebook、50 chat queries/day 的个人资料整理入口；如果团队需要 Video Overviews、Deep Research、Slide Decks、Infographics、Watermark Removal 或更高 source limits，应核对 Plus/Pro/Ultra、Cloud 或 Workspace 权益。",
+    "insights": "截至 2026-07-13，NotebookLM 更适合被定位为“基于资料源的研究/写作助手”。标准版仍是 100 notebooks、50 sources/notebook、50 chat queries/day 的个人资料整理入口；如果团队需要 Video Overviews、Deep Research、Slide Decks、Infographics、Watermark Removal 或更高 source limits，应核对 Plus/Pro/Ultra、Cloud 或 Workspace 权益。",
     "pitfalls": [
       "不是通用对话模型",
       "高级额度与功能受 Google 计划、地区和账号类型影响",

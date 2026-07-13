@@ -16,7 +16,7 @@ export const battleCatalog = [
   {
     "id": "trae",
     "name": "Trae",
-    "developer": "字节跳动",
+    "developer": "深圳市脸萌科技有限公司（字节跳动旗下）",
     "bestFor": "国内开发者、预算有限团队、快速原型",
     "pros": [
       "价格梯度清晰，Lite $3/月起，Pro 7 天试用后 $10/月",
@@ -111,7 +111,7 @@ export const battleCatalog = [
     "bestFor": "Google 生态用户、尝鲜新品",
     "pros": [
       "Google 官方 agentic development platform",
-      "Google AI Pro $19.99/month 提供 Antigravity higher rate limits"
+      "Google AI Pro 提供 Antigravity higher rate limits，订阅价格按地区确认"
     ],
     "personalExperience": {
       "rating": 3.5
@@ -133,7 +133,7 @@ export const battleCatalog = [
   {
     "id": "verdent",
     "name": "Verdent",
-    "developer": "Verdent Team",
+    "developer": "Verdent AI, Inc.",
     "bestFor": "复杂任务分解、多 Agent 协作、代码审查",
     "pros": [
       "免费试用提供 7 天 100 credits",
@@ -211,7 +211,7 @@ export const battleCatalog = [
   {
     "id": "cline",
     "name": "Cline",
-    "developer": "开源社区",
+    "developer": "Cline Bot Inc.",
     "bestFor": "VS Code 用户、自主执行任务",
     "pros": [
       "VS Code 扩展与 CLI 路径成熟，JetBrains 扩展需按当前企业/产品页确认",
@@ -224,7 +224,7 @@ export const battleCatalog = [
   {
     "id": "continue",
     "name": "Continue",
-    "developer": "开源社区",
+    "developer": "Continue team; now Cursor/Anysphere",
     "bestFor": "多 IDE 用户、自托管需求",
     "pros": [
       "历史上成熟的 VS Code/JetBrains 开源 AI 编码助手",
@@ -276,7 +276,7 @@ export const battleCatalog = [
   {
     "id": "crush",
     "name": "Crush",
-    "developer": "Charm Bracelet",
+    "developer": "Charmbracelet, Inc. (Charm)",
     "bestFor": "喜欢精美 TUI 的开源 CLI 用户",
     "pros": [
       "Charm Bracelet 官方维护，定位为终端里的 AI coding companion",
@@ -289,7 +289,7 @@ export const battleCatalog = [
   {
     "id": "openhands",
     "name": "OpenHands",
-    "developer": "OpenHands Community",
+    "developer": "OpenHands Community / All Hands AI, Inc.",
     "bestFor": "开源用户、多模型切换",
     "pros": [
       "官方 pricing 已将 Local、Individual、Enterprise 路径拆开",
@@ -314,11 +314,11 @@ export const battleCatalog = [
   },
   {
     "id": "gpt",
-    "name": "GPT-5.5 / OpenAI",
+    "name": "GPT-5.6 / OpenAI",
     "developer": "OpenAI",
     "bestFor": "通用任务、生态集成、推理任务、插件生态",
     "pros": [
-      "官方 GPT-5.5 文档定位为复杂生产工作流、工具型 Agent、长上下文检索和代码场景",
+      "GPT-5.6 sol/terra/luna 覆盖不同性能和成本层级，适合复杂生产工作流、工具型 Agent 与代码场景",
       "Responses API、托管工具、结构化输出、推理 effort 和 verbosity 控制完整"
     ],
     "personalExperience": {
@@ -409,7 +409,7 @@ export const battleCatalog = [
     "developer": "字节跳动",
     "bestFor": "前端开发、Bug 修复",
     "pros": [
-      "火山方舟模型列表于 2026-07-07 更新，并把最新模型指向 Seed 2.1",
+      "火山方舟当前主线包含 Seed 2.1 Pro / Turbo，适合 Coding、Agent 和长上下文任务",
       "Seed 2.1 面向 Coding、Agent、深度思考和长上下文任务，有 Pro/Turbo 路径"
     ],
     "personalExperience": {
@@ -419,7 +419,7 @@ export const battleCatalog = [
   {
     "id": "grok",
     "name": "Grok / xAI",
-    "developer": "xAI",
+    "developer": "SpaceXAI (xAI)",
     "bestFor": "实时信息、推理任务、X 平台用户、特定内容（成人内容等）",
     "pros": [
       "官方模型页已列出 Grok 4.3、Grok Build 等当前模型路线",
@@ -509,8 +509,8 @@ export const battleCatalog = [
   },
   {
     "id": "jianying",
-    "name": "剪映",
-    "developer": "字节跳动",
+    "name": "剪映 / CapCut",
+    "developer": "ByteDance",
     "bestFor": "视频/照片二次编辑",
     "pros": [
       "CapCut 覆盖浏览器、桌面和移动端编辑，并提供 AI 辅助视频与素材工作流",
@@ -540,7 +540,7 @@ export const battleCatalog = [
     "bestFor": "中文 3D 创作",
     "pros": [
       "腾讯将 Hunyuan 3D 3.0 定位为全球 3D 创作引擎，支持 text-to-3D、image-to-3D 和 Sketch-to-3D 输入",
-      "腾讯云混元生3D API 文档列出一次性 100 积分免费包、1,000 积分 100 元、10,000 积分 980 元、后付费 0.12 元/积分"
+      "新模型服务正在迁移至 TokenHub；旧平台停止新购后，存量账号应按官方迁移说明处理"
     ],
     "personalExperience": {
       "rating": 4
@@ -562,7 +562,7 @@ export const battleCatalog = [
   {
     "id": "qinglizi",
     "name": "氢离子 / 阿里健康",
-    "developer": "阿里健康 / 杭州智循建模科技",
+    "developer": "杭州智循建模科技有限公司（阿里健康氢离子）",
     "bestFor": "医学文献检索、指南查阅、科研阅读辅助",
     "pros": [
       "面向医生的医学文献、指南和原文阅读场景",
@@ -575,11 +575,11 @@ export const battleCatalog = [
   {
     "id": "coze",
     "name": "Coze",
-    "developer": "字节跳动",
+    "developer": "Global: SPRING (SG) PTE. LTD. / CN: 字节跳动（扣子）",
     "bestFor": "快速搭建 Bot、轻量工作流和可发布的 Agent 应用",
     "pros": [
       "面向 AI Agent 的低代码/无代码构建平台",
-      "Global 版 Free 每日 10 credits，Premium Lite 每日 100 credits"
+      "Global 与 CN 由不同法律主体和产品入口运营，采购时应分别确认条款"
     ],
     "personalExperience": {
       "rating": 4
@@ -588,7 +588,7 @@ export const battleCatalog = [
   {
     "id": "dify",
     "name": "Dify",
-    "developer": "开源社区",
+    "developer": "LangGenius, Inc.",
     "bestFor": "团队搭建 RAG、Agentic workflow 和可观测的 AI 应用",
     "pros": [
       "Dify Cloud 明确提供 Sandbox Free、Professional 和 Team 档",
@@ -614,7 +614,7 @@ export const battleCatalog = [
   {
     "id": "langchain",
     "name": "LangChain",
-    "developer": "开源社区",
+    "developer": "LangChain, Inc.",
     "bestFor": "开发者构建可观测、可评估、可部署的 Agent 应用",
     "pros": [
       "LangChain 提供 agent 开发入口，LangGraph 负责更可控的 stateful orchestration",
@@ -743,7 +743,7 @@ export const battleCatalog = [
   },
   {
     "id": "mistral",
-    "name": "Mistral / Le Chat",
+    "name": "Mistral / Vibe (former Le Chat)",
     "developer": "Mistral AI (法国)",
     "bestFor": "性价比优先、开源部署、欧洲合规场景",
     "pros": [
@@ -955,8 +955,8 @@ export const battleCatalog = [
     "developer": "Upstash",
     "bestFor": "开发时实时查阅最新 API 文档、减少过期代码示例和 hallucinated API",
     "pros": [
-      "提供远程 MCP 服务和本地 npx MCP Server 两种接入",
-      "支持 CLI + Skills 与 MCP 双模式"
+      "提供远程 MCP 服务，当前推荐通过 npx ctx7 setup 配置客户端",
+      "支持 CLI + Skills 与 MCP 双模式，远程端点为 https://mcp.context7.com/mcp"
     ],
     "personalExperience": {
       "rating": 5
@@ -995,7 +995,7 @@ export const battleCatalog = [
     "bestFor": "在 AI IDE 中直接管理 GitHub 仓库、Issue、PR",
     "pros": [
       "GitHub 官方 MCP Server",
-      "remote GitHub MCP server 已进入官方主路径，适合 repo、Issue、PR、Actions 的受控 AI 工作流"
+      "remote GitHub MCP server https://api.githubcopilot.com/mcp/ 已进入官方主路径，适合 repo、Issue、PR、Actions 的受控 AI 工作流"
     ],
     "personalExperience": {
       "rating": 4.5
@@ -1021,7 +1021,7 @@ export const battleCatalog = [
     "bestFor": "数据可视化、生成报表图表、项目进度展示",
     "pros": [
       "@antv/mcp-server-chart 是基于 AntV 的 TypeScript MCP server，用于图表生成和数据分析",
-      "server 暴露 25+ 图表类型，包括 generate_word_cloud_chart、generate_spreadsheet 等工具"
+      "server 暴露 26+ 图表类型，包括 generate_word_cloud_chart、generate_spreadsheet 等工具"
     ],
     "personalExperience": {
       "rating": 4
@@ -1042,7 +1042,7 @@ export const battleCatalog = [
   },
   {
     "id": "openmemory-mcp",
-    "name": "OpenMemory / Mem0 MCP",
+    "name": "Mem0 MCP",
     "developer": "Mem0",
     "bestFor": "跨 AI 客户端保存长期偏好、项目上下文和可复用工作方式",
     "pros": [
@@ -1073,7 +1073,7 @@ export const battleCatalog = [
     "bestFor": "让 Agent 在受控工作区内辅助维护 Postman collections、specs、environments 和 API 文档",
     "pros": [
       "Postman 官方 MCP Server，可让 Agent 管理 collections、specs、environments、workspaces 等 Postman 资源",
-      "提供 Minimal、Code、Full 三种配置，Full 覆盖 100+ tools，日常可先用 Minimal 降低工具面"
+      "提供 Minimal、Code、Full、Learn 四种配置，Full 覆盖 100+ tools，日常可先用 Minimal 降低工具面"
     ],
     "personalExperience": {
       "rating": 3.5
@@ -1082,7 +1082,7 @@ export const battleCatalog = [
   {
     "id": "atlassian-mcp",
     "name": "Atlassian Rovo MCP",
-    "developer": "Atlassian / Sooperset community alternative",
+    "developer": "Atlassian",
     "bestFor": "Atlassian Cloud 团队在 AI 客户端中查询、总结和受控更新 Jira/Confluence/Bitbucket 资料",
     "pros": [
       "官方 Atlassian Rovo MCP Server 是 cloud-hosted bridge，可连接 Jira、Confluence、Jira Service Management、Bitbucket 和 Compass",
@@ -1172,12 +1172,12 @@ export const battleCatalog = [
   },
   {
     "id": "docker-mcp",
-    "name": "Docker MCP",
+    "name": "Docker MCP Toolkit",
     "developer": "Docker",
     "bestFor": "在 Docker Desktop 管理的开发环境中运行和治理容器化 MCP servers",
     "pros": [
       "Docker MCP Toolkit 官方文档标注 Availability: Beta",
-      "Docker MCP Catalog 提供 300+ verified servers，并通过 profiles 组织不同项目的 server 配置"
+      "Docker MCP Catalog 通过 profiles 组织不同项目的 server 配置，server 数量以当前 Catalog 为准"
     ],
     "personalExperience": {
       "rating": 3.5
@@ -1224,7 +1224,7 @@ export const battleCatalog = [
   },
   {
     "id": "elasticsearch-mcp",
-    "name": "Elasticsearch MCP",
+    "name": "Elastic Agent Builder MCP server",
     "developer": "Elastic",
     "bestFor": "Elastic 9.2+ 或 Serverless 项目优先评估 Agent Builder MCP server，旧集群再考虑 legacy server",
     "pros": [
@@ -1238,7 +1238,7 @@ export const battleCatalog = [
   {
     "id": "autogen",
     "name": "AutoGen",
-    "developer": "Microsoft",
+    "developer": "Microsoft Research / community-managed",
     "bestFor": "学习多 Agent 架构、维护历史 AutoGen 项目、迁移 v0.2 到 v0.4",
     "pros": [
       "AutoGen Studio 提供无代码原型界面，基于 AgentChat",
@@ -1250,7 +1250,7 @@ export const battleCatalog = [
   },
   {
     "id": "zapier-ai",
-    "name": "Zapier AI Automation",
+    "name": "Zapier",
     "developer": "Zapier",
     "bestFor": "需要 9,000+ SaaS 连接、AI-to-app 操作和统一治理的业务自动化团队",
     "pros": [
@@ -1268,7 +1268,7 @@ export const battleCatalog = [
     "bestFor": "可视化编排、复杂分支、跨 SaaS 流程、AI agent/MCP 与自动化结合",
     "pros": [
       "Free 计划含 1,000 credits/month、无代码可视化工作流构建器和 3000+ apps",
-      "Core $9/mo、Pro $16/mo、Teams $29/mo 都以 10k credits/mo 为页面默认价格口径"
+      "统一 Make Plan 从 $9/月起，价格页默认按 5,000 credits 展示；Company 走定制采购"
     ],
     "personalExperience": {
       "rating": 3.5
@@ -1277,7 +1277,7 @@ export const battleCatalog = [
   {
     "id": "camel-ai",
     "name": "CAMEL-AI",
-    "developer": "CAMEL-AI.org",
+    "developer": "CAMEL-AI open-source community",
     "bestFor": "多 Agent 研究、数据生成、RAG/工具编排、Agent society 原型",
     "pros": [
       "CAMEL 聚焦多 Agent 研究与开发，覆盖 scaling laws、任务自动化、世界模拟和数据生成",
@@ -1290,7 +1290,7 @@ export const battleCatalog = [
   {
     "id": "agentscope",
     "name": "AgentScope",
-    "developer": "agentscope-ai / open-source community",
+    "developer": "AgentScope / Alibaba Tongyi Lab",
     "bestFor": "需要事件流、权限、沙箱、多租户和服务化的 Agent 应用",
     "pros": [
       "AgentScope 2.0 定位为具备事件驱动抽象的 production-ready agent framework",
@@ -1330,7 +1330,7 @@ export const battleCatalog = [
     "id": "udio",
     "name": "Udio",
     "developer": "Udio",
-    "bestFor": "原创音乐创作、BGM 生成、歌曲制作",
+    "bestFor": "平台内音乐创意试验、歌曲草稿和编辑探索",
     "pros": [
       "官方帮助中心明确 credit limits：Free 每日 10 credits + 每月 100 credits 上限",
       "Standard subscription 每月最多 2,400 credits，Pro subscription 每月最多 6,000 credits"
@@ -1345,7 +1345,7 @@ export const battleCatalog = [
     "developer": "Cohere",
     "bestFor": "企业 RAG 应用、知识库检索、多语言业务",
     "pros": [
-      "Command A+ 是 2026 年 Cohere Command A family 最新模型之一，支持图像、Agent、reasoning 和翻译能力",
+      "Command A+ 是 2026 年 Cohere Command A family 最新模型之一，提供 Apache 2.0 open weights，并支持图像、Agent、reasoning 和翻译能力",
       "Command A 官方定位为企业 Agent、tool use、RAG 和多语言任务"
     ],
     "personalExperience": {
@@ -1372,7 +1372,7 @@ export const battleCatalog = [
     "bestFor": "腾讯生态应用、中文内容生成、企业微信集成",
     "pros": [
       "腾讯云官方页面将混元描述为通用与多模态大模型家族，覆盖文本、图像、视频、3D 等模态",
-      "Hy3 于 2026-07-06 更新，强化 Coding、长文、推理和 Agent 能力"
+      "Hy3 正式版强化 Coding、长文、推理和 Agent 能力"
     ],
     "personalExperience": {
       "rating": 3.5
@@ -1381,7 +1381,7 @@ export const battleCatalog = [
   {
     "id": "frontend-design-skill",
     "name": "frontend-app-builder",
-    "developer": "OpenAI curated build-web-apps plugin",
+    "developer": "OpenAI",
     "bestFor": "页面改版、前端视觉现代化、从设计方向到真实浏览器验收的工作流",
     "pros": [
       "当前核验环境存在精确 frontend-app-builder Skill",
@@ -1394,7 +1394,7 @@ export const battleCatalog = [
   {
     "id": "webapp-testing-skill",
     "name": "frontend-testing-debugging",
-    "developer": "OpenAI curated build-web-apps plugin",
+    "developer": "OpenAI",
     "bestFor": "前端页面烟测、渲染错误排查、交互回归验证、响应式布局和控制台健康检查",
     "pros": [
       "frontend-testing-debugging 明确服务于渲染后的前端验证、UI 回归和交互调试",
@@ -1407,7 +1407,7 @@ export const battleCatalog = [
   {
     "id": "mcp-builder-skill",
     "name": "building-mcp-server-on-cloudflare",
-    "developer": "Cloudflare / OpenAI curated plugin",
+    "developer": "Cloudflare",
     "bestFor": "Cloudflare Workers 上的 remote MCP server 规划、MCP architecture 学习、把外部能力封装成 tools/resources/prompts",
     "pros": [
       "当前核验环境存在精确 building-mcp-server-on-cloudflare Skill",
@@ -1433,7 +1433,7 @@ export const battleCatalog = [
   {
     "id": "semgrep-skill",
     "name": "semgrep",
-    "developer": "Semgrep / Semgrep Skills",
+    "developer": "Semgrep",
     "bestFor": "已安装 Semgrep Skill、Semgrep CLI 或 MCP tools 的代码安全扫描、规则化漏洞检查、PR 辅助审计",
     "pros": [
       "semgrep/skills 公开仓库已列出 semgrep Skill，可运行 Semgrep static analysis scans 和 custom detection rules",
@@ -1550,10 +1550,10 @@ export const battleCatalog = [
   {
     "id": "supabase-skill",
     "name": "supabase",
-    "developer": "Supabase / OpenAI curated plugin",
+    "developer": "Supabase",
     "bestFor": "Supabase 项目开发、Auth/RLS 安全复核、CLI/MCP 排障、Postgres schema 和性能优化",
     "pros": [
-      "当前核验环境中的 supabase Skill 覆盖 Database、Auth、Edge Functions、Realtime、Storage、Vectors、Cron、Queues、CLI 和 MCP server",
+      "Supabase 官方公开 Agent Skill 覆盖 Database、Auth、Edge Functions、Realtime、Storage、Vectors、Cron、Queues、CLI 和 MCP server",
       "明确提醒 Supabase changes frequently，需要 verify against changelog 和当前 docs"
     ],
     "personalExperience": {
@@ -1576,14 +1576,14 @@ export const battleCatalog = [
   {
     "id": "ui-ux-pro-max-skill",
     "name": "ui-ux-pro-max",
-    "developer": "历史概念 / 公开来源不足",
-    "bestFor": "历史内容迁移时的合并候选；新任务应转用 frontend-app-builder 或 Product Design ideate",
+    "developer": "nextlevelbuilder",
+    "bestFor": "需要设计系统建议、多技术栈 UI 实现和 UX 检查清单的前端团队",
     "pros": [
-      "公开来源不足，旧条目可作为 UI/UX 设计增强概念留档",
-      "frontend-app-builder 是真实前端设计与实现工作流"
+      "官方 GitHub 仓库持续维护，并提供面向多种 Agent 和前端技术栈的安装路径",
+      "v2.0 提供基于项目需求生成设计系统的工作流"
     ],
     "personalExperience": {
-      "rating": 2.5
+      "rating": 4
     }
   },
   {
@@ -1615,7 +1615,7 @@ export const battleCatalog = [
   {
     "id": "research-skill",
     "name": "research",
-    "developer": "Product Design / AnyCap",
+    "developer": "Multiple unrelated skill sources",
     "bestFor": "产品 UX 研究、用户痛点聚类、竞品/市场/技术深度研究的证据化报告",
     "pros": [
       "精确 research Skill 存在：快速、基于来源的 UX 研究，聚焦用户痛点和体验摩擦",

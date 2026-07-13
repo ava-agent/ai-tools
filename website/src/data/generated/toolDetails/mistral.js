@@ -1,14 +1,14 @@
 // Generated from src/data/tools.js.
 export default {
   "verificationStatus": "verified",
-  "lastVerified": "2026-07-07",
+  "lastVerified": "2026-07-13",
   "sources": [
     "https://docs.mistral.ai/models/overview",
     "https://docs.mistral.ai/models/model-cards/mistral-large-3-25-12",
     "https://docs.mistral.ai/resources/known-limitations"
   ],
   "id": "mistral",
-  "name": "Mistral / Le Chat",
+  "name": "Mistral / Vibe (former Le Chat)",
   "category": "llm",
   "subcategory": "通用大模型",
   "developer": "Mistral AI (法国)",
@@ -16,12 +16,12 @@ export default {
   "versions": [
     {
       "type": "Global",
-      "pricing": "API 按模型 token 计费；Large 3 官方模型卡列出 $0.5/M input、$1.5/M output",
+      "pricing": "Vibe：Free / Pro $14.99/月 / Team $24.99/用户/月 / Enterprise 定制；API 按模型 token 另计",
       "models": "Mistral Medium 3.5, Mistral Small 4, Mistral Large 3, Ministral 3",
       "link": "https://docs.mistral.ai/models/overview"
     }
   ],
-  "freeQuota": "账号和 API tier 以 Mistral 控制台为准；生产用量按模型计费",
+  "freeQuota": "Vibe 提供 Free 计划；API tier 以 Mistral 控制台为准，生产用量按模型另计",
   "contextWindow": "Large 3 / Medium 3.5 / Small 4 / Ministral 3 最高 256K",
   "chineseSupport": 3,
   "pros": [
@@ -40,7 +40,7 @@ export default {
   "funRanking": "夯夯",
   "personalExperience": {
     "rating": 4,
-    "insights": "截至 2026-07-07，Mistral 官方模型页的主线已经不只是 Large 3，还包括 Medium 3.5、Small 4、Devstral 2 和 Ministral 3；known limitations 仍提醒按具体模型能力和限制选型。本站改为 Mistral / Le Chat 生态口径：适合想在开放权重、欧洲合规和 API 成本之间找平衡的团队，但不要用未经验证的榜单或订阅价做采购判断。",
+    "insights": "截至 2026-07-13，Mistral 的托管产品现以 Vibe（原 Le Chat）展示 Free、Pro、Team 与 Enterprise，API 仍按模型另计。模型主线包括 Medium 3.5、Small 4、Large 3、Devstral 2 和 Ministral 3；选型应同时核对计划、模型卡与限制。",
     "pitfalls": [
       "按具体模型卡核上下文和价格",
       "中文/国内场景先做小样本评测",

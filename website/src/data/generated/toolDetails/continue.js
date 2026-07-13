@@ -1,7 +1,7 @@
 // Generated from src/data/tools.js.
 export default {
   "verificationStatus": "historical",
-  "lastVerified": "2026-07-08",
+  "lastVerified": "2026-07-13",
   "sources": [
     "https://www.continue.dev/",
     "https://github.com/continuedev/continue",
@@ -11,7 +11,7 @@ export default {
   "name": "Continue",
   "category": "cli",
   "subcategory": "开源平台",
-  "developer": "开源社区",
+  "developer": "Continue team; now Cursor/Anysphere",
   "logo": null,
   "versions": [
     {
@@ -39,10 +39,10 @@ export default {
     "历史文档和当前 Cursor 生态之间需要区分"
   ],
   "bestFor": "多 IDE 用户、自托管需求",
-  "funRanking": "夯",
+  "funRanking": "历史",
   "personalExperience": {
     "rating": 3,
-    "insights": "截至 2026-07-08，Continue 官方首页显示团队已加入 Cursor，GitHub 仓库 README 明确该仓库已不再主动维护、对所有用户只读，并有 final 2.0.0 release 覆盖 VS Code extension、CLI 和 JetBrains plugin。它仍适合做历史参考或迁移评估，但不应继续作为“正在快速演进的开源主力平台”推荐。",
+    "insights": "截至 2026-07-13，Continue 官方首页显示团队已加入 Cursor，GitHub 仓库 README 明确该仓库已不再主动维护、对所有用户只读，并有 final 2.0.0 release 覆盖 VS Code extension、CLI 和 JetBrains plugin。它仍适合做历史参考或迁移评估，但不应继续作为“正在快速演进的开源主力平台”推荐。",
     "pitfalls": [
       "新项目优先评估 Cursor 或其他活跃替代",
       "区分历史 Continue 文档与当前 Cursor 生态",

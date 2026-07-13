@@ -1,22 +1,22 @@
 // Generated from src/data/tools.js.
 export default {
   "verificationStatus": "verified",
-  "lastVerified": "2026-07-08",
+  "lastVerified": "2026-07-13",
   "sources": [
-    "本地 skill: supabase",
-    "本地 skill: build-web-apps:supabase-postgres-best-practices",
+    "https://github.com/supabase/agent-skills/blob/main/skills/supabase/SKILL.md",
+    "https://supabase.com/docs/guides/getting-started/ai-skills",
     "https://supabase.com/docs"
   ],
   "id": "supabase-skill",
   "name": "supabase",
   "category": "skill",
   "subcategory": "数据库",
-  "developer": "Supabase / OpenAI curated plugin",
+  "developer": "Supabase",
   "logo": null,
   "versions": [
     {
-      "type": "Installed skill",
-      "pricing": "随当前 Supabase 插件环境可用；Supabase 项目和外部服务按官方账户计费",
+      "type": "Public official Agent Skill",
+      "pricing": "MIT 开源，需要单独安装；Supabase 项目和外部服务按官方账户计费",
       "models": "Supabase Database, Auth, Edge Functions, Realtime, Storage, Vectors, Cron, Queues, CLI and MCP server",
       "link": "https://supabase.com/docs"
     },
@@ -31,7 +31,7 @@ export default {
   "contextWindow": "N/A",
   "chineseSupport": 3,
   "pros": [
-    "当前核验环境中的 supabase Skill 覆盖 Database、Auth、Edge Functions、Realtime、Storage、Vectors、Cron、Queues、CLI 和 MCP server",
+    "Supabase 官方公开 Agent Skill 覆盖 Database、Auth、Edge Functions、Realtime、Storage、Vectors、Cron、Queues、CLI 和 MCP server",
     "明确提醒 Supabase changes frequently，需要 verify against changelog 和当前 docs",
     "安全清单覆盖 RLS、service_role 暴露、JWT metadata、views、SECURITY DEFINER 和 storage upsert",
     "Supabase CLI 命令要求通过 --help 发现，避免记忆过时",
@@ -46,7 +46,7 @@ export default {
   "funRanking": "夯夯",
   "personalExperience": {
     "rating": 4.5,
-    "insights": "这是本批里证据更充分的条目之一：当前核验环境有精确 supabase Skill，也有 Supabase Postgres best practices。推荐时重点应放在“先查 changelog / docs、做真实 SQL 或 CLI 验证、严守 RLS 安全清单”。",
+    "insights": "Supabase 已公开官方 agent-skills 仓库，supabase 与 supabase-postgres-best-practices 都需要单独安装。推荐时重点应放在先查 changelog/docs、做真实 SQL 或 CLI 验证、严守 RLS 安全清单。",
     "pitfalls": [
       "先查 changelog 和 docs",
       "RLS/权限变更必须验证",

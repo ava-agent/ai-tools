@@ -56,7 +56,7 @@
           class="text-3xl sm:text-4xl font-bold tabular-nums transition-all duration-300"
           :style="{ color: stat.color, textShadow: '0 0 40px ' + stat.color + '40' }"
         >
-          {{ statValues[stat.key] }}<span class="text-xl opacity-60">+</span>
+          {{ statValues[stat.key] }}
         </div>
         <div
           data-testid="hero-stat-label"

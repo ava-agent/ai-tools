@@ -1,7 +1,7 @@
 // Generated from src/data/tools.js.
 export default {
   "verificationStatus": "verified",
-  "lastVerified": "2026-07-08",
+  "lastVerified": "2026-07-13",
   "sources": [
     "https://jimeng.jianying.com/",
     "https://www.volcengine.com/docs/85621/1544714?lang=zh",
@@ -43,7 +43,7 @@ export default {
   "funRanking": "夯夯",
   "personalExperience": {
     "rating": 4,
-    "insights": "截至 2026-07-08，可官方确认的是即梦AI官网的一站式创作定位、火山引擎的即梦AI图片/视频 API 文档，以及付费服务协议中的积分/会员规则。页面不再写死第三方整理的消费者会员价或每日积分数；API 预算则按图片 0.2/0.22 元每张、视频 3.0 Pro 1 元/秒、1080p 0.63 元/秒、720p 0.28 元/秒这类火山引擎计费口径估算。",
+    "insights": "截至 2026-07-13，可官方确认的是即梦AI官网的一站式创作定位、火山引擎的即梦AI图片/视频 API 文档，以及付费服务协议中的积分/会员规则。页面不再写死第三方整理的消费者会员价或每日积分数；API 预算则按图片 0.2/0.22 元每张、视频 3.0 Pro 1 元/秒、1080p 0.63 元/秒、720p 0.28 元/秒这类火山引擎计费口径估算。",
     "pitfalls": [
       "消费者端会员价和权益以订单结算页价格为准",
       "API 计费与 App/网页积分体系分开核算",

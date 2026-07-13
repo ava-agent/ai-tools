@@ -1,7 +1,7 @@
 // Generated from src/data/tools.js.
 export default {
   "verificationStatus": "verified",
-  "lastVerified": "2026-07-08",
+  "lastVerified": "2026-07-13",
   "sources": [
     "https://trailofbits.com/skills/sharp-edges/",
     "邻近本地 skill: security-best-practices"
@@ -46,7 +46,7 @@ export default {
   "funRanking": "归档",
   "personalExperience": {
     "rating": 3.5,
-    "insights": "截至 2026-07-08，sharp-edges 有 Trail of Bits 公开上游，定位是发现 footgun designs、危险配置和缺乏 misuse resistance 的 API design；推荐时要说明需单独安装并结合人工复核。",
+    "insights": "截至 2026-07-13，sharp-edges 有 Trail of Bits 公开上游，定位是发现 footgun designs、危险配置和缺乏 misuse resistance 的 API design；推荐时要说明需单独安装并结合人工复核。",
     "pitfalls": [
       "先确认同名 Skill 来源",
       "结合威胁模型判断",

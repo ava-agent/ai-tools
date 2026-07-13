@@ -1,7 +1,7 @@
 // Generated from src/data/tools.js.
 export default {
   "verificationStatus": "verified",
-  "lastVerified": "2026-07-07",
+  "lastVerified": "2026-07-13",
   "sources": [
     "https://suno.com/pricing",
     "https://help.suno.com/en/articles/2746945",
@@ -43,7 +43,7 @@ export default {
   "funRanking": "夯夯",
   "personalExperience": {
     "rating": 3.5,
-    "insights": "截至 2026-07-07，Suno 官方 pricing 显示 Free $0、Pro $10 月付或 $8/月年付、Premier $30 月付或 $24/月年付；Free 使用 v4.5-all 且每日 50 credits，付费档使用 v5.5 并给新歌商业使用权。官方帮助页同时说明 Free/Basic 生成歌曲只可非商业使用。",
+    "insights": "截至 2026-07-13，Suno 官方 pricing 显示 Free $0、Pro $10 月付或 $8/月年付、Premier $30 月付或 $24/月年付；Free 使用 v4.5-all 且每日 50 credits，付费档使用 v5.5 并给新歌商业使用权。官方帮助页同时说明 Free/Basic 生成歌曲只可非商业使用。",
     "pitfalls": [
       "商业用途优先确认是否来自付费计划",
       "按 monthly credits 和歌曲数量估算产能",

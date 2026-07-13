@@ -1,7 +1,7 @@
 // Generated from src/data/tools.js.
 export default {
   "verificationStatus": "verified",
-  "lastVerified": "2026-07-07",
+  "lastVerified": "2026-07-13",
   "sources": [
     "https://support.claude.com/en/articles/11145838-use-claude-code-with-your-pro-or-max-plan",
     "https://support.claude.com/en/articles/11049741-what-is-the-max-plan",
@@ -43,7 +43,7 @@ export default {
   "funRanking": "夯",
   "personalExperience": {
     "rating": 5,
-    "insights": "截至 2026-07-07，Claude Code 仍适合把高难任务交给 Claude 在终端或 IDE 里推进。官方成本文档强调 API 路径按 token 消耗计费，订阅计划价格应回到 claude.com/pricing；Pro/Max 订阅路径和 API 路径要分开管理。",
+    "insights": "截至 2026-07-13，Claude Code 仍适合把高难任务交给 Claude 在终端或 IDE 里推进。官方成本文档强调 API 路径按 token 消耗计费，订阅计划价格应回到 claude.com/pricing；Pro/Max 订阅路径和 API 路径要分开管理。",
     "pitfalls": [
       "先确认是 Pro/Max 订阅路径还是 API token 路径",
       "关键任务再用",

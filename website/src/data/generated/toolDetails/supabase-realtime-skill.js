@@ -1,9 +1,9 @@
 // Generated from src/data/tools.js.
 export default {
   "verificationStatus": "historical",
-  "lastVerified": "2026-07-08",
+  "lastVerified": "2026-07-13",
   "sources": [
-    "公开来源不足：未发现同名 supabase-realtime skill（检查于 2026-07-08）",
+    "公开来源不足：未发现同名 supabase-realtime skill（检查于 2026-07-13）",
     "邻近本地 skill: supabase",
     "https://supabase.com/docs/guides/realtime"
   ],

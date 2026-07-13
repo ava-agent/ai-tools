@@ -1,7 +1,7 @@
 // Generated from src/data/tools.js.
 export default {
   "verificationStatus": "verified",
-  "lastVerified": "2026-07-08",
+  "lastVerified": "2026-07-13",
   "sources": [
     "https://developers.notion.com/guides/mcp/overview",
     "https://developers.notion.com/guides/mcp/get-started-with-mcp",
@@ -21,8 +21,8 @@ export default {
       "link": "https://developers.notion.com/guides/mcp/overview"
     },
     {
-      "type": "Local legacy",
-      "pricing": "local MCP server repository 不再是优先支持路径",
+      "type": "Local (not actively supported)",
+      "pricing": "local MCP server repository 仍可参考，但官方不再积极支持或监控",
       "models": "local MCP server repository；remote MCP 和 OAuth 入口优先",
       "link": "https://github.com/makenotion/notion-mcp-server"
     }
@@ -47,7 +47,7 @@ export default {
   "funRanking": "夯",
   "personalExperience": {
     "rating": 4,
-    "insights": "截至 2026-07-08，Notion MCP 的准确口径应从旧本地包转向官方 hosted server：remote MCP + standard OAuth，Agent 能在用户 access and permissions 范围内 read and write。选型重点是权限、限流、Notion AI/计划门槛和写操作确认。",
+    "insights": "截至 2026-07-13，Notion MCP 的准确口径应从旧本地包转向官方 hosted server：remote MCP + standard OAuth，Agent 能在用户 access and permissions 范围内 read and write。选型重点是权限、限流、Notion AI/计划门槛和写操作确认。",
     "pitfalls": [
       "限定 workspace/page 权限",
       "写入前人工确认",

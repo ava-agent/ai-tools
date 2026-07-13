@@ -1,7 +1,7 @@
 // Generated from src/data/tools.js.
 export default {
   "verificationStatus": "verified",
-  "lastVerified": "2026-07-07",
+  "lastVerified": "2026-07-13",
   "sources": [
     "https://hailuoai.video/",
     "https://hailuoai.video/doc/payment-policy.html",
@@ -44,7 +44,7 @@ export default {
   "funRanking": "夯夯",
   "personalExperience": {
     "rating": 4,
-    "insights": "截至 2026-07-07，Hailuo 应作为 MiniMax 视频栈评估：既有消费者 app 入口，也有 Open Platform API 入口。当前需要保留的关键事实是 Hailuo 2.3、Media Agent、多档会员价格、Membership Credits、Purchased Credits、Bonus credits 和 API pay-go 价格。",
+    "insights": "截至 2026-07-13，Hailuo 应作为 MiniMax 视频栈评估：既有消费者 app 入口，也有 Open Platform API 入口。当前需要保留的关键事实是 Hailuo 2.3、Media Agent、多档会员价格、Membership Credits、Purchased Credits、Bonus credits 和 API pay-go 价格。",
     "pitfalls": [
       "分开核算消费者 credits 与 Open Platform API 计费",
       "不要把活动/Bonus credits 视为稳定生产预算",

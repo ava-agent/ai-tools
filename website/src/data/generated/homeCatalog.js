@@ -10,19 +10,19 @@ export const homeCatalog = [
     ],
     "versions": [
       {
-        "pricing": "Hobby 免费 / Individual $20/月 / Teams $40/用户/月 / Enterprise 定制；高级模型和额外用量按官方模型与用量池规则核算"
+        "pricing": "Hobby 免费 / Pro $20/月 / Pro+ $60/月 / Ultra $200/月 / Teams $40/用户/月 / Enterprise 定制；高级模型和额外用量按官方模型与用量池规则核算"
       }
     ],
     "personalExperience": {
       "rating": 5,
-      "insights": "截至 2026-07-07，官方 pricing 与 Models & Pricing 页仍确认 Cursor 是多档订"
+      "insights": "截至 2026-07-13，官方 pricing 与 Models & Pricing 页确认 Cursor 提供 Ho"
     },
     "decisionSummary": {
       "bestFor": "日常主力开发、复杂架构重构与高频编码",
       "mainRisk": "Agent 请求、高级模型、Cloud Agents/Bugbot 与额外用量可能让实际成本高于标价"
     },
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-07",
+    "lastVerified": "2026-07-13",
     "sourceCount": 4,
     "publicSourceCount": 4,
     "hasPublicSource": true,
@@ -38,7 +38,7 @@ export const homeCatalog = [
   {
     "id": "trae",
     "name": "Trae",
-    "developer": "字节跳动",
+    "developer": "深圳市脸萌科技有限公司（字节跳动旗下）",
     "category": "ide",
     "tags": [
       "推荐"
@@ -50,14 +50,14 @@ export const homeCatalog = [
     ],
     "personalExperience": {
       "rating": 5,
-      "insights": "截至 2026-07-07，Trae 官方 pricing 明确展示 Free、Lite、Pro、Pro+、Ultra，"
+      "insights": "截至 2026-07-13，Trae 官方 pricing 明确展示 Free、Lite、Pro、Pro+、Ultra，"
     },
     "decisionSummary": {
       "bestFor": "国内开发者、预算有限团队、快速原型",
       "mainRisk": "真实成本取决于 Basic/Bonus usage、模型消耗、SOLO mode 和并发云任务档位"
     },
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-07",
+    "lastVerified": "2026-07-13",
     "sourceCount": 4,
     "publicSourceCount": 4,
     "hasPublicSource": true,
@@ -84,14 +84,14 @@ export const homeCatalog = [
     ],
     "personalExperience": {
       "rating": 4,
-      "insights": "截至 2026-07-07，Windsurf/Devin Desktop 官方 pricing 展示 Free $0、P"
+      "insights": "截至 2026-07-13，Windsurf/Devin Desktop 官方 pricing 展示 Free $0、P"
     },
     "decisionSummary": {
       "bestFor": "复杂逻辑重构、多文件协作、希望接入 Devin 生态的团队",
       "mainRisk": "Windsurf/Devin 迁移期文档、Teams seat 结构、quota 与 extra usage 口径变化大，容易误算成本"
     },
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-07",
+    "lastVerified": "2026-07-13",
     "sourceCount": 5,
     "publicSourceCount": 5,
     "hasPublicSource": true,
@@ -120,14 +120,14 @@ export const homeCatalog = [
     ],
     "personalExperience": {
       "rating": 4.5,
-      "insights": "截至 2026-07-07，Qoder docs 已给出 Community Free、Pro $20、Pro+ $60"
+      "insights": "截至 2026-07-13，Qoder docs 已给出 Community Free、Pro $20、Pro+ $60"
     },
     "decisionSummary": {
       "bestFor": "中大型后端项目、存量代码理解、代码库知识沉淀",
       "mainRisk": "Pro/Pro+/Ultra 的表面月费不等于无限高级模型，premium credits 消耗、过期和降级规则会影响真实成本"
     },
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-07",
+    "lastVerified": "2026-07-13",
     "sourceCount": 4,
     "publicSourceCount": 4,
     "hasPublicSource": true,
@@ -156,14 +156,14 @@ export const homeCatalog = [
     ],
     "personalExperience": {
       "rating": 3,
-      "insights": "截至 2026-07-07，Zed 官方 pricing 将 Personal、Pro、Business 分层展示：Pe"
+      "insights": "截至 2026-07-13，Zed 官方 pricing 将 Personal、Pro、Business 分层展示：Pe"
     },
     "decisionSummary": {
       "bestFor": "追求高速编辑、多人协作、BYOK/外部 Agent 组合的开发者",
       "mainRisk": "Personal 免费容易被误读成托管 AI 免费；Pro 和 Business 的真实成本仍取决于 token/provider 用量"
     },
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-07",
+    "lastVerified": "2026-07-13",
     "sourceCount": 2,
     "publicSourceCount": 2,
     "hasPublicSource": true,
@@ -191,14 +191,14 @@ export const homeCatalog = [
     ],
     "personalExperience": {
       "rating": 3,
-      "insights": "截至 2026-07-07，Replit pricing 仍以 Starter、Core、Pro、Enterprise "
+      "insights": "截至 2026-07-13，Replit pricing 仍以 Starter、Core、Pro、Enterprise "
     },
     "decisionSummary": {
       "bestFor": "快速原型验证、编程教学、分布式团队、非技术人员构建内部工具",
       "mainRisk": "Agent 对话、计划和代码修改都可能计费，复杂任务与第三方 API 会快速消耗 credits"
     },
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-07",
+    "lastVerified": "2026-07-13",
     "sourceCount": 2,
     "publicSourceCount": 2,
     "hasPublicSource": true,
@@ -226,14 +226,14 @@ export const homeCatalog = [
     ],
     "personalExperience": {
       "rating": 4,
-      "insights": "截至 2026-07-07，Kiro 官方 pricing 页显示 Free 50 credits，付费档从 Pro $"
+      "insights": "截至 2026-07-13，Kiro 官方 pricing 页显示 Free 50 credits，付费档从 Pro $"
     },
     "decisionSummary": {
       "bestFor": "需求拆解、规格文档、任务分解、偏规范化的团队开发",
-      "mainRisk": "Free credits 很少，复杂任务可能快速进入付费或超额 credits"
+      "mainRisk": "Free credits 很少，复杂任务可能快速进入付费或超额 credits；官方页面对具体模型小版本的口径仍需复核"
     },
-    "verificationStatus": "verified",
-    "lastVerified": "2026-07-07",
+    "verificationStatus": "needs-review",
+    "lastVerified": "2026-07-13",
     "sourceCount": 1,
     "publicSourceCount": 1,
     "hasPublicSource": true,
@@ -263,14 +263,14 @@ export const homeCatalog = [
     ],
     "personalExperience": {
       "rating": 2.5,
-      "insights": "截至 2026-07-07，官方文档将 CodeBuddy 计费写成 Pro / Team Plan + credits"
+      "insights": "截至 2026-07-13，官方文档将 CodeBuddy 计费写成 Pro / Team Plan + credits"
     },
     "decisionSummary": {
       "bestFor": "腾讯云用户、需要 CodeBuddy IDE/CLI/plugin 与 credits 统一管理的团队",
       "mainRisk": "所有 conversation 相关请求都会消耗 credits，复杂任务和高级模型会更快消耗额度；自定义模型仍要按 OpenAI interface format 配置"
     },
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-07",
+    "lastVerified": "2026-07-13",
     "sourceCount": 3,
     "publicSourceCount": 3,
     "hasPublicSource": true,
@@ -293,19 +293,19 @@ export const homeCatalog = [
     ],
     "versions": [
       {
-        "pricing": "Free / Google AI Pro $19.99/month / Google AI Ultra $99.99 或 $199.99/month；Antigravity 具体限额按官方 Plans 页面与 Google AI 订阅说明"
+        "pricing": "Free / Google AI Pro / Google AI Ultra；价格按所在地区与当前 Google AI 订阅页确认，Antigravity 具体限额按官方 Plans 页面与订阅说明"
       }
     ],
     "personalExperience": {
       "rating": 3.5,
-      "insights": "截至 2026-07-07，Antigravity 已不应只按“Public Preview 免费”描述。Google "
+      "insights": "截至 2026-07-13，Antigravity 已不应只按“Public Preview 免费”描述。Google "
     },
     "decisionSummary": {
       "bestFor": "Google AI Pro/Ultra 用户、想在 Gemini 生态里尝试 Agent Manager 和 agentic IDE 的开发者",
       "mainRisk": "Google AI Pro/Ultra 的 Antigravity 限额是 rate limits / usage limits 口径，不等同于无限使用；达到 baseline quota 后可能需要 AI credits"
     },
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-07",
+    "lastVerified": "2026-07-13",
     "sourceCount": 4,
     "publicSourceCount": 4,
     "hasPublicSource": true,
@@ -356,7 +356,7 @@ export const homeCatalog = [
   {
     "id": "verdent",
     "name": "Verdent",
-    "developer": "Verdent Team",
+    "developer": "Verdent AI, Inc.",
     "category": "ide",
     "tags": [
       "多Agent"
@@ -368,14 +368,14 @@ export const homeCatalog = [
     ],
     "personalExperience": {
       "rating": 3.5,
-      "insights": "截至 2026-07-07，Verdent 的亮点是多 Agent 工作流和成本控制组合，而不是单一 benchmark"
+      "insights": "截至 2026-07-13，Verdent 的亮点是多 Agent 工作流和成本控制组合，而不是单一 benchmark"
     },
     "decisionSummary": {
       "bestFor": "复杂任务分解、多 Agent 协作、需要 Eco Mode / BYOK / PAYG 控制成本的开发者",
       "mainRisk": "官方 pricing 有限时 bonus 和 credits 结构，真实成本取决于模型 provider pricing、任务复杂度和 Eco Mode/BYOK 使用方式"
     },
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-07",
+    "lastVerified": "2026-07-13",
     "sourceCount": 4,
     "publicSourceCount": 4,
     "hasPublicSource": true,
@@ -399,19 +399,19 @@ export const homeCatalog = [
     ],
     "versions": [
       {
-        "pricing": "AI Free / AI Pro / AI Ultimate；具体价格和 credit 额度按官方账号与地区页面为准"
+        "pricing": "AI Free（3 AI credits/30 天）/ AI Pro $10/月（10 credits）/ AI Ultimate $30/月（35 credits）；企业和地区价格按官方结账页确认"
       }
     ],
     "personalExperience": {
       "rating": 3,
-      "insights": "截至 2026-07-07，JetBrains 官方说明仍将 AI Assistant 归入 AI Free、AI Pr"
+      "insights": "截至 2026-07-13，JetBrains 官方说明将 AI Assistant 分为 AI Free（3 cred"
     },
     "decisionSummary": {
       "bestFor": "JetBrains 生态系统用户、企业团队、希望保留熟悉 IDE 的开发者",
       "mainRisk": "AI Free、Pro、Ultimate 的云端 credits、本地能力和地区价格容易被混成一个“免费层”判断"
     },
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-07",
+    "lastVerified": "2026-07-13",
     "sourceCount": 2,
     "publicSourceCount": 2,
     "hasPublicSource": true,
@@ -440,14 +440,14 @@ export const homeCatalog = [
     ],
     "personalExperience": {
       "rating": 5,
-      "insights": "截至 2026-07-07，Claude Code 仍适合把高难任务交给 Claude 在终端或 IDE 里推进。官方成"
+      "insights": "截至 2026-07-13，Claude Code 仍适合把高难任务交给 Claude 在终端或 IDE 里推进。官方成"
     },
     "decisionSummary": {
       "bestFor": "关键方案、复杂重构、高难定位、大型代码库",
       "mainRisk": "Pro/Max 使用量与 Claude 共用，API token 消耗又是单独计费路径，容易误判真实成本"
     },
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-07",
+    "lastVerified": "2026-07-13",
     "sourceCount": 4,
     "publicSourceCount": 4,
     "hasPublicSource": true,
@@ -475,14 +475,14 @@ export const homeCatalog = [
     ],
     "personalExperience": {
       "rating": 4.5,
-      "insights": "截至 2026-07-07，官方 README 仍确认个人 Google 账号 OAuth 路径可用 60 RPM / "
+      "insights": "截至 2026-07-13，官方 README 仍确认个人 Google 账号 OAuth 路径可用 60 RPM / "
     },
     "decisionSummary": {
       "bestFor": "读仓库、长日志、多文件定位、方案调研",
       "mainRisk": "免费额度、高阶模型可用性、Code Assist license 和 Google 账号路径会影响稳定性"
     },
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-07",
+    "lastVerified": "2026-07-13",
     "sourceCount": 3,
     "publicSourceCount": 3,
     "hasPublicSource": true,
@@ -512,14 +512,14 @@ export const homeCatalog = [
     ],
     "personalExperience": {
       "rating": 4,
-      "insights": "截至 2026-07-07，Qwen Code 官方认证文档明确旧 OAuth free tier 已于 2026-04"
+      "insights": "截至 2026-07-13，Qwen Code 官方认证文档明确旧 OAuth free tier 已于 2026-04"
     },
     "decisionSummary": {
       "bestFor": "中文需求、中小项目开发、Qwen/API provider 已就绪的团队",
       "mainRisk": "2026-04-15 后 OAuth 免费层已停，Coding Plan、Token Plan、Standard API Key 和 provider 计费路径容易被误判"
     },
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-07",
+    "lastVerified": "2026-07-13",
     "sourceCount": 4,
     "publicSourceCount": 4,
     "hasPublicSource": true,
@@ -546,14 +546,14 @@ export const homeCatalog = [
     ],
     "personalExperience": {
       "rating": 3,
-      "insights": "截至 2026-07-07，Aider 官方文档仍强调“连接多数 LLM”，并建议查看 LLM leaderboards"
+      "insights": "截至 2026-07-13，Aider 官方文档仍强调“连接多数 LLM”，并建议查看 LLM leaderboards"
     },
     "decisionSummary": {
       "bestFor": "Git 工作流、多模型切换、隐私意识强团队",
       "mainRisk": "模型能力、provider 额度和手动上下文选择会直接影响编辑质量"
     },
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-07",
+    "lastVerified": "2026-07-13",
     "sourceCount": 3,
     "publicSourceCount": 3,
     "hasPublicSource": true,
@@ -570,7 +570,7 @@ export const homeCatalog = [
   {
     "id": "cline",
     "name": "Cline",
-    "developer": "开源社区",
+    "developer": "Cline Bot Inc.",
     "category": "cli",
     "tags": [
       "CLI"
@@ -582,14 +582,14 @@ export const homeCatalog = [
     ],
     "personalExperience": {
       "rating": 3,
-      "insights": "截至 2026-07-07，Cline 官方价格页说明个人开源扩展免费、只按 AI inference 付费；文档将 C"
+      "insights": "截至 2026-07-13，Cline 官方价格页说明个人开源扩展免费、只按 AI inference 付费；文档将 C"
     },
     "decisionSummary": {
       "bestFor": "VS Code 用户、自主执行任务、需要人在环审批的团队",
       "mainRisk": "插件开源、Cline credits、ClinePass $9.99/月和自带 API key 会形成多条计费路径，容易低估成本"
     },
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-07",
+    "lastVerified": "2026-07-13",
     "sourceCount": 3,
     "publicSourceCount": 3,
     "hasPublicSource": true,
@@ -607,7 +607,7 @@ export const homeCatalog = [
   {
     "id": "continue",
     "name": "Continue",
-    "developer": "开源社区",
+    "developer": "Continue team; now Cursor/Anysphere",
     "category": "cli",
     "tags": [
       "开源"
@@ -619,14 +619,14 @@ export const homeCatalog = [
     ],
     "personalExperience": {
       "rating": 3,
-      "insights": "截至 2026-07-08，Continue 官方首页显示团队已加入 Cursor，GitHub 仓库 README 明"
+      "insights": "截至 2026-07-13，Continue 官方首页显示团队已加入 Cursor，GitHub 仓库 README 明"
     },
     "decisionSummary": {
       "bestFor": "迁移评估、开源架构参考、仍在使用 Continue 的存量团队",
       "mainRisk": "官方已加入 Cursor，仓库不再主动维护且对用户 read-only；final 2.0.0 release 之后的历史能力和当前维护状态容易混淆"
     },
     "verificationStatus": "historical",
-    "lastVerified": "2026-07-08",
+    "lastVerified": "2026-07-13",
     "sourceCount": 3,
     "publicSourceCount": 3,
     "hasPublicSource": true,
@@ -654,14 +654,14 @@ export const homeCatalog = [
     ],
     "personalExperience": {
       "rating": 3,
-      "insights": "截至 2026-07-07，OpenCode 官方站仍将其定位为开源 AI coding agent，覆盖 termin"
+      "insights": "截至 2026-07-13，OpenCode 官方站仍将其定位为开源 AI coding agent，覆盖 termin"
     },
     "decisionSummary": {
       "bestFor": "开源终端 Agent、多 provider、隐私敏感开发",
       "mainRisk": "开源工具、可选订阅和不同 provider 的责任边界容易混淆"
     },
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-07",
+    "lastVerified": "2026-07-13",
     "sourceCount": 3,
     "publicSourceCount": 3,
     "hasPublicSource": true,
@@ -690,16 +690,16 @@ export const homeCatalog = [
     ],
     "personalExperience": {
       "rating": 5,
-      "insights": "截至 2026-07-07，OpenAI 官方 Codex pricing 页明确 Codex 包含在 ChatGPT "
+      "insights": "截至 2026-07-13，OpenAI 官方 Codex pricing 页明确 Codex 包含在 ChatGPT "
     },
     "decisionSummary": {
       "bestFor": "OpenAI 生态内的代码生成、代码审查、CLI Agent 任务",
       "mainRisk": "Codex 模型推荐、计划限制、flexible credits 和 API 计费路径变化快，旧资料很容易过时"
     },
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-07",
-    "sourceCount": 5,
-    "publicSourceCount": 5,
+    "lastVerified": "2026-07-13",
+    "sourceCount": 6,
+    "publicSourceCount": 6,
     "hasPublicSource": true,
     "hasFreeTier": true,
     "hasLowCostSignal": true,
@@ -726,14 +726,14 @@ export const homeCatalog = [
     ],
     "personalExperience": {
       "rating": 3,
-      "insights": "截至 2026-07-07，Goose 官方 README 明确项目已从 block/goose 迁到 AAIF，并定位"
+      "insights": "截至 2026-07-13，Goose 官方 README 明确项目已从 block/goose 迁到 AAIF，并定位"
     },
     "decisionSummary": {
       "bestFor": "本地部署、隐私优先用户、多 provider Agent 实验",
       "mainRisk": "旧仓库地址、开源软件成本和 provider 推理成本容易混淆"
     },
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-07",
+    "lastVerified": "2026-07-13",
     "sourceCount": 3,
     "publicSourceCount": 3,
     "hasPublicSource": true,
@@ -748,7 +748,7 @@ export const homeCatalog = [
   {
     "id": "crush",
     "name": "Crush",
-    "developer": "Charm Bracelet",
+    "developer": "Charmbracelet, Inc. (Charm)",
     "category": "cli",
     "tags": [
       "开源"
@@ -760,14 +760,14 @@ export const homeCatalog = [
     ],
     "personalExperience": {
       "rating": 4,
-      "insights": "截至 2026-07-07，Charm 官方 GitHub 将 Crush 描述为可在终端中运行的 AI coding "
+      "insights": "截至 2026-07-13，Charm 官方 GitHub 将 Crush 描述为可在终端中运行的 AI coding "
     },
     "decisionSummary": {
       "bestFor": "喜欢精美 TUI 的开源 CLI 用户",
       "mainRisk": "开源安装、provider API 与 Charm Hyper 是不同成本层，容易被混成“完全免费”或单一订阅"
     },
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-07",
+    "lastVerified": "2026-07-13",
     "sourceCount": 3,
     "publicSourceCount": 3,
     "hasPublicSource": true,
@@ -783,7 +783,7 @@ export const homeCatalog = [
   {
     "id": "openhands",
     "name": "OpenHands",
-    "developer": "OpenHands Community",
+    "developer": "OpenHands Community / All Hands AI, Inc.",
     "category": "cli",
     "tags": [
       "开源"
@@ -795,14 +795,14 @@ export const homeCatalog = [
     ],
     "personalExperience": {
       "rating": 3.5,
-      "insights": "截至 2026-07-07，OpenHands 官方 pricing 将 Local、Individual、Enterp"
+      "insights": "截至 2026-07-13，OpenHands 官方 pricing 将 Local、Individual、Enterp"
     },
     "decisionSummary": {
       "bestFor": "开源用户、多模型切换、本地/企业部署评估",
       "mainRisk": "本地部署、云端计划、模型/API 和企业能力边界容易混淆"
     },
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-07",
+    "lastVerified": "2026-07-13",
     "sourceCount": 2,
     "publicSourceCount": 2,
     "hasPublicSource": true,
@@ -830,14 +830,14 @@ export const homeCatalog = [
     ],
     "personalExperience": {
       "rating": 5,
-      "insights": "截至 2026-07-07，Anthropic 模型页显示 Claude Fable 5、Opus 4.8、Sonnet"
+      "insights": "截至 2026-07-13，Anthropic 模型页显示 Claude Fable 5、Opus 4.8、Sonnet"
     },
     "decisionSummary": {
       "bestFor": "代码审查、方案设计、长上下文任务、多模态任务、复杂推理",
       "mainRisk": "Claude.ai 计划、API 价格和具体可用模型变化快，不能按旧 Sonnet/Opus 版本号做长期判断"
     },
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-07",
+    "lastVerified": "2026-07-13",
     "sourceCount": 3,
     "publicSourceCount": 3,
     "hasPublicSource": true,
@@ -853,7 +853,7 @@ export const homeCatalog = [
   },
   {
     "id": "gpt",
-    "name": "GPT-5.5 / OpenAI",
+    "name": "GPT-5.6 / OpenAI",
     "developer": "OpenAI",
     "category": "llm",
     "tags": [
@@ -866,14 +866,14 @@ export const homeCatalog = [
     ],
     "personalExperience": {
       "rating": 5,
-      "insights": "截至 2026-07-07，OpenAI 官方开发者文档的最新模型指南仍指向 GPT-5.5，并强调不要把它当作旧 GP"
+      "insights": "截至 2026-07-13，当前 OpenAI 模型入口以 GPT-5.6 sol/terra/luna 分层。本站采用"
     },
     "decisionSummary": {
       "bestFor": "通用任务、生态集成、推理任务、Agent 工作流、多模态工具链",
       "mainRisk": "模型、ChatGPT 计划、API 工具和服务层计费变化快，旧固定 GPT 口径会误导成本判断"
     },
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-07",
+    "lastVerified": "2026-07-13",
     "sourceCount": 3,
     "publicSourceCount": 3,
     "hasPublicSource": true,
@@ -883,7 +883,6 @@ export const homeCatalog = [
     "scenarioIds": [
       "daily-coding",
       "complex-refactor",
-      "long-context",
       "visual-generation"
     ]
   },
@@ -902,14 +901,14 @@ export const homeCatalog = [
     ],
     "personalExperience": {
       "rating": 5,
-      "insights": "截至 2026-07-07，Google 官方 Gemini API pricing 将 Free、Paid、Enter"
+      "insights": "截至 2026-07-13，Google 官方 Gemini API pricing 将 Free、Paid、Enter"
     },
     "decisionSummary": {
       "bestFor": "长文档处理、多模态任务、方案设计、Google 生态工作流",
       "mainRisk": "Gemini app 订阅、API 免费层、模型上下文和数据使用政策分属不同入口，容易混淆"
     },
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-07",
+    "lastVerified": "2026-07-13",
     "sourceCount": 3,
     "publicSourceCount": 3,
     "hasPublicSource": true,
@@ -937,14 +936,14 @@ export const homeCatalog = [
     ],
     "personalExperience": {
       "rating": 4,
-      "insights": "截至 2026-07-07，DeepSeek 官方价格页将 API 主模型列为 deepseek-v4-flash 与 "
+      "insights": "截至 2026-07-13，DeepSeek 官方价格页将 API 主模型列为 deepseek-v4-flash 与 "
     },
     "decisionSummary": {
       "bestFor": "预算有限、中文场景、推理任务、批量 API 调用",
       "mainRisk": "deepseek-chat / deepseek-reasoner 仍可兼容路由，但官方预告这些旧别名将在 2026-07-24 下线，生产迁移应改用 deepseek-v4-flash / deepseek-v4-pro"
     },
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-07",
+    "lastVerified": "2026-07-13",
     "sourceCount": 3,
     "publicSourceCount": 3,
     "hasPublicSource": true,
@@ -972,14 +971,14 @@ export const homeCatalog = [
     ],
     "personalExperience": {
       "rating": 4.5,
-      "insights": "截至 2026-07-07，阿里云 Model Studio 官方价格页将 Qwen API 明确放在 pay-as-y"
+      "insights": "截至 2026-07-13，阿里云 Model Studio 官方价格页将 Qwen API 明确放在 pay-as-y"
     },
     "decisionSummary": {
       "bestFor": "中文场景、代码任务、阿里云/国内企业工作流",
       "mainRisk": "Qwen 模型名、长上下文和 thinking/VL/coder 档位很多，旧固定 Qwen 单一口径会误导选型和成本"
     },
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-07",
+    "lastVerified": "2026-07-13",
     "sourceCount": 3,
     "publicSourceCount": 3,
     "hasPublicSource": true,
@@ -1009,14 +1008,14 @@ export const homeCatalog = [
     ],
     "personalExperience": {
       "rating": 4.5,
-      "insights": "截至 2026-07-07，Z.AI/BigModel 官方 pricing 已把 GLM 拆成 GLM-5.2、GLM"
+      "insights": "截至 2026-07-13，Z.AI/BigModel 官方 pricing 已把 GLM 拆成 GLM-5.2、GLM"
     },
     "decisionSummary": {
       "bestFor": "前端 demo、中文 Agent、国内账号/API 路径",
       "mainRisk": "GLM-5.2、GLM-4.7 等型号和计费档位并存，旧单一型号/价格会误导预算"
     },
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-07",
+    "lastVerified": "2026-07-13",
     "sourceCount": 2,
     "publicSourceCount": 2,
     "hasPublicSource": true,
@@ -1044,14 +1043,14 @@ export const homeCatalog = [
     ],
     "personalExperience": {
       "rating": 4.5,
-      "insights": "截至 2026-07-07，Kimi API 官方文档已显示 kimi-k2.7-code、kimi-k2.7-code"
+      "insights": "截至 2026-07-13，Kimi API 官方文档已显示 kimi-k2.7-code、kimi-k2.7-code"
     },
     "decisionSummary": {
       "bestFor": "长文档、中文对话、方案调研、Kimi API 代码任务",
       "mainRisk": "K2.7 Code、K2.6、K2.5、Moonshot V1 与 Chat/API 入口不同，旧 kimi-k2/kimi-latest 和泛化免费说法会误导成本"
     },
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-07",
+    "lastVerified": "2026-07-13",
     "sourceCount": 3,
     "publicSourceCount": 3,
     "hasPublicSource": true,
@@ -1080,14 +1079,14 @@ export const homeCatalog = [
     ],
     "personalExperience": {
       "rating": 4.5,
-      "insights": "截至 2026-07-07，MiniMax 官方文档显示 MiniMax-M3 是最新 M-series languag"
+      "insights": "截至 2026-07-13，MiniMax 官方文档显示 MiniMax-M3 是最新 M-series languag"
     },
     "decisionSummary": {
       "bestFor": "多语言项目、语音+文本应用、高频 API 调用",
       "mainRisk": "M3 输入长度分档、Priority 1.5x、文本/语音/视频产品线分开计费，旧 M2.1 低价口径会低估真实成本"
     },
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-07",
+    "lastVerified": "2026-07-13",
     "sourceCount": 3,
     "publicSourceCount": 3,
     "hasPublicSource": true,
@@ -1111,19 +1110,19 @@ export const homeCatalog = [
     ],
     "versions": [
       {
-        "pricing": "火山方舟模型价格页 2026-07-06 更新；按模型、输入/输出 token、缓存和产品能力计费"
+        "pricing": "火山方舟按模型、输入/输出 token、缓存和产品能力计费；具体单价以当前价格页为准"
       }
     ],
     "personalExperience": {
       "rating": 3,
-      "insights": "截至 2026-07-07，火山方舟模型列表已经更新并指向 Seed 2.1，模型价格页在 2026-07-06 更新。"
+      "insights": "截至 2026-07-13，火山方舟当前主线指向 Seed 2.1。本站不再保留无法稳定核验的页面更新时间断言，而是按 "
     },
     "decisionSummary": {
       "bestFor": "前端开发、Bug 修复、办公助手、字节/火山生态团队",
       "mainRisk": "Seed 2.1 Pro/Turbo、深度思考、缓存、Responses API、Seedance/Seedream 和 App/API 入口混在一起会误判成本"
     },
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-07",
+    "lastVerified": "2026-07-13",
     "sourceCount": 3,
     "publicSourceCount": 3,
     "hasPublicSource": true,
@@ -1141,7 +1140,7 @@ export const homeCatalog = [
   {
     "id": "grok",
     "name": "Grok / xAI",
-    "developer": "xAI",
+    "developer": "SpaceXAI (xAI)",
     "category": "llm",
     "tags": [
       "LLM"
@@ -1153,14 +1152,14 @@ export const homeCatalog = [
     ],
     "personalExperience": {
       "rating": 4.5,
-      "insights": "截至 2026-07-07，xAI 官方模型页已展示 Grok 4.3、Grok Build 等模型，pricing 页"
+      "insights": "截至 2026-07-13，xAI 官方模型页已展示 Grok 4.3、Grok Build 等模型，pricing 页"
     },
     "decisionSummary": {
       "bestFor": "实时信息、X 平台用户、热点研究、开放创意写作",
       "mainRisk": "Grok 4.3、Grok Build、App 订阅和 API pricing 变化快，旧单一 X 订阅口径会误导预算"
     },
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-07",
+    "lastVerified": "2026-07-13",
     "sourceCount": 3,
     "publicSourceCount": 3,
     "hasPublicSource": true,
@@ -1187,14 +1186,14 @@ export const homeCatalog = [
     ],
     "personalExperience": {
       "rating": 5,
-      "insights": "截至 2026-07-07，Midjourney 官方更新页显示 V8.1 已成为默认模型；Version 文档说明 V"
+      "insights": "截至 2026-07-13，Midjourney 官方更新页显示 V8.1 已成为默认模型；Version 文档说明 V"
     },
     "decisionSummary": {
       "bestFor": "概念设计、海报、角色、广告视觉、品牌 moodboard",
       "mainRisk": "订阅价格、Fast/Relax/Turbo GPU time、V8.1 HD、视频 batch 和隐私能力分属不同计划，不能只看单一月费。"
     },
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-07",
+    "lastVerified": "2026-07-13",
     "sourceCount": 6,
     "publicSourceCount": 6,
     "hasPublicSource": true,
@@ -1222,14 +1221,14 @@ export const homeCatalog = [
     ],
     "personalExperience": {
       "rating": 4.5,
-      "insights": "截至 2026-07-07，OpenAI 官方 Images 文档仍将 API 图像能力表述为 GPT Image mo"
+      "insights": "截至 2026-07-13，OpenAI 官方 Images 文档仍将 API 图像能力表述为 GPT Image mo"
     },
     "decisionSummary": {
       "bestFor": "需要 ChatGPT 集成、文字渲染、图像编辑、多轮视觉迭代和 OpenAI API 生态衔接的团队",
       "mainRisk": "ChatGPT 产品入口与 API Images / Responses API 的可用性、额度、价格和安全策略不同，商用前要逐项确认。"
     },
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-07",
+    "lastVerified": "2026-07-13",
     "sourceCount": 3,
     "publicSourceCount": 3,
     "hasPublicSource": true,
@@ -1258,22 +1257,23 @@ export const homeCatalog = [
     ],
     "personalExperience": {
       "rating": 4,
-      "insights": "截至 2026-07-07，Stability AI 官方许可页把 Stable Diffusion 3.5 Suite"
+      "insights": "截至 2026-07-13，Stability AI 官方许可页把 Stable Diffusion 3.5 Suite"
     },
     "decisionSummary": {
       "bestFor": "本地部署、私有化图像管线、LoRA 风格训练、可控工作流",
       "mainRisk": "“开源/免费”容易被误读，Core Models 许可、收入门槛、API credits 和内容治理是不同问题。"
     },
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-07",
+    "lastVerified": "2026-07-13",
     "sourceCount": 3,
     "publicSourceCount": 3,
     "hasPublicSource": true,
-    "hasFreeTier": false,
+    "hasFreeTier": true,
     "hasLowCostSignal": true,
     "hasPaidSignal": true,
     "scenarioIds": [
       "daily-coding",
+      "free-stack",
       "long-context",
       "visual-generation"
     ]
@@ -1293,14 +1293,14 @@ export const homeCatalog = [
     ],
     "personalExperience": {
       "rating": 4,
-      "insights": "截至 2026-07-08，美图更适合描述为带有明确 AI 工具的消费级图像编辑套件，而不是泛泛的低价修图软件。官方页面"
+      "insights": "截至 2026-07-13，美图更适合描述为带有明确 AI 工具的消费级图像编辑套件，而不是泛泛的低价修图软件。官方页面"
     },
     "decisionSummary": {
       "bestFor": "AI 消除、AI 抠图、照片扩展、人像清理、电商图片清理和轻量社媒视觉",
       "mainRisk": "美图 VIP、美图 VIP+、美图 PC VIP 和 AI Agent VIP 属于相关但不同的订阅权益，团队容易高估单一计划能覆盖的能力。"
     },
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-08",
+    "lastVerified": "2026-07-13",
     "sourceCount": 3,
     "publicSourceCount": 3,
     "hasPublicSource": true,
@@ -1328,14 +1328,14 @@ export const homeCatalog = [
     ],
     "personalExperience": {
       "rating": 3,
-      "insights": "截至 2026-07-07，OpenAI 官方 Video generation 文档明确提示 Sora 2 video"
+      "insights": "截至 2026-07-13，OpenAI 官方 Video generation 文档明确提示 Sora 2 video"
     },
     "decisionSummary": {
       "bestFor": "短期高质量视频试验、历史项目迁移评估、营销素材概念验证",
       "mainRisk": "Sora 2 与 Videos API 官方已标记 deprecated，并将于 2026-09-24 shut down；仍要额外管理异步渲染、模型/时长/分辨率计费和内容限制"
     },
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-07",
+    "lastVerified": "2026-07-13",
     "sourceCount": 3,
     "publicSourceCount": 3,
     "hasPublicSource": true,
@@ -1356,7 +1356,7 @@ export const homeCatalog = [
     "developer": "快手",
     "category": "multimodal",
     "tags": [
-      "推荐"
+      "视频"
     ],
     "versions": [
       {
@@ -1365,14 +1365,14 @@ export const homeCatalog = [
     ],
     "personalExperience": {
       "rating": 5,
-      "insights": "截至 2026-07-07，可灵官方 API 文档主入口已经迁到 kling.ai/document-api，API g"
+      "insights": "截至 2026-07-13，可灵官方 API 文档主入口已经迁到 kling.ai/document-api，API g"
     },
     "decisionSummary": {
       "bestFor": "中文短视频、商品视频、社媒素材、API 化视频批量生成",
       "mainRisk": "Kling 3.0 文档、旧规格、网页积分和 API Resource Packages 并存，容易误估成本和能力边界。"
     },
-    "verificationStatus": "verified",
-    "lastVerified": "2026-07-07",
+    "verificationStatus": "needs-review",
+    "lastVerified": "2026-07-13",
     "sourceCount": 4,
     "publicSourceCount": 4,
     "hasPublicSource": true,
@@ -1387,27 +1387,27 @@ export const homeCatalog = [
   },
   {
     "id": "jianying",
-    "name": "剪映",
-    "developer": "字节跳动",
+    "name": "剪映 / CapCut",
+    "developer": "ByteDance",
     "category": "multimodal",
     "tags": [
       "视频"
     ],
     "versions": [
       {
-        "pricing": "CapCut Pro 和 Teams 价格会随地区、设备、计费周期和促销变化"
+        "pricing": "剪映会员与 AI 权益以中国站和产品内为准"
       }
     ],
     "personalExperience": {
       "rating": 4,
-      "insights": "截至 2026-07-08，CapCut/剪映不应再被简单写成通用免费编辑器，而应视为跨设备视频编辑器：Pro、Team"
+      "insights": "截至 2026-07-13，CapCut/剪映不应再被简单写成通用免费编辑器，而应视为跨设备视频编辑器：Pro、Team"
     },
     "decisionSummary": {
       "bestFor": "短视频编辑、字幕、模板、创作者流程，以及 CapCut Online 里的轻量团队审阅",
       "mainRisk": "价格会随地区变化，Pro/Teams 的 AI points、存储和 Standard Plan 管理也不是全球统一常量。"
     },
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-08",
+    "lastVerified": "2026-07-13",
     "sourceCount": 3,
     "publicSourceCount": 3,
     "hasPublicSource": true,
@@ -1435,14 +1435,14 @@ export const homeCatalog = [
     ],
     "personalExperience": {
       "rating": 4,
-      "insights": "截至 2026-07-08，Meshy 官方 pricing 页确认 Free $0、Pro $20/月、Studio "
+      "insights": "截至 2026-07-13，Meshy 官方 pricing 页确认 Free $0、Pro $20/月、Studio "
     },
     "decisionSummary": {
       "bestFor": "Text to 3D（Preview）、Image to 3D、游戏道具、产品 mockup 和快速 3D 构思",
       "mainRisk": "$0 档适合试用，但 CC BY 4.0 署名要求和过期 credits 可能让商业团队低估成本。"
     },
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-08",
+    "lastVerified": "2026-07-13",
     "sourceCount": 3,
     "publicSourceCount": 3,
     "hasPublicSource": true,
@@ -1464,19 +1464,19 @@ export const homeCatalog = [
     ],
     "versions": [
       {
-        "pricing": "消费端、腾讯云 API 和开源模型分开核算；腾讯云 API 首次开通可领 100 积分，预付 1,000 积分 100 元，后付 0.12 元/积分"
+        "pricing": "消费端、腾讯云 API、TokenHub 新入口和开源模型分开核算；旧平台已停止新购，存量服务按官方迁移说明继续使用"
       }
     ],
     "personalExperience": {
       "rating": 4,
-      "insights": "截至 2026-07-08，混元 3D 应拆成三条路线看：Hunyuan 3D 3.0 消费/云端产品、腾讯云混元生3D"
+      "insights": "截至 2026-07-13，混元 3D 应拆成三条路线看：Hunyuan 3D 3.0 消费/云端产品、腾讯云混元生3D"
     },
     "decisionSummary": {
       "bestFor": "text-to-3D、image-to-3D、Sketch-to-3D、中文 3D 原型，以及同时需要网页和本地模型选项的团队",
       "mainRisk": "Hunyuan 3D 3.0 消费站点、腾讯云 API 计费和 Hunyuan3D 2.0 / Hunyuan3D-2.1 Series 开源模型很容易混为一谈，从而造成许可、成本或硬件判断错误。"
     },
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-08",
+    "lastVerified": "2026-07-13",
     "sourceCount": 4,
     "publicSourceCount": 4,
     "hasPublicSource": true,
@@ -1484,6 +1484,7 @@ export const homeCatalog = [
     "hasLowCostSignal": true,
     "hasPaidSignal": true,
     "scenarioIds": [
+      "complex-refactor",
       "free-stack",
       "long-context",
       "visual-generation"
@@ -1504,14 +1505,14 @@ export const homeCatalog = [
     ],
     "personalExperience": {
       "rating": 4,
-      "insights": "截至 2026-07-07，NotebookLM 更适合被定位为“基于资料源的研究/写作助手”。标准版仍是 100 no"
+      "insights": "截至 2026-07-13，NotebookLM 更适合被定位为“基于资料源的研究/写作助手”。标准版仍是 100 no"
     },
     "decisionSummary": {
       "bestFor": "把 PDF、网页、文档沉淀成可问答、可复用的研究 notebook",
       "mainRisk": "额度和高级输出绑定 Google AI/Workspace/Cloud 计划，Deep Research 与 artifact 输出并不等于事实自动核验，且上传资料涉及隐私、版权和来源可靠性。"
     },
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-07",
+    "lastVerified": "2026-07-13",
     "sourceCount": 3,
     "publicSourceCount": 3,
     "hasPublicSource": true,
@@ -1528,32 +1529,32 @@ export const homeCatalog = [
   {
     "id": "qinglizi",
     "name": "氢离子 / 阿里健康",
-    "developer": "阿里健康 / 杭州智循建模科技",
+    "developer": "杭州智循建模科技有限公司（阿里健康氢离子）",
     "category": "llm",
     "tags": [
       "医学"
     ],
     "versions": [
       {
-        "pricing": "App Store / 产品内页面曾列出免费 App 与若干内购档位；具体价格、权益和机构权限以当前商店页及产品内为准"
+        "pricing": "App 免费下载；App 内购当前列出新人/月 ¥9.90、月卡 ¥49、季卡 ¥118、年卡 ¥360，权益以产品内为准"
       }
     ],
     "personalExperience": {
       "rating": 3.5,
-      "insights": "截至 2026-07-08，可以通过阿里健康/氢离子入口和 App Store 确认其医学 AI 助手定位，主要围绕搜文"
+      "insights": "截至 2026-07-13，可以通过阿里健康/氢离子入口和 App Store 确认其医学 AI 助手定位，主要围绕搜文"
     },
     "decisionSummary": {
       "bestFor": "医生、医学生和科研人员做文献/指南查阅",
       "mainRisk": "App Store 免责声明限定其仅供医疗行业专业用户参考，不能代替医生面诊和医院诊断；公开来源暂未给出完整模型卡和机构权限边界。"
     },
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-08",
+    "lastVerified": "2026-07-13",
     "sourceCount": 2,
     "publicSourceCount": 2,
     "hasPublicSource": true,
     "hasFreeTier": true,
     "hasLowCostSignal": true,
-    "hasPaidSignal": false,
+    "hasPaidSignal": true,
     "scenarioIds": [
       "free-stack"
     ]
@@ -1561,26 +1562,26 @@ export const homeCatalog = [
   {
     "id": "coze",
     "name": "Coze",
-    "developer": "字节跳动",
+    "developer": "Global: SPRING (SG) PTE. LTD. / CN: 字节跳动（扣子）",
     "category": "agent",
     "tags": [
-      "推荐"
+      "Agent"
     ],
     "versions": [
       {
-        "pricing": "免费版每天 10 积分；Premium Lite 每天 100 积分；Premium $19；Premium Plus $39"
+        "pricing": "Global 计划和 credits 以登录后的订阅与账单页为准；公开页面不足以稳定核验固定价格"
       }
     ],
     "personalExperience": {
       "rating": 4,
-      "insights": "截至 2026-07-08，Coze 更适合当作低代码 Agent 发布平台评估：先用 Free 10 credits/"
+      "insights": "截至 2026-07-13，Coze 更适合当作低代码 Agent 发布平台评估。公开页面不足以稳定核验固定计划价格，且"
     },
     "decisionSummary": {
       "bestFor": "业务人员和开发者快速组合 Bot、Workflow、Plugin 与知识库",
       "mainRisk": "credit、message billing、Coze tokens、API/Web SDK 与非 SDK 插件费用会随模型、插件、工作流复杂度变化，账单预测不能只看订阅名义价格。"
     },
-    "verificationStatus": "verified",
-    "lastVerified": "2026-07-08",
+    "verificationStatus": "needs-review",
+    "lastVerified": "2026-07-13",
     "sourceCount": 3,
     "publicSourceCount": 3,
     "hasPublicSource": true,
@@ -1597,7 +1598,7 @@ export const homeCatalog = [
   {
     "id": "dify",
     "name": "Dify",
-    "developer": "开源社区",
+    "developer": "LangGenius, Inc.",
     "category": "agent",
     "tags": [
       "开源"
@@ -1609,14 +1610,14 @@ export const homeCatalog = [
     ],
     "personalExperience": {
       "rating": 4,
-      "insights": "截至 2026-07-07，Dify 的价值不只是“可自托管”，而是把 RAG、Workflow、Agent、插件和观测"
+      "insights": "截至 2026-07-13，Dify 的价值不只是“可自托管”，而是把 RAG、Workflow、Agent、插件和观测"
     },
     "decisionSummary": {
       "bestFor": "知识库问答、客服 Agent、内部 AI 应用和可观测工作流",
       "mainRisk": "Cloud 订阅额度、自托管基础设施和模型调用成本需要合并预算，否则容易低估长期成本。"
     },
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-07",
+    "lastVerified": "2026-07-13",
     "sourceCount": 3,
     "publicSourceCount": 3,
     "hasPublicSource": true,
@@ -1645,14 +1646,14 @@ export const homeCatalog = [
     ],
     "personalExperience": {
       "rating": 3.5,
-      "insights": "截至 2026-07-08，AutoGPT 更应该按平台型 Agent 自动化工具评估，而不是只看早期经典 autono"
+      "insights": "截至 2026-07-13，AutoGPT 更应该按平台型 Agent 自动化工具评估，而不是只看早期经典 autono"
     },
     "decisionSummary": {
       "bestFor": "定时 Agent、可视化流程编排、marketplace agents、可观测自动化和 MCP 工具工作流",
       "mainRisk": "项目已经从经典 AutoGPT 演示转向平台模式；托管云成本、自托管基础设施、凭证治理，以及 Polyform Shield License 与 MIT License 的边界都容易被误读。"
     },
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-08",
+    "lastVerified": "2026-07-13",
     "sourceCount": 3,
     "publicSourceCount": 3,
     "hasPublicSource": true,
@@ -1666,7 +1667,7 @@ export const homeCatalog = [
   {
     "id": "langchain",
     "name": "LangChain",
-    "developer": "开源社区",
+    "developer": "LangChain, Inc.",
     "category": "agent",
     "tags": [
       "开源"
@@ -1678,14 +1679,14 @@ export const homeCatalog = [
     ],
     "personalExperience": {
       "rating": 4,
-      "insights": "截至 2026-07-08，LangChain 条目应拆成“开源框架 + LangSmith 平台”来理解：LangGr"
+      "insights": "截至 2026-07-13，LangChain 条目应拆成“开源框架 + LangSmith 平台”来理解：LangGr"
     },
     "decisionSummary": {
       "bestFor": "需要代码级控制、评测、追踪和部署流水线的 AI 应用团队",
       "mainRisk": "容易低估工程复杂度与 LangSmith trace/seat 成本，原型和生产治理要分阶段推进。"
     },
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-08",
+    "lastVerified": "2026-07-13",
     "sourceCount": 3,
     "publicSourceCount": 3,
     "hasPublicSource": true,
@@ -1713,14 +1714,14 @@ export const homeCatalog = [
     ],
     "personalExperience": {
       "rating": 4,
-      "insights": "截至 2026-07-07，这个条目应指向 Gemini 图像生成，而不是一个独立轻量图表服务。Nano Banana "
+      "insights": "截至 2026-07-13，这个条目应指向 Gemini 图像生成，而不是一个独立轻量图表服务。Nano Banana "
     },
     "decisionSummary": {
       "bestFor": "Gemini app 图片编辑、含文字海报、照片变换、API 图像工作流和创意草稿",
       "mainRisk": "旧条目容易把 Nano Banana 误认为独立免费图表站；真实产品是 Gemini 图像模型族，涉及计划限制、API 价格、legacy 模型迁移、SynthID 和可见水印义务。"
     },
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-07",
+    "lastVerified": "2026-07-13",
     "sourceCount": 4,
     "publicSourceCount": 4,
     "hasPublicSource": true,
@@ -1749,14 +1750,14 @@ export const homeCatalog = [
     ],
     "personalExperience": {
       "rating": 4,
-      "insights": "截至 2026-07-07，Perplexity 应定位为 web-first research/answer engi"
+      "insights": "截至 2026-07-13，Perplexity 应定位为 web-first research/answer engi"
     },
     "decisionSummary": {
       "bestFor": "实时网页调研、带来源摘要、轻量报告和研究工作流",
       "mainRisk": "引用存在质量差异，最终事实仍要打开原文核验；Max/Enterprise 与 API 是不同成本路径，Brain 和 Comet agent 功能也有逐步开放和使用限额。"
     },
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-07",
+    "lastVerified": "2026-07-13",
     "sourceCount": 3,
     "publicSourceCount": 3,
     "hasPublicSource": true,
@@ -1784,14 +1785,14 @@ export const homeCatalog = [
     ],
     "personalExperience": {
       "rating": 4,
-      "insights": "截至 2026-07-07，Devin pricing 明确展示 Free、Pro $20、Max $200、Teams"
+      "insights": "截至 2026-07-13，Devin pricing 明确展示 Free、Pro $20、Max $200、Teams"
     },
     "decisionSummary": {
       "bestFor": "自主化开发任务、端到端功能实现、Bug 修复自动化、工程团队 backlog",
       "mainRisk": "included quota、extra usage、full dev seat 和模型/任务复杂度会影响真实成本，复杂任务输出不能免审"
     },
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-07",
+    "lastVerified": "2026-07-13",
     "sourceCount": 5,
     "publicSourceCount": 5,
     "hasPublicSource": true,
@@ -1820,14 +1821,14 @@ export const homeCatalog = [
     ],
     "personalExperience": {
       "rating": 4,
-      "insights": "截至 2026-07-07，Bolt 官方价格页显示 Free、Pro $25、Teams $30/成员、Enterpr"
+      "insights": "截至 2026-07-13，Bolt 官方价格页显示 Free、Pro $25、Teams $30/成员、Enterpr"
     },
     "decisionSummary": {
       "bestFor": "快速原型、全栈 Web 应用构建、MVP 验证",
       "mainRisk": "token 消耗与项目文件系统规模强相关，Free/Pro/Teams 额度和 rollover 规则可能比预期更快影响迭代"
     },
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-07",
+    "lastVerified": "2026-07-13",
     "sourceCount": 3,
     "publicSourceCount": 3,
     "hasPublicSource": true,
@@ -1856,14 +1857,14 @@ export const homeCatalog = [
     ],
     "personalExperience": {
       "rating": 4,
-      "insights": "截至 2026-07-07，v0 官方 pricing 显示 Free、Team、Business、Enterprise"
+      "insights": "截至 2026-07-13，v0 官方 pricing 显示 Free、Team、Business、Enterprise"
     },
     "decisionSummary": {
       "bestFor": "UI 快速原型、React 组件生成、Landing Page、Vercel 应用",
       "mainRisk": "模型 token 价格和 credits 消耗会让迭代成本高于订阅标价"
     },
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-07",
+    "lastVerified": "2026-07-13",
     "sourceCount": 3,
     "publicSourceCount": 3,
     "hasPublicSource": true,
@@ -1892,14 +1893,14 @@ export const homeCatalog = [
     ],
     "personalExperience": {
       "rating": 3.5,
-      "insights": "截至 2026-07-07，Lovable 官方文档显示其正在滚动到一个 credit balance：building"
+      "insights": "截至 2026-07-13，Lovable 官方文档显示其正在滚动到一个 credit balance：building"
     },
     "decisionSummary": {
       "bestFor": "全栈 Web 应用快速构建、非技术人员建站、Supabase MVP",
       "mainRisk": "同一 credits balance 覆盖 build、Cloud 和 AI features，用尽后会停止构建或影响运行"
     },
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-07",
+    "lastVerified": "2026-07-13",
     "sourceCount": 5,
     "publicSourceCount": 5,
     "hasPublicSource": true,
@@ -1928,14 +1929,14 @@ export const homeCatalog = [
     ],
     "personalExperience": {
       "rating": 3,
-      "insights": "截至 2026-07-08，Tabnine 官方 pricing 将 Code Assistant 标为 $39/用户/"
+      "insights": "截至 2026-07-13，Tabnine 官方 pricing 将 Code Assistant 标为 $39/用户/"
     },
     "decisionSummary": {
       "bestFor": "企业隐私优先、合规要求严格的团队",
       "mainRisk": "公开价格、annual subscription、quote/合同和 Tabnine-provided LLM access 附加计费需要分开核实，不能沿用旧 Dev/Enterprise 档位"
     },
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-08",
+    "lastVerified": "2026-07-13",
     "sourceCount": 2,
     "publicSourceCount": 2,
     "hasPublicSource": true,
@@ -1965,14 +1966,14 @@ export const homeCatalog = [
     ],
     "personalExperience": {
       "rating": 3.5,
-      "insights": "截至 2026-07-08，Warp 官方 pricing 是 Free、Build、Max、Business、Ente"
+      "insights": "截至 2026-07-13，Warp 官方 pricing 是 Free、Build、Max、Business、Ente"
     },
     "decisionSummary": {
       "bestFor": "终端重度用户、DevOps 工程师、命令行学习",
       "mainRisk": "Free 不含 bundled AI usage，Build/Max/Business credits、add-on credits 和 BYOK/custom endpoint 口径不同，旧请求数口径会低估使用 Warp Agent 的真实成本"
     },
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-08",
+    "lastVerified": "2026-07-13",
     "sourceCount": 2,
     "publicSourceCount": 2,
     "hasPublicSource": true,
@@ -1999,14 +2000,14 @@ export const homeCatalog = [
     ],
     "personalExperience": {
       "rating": 4,
-      "insights": "截至 2026-07-08，Meta 官方 Llama 4 页面、模型卡和 Meta AI 博客列出 Scout 与 M"
+      "insights": "截至 2026-07-13，Meta 官方 Llama 4 页面、模型卡和 Meta AI 博客列出 Scout 与 M"
     },
     "decisionSummary": {
       "bestFor": "隐私优先、本地推理、多模态长文档分析",
       "mainRisk": "部署成本、许可边界、Behemoth preview 状态和长上下文实际效果都需要在目标环境里验证。"
     },
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-08",
+    "lastVerified": "2026-07-13",
     "sourceCount": 3,
     "publicSourceCount": 3,
     "hasPublicSource": true,
@@ -2022,7 +2023,7 @@ export const homeCatalog = [
   },
   {
     "id": "mistral",
-    "name": "Mistral / Le Chat",
+    "name": "Mistral / Vibe (former Le Chat)",
     "developer": "Mistral AI (法国)",
     "category": "llm",
     "tags": [
@@ -2030,27 +2031,28 @@ export const homeCatalog = [
     ],
     "versions": [
       {
-        "pricing": "API 按模型 token 计费；Large 3 官方模型卡列出 $0.5/M input、$1.5/M output"
+        "pricing": "Vibe：Free / Pro $14.99/月 / Team $24.99/用户/月 / Enterprise 定制；API 按模型 token 另计"
       }
     ],
     "personalExperience": {
       "rating": 4,
-      "insights": "截至 2026-07-07，Mistral 官方模型页的主线已经不只是 Large 3，还包括 Medium 3.5、S"
+      "insights": "截至 2026-07-13，Mistral 的托管产品现以 Vibe（原 Le Chat）展示 Free、Pro、Tea"
     },
     "decisionSummary": {
       "bestFor": "欧洲合规、多模态 API、自部署或边缘模型评估",
       "mainRisk": "模型线更新快，采购前要逐项确认模型卡、价格、上下文和可用区域。"
     },
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-07",
+    "lastVerified": "2026-07-13",
     "sourceCount": 3,
     "publicSourceCount": 3,
     "hasPublicSource": true,
-    "hasFreeTier": false,
+    "hasFreeTier": true,
     "hasLowCostSignal": true,
     "hasPaidSignal": true,
     "scenarioIds": [
       "complex-refactor",
+      "free-stack",
       "long-context"
     ]
   },
@@ -2069,14 +2071,14 @@ export const homeCatalog = [
     ],
     "personalExperience": {
       "rating": 3,
-      "insights": "截至 2026-07-08，01.AI 官网可确认 Yi-Lightning、Yi Open-source 和 Worl"
+      "insights": "截至 2026-07-13，01.AI 官网可确认 Yi-Lightning、Yi Open-source 和 Worl"
     },
     "decisionSummary": {
       "bestFor": "需要跟踪 Yi 开放模型、企业 Agent 和中文模型备选的团队",
       "mainRisk": "开放权重、01.AI platform API、NVIDIA API trial 与企业 WorldWise 授权边界不同；Billing/Payment、real-name authentication、limited trial purposes only 和输入/生成内容记录都需要账户内和协议层面确认。"
     },
-    "verificationStatus": "verified",
-    "lastVerified": "2026-07-08",
+    "verificationStatus": "needs-review",
+    "lastVerified": "2026-07-13",
     "sourceCount": 9,
     "publicSourceCount": 9,
     "hasPublicSource": true,
@@ -2104,14 +2106,14 @@ export const homeCatalog = [
     ],
     "personalExperience": {
       "rating": 3.5,
-      "insights": "截至 2026-07-08，百度千帆官方页面已列出 ERNIE 5.1、ERNIE 5.0、ERNIE-5.0-Thin"
+      "insights": "截至 2026-07-13，百度千帆官方页面已列出 ERNIE 5.1、ERNIE 5.0、ERNIE-5.0-Thin"
     },
     "decisionSummary": {
       "bestFor": "百度生态、中文搜索增强、企业 API 接入",
       "mainRisk": "消费者入口、千帆 API、Agent 平台、第三方模型服务和资源包价格要分开核算，不能用单一免费结论覆盖。"
     },
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-08",
+    "lastVerified": "2026-07-13",
     "sourceCount": 4,
     "publicSourceCount": 4,
     "hasPublicSource": true,
@@ -2138,14 +2140,14 @@ export const homeCatalog = [
     ],
     "personalExperience": {
       "rating": 4.5,
-      "insights": "截至 2026-07-07，Black Forest Labs 官方文档把 FLUX.2 作为推荐模型家族：FLUX.2"
+      "insights": "截至 2026-07-13，Black Forest Labs 官方文档把 FLUX.2 作为推荐模型家族：FLUX.2"
     },
     "decisionSummary": {
       "bestFor": "开源/开放权重图像工作流、API 图像生成、本地 ComfyUI 探索",
       "mainRisk": "“开源模型”和“商用可用”不是同一件事，FLUX.2 API、FLUX.2 [klein] 4B/9B、FLUX.2 [dev]、FLUX MCP 与 Open Weights Licensing 需要分开看"
     },
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-07",
+    "lastVerified": "2026-07-13",
     "sourceCount": 4,
     "publicSourceCount": 4,
     "hasPublicSource": true,
@@ -2173,14 +2175,14 @@ export const homeCatalog = [
     ],
     "personalExperience": {
       "rating": 4,
-      "insights": "截至 2026-07-07，Runway pricing 页显示 Free 一次性 125 credits、Standa"
+      "insights": "截至 2026-07-13，Runway pricing 页显示 Free 一次性 125 credits、Standa"
     },
     "decisionSummary": {
       "bestFor": "广告片、产品视频、影视预览、动态图形、团队视频工作流",
       "mainRisk": "Free 125 credits 是一次性试用，Gen-4.5 以 12 credits per second 计费，API credits 与 Web app 计划分离，旧 Unlimited 正在向 Max 迁移。"
     },
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-07",
+    "lastVerified": "2026-07-13",
     "sourceCount": 5,
     "publicSourceCount": 5,
     "hasPublicSource": true,
@@ -2209,14 +2211,14 @@ export const homeCatalog = [
     ],
     "personalExperience": {
       "rating": 3.5,
-      "insights": "截至 2026-07-08，Pika 官方 pricing 页显示 Basic $0/80 monthly video "
+      "insights": "截至 2026-07-13，Pika 官方 pricing 页显示 Basic $0/80 monthly video "
     },
     "decisionSummary": {
       "bestFor": "社交媒体内容、创意短视频、AI 视频入门",
       "mainRisk": "Pika 订阅档位和 API 入口容易混算；Pikascenes/Pikadditions/Pikatwists 等功能的 credits 消耗、分辨率限制和 Fal.ai API 路径会影响真实成本"
     },
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-08",
+    "lastVerified": "2026-07-13",
     "sourceCount": 3,
     "publicSourceCount": 3,
     "hasPublicSource": true,
@@ -2244,14 +2246,14 @@ export const homeCatalog = [
     ],
     "personalExperience": {
       "rating": 4,
-      "insights": "截至 2026-07-07，Ideogram 应围绕 Ideogram 4.0、当前计划梯度、API pricing 和"
+      "insights": "截至 2026-07-13，Ideogram 应围绕 Ideogram 4.0、当前计划梯度、API pricing 和"
     },
     "decisionSummary": {
       "bestFor": "Logo、海报、社交图、图中文字实验，以及已配置 credit 控制的 API/MCP 图像生成",
       "mainRisk": "Free Plan、Priority credits、slow credits、API 单图价格、MCP/开发者入口和自动充值设置混在一起，容易造成预算误判。"
     },
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-07",
+    "lastVerified": "2026-07-13",
     "sourceCount": 6,
     "publicSourceCount": 6,
     "hasPublicSource": true,
@@ -2280,14 +2282,14 @@ export const homeCatalog = [
     ],
     "personalExperience": {
       "rating": 4,
-      "insights": "截至 2026-07-08，可官方确认的是即梦AI官网的一站式创作定位、火山引擎的即梦AI图片/视频 API 文档，以及"
+      "insights": "截至 2026-07-13，可官方确认的是即梦AI官网的一站式创作定位、火山引擎的即梦AI图片/视频 API 文档，以及"
     },
     "decisionSummary": {
       "bestFor": "中文图像/视频创作、国潮设计、社交媒体内容",
       "mainRisk": "会员价、积分消耗和火山引擎 API 计费入口不同；图片按张、视频按秒计费，协议也明确实际价格以产品页和订单结算页为准"
     },
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-08",
+    "lastVerified": "2026-07-13",
     "sourceCount": 4,
     "publicSourceCount": 4,
     "hasPublicSource": true,
@@ -2315,14 +2317,14 @@ export const homeCatalog = [
     ],
     "personalExperience": {
       "rating": 3.5,
-      "insights": "截至 2026-07-07，Suno 官方 pricing 显示 Free $0、Pro $10 月付或 $8/月年付、"
+      "insights": "截至 2026-07-13，Suno 官方 pricing 显示 Free $0、Pro $10 月付或 $8/月年付、"
     },
     "decisionSummary": {
       "bestFor": "短视频配乐、广告 demo、音乐灵感、社媒内容",
       "mainRisk": "Free credits、Free/Basic 非商业限制、paid commercial use rights、v5.5 模型能力和版权风险不能混为一个“可商用免费”结论。"
     },
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-07",
+    "lastVerified": "2026-07-13",
     "sourceCount": 5,
     "publicSourceCount": 5,
     "hasPublicSource": true,
@@ -2354,10 +2356,10 @@ export const homeCatalog = [
     },
     "decisionSummary": {
       "bestFor": "有声书、视频旁白、产品语音、多语言配音、语音 Agent",
-      "mainRisk": "Free 10,000 credits 不含 commercial license；旧 scribe_v1、eleven_monolingual_v1、eleven_multilingual_v1 将于 2026-07-09 移除，且 TTS/API/Agents/Studio 的计费口径不同。"
+      "mainRisk": "Free 10,000 credits 不含 commercial license；旧 scribe_v1、eleven_monolingual_v1、eleven_multilingual_v1 已到官方移除日期，且 TTS/API/Agents/Studio 的计费口径不同。"
     },
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-07",
+    "lastVerified": "2026-07-13",
     "sourceCount": 5,
     "publicSourceCount": 5,
     "hasPublicSource": true,
@@ -2387,14 +2389,14 @@ export const homeCatalog = [
     ],
     "personalExperience": {
       "rating": 3,
-      "insights": "截至 2026-07-07，Manus 官网已显示其属于 Meta，并公开 Free、Pro、Team 的 credit"
+      "insights": "截至 2026-07-13，Manus 官网已显示其属于 Meta，并公开 Free、Pro、Team 的 credit"
     },
     "decisionSummary": {
       "bestFor": "自动化调研、幻灯片/网页/内容生成、团队级 AI 工作流探索",
       "mainRisk": "credits 会随任务复杂度、LLM tokens、虚拟机和第三方 API 增加，Plan credits 月度重置，add-on credits 才不失效，Team/Enterprise 才提供更完整团队治理"
     },
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-07",
+    "lastVerified": "2026-07-13",
     "sourceCount": 4,
     "publicSourceCount": 4,
     "hasPublicSource": true,
@@ -2424,14 +2426,14 @@ export const homeCatalog = [
     ],
     "personalExperience": {
       "rating": 3.5,
-      "insights": "截至 2026-07-08，CrewAI 应按“开源 Python 编排框架 + 商业控制平面”理解。官方 pricin"
+      "insights": "截至 2026-07-13，CrewAI 应按“开源 Python 编排框架 + 商业控制平面”理解。官方 pricin"
     },
     "decisionSummary": {
       "bestFor": "多 Agent 工作流编排、AI 自动化任务、需要 Crews 与 Flows 的 Python 团队",
       "mainRisk": "Basic Free 的 50 workflow executions/month 与开源本地运行不是同一成本模型，生产部署还要承担 LLM/API/基础设施成本"
     },
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-08",
+    "lastVerified": "2026-07-13",
     "sourceCount": 4,
     "publicSourceCount": 4,
     "hasPublicSource": true,
@@ -2460,14 +2462,14 @@ export const homeCatalog = [
     ],
     "personalExperience": {
       "rating": 4,
-      "insights": "截至 2026-07-08，n8n 仍是技术团队做自动化和 AI 工作流的强选择，但当前页面应按官方 pricing、A"
+      "insights": "截至 2026-07-13，n8n 仍是技术团队做自动化和 AI 工作流的强选择，但当前页面应按官方 pricing、A"
     },
     "decisionSummary": {
       "bestFor": "内部工作流自动化、AI Agent 编排、跨系统数据同步、企业集成",
       "mainRisk": "Cloud 按 monthly workflow executions 计费；Community Edition 使用 Sustainable Use License，不应简单理解为无限制开源。"
     },
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-08",
+    "lastVerified": "2026-07-13",
     "sourceCount": 3,
     "publicSourceCount": 3,
     "hasPublicSource": true,
@@ -2495,14 +2497,14 @@ export const homeCatalog = [
     ],
     "personalExperience": {
       "rating": 4,
-      "insights": "截至 2026-07-08，OpenAI Agents SDK 的价值在于 code-first、抽象少、上手快，同时把"
+      "insights": "截至 2026-07-13，OpenAI Agents SDK 的价值在于 code-first、抽象少、上手快，同时把"
     },
     "decisionSummary": {
       "bestFor": "OpenAI 优先但希望保留多 provider 接入的 Agent 应用、工具调用、Handoffs 和可追踪工作流",
       "mainRisk": "SDK 本身轻量，但生产成本和能力边界取决于所选模型/provider、Tracing 留存和 Guardrails 设计。"
     },
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-08",
+    "lastVerified": "2026-07-13",
     "sourceCount": 3,
     "publicSourceCount": 3,
     "hasPublicSource": true,
@@ -2527,19 +2529,19 @@ export const homeCatalog = [
     ],
     "versions": [
       {
-        "pricing": "MIT 开源 SDK；运行成本取决于 Claude Code / Anthropic API / 订阅或自定义 CLI 路径"
+        "pricing": "MIT 开源 SDK；模型用量按 Anthropic API、Amazon Bedrock、Google Cloud 或 Microsoft Foundry 计费"
       }
     ],
     "personalExperience": {
       "rating": 4.5,
-      "insights": "截至 2026-07-08，Claude Agent SDK 更像是把 Claude Code 的 agent loop"
+      "insights": "截至 2026-07-13，Claude Agent SDK 更像是把 Claude Code 的 agent loop"
     },
     "decisionSummary": {
       "bestFor": "代码库读取、命令执行、文件编辑、复杂代码工作流自动化",
       "mainRisk": "SDK 会把 Claude Code 的文件、命令和编辑能力库化，生产使用必须限制工具权限、工作目录和成本路径。"
     },
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-08",
+    "lastVerified": "2026-07-13",
     "sourceCount": 3,
     "publicSourceCount": 3,
     "hasPublicSource": true,
@@ -2568,14 +2570,14 @@ export const homeCatalog = [
     ],
     "personalExperience": {
       "rating": 3.5,
-      "insights": "截至 2026-07-08，Google ADK 当前更应按官方多语言 production agents 框架来介绍，"
+      "insights": "截至 2026-07-13，Google ADK 当前更应按官方多语言 production agents 框架来介绍，"
     },
     "decisionSummary": {
       "bestFor": "Google 生态、多语言 agent 开发、Gemini 工具能力、企业级调试与部署路径",
       "mainRisk": "ADK 框架开源不等于运行免费；Gemini、Vertex AI、Agent Engine 和企业能力仍需按对应服务计费与权限治理。"
     },
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-08",
+    "lastVerified": "2026-07-13",
     "sourceCount": 3,
     "publicSourceCount": 3,
     "hasPublicSource": true,
@@ -2605,14 +2607,14 @@ export const homeCatalog = [
     ],
     "personalExperience": {
       "rating": 5,
-      "insights": "截至 2026-07-08，MCP Core 核心工具之一。它把最新、版本化的库文档拉进 AI 编码上下文，尤其适合处理"
+      "insights": "截至 2026-07-13，MCP Core 核心工具之一。它把最新、版本化的库文档拉进 AI 编码上下文，尤其适合处理"
     },
     "decisionSummary": {
       "bestFor": "Cursor、Claude Code、Codex、Gemini CLI 等需要查询最新 API/框架文档的编码场景",
       "mainRisk": "Free 计划只有 1,000 API calls/月；Pro 为 $10/seat/月并含 5,000 free API calls/seat/月，私有仓库解析另按 tokens 计费。"
     },
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-08",
+    "lastVerified": "2026-07-13",
     "sourceCount": 5,
     "publicSourceCount": 5,
     "hasPublicSource": true,
@@ -2647,7 +2649,7 @@ export const homeCatalog = [
       "mainRisk": "需要 Node.js 18+ 和 MCP 客户端；accessibility snapshots 会占上下文，复杂任务还会消耗本地浏览器资源。"
     },
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-08",
+    "lastVerified": "2026-07-13",
     "sourceCount": 2,
     "publicSourceCount": 2,
     "hasPublicSource": true,
@@ -2683,7 +2685,7 @@ export const homeCatalog = [
       "mainRisk": "Free 只有 1,000 credits / month；Scrape/Crawl/Map 通常 1 credit/page，Search 2/10 results，Interact 按 browser minute 扣 credits。"
     },
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-08",
+    "lastVerified": "2026-07-13",
     "sourceCount": 2,
     "publicSourceCount": 2,
     "hasPublicSource": true,
@@ -2717,7 +2719,7 @@ export const homeCatalog = [
       "mainRisk": "远程 OAuth 可免 PAT，但不同 IDE 支持不同；本地模式常用 PAT，toolsets 和 read-only 配置必须严格收敛权限。"
     },
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-08",
+    "lastVerified": "2026-07-13",
     "sourceCount": 3,
     "publicSourceCount": 3,
     "hasPublicSource": true,
@@ -2744,14 +2746,14 @@ export const homeCatalog = [
     ],
     "personalExperience": {
       "rating": 4,
-      "insights": "截至 2026-07-08，Sequential Thinking 更准确的定位是一个提供结构化推理工具的参考 MCP "
+      "insights": "截至 2026-07-13，Sequential Thinking 更准确的定位是一个提供结构化推理工具的参考 MCP "
     },
     "decisionSummary": {
       "bestFor": "架构取舍分析、生产调试、迁移规划，以及需要修订或分支的问题",
       "mainRisk": "MCP server 会暴露结构化推理状态；如果 host 日志或分享控制不好，敏感任务上下文可能进入 trace，简单任务也会浪费模型调用。"
     },
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-08",
+    "lastVerified": "2026-07-13",
     "sourceCount": 3,
     "publicSourceCount": 3,
     "hasPublicSource": true,
@@ -2778,14 +2780,14 @@ export const homeCatalog = [
     ],
     "personalExperience": {
       "rating": 4,
-      "insights": "截至 2026-07-08，AntV Chart MCP 是具体的可视化 MCP server，而不是泛泛的数据分析承诺"
+      "insights": "截至 2026-07-13，AntV Chart MCP 是具体的可视化 MCP server，而不是泛泛的数据分析承诺"
     },
     "decisionSummary": {
       "bestFor": "AI 辅助图表、快速报告视觉、Dify 图表生成，以及需要 25+ 图表类型的 MCP 工作流",
       "mainRisk": "即便输入 schema、聚合口径或地理范围有误，图表也可能显得很有说服力；地图生成还依赖 AMap 且有地区限制。"
     },
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-08",
+    "lastVerified": "2026-07-13",
     "sourceCount": 3,
     "publicSourceCount": 3,
     "hasPublicSource": true,
@@ -2811,14 +2813,14 @@ export const homeCatalog = [
     ],
     "personalExperience": {
       "rating": 3.5,
-      "insights": "截至 2026-07-08，Brave Search API 已按 credits 和请求数展示价格：Search 是 "
+      "insights": "截至 2026-07-13，Brave Search API 已按 credits 和请求数展示价格：Search 是 "
     },
     "decisionSummary": {
       "bestFor": "RAG/Agent 的实时网页搜索、技术资料检索、独立搜索索引需求",
       "mainRisk": "旧免费查询口径已过时；Search、Answers 和 token 费用不同，泄露 API key 或未设 usage limits 都可能造成额外账单。"
     },
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-08",
+    "lastVerified": "2026-07-13",
     "sourceCount": 3,
     "publicSourceCount": 3,
     "hasPublicSource": true,
@@ -2834,7 +2836,7 @@ export const homeCatalog = [
   },
   {
     "id": "openmemory-mcp",
-    "name": "OpenMemory / Mem0 MCP",
+    "name": "Mem0 MCP",
     "developer": "Mem0",
     "category": "mcp",
     "tags": [
@@ -2847,14 +2849,14 @@ export const homeCatalog = [
     ],
     "personalExperience": {
       "rating": 3.5,
-      "insights": "截至 2026-07-08，OpenMemory/Mem0 的关键变化是托管 Mem0 MCP 已明确可用，同时 Ope"
+      "insights": "截至 2026-07-13，Mem0 MCP 的当前主路径是托管服务和 11 个 memory tools；旧本地 me"
     },
     "decisionSummary": {
       "bestFor": "跨客户端长期偏好、项目背景、工作习惯和可复用上下文",
       "mainRisk": "memory persistence risk：错误或敏感记忆会跨会话持续影响 Agent；云端版受 Mem0 Platform 额度和 API key 控制，本地版受部署和存储治理质量影响。"
     },
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-08",
+    "lastVerified": "2026-07-13",
     "sourceCount": 5,
     "publicSourceCount": 5,
     "hasPublicSource": true,
@@ -2880,14 +2882,14 @@ export const homeCatalog = [
     ],
     "personalExperience": {
       "rating": 4,
-      "insights": "截至 2026-07-08，Notion MCP 的准确口径应从旧本地包转向官方 hosted server：remot"
+      "insights": "截至 2026-07-13，Notion MCP 的准确口径应从旧本地包转向官方 hosted server：remot"
     },
     "decisionSummary": {
       "bestFor": "团队文档、项目数据库、知识库页面和评论的受控查询与更新",
       "mainRisk": "OAuth 授权后 Agent 可按 access and permissions 对 Notion 内容 read and write；部分搜索和数据源能力受 Notion AI、计划与 rate limits 影响。"
     },
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-08",
+    "lastVerified": "2026-07-13",
     "sourceCount": 3,
     "publicSourceCount": 3,
     "hasPublicSource": true,
@@ -2915,14 +2917,14 @@ export const homeCatalog = [
     ],
     "personalExperience": {
       "rating": 3.5,
-      "insights": "截至 2026-07-08，Postman MCP 已有官方文档和 remote server。选型重点不是“能不能免费"
+      "insights": "截至 2026-07-13，Postman MCP 已有官方文档和 remote server。选型重点不是“能不能免费"
     },
     "decisionSummary": {
       "bestFor": "Postman collections/specs/environments 的查询、同步和轻量维护",
       "mainRisk": "Full 配置暴露 100+ Postman tools；OAuth/API key 与 EU remote server 规则不同，权限过大时可能误改共享 API 资产。"
     },
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-08",
+    "lastVerified": "2026-07-13",
     "sourceCount": 3,
     "publicSourceCount": 3,
     "hasPublicSource": true,
@@ -2938,7 +2940,7 @@ export const homeCatalog = [
   {
     "id": "atlassian-mcp",
     "name": "Atlassian Rovo MCP",
-    "developer": "Atlassian / Sooperset community alternative",
+    "developer": "Atlassian",
     "category": "mcp",
     "tags": [
       "MCP"
@@ -2950,14 +2952,14 @@ export const homeCatalog = [
     ],
     "personalExperience": {
       "rating": 3.5,
-      "insights": "截至 2026-07-08，Atlassian 已有官方 Atlassian Rovo MCP Server，旧条目不能"
+      "insights": "截至 2026-07-13，Atlassian 已有官方 Atlassian Rovo MCP Server，旧条目不能"
     },
     "decisionSummary": {
       "bestFor": "已在 Atlassian Cloud 上管理工程、产品、支持和知识库的团队",
       "mainRisk": "Agent 可在 existing access controls 范围内读取和更新真实 Jira/Confluence/Bitbucket 资料；Beta tools、Rovo credits、API rate limits 和合规要求必须逐项确认。"
     },
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-08",
+    "lastVerified": "2026-07-13",
     "sourceCount": 5,
     "publicSourceCount": 5,
     "hasPublicSource": true,
@@ -2983,14 +2985,14 @@ export const homeCatalog = [
     ],
     "personalExperience": {
       "rating": 4.5,
-      "insights": "截至 2026-07-08，Supabase 官方文档已经把安全边界写得很清楚：默认建议 project_ref + r"
+      "insights": "截至 2026-07-13，Supabase 官方文档已经把安全边界写得很清楚：默认建议 project_ref + r"
     },
     "decisionSummary": {
       "bestFor": "开发环境数据库查询、schema 理解、日志排查、TypeScript types 生成",
       "mainRisk": "未设置 project_ref、read_only 和 features 会扩大权限面；官方也提示切勿将 MCP 服务器连接到生产数据。"
     },
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-08",
+    "lastVerified": "2026-07-13",
     "sourceCount": 2,
     "publicSourceCount": 2,
     "hasPublicSource": true,
@@ -3054,14 +3056,14 @@ export const homeCatalog = [
     ],
     "personalExperience": {
       "rating": 4,
-      "insights": "截至 2026-07-08，Vercel MCP 是官方 Beta remote MCP。它适合让 Agent 查 do"
+      "insights": "截至 2026-07-13，Vercel MCP 是官方 Beta remote MCP。它适合让 Agent 查 do"
     },
     "decisionSummary": {
       "bestFor": "Vercel 项目诊断、部署状态查询、运行日志排查和文档检索",
       "mainRisk": "authenticated tools 可触达真实 Vercel 资源；prompt injection 与误操作可能造成部署、域名购买或账单影响，必须 human confirmation。"
     },
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-08",
+    "lastVerified": "2026-07-13",
     "sourceCount": 2,
     "publicSourceCount": 2,
     "hasPublicSource": true,
@@ -3088,14 +3090,14 @@ export const homeCatalog = [
     ],
     "personalExperience": {
       "rating": 4,
-      "insights": "截至 2026-07-08，Slack 已有官方 MCP Server 文档。它的关键价值是把 Slack 搜索、频道/"
+      "insights": "截至 2026-07-13，Slack 已有官方 MCP Server 文档。它的关键价值是把 Slack 搜索、频道/"
     },
     "decisionSummary": {
       "bestFor": "Slack 消息/文件/成员/频道搜索，线程上下文整理，人工确认后的回复草稿",
       "mainRisk": "Slack MCP 可读取指定频道或会话，也可发送消息；OAuth 权限范围和工作区管理不到位会扩大内部数据与误发消息风险。"
     },
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-08",
+    "lastVerified": "2026-07-13",
     "sourceCount": 3,
     "publicSourceCount": 3,
     "hasPublicSource": true,
@@ -3123,14 +3125,14 @@ export const homeCatalog = [
     ],
     "personalExperience": {
       "rating": 4,
-      "insights": "截至 2026-07-08，Linear MCP 应按官方 remote MCP 和 workspace 计划来判断：它"
+      "insights": "截至 2026-07-13，Linear MCP 应按官方 remote MCP 和 workspace 计划来判断：它"
     },
     "decisionSummary": {
       "bestFor": "研发任务查询、issue/comment 草稿、项目状态整理和低风险更新",
       "mainRisk": "Agent 可创建和更新真实 Linear 记录；AI credits、Free/Basic/Business 计划、API limits 与权限治理会影响成本和可靠性。"
     },
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-08",
+    "lastVerified": "2026-07-13",
     "sourceCount": 2,
     "publicSourceCount": 2,
     "hasPublicSource": true,
@@ -3157,14 +3159,14 @@ export const homeCatalog = [
     ],
     "personalExperience": {
       "rating": 4.5,
-      "insights": "截至 2026-07-08，Sentry MCP 的选型重点是错误数据治理：OAuth/Auth Token 如何授权、"
+      "insights": "截至 2026-07-13，Sentry MCP 的选型重点是错误数据治理：OAuth/Auth Token 如何授权、"
     },
     "decisionSummary": {
       "bestFor": "错误堆栈分析、issue 聚类、复现线索整理、修复草案生成",
       "mainRisk": "Sentry MCP 会暴露 production error data；Auth Token/OAuth permissions and scopes 配置过大时，Agent 可接触敏感项目和用户数据。"
     },
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-08",
+    "lastVerified": "2026-07-13",
     "sourceCount": 5,
     "publicSourceCount": 5,
     "hasPublicSource": true,
@@ -3180,7 +3182,7 @@ export const homeCatalog = [
   },
   {
     "id": "docker-mcp",
-    "name": "Docker MCP",
+    "name": "Docker MCP Toolkit",
     "developer": "Docker",
     "category": "mcp",
     "tags": [
@@ -3193,14 +3195,14 @@ export const homeCatalog = [
     ],
     "personalExperience": {
       "rating": 3.5,
-      "insights": "截至 2026-07-08，Docker MCP 更准确的定位是 Catalog/Toolkit/Gateway：用 3"
+      "insights": "截至 2026-07-13，Docker MCP Toolkit 更准确的定位是 Catalog/Toolkit/Gat"
     },
     "decisionSummary": {
       "bestFor": "本地开发中的 MCP server 发现、隔离运行、权限治理和调用追踪",
       "mainRisk": "Docker MCP Gateway 以隔离 Docker 容器降低风险，但 server 仍可能通过网络访问、资源使用或宿主权限造成影响；Beta 阶段需谨慎试点。"
     },
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-08",
+    "lastVerified": "2026-07-13",
     "sourceCount": 2,
     "publicSourceCount": 2,
     "hasPublicSource": true,
@@ -3228,14 +3230,14 @@ export const homeCatalog = [
     ],
     "personalExperience": {
       "rating": 3.5,
-      "insights": "截至 2026-07-08，Stripe MCP 是官方 remote MCP server，不应再指向泛 Claude"
+      "insights": "截至 2026-07-13，Stripe MCP 是官方 remote MCP server，不应再指向泛 Claude"
     },
     "decisionSummary": {
       "bestFor": "Stripe 文档检索、API 集成规划、客户/订单/订阅只读排查、sandbox 调试",
       "mainRisk": "stripe_api_write、create_refund 等工具可修改真实支付资源；应使用受限 API 密钥、人工确认，并隔离沙箱与正式环境。"
     },
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-08",
+    "lastVerified": "2026-07-13",
     "sourceCount": 3,
     "publicSourceCount": 3,
     "hasPublicSource": true,
@@ -3262,14 +3264,14 @@ export const homeCatalog = [
     ],
     "personalExperience": {
       "rating": 4,
-      "insights": "截至 2026-07-08，Cloudflare MCP 分为广覆盖的 API Code Mode server 和更收"
+      "insights": "截至 2026-07-13，Cloudflare MCP 分为广覆盖的 API Code Mode server 和更收"
     },
     "decisionSummary": {
       "bestFor": "Workers、R2、D1、DNS、AI Gateway、Observability 和 Audit Logs 的 AI 辅助运维/开发",
       "mainRisk": "Cloudflare API MCP 覆盖 over 2,500 endpoints，search()/execute() 能触达大量资源；权限过大可能造成 DNS、部署或账单风险。"
     },
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-08",
+    "lastVerified": "2026-07-13",
     "sourceCount": 3,
     "publicSourceCount": 3,
     "hasPublicSource": true,
@@ -3298,14 +3300,14 @@ export const homeCatalog = [
     ],
     "personalExperience": {
       "rating": 4,
-      "insights": "截至 2026-07-08，GitLab MCP 已有官方 Beta 文档，应按 Premium, Ultimate、G"
+      "insights": "截至 2026-07-13，GitLab MCP 已有官方 Beta 文档，应按 Premium, Ultimate、G"
     },
     "decisionSummary": {
       "bestFor": "issue/MR/pipeline/search/semantic_code_search 的受控 AI 辅助",
       "mainRisk": "GitLab MCP 可代你执行操作；manage_pipeline、MR 和 issue 写入会影响真实研发流程，个人访问令牌必须定期轮换或撤销，并遵循最小授权。"
     },
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-08",
+    "lastVerified": "2026-07-13",
     "sourceCount": 3,
     "publicSourceCount": 3,
     "hasPublicSource": true,
@@ -3319,7 +3321,7 @@ export const homeCatalog = [
   },
   {
     "id": "elasticsearch-mcp",
-    "name": "Elasticsearch MCP",
+    "name": "Elastic Agent Builder MCP server",
     "developer": "Elastic",
     "category": "mcp",
     "tags": [
@@ -3332,14 +3334,14 @@ export const homeCatalog = [
     ],
     "personalExperience": {
       "rating": 3.5,
-      "insights": "截至 2026-07-08，Elastic MCP 选型要先区分 Agent Builder MCP server 与 "
+      "insights": "截至 2026-07-13，Elastic MCP 选型要先区分 Agent Builder MCP server 与 "
     },
     "decisionSummary": {
       "bestFor": "Elastic 日志/搜索数据的受控查询、mapping 理解、ES|QL 辅助和排障上下文整理",
       "mainRisk": "KIBANA_URL 与 API_KEY 的暴露面取决于 API 密钥权限；若未按最小权限原则配置，Agent 可能读取敏感日志或触发昂贵查询。"
     },
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-08",
+    "lastVerified": "2026-07-13",
     "sourceCount": 3,
     "publicSourceCount": 3,
     "hasPublicSource": true,
@@ -3354,7 +3356,7 @@ export const homeCatalog = [
   {
     "id": "autogen",
     "name": "AutoGen",
-    "developer": "Microsoft",
+    "developer": "Microsoft Research / community-managed",
     "category": "agent",
     "tags": [
       "Agent"
@@ -3366,14 +3368,14 @@ export const homeCatalog = [
     ],
     "personalExperience": {
       "rating": 3,
-      "insights": "截至 2026-07-08，AutoGen 更适合“历史项目维护与多 Agent 架构学习”而不是默认新项目首选。官方稳"
+      "insights": "截至 2026-07-13，AutoGen 更适合“历史项目维护与多 Agent 架构学习”而不是默认新项目首选。官方稳"
     },
     "decisionSummary": {
       "bestFor": "维护既有 AutoGen 项目、学习 AgentChat/Core/Magentic-One 等多 Agent 模式",
       "mainRisk": "GitHub 仓库标注为维护模式，长期路线、依赖升级和社区活跃度都需要重新评估。"
     },
-    "verificationStatus": "verified",
-    "lastVerified": "2026-07-08",
+    "verificationStatus": "historical",
+    "lastVerified": "2026-07-13",
     "sourceCount": 3,
     "publicSourceCount": 3,
     "hasPublicSource": true,
@@ -3388,7 +3390,7 @@ export const homeCatalog = [
   },
   {
     "id": "zapier-ai",
-    "name": "Zapier AI Automation",
+    "name": "Zapier",
     "developer": "Zapier",
     "category": "agent",
     "tags": [
@@ -3401,14 +3403,14 @@ export const homeCatalog = [
     ],
     "personalExperience": {
       "rating": 3.5,
-      "insights": "截至 2026-07-08，Zapier 条目不应再以 AI Actions 为主。官方帮助页说明 AI Actions"
+      "insights": "截至 2026-07-13，Zapier 条目不应再以 AI Actions 为主，MCP 也已不再标 Beta。当前口"
     },
     "decisionSummary": {
       "bestFor": "跨 SaaS 应用的自然语言操作、业务自动化、团队治理和低代码工作流",
       "mainRisk": "task-based pricing 和 shared task pool 会让 Zap workflows、AI steps、code、MCP、SDK 共用额度；AI 工具调用真实业务系统前必须控制权限和确认。"
     },
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-08",
+    "lastVerified": "2026-07-13",
     "sourceCount": 5,
     "publicSourceCount": 5,
     "hasPublicSource": true,
@@ -3417,6 +3419,7 @@ export const homeCatalog = [
     "hasPaidSignal": true,
     "scenarioIds": [
       "daily-coding",
+      "complex-refactor",
       "free-stack"
     ]
   },
@@ -3430,19 +3433,19 @@ export const homeCatalog = [
     ],
     "versions": [
       {
-        "pricing": "Free $0/mo，最多 1,000 credits/month；Core $9/mo、Pro $16/mo、Teams $29/mo 默认按 10k credits/mo 展示"
+        "pricing": "Free $0，1,000 credits/month；统一 Make Plan 从 $9/月起（默认 5,000 credits）；Company 定制"
       }
     ],
     "personalExperience": {
       "rating": 3.5,
-      "insights": "截至 2026-07-08，Make 已把旧 operations 口径更新为 credits。它适合偏可视化编排和复杂"
+      "insights": "截至 2026-07-13，Make 已把旧 Core/Pro/Teams 梯度收敛为统一 Make Plan，从默认 "
     },
     "decisionSummary": {
       "bestFor": "复杂流程、分支/错误处理、AI Agents、Make MCP Server 和跨 SaaS 自动化",
       "mainRisk": "credits 是计费单位；AI features 可能随 token/model/usage 动态消耗 credits，Make MCP Server 和 scenario runs 也会消耗 credits，不能沿用旧 operations 口径。"
     },
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-08",
+    "lastVerified": "2026-07-13",
     "sourceCount": 5,
     "publicSourceCount": 5,
     "hasPublicSource": true,
@@ -3459,7 +3462,7 @@ export const homeCatalog = [
   {
     "id": "camel-ai",
     "name": "CAMEL-AI",
-    "developer": "CAMEL-AI.org",
+    "developer": "CAMEL-AI open-source community",
     "category": "agent",
     "tags": [
       "Agent"
@@ -3471,14 +3474,14 @@ export const homeCatalog = [
     ],
     "personalExperience": {
       "rating": 3.5,
-      "insights": "截至 2026-07-08，CAMEL-AI 更像一个宽口径的多 Agent 研究与工程框架，而不是简单的角色扮演 de"
+      "insights": "截至 2026-07-13，CAMEL-AI 更像一个宽口径的多 Agent 研究与工程框架，而不是简单的角色扮演 de"
     },
     "decisionSummary": {
       "bestFor": "Agent societies、研究原型、合成数据生成、RAG 实验和多 Agent 自动化 cookbook",
       "mainRisk": "CAMEL-AI 活跃且覆盖广，但多 Agent 系统会迅速增加版本、依赖、可观测性和模型/工具成本复杂度。"
     },
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-08",
+    "lastVerified": "2026-07-13",
     "sourceCount": 3,
     "publicSourceCount": 3,
     "hasPublicSource": true,
@@ -3495,7 +3498,7 @@ export const homeCatalog = [
   {
     "id": "agentscope",
     "name": "AgentScope",
-    "developer": "agentscope-ai / open-source community",
+    "developer": "AgentScope / Alibaba Tongyi Lab",
     "category": "agent",
     "tags": [
       "Agent"
@@ -3507,14 +3510,14 @@ export const homeCatalog = [
     ],
     "personalExperience": {
       "rating": 4,
-      "insights": "截至 2026-07-08，更有用的理解方式是 AgentScope 2.0：事件流、权限控制、多会话服务、worksp"
+      "insights": "截至 2026-07-13，更有用的理解方式是 AgentScope 2.0：事件流、权限控制、多会话服务、worksp"
     },
     "decisionSummary": {
       "bestFor": "Agent 服务后端、受控工具使用、RAG 服务、沙箱编码 Agent 和事件流 UI 集成",
       "mainRisk": "AgentScope 2.0 增强了事件、权限、沙箱和服务抽象，但迁移、API 变化、工具权限和模型供应商成本都需要主动管理。"
     },
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-08",
+    "lastVerified": "2026-07-13",
     "sourceCount": 3,
     "publicSourceCount": 3,
     "hasPublicSource": true,
@@ -3542,14 +3545,14 @@ export const homeCatalog = [
     ],
     "personalExperience": {
       "rating": 4,
-      "insights": "截至 2026-07-07，Luma 已把个人计划整理为 Plus $30/月、Pro $90/月、Ultra $300"
+      "insights": "截至 2026-07-13，Luma 已把个人计划整理为 Plus $30/月、Pro $90/月、Ultra $300"
     },
     "decisionSummary": {
       "bestFor": "高质量短视频生成、产品展示视频、创意团队视频工作流",
       "mainRisk": "订阅 credits、API 用量、第三方模型成本和 Team/Enterprise 规则不同，不能再按旧 Dream Machine 口径估算"
     },
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-07",
+    "lastVerified": "2026-07-13",
     "sourceCount": 3,
     "publicSourceCount": 3,
     "hasPublicSource": true,
@@ -3575,14 +3578,14 @@ export const homeCatalog = [
     ],
     "personalExperience": {
       "rating": 4,
-      "insights": "截至 2026-07-07，Hailuo 应作为 MiniMax 视频栈评估：既有消费者 app 入口，也有 Open "
+      "insights": "截至 2026-07-13，Hailuo 应作为 MiniMax 视频栈评估：既有消费者 app 入口，也有 Open "
     },
     "decisionSummary": {
       "bestFor": "短视频生成、Hailuo 网页/移动端实验，以及基于 Hailuo 2.3 模型的 API 视频渲染",
       "mainRisk": "Membership Credits、Purchased Credits、Bonus credits 和 MiniMax Open Platform API pay-go 很容易混淆，从而扭曲生产成本估算。"
     },
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-07",
+    "lastVerified": "2026-07-13",
     "sourceCount": 5,
     "publicSourceCount": 5,
     "hasPublicSource": true,
@@ -3610,14 +3613,14 @@ export const homeCatalog = [
     ],
     "personalExperience": {
       "rating": 4,
-      "insights": "截至 2026-07-07，Udio 官方帮助中心比 pricing 页更适合核验 credits：Free 是每日 1"
+      "insights": "截至 2026-07-13，Udio 官方帮助中心比 pricing 页更适合核验 credits：Free 是每日 1"
     },
     "decisionSummary": {
       "bestFor": "原创音乐创作、BGM 生成、歌曲制作",
       "mainRisk": "Free、trial、Standard、Pro 的 credit limits 不同，trial 不提升额度且没有 Pro trial，长歌生成、编辑和 remix 都会消耗 credits"
     },
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-07",
+    "lastVerified": "2026-07-13",
     "sourceCount": 4,
     "publicSourceCount": 4,
     "hasPublicSource": true,
@@ -3639,19 +3642,19 @@ export const homeCatalog = [
     ],
     "versions": [
       {
-        "pricing": "Command A / R+ 按 input/output token 计费；A 与 R+ 当前均列出 $2.5/M input、$10/M output"
+        "pricing": "Command A+ 提供 Apache 2.0 open weights；API 可在 rate limits 内试用，生产通过 Model Vault / enterprise 路径核价"
       }
     ],
     "personalExperience": {
       "rating": 3.5,
-      "insights": "截至 2026-07-07，Cohere 官方模型页已经把 Command A+、Command A、Command A"
+      "insights": "截至 2026-07-13，Cohere 官方模型页已经把 Command A+、Command A、Command A"
     },
     "decisionSummary": {
       "bestFor": "企业知识库、tool use、Agent、多语言检索增强",
       "mainRisk": "旧 Command R+ 口径容易低估新模型线；试用、限额和私有部署要账户级确认。"
     },
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-07",
+    "lastVerified": "2026-07-13",
     "sourceCount": 3,
     "publicSourceCount": 3,
     "hasPublicSource": true,
@@ -3678,14 +3681,14 @@ export const homeCatalog = [
     ],
     "personalExperience": {
       "rating": 3.5,
-      "insights": "截至 2026-07-07，AWS Nova 2 文档已经把 Nova 2 描述为支持 up to 1M context"
+      "insights": "截至 2026-07-13，AWS Nova 2 文档已经把 Nova 2 描述为支持 up to 1M context"
     },
     "decisionSummary": {
       "bestFor": "AWS 生态、Bedrock Agents/Knowledge Bases、Nova 2 reasoning/tools、长文档和多模态输入",
       "mainRisk": "Nova 2、Nova v1、multimodal embeddings、Canvas/Reel/Sonic 和 Bedrock 服务层价格/区域不同，不能用单一低价结论采购。"
     },
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-07",
+    "lastVerified": "2026-07-13",
     "sourceCount": 7,
     "publicSourceCount": 7,
     "hasPublicSource": true,
@@ -3709,19 +3712,19 @@ export const homeCatalog = [
     ],
     "versions": [
       {
-        "pricing": "Hy3 preview / TokenHub 新入口优先确认；旧平台免费资源包和后付费规则仍适用于存量模型"
+        "pricing": "Hy3 正式版 / TokenHub 新入口优先确认；旧平台免费资源包和后付费规则仅适用于存量模型"
       }
     ],
     "personalExperience": {
       "rating": 3.5,
-      "insights": "截至 2026-07-07，腾讯云混元产品页已将 Hy3 preview 放到主推位置，标注 192K 输入、128K "
+      "insights": "截至 2026-07-13，腾讯云混元产品页已将 Hy3 正式版放到主推位置，标注 192K 输入、128K 输出、29"
     },
     "decisionSummary": {
       "bestFor": "腾讯云、企业微信、腾讯元器、中文内容和多模态 API",
       "mainRisk": "Hy3、TokenHub、hunyuan-a13b 等旧平台模型、免费资源包和后付费设置并存，需要逐项确认。"
     },
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-07",
+    "lastVerified": "2026-07-13",
     "sourceCount": 3,
     "publicSourceCount": 3,
     "hasPublicSource": true,
@@ -3738,14 +3741,14 @@ export const homeCatalog = [
   {
     "id": "frontend-design-skill",
     "name": "frontend-app-builder",
-    "developer": "OpenAI curated build-web-apps plugin",
+    "developer": "OpenAI",
     "category": "skill",
     "tags": [
       "Skills"
     ],
     "versions": [
       {
-        "pricing": "随当前 Codex 插件环境可用；无独立免费额度声明"
+        "pricing": "需要安装并启用 OpenAI Build Web Apps plugin；无独立免费额度声明"
       }
     ],
     "personalExperience": {
@@ -3756,11 +3759,11 @@ export const homeCatalog = [
       "bestFor": "需要从视觉方向、前端实现到真实浏览器验收串起来的页面优化任务",
       "mainRisk": "输出质量依赖 brief、视觉来源和浏览器验证；缺少这些边界时容易变成主观改色。"
     },
-    "verificationStatus": "local-verified",
-    "lastVerified": "2026-07-07",
+    "verificationStatus": "verified",
+    "lastVerified": "2026-07-13",
     "sourceCount": 1,
-    "publicSourceCount": 0,
-    "hasPublicSource": false,
+    "publicSourceCount": 1,
+    "hasPublicSource": true,
     "hasFreeTier": false,
     "hasLowCostSignal": false,
     "hasPaidSignal": true,
@@ -3772,14 +3775,14 @@ export const homeCatalog = [
   {
     "id": "webapp-testing-skill",
     "name": "frontend-testing-debugging",
-    "developer": "OpenAI curated build-web-apps plugin",
+    "developer": "OpenAI",
     "category": "skill",
     "tags": [
       "Skills"
     ],
     "versions": [
       {
-        "pricing": "随当前 Codex 插件环境可用；无独立免费额度声明"
+        "pricing": "需要安装并启用 OpenAI Build Web Apps plugin；无独立免费额度声明"
       }
     ],
     "personalExperience": {
@@ -3790,11 +3793,11 @@ export const homeCatalog = [
       "bestFor": "本地页面加载、样式回归、控制台错误、响应式和核心交互验证",
       "mainRisk": "它验证真实页面状态，不替代单元测试覆盖率；Browser 插件不可用或 dev server 无法启动时需要降级到 Playwright，并清楚记录 fallback 原因。"
     },
-    "verificationStatus": "local-verified",
-    "lastVerified": "2026-07-08",
+    "verificationStatus": "verified",
+    "lastVerified": "2026-07-13",
     "sourceCount": 1,
-    "publicSourceCount": 0,
-    "hasPublicSource": false,
+    "publicSourceCount": 1,
+    "hasPublicSource": true,
     "hasFreeTier": false,
     "hasLowCostSignal": false,
     "hasPaidSignal": false,
@@ -3805,14 +3808,14 @@ export const homeCatalog = [
   {
     "id": "mcp-builder-skill",
     "name": "building-mcp-server-on-cloudflare",
-    "developer": "Cloudflare / OpenAI curated plugin",
+    "developer": "Cloudflare",
     "category": "skill",
     "tags": [
       "Skills"
     ],
     "versions": [
       {
-        "pricing": "随当前 Cloudflare/Codex 插件环境可用；Cloudflare Workers 和外部 API 成本需单独评估"
+        "pricing": "需要单独安装并启用；Cloudflare Workers 和外部 API 成本需单独评估"
       }
     ],
     "personalExperience": {
@@ -3824,9 +3827,9 @@ export const homeCatalog = [
       "mainRisk": "能力范围偏 Cloudflare Workers；语言、鉴权、部署和安全边界仍需按项目复核。"
     },
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-08",
+    "lastVerified": "2026-07-13",
     "sourceCount": 3,
-    "publicSourceCount": 2,
+    "publicSourceCount": 3,
     "hasPublicSource": true,
     "hasFreeTier": false,
     "hasLowCostSignal": false,
@@ -3858,11 +3861,11 @@ export const homeCatalog = [
       "bestFor": "需要把稳定流程、领域知识、脚本或模板沉淀成 Codex Skill 的用户",
       "mainRisk": "Skill 质量取决于触发描述、资源边界和验证流程；过度堆文档会浪费上下文并降低可用性。"
     },
-    "verificationStatus": "local-verified",
-    "lastVerified": "2026-07-08",
+    "verificationStatus": "verified",
+    "lastVerified": "2026-07-13",
     "sourceCount": 1,
-    "publicSourceCount": 0,
-    "hasPublicSource": false,
+    "publicSourceCount": 1,
+    "hasPublicSource": true,
     "hasFreeTier": false,
     "hasLowCostSignal": false,
     "hasPaidSignal": true,
@@ -3876,7 +3879,7 @@ export const homeCatalog = [
   {
     "id": "semgrep-skill",
     "name": "semgrep",
-    "developer": "Semgrep / Semgrep Skills",
+    "developer": "Semgrep",
     "category": "skill",
     "tags": [
       "Skills"
@@ -3895,7 +3898,7 @@ export const homeCatalog = [
       "mainRisk": "需要单独安装 Skill/CLI 或配置 MCP tools；Semgrep Community Edition 与 Semgrep Code / Pro Engine 能力、价格和 cross-file analysis 范围不同，发现仍需人工复核。"
     },
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-08",
+    "lastVerified": "2026-07-13",
     "sourceCount": 7,
     "publicSourceCount": 7,
     "hasPublicSource": true,
@@ -3928,7 +3931,7 @@ export const homeCatalog = [
       "mainRisk": "需要单独安装，且差异审查不等于全仓审计；官方相邻能力也说明 Code Review 不会批准或阻止 PR，security-review action 缺少提示注入防护证据，只审查 diff 可能漏掉上下文问题。"
     },
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-08",
+    "lastVerified": "2026-07-13",
     "sourceCount": 4,
     "publicSourceCount": 4,
     "hasPublicSource": true,
@@ -3956,14 +3959,14 @@ export const homeCatalog = [
     ],
     "personalExperience": {
       "rating": 3.5,
-      "insights": "截至 2026-07-08，insecure-defaults 有 Trail of Bits 公开上游，适合定位 fa"
+      "insights": "截至 2026-07-13，insecure-defaults 有 Trail of Bits 公开上游，适合定位 fa"
     },
     "decisionSummary": {
       "bestFor": "把 secure-by-default、环境配置和高影响安全问题纳入上线前人工复核",
       "mainRisk": "需单独安装该 Skill；即便使用公开上游，发现也必须验证生产可达性并由人工复核。"
     },
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-08",
+    "lastVerified": "2026-07-13",
     "sourceCount": 2,
     "publicSourceCount": 1,
     "hasPublicSource": true,
@@ -3989,14 +3992,14 @@ export const homeCatalog = [
     ],
     "personalExperience": {
       "rating": 3.5,
-      "insights": "截至 2026-07-08，sharp-edges 有 Trail of Bits 公开上游，定位是发现 footgun"
+      "insights": "截至 2026-07-13，sharp-edges 有 Trail of Bits 公开上游，定位是发现 footgun"
     },
     "decisionSummary": {
       "bestFor": "评审 SDK、权限、配置和危险操作 API 是否容易被误用",
       "mainRisk": "需单独安装该 Skill；API design 建议仍依赖业务语境、威胁模型和人工复核。"
     },
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-08",
+    "lastVerified": "2026-07-13",
     "sourceCount": 2,
     "publicSourceCount": 1,
     "hasPublicSource": true,
@@ -4023,14 +4026,14 @@ export const homeCatalog = [
     ],
     "personalExperience": {
       "rating": 3.5,
-      "insights": "截至 2026-07-08，second-opinion 有 Trail of Bits 公开上游，定位是通过 Code"
+      "insights": "截至 2026-07-13，second-opinion 有 Trail of Bits 公开上游，定位是通过 Code"
     },
     "decisionSummary": {
       "bestFor": "重大变更后的 reviewer subagent 检查，以及收到 review feedback 后的技术验证流程",
       "mainRisk": "需单独安装该 Skill；Gemini --yolo 会自动批准工具调用，Codex/Gemini CLI、API key 或订阅状态都需现场核验。"
     },
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-08",
+    "lastVerified": "2026-07-13",
     "sourceCount": 3,
     "publicSourceCount": 1,
     "hasPublicSource": true,
@@ -4058,14 +4061,14 @@ export const homeCatalog = [
     ],
     "personalExperience": {
       "rating": 3.5,
-      "insights": "截至 2026-07-08，audit-context-building 有 Trail of Bits 公开上游，定位"
+      "insights": "截至 2026-07-13，audit-context-building 有 Trail of Bits 公开上游，定位"
     },
     "decisionSummary": {
       "bestFor": "需要先厘清系统边界、资产、入口和假设，再做安全审查的仓库",
       "mainRisk": "需单独安装该 Skill；若范围和证据不明确，line-by-line context building 仍会变成泛泛架构总结。"
     },
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-08",
+    "lastVerified": "2026-07-13",
     "sourceCount": 3,
     "publicSourceCount": 1,
     "hasPublicSource": true,
@@ -4093,14 +4096,14 @@ export const homeCatalog = [
     ],
     "personalExperience": {
       "rating": 3,
-      "insights": "截至 2026-07-08，git-cleanup 有 Trail of Bits 公开上游，定位是清理 local b"
+      "insights": "截至 2026-07-13，git-cleanup 有 Trail of Bits 公开上游，定位是清理 local b"
     },
     "decisionSummary": {
       "bestFor": "开始 feature work 前确认是否在 isolated workspace，或清理前生成人工审计清单",
       "mainRisk": "Git 删除操作不可逆风险高；即便使用公开上游，也必须保留 two confirmation gates 和人工确认。"
     },
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-08",
+    "lastVerified": "2026-07-13",
     "sourceCount": 2,
     "publicSourceCount": 1,
     "hasPublicSource": true,
@@ -4127,14 +4130,14 @@ export const homeCatalog = [
     ],
     "personalExperience": {
       "rating": 4,
-      "insights": "截至 2026-07-08，ask-questions-if-underspecified 有 Trail of Bit"
+      "insights": "截至 2026-07-13，ask-questions-if-underspecified 有 Trail of Bit"
     },
     "decisionSummary": {
       "bestFor": "模糊需求、产品 UI brief、复杂实现前的关键决策澄清",
       "mainRisk": "如果不控制问题数量，minimum set of clarifying questions 仍可能把主动协作变成阻塞。"
     },
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-08",
+    "lastVerified": "2026-07-13",
     "sourceCount": 3,
     "publicSourceCount": 1,
     "hasPublicSource": true,
@@ -4163,14 +4166,14 @@ export const homeCatalog = [
     ],
     "personalExperience": {
       "rating": 3.5,
-      "insights": "截至 2026-07-08，property-based-testing 有 Trail of Bits 公开上游，覆盖"
+      "insights": "截至 2026-07-13，property-based-testing 有 Trail of Bits 公开上游，覆盖"
     },
     "decisionSummary": {
       "bestFor": "解析器、序列化、状态机、权限规则等适合定义不变量的代码",
       "mainRisk": "属性不变量写错会制造噪音，随机失败需要固定种子、保存失败样本并系统化复现。"
     },
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-08",
+    "lastVerified": "2026-07-13",
     "sourceCount": 3,
     "publicSourceCount": 1,
     "hasPublicSource": true,
@@ -4184,28 +4187,28 @@ export const homeCatalog = [
   {
     "id": "supabase-skill",
     "name": "supabase",
-    "developer": "Supabase / OpenAI curated plugin",
+    "developer": "Supabase",
     "category": "skill",
     "tags": [
       "Skills"
     ],
     "versions": [
       {
-        "pricing": "随当前 Supabase 插件环境可用；Supabase 项目和外部服务按官方账户计费"
+        "pricing": "MIT 开源，需要单独安装；Supabase 项目和外部服务按官方账户计费"
       }
     ],
     "personalExperience": {
       "rating": 4.5,
-      "insights": "这是本批里证据更充分的条目之一：当前核验环境有精确 supabase Skill，也有 Supabase Postgre"
+      "insights": "Supabase 已公开官方 agent-skills 仓库，supabase 与 supabase-postgres-"
     },
     "decisionSummary": {
       "bestFor": "Supabase Auth/RLS/CLI/MCP/Schema/Realtime/Storage 等项目开发和排障",
       "mainRisk": "Supabase 变更频繁；如果不查 changelog/docs 并执行真实验证，容易按过时 API 或错误 RLS 模式实现。"
     },
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-08",
+    "lastVerified": "2026-07-13",
     "sourceCount": 3,
-    "publicSourceCount": 1,
+    "publicSourceCount": 3,
     "hasPublicSource": true,
     "hasFreeTier": false,
     "hasLowCostSignal": false,
@@ -4237,7 +4240,7 @@ export const homeCatalog = [
       "mainRisk": "同名来源缺失；实时订阅问题高度依赖项目设置、RLS 和网络环境。"
     },
     "verificationStatus": "historical",
-    "lastVerified": "2026-07-08",
+    "lastVerified": "2026-07-13",
     "sourceCount": 3,
     "publicSourceCount": 1,
     "hasPublicSource": true,
@@ -4253,35 +4256,35 @@ export const homeCatalog = [
   {
     "id": "ui-ux-pro-max-skill",
     "name": "ui-ux-pro-max",
-    "developer": "历史概念 / 公开来源不足",
+    "developer": "nextlevelbuilder",
     "category": "skill",
     "tags": [
       "Skills"
     ],
     "versions": [
       {
-        "pricing": "未发现可公开核验的同名 Skill；建议并入 frontend-app-builder / Product Design ideate"
+        "pricing": "Basic 版 MIT 开源；Premium 版采用商业许可，安装与升级以官方仓库说明为准"
       }
     ],
     "personalExperience": {
-      "rating": 2.5,
-      "insights": "这个条目的旧文案最像过时宣传页。没有同名来源时，应标为历史概念，并把用户导向 frontend-app-builder "
+      "rating": 4,
+      "insights": "截至 2026-07-13，ui-ux-pro-max 是 NextLevelBuilder 持续维护的公开第三方 Sk"
     },
     "decisionSummary": {
-      "bestFor": "清理旧目录时提示用户转向 frontend-app-builder 或 Product Design ideate",
-      "mainRisk": "旧数字卖点没有来源，继续展示会误导用户认为存在全能 UI/UX Skill。"
+      "bestFor": "需要快速生成设计系统方向、多技术栈实现建议和 UX 检查清单的团队",
+      "mainRisk": "第三方更新和 Premium 许可可能变化，生成建议也不能替代产品研究、设计系统和浏览器验收。"
     },
-    "verificationStatus": "deprecated",
-    "lastVerified": "2026-07-08",
+    "verificationStatus": "verified",
+    "lastVerified": "2026-07-13",
     "sourceCount": 3,
-    "publicSourceCount": 0,
-    "hasPublicSource": false,
+    "publicSourceCount": 3,
+    "hasPublicSource": true,
     "hasFreeTier": false,
     "hasLowCostSignal": false,
     "hasPaidSignal": true,
     "scenarioIds": [
       "daily-coding",
-      "complex-refactor",
+      "long-context",
       "visual-generation"
     ]
   },
@@ -4306,8 +4309,8 @@ export const homeCatalog = [
       "bestFor": "内部监控/告警/工单数据已经可访问，且有固定周报模板的团队",
       "mainRisk": "所有核心卖点都依赖未验证的内部平台和模板，公开展示会过度承诺。"
     },
-    "verificationStatus": "deprecated",
-    "lastVerified": "2026-07-08",
+    "verificationStatus": "historical",
+    "lastVerified": "2026-07-13",
     "sourceCount": 1,
     "publicSourceCount": 0,
     "hasPublicSource": false,
@@ -4339,8 +4342,8 @@ export const homeCatalog = [
       "bestFor": "帮助用户从旧条目跳转到 brainstorming、systematic-debugging 等真实工作流",
       "mainRisk": "缺少同名来源；泛化“深度推理”无法被页面核验，容易变成不可证明的卖点。"
     },
-    "verificationStatus": "deprecated",
-    "lastVerified": "2026-07-08",
+    "verificationStatus": "historical",
+    "lastVerified": "2026-07-13",
     "sourceCount": 3,
     "publicSourceCount": 0,
     "hasPublicSource": false,
@@ -4355,7 +4358,7 @@ export const homeCatalog = [
   {
     "id": "research-skill",
     "name": "research",
-    "developer": "Product Design / AnyCap",
+    "developer": "Multiple unrelated skill sources",
     "category": "skill",
     "tags": [
       "Skills"
@@ -4373,8 +4376,8 @@ export const homeCatalog = [
       "bestFor": "产品 UX pain 扫描、开发者体验/文档摩擦研究、竞品或技术主题的多源报告",
       "mainRisk": "研究结论依赖来源质量；必须区分观察证据和推断，公开来源弱时要降置信度。"
     },
-    "verificationStatus": "local-verified",
-    "lastVerified": "2026-07-08",
+    "verificationStatus": "needs-review",
+    "lastVerified": "2026-07-13",
     "sourceCount": 2,
     "publicSourceCount": 0,
     "hasPublicSource": false,

@@ -1,7 +1,7 @@
 // Generated from src/data/tools.js.
 export default {
   "verificationStatus": "verified",
-  "lastVerified": "2026-07-07",
+  "lastVerified": "2026-07-13",
   "sources": [
     "https://cloud.tencent.com/product/tclm",
     "https://cloud.tencent.com/document/product/1729/104753",
@@ -16,13 +16,13 @@ export default {
   "versions": [
     {
       "type": "CN",
-      "pricing": "Hy3 preview / TokenHub 新入口优先确认；旧平台免费资源包和后付费规则仍适用于存量模型",
+      "pricing": "Hy3 正式版 / TokenHub 新入口优先确认；旧平台免费资源包和后付费规则仅适用于存量模型",
       "models": "Hy3：192K 最大输入、128K 最大输出、295B/21B MoE、no_think/think_low/think_high",
       "link": "https://cloud.tencent.com/product/tclm"
     },
     {
       "type": "CN",
-      "pricing": "新模型能力逐步迁移至 TokenHub，原平台不再新增模型能力",
+      "pricing": "新模型能力迁移至 TokenHub；旧平台已停止新购，并计划于 2026-09-30 全面停止服务",
       "models": "TokenHub / hunyuan-a13b / Tencent HY Vision 1.5 / translation / role 等存量路径",
       "link": "https://cloud.tencent.com/document/product/1729/97731"
     }
@@ -32,14 +32,14 @@ export default {
   "chineseSupport": 5,
   "pros": [
     "腾讯云官方页面将混元描述为通用与多模态大模型家族，覆盖文本、图像、视频、3D 等模态",
-    "Hy3 于 2026-07-06 更新，强化 Coding、长文、推理和 Agent 能力",
+    "Hy3 正式版强化 Coding、长文、推理和 Agent 能力",
     "Hy3 采用 295B 总参数、21B 激活 MoE 架构，并提供 no_think / think_low / think_high",
     "产品概述列出角色扮演、翻译、视觉理解等专项模型",
     "购买指南列出免费资源包、后付费、预付费和 token 单价",
     "与腾讯云、腾讯元器和企业微信等生态更易衔接"
   ],
   "cons": [
-    "原混元平台新购/新增能力正在向 TokenHub 迁移，入口和计费路径需要确认",
+    "原混元平台已停止新购并向 TokenHub 迁移，官方计划于 2026-09-30 全面停止服务",
     "国际生态和第三方教程不如 AWS/OpenAI/Anthropic 丰富",
     "腾讯生态外的独立开发体验需要实测",
     "旧模型命名和新 TokenHub 资源容易混淆"
@@ -48,7 +48,7 @@ export default {
   "funRanking": "夯",
   "personalExperience": {
     "rating": 3.5,
-    "insights": "截至 2026-07-07，腾讯云混元产品页已将 Hy3 preview 放到主推位置，标注 192K 输入、128K 输出、295B/21B MoE 和多档思考模式；购买指南仍提示旧平台能力逐步迁移至 TokenHub。本站不再以 hunyuan-a13b 作为唯一主线，而是把 Hy3/TokenHub 与旧平台存量模型分开展示。",
+    "insights": "截至 2026-07-13，腾讯云混元产品页已将 Hy3 正式版放到主推位置，标注 192K 输入、128K 输出、295B/21B MoE 和多档思考模式；旧平台已停止新购并计划于 2026-09-30 停服。本站把 Hy3/TokenHub 与旧平台存量模型分开展示。",
     "pitfalls": [
       "先确认是否走 Hy3 / TokenHub 新入口",
       "免费资源包耗尽后默认不一定自动转后付费",

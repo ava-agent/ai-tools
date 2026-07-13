@@ -1,7 +1,7 @@
 // Generated from src/data/tools.js.
 export default {
   "verificationStatus": "verified",
-  "lastVerified": "2026-07-07",
+  "lastVerified": "2026-07-13",
   "sources": [
     "https://github.com/aider-ai/aider",
     "https://aider.chat/docs/llms.html",
@@ -41,7 +41,7 @@ export default {
   "funRanking": "夯",
   "personalExperience": {
     "rating": 3,
-    "insights": "截至 2026-07-07，Aider 官方文档仍强调“连接多数 LLM”，并建议查看 LLM leaderboards 选择更会返回 code edits 的模型。它的核心价值是 Git-first、终端内可审计修改和多 provider 灵活性，不应写成某个固定模型绑定工具。",
+    "insights": "截至 2026-07-13，Aider 官方文档仍强调“连接多数 LLM”，并建议查看 LLM leaderboards 选择更会返回 code edits 的模型。它的核心价值是 Git-first、终端内可审计修改和多 provider 灵活性，不应写成某个固定模型绑定工具。",
     "pitfalls": [
       "需要自带 API key 或配置本地模型",
       "仅终端无完整 GUI",

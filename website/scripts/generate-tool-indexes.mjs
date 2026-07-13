@@ -55,6 +55,7 @@ const pricingCatalog = aiToolsData.map((tool) => ({
   id: tool.id,
   name: tool.name,
   category: tool.category,
+  verificationStatus: tool.verificationStatus,
   versions: (tool.versions || []).map((version) => ({ pricing: version.pricing })),
   freeQuota: tool.freeQuota,
   personalExperience: { rating: tool.personalExperience?.rating || 0 }

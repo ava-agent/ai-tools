@@ -1,7 +1,7 @@
 // Generated from src/data/tools.js.
 export default {
   "verificationStatus": "verified",
-  "lastVerified": "2026-07-08",
+  "lastVerified": "2026-07-13",
   "sources": [
     "https://trailofbits.com/skills/ask-questions-if-underspecified/",
     "邻近本地 skill: superpowers:brainstorming",
@@ -41,7 +41,7 @@ export default {
   "funRanking": "归档",
   "personalExperience": {
     "rating": 4,
-    "insights": "截至 2026-07-08，ask-questions-if-underspecified 有 Trail of Bits 公开上游，定位是用 minimum set of clarifying questions 找出 must-have questions；它应与 brainstorming 和 get-context 搭配，避免过度提问。",
+    "insights": "截至 2026-07-13，ask-questions-if-underspecified 有 Trail of Bits 公开上游，定位是用 minimum set of clarifying questions 找出 must-have questions；它应与 brainstorming 和 get-context 搭配，避免过度提问。",
     "pitfalls": [
       "只问阻塞决策的问题",
       "能用安全默认值推进时不要过度等待",

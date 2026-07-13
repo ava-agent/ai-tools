@@ -1,7 +1,7 @@
 // Generated from src/data/tools.js.
 export default {
   "verificationStatus": "verified",
-  "lastVerified": "2026-07-08",
+  "lastVerified": "2026-07-13",
   "sources": [
     "https://zapier.com/pricing",
     "https://zapier.com/apps",
@@ -10,7 +10,7 @@ export default {
     "https://help.zapier.com/hc/en-us/articles/32337438839565-What-s-included-in-Zapier-s-Free-plan"
   ],
   "id": "zapier-ai",
-  "name": "Zapier AI Automation",
+  "name": "Zapier",
   "category": "agent",
   "subcategory": "工作流自动化",
   "developer": "Zapier",
@@ -19,12 +19,12 @@ export default {
     {
       "type": "Platform",
       "pricing": "免费版 $0/月，每月含 100 个任务；专业版 $19.99/月起；团队版 $69/月起",
-      "models": "Zap 工作流、Zapier MCP Beta、SDK、Agents、Chatbots、Tables 与 Forms",
+      "models": "Zap 工作流、Zapier MCP、SDK Beta、Agents、Chatbots、Tables 与 Forms",
       "link": "https://zapier.com/pricing"
     },
     {
       "type": "Zapier MCP",
-      "pricing": "按任务量计费；AI 步骤、代码和 SDK 共用同一个任务额度池",
+      "pricing": "Zapier MCP 每次调用计 2 tasks；AI steps 按步骤计 1/3/5 tasks；SDK Beta 当前不计 tasks",
       "models": "9,000+ apps, 40,000+ actions, dynamic tool discovery",
       "link": "https://docs.zapier.com/mcp/home"
     },
@@ -41,13 +41,13 @@ export default {
   "pros": [
     "Zapier MCP 可把 AI 客户端连接到 9,000+ apps 和 40,000+ actions",
     "Free 计划包含 100 tasks per month，适合低频验证",
-    "定价页显示 AI steps, code, and SDK 采用统一 task-based pricing，便于跨产品估算成本",
+    "Zapier MCP 当前每次调用计 2 tasks；AI steps 按步骤复杂度计 1/3/5 tasks",
     "MCP、SDK、Agents、Chatbots、Tables 和 Forms 已纳入统一平台叙事",
     "Each successful action in a Zap counts as a separate task，MCP/AI 调用也要按任务池管理"
   ],
   "cons": [
-    "AI Actions is no longer being developed and supported，新项目应优先评估 Zapier MCP Beta、SDK 或 Agents",
-    "shared task pool 意味着 Zap workflows、AI steps、code、MCP、SDK 会共同消耗任务额度",
+    "AI Actions is no longer being developed and supported，新项目应优先评估 Zapier MCP、SDK Beta 或 Agents",
+    "SDK 仍为 Beta 且当前不计 tasks，正式计费口径可能变化",
     "自动化一旦连接真实 SaaS 账号，AI 工具调用可能发送邮件、改 CRM、建 issue 或更新表格，需要权限和确认策略",
     "高级治理、SSO、审计、app controls 等能力集中在 Team/Enterprise 档位",
     "国内访问、SaaS 授权和数据出境要按企业环境实测"
@@ -56,7 +56,7 @@ export default {
   "funRanking": "夯",
   "personalExperience": {
     "rating": 3.5,
-    "insights": "截至 2026-07-08，Zapier 条目不应再以 AI Actions 为主。官方帮助页说明 AI Actions 已停止开发和支持；当前选型应看 Zapier MCP Beta、SDK、Agents 和统一任务计费。",
+    "insights": "截至 2026-07-13，Zapier 条目不应再以 AI Actions 为主，MCP 也已不再标 Beta。当前口径是 MCP 每次调用 2 tasks、AI steps 计 1/3/5 tasks，SDK Beta 暂不计 tasks。",
     "pitfalls": [
       "先按真实动作数估算 tasks",
       "AI 调用真实 SaaS 前设置人工确认",

@@ -4,7 +4,7 @@ export const matcherCatalog = [
     "id": "cursor",
     "name": "Cursor",
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-07",
+    "lastVerified": "2026-07-13",
     "sources": [
       "https://cursor.com/pricing",
       "https://cursor.com/docs/models-and-pricing",
@@ -16,7 +16,7 @@ export const matcherCatalog = [
     "id": "trae",
     "name": "Trae",
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-07",
+    "lastVerified": "2026-07-13",
     "sources": [
       "https://www.trae.ai/pricing",
       "https://docs.trae.ai/ide/new-plans-and-billing",
@@ -28,7 +28,7 @@ export const matcherCatalog = [
     "id": "windsurf",
     "name": "Windsurf",
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-07",
+    "lastVerified": "2026-07-13",
     "sources": [
       "https://windsurf.com/pricing",
       "https://devin.ai/pricing/",
@@ -41,10 +41,10 @@ export const matcherCatalog = [
     "id": "qoder",
     "name": "Qoder",
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-07",
+    "lastVerified": "2026-07-13",
     "sources": [
       "https://docs.qoder.com/account/pricing",
-      "https://docs.qoder.com/account/credits",
+      "https://docs.qoder.com/Credits",
       "https://qoder.com/pricing",
       "https://qoder.com/en"
     ]
@@ -53,7 +53,7 @@ export const matcherCatalog = [
     "id": "zed",
     "name": "Zed",
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-07",
+    "lastVerified": "2026-07-13",
     "sources": [
       "https://zed.dev/pricing",
       "https://zed.dev/docs/ai/overview"
@@ -63,7 +63,7 @@ export const matcherCatalog = [
     "id": "replit",
     "name": "Replit",
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-07",
+    "lastVerified": "2026-07-13",
     "sources": [
       "https://replit.com/pricing",
       "https://docs.replit.com/billing/ai-billing"
@@ -72,8 +72,8 @@ export const matcherCatalog = [
   {
     "id": "kiro",
     "name": "Kiro",
-    "verificationStatus": "verified",
-    "lastVerified": "2026-07-07",
+    "verificationStatus": "needs-review",
+    "lastVerified": "2026-07-13",
     "sources": [
       "https://kiro.dev/pricing/"
     ]
@@ -82,7 +82,7 @@ export const matcherCatalog = [
     "id": "codebuddy",
     "name": "Codebuddy",
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-07",
+    "lastVerified": "2026-07-13",
     "sources": [
       "https://www.codebuddy.ai/docs/ide/Account/pricing",
       "https://www.codebuddy.ai/docs/ide/Account/credits",
@@ -93,7 +93,7 @@ export const matcherCatalog = [
     "id": "antigravity",
     "name": "Antigravity",
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-07",
+    "lastVerified": "2026-07-13",
     "sources": [
       "https://antigravity.google/pricing",
       "https://gemini.google/subscriptions/",
@@ -117,7 +117,7 @@ export const matcherCatalog = [
     "id": "verdent",
     "name": "Verdent",
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-07",
+    "lastVerified": "2026-07-13",
     "sources": [
       "https://www.verdent.ai/pricing",
       "https://www.verdent.ai/blog/swe-bench-verified-technical-report",
@@ -129,7 +129,7 @@ export const matcherCatalog = [
     "id": "jetbrains-ai",
     "name": "JetBrains AI Assistant",
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-07",
+    "lastVerified": "2026-07-13",
     "sources": [
       "https://www.jetbrains.com/help/ai-assistant/licensing-and-subscriptions.html",
       "https://www.jetbrains.com/ai-ides/buy/"
@@ -139,7 +139,7 @@ export const matcherCatalog = [
     "id": "claude-code",
     "name": "Claude Code",
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-07",
+    "lastVerified": "2026-07-13",
     "sources": [
       "https://support.claude.com/en/articles/11145838-use-claude-code-with-your-pro-or-max-plan",
       "https://support.claude.com/en/articles/11049741-what-is-the-max-plan",
@@ -151,7 +151,7 @@ export const matcherCatalog = [
     "id": "gemini-cli",
     "name": "Gemini CLI",
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-07",
+    "lastVerified": "2026-07-13",
     "sources": [
       "https://github.com/google-gemini/gemini-cli",
       "https://github.com/google-gemini/gemini-cli/blob/main/docs/resources/quota-and-pricing.md",
@@ -162,7 +162,7 @@ export const matcherCatalog = [
     "id": "qwen-cli",
     "name": "Qwen CLI",
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-07",
+    "lastVerified": "2026-07-13",
     "sources": [
       "https://qwenlm.github.io/qwen-code-docs/en/users/configuration/auth/",
       "https://www.alibabacloud.com/help/en/model-studio/coding-plan",
@@ -174,7 +174,7 @@ export const matcherCatalog = [
     "id": "aider",
     "name": "Aider",
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-07",
+    "lastVerified": "2026-07-13",
     "sources": [
       "https://github.com/aider-ai/aider",
       "https://aider.chat/docs/llms.html",
@@ -185,7 +185,7 @@ export const matcherCatalog = [
     "id": "cline",
     "name": "Cline",
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-07",
+    "lastVerified": "2026-07-13",
     "sources": [
       "https://cline.bot/pricing",
       "https://docs.cline.bot/getting-started/cline-provider",
@@ -196,7 +196,7 @@ export const matcherCatalog = [
     "id": "continue",
     "name": "Continue",
     "verificationStatus": "historical",
-    "lastVerified": "2026-07-08",
+    "lastVerified": "2026-07-13",
     "sources": [
       "https://www.continue.dev/",
       "https://github.com/continuedev/continue",
@@ -207,7 +207,7 @@ export const matcherCatalog = [
     "id": "opencode",
     "name": "OpenCode",
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-07",
+    "lastVerified": "2026-07-13",
     "sources": [
       "https://opencode.ai/",
       "https://github.com/anomalyco/opencode",
@@ -218,8 +218,9 @@ export const matcherCatalog = [
     "id": "codex",
     "name": "Codex",
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-07",
+    "lastVerified": "2026-07-13",
     "sources": [
+      "https://learn.chatgpt.com/docs/pricing",
       "https://developers.openai.com/codex/pricing",
       "https://developers.openai.com/codex/cli/features",
       "https://developers.openai.com/codex/models",
@@ -231,7 +232,7 @@ export const matcherCatalog = [
     "id": "goose",
     "name": "Goose",
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-07",
+    "lastVerified": "2026-07-13",
     "sources": [
       "https://goose-docs.ai/",
       "https://github.com/aaif-goose/goose",
@@ -242,7 +243,7 @@ export const matcherCatalog = [
     "id": "crush",
     "name": "Crush",
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-07",
+    "lastVerified": "2026-07-13",
     "sources": [
       "https://github.com/charmbracelet/crush",
       "https://charm.land/blog/crush-comes-home/",
@@ -253,7 +254,7 @@ export const matcherCatalog = [
     "id": "openhands",
     "name": "OpenHands",
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-07",
+    "lastVerified": "2026-07-13",
     "sources": [
       "https://www.openhands.dev/pricing",
       "https://github.com/OpenHands/OpenHands"
@@ -263,7 +264,7 @@ export const matcherCatalog = [
     "id": "claude",
     "name": "Claude",
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-07",
+    "lastVerified": "2026-07-13",
     "sources": [
       "https://platform.claude.com/docs/en/about-claude/models/overview",
       "https://claude.com/pricing",
@@ -272,9 +273,9 @@ export const matcherCatalog = [
   },
   {
     "id": "gpt",
-    "name": "GPT-5.5 / OpenAI",
+    "name": "GPT-5.6 / OpenAI",
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-07",
+    "lastVerified": "2026-07-13",
     "sources": [
       "https://developers.openai.com/api/docs/guides/latest-model",
       "https://developers.openai.com/api/docs/pricing",
@@ -285,7 +286,7 @@ export const matcherCatalog = [
     "id": "gemini",
     "name": "Gemini",
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-07",
+    "lastVerified": "2026-07-13",
     "sources": [
       "https://ai.google.dev/gemini-api/docs/models",
       "https://ai.google.dev/gemini-api/docs/pricing",
@@ -296,7 +297,7 @@ export const matcherCatalog = [
     "id": "deepseek",
     "name": "DeepSeek",
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-07",
+    "lastVerified": "2026-07-13",
     "sources": [
       "https://api-docs.deepseek.com/quick_start/pricing",
       "https://api-docs.deepseek.com/news/news260424",
@@ -307,7 +308,7 @@ export const matcherCatalog = [
     "id": "qwen",
     "name": "Qwen",
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-07",
+    "lastVerified": "2026-07-13",
     "sources": [
       "https://www.alibabacloud.com/help/en/model-studio/model-pricing",
       "https://www.alibabacloud.com/help/en/model-studio/models",
@@ -318,7 +319,7 @@ export const matcherCatalog = [
     "id": "glm",
     "name": "GLM / Z.AI",
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-07",
+    "lastVerified": "2026-07-13",
     "sources": [
       "https://docs.z.ai/guides/overview/pricing",
       "https://bigmodel.cn/pricing"
@@ -328,7 +329,7 @@ export const matcherCatalog = [
     "id": "kimi",
     "name": "Kimi / Moonshot",
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-07",
+    "lastVerified": "2026-07-13",
     "sources": [
       "https://platform.kimi.ai/docs/models",
       "https://platform.kimi.ai/docs/pricing/chat",
@@ -339,7 +340,7 @@ export const matcherCatalog = [
     "id": "minimax",
     "name": "MiniMax / MiniMax-M3",
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-07",
+    "lastVerified": "2026-07-13",
     "sources": [
       "https://platform.minimax.io/docs/guides/text-generation",
       "https://platform.minimax.io/docs/guides/pricing-paygo",
@@ -350,7 +351,7 @@ export const matcherCatalog = [
     "id": "doubao",
     "name": "Doubao / Volcano Ark",
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-07",
+    "lastVerified": "2026-07-13",
     "sources": [
       "https://www.volcengine.com/docs/82379/1330310",
       "https://www.volcengine.com/docs/82379/2549861?lang=zh",
@@ -361,7 +362,7 @@ export const matcherCatalog = [
     "id": "grok",
     "name": "Grok / xAI",
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-07",
+    "lastVerified": "2026-07-13",
     "sources": [
       "https://docs.x.ai/developers/models",
       "https://x.ai/pricing",
@@ -372,7 +373,7 @@ export const matcherCatalog = [
     "id": "midjourney",
     "name": "Midjourney",
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-07",
+    "lastVerified": "2026-07-13",
     "sources": [
       "https://docs.midjourney.com/hc/en-us/articles/27870484040333-Comparing-Midjourney-Plans",
       "https://docs.midjourney.com/hc/en-us/articles/32199405667853-Version",
@@ -386,7 +387,7 @@ export const matcherCatalog = [
     "id": "dalle",
     "name": "GPT Image 2 / ChatGPT Images",
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-07",
+    "lastVerified": "2026-07-13",
     "sources": [
       "https://developers.openai.com/api/docs/guides/images-vision",
       "https://developers.openai.com/api/docs/models/gpt-image-2",
@@ -397,7 +398,7 @@ export const matcherCatalog = [
     "id": "stable-diffusion",
     "name": "Stable Diffusion",
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-07",
+    "lastVerified": "2026-07-13",
     "sources": [
       "https://stability.ai/license",
       "https://platform.stability.ai/pricing",
@@ -408,7 +409,7 @@ export const matcherCatalog = [
     "id": "meitu-ai",
     "name": "美图AI",
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-08",
+    "lastVerified": "2026-07-13",
     "sources": [
       "https://www.meituxiuxiu.com",
       "https://pc.meitu.com/en/pc",
@@ -419,7 +420,7 @@ export const matcherCatalog = [
     "id": "sora",
     "name": "Sora",
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-07",
+    "lastVerified": "2026-07-13",
     "sources": [
       "https://developers.openai.com/api/docs/guides/video-generation",
       "https://developers.openai.com/api/docs/pricing",
@@ -429,8 +430,8 @@ export const matcherCatalog = [
   {
     "id": "kling",
     "name": "可灵 (Kling)",
-    "verificationStatus": "verified",
-    "lastVerified": "2026-07-07",
+    "verificationStatus": "needs-review",
+    "lastVerified": "2026-07-13",
     "sources": [
       "https://app.klingai.com",
       "https://kling.ai/document-api/quickStart/productIntroduction/overview",
@@ -440,9 +441,9 @@ export const matcherCatalog = [
   },
   {
     "id": "jianying",
-    "name": "剪映",
+    "name": "剪映 / CapCut",
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-08",
+    "lastVerified": "2026-07-13",
     "sources": [
       "https://www.capcut.com/help/how-much-does-capcut-pro-cost",
       "https://www.capcut.com/help/pricing-change",
@@ -453,7 +454,7 @@ export const matcherCatalog = [
     "id": "meshy",
     "name": "Meshy",
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-08",
+    "lastVerified": "2026-07-13",
     "sources": [
       "https://www.meshy.ai/pricing",
       "https://docs.meshy.ai/en/api/pricing",
@@ -464,7 +465,7 @@ export const matcherCatalog = [
     "id": "hunyuan3d",
     "name": "混元3D",
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-08",
+    "lastVerified": "2026-07-13",
     "sources": [
       "https://www.tencent.com/en-us/articles/2202235.html",
       "https://cloud.tencent.com/document/product/1804/123461",
@@ -476,7 +477,7 @@ export const matcherCatalog = [
     "id": "notebooklm",
     "name": "NotebookLM",
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-07",
+    "lastVerified": "2026-07-13",
     "sources": [
       "https://support.google.com/notebooklm/answer/16269187?hl=en",
       "https://support.google.com/notebooklm/answer/16213268?hl=en",
@@ -487,7 +488,7 @@ export const matcherCatalog = [
     "id": "qinglizi",
     "name": "氢离子 / 阿里健康",
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-08",
+    "lastVerified": "2026-07-13",
     "sources": [
       "https://ali-doctor.com/login",
       "https://apps.apple.com/cn/app/%E6%B0%A2%E7%A6%BB%E5%AD%90-%E5%8C%BB%E5%AD%A6ai%E5%8A%A9%E6%89%8B/id6738349403"
@@ -496,8 +497,8 @@ export const matcherCatalog = [
   {
     "id": "coze",
     "name": "Coze",
-    "verificationStatus": "verified",
-    "lastVerified": "2026-07-08",
+    "verificationStatus": "needs-review",
+    "lastVerified": "2026-07-13",
     "sources": [
       "https://www.coze.com/premium",
       "https://www.coze.com/open/docs/guides/subscription",
@@ -508,7 +509,7 @@ export const matcherCatalog = [
     "id": "dify",
     "name": "Dify",
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-07",
+    "lastVerified": "2026-07-13",
     "sources": [
       "https://dify.ai/pricing",
       "https://docs.dify.ai/en/cloud/use-dify/workspace/subscription-management",
@@ -519,7 +520,7 @@ export const matcherCatalog = [
     "id": "autogpt",
     "name": "AutoGPT",
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-08",
+    "lastVerified": "2026-07-13",
     "sources": [
       "https://agpt.co/pricing/",
       "https://agpt.co/docs/platform",
@@ -530,7 +531,7 @@ export const matcherCatalog = [
     "id": "langchain",
     "name": "LangChain",
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-08",
+    "lastVerified": "2026-07-13",
     "sources": [
       "https://www.langchain.com/",
       "https://www.langchain.com/pricing",
@@ -541,7 +542,7 @@ export const matcherCatalog = [
     "id": "nanobanana",
     "name": "Nano Banana / Gemini Image",
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-07",
+    "lastVerified": "2026-07-13",
     "sources": [
       "https://gemini.google/overview/image-generation/",
       "https://ai.google.dev/gemini-api/docs/image-generation",
@@ -553,7 +554,7 @@ export const matcherCatalog = [
     "id": "perplexity",
     "name": "Perplexity",
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-07",
+    "lastVerified": "2026-07-13",
     "sources": [
       "https://www.perplexity.ai/hub",
       "https://www.perplexity.ai/help-center/en/articles/11680686-perplexity-max",
@@ -564,7 +565,7 @@ export const matcherCatalog = [
     "id": "devin",
     "name": "Devin",
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-07",
+    "lastVerified": "2026-07-13",
     "sources": [
       "https://devin.ai/pricing/",
       "https://cognition.com/blog/new-self-serve-plans-for-devin",
@@ -577,7 +578,7 @@ export const matcherCatalog = [
     "id": "bolt-new",
     "name": "Bolt.new",
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-07",
+    "lastVerified": "2026-07-13",
     "sources": [
       "https://bolt.new/pricing",
       "https://github.com/stackblitz/bolt.new",
@@ -588,7 +589,7 @@ export const matcherCatalog = [
     "id": "v0",
     "name": "v0",
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-07",
+    "lastVerified": "2026-07-13",
     "sources": [
       "https://v0.app/pricing",
       "https://v0.app/",
@@ -599,7 +600,7 @@ export const matcherCatalog = [
     "id": "lovable",
     "name": "Lovable",
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-07",
+    "lastVerified": "2026-07-13",
     "sources": [
       "https://lovable.dev/pricing",
       "https://docs.lovable.dev/introduction/subscription-plans",
@@ -612,7 +613,7 @@ export const matcherCatalog = [
     "id": "tabnine",
     "name": "Tabnine",
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-08",
+    "lastVerified": "2026-07-13",
     "sources": [
       "https://www.tabnine.com/pricing/",
       "https://www.tabnine.com/"
@@ -622,7 +623,7 @@ export const matcherCatalog = [
     "id": "warp",
     "name": "Warp",
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-08",
+    "lastVerified": "2026-07-13",
     "sources": [
       "https://www.warp.dev/pricing",
       "https://docs.warp.dev/support-and-community/plans-and-billing/plans-pricing-refunds/"
@@ -632,7 +633,7 @@ export const matcherCatalog = [
     "id": "llama",
     "name": "Llama 4 / Meta",
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-08",
+    "lastVerified": "2026-07-13",
     "sources": [
       "https://www.llama.com/models/llama-4/",
       "https://www.llama.com/docs/model-cards-and-prompt-formats/llama4/",
@@ -641,9 +642,9 @@ export const matcherCatalog = [
   },
   {
     "id": "mistral",
-    "name": "Mistral / Le Chat",
+    "name": "Mistral / Vibe (former Le Chat)",
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-07",
+    "lastVerified": "2026-07-13",
     "sources": [
       "https://docs.mistral.ai/models/overview",
       "https://docs.mistral.ai/models/model-cards/mistral-large-3-25-12",
@@ -653,8 +654,8 @@ export const matcherCatalog = [
   {
     "id": "yi",
     "name": "Yi / 01.AI",
-    "verificationStatus": "verified",
-    "lastVerified": "2026-07-08",
+    "verificationStatus": "needs-review",
+    "lastVerified": "2026-07-13",
     "sources": [
       "https://www.01.ai/",
       "https://www.01.ai/yi-models",
@@ -671,7 +672,7 @@ export const matcherCatalog = [
     "id": "ernie",
     "name": "ERNIE / 百度千帆",
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-08",
+    "lastVerified": "2026-07-13",
     "sources": [
       "https://cloud.baidu.com/product-s/qianfan_home",
       "https://cloud.baidu.com/doc/qianfan-docs/s/7m95lyy43",
@@ -683,7 +684,7 @@ export const matcherCatalog = [
     "id": "flux",
     "name": "FLUX",
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-07",
+    "lastVerified": "2026-07-13",
     "sources": [
       "https://bfl.ai/pricing",
       "https://docs.bfl.ai/quick_start/pricing",
@@ -695,7 +696,7 @@ export const matcherCatalog = [
     "id": "runway",
     "name": "Runway Gen-4.5",
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-07",
+    "lastVerified": "2026-07-13",
     "sources": [
       "https://runwayml.com/pricing",
       "https://help.runwayml.com/hc/en-us/articles/46974685288467-Creating-with-Gen-4-5",
@@ -708,7 +709,7 @@ export const matcherCatalog = [
     "id": "pika",
     "name": "Pika",
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-08",
+    "lastVerified": "2026-07-13",
     "sources": [
       "https://pika.art/pricing",
       "https://pika.art/",
@@ -719,7 +720,7 @@ export const matcherCatalog = [
     "id": "ideogram",
     "name": "Ideogram",
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-07",
+    "lastVerified": "2026-07-13",
     "sources": [
       "https://ideogram.ai/",
       "https://docs.ideogram.ai/plans-and-pricing/available-plans",
@@ -733,7 +734,7 @@ export const matcherCatalog = [
     "id": "jimeng",
     "name": "即梦 (Jimeng)",
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-08",
+    "lastVerified": "2026-07-13",
     "sources": [
       "https://jimeng.jianying.com/",
       "https://www.volcengine.com/docs/85621/1544714?lang=zh",
@@ -745,7 +746,7 @@ export const matcherCatalog = [
     "id": "suno",
     "name": "Suno",
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-07",
+    "lastVerified": "2026-07-13",
     "sources": [
       "https://suno.com/pricing",
       "https://help.suno.com/en/articles/2746945",
@@ -758,7 +759,7 @@ export const matcherCatalog = [
     "id": "elevenlabs",
     "name": "ElevenLabs",
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-07",
+    "lastVerified": "2026-07-13",
     "sources": [
       "https://elevenlabs.io/docs/overview/models",
       "https://elevenlabs.io/docs/changelog/2026/6/8",
@@ -771,7 +772,7 @@ export const matcherCatalog = [
     "id": "manus",
     "name": "Manus",
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-07",
+    "lastVerified": "2026-07-13",
     "sources": [
       "https://manus.im/",
       "https://help.manus.im/en/articles/11711111-what-is-the-current-membership-pricing-for-manus",
@@ -783,7 +784,7 @@ export const matcherCatalog = [
     "id": "crewai",
     "name": "CrewAI",
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-08",
+    "lastVerified": "2026-07-13",
     "sources": [
       "https://crewai.com/pricing",
       "https://docs.crewai.com/",
@@ -795,7 +796,7 @@ export const matcherCatalog = [
     "id": "n8n",
     "name": "n8n",
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-08",
+    "lastVerified": "2026-07-13",
     "sources": [
       "https://n8n.io/pricing/",
       "https://docs.n8n.io/sustainable-use-license/",
@@ -806,7 +807,7 @@ export const matcherCatalog = [
     "id": "openai-agents-sdk",
     "name": "OpenAI Agents SDK",
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-08",
+    "lastVerified": "2026-07-13",
     "sources": [
       "https://openai.github.io/openai-agents-python/",
       "https://developers.openai.com/api/docs/guides/agents",
@@ -817,7 +818,7 @@ export const matcherCatalog = [
     "id": "claude-agent-sdk",
     "name": "Claude Agent SDK",
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-08",
+    "lastVerified": "2026-07-13",
     "sources": [
       "https://code.claude.com/docs/en/agent-sdk/overview",
       "https://github.com/anthropics/claude-agent-sdk-python",
@@ -828,7 +829,7 @@ export const matcherCatalog = [
     "id": "google-adk",
     "name": "Google ADK",
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-08",
+    "lastVerified": "2026-07-13",
     "sources": [
       "https://adk.dev/",
       "https://adk.dev/agents/models/google-gemini/",
@@ -839,7 +840,7 @@ export const matcherCatalog = [
     "id": "context7",
     "name": "Context7",
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-08",
+    "lastVerified": "2026-07-13",
     "sources": [
       "https://context7.com/plans",
       "https://context7.com/docs/installation",
@@ -852,7 +853,7 @@ export const matcherCatalog = [
     "id": "playwright-mcp",
     "name": "Playwright MCP",
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-08",
+    "lastVerified": "2026-07-13",
     "sources": [
       "https://playwright.dev/docs/getting-started-mcp",
       "https://github.com/microsoft/playwright-mcp"
@@ -862,7 +863,7 @@ export const matcherCatalog = [
     "id": "firecrawl-mcp",
     "name": "Firecrawl MCP",
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-08",
+    "lastVerified": "2026-07-13",
     "sources": [
       "https://www.firecrawl.dev/pricing",
       "https://github.com/firecrawl/firecrawl-mcp-server"
@@ -872,7 +873,7 @@ export const matcherCatalog = [
     "id": "github-mcp",
     "name": "GitHub MCP",
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-08",
+    "lastVerified": "2026-07-13",
     "sources": [
       "https://github.com/github/github-mcp-server",
       "https://docs.github.com/en/copilot/how-tos/provide-context/use-mcp-in-your-ide/set-up-the-github-mcp-server",
@@ -883,7 +884,7 @@ export const matcherCatalog = [
     "id": "sequential-thinking-mcp",
     "name": "Sequential Thinking",
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-08",
+    "lastVerified": "2026-07-13",
     "sources": [
       "https://github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking",
       "https://www.npmjs.com/package/@modelcontextprotocol/server-sequential-thinking",
@@ -894,7 +895,7 @@ export const matcherCatalog = [
     "id": "antv-chart-mcp",
     "name": "AntV Chart MCP",
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-08",
+    "lastVerified": "2026-07-13",
     "sources": [
       "https://github.com/antvis/mcp-server-chart",
       "https://www.npmjs.com/package/@antv/mcp-server-chart",
@@ -905,7 +906,7 @@ export const matcherCatalog = [
     "id": "brave-search-mcp",
     "name": "Brave Search MCP",
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-08",
+    "lastVerified": "2026-07-13",
     "sources": [
       "https://brave.com/search/api/",
       "https://github.com/brave/brave-search-mcp-server",
@@ -914,9 +915,9 @@ export const matcherCatalog = [
   },
   {
     "id": "openmemory-mcp",
-    "name": "OpenMemory / Mem0 MCP",
+    "name": "Mem0 MCP",
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-08",
+    "lastVerified": "2026-07-13",
     "sources": [
       "https://mem0.ai/blog/introducing-openmemory-mcp",
       "https://docs.mem0.ai/platform/mem0-mcp",
@@ -929,7 +930,7 @@ export const matcherCatalog = [
     "id": "notion-mcp",
     "name": "Notion MCP",
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-08",
+    "lastVerified": "2026-07-13",
     "sources": [
       "https://developers.notion.com/guides/mcp/overview",
       "https://developers.notion.com/guides/mcp/get-started-with-mcp",
@@ -940,7 +941,7 @@ export const matcherCatalog = [
     "id": "postman-mcp",
     "name": "Postman MCP",
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-08",
+    "lastVerified": "2026-07-13",
     "sources": [
       "https://learning.postman.com/docs/reference/postman-api/postman-mcp-server/overview",
       "https://learning.postman.com/docs/reference/postman-api/postman-mcp-server/postman-mcp-remote-server",
@@ -951,7 +952,7 @@ export const matcherCatalog = [
     "id": "atlassian-mcp",
     "name": "Atlassian Rovo MCP",
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-08",
+    "lastVerified": "2026-07-13",
     "sources": [
       "https://www.atlassian.com/platform/remote-mcp-server",
       "https://github.com/atlassian/atlassian-mcp-server",
@@ -964,7 +965,7 @@ export const matcherCatalog = [
     "id": "supabase-mcp",
     "name": "Supabase MCP",
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-08",
+    "lastVerified": "2026-07-13",
     "sources": [
       "https://supabase.com/docs/guides/ai-tools/mcp",
       "https://github.com/supabase/mcp"
@@ -986,7 +987,7 @@ export const matcherCatalog = [
     "id": "vercel-mcp",
     "name": "Vercel MCP",
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-08",
+    "lastVerified": "2026-07-13",
     "sources": [
       "https://vercel.com/docs/agent-resources/vercel-mcp",
       "https://vercel.com/docs/agent-resources/vercel-mcp/tools"
@@ -996,7 +997,7 @@ export const matcherCatalog = [
     "id": "slack-mcp",
     "name": "Slack MCP",
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-08",
+    "lastVerified": "2026-07-13",
     "sources": [
       "https://docs.slack.dev/ai/slack-mcp-server",
       "https://slack.com/help/articles/48855576908307-Guide-to-Model-Context-Protocol-in-Slack",
@@ -1007,7 +1008,7 @@ export const matcherCatalog = [
     "id": "linear-mcp",
     "name": "Linear MCP",
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-08",
+    "lastVerified": "2026-07-13",
     "sources": [
       "https://linear.app/docs/mcp",
       "https://linear.app/pricing"
@@ -1017,7 +1018,7 @@ export const matcherCatalog = [
     "id": "sentry-mcp",
     "name": "Sentry MCP",
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-08",
+    "lastVerified": "2026-07-13",
     "sources": [
       "https://mcp.sentry.dev/",
       "https://github.com/getsentry/sentry-mcp",
@@ -1028,9 +1029,9 @@ export const matcherCatalog = [
   },
   {
     "id": "docker-mcp",
-    "name": "Docker MCP",
+    "name": "Docker MCP Toolkit",
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-08",
+    "lastVerified": "2026-07-13",
     "sources": [
       "https://docs.docker.com/ai/mcp-catalog-and-toolkit/toolkit/",
       "https://docs.docker.com/ai/mcp-catalog-and-toolkit/mcp-gateway/"
@@ -1040,7 +1041,7 @@ export const matcherCatalog = [
     "id": "stripe-mcp",
     "name": "Stripe MCP",
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-08",
+    "lastVerified": "2026-07-13",
     "sources": [
       "https://docs.stripe.com/mcp",
       "https://github.com/stripe/ai",
@@ -1051,7 +1052,7 @@ export const matcherCatalog = [
     "id": "cloudflare-mcp",
     "name": "Cloudflare MCP",
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-08",
+    "lastVerified": "2026-07-13",
     "sources": [
       "https://developers.cloudflare.com/agents/model-context-protocol/cloudflare/servers-for-cloudflare/",
       "https://github.com/cloudflare/mcp",
@@ -1062,7 +1063,7 @@ export const matcherCatalog = [
     "id": "gitlab-mcp",
     "name": "GitLab MCP",
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-08",
+    "lastVerified": "2026-07-13",
     "sources": [
       "https://docs.gitlab.com/user/gitlab_duo/model_context_protocol/mcp_server/",
       "https://docs.gitlab.com/user/gitlab_duo/model_context_protocol/mcp_server_tools/",
@@ -1071,9 +1072,9 @@ export const matcherCatalog = [
   },
   {
     "id": "elasticsearch-mcp",
-    "name": "Elasticsearch MCP",
+    "name": "Elastic Agent Builder MCP server",
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-08",
+    "lastVerified": "2026-07-13",
     "sources": [
       "https://www.elastic.co/docs/explore-analyze/ai-features",
       "https://www.elastic.co/docs/explore-analyze/ai-features/agent-builder/mcp-server",
@@ -1083,8 +1084,8 @@ export const matcherCatalog = [
   {
     "id": "autogen",
     "name": "AutoGen",
-    "verificationStatus": "verified",
-    "lastVerified": "2026-07-08",
+    "verificationStatus": "historical",
+    "lastVerified": "2026-07-13",
     "sources": [
       "https://microsoft.github.io/autogen/stable/",
       "https://microsoft.github.io/autogen/stable/user-guide/agentchat-user-guide/migration-guide.html",
@@ -1093,9 +1094,9 @@ export const matcherCatalog = [
   },
   {
     "id": "zapier-ai",
-    "name": "Zapier AI Automation",
+    "name": "Zapier",
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-08",
+    "lastVerified": "2026-07-13",
     "sources": [
       "https://zapier.com/pricing",
       "https://zapier.com/apps",
@@ -1108,7 +1109,7 @@ export const matcherCatalog = [
     "id": "make",
     "name": "Make (Integromat)",
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-08",
+    "lastVerified": "2026-07-13",
     "sources": [
       "https://www.make.com/en/pricing",
       "https://www.make.com/en/integrations",
@@ -1121,7 +1122,7 @@ export const matcherCatalog = [
     "id": "camel-ai",
     "name": "CAMEL-AI",
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-08",
+    "lastVerified": "2026-07-13",
     "sources": [
       "https://github.com/camel-ai/camel",
       "https://docs.camel-ai.org/",
@@ -1132,7 +1133,7 @@ export const matcherCatalog = [
     "id": "agentscope",
     "name": "AgentScope",
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-08",
+    "lastVerified": "2026-07-13",
     "sources": [
       "https://github.com/agentscope-ai/agentscope",
       "https://docs.agentscope.io/",
@@ -1143,7 +1144,7 @@ export const matcherCatalog = [
     "id": "luma",
     "name": "Luma",
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-07",
+    "lastVerified": "2026-07-13",
     "sources": [
       "https://lumalabs.ai/pricing",
       "https://lumalabs.ai/llm-info",
@@ -1154,7 +1155,7 @@ export const matcherCatalog = [
     "id": "hailuo",
     "name": "海螺AI (Hailuo)",
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-07",
+    "lastVerified": "2026-07-13",
     "sources": [
       "https://hailuoai.video/",
       "https://hailuoai.video/doc/payment-policy.html",
@@ -1167,7 +1168,7 @@ export const matcherCatalog = [
     "id": "udio",
     "name": "Udio",
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-07",
+    "lastVerified": "2026-07-13",
     "sources": [
       "https://www.udio.com/pricing",
       "https://help.udio.com/en/articles/10739134-credits-and-credit-limits",
@@ -1179,7 +1180,7 @@ export const matcherCatalog = [
     "id": "cohere",
     "name": "Cohere / Command",
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-07",
+    "lastVerified": "2026-07-13",
     "sources": [
       "https://docs.cohere.com/docs/models",
       "https://docs.cohere.com/docs/how-does-cohere-pricing-work",
@@ -1190,7 +1191,7 @@ export const matcherCatalog = [
     "id": "amazon-nova",
     "name": "Amazon Nova",
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-07",
+    "lastVerified": "2026-07-13",
     "sources": [
       "https://docs.aws.amazon.com/nova/latest/nova2-userguide/what-is-nova-2.html",
       "https://docs.aws.amazon.com/nova/latest/nova2-userguide/whats-new.html",
@@ -1205,7 +1206,7 @@ export const matcherCatalog = [
     "id": "hunyuan",
     "name": "腾讯混元 / Tencent HY",
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-07",
+    "lastVerified": "2026-07-13",
     "sources": [
       "https://cloud.tencent.com/product/tclm",
       "https://cloud.tencent.com/document/product/1729/104753",
@@ -1216,27 +1217,27 @@ export const matcherCatalog = [
     "id": "frontend-design-skill",
     "name": "frontend-app-builder",
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-07",
+    "lastVerified": "2026-07-13",
     "sources": [
-      "本地 skill: build-web-apps:frontend-app-builder"
+      "https://github.com/openai/plugins/blob/main/plugins/build-web-apps/skills/frontend-app-builder/SKILL.md"
     ]
   },
   {
     "id": "webapp-testing-skill",
     "name": "frontend-testing-debugging",
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-08",
+    "lastVerified": "2026-07-13",
     "sources": [
-      "本地 skill: build-web-apps:frontend-testing-debugging"
+      "https://github.com/openai/plugins/blob/main/plugins/build-web-apps/skills/frontend-testing-debugging/SKILL.md"
     ]
   },
   {
     "id": "mcp-builder-skill",
     "name": "building-mcp-server-on-cloudflare",
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-08",
+    "lastVerified": "2026-07-13",
     "sources": [
-      "本地 skill: cloudflare:building-mcp-server-on-cloudflare",
+      "https://github.com/cloudflare/skills/blob/main/skills/building-mcp-server-on-cloudflare/SKILL.md",
       "https://modelcontextprotocol.io/docs/learn/architecture",
       "https://modelcontextprotocol.io/specification/2025-06-18/server/tools"
     ]
@@ -1245,16 +1246,16 @@ export const matcherCatalog = [
     "id": "skill-creator-skill",
     "name": "skill-creator",
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-08",
+    "lastVerified": "2026-07-13",
     "sources": [
-      "本地 skill: skill-creator"
+      "https://github.com/openai/skills/blob/main/skills/.system/skill-creator/SKILL.md"
     ]
   },
   {
     "id": "semgrep-skill",
     "name": "semgrep",
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-08",
+    "lastVerified": "2026-07-13",
     "sources": [
       "https://github.com/semgrep/skills",
       "https://github.com/semgrep/skills/blob/main/skills/semgrep/SKILL.md",
@@ -1269,7 +1270,7 @@ export const matcherCatalog = [
     "id": "differential-review-skill",
     "name": "differential-review",
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-08",
+    "lastVerified": "2026-07-13",
     "sources": [
       "https://github.com/trailofbits/skills/tree/main/plugins/differential-review",
       "https://github.com/trailofbits/skills/blob/main/plugins/differential-review/skills/differential-review/SKILL.md",
@@ -1281,7 +1282,7 @@ export const matcherCatalog = [
     "id": "insecure-defaults-skill",
     "name": "insecure-defaults",
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-08",
+    "lastVerified": "2026-07-13",
     "sources": [
       "https://trailofbits.com/skills/insecure-defaults/",
       "邻近本地 skill: security-best-practices"
@@ -1291,7 +1292,7 @@ export const matcherCatalog = [
     "id": "sharp-edges-skill",
     "name": "sharp-edges",
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-08",
+    "lastVerified": "2026-07-13",
     "sources": [
       "https://trailofbits.com/skills/sharp-edges/",
       "邻近本地 skill: security-best-practices"
@@ -1301,7 +1302,7 @@ export const matcherCatalog = [
     "id": "second-opinion-skill",
     "name": "second-opinion",
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-08",
+    "lastVerified": "2026-07-13",
     "sources": [
       "https://trailofbits.com/skills/second-opinion/",
       "邻近本地 skill: superpowers:requesting-code-review",
@@ -1312,7 +1313,7 @@ export const matcherCatalog = [
     "id": "audit-context-building-skill",
     "name": "audit-context-building",
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-08",
+    "lastVerified": "2026-07-13",
     "sources": [
       "https://trailofbits.com/skills/audit-context-building/",
       "邻近本地 skill: security-threat-model",
@@ -1323,7 +1324,7 @@ export const matcherCatalog = [
     "id": "git-cleanup-skill",
     "name": "git-cleanup",
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-08",
+    "lastVerified": "2026-07-13",
     "sources": [
       "https://trailofbits.com/skills/git-cleanup/",
       "邻近本地 skill: superpowers:using-git-worktrees"
@@ -1333,7 +1334,7 @@ export const matcherCatalog = [
     "id": "ask-questions-skill",
     "name": "ask-questions-if-underspecified",
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-08",
+    "lastVerified": "2026-07-13",
     "sources": [
       "https://trailofbits.com/skills/ask-questions-if-underspecified/",
       "邻近本地 skill: superpowers:brainstorming",
@@ -1344,7 +1345,7 @@ export const matcherCatalog = [
     "id": "property-based-testing-skill",
     "name": "property-based-testing",
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-08",
+    "lastVerified": "2026-07-13",
     "sources": [
       "https://trailofbits.com/skills/property-based-testing/",
       "邻近本地 skill: superpowers:test-driven-development",
@@ -1355,10 +1356,10 @@ export const matcherCatalog = [
     "id": "supabase-skill",
     "name": "supabase",
     "verificationStatus": "verified",
-    "lastVerified": "2026-07-08",
+    "lastVerified": "2026-07-13",
     "sources": [
-      "本地 skill: supabase",
-      "本地 skill: build-web-apps:supabase-postgres-best-practices",
+      "https://github.com/supabase/agent-skills/blob/main/skills/supabase/SKILL.md",
+      "https://supabase.com/docs/guides/getting-started/ai-skills",
       "https://supabase.com/docs"
     ]
   },
@@ -1366,9 +1367,9 @@ export const matcherCatalog = [
     "id": "supabase-realtime-skill",
     "name": "supabase-realtime",
     "verificationStatus": "historical",
-    "lastVerified": "2026-07-08",
+    "lastVerified": "2026-07-13",
     "sources": [
-      "公开来源不足：未发现同名 supabase-realtime skill（检查于 2026-07-08）",
+      "公开来源不足：未发现同名 supabase-realtime skill（检查于 2026-07-13）",
       "邻近本地 skill: supabase",
       "https://supabase.com/docs/guides/realtime"
     ]
@@ -1376,30 +1377,30 @@ export const matcherCatalog = [
   {
     "id": "ui-ux-pro-max-skill",
     "name": "ui-ux-pro-max",
-    "verificationStatus": "deprecated",
-    "lastVerified": "2026-07-08",
+    "verificationStatus": "verified",
+    "lastVerified": "2026-07-13",
     "sources": [
-      "公开来源不足：未发现同名 ui-ux-pro-max skill（检查于 2026-07-08）",
-      "邻近本地 skill: build-web-apps:frontend-app-builder",
-      "邻近本地 skill: product-design:ideate"
+      "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill",
+      "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill/blob/main/.claude/skills/ui-ux-pro-max/SKILL.md",
+      "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill/blob/main/LICENSE"
     ]
   },
   {
     "id": "week-report-skill",
     "name": "week-report-generator",
-    "verificationStatus": "deprecated",
-    "lastVerified": "2026-07-08",
+    "verificationStatus": "historical",
+    "lastVerified": "2026-07-13",
     "sources": [
-      "公开来源不足：未发现同名 week-report-generator skill（检查于 2026-07-08）"
+      "公开来源不足：未发现同名 week-report-generator skill（检查于 2026-07-13）"
     ]
   },
   {
     "id": "think-harder-skill",
     "name": "think-harder",
-    "verificationStatus": "deprecated",
-    "lastVerified": "2026-07-08",
+    "verificationStatus": "historical",
+    "lastVerified": "2026-07-13",
     "sources": [
-      "公开来源不足：未发现同名 think-harder skill（检查于 2026-07-08）",
+      "公开来源不足：未发现同名 think-harder skill（检查于 2026-07-13）",
       "邻近本地 skill: superpowers:brainstorming",
       "邻近本地 skill: superpowers:systematic-debugging"
     ]
@@ -1407,8 +1408,8 @@ export const matcherCatalog = [
   {
     "id": "research-skill",
     "name": "research",
-    "verificationStatus": "verified",
-    "lastVerified": "2026-07-08",
+    "verificationStatus": "needs-review",
+    "lastVerified": "2026-07-13",
     "sources": [
       "本地 skill: product-design:research",
       "本地 skill: anycap-deepresearch"

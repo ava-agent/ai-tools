@@ -1,7 +1,7 @@
 // Generated from src/data/tools.js.
 export default {
   "verificationStatus": "verified",
-  "lastVerified": "2026-07-07",
+  "lastVerified": "2026-07-13",
   "sources": [
     "https://www.alibabacloud.com/help/en/model-studio/model-pricing",
     "https://www.alibabacloud.com/help/en/model-studio/models",
@@ -32,7 +32,7 @@ export default {
     "alternatives": [
       "DeepSeek",
       "Gemini",
-      "GPT-5.5 / OpenAI"
+      "GPT-5.6 / OpenAI"
     ]
   },
   "pros": [
@@ -52,7 +52,7 @@ export default {
   "funRanking": "夯夯",
   "personalExperience": {
     "rating": 4.5,
-    "insights": "截至 2026-07-07，阿里云 Model Studio 官方价格页将 Qwen API 明确放在 pay-as-you-go 体系里，并列出 qwen3.7-max 等模型的国际/中国大陆部署价格、1M token 级别价格和免费 quota 适用范围。本站不再把 Qwen 固定写成单个型号，而是按中文/代码/视觉/云生态的模型家族来选型。",
+    "insights": "截至 2026-07-13，阿里云 Model Studio 官方价格页将 Qwen API 明确放在 pay-as-you-go 体系里，并列出 qwen3.7-max 等模型的国际/中国大陆部署价格、1M token 级别价格和免费 quota 适用范围。本站不再把 Qwen 固定写成单个型号，而是按中文/代码/视觉/云生态的模型家族来选型。",
     "pitfalls": [
       "先按模型价格表核对输入、输出和 long-context 单价",
       "不要把通义千问 App 免费入口等同于 API 免费",

@@ -1,7 +1,7 @@
 // Generated from src/data/tools.js.
 export default {
-  "verificationStatus": "verified",
-  "lastVerified": "2026-07-08",
+  "verificationStatus": "historical",
+  "lastVerified": "2026-07-13",
   "sources": [
     "https://microsoft.github.io/autogen/stable/",
     "https://microsoft.github.io/autogen/stable/user-guide/agentchat-user-guide/migration-guide.html",
@@ -11,7 +11,7 @@ export default {
   "name": "AutoGen",
   "category": "agent",
   "subcategory": "开发框架",
-  "developer": "Microsoft",
+  "developer": "Microsoft Research / community-managed",
   "logo": null,
   "versions": [
     {
@@ -38,10 +38,10 @@ export default {
     "新项目需要评估是否采用后续 Microsoft Agent Framework 或其他活跃框架"
   ],
   "bestFor": "学习多 Agent 架构、维护历史 AutoGen 项目、迁移 v0.2 到 v0.4",
-  "funRanking": "夯夯",
+  "funRanking": "历史",
   "personalExperience": {
     "rating": 3,
-    "insights": "截至 2026-07-08，AutoGen 更适合“历史项目维护与多 Agent 架构学习”而不是默认新项目首选。官方稳定版文档仍覆盖 AutoGen Studio、autogen-agentchat、Core 和 v0.4 迁移，但 GitHub 仓库已标注为维护模式，并建议新项目评估 Microsoft Agent Framework；后续维护更偏向社区。",
+    "insights": "截至 2026-07-13，AutoGen 更适合“历史项目维护与多 Agent 架构学习”而不是默认新项目首选。官方稳定版文档仍覆盖 AutoGen Studio、autogen-agentchat、Core 和 v0.4 迁移，但 GitHub 仓库已标注为维护模式，并建议新项目评估 Microsoft Agent Framework；后续维护更偏向社区。",
     "pitfalls": [
       "维护模式会影响长期路线",
       "v0.2/v0.4 迁移成本不可忽略",

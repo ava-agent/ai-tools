@@ -1,7 +1,7 @@
 // Generated from src/data/tools.js.
 export default {
   "verificationStatus": "verified",
-  "lastVerified": "2026-07-07",
+  "lastVerified": "2026-07-13",
   "sources": [
     "https://www.openhands.dev/pricing",
     "https://github.com/OpenHands/OpenHands"
@@ -10,7 +10,7 @@ export default {
   "name": "OpenHands",
   "category": "cli",
   "subcategory": "开源CLI",
-  "developer": "OpenHands Community",
+  "developer": "OpenHands Community / All Hands AI, Inc.",
   "logo": null,
   "versions": [
     {
@@ -20,7 +20,7 @@ export default {
       "link": "https://www.openhands.dev/pricing"
     }
   ],
-  "freeQuota": "本地自托管和云端 Individual/Enterprise 路径分开；模型/API/托管资源成本需单独确认",
+  "freeQuota": "Local 可自托管；云端 Individual 当前为每日 10 次 conversations，模型/API 与托管资源成本仍需单独确认",
   "contextWindow": "取决于所选模型/provider",
   "chineseSupport": 3,
   "pros": [
@@ -41,7 +41,7 @@ export default {
   "funRanking": "夯夯",
   "personalExperience": {
     "rating": 3.5,
-    "insights": "截至 2026-07-07，OpenHands 官方 pricing 将 Local、Individual、Enterprise 分层展示：Local open source 免费，Individual SaaS 免费但 BYOK 或 at-cost provider 另计，Enterprise 定制价格。它仍是开源软件开发 Agent 的重要选择，但要避免把本地自托管、云端计划和模型/API 成本合并成一个简单“免费版”。",
+    "insights": "截至 2026-07-13，OpenHands 官方 pricing 将 Local、Individual、Enterprise 分层展示：Local open source 免费，Individual SaaS 免费但 BYOK 或 at-cost provider 另计，Enterprise 定制价格。它仍是开源软件开发 Agent 的重要选择，但要避免把本地自托管、云端计划和模型/API 成本合并成一个简单“免费版”。",
     "pitfalls": [
       "先选 Local、Individual 还是 Enterprise 路径",
       "模型/API 和托管资源成本另算",

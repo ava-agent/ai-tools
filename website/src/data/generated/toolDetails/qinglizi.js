@@ -1,7 +1,7 @@
 // Generated from src/data/tools.js.
 export default {
   "verificationStatus": "verified",
-  "lastVerified": "2026-07-08",
+  "lastVerified": "2026-07-13",
   "sources": [
     "https://ali-doctor.com/login",
     "https://apps.apple.com/cn/app/%E6%B0%A2%E7%A6%BB%E5%AD%90-%E5%8C%BB%E5%AD%A6ai%E5%8A%A9%E6%89%8B/id6738349403"
@@ -10,12 +10,12 @@ export default {
   "name": "氢离子 / 阿里健康",
   "category": "llm",
   "subcategory": "医学垂直助手",
-  "developer": "阿里健康 / 杭州智循建模科技",
+  "developer": "杭州智循建模科技有限公司（阿里健康氢离子）",
   "logo": null,
   "versions": [
     {
       "type": "CN",
-      "pricing": "App Store / 产品内页面曾列出免费 App 与若干内购档位；具体价格、权益和机构权限以当前商店页及产品内为准",
+      "pricing": "App 免费下载；App 内购当前列出新人/月 ¥9.90、月卡 ¥49、季卡 ¥118、年卡 ¥360，权益以产品内为准",
       "models": "医学文献检索、指南阅读、AI 翻译和智能问答助手",
       "link": "https://ali-doctor.com/login"
     }
@@ -39,7 +39,7 @@ export default {
   "funRanking": "夯",
   "personalExperience": {
     "rating": 3.5,
-    "insights": "截至 2026-07-08，可以通过阿里健康/氢离子入口和 App Store 确认其医学 AI 助手定位，主要围绕搜文献、查指南、查药品、AI 翻译和原文总结。本站只核验产品存在、免费 App + App 内购买线索和免责声明；当前价格权益、模型卡、临床效果或机构权限仍需以商店页及产品内为准。",
+    "insights": "截至 2026-07-13，可以通过阿里健康/氢离子入口和 App Store 确认其医学 AI 助手定位，主要围绕搜文献、查指南、查药品、AI 翻译和原文总结。本站只核验产品存在、免费 App + App 内购买线索和免责声明；当前价格权益、模型卡、临床效果或机构权限仍需以商店页及产品内为准。",
     "pitfalls": [
       "不要把回答当作诊断或处方",
       "价格、额度和机构权限以产品内为准",
@@ -53,7 +53,7 @@ export default {
     "mainRisk": "App Store 免责声明限定其仅供医疗行业专业用户参考，不能代替医生面诊和医院诊断；公开来源暂未给出完整模型卡和机构权限边界。",
     "alternatives": [
       "Perplexity",
-      "GPT-5.5 / OpenAI",
+      "GPT-5.6 / OpenAI",
       "Claude"
     ]
   },

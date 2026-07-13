@@ -1,7 +1,7 @@
 // Generated from src/data/tools.js.
 export default {
   "verificationStatus": "verified",
-  "lastVerified": "2026-07-08",
+  "lastVerified": "2026-07-13",
   "sources": [
     "https://www.langchain.com/",
     "https://www.langchain.com/pricing",
@@ -11,7 +11,7 @@ export default {
   "name": "LangChain",
   "category": "agent",
   "subcategory": "开发框架",
-  "developer": "开源社区",
+  "developer": "LangChain, Inc.",
   "logo": null,
   "versions": [
     {
@@ -41,7 +41,7 @@ export default {
   "funRanking": "夯",
   "personalExperience": {
     "rating": 4,
-    "insights": "截至 2026-07-08，LangChain 条目应拆成“开源框架 + LangSmith 平台”来理解：LangGraph 适合需要明确状态和控制流的 Agent，LangSmith 则解决追踪、评测和部署。团队选型时要同时评估代码复杂度、每月 5,000/10,000 条基础追踪阶梯、大模型用量另行计费和可观测性预算。",
+    "insights": "截至 2026-07-13，LangChain 条目应拆成“开源框架 + LangSmith 平台”来理解：LangGraph 适合需要明确状态和控制流的 Agent，LangSmith 则解决追踪、评测和部署。团队选型时要同时评估代码复杂度、每月 5,000/10,000 条基础追踪阶梯、大模型用量另行计费和可观测性预算。",
     "pitfalls": [
       "需要工程化能力",
       "LangSmith 超额按量",

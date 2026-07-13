@@ -1,7 +1,7 @@
 // Generated from src/data/tools.js.
 export default {
   "verificationStatus": "verified",
-  "lastVerified": "2026-07-07",
+  "lastVerified": "2026-07-13",
   "sources": [
     "https://cursor.com/pricing",
     "https://cursor.com/docs/models-and-pricing",
@@ -17,7 +17,7 @@ export default {
   "versions": [
     {
       "type": "Global",
-      "pricing": "Hobby 免费 / Individual $20/月 / Teams $40/用户/月 / Enterprise 定制；高级模型和额外用量按官方模型与用量池规则核算",
+      "pricing": "Hobby 免费 / Pro $20/月 / Pro+ $60/月 / Ultra $200/月 / Teams $40/用户/月 / Enterprise 定制；高级模型和额外用量按官方模型与用量池规则核算",
       "models": "前沿模型、Auto、Composer 系列与第三方模型（以官方 Models & Pricing 当前表为准）",
       "link": "https://cursor.com/pricing"
     }
@@ -42,7 +42,7 @@ export default {
   "funRanking": "夯",
   "personalExperience": {
     "rating": 5,
-    "insights": "截至 2026-07-07，官方 pricing 与 Models & Pricing 页仍确认 Cursor 是多档订阅的 AI 原生 IDE：Hobby 免费，Individual $20/月，Teams $40/用户/月，Enterprise 定制。适合作为主力，但要按 usage pool、高级模型消耗、Cloud Agents/Bugbot 与隐私策略一起核算。",
+    "insights": "截至 2026-07-13，官方 pricing 与 Models & Pricing 页确认 Cursor 提供 Hobby、Pro $20/月、Pro+ $60/月、Ultra $200/月、Teams $40/用户/月和 Enterprise。适合作为主力，但要按 usage pool、高级模型消耗、Cloud Agents/Bugbot 与隐私策略一起核算。",
     "pitfalls": [
       "不要让它一次性改超过 10 个文件",
       "敏感项目先确认 Privacy Mode 与代码处理策略"

@@ -1,7 +1,7 @@
 // Generated from src/data/tools.js.
 export default {
   "verificationStatus": "verified",
-  "lastVerified": "2026-07-07",
+  "lastVerified": "2026-07-13",
   "sources": [
     "https://manus.im/",
     "https://help.manus.im/en/articles/11711111-what-is-the-current-membership-pricing-for-manus",
@@ -43,7 +43,7 @@ export default {
   "funRanking": "夯",
   "personalExperience": {
     "rating": 3,
-    "insights": "截至 2026-07-07，Manus 官网已显示其属于 Meta，并公开 Free、Pro、Team 的 credits 与并发任务口径。帮助中心把 Free 写成每日 300 credits、1 个并发任务；Pro 有 $20 起 4,000 monthly credits 和 $40 起 8,000 monthly credits 两类入口。页面不再保留未经官方来源支持的交易金额、收入和媒体评价，选型重点改为 credits、团队隐私和任务可交付性。",
+    "insights": "截至 2026-07-13，Manus 官网已显示其属于 Meta，并公开 Free、Pro、Team 的 credits 与并发任务口径。帮助中心把 Free 写成每日 300 credits、1 个并发任务；Pro 有 $20 起 4,000 monthly credits 和 $40 起 8,000 monthly credits 两类入口。页面不再保留未经官方来源支持的交易金额、收入和媒体评价，选型重点改为 credits、团队隐私和任务可交付性。",
     "pitfalls": [
       "先用低风险任务估算 credit 消耗",
       "团队使用前确认 Data Training Opt-Out、SSO 和共享权限",

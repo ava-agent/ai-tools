@@ -1,7 +1,7 @@
 // Generated from src/data/tools.js.
 export default {
   "verificationStatus": "verified",
-  "lastVerified": "2026-07-07",
+  "lastVerified": "2026-07-13",
   "sources": [
     "https://ai.google.dev/gemini-api/docs/models",
     "https://ai.google.dev/gemini-api/docs/pricing",
@@ -30,7 +30,7 @@ export default {
     "avoidIf": "你需要固定低延迟、完全脱离 Google 账号/云生态，或非常明确的国内可用性",
     "mainRisk": "Gemini app 订阅、API 免费层、模型上下文和数据使用政策分属不同入口，容易混淆",
     "alternatives": [
-      "GPT-5.5 / OpenAI",
+      "GPT-5.6 / OpenAI",
       "Claude",
       "Qwen"
     ]
@@ -52,7 +52,7 @@ export default {
   "funRanking": "夯夯",
   "personalExperience": {
     "rating": 5,
-    "insights": "截至 2026-07-07，Google 官方 Gemini API pricing 将 Free、Paid、Enterprise、Gemini 3.5 Flash、3.1 Pro Preview、3.1 Flash-Lite、Omni Flash Preview 等入口和价格分开说明。本站不再把 Gemini 固定写成单一系列结论，而是强调长上下文、多模态、Google 生态和不同计费路径的边界。",
+    "insights": "截至 2026-07-13，Google 官方 Gemini API pricing 将 Free、Paid、Enterprise、Gemini 3.5 Flash、3.1 Pro Preview、3.1 Flash-Lite、Omni Flash Preview 等入口和价格分开说明。本站不再把 Gemini 固定写成单一系列结论，而是强调长上下文、多模态、Google 生态和不同计费路径的边界。",
     "pitfalls": [
       "区分 Gemini app 订阅和 API 计费",
       "免费层数据和额度按官方条款确认",

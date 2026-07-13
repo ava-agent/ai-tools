@@ -156,6 +156,35 @@ describe('Pricing', () => {
     expect(detailLink.classes()).toEqual(expect.arrayContaining(['min-h-11', 'justify-center']))
   })
 
+  it('excludes needs-review and historical entries from ranked pricing recommendations', async () => {
+    const pending = {
+      ...sampleTools[0],
+      id: 'pending-tool',
+      name: 'Pending Tool',
+      verificationStatus: 'needs-review',
+    }
+    const historical = {
+      ...sampleTools[1],
+      id: 'historical-tool',
+      name: 'Historical Tool',
+      verificationStatus: 'historical',
+    }
+    const { wrapper } = await mountPricing([...sampleTools, pending, historical])
+
+    expect(wrapper.text()).not.toContain('Pending Tool')
+    expect(wrapper.text()).not.toContain('Historical Tool')
+  })
+
+  it('labels the catalog score as a documented heuristic instead of an objective value claim', async () => {
+    const { wrapper } = await mountPricing()
+
+    expect(wrapper.text()).toContain('目录参考分')
+    expect(wrapper.get('[data-testid="pricing-score-methodology"]').text()).toContain(
+      '不代表官方价格评测或客观性价比结论'
+    )
+    expect(wrapper.findAll('th').map(node => node.text())).not.toContain('性价比')
+  })
+
   it('renders mobile pricing cards in batches while keeping every desktop row', async () => {
     const { wrapper } = await mountPricing(makePricingTools(40))
 
@@ -208,8 +237,8 @@ describe('Pricing', () => {
   it('does not describe Claude Code Max as unlimited usage', async () => {
     const { wrapper } = await mountPricing()
 
-    expect(wrapper.text()).toContain('Claude Code Max $200/月起提供更高用量档')
-    expect(wrapper.text()).toContain('计划、模型和时段/会话限制核验')
+    expect(wrapper.text()).toContain('Max 高用量档可显著提升 Claude Code 额度')
+    expect(wrapper.text()).toContain('仍受计划、模型和时段限制')
     expect(wrapper.text()).not.toContain('无限额度')
     expect(wrapper.text()).not.toContain('效率提升远超成本')
   })

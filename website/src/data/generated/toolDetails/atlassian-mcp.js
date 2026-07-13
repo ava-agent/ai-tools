@@ -1,7 +1,7 @@
 // Generated from src/data/tools.js.
 export default {
   "verificationStatus": "verified",
-  "lastVerified": "2026-07-08",
+  "lastVerified": "2026-07-13",
   "sources": [
     "https://www.atlassian.com/platform/remote-mcp-server",
     "https://github.com/atlassian/atlassian-mcp-server",
@@ -13,7 +13,7 @@ export default {
   "name": "Atlassian Rovo MCP",
   "category": "mcp",
   "subcategory": "协作工具",
-  "developer": "Atlassian / Sooperset community alternative",
+  "developer": "Atlassian",
   "logo": null,
   "versions": [
     {
@@ -50,7 +50,7 @@ export default {
   "funRanking": "夯",
   "personalExperience": {
     "rating": 3.5,
-    "insights": "截至 2026-07-08，Atlassian 已有官方 Atlassian Rovo MCP Server，旧条目不能再按“仅有社区版、未来才可能有官方方案”的口径推荐。现在的重点是选择官方云端 Rovo MCP 还是 Sooperset 自托管替代，并把写权限、审计、API rate limits 和 Rovo credits 风险说清楚。",
+    "insights": "截至 2026-07-13，Atlassian 已有官方 Atlassian Rovo MCP Server，旧条目不能再按“仅有社区版、未来才可能有官方方案”的口径推荐。现在的重点是选择官方云端 Rovo MCP 还是 Sooperset 自托管替代，并把写权限、审计、API rate limits 和 Rovo credits 风险说清楚。",
     "pitfalls": [
       "默认限制 Read/Search",
       "写入 Jira/Confluence 前人工确认",

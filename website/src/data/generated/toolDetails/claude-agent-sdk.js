@@ -1,7 +1,7 @@
 // Generated from src/data/tools.js.
 export default {
   "verificationStatus": "verified",
-  "lastVerified": "2026-07-08",
+  "lastVerified": "2026-07-13",
   "sources": [
     "https://code.claude.com/docs/en/agent-sdk/overview",
     "https://github.com/anthropics/claude-agent-sdk-python",
@@ -16,7 +16,7 @@ export default {
   "versions": [
     {
       "type": "Global",
-      "pricing": "MIT 开源 SDK；运行成本取决于 Claude Code / Anthropic API / 订阅或自定义 CLI 路径",
+      "pricing": "MIT 开源 SDK；模型用量按 Anthropic API、Amazon Bedrock、Google Cloud 或 Microsoft Foundry 计费",
       "models": "Claude Code as a library；Python and TypeScript SDK 暴露 Claude Code 的工具、agent loop 和 context management",
       "link": "https://code.claude.com/docs/en/agent-sdk/overview"
     }
@@ -32,7 +32,7 @@ export default {
       "LangChain"
     ]
   },
-  "freeQuota": "SDK 免费，API 按量计费",
+  "freeQuota": "SDK 免费；模型与云平台调用按对应 Anthropic 或云服务计费",
   "contextWindow": "取决于 Claude Code / 模型配置",
   "chineseSupport": 3,
   "pros": [
@@ -48,14 +48,14 @@ export default {
   "cons": [
     "模型与运行路径主要围绕 Claude Code / Anthropic 生态",
     "具备文件和命令能力，权限边界必须明确",
-    "成本取决于 Claude Code/Anthropic 当前计划与用量",
+    "成本取决于 Anthropic API 或所选云平台的当前价格与用量",
     "本地/CI 集成前要确认 CLI 路径、工作目录和沙箱策略"
   ],
   "bestFor": "构建代码智能体、复杂推理 Agent",
   "funRanking": "夯夯",
   "personalExperience": {
     "rating": 4.5,
-    "insights": "截至 2026-07-08，Claude Agent SDK 更像是把 Claude Code 的 agent loop 变成可编程库。它适合代码任务自动化，但能力强也意味着权限风险更高：读写文件、运行命令、搜索网页、MCP 和 Permissions 都要在明确边界内使用。旧的上下文数字和泛化能力排行不如官方 SDK/CLI 能力描述可靠。",
+    "insights": "截至 2026-07-13，Claude Agent SDK 更像是把 Claude Code 的 agent loop 变成可编程库。它适合代码任务自动化，但能力强也意味着权限风险更高：读写文件、运行命令、搜索网页、MCP 和 Permissions 都要在明确边界内使用。旧的上下文数字和泛化能力排行不如官方 SDK/CLI 能力描述可靠。",
     "pitfalls": [
       "限制工作目录和工具权限",
       "确认 Python 3.10+ 或 TypeScript 包路径",

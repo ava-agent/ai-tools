@@ -1,7 +1,7 @@
 // Generated from src/data/tools.js.
 export default {
   "verificationStatus": "verified",
-  "lastVerified": "2026-07-08",
+  "lastVerified": "2026-07-13",
   "sources": [
     "https://supabase.com/docs/guides/ai-tools/mcp",
     "https://github.com/supabase/mcp"
@@ -16,7 +16,7 @@ export default {
     {
       "type": "Global",
       "pricing": "官方 Remote MCP Server；使用受 Supabase 项目、组织权限和计划限制；server pre-1.0",
-      "models": "Database, docs, debugging, development, functions, storage, branching feature groups",
+      "models": "Account management, database, docs, debugging, development, functions, storage and branching feature groups；Storage 默认禁用",
       "link": "https://supabase.com/docs/guides/ai-tools/mcp"
     }
   ],
@@ -29,7 +29,7 @@ export default {
     "可用 read_only=true 让 SQL 以 read-only Postgres user 执行并禁用 mutating tools",
     "可用 project_ref 限定单个项目，避免访问组织内所有项目",
     "可用 features=database,docs 等参数只启用必要工具组",
-    "覆盖 database、debugging、development、functions、docs、storage、branching 等 feature groups"
+    "覆盖 account、database、debugging、development、functions、docs、storage、branching 等 feature groups；Storage 默认禁用"
   ],
   "cons": [
     "官方明确提示切勿将 MCP 服务器连接到生产数据；仅用于开发和测试",
@@ -42,7 +42,7 @@ export default {
   "funRanking": "夯夯",
   "personalExperience": {
     "rating": 4.5,
-    "insights": "截至 2026-07-08，Supabase 官方文档已经把安全边界写得很清楚：默认建议 project_ref + read_only=true，并可用 features 限制工具组。它适合开发和测试，不应直接连生产数据。",
+    "insights": "截至 2026-07-13，Supabase 官方文档已经把安全边界写得很清楚：默认建议 project_ref + read_only=true，并可用 features 限制工具组。它适合开发和测试，不应直接连生产数据。",
     "pitfalls": [
       "默认加 project_ref 和 read_only=true",
       "生产数据不要直连",
@@ -69,7 +69,6 @@ export default {
   "tags": [
     "推荐",
     "MCP",
-    "免费",
     "开源",
     "Supabase",
     "全栈",

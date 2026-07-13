@@ -1,7 +1,7 @@
 // Generated from src/data/tools.js.
 export default {
   "verificationStatus": "verified",
-  "lastVerified": "2026-07-08",
+  "lastVerified": "2026-07-13",
   "sources": [
     "https://mem0.ai/blog/introducing-openmemory-mcp",
     "https://docs.mem0.ai/platform/mem0-mcp",
@@ -10,7 +10,7 @@ export default {
     "https://mem0.ai/pricing"
   ],
   "id": "openmemory-mcp",
-  "name": "OpenMemory / Mem0 MCP",
+  "name": "Mem0 MCP",
   "category": "mcp",
   "subcategory": "AI增强",
   "developer": "Mem0",
@@ -25,7 +25,7 @@ export default {
     {
       "type": "Claude Code plugin",
       "pricing": "Plugin + MCP + lifecycle hooks；需要 MEM0_API_KEY",
-      "models": "9 memory tools plus lifecycle hooks and SDK skill",
+      "models": "11 memory tools plus lifecycle hooks and SDK skill",
       "link": "https://docs.mem0.ai/integrations/claude-code"
     },
     {
@@ -35,21 +35,21 @@ export default {
       "link": "https://github.com/mem0ai/mem0-mcp"
     }
   ],
-  "freeQuota": "云端按 Mem0 Platform pricing 和 API key 额度；OSS/本地部署仍需自行承担 LLM、embedding、vector store 与 hosting 成本",
+  "freeQuota": "云端按 Mem0 Platform pricing 和 API key 额度；旧本地 server 已归档，不作为新项目路径",
   "contextWindow": "N/A",
   "chineseSupport": 2,
   "pros": [
     "Mem0 MCP 官方文档要求 Mem0 Platform account 和 API key，可通过托管端点接入 Claude、Claude Code、Codex、Cursor、Windsurf、VS Code 等客户端",
     "cloud-hosted MCP server requires no local installation，适合先验证跨会话记忆工作流",
-    "OpenMemory 强调 self-hostable、user-owned memory；Mem0 MCP API 路径适合 add_memory、search_memories、get_memories 和 delete_memory",
-    "可暴露 add_memory、search_memories、get_memories、get_memory、update_memory、delete_memory、delete_all_memories 等 9 memory tools",
+    "Mem0 MCP API 路径适合 add_memory、search_memories、get_memories 和 delete_memory 等跨会话记忆工作流",
+    "当前官方托管集成提供 11 个 memory tools；旧本地仓库已归档，不再作为新项目主路径",
     "Claude Code 集成可用 MEM0_API_KEY、MCP server、lifecycle hooks 和 SDK skill",
     "旧 mem0-mcp-server 已 archived，新项目应优先看官方托管 MCP 文档"
   ],
   "cons": [
     "memory persistence risk：记忆可能包含敏感偏好、客户信息、项目结构或过时结论，需要删除、更新和作用域治理",
     "云端版依赖 Mem0 Platform 账号、API key 和 pricing/free tier 额度",
-    "本地/OSS 路径仍要维护 LLM、embedding、vector store、storage、backup 和访问控制",
+    "旧本地 server 已归档，不能把历史 OSS 路径当作当前官方托管能力",
     "记忆召回质量取决于写入粒度、embedding、过滤器和用户清理习惯",
     "跨客户端共享记忆前要明确哪些内容允许长期保存"
   ],
@@ -57,7 +57,7 @@ export default {
   "funRanking": "夯",
   "personalExperience": {
     "rating": 3.5,
-    "insights": "截至 2026-07-08，OpenMemory/Mem0 的关键变化是托管 Mem0 MCP 已明确可用，同时 OpenMemory 强调 self-hostable、user-owned memory。选型时应把“本地 OpenMemory / OSS 依赖”和“Mem0 cloud MCP / API key / pricing”分开评估。",
+    "insights": "截至 2026-07-13，Mem0 MCP 的当前主路径是托管服务和 11 个 memory tools；旧本地 mem0-mcp-server 已归档。选型时应重点评估 API key、平台额度、记忆删除与敏感信息治理。",
     "pitfalls": [
       "先确认保存哪些记忆",
       "敏感项目默认不开长期记忆",

@@ -1,7 +1,7 @@
 // Generated from src/data/tools.js.
 export default {
   "verificationStatus": "verified",
-  "lastVerified": "2026-07-08",
+  "lastVerified": "2026-07-13",
   "sources": [
     "https://agpt.co/pricing/",
     "https://agpt.co/docs/platform",
@@ -48,7 +48,7 @@ export default {
   "funRanking": "夯",
   "personalExperience": {
     "rating": 3.5,
-    "insights": "截至 2026-07-08，AutoGPT 更应该按平台型 Agent 自动化工具评估，而不是只看早期经典 autonomous-agent demo。关键问题是你的流程是否需要云端运行管理、可视化积木、marketplace agents、定时任务、MCP 集成、AutoPilot Chat 和 pay-as-you-go credits，还是自托管加模型成本更合适。",
+    "insights": "截至 2026-07-13，AutoGPT 更应该按平台型 Agent 自动化工具评估，而不是只看早期经典 autonomous-agent demo。关键问题是你的流程是否需要云端运行管理、可视化积木、marketplace agents、定时任务、MCP 集成、AutoPilot Chat 和 pay-as-you-go credits，还是自托管加模型成本更合适。",
     "pitfalls": [
       "分开核算托管订阅和自托管成本",
       "再分发或平台复用前核对 Polyform Shield License 边界",

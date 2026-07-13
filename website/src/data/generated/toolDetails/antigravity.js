@@ -1,7 +1,7 @@
 // Generated from src/data/tools.js.
 export default {
   "verificationStatus": "verified",
-  "lastVerified": "2026-07-07",
+  "lastVerified": "2026-07-13",
   "sources": [
     "https://antigravity.google/pricing",
     "https://gemini.google/subscriptions/",
@@ -17,7 +17,7 @@ export default {
   "versions": [
     {
       "type": "Global",
-      "pricing": "Free / Google AI Pro $19.99/month / Google AI Ultra $99.99 或 $199.99/month；Antigravity 具体限额按官方 Plans 页面与 Google AI 订阅说明",
+      "pricing": "Free / Google AI Pro / Google AI Ultra；价格按所在地区与当前 Google AI 订阅页确认，Antigravity 具体限额按官方 Plans 页面与订阅说明",
       "models": "Gemini 与第三方模型接入范围以 Antigravity 当前 Plans 和模型选择器为准",
       "link": "https://antigravity.google/pricing"
     }
@@ -38,8 +38,8 @@ export default {
   },
   "pros": [
     "Google 官方 agentic development platform",
-    "Google AI Pro $19.99/month 提供 Antigravity higher rate limits",
-    "Google AI Ultra $99.99/month 与 $199.99/month 层级提供更高 limits，官方 Help 写明相对 Pro 可达 5x 或 20x quota",
+    "Google AI Pro 提供 Antigravity higher rate limits，订阅价格按地区确认",
+    "Google AI Ultra 提供更高 limits，官方 Help 写明相对 Pro 可达 5x 或 20x quota",
     "Google One Help 明确 Ultra 有最高 limits、prioritized traffic、first access to new models 与 baseline quota / AI credits 两层机制",
     "支持通过 AI credits 扩展 Antigravity 用量",
     "适合与 Gemini、Jules、AI Studio 等 Google 开发生态联动"
@@ -55,7 +55,7 @@ export default {
   "funRanking": "夯",
   "personalExperience": {
     "rating": 3.5,
-    "insights": "截至 2026-07-07，Antigravity 已不应只按“Public Preview 免费”描述。Google AI Pro / Ultra 订阅页和 Google One Help 都把 Antigravity 放进订阅权益与 AI credits 体系里，重点是 baseline quota、限额层级、优先流量、英文提示限制和超额续用机制。",
+    "insights": "截至 2026-07-13，Antigravity 已不应只按“Public Preview 免费”描述。Google AI Pro / Ultra 订阅页和 Google One Help 都把 Antigravity 放进订阅权益与 AI credits 体系里，重点是 baseline quota、限额层级、优先流量、英文提示限制和超额续用机制。",
     "pitfalls": [
       "先确认所在地区和账号能否使用对应计划",
       "把 baseline quota 与 AI credits 分开估算",

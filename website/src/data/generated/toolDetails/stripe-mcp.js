@@ -1,7 +1,7 @@
 // Generated from src/data/tools.js.
 export default {
   "verificationStatus": "verified",
-  "lastVerified": "2026-07-08",
+  "lastVerified": "2026-07-13",
   "sources": [
     "https://docs.stripe.com/mcp",
     "https://github.com/stripe/ai",
@@ -43,7 +43,7 @@ export default {
   "funRanking": "夯",
   "personalExperience": {
     "rating": 3.5,
-    "insights": "截至 2026-07-08，Stripe MCP 是官方 remote MCP server，不应再指向泛 Claude Code 仓库。支付类 MCP 的重点是权限治理：OAuth 优先，Agent 用 restricted API keys，写工具必须 human confirmation，并且 sandbox/live mode 分开管理。",
+    "insights": "截至 2026-07-13，Stripe MCP 是官方 remote MCP server，不应再指向泛 Claude Code 仓库。支付类 MCP 的重点是权限治理：OAuth 优先，Agent 用 restricted API keys，写工具必须 human confirmation，并且 sandbox/live mode 分开管理。",
     "pitfalls": [
       "优先 OAuth 和 restricted API keys",
       "启用 human confirmation",

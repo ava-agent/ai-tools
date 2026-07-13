@@ -1,9 +1,9 @@
 // Generated from src/data/tools.js.
 export default {
   "verificationStatus": "verified",
-  "lastVerified": "2026-07-08",
+  "lastVerified": "2026-07-13",
   "sources": [
-    "本地 skill: skill-creator"
+    "https://github.com/openai/skills/blob/main/skills/.system/skill-creator/SKILL.md"
   ],
   "id": "skill-creator-skill",
   "name": "skill-creator",

@@ -1,7 +1,7 @@
 // Generated from src/data/tools.js.
 export default {
   "verificationStatus": "verified",
-  "lastVerified": "2026-07-08",
+  "lastVerified": "2026-07-13",
   "sources": [
     "https://crewai.com/pricing",
     "https://docs.crewai.com/",
@@ -43,7 +43,7 @@ export default {
   "funRanking": "夯",
   "personalExperience": {
     "rating": 3.5,
-    "insights": "截至 2026-07-08，CrewAI 应按“开源 Python 编排框架 + 商业控制平面”理解。官方 pricing 当前突出 Basic Free 与 Enterprise Custom，不再沿用旧的固定月费/年费档描述；企业页强调 private infrastructure 与 63% of the Fortune 500。适合会写代码、需要 Crews/Flows 和观测治理的团队。",
+    "insights": "截至 2026-07-13，CrewAI 应按“开源 Python 编排框架 + 商业控制平面”理解。官方 pricing 当前突出 Basic Free 与 Enterprise Custom，不再沿用旧的固定月费/年费档描述；企业页强调 private infrastructure 与 63% of the Fortune 500。适合会写代码、需要 Crews/Flows 和观测治理的团队。",
     "pitfalls": [
       "把开源框架成本和 CrewAI 云端 workflow executions 分开算",
       "生产工作流先接 tracing/observability",

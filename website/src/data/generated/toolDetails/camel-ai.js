@@ -1,7 +1,7 @@
 // Generated from src/data/tools.js.
 export default {
   "verificationStatus": "verified",
-  "lastVerified": "2026-07-08",
+  "lastVerified": "2026-07-13",
   "sources": [
     "https://github.com/camel-ai/camel",
     "https://docs.camel-ai.org/",
@@ -11,7 +11,7 @@ export default {
   "name": "CAMEL-AI",
   "category": "agent",
   "subcategory": "开发框架",
-  "developer": "CAMEL-AI.org",
+  "developer": "CAMEL-AI open-source community",
   "logo": null,
   "versions": [
     {
@@ -42,7 +42,7 @@ export default {
   "funRanking": "夯",
   "personalExperience": {
     "rating": 3.5,
-    "insights": "截至 2026-07-08，CAMEL-AI 更像一个宽口径的多 Agent 研究与工程框架，而不是简单的角色扮演 demo。它在 agent societies、数据生成、RAG、工具和实验上很有潜力；当前 v0.2.90 仍提示生产用户需要为模型/工具调用和快速依赖演进预留预算。",
+    "insights": "截至 2026-07-13，CAMEL-AI 更像一个宽口径的多 Agent 研究与工程框架，而不是简单的角色扮演 demo。它在 agent societies、数据生成、RAG、工具和实验上很有潜力；当前 v0.2.90 仍提示生产用户需要为模型/工具调用和快速依赖演进预留预算。",
     "pitfalls": [
       "锁定框架和供应商版本",
       "多 Agent 生产运行前补齐 traces 与测试",

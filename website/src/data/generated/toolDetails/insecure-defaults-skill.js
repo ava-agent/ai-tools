@@ -1,7 +1,7 @@
 // Generated from src/data/tools.js.
 export default {
   "verificationStatus": "verified",
-  "lastVerified": "2026-07-08",
+  "lastVerified": "2026-07-13",
   "sources": [
     "https://trailofbits.com/skills/insecure-defaults/",
     "邻近本地 skill: security-best-practices"
@@ -46,7 +46,7 @@ export default {
   "funRanking": "归档",
   "personalExperience": {
     "rating": 3.5,
-    "insights": "截至 2026-07-08，insecure-defaults 有 Trail of Bits 公开上游，适合定位 fail-open defaults、hardcoded secrets、weak auth 等生产可达配置风险；实际使用前需安装 Trail of Bits plugin 并人工复核。",
+    "insights": "截至 2026-07-13，insecure-defaults 有 Trail of Bits 公开上游，适合定位 fail-open defaults、hardcoded secrets、weak auth 等生产可达配置风险；实际使用前需安装 Trail of Bits plugin 并人工复核。",
     "pitfalls": [
       "先补充同名 Skill 的上游仓库",
       "按实际技术栈加载安全参考",

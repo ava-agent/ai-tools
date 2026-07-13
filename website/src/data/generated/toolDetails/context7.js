@@ -1,7 +1,7 @@
 // Generated from src/data/tools.js.
 export default {
   "verificationStatus": "verified",
-  "lastVerified": "2026-07-08",
+  "lastVerified": "2026-07-13",
   "sources": [
     "https://context7.com/plans",
     "https://context7.com/docs/installation",
@@ -19,7 +19,7 @@ export default {
     {
       "type": "Global",
       "pricing": "Free for personal use：1,000 API calls/月；Pro $10/seat/月，含 5,000 free API calls/seat/月，额外 $10/1,000 calls",
-      "models": "无需 LLM，提供远程 MCP、CLI + Skills 与私有仓库/团队计划",
+      "models": "远程端点 https://mcp.context7.com/mcp；当前推荐用 npx ctx7 setup 配置 MCP 或 Skills",
       "link": "https://context7.com/plans"
     }
   ],
@@ -38,8 +38,8 @@ export default {
   "contextWindow": "按需查询",
   "chineseSupport": 3,
   "pros": [
-    "提供远程 MCP 服务和本地 npx MCP Server 两种接入",
-    "支持 CLI + Skills 与 MCP 双模式",
+    "提供远程 MCP 服务，当前推荐通过 npx ctx7 setup 配置客户端",
+    "支持 CLI + Skills 与 MCP 双模式，远程端点为 https://mcp.context7.com/mcp",
     "可查询版本化文档和代码示例",
     "支持 Cursor / Claude Code / Codex / Gemini CLI 等多种客户端配置",
     "API key 可提升限额并支持私有仓库能力",
@@ -57,7 +57,7 @@ export default {
   "funRanking": "夯夯夯",
   "personalExperience": {
     "rating": 5,
-    "insights": "截至 2026-07-08，MCP Core 核心工具之一。它把最新、版本化的库文档拉进 AI 编码上下文，尤其适合处理训练数据落后的 API 用法。当前不能再按“无限免费”理解：个人公开仓库有免费层，团队、私有仓库、较高调用量、Enterprise seat pricing 和解析私有源都要看 Context7 Plans。",
+    "insights": "截至 2026-07-13，MCP Core 核心工具之一。它把最新、版本化的库文档拉进 AI 编码上下文，尤其适合处理训练数据落后的 API 用法。当前不能再按“无限免费”理解：个人公开仓库有免费层，团队、私有仓库、较高调用量、Enterprise seat pricing 和解析私有源都要看 Context7 Plans。",
     "pitfalls": [
       "免费层 API calls 有月度上限",
       "私有仓库解析和团队空间会产生额外成本",

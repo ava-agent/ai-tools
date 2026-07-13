@@ -1,7 +1,7 @@
 // Generated from src/data/tools.js.
 export default {
   "verificationStatus": "verified",
-  "lastVerified": "2026-07-08",
+  "lastVerified": "2026-07-13",
   "sources": [
     "https://www.make.com/en/pricing",
     "https://www.make.com/en/integrations",
@@ -18,14 +18,14 @@ export default {
   "versions": [
     {
       "type": "Global",
-      "pricing": "Free $0/mo，最多 1,000 credits/month；Core $9/mo、Pro $16/mo、Teams $29/mo 默认按 10k credits/mo 展示",
+      "pricing": "Free $0，1,000 credits/month；统一 Make Plan 从 $9/月起（默认 5,000 credits）；Company 定制",
       "models": "可视化工作流构建器、3000+ apps、350+ AI apps",
       "link": "https://www.make.com/en/pricing"
     },
     {
       "type": "Make + AI",
       "pricing": "AI Provider 可在所有计划使用；部分 AI/advanced apps 动态消耗 credits",
-      "models": "Make AI Agents beta、Make MCP Server、AI Toolkit、AI Web Search beta、AI Content Extractor",
+      "models": "Make AI Agents、Make MCP Server、AI Toolkit、AI Web Search、AI Content Extractor",
       "link": "https://help.make.com/credits"
     }
   ],
@@ -34,8 +34,8 @@ export default {
   "chineseSupport": 2,
   "pros": [
     "Free 计划含 1,000 credits/month、无代码可视化工作流构建器和 3000+ apps",
-    "Core $9/mo、Pro $16/mo、Teams $29/mo 都以 10k credits/mo 为页面默认价格口径",
-    "Make + AI 覆盖 350+ AI apps、Make MCP Server、AI Content Extractor、AI Web Search beta、Make AI Agents beta 和 Make AI Toolkit",
+    "统一 Make Plan 从 $9/月起，价格页默认按 5,000 credits 展示；Company 走定制采购",
+    "Make + AI 覆盖 350+ AI apps、Make MCP Server、AI Content Extractor、AI Web Search、Make AI Agents 和 Make AI Toolkit",
     "credits 是计费单位，常见模块动作通常 1 credit，便于从场景执行量估算成本",
     "可视化 scenario、routers、filters、error handlers 和 scheduled scenarios 适合复杂业务流程建模"
   ],
@@ -50,7 +50,7 @@ export default {
   "funRanking": "夯",
   "personalExperience": {
     "rating": 3.5,
-    "insights": "截至 2026-07-08，Make 已把旧 operations 口径更新为 credits。它适合偏可视化编排和复杂 scenario 的团队，但 credits、AI Provider token/model 用量和 billing toggle 会影响真实成本，不能和 Zapier tasks 直接一比一比较。",
+    "insights": "截至 2026-07-13，Make 已把旧 Core/Pro/Teams 梯度收敛为统一 Make Plan，从默认 5,000 credits 的 $9/月起，Company 定制。它仍按 credits 计费，不能和 Zapier tasks 一比一比较。",
     "pitfalls": [
       "按 scenario 逐步估算 credits",
       "AI Provider 费用单独看 tokens/model",

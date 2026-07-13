@@ -1,7 +1,7 @@
 // Generated from src/data/tools.js.
 export default {
   "verificationStatus": "verified",
-  "lastVerified": "2026-07-07",
+  "lastVerified": "2026-07-13",
   "sources": [
     "https://developers.openai.com/api/docs/guides/images-vision",
     "https://developers.openai.com/api/docs/models/gpt-image-2",
@@ -41,7 +41,7 @@ export default {
   "funRanking": "夯夯",
   "personalExperience": {
     "rating": 4.5,
-    "insights": "截至 2026-07-07，OpenAI 官方 Images 文档仍将 API 图像能力表述为 GPT Image models，并列出最新模型 gpt-image-2；ChatGPT 产品侧对应 ChatGPT Images 2.0。本站不再展示 “DALL-E 4” 或固定 “GPT-5 图像生成” 口径，改为按官方 Images API/ChatGPT 图像入口核验。",
+    "insights": "截至 2026-07-13，OpenAI 官方 Images 文档仍将 API 图像能力表述为 GPT Image models，并列出最新模型 gpt-image-2；ChatGPT 产品侧对应 ChatGPT Images 2.0。本站不再展示 “DALL-E 4” 或固定 “GPT-5 图像生成” 口径，改为按官方 Images API/ChatGPT 图像入口核验。",
     "pitfalls": [
       "入口和额度按 ChatGPT 计划或 API 路径区分",
       "生成成本按官方 calculator 估算",

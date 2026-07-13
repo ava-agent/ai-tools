@@ -1,7 +1,7 @@
 // Generated from src/data/tools.js.
 export default {
   "verificationStatus": "verified",
-  "lastVerified": "2026-07-08",
+  "lastVerified": "2026-07-13",
   "sources": [
     "https://developers.cloudflare.com/agents/model-context-protocol/cloudflare/servers-for-cloudflare/",
     "https://github.com/cloudflare/mcp",
@@ -17,7 +17,7 @@ export default {
     {
       "type": "Global",
       "pricing": "Cloudflare managed remote MCP servers；实际资源按 Cloudflare 产品与计划计费",
-      "models": "Cloudflare API Code Mode server and product-specific MCP servers",
+      "models": "Cloudflare API Code Mode server https://mcp.cloudflare.com/mcp and product-specific MCP servers",
       "link": "https://developers.cloudflare.com/agents/model-context-protocol/cloudflare/servers-for-cloudflare/"
     }
   ],
@@ -27,7 +27,7 @@ export default {
   "pros": [
     "Cloudflare 官方 managed remote MCP servers，可通过 OAuth 接入",
     "Cloudflare API MCP server 覆盖 over 2,500 endpoints across DNS, Workers, R2, Zero Trust 等",
-    "Code Mode 仅暴露 search() 和 execute() 两个工具，约 1,000 tokens 即可覆盖大量 API",
+    "当前 Code Mode 暴露 docs()、search() 和 execute() 三个工具，以较小工具面覆盖大量 API",
     "生成代码在 isolated Dynamic Worker sandbox 中执行",
     "CI/CD 或 automation 可用 Cloudflare API token，并只授予所需 permissions",
     "managed remote MCP servers 支持 streamable-http transport；SSE transport 已标注 deprecated",
@@ -43,7 +43,7 @@ export default {
   "funRanking": "夯",
   "personalExperience": {
     "rating": 4,
-    "insights": "截至 2026-07-08，Cloudflare MCP 分为广覆盖的 API Code Mode server 和更收敛的 product-specific MCP servers。它很强，但应按权限治理来用：OAuth 选择最小权限，CI/CD 用 API token，并优先选择具体产品 server 降低误操作面；当前文档以 streamable-http 为主，SSE 属 deprecated transport。",
+    "insights": "截至 2026-07-13，Cloudflare MCP 分为广覆盖的 API Code Mode server 和更收敛的 product-specific MCP servers。它很强，但应按权限治理来用：OAuth 选择最小权限，CI/CD 用 API token，并优先选择具体产品 server 降低误操作面；当前文档以 streamable-http 为主，SSE 属 deprecated transport。",
     "pitfalls": [
       "OAuth/API token 只给必要权限",
       "DNS/Workers/R2/D1 写操作要人工确认",
