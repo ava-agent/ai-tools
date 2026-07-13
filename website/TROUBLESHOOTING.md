@@ -19,12 +19,12 @@
    - 工作流
 
 ### 方法 2: 直接访问 URL
-- **首页**: `http://localhost:8765/#/`
-- **全景浏览**: `http://localhost:8765/#/tools`
-- **工具对比**: `http://localhost:8765/#/comparison`
-- **工作流**: `http://localhost:8765/#/workflows`
-- **工具详情**: `http://localhost:8765/#/tool/cursor`（不是 `/#/tools/cursor`）
-- **工具匹配器/订阅指南**: `/#/matcher`、`/#/pricing` 仍是路由页面，但不在当前顶部主导航中
+- **首页**: `http://localhost:8765/`
+- **全景浏览**: `http://localhost:8765/tools`
+- **工具对比**: `http://localhost:8765/comparison`
+- **工作流**: `http://localhost:8765/workflows`
+- **工具详情**: `http://localhost:8765/tools/cursor`
+- **工具匹配器/订阅指南**: `/matcher`、`/pricing` 仍是路由页面，但不在当前顶部主导航中
 
 ---
 
@@ -86,10 +86,10 @@ http://localhost:8765/
 
 ### 3. 验证新页面
 点击导航链接或直接访问：
-- `http://localhost:8765/#/tools` - 应该看到工具全景浏览和筛选
-- `http://localhost:8765/#/comparison` - 应该看到 "工具对比" 标题
-- `http://localhost:8765/#/workflows` - 应该看到 "AI 工作流最佳实践" 标题
-- `http://localhost:8765/#/matcher`、`/#/pricing` - 仍可作为直接路由访问
+- `http://localhost:8765/tools` - 应该看到工具全景浏览和筛选
+- `http://localhost:8765/comparison` - 应该看到 "工具对比" 标题
+- `http://localhost:8765/workflows` - 应该看到 "AI 工作流最佳实践" 标题
+- `http://localhost:8765/matcher`、`/pricing` - 仍可作为直接路由访问
 
 ### 4. 验证页面功能
 - **Matcher 页面**: 点击类别卡片，应该出现决策树问题

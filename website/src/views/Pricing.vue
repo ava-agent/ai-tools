@@ -232,11 +232,11 @@
             <ul class="space-y-3 text-white/80">
               <li class="flex items-start">
                 <X class="w-5 h-5 text-red-500 mr-2 mt-0.5 flex-shrink-0" />
-                <span><strong class="text-white">避免重复订阅</strong>：Cursor 和 GitHub Copilot 功能重叠，二选一即可</span>
+                <span><strong class="text-white">评估功能重叠</strong>：Cursor 与 GitHub Copilot 在补全和 Agent 工作流上可能重叠，先按团队流程试用，再决定是否同时订阅</span>
               </li>
               <li class="flex items-start">
                 <X class="w-5 h-5 text-red-500 mr-2 mt-0.5 flex-shrink-0" />
-                <span><strong class="text-white">注意用量限制</strong>：Claude、GPT 等按量计费，关注月度账单</span>
+                <span><strong class="text-white">区分计费入口</strong>：Claude、GPT 同时存在订阅与 API/按量入口，分别核对额度、超额规则和团队计划</span>
               </li>
               <li class="flex items-start">
                 <X class="w-5 h-5 text-red-500 mr-2 mt-0.5 flex-shrink-0" />
@@ -265,11 +265,18 @@
               class="pill cursor-pointer transition-all min-h-11"
               :class="pricingCategory === cat ? 'pill-active' : 'pill-inactive'"
               :aria-pressed="pricingCategory === cat"
+              :data-testid="`pricing-category-${cat}`"
               @click="pricingCategory = cat"
             >
               {{ cat === 'all' ? '全部' : getCategoryLabel(cat) }}
             </button>
           </div>
+          <p
+            class="border-b border-white/[0.06] px-4 py-3 text-xs leading-relaxed text-white/45"
+            data-testid="pricing-score-methodology"
+          >
+            目录参考分仅按是否有免费层与本站体验评分计算，用于排序浏览，不代表官方价格评测或客观性价比结论。
+          </p>
           <div
             class="hidden overflow-x-auto md:block"
             data-testid="pricing-desktop-table"
@@ -287,7 +294,7 @@
                     定价
                   </th>
                   <th class="text-left p-4 text-white font-semibold">
-                    性价比
+                    目录参考分
                   </th>
                 </tr>
               </thead>
@@ -344,11 +351,12 @@
           </div>
 
           <div
+            id="pricing-mobile-results"
             class="md:hidden"
             data-testid="pricing-mobile-list"
           >
             <article
-              v-for="tool in pricingComparison"
+              v-for="tool in mobilePricingComparison"
               :key="tool.id"
               class="border-b border-white/[0.06] p-4 transition-all"
               :class="{
@@ -396,7 +404,7 @@
                 </div>
                 <div>
                   <div class="mb-2 text-xs font-semibold text-white/45">
-                    性价比
+                    目录参考分
                   </div>
                   <div class="flex items-center">
                     <div class="mr-2 h-2 flex-1 rounded-full bg-white/[0.04]">
@@ -418,6 +426,31 @@
                 查看详情
               </router-link>
             </article>
+
+            <div
+              class="border-t border-white/[0.06] p-4 text-center"
+              data-testid="pricing-mobile-pagination"
+            >
+              <p
+                class="text-sm text-white/60"
+                data-testid="pricing-mobile-count"
+                role="status"
+                aria-live="polite"
+              >
+                已显示 {{ mobilePricingComparison.length }} / {{ pricingComparison.length }} 个工具
+              </p>
+              <button
+                v-if="hasMoreMobilePricing"
+                type="button"
+                class="mt-3 inline-flex min-h-11 items-center justify-center rounded-lg border border-white/10 px-5 text-sm font-semibold text-primary transition-colors hover:bg-primary/10"
+                data-testid="pricing-mobile-load-more"
+                aria-controls="pricing-mobile-results"
+                @click="loadMorePricing"
+              >
+                <ChevronDown class="mr-2 h-4 w-4" />
+                加载更多（再显示 {{ nextMobileBatchSize }} 个）
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -432,13 +465,13 @@
                 订阅成本计算建议
               </h3>
               <p class="text-white/80 mb-4">
-                建议每月订阅成本控制在收入的 1-3% 之间。例如：
+                先设月度上限并记录真实使用率，再决定是否升级或增加席位：
               </p>
               <ul class="space-y-2 text-white/70 text-sm">
-                <li>• 个人开发者（月入 1-2 万）：推荐 $0-50/月 的方案</li>
-                <li>• 重度 AI 用户：Claude Code Max $200/月起提供更高用量档，但仍需按当前计划、模型和时段/会话限制核验</li>
-                <li>• 小团队（5 人）：推荐 $100-300/月的团队方案</li>
-                <li>• 中型团队（20 人）：推荐 $500-1000/月的企业方案</li>
+                <li>• 个人开发者：先保留一个主力付费工具，其余用免费层、开源或按量入口补充</li>
+                <li>• 重度用户：把订阅额度、API 按量费和可购买 credits 分开记账，并设置硬上限</li>
+                <li>• 团队：先用小范围试点核对席位利用率、权限治理和实际节省时间，再逐步扩容</li>
+                <li>• 每月复盘一次闲置订阅、重复能力和超额费用；价格变更后重新核对官方页面</li>
               </ul>
             </div>
           </div>
@@ -449,7 +482,7 @@
 </template>
 
 <script setup>
-import { ref, computed } from 'vue'
+import { ref, computed, watch } from 'vue'
 import {
   DollarSign,
   Star,
@@ -460,20 +493,23 @@ import {
   X,
   Scale,
   Calculator,
-  Check
+  Check,
+  ChevronDown
 } from 'lucide-vue-next'
-import { useToolsStore } from '../stores/tools'
+import { usePricingCatalogStore } from '../stores/pricingCatalog'
 import { getCategoryLabel } from '../utils/helpers'
 import { analyzeToolPricing, matchesPricingBudget } from '../utils/pricing'
 import { formatMetricValue } from '../utils/toolMetadata'
 import { recommendedCombos as rawCombos } from '../data/categories.js'
 
-const toolsStore = useToolsStore()
+const toolsStore = usePricingCatalogStore()
 
 // Selection state
 const selectedBudgetTier = ref(null)
 const selectedCombo = ref(null)
 const pricingCategory = ref('all')
+const MOBILE_PAGE_SIZE = 16
+const mobileVisibleCount = ref(MOBILE_PAGE_SIZE)
 
 // Budget tiers overview
 const budgetTiers = [
@@ -519,13 +555,21 @@ const comboToolIds = computed(() => {
 
 // 分类列表
 const pricingCategories = computed(() => {
-  const cats = new Set(toolsStore.tools.map(t => t.category))
+  const cats = new Set(
+    toolsStore.tools
+      .filter(t => !t.verificationStatus || t.verificationStatus === 'verified')
+      .map(t => t.category)
+  )
   return ['all', ...Array.from(cats)]
 })
 
 // 从真实工具数据生成价格表
 const pricingComparison = computed(() => {
-  let tools = toolsStore.tools.filter(t => t.versions && t.versions.length > 0)
+  let tools = toolsStore.tools.filter(t =>
+    (!t.verificationStatus || t.verificationStatus === 'verified') &&
+    t.versions &&
+    t.versions.length > 0
+  )
 
   if (pricingCategory.value !== 'all') {
     tools = tools.filter(t => t.category === pricingCategory.value)
@@ -558,6 +602,20 @@ const pricingComparison = computed(() => {
   }).sort((a, b) => b.value - a.value)
 })
 
+const mobilePricingComparison = computed(() =>
+  pricingComparison.value.slice(0, mobileVisibleCount.value)
+)
+const hasMoreMobilePricing = computed(() =>
+  mobileVisibleCount.value < pricingComparison.value.length
+)
+const nextMobileBatchSize = computed(() =>
+  Math.min(MOBILE_PAGE_SIZE, pricingComparison.value.length - mobileVisibleCount.value)
+)
+
+watch([pricingCategory, selectedBudgetTier], () => {
+  mobileVisibleCount.value = MOBILE_PAGE_SIZE
+})
+
 // 判断工具是否匹配所选预算层级
 function matchesBudget(tool) {
   if (!selectedBudgetTier.value) return true
@@ -587,5 +645,12 @@ function selectBudgetTier(tierId) {
 
 function selectCombo(comboName) {
   selectedCombo.value = selectedCombo.value === comboName ? null : comboName
+}
+
+function loadMorePricing() {
+  mobileVisibleCount.value = Math.min(
+    mobileVisibleCount.value + MOBILE_PAGE_SIZE,
+    pricingComparison.value.length
+  )
 }
 </script>

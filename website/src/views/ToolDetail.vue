@@ -1,6 +1,51 @@
 <template>
   <div
-    v-if="tool"
+    v-if="isLoading"
+    class="flex min-h-[50vh] items-center justify-center px-5 text-center"
+    role="status"
+    aria-live="polite"
+    data-testid="tool-detail-loading"
+  >
+    <div>
+      <div class="mx-auto h-8 w-8 animate-spin rounded-full border-2 border-white/15 border-t-[#0a84ff]" />
+      <p class="mt-4 text-sm text-white/55">
+        正在加载工具详情...
+      </p>
+    </div>
+  </div>
+
+  <div
+    v-else-if="loadError"
+    class="flex min-h-[50vh] items-center justify-center px-5 text-center"
+    data-testid="tool-detail-error"
+  >
+    <div>
+      <p
+        class="text-lg font-semibold text-white"
+        role="alert"
+      >
+        {{ loadError }}
+      </p>
+      <div class="mt-5 flex flex-wrap justify-center gap-3">
+        <button
+          type="button"
+          class="btn-capsule"
+          @click="retryLoad"
+        >
+          重新加载
+        </button>
+        <router-link
+          to="/tools"
+          class="pill pill-inactive inline-flex min-h-11 items-center px-4"
+        >
+          返回工具列表
+        </router-link>
+      </div>
+    </div>
+  </div>
+
+  <div
+    v-else-if="tool"
     class="min-h-screen"
   >
     <!-- Back nav header -->
@@ -144,9 +189,7 @@
         </p>
 
         <div class="grid grid-cols-1 sm:grid-cols-3 gap-[10px]">
-          <div
-            class="border-l-2 border-[#30d158]/45 py-1 pl-3"
-          >
+          <div class="border-l-2 border-[#30d158]/45 py-1 pl-3">
             <div class="text-[11px] font-semibold text-[#30d158] mb-1">
               适合
             </div>
@@ -154,9 +197,7 @@
               {{ decisionSummary.bestFor }}
             </div>
           </div>
-          <div
-            class="border-l-2 border-[#ff9f0a]/45 py-1 pl-3"
-          >
+          <div class="border-l-2 border-[#ff9f0a]/45 py-1 pl-3">
             <div class="text-[11px] font-semibold text-[#ff9f0a] mb-1">
               避开
             </div>
@@ -164,9 +205,7 @@
               {{ decisionSummary.avoidIf }}
             </div>
           </div>
-          <div
-            class="border-l-2 border-[#ff453a]/45 py-1 pl-3"
-          >
+          <div class="border-l-2 border-[#ff453a]/45 py-1 pl-3">
             <div class="text-[11px] font-semibold text-[#ff453a] mb-1">
               主要风险
             </div>
@@ -179,7 +218,7 @@
         <div
           v-if="decisionSummary.alternatives.length"
           class="mt-3 pt-3"
-          style="border-top: 1px solid rgba(255,255,255,0.06);"
+          style="border-top: 1px solid rgba(255, 255, 255, 0.06)"
         >
           <div class="text-[11px] font-semibold text-white/45 mb-2">
             替代方案
@@ -243,7 +282,7 @@
       <div
         v-if="tool.personalExperience?.insights"
         class="rounded-xl p-4 mb-4"
-        style="background: rgba(48,209,88,0.04); border-left: 4px solid #30d158;"
+        style="background: rgba(48, 209, 88, 0.04); border-left: 4px solid #30d158"
       >
         <h2 class="text-[13px] font-semibold text-[#30d158] mb-2">
           实战洞察
@@ -293,7 +332,7 @@
         <div class="grid grid-cols-1 gap-2 sm:grid-cols-2">
           <div
             class="py-2.5 px-3 rounded-r-lg"
-            style="background: rgba(48,209,88,0.06); border-left: 3px solid #30d158;"
+            style="background: rgba(48, 209, 88, 0.06); border-left: 3px solid #30d158"
           >
             <div class="text-[11px] font-semibold text-[#30d158] mb-1">
               S 优势
@@ -304,7 +343,7 @@
           </div>
           <div
             class="py-2.5 px-3 rounded-r-lg"
-            style="background: rgba(255,69,58,0.06); border-left: 3px solid #ff453a;"
+            style="background: rgba(255, 69, 58, 0.06); border-left: 3px solid #ff453a"
           >
             <div class="text-[11px] font-semibold text-[#ff453a] mb-1">
               W 劣势
@@ -315,7 +354,7 @@
           </div>
           <div
             class="py-2.5 px-3 rounded-r-lg"
-            style="background: rgba(10,132,255,0.06); border-left: 3px solid #0a84ff;"
+            style="background: rgba(10, 132, 255, 0.06); border-left: 3px solid #0a84ff"
           >
             <div class="text-[11px] font-semibold text-[#0a84ff] mb-1">
               O 机会
@@ -326,7 +365,7 @@
           </div>
           <div
             class="py-2.5 px-3 rounded-r-lg"
-            style="background: rgba(255,159,10,0.06); border-left: 3px solid #ff9f0a;"
+            style="background: rgba(255, 159, 10, 0.06); border-left: 3px solid #ff9f0a"
           >
             <div class="text-[11px] font-semibold text-[#ff9f0a] mb-1">
               T 威胁
@@ -342,7 +381,7 @@
       <div class="grid grid-cols-1 gap-[10px] mb-4 sm:grid-cols-2">
         <div
           class="rounded-xl p-4"
-          style="background: rgba(48,209,88,0.04); border: 1px solid rgba(48,209,88,0.1);"
+          style="background: rgba(48, 209, 88, 0.04); border: 1px solid rgba(48, 209, 88, 0.1)"
         >
           <h2 class="text-[13px] font-semibold text-[#30d158] mb-2">
             优势
@@ -358,7 +397,7 @@
         </div>
         <div
           class="rounded-xl p-4"
-          style="background: rgba(255,69,58,0.04); border: 1px solid rgba(255,69,58,0.1);"
+          style="background: rgba(255, 69, 58, 0.04); border: 1px solid rgba(255, 69, 58, 0.1)"
         >
           <h2 class="text-[13px] font-semibold text-[#ff453a] mb-2">
             劣势
@@ -393,15 +432,20 @@
             :rel="isHttpSource(version.link) ? 'noopener noreferrer' : undefined"
             class="block min-h-11 py-2.5 px-3 rounded-lg text-[13px] text-white/60 transition-colors"
             :class="isHttpSource(version.link) ? 'hover:text-white' : 'cursor-default'"
-            style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.06);"
+            style="
+              background: rgba(255, 255, 255, 0.04);
+              border: 1px solid rgba(255, 255, 255, 0.06);
+            "
           >
             <div class="flex flex-wrap items-center justify-between gap-2">
-              <span class="font-medium text-white/80">{{ version.type }}</span>
-              <span class="min-w-0 break-words text-[11px] text-[#0a84ff]">{{ formatMetricValue(version.pricing, '未公开') }}</span>
+              <span class="font-medium text-white/80">{{ formatVersionType(version.type) }}</span>
+              <span class="min-w-0 break-words text-[11px] text-[#0a84ff]">{{
+                formatMetricValue(version.pricing, '未公开')
+              }}</span>
             </div>
             <div
               v-if="version.models"
-            class="break-words text-[11px] text-white/35 mt-0.5"
+              class="break-words text-[11px] text-white/35 mt-0.5"
             >
               {{ formatMetricValue(version.models, '未公开') }}
             </div>
@@ -443,6 +487,38 @@
         </span>
       </div>
 
+      <section
+        v-if="detailComparisonTools.length >= 2"
+        class="mb-4 border-y border-white/[0.08] py-4"
+        aria-labelledby="detail-next-step-heading"
+        data-testid="tool-detail-next-step"
+      >
+        <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+          <div class="min-w-0">
+            <h2
+              id="detail-next-step-heading"
+              class="text-[13px] font-semibold text-white"
+            >
+              下一步：比较相近方案
+            </h2>
+            <p class="mt-1 break-words text-xs leading-relaxed text-white/45">
+              {{ detailComparisonTools.map((item) => item.name).join('、') }}
+            </p>
+          </div>
+          <router-link
+            :to="detailComparisonTarget"
+            class="btn-capsule btn-capsule-sm inline-flex min-h-11 flex-shrink-0 items-center justify-center gap-2"
+            data-testid="tool-detail-compare-related"
+          >
+            <GitCompareArrows
+              class="h-4 w-4"
+              aria-hidden="true"
+            />
+            直接对比
+          </router-link>
+        </div>
+      </section>
+
       <!-- Related tools -->
       <div
         v-if="relatedTools.length > 0"
@@ -457,7 +533,11 @@
             :key="related.id"
             :to="{ name: 'tool-detail', params: { id: related.id } }"
             class="block min-h-11 py-2.5 px-3 rounded-lg transition-colors hover:bg-white/[0.06]"
-            style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06);"
+            :data-testid="`tool-detail-related-${related.id}`"
+            style="
+              background: rgba(255, 255, 255, 0.03);
+              border: 1px solid rgba(255, 255, 255, 0.06);
+            "
           >
             <div class="text-[13px] font-semibold text-white truncate">
               {{ related.name }}
@@ -482,24 +562,31 @@
   <div
     v-else
     class="text-center py-20"
+    data-testid="tool-detail-not-found"
   >
     <p class="text-xl text-white/60">
       未找到该工具
     </p>
     <router-link
-      to="/"
+      to="/tools"
       class="btn-capsule mt-4 inline-block"
     >
-      返回列表
+      返回工具列表
     </router-link>
   </div>
 </template>
 
 <script setup>
-import { computed, onMounted, watch } from 'vue'
-import { useToolsStore } from '../stores/tools'
+import { computed, ref, watch } from 'vue'
+import { useRouter } from 'vue-router'
+import { GitCompareArrows } from 'lucide-vue-next'
 import { useGamificationStore } from '../stores/gamification'
 import { useAchievementsStore } from '../stores/achievements'
+import {
+  hasToolDetail,
+  loadToolDetail,
+  toolDetailCatalog
+} from '../data/generated/toolDetails.js'
 import FunFact from '../components/gamification/FunFact.vue'
 import ToolRating from '../components/ToolRating.vue'
 import ToolReviews from '../components/ToolReviews.vue'
@@ -510,27 +597,28 @@ import {
   formatChineseSupport,
   formatContextWindow,
   formatMetricValue,
+  formatVersionType,
   getDecisionSummary,
   getToolVerification,
-  getVerificationBadgeClass,
+  getVerificationBadgeClass
 } from '../utils/toolMetadata'
 
 const props = defineProps({
   id: {
     type: String,
-    default: '',
-  },
+    default: ''
+  }
 })
 
-const toolsStore = useToolsStore()
 const gamification = useGamificationStore()
 const achievements = useAchievementsStore()
+const router = useRouter()
 
 const currentToolId = computed(() => props.id)
-
-const tool = computed(() => {
-  return toolsStore.tools.find((t) => t.id === currentToolId.value)
-})
+const tool = ref(null)
+const isLoading = ref(true)
+const loadError = ref('')
+let detailRequestId = 0
 
 const verification = computed(() => getToolVerification(tool.value))
 const verificationClass = computed(() => getVerificationBadgeClass(tool.value))
@@ -538,13 +626,13 @@ const verificationDateLabel = computed(() => (verification.value.isVerified ? '�
 const decisionSummary = computed(() => getDecisionSummary(tool.value))
 const publicVerificationSources = computed(() => {
   const sources = Array.isArray(tool.value?.sources) ? tool.value.sources : []
-  return sources.filter(source => !isLocalEvidenceSource(source))
+  return sources.filter((source) => !isLocalEvidenceSource(source))
 })
 
 const relatedTools = computed(() => {
   const current = tool.value
   if (!current) return []
-  return toolsStore.tools
+  return toolDetailCatalog
     .filter((t) => t.id !== current.id)
     .map((t) => {
       let score = 0
@@ -557,6 +645,19 @@ const relatedTools = computed(() => {
     .sort((a, b) => b._score - a._score)
     .slice(0, 4)
 })
+
+const detailComparisonTools = computed(() => {
+  if (!tool.value) return []
+  return [tool.value, ...relatedTools.value.slice(0, 2)]
+})
+
+const detailComparisonTarget = computed(() => ({
+  name: 'comparison',
+  query: {
+    tools: detailComparisonTools.value.map((item) => item.id).join(','),
+    start: '1'
+  }
+}))
 
 // Pricing display from first version
 const pricingDisplay = computed(() => {
@@ -597,7 +698,12 @@ const LEGACY_LOCAL_SOURCE_PREFIX = ['local', 'skill'].join('-') + ':'
 const LEGACY_PENDING_SOURCE_PREFIX = ['source', 'pending'].join('-') + ':'
 
 function isLocalEvidenceSource(source) {
-  return source?.startsWith(LEGACY_LOCAL_SOURCE_PREFIX) || source?.startsWith('本地核验线索')
+  return (
+    source?.startsWith(LEGACY_LOCAL_SOURCE_PREFIX) ||
+    source?.startsWith('本地核验线索') ||
+    source?.startsWith('本地 skill') ||
+    source?.startsWith('邻近本地 skill')
+  )
 }
 
 function formatSourceLabel(source) {
@@ -631,36 +737,47 @@ function getVersionKey(version, index) {
   return [version.type, version.link, version.models, index].filter(Boolean).join('|')
 }
 
-onMounted(() => {
-  if (tool.value) {
-    updateDocumentTitle(tool.value)
-    gamification.trackToolView(tool.value.id)
-    achievements.checkAll()
+async function loadCurrentTool(id) {
+  const requestId = ++detailRequestId
+  tool.value = null
+  loadError.value = ''
+  isLoading.value = true
+
+  if (!id || !hasToolDetail(id)) {
+    isLoading.value = false
+    return
   }
-})
 
-watch(tool, updateDocumentTitle, { immediate: true })
-
-// Also track and update title when navigating between tools via related links
-watch(
-  currentToolId,
-  (newId) => {
-    if (newId) {
-      const t = toolsStore.getToolById(newId)
-      if (t) {
-        updateDocumentTitle(t)
-      }
-      gamification.trackToolView(newId)
-      achievements.checkAll()
+  try {
+    const loadedTool = await loadToolDetail(id)
+    if (requestId !== detailRequestId) return
+    tool.value = loadedTool
+    updateDocumentTitle(loadedTool)
+    gamification.trackToolView(id)
+    achievements.checkAll()
+  } catch {
+    if (requestId !== detailRequestId) return
+    loadError.value = '工具详情加载失败，请检查网络后重试'
+  } finally {
+    if (requestId === detailRequestId) {
+      isLoading.value = false
     }
-  },
-)
+  }
+}
+
+function retryLoad() {
+  void loadCurrentTool(currentToolId.value)
+}
+
+watch(currentToolId, (id) => {
+  void loadCurrentTool(id)
+}, { immediate: true })
 
 function goBack() {
-  if (window.history.length > 1) {
-    window.history.back()
+  if (window.history.state?.back) {
+    router.back()
   } else {
-    window.location.hash = '#/'
+    void router.push({ name: 'tools' })
   }
 }
 </script>

@@ -1,6 +1,8 @@
 import { defineStore } from 'pinia'
 import { ref, computed } from 'vue'
 import { aiToolsData } from '../data/tools.js'
+import { analyzeToolPricing } from '../utils/pricing.js'
+import { getToolVerification } from '../utils/toolMetadata.js'
 
 /**
  * 工具数据存储 Store
@@ -36,7 +38,9 @@ export const useToolsStore = defineStore('tools', () => {
   const verificationOptions = [
     { id: 'all', label: '全部状态' },
     { id: 'verified', label: '已核验' },
-    { id: 'needs-review', label: '待核验' }
+    { id: 'needs-review', label: '待核验' },
+    { id: 'historical', label: '历史信息' },
+    { id: 'deprecated', label: '已停更' }
   ]
 
   const scenarioMatchers = {
@@ -94,10 +98,7 @@ export const useToolsStore = defineStore('tools', () => {
   }
 
   function hasFreeTier(tool) {
-    const pricingText = getPricingSearchText(tool)
-    const hasFreeSignal = /完全免费|免费开源|永久免费|免费额度|免费入口|免费计划|免费层|free\s*(plan|tier)?|\$0|开源/.test(pricingText)
-    const hasNoFreeSignal = /无独立永久免费|无固定永久免费|无永久免费|无免费|不提供免费|free tier 不支持|付费订阅/.test(pricingText)
-    return hasFreeSignal && !hasNoFreeSignal
+    return analyzeToolPricing(tool).hasFreeTier
   }
 
   function hasLowCostSignal(tool) {
@@ -127,9 +128,7 @@ export const useToolsStore = defineStore('tools', () => {
 
   function matchesVerification(tool, verification) {
     if (verification === 'all') return true
-    const status = tool.verificationStatus || 'needs-review'
-    if (verification === 'needs-review') return status !== 'verified'
-    return status === verification
+    return getToolVerification(tool).status === verification
   }
 
   // Getters

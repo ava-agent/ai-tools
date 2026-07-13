@@ -1,9 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: [
-    './index.html',
-    './src/**/*.{vue,js,ts,jsx,tsx}'
-  ],
+  content: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
   theme: {
     extend: {
       fontFamily: {
@@ -11,27 +8,27 @@ export default {
         mono: ['JetBrains Mono', 'monospace']
       },
       colors: {
-        background: '#05051a',
-        surface: '#0a0a2a',
-        primary: '#0a84ff',
-        secondary: '#bf5af2',
-        accent: '#30d158',
+        background: '#080908',
+        surface: '#121412',
+        primary: '#2f81f7',
+        secondary: '#3fb950',
+        accent: '#f0b429',
         apple: {
-          blue: '#0a84ff',
-          green: '#30d158',
-          purple: '#bf5af2',
+          blue: '#2f81f7',
+          green: '#3fb950',
+          purple: '#a78bfa',
           yellow: '#ffd60a',
           red: '#ff453a',
-          orange: '#ff9f0a',
-        },
+          orange: '#ff9f0a'
+        }
       },
       borderRadius: {
-        capsule: '980px',
-        card: '14px',
-        'card-lg': '16px',
-        cell: '12px',
+        capsule: '8px',
+        card: '8px',
+        'card-lg': '10px',
+        cell: '8px',
         icon: '9px',
-        control: '8px',
+        control: '8px'
       },
       animation: {
         'fade-in': 'fadeIn 0.5s ease-in-out',

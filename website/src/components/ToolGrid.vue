@@ -14,12 +14,14 @@
     <div
       v-if="!tools || tools.length === 0"
       class="glass-card text-center py-16 px-4"
-      style="border-radius: 16px;"
+      style="border-radius: 16px"
       role="status"
       aria-live="polite"
       data-testid="tool-grid-empty-state"
     >
-      <div class="inline-flex items-center justify-center w-20 h-20 sm:w-24 sm:h-24 bg-white/5 rounded-full mb-6">
+      <div
+        class="inline-flex items-center justify-center w-20 h-20 sm:w-24 sm:h-24 bg-white/5 rounded-full mb-6"
+      >
         <SearchX
           class="w-10 h-10 sm:w-12 sm:h-12 text-muted"
           aria-hidden="true"
@@ -46,10 +48,19 @@
 
     <!-- Tool list with pagination -->
     <template v-else>
+      <div
+        class="mb-2 hidden rounded-lg border border-[#2c352d]/80 bg-[#090b09]/60 px-4 py-3 text-[11px] font-semibold uppercase tracking-[0.08em] text-[#8c9889] lg:grid lg:grid-cols-[minmax(220px,1.25fr)_minmax(180px,1fr)_minmax(180px,1fr)_minmax(120px,auto)] lg:gap-4"
+        data-testid="tool-grid-table-header"
+      >
+        <span>工具</span>
+        <span>最佳用途</span>
+        <span>价格 / 风险</span>
+        <span class="text-right">评分 / 来源</span>
+      </div>
       <TransitionGroup
         tag="div"
         name="tool-card"
-        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[10px]"
+        class="space-y-2"
       >
         <ToolCard
           v-for="tool in visibleTools"
@@ -78,7 +89,7 @@
 
       <!-- Result count -->
       <div
-        class="text-center mt-4 text-xs text-white/55"
+        class="text-center mt-4 text-xs text-slate-400"
         role="status"
         aria-live="polite"
         data-testid="tool-grid-result-count"
@@ -108,9 +119,12 @@ defineEmits(['clearFilters'])
 const displayCount = ref(PAGE_SIZE)
 
 // Reset pagination when tools list changes (search/filter)
-watch(() => props.tools.map((tool) => tool.id).join('|'), () => {
-  displayCount.value = PAGE_SIZE
-})
+watch(
+  () => props.tools.map((tool) => tool.id).join('|'),
+  () => {
+    displayCount.value = PAGE_SIZE
+  }
+)
 
 const visibleTools = computed(() => props.tools.slice(0, displayCount.value))
 const hasMore = computed(() => displayCount.value < props.tools.length)

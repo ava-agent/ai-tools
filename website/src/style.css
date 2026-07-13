@@ -5,19 +5,19 @@
 @layer base {
   :root {
     color-scheme: dark;
-    --color-primary: #0a84ff;
+    --color-primary: #2f81f7;
   }
 
   body {
     font-family: 'IBM Plex Sans', system-ui, sans-serif;
     color: #fff;
     -webkit-font-smoothing: antialiased;
-    background: linear-gradient(180deg, #05051a 0%, #0a0a2a 40%, #0f0a1e 100%);
+    background: linear-gradient(180deg, rgba(63, 185, 80, 0.06) 0%, rgba(8, 9, 8, 0) 24%), #080908;
     min-height: 100vh;
   }
 
   *:focus-visible {
-    outline: 2px solid #0a84ff;
+    outline: 2px solid #2f81f7;
     outline-offset: 2px;
   }
 
@@ -36,18 +36,18 @@
   /* ===== Vibrancy Material System ===== */
 
   .glass-nav {
-    background: rgba(255, 255, 255, 0.04);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    background: rgba(8, 9, 8, 0.9);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border-bottom: 1px solid rgba(150, 160, 140, 0.14);
   }
 
   .glass-card {
-    background: rgba(255, 255, 255, 0.04);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    border: 1px solid rgba(255, 255, 255, 0.06);
-    border-radius: 14px;
+    background: rgba(18, 20, 18, 0.62);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid rgba(150, 160, 140, 0.15);
+    border-radius: 8px;
     transition: all 0.2s ease;
   }
 
@@ -57,23 +57,23 @@
 
   @media (hover: hover) {
     .glass-card:hover {
-      background: rgba(255, 255, 255, 0.06);
-      border-color: rgba(255, 255, 255, 0.08);
+      background: rgba(22, 25, 21, 0.82);
+      border-color: rgba(63, 185, 80, 0.24);
     }
 
     .glass-card-interactive:hover {
-      background: rgba(255, 255, 255, 0.06);
-      border-color: rgba(255, 255, 255, 0.08);
+      background: rgba(22, 25, 21, 0.84);
+      border-color: rgba(240, 180, 41, 0.22);
       transform: translateY(-1px);
     }
   }
 
   .glass-elevated {
-    background: rgba(255, 255, 255, 0.06);
+    background: rgba(18, 20, 18, 0.86);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 14px;
+    border: 1px solid rgba(150, 160, 140, 0.16);
+    border-radius: 8px;
   }
 
   /* ===== Capsule Buttons ===== */
@@ -84,9 +84,9 @@
     justify-content: center;
     padding: 8px 20px;
     min-height: 44px;
-    background: #0a84ff;
+    background: #2f81f7;
     color: #fff;
-    border-radius: 980px;
+    border-radius: 8px;
     font-size: 13px;
     font-weight: 500;
     transition: all 0.2s ease;
@@ -113,7 +113,7 @@
     min-height: 44px;
     min-width: 44px;
     padding: 6px 16px;
-    border-radius: 980px;
+    border-radius: 8px;
     font-size: 13px;
     transition: all 0.2s ease;
     cursor: pointer;
@@ -121,21 +121,22 @@
   }
 
   .pill-active {
-    background: #0a84ff;
+    background: #2f81f7;
     color: #fff;
     font-weight: 500;
   }
 
   .pill-inactive {
-    background: rgba(255, 255, 255, 0.06);
-    color: rgba(255, 255, 255, 0.6);
+    background: rgba(18, 20, 18, 0.76);
+    color: rgba(226, 232, 240, 0.72);
+    border: 1px solid rgba(150, 160, 140, 0.15);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
   }
 
   .pill-inactive:hover {
-    background: rgba(255, 255, 255, 0.1);
-    color: rgba(255, 255, 255, 0.8);
+    background: rgba(28, 32, 25, 0.92);
+    color: rgba(255, 255, 255, 0.9);
   }
 
   /* ===== Tag Pills ===== */
@@ -144,19 +145,19 @@
     display: inline-flex;
     align-items: center;
     padding: 4px 12px;
-    border-radius: 980px;
+    border-radius: 6px;
     font-size: 11px;
     transition: all 0.2s ease;
   }
 
   .tag-pill-highlight {
     background: rgba(10, 132, 255, 0.1);
-    color: #0a84ff;
+    color: #58a6ff;
   }
 
   .tag-pill-primary {
     background: rgba(10, 132, 255, 0.12);
-    color: #0a84ff;
+    color: #58a6ff;
     border: 1px solid rgba(10, 132, 255, 0.2);
   }
 
@@ -168,11 +169,11 @@
   /* ===== Info Grid Cell ===== */
 
   .info-cell {
-    background: rgba(255, 255, 255, 0.04);
+    background: rgba(18, 20, 18, 0.66);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
-    border: 1px solid rgba(255, 255, 255, 0.06);
-    border-radius: 12px;
+    border: 1px solid rgba(150, 160, 140, 0.15);
+    border-radius: 8px;
     padding: 14px;
     text-align: center;
   }
@@ -181,7 +182,7 @@
 
   .segmented-control {
     display: flex;
-    background: rgba(255, 255, 255, 0.06);
+    background: rgba(18, 20, 18, 0.76);
     border-radius: 8px;
     padding: 2px;
   }
@@ -200,7 +201,7 @@
   }
 
   .segment-active {
-    background: rgba(255, 255, 255, 0.12);
+    background: rgba(47, 129, 247, 0.18);
     color: #fff;
     font-weight: 500;
   }
@@ -214,8 +215,8 @@
     border-radius: 8px;
     color: #fff;
     font-size: 12px;
-    background: rgba(255, 255, 255, 0.06);
-    border: 1px solid rgba(255, 255, 255, 0.06);
+    background: rgba(18, 20, 18, 0.76);
+    border: 1px solid rgba(150, 160, 140, 0.16);
     transition: all 0.2s ease;
   }
 
@@ -225,12 +226,12 @@
 
   .input-field:focus {
     outline: none;
-    border-color: rgba(10, 132, 255, 0.5);
-    box-shadow: 0 0 0 3px rgba(10, 132, 255, 0.1);
+    border-color: rgba(47, 129, 247, 0.58);
+    box-shadow: 0 0 0 3px rgba(47, 129, 247, 0.12);
   }
 
   .gradient-text {
-    background: linear-gradient(135deg, #0a84ff, #bf5af2);
+    background: linear-gradient(135deg, #58a6ff, #3fb950);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -238,8 +239,8 @@
 
   .btn-primary {
     @apply px-6 py-3 text-white font-semibold rounded-xl transition-all duration-300 cursor-pointer;
-    background: linear-gradient(135deg, #0a84ff 0%, #bf5af2 100%);
-    box-shadow: 0 4px 15px rgba(10, 132, 255, 0.4);
+    background: linear-gradient(135deg, #2f81f7 0%, #238636 100%);
+    box-shadow: 0 4px 15px rgba(47, 129, 247, 0.25);
   }
 
   .btn-primary:hover {
@@ -347,11 +348,7 @@
     opacity: 0;
     transition: opacity 0.3s ease;
     pointer-events: none;
-    background: linear-gradient(
-      135deg,
-      rgba(10, 132, 255, 0.08),
-      rgba(191, 90, 242, 0.05)
-    );
+    background: linear-gradient(135deg, rgba(10, 132, 255, 0.08), rgba(191, 90, 242, 0.05));
   }
 
   .entry-card:hover::after {

@@ -48,9 +48,12 @@
         <tbody>
           <!-- 开发者 -->
           <tr class="border-b border-white/5">
-            <td class="p-4 text-white/60 text-sm">
+            <th
+              scope="row"
+              class="p-4 text-left text-white/60 text-sm"
+            >
               开发者
-            </td>
+            </th>
             <td
               v-for="tool in tools"
               :key="tool.id"
@@ -62,9 +65,12 @@
 
           <!-- 分类 -->
           <tr class="border-b border-white/5">
-            <td class="p-4 text-white/60 text-sm">
+            <th
+              scope="row"
+              class="p-4 text-left text-white/60 text-sm"
+            >
               分类
-            </td>
+            </th>
             <td
               v-for="tool in tools"
               :key="tool.id"
@@ -78,31 +84,46 @@
 
           <!-- 评分 -->
           <tr class="border-b border-white/5">
-            <td class="p-4 text-white/60 text-sm">
+            <th
+              scope="row"
+              class="p-4 text-left text-white/60 text-sm"
+            >
               评分
-            </td>
+            </th>
             <td
               v-for="tool in tools"
               :key="tool.id"
               class="p-4"
               :class="isHighest(tool, 'rating') ? 'bg-green-500/5' : ''"
             >
-              <div class="flex items-center space-x-1">
+              <div
+                class="flex items-center gap-1"
+                role="img"
+                :aria-label="getRatingLabel(tool)"
+              >
                 <Star
                   v-for="i in 5"
                   :key="i"
                   class="w-4 h-4"
                   :class="i <= (tool.personalExperience?.rating || 0) ? 'text-primary fill-primary' : 'text-gray-600'"
+                  aria-hidden="true"
                 />
+                <span
+                  v-if="isHighest(tool, 'rating')"
+                  class="ml-1 text-[10px] font-semibold text-green-400"
+                >最高</span>
               </div>
             </td>
           </tr>
 
           <!-- 定价 -->
           <tr class="border-b border-white/5">
-            <td class="p-4 text-white/60 text-sm">
+            <th
+              scope="row"
+              class="p-4 text-left text-white/60 text-sm"
+            >
               定价
-            </td>
+            </th>
             <td
               v-for="tool in tools"
               :key="tool.id"
@@ -114,9 +135,12 @@
 
           <!-- 免费额度 -->
           <tr class="border-b border-white/5">
-            <td class="p-4 text-white/60 text-sm">
+            <th
+              scope="row"
+              class="p-4 text-left text-white/60 text-sm"
+            >
               免费额度
-            </td>
+            </th>
             <td
               v-for="tool in tools"
               :key="tool.id"
@@ -128,9 +152,12 @@
 
           <!-- 上下文窗口 -->
           <tr class="border-b border-white/5">
-            <td class="p-4 text-white/60 text-sm">
+            <th
+              scope="row"
+              class="p-4 text-left text-white/60 text-sm"
+            >
               上下文
-            </td>
+            </th>
             <td
               v-for="tool in tools"
               :key="tool.id"
@@ -142,12 +169,15 @@
 
           <!-- 中文支持 -->
           <tr class="border-b border-white/5">
-            <td class="p-4 text-white/60 text-sm">
+            <th
+              scope="row"
+              class="p-4 text-left text-white/60 text-sm"
+            >
               <span class="flex items-center gap-1.5">
                 <Globe class="w-3.5 h-3.5" />
                 中文支持
               </span>
-            </td>
+            </th>
             <td
               v-for="tool in tools"
               :key="tool.id"
@@ -156,14 +186,21 @@
             >
               <div
                 v-if="getChineseSupportLevel(tool) > 0"
-                class="flex items-center space-x-0.5"
+                class="flex items-center gap-0.5"
+                role="img"
+                :aria-label="getChineseSupportLabel(tool)"
               >
                 <Star
                   v-for="i in 5"
                   :key="'cn-' + i"
                   class="w-3.5 h-3.5"
                   :class="i <= getChineseSupportLevel(tool) ? 'text-yellow-400 fill-yellow-400' : 'text-white/20'"
+                  aria-hidden="true"
                 />
+                <span
+                  v-if="isHighest(tool, 'chinese')"
+                  class="ml-1 text-[10px] font-semibold text-green-400"
+                >最高</span>
               </div>
               <span
                 v-else
@@ -174,9 +211,12 @@
 
           <!-- 优势 -->
           <tr class="border-b border-white/5">
-            <td class="p-4 text-white/60 text-sm align-top">
+            <th
+              scope="row"
+              class="p-4 text-left text-white/60 text-sm align-top"
+            >
               优势
-            </td>
+            </th>
             <td
               v-for="tool in tools"
               :key="tool.id"
@@ -197,9 +237,12 @@
 
           <!-- 劣势 -->
           <tr class="border-b border-white/5">
-            <td class="p-4 text-white/60 text-sm align-top">
+            <th
+              scope="row"
+              class="p-4 text-left text-white/60 text-sm align-top"
+            >
               劣势
-            </td>
+            </th>
             <td
               v-for="tool in tools"
               :key="tool.id"
@@ -220,9 +263,12 @@
 
           <!-- 适用场景 -->
           <tr>
-            <td class="p-4 text-white/60 text-sm align-top">
+            <th
+              scope="row"
+              class="p-4 text-left text-white/60 text-sm align-top"
+            >
               适用场景
-            </td>
+            </th>
             <td
               v-for="tool in tools"
               :key="tool.id"
@@ -236,133 +282,109 @@
     </div>
 
     <div
-      class="space-y-4 md:hidden"
-      data-testid="compare-mobile-cards"
+      class="md:hidden"
+      data-testid="compare-mobile-matrix"
     >
-      <article
-        v-for="tool in tools"
-        :key="tool.id"
-        class="rounded-lg border border-white/[0.06] bg-white/[0.03] p-4"
-        :data-testid="`compare-mobile-card-${tool.id}`"
+      <div
+        class="-mx-4 overflow-x-auto px-4"
+        data-testid="compare-mobile-scroll"
       >
-        <router-link
-          :to="{ name: 'tool-detail', params: { id: tool.id } }"
-          class="mb-4 flex min-h-11 items-center gap-3 text-white transition-colors hover:text-primary"
+        <table
+          class="table-fixed border-separate border-spacing-0 text-sm"
+          :style="{ minWidth: `${104 + tools.length * 220}px` }"
         >
-          <ToolLogo
-            :tool-id="tool.id"
-            :tool-name="tool.name"
-            size="sm"
-          />
-          <div class="min-w-0">
-            <h3 class="break-words text-base font-semibold">
-              {{ tool.name }}
-            </h3>
-            <p class="break-words text-xs text-white/45">
-              {{ formatMetricValue(tool.developer, '待补充') }}
-            </p>
-          </div>
-        </router-link>
-
-        <dl class="space-y-3 text-sm">
-          <div class="grid gap-1">
-            <dt class="text-xs font-medium text-white/45">
-              分类
-            </dt>
-            <dd
-              class="break-words"
-              :data-testid="`compare-mobile-field-${tool.id}-category`"
+          <caption class="sr-only">
+            移动端工具横向对比
+          </caption>
+          <thead>
+            <tr>
+              <th class="sticky left-0 z-20 w-[104px] border-b border-white/10 bg-[#0b0d0b] p-3 text-left text-xs font-medium text-white/45">
+                指标
+              </th>
+              <th
+                v-for="tool in tools"
+                :key="`mobile-head-${tool.id}`"
+                class="w-[220px] border-b border-white/10 bg-[#0b0d0b] p-3 text-left"
+              >
+                <router-link
+                  :to="{ name: 'tool-detail', params: { id: tool.id } }"
+                  class="flex min-h-11 items-center gap-2 font-semibold text-white hover:text-primary"
+                >
+                  <ToolLogo
+                    :tool-id="tool.id"
+                    :tool-name="tool.name"
+                    size="xs"
+                  />
+                  <span class="break-words">{{ tool.name }}</span>
+                </router-link>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr
+              v-for="row in mobileRows"
+              :key="row.id"
             >
-              <span class="inline-flex rounded-full bg-primary/20 px-2 py-1 text-xs text-primary">
-                {{ getCategoryLabel(tool.category) }}
-              </span>
-            </dd>
-          </div>
+              <th
+                scope="row"
+                class="sticky left-0 z-10 w-[104px] border-b border-white/[0.06] bg-[#0b0d0b] p-3 text-left text-xs font-medium text-white/45"
+              >
+                {{ row.label }}
+              </th>
+              <td
+                v-for="tool in tools"
+                :key="`${row.id}-${tool.id}`"
+                class="w-[220px] break-words border-b border-white/[0.06] p-3 align-top text-xs leading-relaxed text-white/75"
+                :data-testid="`compare-mobile-field-${tool.id}-${row.id}`"
+                :role="row.id === 'rating' || row.id === 'chinese' ? 'img' : undefined"
+                :aria-label="row.id === 'rating' ? getRatingLabel(tool) : row.id === 'chinese' ? getChineseSupportLabel(tool) : undefined"
+              >
+                <template v-if="row.id === 'rating'">
+                  <span class="inline-flex items-center gap-1">
+                    <span>{{ formatRatingValue(tool) }}</span>
+                    <span
+                      v-if="isHighest(tool, 'rating')"
+                      class="text-[10px] font-semibold text-green-400"
+                    >最高</span>
+                  </span>
+                </template>
+                <template v-else-if="row.id === 'chinese'">
+                  <span class="inline-flex items-center gap-1">
+                    <span>{{ formatChineseSupport(tool.chineseSupport) }}</span>
+                    <span
+                      v-if="isHighest(tool, 'chinese')"
+                      class="text-[10px] font-semibold text-green-400"
+                    >最高</span>
+                  </span>
+                </template>
+                <span
+                  v-else
+                  class="break-words"
+                >{{ getMobileRowValue(tool, row.id) }}</span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
 
-          <div class="grid gap-1">
-            <dt class="text-xs font-medium text-white/45">
-              评分
-            </dt>
-            <dd
-              class="flex items-center gap-1 rounded-lg p-2"
-              :class="isHighest(tool, 'rating') ? 'bg-green-500/5' : 'bg-white/[0.02]'"
-              :data-testid="`compare-mobile-field-${tool.id}-rating`"
-            >
-              <Star
-                v-for="i in 5"
-                :key="`mobile-rating-${tool.id}-${i}`"
-                class="h-4 w-4"
-                :class="i <= (tool.personalExperience?.rating || 0) ? 'fill-primary text-primary' : 'text-white/20'"
-              />
-            </dd>
-          </div>
-
-          <div class="grid gap-1">
-            <dt class="text-xs font-medium text-white/45">
-              定价
-            </dt>
-            <dd
-              class="break-words text-white/80"
-              :data-testid="`compare-mobile-field-${tool.id}-pricing`"
-            >
-              {{ firstVersionValue(tool, 'pricing') }}
-            </dd>
-          </div>
-
-          <div class="grid gap-1">
-            <dt class="text-xs font-medium text-white/45">
-              免费额度
-            </dt>
-            <dd
-              class="break-words text-white/80"
-              :data-testid="`compare-mobile-field-${tool.id}-free-quota`"
-            >
-              {{ formatMetricValue(tool.freeQuota, '未公开') }}
-            </dd>
-          </div>
-
-          <div class="grid gap-1">
-            <dt class="text-xs font-medium text-white/45">
-              上下文
-            </dt>
-            <dd
-              class="break-words text-white/80"
-              :data-testid="`compare-mobile-field-${tool.id}-context`"
-            >
-              {{ formatContextWindow(tool.contextWindow) }}
-            </dd>
-          </div>
-
-          <div class="grid gap-1">
-            <dt class="flex items-center gap-1.5 text-xs font-medium text-white/45">
-              <Globe class="h-3.5 w-3.5" />
-              中文支持
-            </dt>
-            <dd
-              class="flex items-center gap-0.5 rounded-lg p-2"
-              :class="isHighest(tool, 'chinese') ? 'bg-green-500/5' : 'bg-white/[0.02]'"
-              :data-testid="`compare-mobile-field-${tool.id}-chinese`"
-            >
-              <template v-if="getChineseSupportLevel(tool) > 0">
-                <Star
-                  v-for="i in 5"
-                  :key="`mobile-cn-${tool.id}-${i}`"
-                  class="h-3.5 w-3.5"
-                  :class="i <= getChineseSupportLevel(tool) ? 'fill-yellow-400 text-yellow-400' : 'text-white/20'"
-                />
-              </template>
-              <span
-                v-else
-                class="text-white/40"
-              >{{ formatChineseSupport(tool.chineseSupport) }}</span>
-            </dd>
-          </div>
-
-          <div class="grid gap-1">
-            <dt class="text-xs font-medium text-white/45">
-              优势
-            </dt>
-            <dd>
+      <div
+        class="mt-4 space-y-2"
+        data-testid="compare-mobile-details"
+      >
+        <details
+          v-for="tool in tools"
+          :key="`mobile-details-${tool.id}`"
+          class="rounded-lg border border-white/[0.06] bg-white/[0.025]"
+          :data-testid="`compare-mobile-detail-${tool.id}`"
+        >
+          <summary class="flex min-h-11 cursor-pointer items-center px-3 py-2 text-sm font-semibold text-white">
+            {{ tool.name }}：优势与风险
+          </summary>
+          <div class="grid gap-4 border-t border-white/[0.06] p-3 text-sm sm:grid-cols-2">
+            <div>
+              <div class="mb-2 text-xs font-semibold text-green-400">
+                优势
+              </div>
               <ul class="space-y-1">
                 <li
                   v-for="(pro, index) in (tool.pros || []).slice(0, 4)"
@@ -370,18 +392,14 @@
                   class="flex items-start break-words text-white/70"
                   :data-testid="`compare-mobile-pro-${tool.id}-${index}`"
                 >
-                  <span class="mr-1.5 flex-shrink-0 text-green-500">+</span>
-                  <span class="min-w-0 break-words">{{ pro }}</span>
+                  <span class="mr-1.5 text-green-500">+</span><span class="break-words">{{ pro }}</span>
                 </li>
               </ul>
-            </dd>
-          </div>
-
-          <div class="grid gap-1">
-            <dt class="text-xs font-medium text-white/45">
-              劣势
-            </dt>
-            <dd>
+            </div>
+            <div>
+              <div class="mb-2 text-xs font-semibold text-red-400">
+                风险
+              </div>
               <ul class="space-y-1">
                 <li
                   v-for="(con, index) in (tool.cons || []).slice(0, 3)"
@@ -389,32 +407,19 @@
                   class="flex items-start break-words text-white/70"
                   :data-testid="`compare-mobile-con-${tool.id}-${index}`"
                 >
-                  <span class="mr-1.5 flex-shrink-0 text-red-500">-</span>
-                  <span class="min-w-0 break-words">{{ con }}</span>
+                  <span class="mr-1.5 text-red-500">-</span><span class="break-words">{{ con }}</span>
                 </li>
               </ul>
-            </dd>
+            </div>
           </div>
-
-          <div class="grid gap-1">
-            <dt class="text-xs font-medium text-white/45">
-              适用场景
-            </dt>
-            <dd
-              class="break-words text-white/80"
-              :data-testid="`compare-mobile-field-${tool.id}-best-for`"
-            >
-              {{ formatMetricValue(tool.bestFor, '待补充') }}
-            </dd>
-          </div>
-        </dl>
-      </article>
+        </details>
+      </div>
     </div>
   </div>
 </template>
 
 <script setup>
-import { useToolsStore } from '../stores/tools'
+import { useComparisonStore } from '../stores/comparison'
 import { getCategoryLabel } from '../utils/helpers'
 import { formatChineseSupport, formatContextWindow, formatMetricValue } from '../utils/toolMetadata'
 import { Star, GitCompareArrows, X, Globe } from 'lucide-vue-next'
@@ -424,7 +429,17 @@ const props = defineProps({
   tools: { type: Array, required: true }
 })
 
-const toolsStore = useToolsStore()
+const toolsStore = useComparisonStore()
+const mobileRows = [
+  { id: 'developer', label: '开发者' },
+  { id: 'category', label: '分类' },
+  { id: 'rating', label: '评分' },
+  { id: 'pricing', label: '定价' },
+  { id: 'free-quota', label: '免费额度' },
+  { id: 'context', label: '上下文' },
+  { id: 'chinese', label: '中文支持' },
+  { id: 'best-for', label: '适用场景' }
+]
 
 function firstVersionValue(tool, field, fallback = '未公开') {
   return formatMetricValue(tool.versions?.[0]?.[field], fallback)
@@ -434,6 +449,33 @@ function getChineseSupportLevel(tool) {
   const level = Number(tool.chineseSupport)
   if (!Number.isFinite(level) || level <= 0) return 0
   return Math.min(5, Math.max(0, Math.round(level)))
+}
+
+function formatRatingValue(tool) {
+  const rating = Number(tool.personalExperience?.rating || 0)
+  return rating > 0 ? `${rating} / 5` : '未评分'
+}
+
+function getMobileRowValue(tool, rowId) {
+  if (rowId === 'developer') return formatMetricValue(tool.developer, '待补充')
+  if (rowId === 'category') return getCategoryLabel(tool.category)
+  if (rowId === 'pricing') return firstVersionValue(tool, 'pricing')
+  if (rowId === 'free-quota') return formatMetricValue(tool.freeQuota, '未公开')
+  if (rowId === 'context') return formatContextWindow(tool.contextWindow)
+  if (rowId === 'best-for') return formatMetricValue(tool.bestFor, '待补充')
+  return '未公开'
+}
+
+function getRatingLabel(tool) {
+  const rating = Number(tool.personalExperience?.rating || 0)
+  const value = rating > 0 ? `${rating} / 5` : '未评分'
+  return `评分 ${value}${isHighest(tool, 'rating') ? '，并列最高' : ''}`
+}
+
+function getChineseSupportLabel(tool) {
+  const level = getChineseSupportLevel(tool)
+  const value = level > 0 ? `${level} / 5` : formatChineseSupport(tool.chineseSupport)
+  return `中文支持 ${value}${isHighest(tool, 'chinese') ? '，并列最高' : ''}`
 }
 
 function isHighest(tool, field) {

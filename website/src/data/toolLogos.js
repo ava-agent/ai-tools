@@ -13,9 +13,9 @@ export const toolLogos = {
   'replit':          { initials: 'R',  colors: ['#F26207', '#e65100'], text: '#ffffff', logoUrl: 'https://icons.duckduckgo.com/ip3/replit.com.ico' },
   'kiro':            { initials: 'Ki', colors: ['#FF9900', '#e68a00'], text: '#ffffff', logoUrl: 'https://icons.duckduckgo.com/ip3/aws.amazon.com.ico' },
   'codebuddy':       { initials: 'CB', colors: ['#1890ff', '#0070cc'], text: '#ffffff', logoUrl: 'https://icons.duckduckgo.com/ip3/cloud.tencent.com.ico' },
-  'antigravity':     { initials: 'AG', colors: ['#7c3aed', '#6d28d9'], text: '#ffffff', logoUrl: 'https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http://antigravity.google&size=128' },
+  'antigravity':     { initials: 'AG', colors: ['#7c3aed', '#6d28d9'], text: '#ffffff', logoUrl: 'https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://antigravity.google&size=128' },
   'github-copilot':  { initials: 'GH', colors: ['#24292e', '#1b1f23'], text: '#ffffff', logoUrl: 'https://icons.duckduckgo.com/ip3/github.com.ico' },
-  'verdent':         { initials: 'Vd', colors: ['#10b981', '#059669'], text: '#ffffff', logoUrl: 'https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http://verdent.ai&size=128' },
+  'verdent':         { initials: 'Vd', colors: ['#10b981', '#059669'], text: '#ffffff', logoUrl: 'https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://verdent.ai&size=128' },
   'jetbrains-ai':    { initials: 'JB', colors: ['#fe315d', '#e0234e'], text: '#ffffff', logoUrl: 'https://icons.duckduckgo.com/ip3/jetbrains.com.ico' },
 
   // === AI CLI ===
@@ -44,7 +44,7 @@ export const toolLogos = {
   'midjourney':      { initials: 'MJ', colors: ['#000000', '#1a1a2e'], text: '#ffffff', logoUrl: 'https://icons.duckduckgo.com/ip3/midjourney.com.ico' },
   'dalle':           { initials: 'DE', colors: ['#10a37f', '#0d8c6c'], text: '#ffffff', logoUrl: 'https://icons.duckduckgo.com/ip3/openai.com.ico' },
   'stable-diffusion':{ initials: 'SD', colors: ['#a855f7', '#9333ea'], text: '#ffffff', logoUrl: 'https://icons.duckduckgo.com/ip3/stability.ai.ico' },
-  'meitu-ai':        { initials: 'Mt', colors: ['#ff4081', '#e91e63'], text: '#ffffff', logoUrl: 'https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http://meituxiuxiu.com&size=128' },
+  'meitu-ai':        { initials: 'Mt', colors: ['#ff4081', '#e91e63'], text: '#ffffff', logoUrl: 'https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://meituxiuxiu.com&size=128' },
   'sora':            { initials: 'So', colors: ['#000000', '#1a1a2e'], text: '#10a37f', logoUrl: 'https://icons.duckduckgo.com/ip3/openai.com.ico' },
   'kling':           { initials: 'Kl', colors: ['#6366f1', '#4f46e5'], text: '#ffffff', logoUrl: 'https://icons.duckduckgo.com/ip3/klingai.com.ico' },
   'jianying':        { initials: 'JY', colors: ['#ff4757', '#ff3838'], text: '#ffffff', logoUrl: 'https://icons.duckduckgo.com/ip3/capcut.com.ico' },
@@ -57,7 +57,7 @@ export const toolLogos = {
   'dify':            { initials: 'Di', colors: ['#1677ff', '#0958d9'], text: '#ffffff', logoUrl: 'https://icons.duckduckgo.com/ip3/cloud.dify.ai.ico' },
   'autogpt':         { initials: 'AT', colors: ['#000000', '#1a1a2e'], text: '#22c55e', logoUrl: 'https://icons.duckduckgo.com/ip3/autogpt.net.ico' },
   'langchain':       { initials: 'LC', colors: ['#1c3c3c', '#0f2e2e'], text: '#2dd4bf', logoUrl: 'https://icons.duckduckgo.com/ip3/langchain.com.ico' },
-  'nanobanana':      { initials: 'NB', colors: ['#f59e0b', '#d97706'], text: '#ffffff', logoUrl: 'https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http://gemini.google&size=128' },
+  'nanobanana':      { initials: 'NB', colors: ['#f59e0b', '#d97706'], text: '#ffffff', logoUrl: 'https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://gemini.google&size=128' },
   'perplexity':      { initials: 'Pp', colors: ['#20808d', '#1a6b76'], text: '#ffffff', logoUrl: 'https://icons.duckduckgo.com/ip3/perplexity.ai.ico' },
 
   // === AI 应用构建器 (新增) ===
@@ -130,7 +130,7 @@ export const toolLogos = {
   'pika':            { initials: 'Pk', colors: ['#ff6b9d', '#e91e63'], text: '#ffffff', logoUrl: 'https://icons.duckduckgo.com/ip3/pika.art.ico' },
   'ideogram':        { initials: 'Id', colors: ['#000000', '#1a1a2e'], text: '#ffffff', logoUrl: 'https://icons.duckduckgo.com/ip3/ideogram.ai.ico' },
   'jimeng':          { initials: 'Jm', colors: ['#ff4757', '#ff3838'], text: '#ffffff', logoUrl: 'https://icons.duckduckgo.com/ip3/jimeng.jianying.com.ico' },
-  'meshy':           { initials: 'Me', colors: ['#8b5cf6', '#7c3aed'], text: '#ffffff', logoUrl: 'https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http://meshy.ai&size=128' },
+  'meshy':           { initials: 'Me', colors: ['#8b5cf6', '#7c3aed'], text: '#ffffff', logoUrl: 'https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://meshy.ai&size=128' },
 
   // === MCP 工具 (补充) ===
   'sequential-thinking-mcp': { initials: 'ST', colors: ['#d97706', '#b45309'], text: '#ffffff', logoUrl: 'https://icons.duckduckgo.com/ip3/anthropic.com.ico' },

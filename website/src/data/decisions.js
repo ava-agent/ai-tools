@@ -133,7 +133,7 @@ export const decisionTrees = {
                 question: '预算和质量要求？',
                 options: [
                     { label: '最高画质', result: 'Sora', toolIds: ['sora'], reason: '高质感视频生成，效果与额度需按当前入口核验' },
-                    { label: '性价比高', result: '可灵', toolIds: ['kling'], reason: '动作连贯，网页额度、订阅积分和 API Resource Packages 需分开核验' },
+                    { label: '预算可控', result: '海螺 AI', toolIds: ['hailuo'], reason: '会员 credits 与 Open Platform API 计费可分开核算，按模型、时长和分辨率估算' },
                     { label: '专业影视', result: 'Runway', toolIds: ['runway'], reason: '专业视频编辑生态成熟，清晰度和控制能力以当前套餐为准' },
                     { label: '创意短视频', result: 'Pika', toolIds: ['pika'], reason: '适合创意短视频，套餐与生成额度需按当前说明核验' }
                 ]
@@ -171,7 +171,7 @@ export const decisionTrees = {
                 id: 'nocode',
                 question: '主要用途？',
                 options: [
-                    { label: 'Bot/对话助手', result: 'Coze', toolIds: ['coze'], reason: '无代码搭建，国内平台集成强' },
+                    { label: 'Bot/对话助手', result: 'Dify', toolIds: ['dify'], reason: '支持低代码 Agent、Workflow、RAG 和可观测工作流' },
                     { label: '工作流自动化', result: 'n8n', toolIds: ['n8n'], reason: '执行计费清晰，Community Edition 需看许可边界' },
                     { label: '自主调研/数据分析', result: 'Manus', toolIds: ['manus'], reason: '通用 AI Agent，自然语言驱动' }
                 ]
@@ -327,9 +327,9 @@ export const decisionTrees = {
                     },
                     {
                         label: '研究/周报',
-                        result: 'research',
-                        toolIds: ['research-skill'],
-                        reason: '适合资料研究、证据整理、周期性报告和结构化内容产出。'
+                        result: 'Perplexity',
+                        toolIds: ['perplexity'],
+                        reason: '适合带引用的资料研究、证据整理和结构化内容产出。'
                     }
                 ]
             }
@@ -346,11 +346,11 @@ export const scenarioGuide = [
     { scenario: '关键方案/复杂重构', primary: 'Claude Code', primaryToolIds: ['claude-code'], backup: 'Gemini CLI', budget: '$20-200/月' },
     { scenario: '长文档调研/代码分析', primary: 'Gemini CLI', primaryToolIds: ['gemini-cli'], backup: 'OpenCode；Qwen CLI 需 Coding Plan/API provider', budget: 'Gemini CLI 免费层；Qwen 需计划/API' },
     { scenario: '企业团队协作', primary: 'Cursor Teams + Qoder', primaryToolIds: ['cursor', 'qoder'], backup: 'Claude Code', budget: '$40-60/人/月' },
-    { scenario: '视频内容创作', primary: '可灵 (Kling)', primaryToolIds: ['kling'], backup: 'Sora、Runway', budget: '免费-$20/月' },
+    { scenario: '视频内容创作', primary: 'Runway', primaryToolIds: ['runway'], backup: '海螺 AI、Pika', budget: '按 credits 与时长核算' },
     { scenario: '图像设计/海报', primary: 'Midjourney', primaryToolIds: ['midjourney'], backup: 'GPT Image、即梦 (Jimeng)', budget: '免费-$30/月' },
     { scenario: '音乐/配乐创作', primary: 'Suno', primaryToolIds: ['suno'], backup: 'ElevenLabs', budget: '免费-$30/月' },
     { scenario: '构建 AI Agent', primary: 'Claude Agent SDK', primaryToolIds: ['claude-agent-sdk'], backup: 'LangChain、Dify', budget: '按 API 用量' },
-    { scenario: '工作流自动化', primary: 'n8n', primaryToolIds: ['n8n'], backup: 'Coze', budget: '20€/mo 起；自托管看许可' },
+    { scenario: '工作流自动化', primary: 'n8n', primaryToolIds: ['n8n'], backup: 'Make、Zapier', budget: '20€/mo 起；自托管看许可' },
     { scenario: 'MCP 必装三件套', primary: 'Context7', primaryToolIds: ['context7'], backup: 'Playwright MCP、GitHub MCP', budget: '免费' }
 ]
 

@@ -38,3 +38,16 @@ Use `website/.env.example` as the template. Supabase is optional; without `VITE_
 - Keep canonical, Open Graph, Twitter, and structured-data URLs aligned with `https://aitools.rxcloud.group`.
 - If the GitHub Pages mirror is changed, keep `vite.config.js` base handling in sync with `.github/workflows/deploy.yml`.
 - When adding tools, update `website/src/data/tools.js` and run `npm run lint`, `npm run test`, and `npm run build`.
+
+## AnyCap
+
+This project uses [AnyCap](https://anycap.ai) for web search and crawling during content-freshness reviews. Treat search summaries as leads, preserve direct source URLs, and verify important claims against first-party pages before editing the catalog.
+
+AnyCap changes quickly. Before relying on its commands, update the installed skill and verify authentication:
+
+```bash
+npx -y skills update
+anycap status
+```
+
+When an AnyCap command fails unexpectedly, submit feedback with the returned request ID instead of storing credentials or raw secrets in the repository.

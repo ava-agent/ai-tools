@@ -1,55 +1,22 @@
 <!-- src/components/landing/HeroSection.vue -->
 <template>
-  <section class="relative flex flex-col items-center justify-center min-h-[70vh] px-5 text-center overflow-hidden">
-    <!-- AI-generated hero background image -->
+  <section
+    class="relative flex flex-col items-center justify-center min-h-[70vh] px-5 text-center overflow-hidden"
+  >
+    <!-- Optimized hero background image -->
     <img
-      :src="publicAsset('images/landing/hero-bg.png')"
+      :src="heroBg"
       alt=""
       aria-hidden="true"
       class="absolute inset-0 w-full h-full object-cover pointer-events-none"
       style="opacity: 0.18; mix-blend-mode: screen"
       loading="eager"
+      decoding="async"
+      fetchpriority="high"
     >
 
     <!-- Constellation network background -->
     <HeroConstellation class="pointer-events-none opacity-40" />
-
-    <!-- Ambient gradient orbs -->
-    <div
-      class="absolute inset-0 pointer-events-none"
-      aria-hidden="true"
-    >
-      <div
-        class="absolute w-[600px] h-[600px] rounded-full"
-        style="
-          background: radial-gradient(circle, #0a84ff, transparent 70%);
-          top: -220px;
-          left: -180px;
-          filter: blur(100px);
-          opacity: 0.07;
-        "
-      />
-      <div
-        class="absolute w-[450px] h-[450px] rounded-full"
-        style="
-          background: radial-gradient(circle, #bf5af2, transparent 70%);
-          bottom: -120px;
-          right: -100px;
-          filter: blur(100px);
-          opacity: 0.05;
-        "
-      />
-      <div
-        class="absolute w-[300px] h-[300px] rounded-full"
-        style="
-          background: radial-gradient(circle, #30d158, transparent 70%);
-          top: 30%;
-          right: 10%;
-          filter: blur(80px);
-          opacity: 0.03;
-        "
-      />
-    </div>
 
     <!-- Title with gradient text -->
     <h1
@@ -57,11 +24,7 @@
       style="
         --hero-delay: 0ms;
         line-height: 1.1;
-        background: linear-gradient(
-          135deg,
-          #ffffff 0%,
-          rgba(255, 255, 255, 0.6) 100%
-        );
+        background: linear-gradient(135deg, #ffffff 0%, rgba(255, 255, 255, 0.6) 100%);
         -webkit-background-clip: text;
         background-clip: text;
         -webkit-text-fill-color: transparent;
@@ -79,21 +42,26 @@
 
     <!-- Stats with glow -->
     <div
-      class="hero-entrance flex items-center gap-8 sm:gap-12 mt-10"
+      data-testid="hero-stats"
+      class="hero-entrance mt-9 grid w-full max-w-lg grid-cols-3 gap-2 sm:mt-10 sm:gap-8"
       style="--hero-delay: 280ms"
     >
       <div
         v-for="stat in stats"
         :key="stat.label"
-        class="text-center group"
+        data-testid="hero-stat"
+        class="group min-w-0 text-center"
       >
         <div
           class="text-3xl sm:text-4xl font-bold tabular-nums transition-all duration-300"
           :style="{ color: stat.color, textShadow: '0 0 40px ' + stat.color + '40' }"
         >
-          {{ statValues[stat.key] }}<span class="text-xl opacity-60">+</span>
+          {{ statValues[stat.key] }}
         </div>
-        <div class="text-xs text-white/35 mt-1">
+        <div
+          data-testid="hero-stat-label"
+          class="mt-1 break-words text-[11px] leading-tight text-white/35 sm:text-xs"
+        >
           {{ stat.label }}
         </div>
       </div>
@@ -115,32 +83,17 @@
 </template>
 
 <script setup>
-import { useToolsStore } from '../../stores/tools'
-import { publicAsset } from '../../utils/publicAsset.js'
+import heroBg from '../../assets/landing/hero-bg.webp'
+import { LANDING_STATS } from '../../data/landingCatalog.js'
 import HeroConstellation from './HeroConstellation.vue'
-
-const toolsStore = useToolsStore()
 
 const stats = [
   { key: 'tools', label: '款工具深度评测', color: '#0a84ff' },
   { key: 'categories', label: '大类别全景覆盖', color: '#bf5af2' },
-  { key: 'insights', label: '条实战洞察', color: '#30d158' },
+  { key: 'insights', label: '条实战洞察', color: '#30d158' }
 ]
 
-const targetValues = {
-  tools: toolsStore.tools.length,
-  categories: toolsStore.categories.length - 1,
-  insights: toolsStore.tools.reduce((sum, t) => {
-    let count = 0
-    if (t.personalExperience?.insights) count++
-    if (t.personalExperience?.pitfalls) count += t.personalExperience.pitfalls.length
-    if (t.pros) count += t.pros.length
-    if (t.cons) count += t.cons.length
-    return sum + count
-  }, 0),
-}
-
-const statValues = targetValues
+const statValues = LANDING_STATS
 
 function scrollToLandscape() {
   const prefersReducedMotion = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches

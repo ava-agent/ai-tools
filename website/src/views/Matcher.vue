@@ -187,7 +187,8 @@
                 重新选择
               </button>
               <router-link
-                to="/"
+                to="/tools"
+                data-testid="matcher-result-tools-link"
                 class="btn-capsule min-h-11 justify-center text-sm"
               >
                 查看工具列表
@@ -318,25 +319,24 @@ import {
   Lightbulb,
   Zap
 } from 'lucide-vue-next'
-import { useToolsStore } from '../stores/tools'
 import { useGamificationStore } from '../stores/gamification'
 import { useAchievementsStore } from '../stores/achievements'
 import { resolveToolLinks as _resolveToolLinks } from '../utils/helpers'
 import { getToolVerification, getVerificationBadgeClass } from '../utils/toolMetadata.js'
 import { getDecisionTree, scenarioGuide } from '../data/decisions.js'
 import { quickSelectionGuide, categories } from '../data/categories.js'
+import { matcherCatalog } from '../data/generated/matcherCatalog.js'
 
-const toolsStore = useToolsStore()
 const gamification = useGamificationStore()
 const achievements = useAchievementsStore()
 
 function resolveToolLinks(name, toolIds) {
-  return _resolveToolLinks(name, toolsStore.tools, toolIds)
+  return _resolveToolLinks(name, matcherCatalog, toolIds)
 }
 
 function getToolsForLinks(links) {
   return links
-    .map(link => ({ ...link, tool: toolsStore.tools.find(tool => tool.id === link.id) }))
+    .map(link => ({ ...link, tool: matcherCatalog.find(tool => tool.id === link.id) }))
     .filter(link => link.tool)
 }
 

@@ -1,16 +1,46 @@
-import { createRouter, createWebHashHistory } from 'vue-router'
-import { getToolById } from '../data/tools.js'
+import { createRouter, createWebHistory } from 'vue-router'
+import { installChunkRecovery } from './chunkRecovery.js'
 
 const defaultTitle = 'AI工具全书 | 持续核验的实战选型指南'
+const productionOrigin = 'https://aitools.rxcloud.group'
 
 function resolveRouteTitle(to) {
-  if (to.name === 'tool-detail') {
-    const tool = getToolById(String(to.params.id || ''))
-    if (tool?.name) {
-      return `${tool.name} - AI工具全书`
-    }
-  }
   return to.meta.title || defaultTitle
+}
+
+export function getCanonicalUrl(path, origin = productionOrigin) {
+  const normalizedPath = `/${String(path || '/').replace(/^\/+/, '')}`
+  return new URL(normalizedPath, origin).href
+}
+
+export function getLegacyHistoryTarget(hash, baseUrl = import.meta.env.BASE_URL) {
+  if (!String(hash || '').startsWith('#/')) return null
+  const normalizedBase = String(baseUrl || '/').replace(/^\/+|\/+$/g, '')
+  const legacyPath = String(hash).slice(2)
+  return normalizedBase ? `/${normalizedBase}/${legacyPath}` : `/${legacyPath}`
+}
+
+const legacyHistoryTarget = getLegacyHistoryTarget(window.location.hash)
+if (legacyHistoryTarget) {
+  window.history.replaceState(window.history.state, '', legacyHistoryTarget)
+}
+
+function updateRouteMetadata(to) {
+  document.title = resolveRouteTitle(to)
+
+  const metaDescription = document.querySelector('meta[name="description"]')
+  if (metaDescription && to.meta.description) {
+    metaDescription.setAttribute('content', to.meta.description)
+  }
+
+  const canonicalUrl = getCanonicalUrl(to.path)
+  document.querySelector('link[rel="canonical"]')?.setAttribute('href', canonicalUrl)
+  document.querySelector('meta[property="og:url"]')?.setAttribute('content', canonicalUrl)
+  document.querySelector('meta[property="twitter:url"]')?.setAttribute('content', canonicalUrl)
+  document.querySelector('meta[name="robots"]')?.setAttribute(
+    'content',
+    to.meta.robots || 'index, follow'
+  )
 }
 
 // 路由级代码分割 - Vue Router 原生懒加载（不要使用 defineAsyncComponent）
@@ -30,11 +60,11 @@ const routes = [
     component: () => import('../views/Home.vue'),
     meta: {
       title: '全景浏览 - AI工具全书',
-      description: '125+ 款 AI 工具分类浏览与搜索'
+      description: '125 款 AI 工具分类浏览与搜索'
     }
   },
   {
-    path: '/tool/:id',
+    path: '/tools/:id',
     name: 'tool-detail',
     component: () => import('../views/ToolDetail.vue'),
     props: route => ({ id: route.params.id }),
@@ -42,6 +72,10 @@ const routes = [
       title: '工具详情 - AI工具全书',
       description: '查看AI工具的详细评测、SWOT分析和使用建议'
     }
+  },
+  {
+    path: '/tool/:id',
+    redirect: (to) => ({ name: 'tool-detail', params: { id: to.params.id } })
   },
   {
     path: '/comparison',
@@ -103,7 +137,8 @@ const routes = [
     component: () => import('../views/Profile.vue'),
     meta: {
       title: '我的档案 - AI工具全书',
-      description: '查看你的 AI 工具学习进度、成就和统计'
+      description: '查看你的 AI 工具学习进度、成就和统计',
+      robots: 'noindex, follow'
     }
   },
   // 404 页面
@@ -113,13 +148,14 @@ const routes = [
     component: () => import('../views/NotFound.vue'),
     meta: {
       title: '页面未找到 - AI工具全书',
-      description: '您访问的页面不存在'
+      description: '您访问的页面不存在',
+      robots: 'noindex, follow'
     }
   }
 ]
 
 const router = createRouter({
-  history: createWebHashHistory(import.meta.env.BASE_URL),
+  history: createWebHistory(import.meta.env.BASE_URL),
   routes,
   scrollBehavior(to, from, savedPosition) {
     if (savedPosition) {
@@ -135,17 +171,11 @@ const router = createRouter({
   }
 })
 
+installChunkRecovery(router)
+
 // 全局导航守卫 - 更新页面标题和元数据
-router.beforeEach((to, from, next) => {
-  document.title = resolveRouteTitle(to)
-
-  // 更新 meta description
-  const metaDescription = document.querySelector('meta[name="description"]')
-  if (metaDescription && to.meta.description) {
-    metaDescription.setAttribute('content', to.meta.description)
-  }
-
-  next()
+router.afterEach((to) => {
+  updateRouteMetadata(to)
 })
 
 export default router

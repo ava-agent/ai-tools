@@ -69,7 +69,7 @@ watch(currentToast, (toast) => {
       achievements.dismissToast()
     }, 4000)
   }
-})
+}, { immediate: true })
 
 onUnmounted(() => {
   clearTimeout(dismissTimer)

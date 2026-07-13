@@ -1,6 +1,6 @@
 # syntax=docker/dockerfile:1
 
-FROM node:20-alpine AS build
+FROM node:24.18.0-alpine AS build
 WORKDIR /app
 
 # Install deps first for better layer caching

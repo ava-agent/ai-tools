@@ -4,12 +4,12 @@ import ToolGrid from '../ToolGrid.vue'
 
 const tools = Array.from({ length: 35 }, (_, index) => ({
   id: `tool-${index}`,
-  name: `Tool ${index}`,
+  name: `Tool ${index}`
 }))
 
 const replacementTools = Array.from({ length: 35 }, (_, index) => ({
   id: `replacement-${index}`,
-  name: `Replacement ${index}`,
+  name: `Replacement ${index}`
 }))
 
 const mountGrid = (props = {}) =>
@@ -19,13 +19,13 @@ const mountGrid = (props = {}) =>
       stubs: {
         ToolCard: {
           template: '<article class="tool-card-stub">{{ tool.name }}</article>',
-          props: ['tool'],
+          props: ['tool']
         },
         SearchX: true,
         RefreshCw: true,
-        ChevronDown: true,
-      },
-    },
+        ChevronDown: true
+      }
+    }
   })
 
 describe('ToolGrid', () => {
@@ -58,6 +58,15 @@ describe('ToolGrid', () => {
     expect(status.text()).toContain('未找到匹配的工具')
   })
 
+  it('keeps the table header layout for large screens to avoid tablet overflow', () => {
+    const wrapper = mountGrid()
+
+    const header = wrapper.get('[data-testid="tool-grid-table-header"]')
+
+    expect(header.classes()).toContain('lg:grid')
+    expect(header.classes().some((className) => className.startsWith('md:grid-cols-'))).toBe(false)
+  })
+
   it('resets pagination when filters swap in an equal-sized result set', async () => {
     const wrapper = mountGrid()
 
@@ -66,7 +75,9 @@ describe('ToolGrid', () => {
 
     await wrapper.setProps({ tools: replacementTools })
 
-    expect(wrapper.get('[data-testid="tool-grid-result-count"]').text()).toContain('显示 30 / 35 个工具')
+    expect(wrapper.get('[data-testid="tool-grid-result-count"]').text()).toContain(
+      '显示 30 / 35 个工具'
+    )
     expect(wrapper.text()).toContain('Replacement 0')
     expect(wrapper.text()).not.toContain('Replacement 30')
   })

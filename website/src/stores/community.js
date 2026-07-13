@@ -12,6 +12,7 @@ export const useCommunityStore = defineStore('community', () => {
   const ratingStats = ref({})
   // 用户自己的评分: { [toolId]: rating }
   const myRatings = ref({})
+  let latestMyRatingsRequest = 0
   // 工具评论缓存: { [toolId]: Review[] }
   const reviewCache = ref({})
   // 对决投票统计: { [matchupKey]: { toolAVotes, toolBVotes, total } }
@@ -35,11 +36,14 @@ export const useCommunityStore = defineStore('community', () => {
   }
 
   async function fetchMyRatings(userId) {
+    const requestId = ++latestMyRatingsRequest
+    myRatings.value = {}
     if (!supabase || !userId) return
     const { data } = await supabase
       .from('tool_ratings')
       .select('tool_id, rating')
       .eq('user_id', userId)
+    if (requestId !== latestMyRatingsRequest) return
     if (data) {
       const map = {}
       for (const row of data) {
@@ -47,6 +51,11 @@ export const useCommunityStore = defineStore('community', () => {
       }
       myRatings.value = map
     }
+  }
+
+  function clearMyRatings() {
+    latestMyRatingsRequest += 1
+    myRatings.value = {}
   }
 
   async function submitRating(userId, toolId, rating) {
@@ -197,6 +206,7 @@ export const useCommunityStore = defineStore('community', () => {
     battleStats,
     fetchRatingStats,
     fetchMyRatings,
+    clearMyRatings,
     submitRating,
     fetchReviewsForTool,
     submitReview,

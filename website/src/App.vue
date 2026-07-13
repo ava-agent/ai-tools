@@ -3,9 +3,19 @@
     id="app"
     class="min-h-screen"
   >
+    <a
+      href="#main-content"
+      class="fixed left-3 top-3 z-[100] -translate-y-20 rounded-md bg-white px-3 py-2 text-sm font-semibold text-black transition-transform focus:translate-y-0 focus:outline-none focus:ring-2 focus:ring-primary"
+    >
+      跳到主内容
+    </a>
     <ErrorBoundary>
       <Header />
-      <main>
+      <main
+        id="main-content"
+        ref="mainContent"
+        tabindex="-1"
+      >
         <router-view v-slot="{ Component }">
           <transition
             name="fade"
@@ -19,6 +29,7 @@
         </router-view>
       </main>
       <Footer />
+      <NetworkStatus />
       <ToastContainer />
       <AchievementToast />
       <AuthModal />
@@ -27,11 +38,13 @@
 </template>
 
 <script setup>
-import { onMounted, watch, onUnmounted } from 'vue'
+import { nextTick, onMounted, ref, watch, onUnmounted } from 'vue'
+import { useRoute } from 'vue-router'
 import Header from './components/Header.vue'
 import Footer from './components/Footer.vue'
 import ErrorBoundary from './components/ErrorBoundary.vue'
 import ToastContainer from './components/ToastContainer.vue'
+import NetworkStatus from './components/NetworkStatus.vue'
 import AchievementToast from './components/gamification/AchievementToast.vue'
 import AuthModal from './components/AuthModal.vue'
 import { usePerformance } from './composables/usePerformance'
@@ -52,22 +65,34 @@ const authStore = useAuthStore()
 const gamification = useGamificationStore()
 const achievements = useAchievementsStore()
 const communityStore = useCommunityStore()
+const route = useRoute()
+const mainContent = ref(null)
 
 // 云同步服务
 const syncService = new SyncService(gamification, achievements)
 
 // 监听认证状态变化，自动启停云同步 + 加载用户评分
 const stopAuthWatch = watch(
-  () => authStore.isAuthenticated,
-  async (isAuth) => {
-    if (isAuth && authStore.userId) {
-      await syncService.migrateLocalToCloud(authStore.userId)
-      syncService.startAutoSync(authStore.userId)
-      communityStore.fetchMyRatings(authStore.userId)
+  [() => authStore.isAuthenticated, () => authStore.userId],
+  async ([isAuth, userId]) => {
+    if (isAuth && userId) {
+      communityStore.fetchMyRatings(userId)
+      await syncService.migrateLocalToCloud(userId)
+      syncService.startAutoSync(userId)
     } else {
+      communityStore.clearMyRatings()
       syncService.stopAutoSync()
     }
   },
+)
+
+const stopRouteWatch = watch(
+  () => route.fullPath,
+  async (_currentPath, previousPath) => {
+    if (!previousPath) return
+    await nextTick()
+    mainContent.value?.focus({ preventScroll: true })
+  }
 )
 
 onMounted(() => {
@@ -84,6 +109,7 @@ onMounted(() => {
 
 onUnmounted(() => {
   stopAuthWatch()
+  stopRouteWatch()
   syncService.stopAutoSync()
 })
 </script>

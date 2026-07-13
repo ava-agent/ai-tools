@@ -51,11 +51,12 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { defineAsyncComponent, ref } from 'vue'
 import { HelpCircle, User, Swords } from 'lucide-vue-next'
-import QuizGame from '../components/interactive/QuizGame.vue'
-import PersonalityQuiz from '../components/interactive/PersonalityQuiz.vue'
-import ToolBattle from '../components/interactive/ToolBattle.vue'
+
+const QuizGame = defineAsyncComponent(() => import('../components/interactive/QuizGame.vue'))
+const PersonalityQuiz = defineAsyncComponent(() => import('../components/interactive/PersonalityQuiz.vue'))
+const ToolBattle = defineAsyncComponent(() => import('../components/interactive/ToolBattle.vue'))
 
 const activeTab = ref('quiz')
 

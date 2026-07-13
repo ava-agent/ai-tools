@@ -63,23 +63,22 @@
 
 <script setup>
 import { recommendations } from '../../data/recommendations.js'
-import { useToolsStore } from '../../stores/tools'
+import { LANDING_TOOL_NAMES } from '../../data/landingCatalog.js'
 import { useReveal } from '../../composables/useReveal'
-import { publicAsset } from '../../utils/publicAsset.js'
 import ToolLogo from '../ToolLogo.vue'
 
-const toolsStore = useToolsStore()
 const { sectionRef, isRevealed } = useReveal()
 
+const landingImage = (name) => `${import.meta.env.BASE_URL}images/landing/${name}.webp`
 const recBgMap = {
-  'daily-coding': publicAsset('images/landing/rec-coding.png'),
-  'complex-refactor': publicAsset('images/landing/rec-refactor.png'),
-  'free-stack': publicAsset('images/landing/rec-free.png'),
-  'long-context': publicAsset('images/landing/rec-refactor.png'),
-  'visual-generation': publicAsset('images/landing/rec-design.png'),
+  'daily-coding': landingImage('rec-coding'),
+  'complex-refactor': landingImage('rec-refactor'),
+  'free-stack': landingImage('rec-free'),
+  'long-context': landingImage('rec-refactor'),
+  'visual-generation': landingImage('rec-design'),
 }
 
 function getToolName(toolId) {
-  return toolsStore.getToolById(toolId)?.name || toolId
+  return LANDING_TOOL_NAMES[toolId] || toolId
 }
 </script>

@@ -18,13 +18,14 @@ describe('AuthModal accessibility', () => {
     document.body.innerHTML = ''
   })
 
-  async function mountAndOpen() {
+  async function mountAndOpen({ authAvailable = true } = {}) {
     const opener = document.getElementById('modal-opener')
     opener.focus()
     const pinia = createPinia()
     setActivePinia(pinia)
 
     const wrapper = mount(AuthModal, {
+      props: { authAvailable },
       attachTo: document.body,
       global: {
         plugins: [pinia],
@@ -54,6 +55,29 @@ describe('AuthModal accessibility', () => {
     await nextTick()
     await flushDom()
 
+    expect(document.activeElement).toBe(opener)
+  })
+
+  it('shows a non-interactive local-mode message when auth is unavailable', async () => {
+    await mountAndOpen({ authAvailable: false })
+
+    const status = document.querySelector('[data-testid="auth-modal-unavailable"]')
+    expect(status?.getAttribute('role')).toBe('status')
+    expect(status?.textContent).toContain('浏览、筛选、对比和本地学习进度')
+    expect(document.querySelector('[data-testid="auth-modal-github"]')).toBeNull()
+    expect(document.querySelector('[data-testid="auth-modal-email"]')).toBeNull()
+    expect(document.querySelector('[data-testid="auth-modal-submit"]')).toBeNull()
+  })
+
+  it('closes when the visible backdrop is clicked', async () => {
+    const { authStore, opener } = await mountAndOpen()
+    const backdrop = document.querySelector('[data-testid="auth-modal-backdrop"]')
+
+    backdrop.click()
+    await nextTick()
+    await flushDom()
+
+    expect(authStore.showAuthModal).toBe(false)
     expect(document.activeElement).toBe(opener)
   })
 
@@ -135,5 +159,30 @@ describe('AuthModal accessibility', () => {
     const successMessage = document.querySelector('[data-testid="auth-modal-success"]')
     expect(successMessage?.getAttribute('role')).toBe('status')
     expect(successMessage?.getAttribute('aria-live')).toBe('polite')
+  })
+
+  it('recovers from rejected authentication requests', async () => {
+    const { authStore } = await mountAndOpen()
+    authStore.signInWithEmail = vi.fn(() => Promise.reject(new Error('network down')))
+
+    const emailInput = document.querySelector('[data-testid="auth-modal-email"]')
+    const passwordInput = document.querySelector('[data-testid="auth-modal-password"]')
+    const submitButton = document.querySelector('[data-testid="auth-modal-submit"]')
+
+    emailInput.value = 'user@example.com'
+    emailInput.dispatchEvent(new Event('input', { bubbles: true }))
+    passwordInput.value = 'password1'
+    passwordInput.dispatchEvent(new Event('input', { bubbles: true }))
+    document.querySelector('form').dispatchEvent(
+      new Event('submit', { bubbles: true, cancelable: true })
+    )
+
+    await flushDom()
+    await nextTick()
+
+    expect(submitButton?.getAttribute('aria-busy')).toBe('false')
+    expect(document.querySelector('[data-testid="auth-modal-error"]')?.textContent).toContain(
+      '登录请求失败，请检查网络后重试'
+    )
   })
 })

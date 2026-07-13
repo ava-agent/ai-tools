@@ -16,7 +16,7 @@
       class="reveal-item text-sm text-white/35 mb-8"
       style="--reveal-i: 1"
     >
-      {{ toolsStore.tools.length }} 款工具 · 7 大类别 · 点击探索详情
+      {{ LANDING_STATS.tools }} 款工具 · {{ LANDING_STATS.categories }} 大类别 · 每类展示 6 个代表工具
     </p>
 
     <div class="space-y-8">
@@ -28,7 +28,7 @@
       >
         <!-- Category background decoration -->
         <img
-          :src="publicAsset(`images/landing/cat-${cat.id}.png`)"
+          :src="landingImage(`cat-${cat.id}`)"
           alt=""
           aria-hidden="true"
           class="absolute right-0 top-0 h-full w-auto max-w-[40%] object-cover object-left pointer-events-none"
@@ -47,7 +47,12 @@
             />
           </div>
           <span class="text-sm font-semibold text-white/70">{{ cat.nameZh }}</span>
-          <span class="text-xs text-white/25">{{ cat.tools.length }}</span>
+          <router-link
+            :to="{ name: 'tools', query: { category: cat.id } }"
+            class="ml-auto inline-flex min-h-11 items-center rounded-lg px-2 text-xs text-primary transition-colors hover:bg-primary/10"
+          >
+            查看全部 {{ cat.total }} 款
+          </router-link>
         </div>
 
         <!-- Tool bubbles -->
@@ -104,14 +109,12 @@
 
 <script setup>
 import { computed } from 'vue'
-import { useToolsStore } from '../../stores/tools'
 import { categories } from '../../data/categories.js'
+import { LANDING_CATEGORY_SUMMARY, LANDING_STATS } from '../../data/landingCatalog.js'
 import { useReveal } from '../../composables/useReveal'
-import { publicAsset } from '../../utils/publicAsset.js'
 import ToolLogo from '../ToolLogo.vue'
 import { categoryIconMap } from './CategoryIcons.js'
 
-const toolsStore = useToolsStore()
 const { sectionRef, isRevealed } = useReveal({
   threshold: 0.02,
   rootMargin: '0px 0px -24px 0px',
@@ -127,21 +130,22 @@ const categoryColors = {
   skill: '#ffd60a',
 }
 
+function landingImage(name) {
+  return `${import.meta.env.BASE_URL}images/landing/${name}.webp`
+}
+
 const groupedTools = computed(() => {
   return categories.map((cat) => ({
     id: cat.id,
     nameZh: cat.nameZh,
     color: categoryColors[cat.id] || '#ffffff',
-    tools: toolsStore.tools
-      .filter((t) => t.category === cat.id)
-      .sort(
-        (a, b) => (b.personalExperience?.rating || 0) - (a.personalExperience?.rating || 0),
-      ),
+    total: LANDING_CATEGORY_SUMMARY[cat.id]?.total || 0,
+    tools: LANDING_CATEGORY_SUMMARY[cat.id]?.featured || [],
   }))
 })
 
 function bubbleSize(tool) {
-  const rating = tool.personalExperience?.rating || 3
+  const rating = tool.rating || 3
   // Map rating 1-5 to a touch-safe 44-64px range.
   return 44 + (rating - 1) * 5
 }

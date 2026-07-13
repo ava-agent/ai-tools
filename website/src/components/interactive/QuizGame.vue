@@ -16,11 +16,20 @@
       </p>
       <button
         class="btn-capsule px-8 py-3 text-lg"
+        :disabled="isLoading"
         @click="startQuiz"
       >
         <Play class="w-5 h-5 mr-2 inline" />
-        开始竞猜 (10 题)
+        {{ isLoading ? '正在准备题目...' : '开始竞猜 (10 题)' }}
       </button>
+      <div
+        v-if="loadError"
+        class="mt-4 text-sm text-[#ff9f0a]"
+        role="alert"
+        data-testid="quiz-load-error"
+      >
+        题库加载失败，请检查网络后重试。
+      </div>
     </div>
 
     <!-- Quiz in progress -->
@@ -105,13 +114,13 @@
 <script setup>
 import { ref, computed } from 'vue'
 import { HelpCircle, Play, ArrowRight, RotateCcw, Star, Trophy, Target } from 'lucide-vue-next'
-import { useToolsStore } from '../../stores/tools.js'
 import { useGamificationStore } from '../../stores/gamification.js'
 import { useAchievementsStore } from '../../stores/achievements.js'
 import { generateQuizSet } from '../../data/quizQuestions.js'
+import { TOOL_CATALOG_SIZE } from '../../data/catalogMeta.js'
+import { loadInteractiveCatalog } from '../../data/generated/interactiveCatalogLoader.js'
 import QuizQuestion from './QuizQuestion.vue'
 
-const toolsStore = useToolsStore()
 const gamification = useGamificationStore()
 const achievements = useAchievementsStore()
 
@@ -121,8 +130,10 @@ const currentIndex = ref(0)
 const score = ref(0)
 const questionAnswered = ref(false)
 const xpEarned = ref(0)
+const isLoading = ref(false)
+const loadError = ref(false)
 
-const totalTools = computed(() => toolsStore.tools.length)
+const totalTools = TOOL_CATALOG_SIZE
 const isLastQuestion = computed(() => currentIndex.value >= questions.value.length - 1)
 const isPerfect = computed(() => score.value === questions.value.length)
 
@@ -136,13 +147,23 @@ const resultMessage = computed(() => {
   return '加油！去工具列表多逛逛吧'
 })
 
-function startQuiz() {
-  questions.value = generateQuizSet(toolsStore.tools, 10)
-  currentIndex.value = 0
-  score.value = 0
-  questionAnswered.value = false
-  xpEarned.value = 0
-  phase.value = 'playing'
+async function startQuiz() {
+  if (isLoading.value) return
+  isLoading.value = true
+  loadError.value = false
+  try {
+    const tools = await loadInteractiveCatalog()
+    questions.value = generateQuizSet(tools, 10)
+    currentIndex.value = 0
+    score.value = 0
+    questionAnswered.value = false
+    xpEarned.value = 0
+    phase.value = 'playing'
+  } catch {
+    loadError.value = true
+  } finally {
+    isLoading.value = false
+  }
 }
 
 function handleAnswer(correct) {

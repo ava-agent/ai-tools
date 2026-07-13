@@ -4,13 +4,13 @@ import { createPinia, setActivePinia } from 'pinia'
 import { createMemoryHistory, createRouter } from 'vue-router'
 import { nextTick } from 'vue'
 import Home from '../Home.vue'
-import { useToolsStore } from '../../stores/tools'
+import { useCatalogStore } from '../../stores/catalog'
 
 vi.mock('/hero-network.mp4', () => ({
   default: '/hero-network.mp4',
 }))
 
-function makeRouter(path = '/tools') {
+function makeRouter() {
   return createRouter({
     history: createMemoryHistory(),
     routes: [
@@ -34,6 +34,10 @@ async function mountHomeAt(path) {
       stubs: {
         Hero: true,
         SearchBar: true,
+        DecisionShortlist: {
+          template: '<section data-testid="decision-shortlist-stub" />',
+          props: ['tools'],
+        },
         ToolGrid: {
           template: '<section data-testid="tool-grid-stub" />',
           props: ['tools'],
@@ -45,7 +49,7 @@ async function mountHomeAt(path) {
   })
   await nextTick()
 
-  return { wrapper, store: useToolsStore() }
+  return { wrapper, store: useCatalogStore() }
 }
 
 describe('Home', () => {
@@ -59,15 +63,17 @@ describe('Home', () => {
     expect(store.selectedScenario).toBe('complex-refactor')
   })
 
-  it('reserves mobile bottom space for the replay intro control', async () => {
+  it('keeps the replay intro control in the page flow', async () => {
     const { wrapper } = await mountHomeAt('/tools')
 
     const content = wrapper.get('[data-testid="home-content"]')
-    const replayButton = wrapper.get('[data-testid="replay-intro"]')
+    const replayButton = content.get('[data-testid="replay-intro"]')
+    const shortlist = content.get('[data-testid="decision-shortlist-stub"]')
 
     expect(content.classes()).toContain('home-content-safe-bottom')
-    expect(replayButton.classes()).toContain('replay-intro-button')
-    expect(replayButton.classes()).toEqual(expect.arrayContaining(['min-h-11', 'min-w-11']))
+    expect(shortlist.exists()).toBe(true)
+    expect(replayButton.classes()).toEqual(expect.arrayContaining(['inline-flex', 'min-h-11']))
+    expect(replayButton.classes()).not.toContain('fixed')
     expect(replayButton.attributes('aria-label')).toBe('重看演示视频')
   })
 })

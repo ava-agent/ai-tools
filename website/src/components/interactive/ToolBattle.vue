@@ -115,15 +115,14 @@
 <script setup>
 import { ref, computed, onMounted } from 'vue'
 import { Star, Swords, CheckCircle, RefreshCw } from 'lucide-vue-next'
-import { useToolsStore } from '../../stores/tools.js'
 import { useGamificationStore } from '../../stores/gamification.js'
 import { useAchievementsStore } from '../../stores/achievements.js'
 import { useAuthStore } from '../../stores/auth.js'
 import { useCommunityStore } from '../../stores/community.js'
 import { generateMatchup } from '../../data/battleCategories.js'
+import { battleCatalog } from '../../data/generated/battleCatalog.js'
 import BattleResults from '../BattleResults.vue'
 
-const toolsStore = useToolsStore()
 const gamification = useGamificationStore()
 const achievements = useAchievementsStore()
 const authStore = useAuthStore()
@@ -132,11 +131,11 @@ const communityStore = useCommunityStore()
 const matchup = ref(null)
 const voted = ref(null)
 const isSubmitting = ref(false)
-const insufficientTools = computed(() => toolsStore.tools.length < 2)
+const insufficientTools = computed(() => battleCatalog.length < 2)
 
 function newBattle() {
   if (insufficientTools.value || isSubmitting.value) return
-  matchup.value = generateMatchup(toolsStore.tools)
+  matchup.value = generateMatchup(battleCatalog)
   voted.value = null
 }
 

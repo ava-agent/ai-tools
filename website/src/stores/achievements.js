@@ -1,7 +1,7 @@
 import { defineStore } from 'pinia'
 import { ref, computed } from 'vue'
 import { useGamificationStore } from './gamification.js'
-import { aiToolsData } from '../data/tools.js'
+import { TOOL_CATALOG_SIZE } from '../data/catalogMeta.js'
 
 /**
  * Achievement definitions
@@ -38,11 +38,11 @@ const ACHIEVEMENT_DEFS = [
   {
     id: 'explorer-all',
     name: '全知全能',
-    description: `查看全部 ${aiToolsData.length} 个工具`,
+    description: `查看全部 ${TOOL_CATALOG_SIZE} 个工具`,
     tier: 'platinum',
     xp: 500,
     icon: 'Crown',
-    check: (s) => s.toolsViewed.length >= aiToolsData.length,
+    check: (s) => s.toolsViewed.length >= TOOL_CATALOG_SIZE,
   },
   {
     id: 'quiz-starter',

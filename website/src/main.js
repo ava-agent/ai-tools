@@ -12,7 +12,10 @@ const pinia = createPinia()
 setActivePinia(pinia)
 
 pinia.use(createLocalStoragePlugin({
-  stores: ['gamification', 'achievements']
+  stores: ['gamification', 'achievements'],
+  transientKeys: {
+    achievements: ['toastQueue']
+  }
 }))
 
 app.use(pinia)
@@ -48,18 +51,4 @@ if (shouldRegisterServiceWorker({
         // SW registration failed silently
       })
   })
-}
-
-// 监听网络状态
-window.addEventListener('online', () => {
-  document.body.classList.remove('offline')
-})
-
-window.addEventListener('offline', () => {
-  document.body.classList.add('offline')
-})
-
-// 检查当前网络状态
-if (!navigator.onLine) {
-  document.body.classList.add('offline')
 }

@@ -7,8 +7,8 @@
         >
           工具对比
         </h1>
-        <p class="text-xl text-white/80">
-          横向对比主流 AI 开发工具的核心特性
+        <p class="text-base text-white/60 sm:text-lg">
+          从 {{ toolsStore.tools.length }} 款工具中筛选 2-4 个，直接比较价格、能力、风险和适用场景
         </p>
       </div>
 
@@ -78,7 +78,7 @@
             <button
               :aria-label="`移除 ${ct.name}`"
               class="inline-flex min-h-11 min-w-11 items-center justify-center rounded-full hover:bg-white/[0.06]"
-              @click="toolsStore.removeFromCompare(ct.id)"
+              @click="removeFromCompare(ct.id)"
             >
               <X class="w-3.5 h-3.5 hover:text-white transition-colors" />
             </button>
@@ -87,26 +87,44 @@
             v-if="toolsStore.comparedToolIds.length >= 2"
             class="btn-capsule min-h-11 text-sm px-4 py-1.5"
             data-testid="start-manual-compare"
+            :disabled="toolsStore.isLoadingDetails"
             @click="startCompare"
           >
             <GitCompareArrows class="w-4 h-4 mr-1 inline" />
-            开始对比 ({{ toolsStore.comparedToolIds.length }})
+            {{ toolsStore.isLoadingDetails ? '加载对比资料...' : `开始对比 (${toolsStore.comparedToolIds.length})` }}
           </button>
           <button
             class="inline-flex min-h-11 items-center rounded-lg px-3 text-sm text-white/50 transition-colors hover:bg-white/[0.04] hover:text-white"
-            @click="toolsStore.clearCompare()"
+            @click="clearComparison"
           >
             清除
           </button>
         </div>
       </div>
 
+      <div
+        v-if="toolsStore.detailLoadError"
+        class="mb-4 flex flex-col gap-3 rounded-lg border border-red-400/25 bg-red-400/[0.06] p-4 sm:flex-row sm:items-center sm:justify-between"
+        role="alert"
+        data-testid="comparison-detail-error"
+      >
+        <p class="text-sm text-red-100/80">
+          对比资料加载失败，请检查网络后重试。
+        </p>
+        <button
+          class="btn-secondary min-h-11 justify-center text-sm"
+          @click="retryComparison"
+        >
+          重新加载
+        </button>
+      </div>
+
       <!-- 侧边对比视图 -->
-      <div v-if="showCompareView && toolsStore.comparedTools.length >= 2">
+      <div v-if="showCompareView && toolsStore.detailedComparedTools.length >= 2">
         <div class="mb-6">
           <button
             class="inline-flex min-h-11 items-center rounded-lg px-3 text-sm text-white/60 transition-colors hover:bg-white/[0.04] hover:text-white"
-            @click="showCompareView = false"
+            @click="exitCompareView"
           >
             <ArrowLeft class="w-4 h-4 mr-1" />
             返回列表
@@ -127,7 +145,7 @@
               </div>
             </div>
             <span class="tag-pill tag-pill-primary">
-              {{ toolsStore.comparedTools.length }} 个工具
+              {{ toolsStore.detailedComparedTools.length }} 个工具
             </span>
           </div>
           <p class="text-sm text-white/70 leading-relaxed mb-4">
@@ -158,7 +176,7 @@
             </div>
           </div>
         </div>
-        <CompareView :tools="toolsStore.comparedTools" />
+        <CompareView :tools="toolsStore.detailedComparedTools" />
       </div>
 
       <!-- 工具列表表格 -->
@@ -166,18 +184,56 @@
         v-else
         class="glass-card p-0 overflow-hidden mb-4"
       >
-        <!-- 分类筛选 -->
-        <div class="flex flex-wrap gap-2 p-4 pb-4 border-b border-white/[0.06]">
-          <button
-            v-for="cat in filterCategories"
-            :key="cat"
-            class="pill"
-            :class="filterCategory === cat ? 'pill-active' : 'pill-inactive'"
-            :aria-pressed="filterCategory === cat"
-            @click="filterCategory = cat"
-          >
-            {{ cat === 'all' ? '全部' : getCategoryLabel(cat) }}
-          </button>
+        <!-- 搜索与分类筛选 -->
+        <div class="border-b border-white/[0.06] p-4">
+          <div class="flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
+            <div class="relative w-full lg:max-w-md">
+              <Search
+                class="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-white/35"
+                aria-hidden="true"
+              />
+              <input
+                v-model="toolQuery"
+                type="search"
+                aria-label="搜索可对比工具"
+                placeholder="搜索工具、开发者或标签"
+                class="input-field min-h-11 w-full pl-10 pr-11 text-sm"
+                data-testid="comparison-tool-search"
+              >
+              <button
+                v-if="toolQuery"
+                type="button"
+                aria-label="清空对比工具搜索"
+                class="absolute right-0 top-0 inline-flex min-h-11 min-w-11 items-center justify-center text-white/45 transition-colors hover:text-white"
+                @click="toolQuery = ''"
+              >
+                <X
+                  class="h-4 w-4"
+                  aria-hidden="true"
+                />
+              </button>
+            </div>
+            <p
+              class="text-xs text-white/40"
+              role="status"
+              data-testid="comparison-result-count"
+            >
+              找到 {{ sortedTools.length }} 个工具
+            </p>
+          </div>
+
+          <div class="mt-3 flex flex-wrap gap-2">
+            <button
+              v-for="cat in filterCategories"
+              :key="cat"
+              class="pill"
+              :class="filterCategory === cat ? 'pill-active' : 'pill-inactive'"
+              :aria-pressed="filterCategory === cat"
+              @click="filterCategory = cat"
+            >
+              {{ cat === 'all' ? '全部' : getCategoryLabel(cat) }}
+            </button>
+          </div>
         </div>
 
         <div
@@ -334,7 +390,7 @@
             </thead>
             <tbody>
               <tr
-                v-for="(tool, index) in sortedTools"
+                v-for="(tool, index) in visibleTools"
                 :key="tool.id"
                 class="border-b border-white/[0.06] hover:bg-white/[0.04] transition-colors"
                 :class="[
@@ -356,24 +412,24 @@
                 </td>
                 <td class="p-3">
                   <div class="flex min-w-0 items-start gap-2">
-                  <ToolLogo
-                    :tool-id="tool.id"
-                    :tool-name="tool.name"
-                    size="xs"
-                    class="flex-shrink-0"
-                  />
+                    <ToolLogo
+                      :tool-id="tool.id"
+                      :tool-name="tool.name"
+                      size="xs"
+                      class="flex-shrink-0"
+                    />
                     <div class="min-w-0">
                       <span class="block min-w-0 break-words font-semibold text-white">{{ tool.name }}</span>
-                    <div class="mt-1 flex flex-wrap gap-1">
-                      <span
-                        v-for="tag in (tool.tags || []).slice(0, 2)"
-                        :key="tag"
-                        class="px-2 py-0.5 text-xs rounded-full text-white"
-                        :class="getTagColor(tag)"
-                      >
-                        {{ tag }}
-                      </span>
-                    </div>
+                      <div class="mt-1 flex flex-wrap gap-1">
+                        <span
+                          v-for="tag in (tool.tags || []).slice(0, 2)"
+                          :key="tag"
+                          class="px-2 py-0.5 text-xs rounded-full text-white"
+                          :class="getTagColor(tag)"
+                        >
+                          {{ tag }}
+                        </span>
+                      </div>
                     </div>
                   </div>
                 </td>
@@ -430,7 +486,7 @@
           data-testid="comparison-mobile-list"
         >
           <article
-            v-for="tool in sortedTools"
+            v-for="tool in visibleTools"
             :key="`${tool.id}-mobile`"
             class="rounded-xl border border-white/[0.08] bg-white/[0.035] p-3"
             :data-testid="`comparison-mobile-card-${tool.id}`"
@@ -519,6 +575,35 @@
           </article>
         </div>
 
+        <div
+          v-if="sortedTools.length"
+          class="flex flex-col items-center justify-between gap-3 border-t border-white/[0.06] p-4 sm:flex-row"
+        >
+          <p
+            class="text-xs text-white/40"
+            data-testid="comparison-visible-count"
+          >
+            已显示 {{ visibleTools.length }} / {{ sortedTools.length }} 个
+          </p>
+          <button
+            v-if="hasMoreTools"
+            type="button"
+            class="pill pill-inactive min-h-11 px-4 text-xs"
+            data-testid="comparison-load-more"
+            @click="loadMoreTools"
+          >
+            再显示 {{ Math.min(PAGE_SIZE, sortedTools.length - visibleTools.length) }} 个
+          </button>
+        </div>
+
+        <p
+          v-else
+          class="border-t border-white/[0.06] px-4 py-10 text-center text-sm text-white/45"
+          data-testid="comparison-empty-state"
+        >
+          没有匹配的工具，试试更短的关键词或其他分类。
+        </p>
+
         <p
           v-if="toolsStore.comparedToolIds.length === 0"
           class="text-center text-white/40 text-sm py-4 border-t border-white/[0.06]"
@@ -527,7 +612,10 @@
         </p>
       </div>
 
-      <div class="grid md:grid-cols-3 gap-6 mt-12">
+      <div
+        v-if="!showCompareView"
+        class="grid md:grid-cols-3 gap-6 mt-12"
+      >
         <div class="glass-card p-4">
           <h3 class="text-xl font-bold text-white mb-4 flex items-center">
             <CheckCircle class="w-5 h-5 text-green-500 mr-2" />
@@ -569,7 +657,7 @@
             </li>
             <li class="flex items-start">
               <span class="font-semibold text-primary mr-2">Claude：</span>
-              <span>200K 上下文窗口，代码理解能力强</span>
+              <span>代码理解与长上下文能力强；实际窗口随模型、账户和使用入口变化</span>
             </li>
             <li class="flex items-start">
               <span class="font-semibold text-primary mr-2">DeepSeek：</span>
@@ -608,8 +696,9 @@
 </template>
 
 <script setup>
-import { ref, computed } from 'vue'
-import { useToolsStore } from '../stores/tools'
+import { ref, computed, watch } from 'vue'
+import { useRoute, useRouter } from 'vue-router'
+import { useComparisonStore } from '../stores/comparison'
 import { useGamificationStore } from '../stores/gamification'
 import { useAchievementsStore } from '../stores/achievements'
 import { getTagColor, getCategoryLabel } from '../utils/helpers'
@@ -618,14 +707,16 @@ import { formatMetricValue } from '../utils/toolMetadata'
 import {
   CheckCircle, Zap, TrendingUp, Star,
   ArrowUpDown, ChevronUp, ChevronDown,
-  X, GitCompareArrows, ArrowLeft
+  X, GitCompareArrows, ArrowLeft, Search
 } from 'lucide-vue-next'
 import CompareView from '../components/CompareView.vue'
 import ToolLogo from '../components/ToolLogo.vue'
 
-const toolsStore = useToolsStore()
+const toolsStore = useComparisonStore()
 const gamification = useGamificationStore()
 const achievements = useAchievementsStore()
+const route = useRoute()
+const router = useRouter()
 
 function firstVersionValue(tool, field, fallback = '未公开') {
   return formatMetricValue(tool.versions?.[0]?.[field], fallback)
@@ -636,8 +727,13 @@ function firstVersionValue(tool, field, fallback = '未公开') {
 const sortField = ref('rating')
 const sortDirection = ref('desc')
 const filterCategory = ref('all')
+const toolQuery = ref('')
+const visibleCount = ref(24)
 const showCompareView = ref(false)
 const activeScenarioId = ref(null)
+const PAGE_SIZE = 24
+let applyingRouteState = false
+let routeApplicationId = 0
 
 const mobileSortOptions = [
   { field: 'name', label: '工具名称', shortLabel: '名称' },
@@ -646,8 +742,20 @@ const mobileSortOptions = [
   { field: 'rating', label: '评分', shortLabel: '评分' },
 ]
 
-function startCompare() {
+async function startCompare() {
+  routeApplicationId += 1
   activeScenarioId.value = null
+  showCompareView.value = false
+  const loaded = await toolsStore.loadComparedToolDetails()
+  if (!loaded) return
+  showCompareView.value = true
+  gamification.trackComparisonUse()
+  achievements.checkAll()
+}
+
+async function retryComparison() {
+  const loaded = await toolsStore.loadComparedToolDetails()
+  if (!loaded) return
   showCompareView.value = true
   gamification.trackComparisonUse()
   achievements.checkAll()
@@ -660,6 +768,16 @@ const filterCategories = computed(() => {
 
 const sortedTools = computed(() => {
   let result = [...toolsStore.tools]
+
+  const query = toolQuery.value.trim().toLowerCase()
+  if (query) {
+    result = result.filter((tool) => [
+      tool.name,
+      tool.developer,
+      getCategoryLabel(tool.category),
+      ...(tool.tags || [])
+    ].filter(Boolean).join(' ').toLowerCase().includes(query))
+  }
 
   // 分类筛选
   if (filterCategory.value !== 'all') {
@@ -691,6 +809,17 @@ const sortedTools = computed(() => {
   return result
 })
 
+const visibleTools = computed(() => sortedTools.value.slice(0, visibleCount.value))
+const hasMoreTools = computed(() => visibleTools.value.length < sortedTools.value.length)
+
+watch([filterCategory, toolQuery], () => {
+  visibleCount.value = PAGE_SIZE
+})
+
+function loadMoreTools() {
+  visibleCount.value += PAGE_SIZE
+}
+
 function toggleSort(field) {
   if (sortField.value === field) {
     sortDirection.value = sortDirection.value === 'asc' ? 'desc' : 'asc'
@@ -716,11 +845,37 @@ function getSortLabel(label, field) {
 }
 
 function toggleCompare(toolId) {
-  if (toolsStore.comparedToolIds.includes(toolId)) {
-    toolsStore.removeFromCompare(toolId)
-  } else {
-    toolsStore.addToCompare(toolId)
+  runManualSelectionChange(() => {
+    if (toolsStore.comparedToolIds.includes(toolId)) {
+      toolsStore.removeFromCompare(toolId)
+    } else {
+      toolsStore.addToCompare(toolId)
+    }
+  })
+}
+
+function removeFromCompare(toolId) {
+  runManualSelectionChange(() => toolsStore.removeFromCompare(toolId))
+}
+
+function clearComparison() {
+  runManualSelectionChange(() => toolsStore.clearCompare())
+}
+
+function exitCompareView() {
+  showCompareView.value = false
+}
+
+function runManualSelectionChange(changeSelection) {
+  routeApplicationId += 1
+  applyingRouteState = true
+  activeScenarioId.value = null
+  changeSelection()
+  if (toolsStore.comparedToolIds.length < 2) {
+    showCompareView.value = false
   }
+  applyingRouteState = false
+  updateComparisonRoute()
 }
 
 const recommendedGroups = [
@@ -767,32 +922,138 @@ const comparisonScenarios = [
 ]
 
 function loadCompareGroup(ids) {
+  routeApplicationId += 1
+  applyingRouteState = true
   activeScenarioId.value = null
   showCompareView.value = false
   toolsStore.clearCompare()
   ids.forEach(id => toolsStore.addToCompare(id))
+  applyingRouteState = false
+  updateComparisonRoute()
 }
 
-function loadScenario(scenario) {
+async function loadScenario(scenario) {
+  routeApplicationId += 1
+  applyingRouteState = true
   activeScenarioId.value = scenario.id
   toolsStore.clearCompare()
   scenario.ids
     .filter(id => toolsStore.tools.some(tool => tool.id === id))
     .slice(0, 4)
     .forEach(id => toolsStore.addToCompare(id))
-  showCompareView.value = toolsStore.comparedTools.length >= 2
+  showCompareView.value = false
+  applyingRouteState = false
+  const loaded = await toolsStore.loadComparedToolDetails()
+  showCompareView.value = loaded
+  updateComparisonRoute()
   if (showCompareView.value) {
     gamification.trackComparisonUse()
     achievements.checkAll()
   }
 }
 
+function getRouteValue(value) {
+  return Array.isArray(value) ? value[0] : value
+}
+
+function parseToolIds(value) {
+  const raw = getRouteValue(value)
+  if (!raw) return []
+  const availableIds = new Set(toolsStore.tools.map((tool) => tool.id))
+  return [...new Set(String(raw).split(',').map((id) => id.trim()).filter(Boolean))]
+    .filter((id) => availableIds.has(id))
+    .slice(0, 4)
+}
+
+async function applyComparisonRoute() {
+  const applicationId = ++routeApplicationId
+  applyingRouteState = true
+
+  const routeIds = parseToolIds(route.query.tools)
+  if (routeIds.join(',') !== toolsStore.comparedToolIds.join(',')) {
+    toolsStore.clearCompare()
+    routeIds.forEach((id) => toolsStore.addToCompare(id))
+  }
+
+  const scenarioId = getRouteValue(route.query.scenario)
+  const routeScenario = comparisonScenarios.find((scenario) => scenario.id === scenarioId)
+  const scenarioIds = routeScenario?.ids
+    .filter((id) => toolsStore.tools.some((tool) => tool.id === id))
+    .slice(0, 4) || []
+  activeScenarioId.value = routeScenario && scenarioIds.join(',') === routeIds.join(',')
+    ? routeScenario.id
+    : null
+  const shouldStart = getRouteValue(route.query.start) === '1' && toolsStore.comparedTools.length >= 2
+  showCompareView.value = false
+  applyingRouteState = false
+
+  if (!shouldStart) {
+    updateComparisonRoute()
+    return
+  }
+  const loaded = await toolsStore.loadComparedToolDetails()
+  const currentRouteIds = parseToolIds(route.query.tools)
+  const selectionIsCurrent = currentRouteIds.join(',') === toolsStore.comparedToolIds.join(',')
+  if (
+    loaded &&
+    applicationId === routeApplicationId &&
+    getRouteValue(route.query.start) === '1' &&
+    selectionIsCurrent
+  ) {
+    showCompareView.value = true
+  } else if (!loaded) {
+    updateComparisonRoute()
+  }
+}
+
+function updateComparisonRoute() {
+  if (applyingRouteState) return
+
+  const query = { ...route.query }
+  delete query.tools
+  delete query.start
+  delete query.scenario
+
+  if (toolsStore.comparedToolIds.length) {
+    query.tools = toolsStore.comparedToolIds.join(',')
+  }
+  if (showCompareView.value && toolsStore.comparedToolIds.length >= 2) {
+    query.start = '1'
+  }
+  if (activeScenarioId.value) {
+    query.scenario = activeScenarioId.value
+  }
+
+  const target = { name: 'comparison', query }
+  if (router.resolve(target).fullPath === route.fullPath) return
+  void router.replace(target)
+}
+
+watch(
+  [() => route.query.tools, () => route.query.start, () => route.query.scenario],
+  applyComparisonRoute,
+  { immediate: true }
+)
+
+watch(
+  () => toolsStore.comparedToolIds.join(','),
+  () => {
+    if (toolsStore.comparedToolIds.length < 2) {
+      showCompareView.value = false
+    }
+    updateComparisonRoute()
+  },
+  { flush: 'sync' }
+)
+
+watch(showCompareView, updateComparisonRoute, { flush: 'sync' })
+
 const activeScenario = computed(() => {
   return comparisonScenarios.find(scenario => scenario.id === activeScenarioId.value) || null
 })
 
 const compareSummary = computed(() => {
-  if (toolsStore.comparedTools.length < 2) return null
+  if (toolsStore.detailedComparedTools.length < 2) return null
   if (activeScenario.value) {
     return {
       label: activeScenario.value.label,
@@ -806,7 +1067,7 @@ const compareSummary = computed(() => {
 })
 
 const dimensionWinners = computed(() => {
-  const tools = toolsStore.comparedTools
+  const tools = toolsStore.detailedComparedTools
   if (tools.length < 2) return []
 
   return [

@@ -2,7 +2,7 @@ import { describe, expect, it, vi } from 'vitest'
 import { mount } from '@vue/test-utils'
 import { createPinia, setActivePinia } from 'pinia'
 import CompareView from '../CompareView.vue'
-import { useToolsStore } from '../../stores/tools'
+import { useComparisonStore } from '../../stores/comparison'
 
 const stubs = {
   RouterLink: {
@@ -50,7 +50,7 @@ const tools = [
 function mountCompareView(toolsInput = tools) {
   const pinia = createPinia()
   setActivePinia(pinia)
-  const toolsStore = useToolsStore()
+  const toolsStore = useComparisonStore()
   toolsStore.clearCompare = vi.fn()
 
   const wrapper = mount(CompareView, {
@@ -65,20 +65,19 @@ function mountCompareView(toolsInput = tools) {
 }
 
 describe('CompareView', () => {
-  it('renders mobile stacked comparison cards instead of only a wide table', () => {
+  it('renders a compact mobile metric matrix with collapsed detail sections', () => {
     const { wrapper } = mountCompareView()
 
     const desktop = wrapper.get('[data-testid="compare-desktop-table"]')
     expect(desktop.classes()).toEqual(expect.arrayContaining(['hidden', 'md:block']))
     expect(desktop.get('table').classes()).toContain('min-w-[600px]')
 
-    const mobileCards = wrapper.get('[data-testid="compare-mobile-cards"]')
-    expect(mobileCards.classes()).toEqual(expect.arrayContaining(['md:hidden', 'space-y-4']))
-
-    const cursorCard = wrapper.get('[data-testid="compare-mobile-card-cursor"]')
-    expect(cursorCard.text()).toContain('Cursor')
-    expect(cursorCard.text()).toContain('Individual $20/month')
-    expect(cursorCard.text()).toContain('Strong agent workflow')
+    const mobileMatrix = wrapper.get('[data-testid="compare-mobile-matrix"]')
+    expect(mobileMatrix.classes()).toContain('md:hidden')
+    expect(wrapper.get('[data-testid="compare-mobile-scroll"]').classes()).toContain('overflow-x-auto')
+    expect(mobileMatrix.findAll('tbody th[scope="row"]')).toHaveLength(8)
+    expect(mobileMatrix.text()).toContain('Cursor')
+    expect(mobileMatrix.text()).toContain('Individual $20/month')
 
     const pricing = wrapper.get('[data-testid="compare-mobile-field-cursor-pricing"]')
     expect(pricing.classes()).toContain('break-words')
@@ -88,6 +87,7 @@ describe('CompareView', () => {
 
     const con = wrapper.get('[data-testid="compare-mobile-con-cursor-0"]')
     expect(con.classes()).toContain('break-words')
+    expect(wrapper.get('[data-testid="compare-mobile-detail-cursor"]').attributes('open')).toBeUndefined()
   })
 
   it('keeps the clear comparison action touch friendly', async () => {
@@ -99,6 +99,21 @@ describe('CompareView', () => {
 
     await button.trigger('click')
     expect(toolsStore.clearCompare).toHaveBeenCalledTimes(1)
+  })
+
+  it('exposes row headers and readable score labels without relying on color', () => {
+    const { wrapper } = mountCompareView()
+    const rowHeaders = wrapper.findAll('tbody th[scope="row"]')
+
+    expect(rowHeaders.map((header) => header.text())).toEqual(
+      expect.arrayContaining(['开发者', '分类', '评分', '定价', '免费额度', '上下文', '中文支持'])
+    )
+
+    const mobileRating = wrapper.get('[data-testid="compare-mobile-field-cursor-rating"]')
+    const mobileChinese = wrapper.get('[data-testid="compare-mobile-field-cursor-chinese"]')
+    expect(mobileRating.attributes('aria-label')).toContain('评分 5 / 5，并列最高')
+    expect(mobileChinese.attributes('aria-label')).toContain('中文支持 4 / 5，并列最高')
+    expect(mobileRating.text()).toContain('最高')
   })
 
   it('translates placeholder metrics instead of exposing raw N/A copy', () => {

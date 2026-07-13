@@ -101,11 +101,10 @@ usePerformance() // 自动监控性能指标
 ## 🛡️ 安全加固
 
 ### 1. 安全响应头
-**新增响应头**:
+**当前响应头**:
 ```nginx
-X-Frame-Options: SAMEORIGIN
+X-Frame-Options: DENY
 X-Content-Type-Options: nosniff
-X-XSS-Protection: 1; mode=block
 Referrer-Policy: strict-origin-when-cross-origin
 Permissions-Policy: geolocation=(), microphone=(), camera()
 ```
@@ -119,14 +118,15 @@ default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; ...
 **优化后**:
 ```
 default-src 'self';
-script-src 'self' 'unsafe-inline' 'unsafe-eval';
-style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
+script-src 'self' 'sha256-gb3xjxXT3M/r/UrCj+BZLvuzRwWiqseed/XsKY98Aw0=';
+style-src 'self' https://fonts.googleapis.com;
+style-src-attr 'unsafe-inline';
 font-src 'self' https://fonts.gstatic.com;
 img-src 'self' data: https: blob:;
 connect-src 'self' https:;
 media-src 'self';
 object-src 'none';
-frame-ancestors 'self';
+frame-ancestors 'none';
 base-uri 'self';
 form-action 'self';
 ```

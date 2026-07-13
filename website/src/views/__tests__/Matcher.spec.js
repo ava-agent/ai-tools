@@ -13,6 +13,7 @@ function makeRouter() {
     history: createMemoryHistory(),
     routes: [
       { path: '/', name: 'landing', component: { template: '<div />' } },
+      { path: '/tools', name: 'tools', component: { template: '<div />' } },
       { path: '/matcher', name: 'matcher', component: Matcher },
       { path: '/tool/:id', name: 'tool-detail', component: { template: '<div />' } },
     ],
@@ -158,8 +159,9 @@ describe('Matcher accessibility', () => {
     const resetButton = actions.get('button')
     expect(resetButton.classes()).toEqual(expect.arrayContaining(['min-h-11', 'justify-center']))
 
-    const catalogLink = actions.get('a')
+    const catalogLink = actions.get('[data-testid="matcher-result-tools-link"]')
     expect(catalogLink.classes()).toEqual(expect.arrayContaining(['min-h-11', 'justify-center']))
+    expect(catalogLink.attributes('href')).toBe('/tools')
   })
 
   it('lets scenario guide links wrap instead of forcing mobile overflow', async () => {

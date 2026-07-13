@@ -10,7 +10,7 @@
       </div>
       <div class="flex items-center justify-end gap-2">
         <a
-          :href="src"
+          :href="resolvedSrc"
           download
           :aria-label="downloadLabel"
           class="toolbar-btn min-h-11 min-w-11 justify-center"
@@ -23,7 +23,7 @@
           <span class="hidden sm:inline ml-1 text-sm">下载</span>
         </a>
         <a
-          :href="src"
+          :href="resolvedSrc"
           target="_blank"
           rel="noopener noreferrer"
           :aria-label="openLabel"
@@ -55,7 +55,7 @@
       class="pdf-container"
     >
       <iframe
-        :src="src"
+        :src="resolvedSrc"
         class="pdf-iframe"
         :title="title"
         loading="lazy"
@@ -83,7 +83,7 @@
           PDF 加载失败
         </p>
         <a
-          :href="src"
+          :href="resolvedSrc"
           target="_blank"
           rel="noopener noreferrer"
           :aria-label="openLabel"
@@ -99,6 +99,7 @@
 <script setup>
 import { computed, ref } from 'vue'
 import { FileText, Download, ExternalLink, Maximize } from 'lucide-vue-next'
+import { resolvePublicAssetPath } from '../utils/publicAssets.js'
 
 const props = defineProps({
   src: {
@@ -118,6 +119,7 @@ const error = ref(false)
 const downloadLabel = computed(() => `\u4e0b\u8f7d ${props.title}`)
 const openLabel = computed(() => `\u5728\u65b0\u6807\u7b7e\u9875\u6253\u5f00 ${props.title}`)
 const fullscreenLabel = computed(() => `\u5168\u5c4f\u67e5\u770b ${props.title}`)
+const resolvedSrc = computed(() => resolvePublicAssetPath(props.src))
 
 function onLoad() {
   loading.value = false

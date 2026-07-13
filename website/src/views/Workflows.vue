@@ -201,7 +201,7 @@
             </h4>
             <div class="border-l-2 border-white/[0.12] py-2 pl-4">
               <img
-                :src="currentWorkflow.flowImage"
+                :src="resolvePublicAssetPath(currentWorkflow.flowImage)"
                 :alt="currentWorkflow.nameZh + ' 流程图'"
                 class="w-full rounded-lg"
                 loading="lazy"
@@ -420,13 +420,14 @@ import {
   Ban
 } from 'lucide-vue-next'
 import { useUIStore } from '../stores/ui'
-import { useToolsStore } from '../stores/tools'
+import { useWorkflowCatalogStore } from '../stores/workflowCatalog'
 import { getCategoryLabel, resolveToolId as _resolveToolId, resolveToolLinks } from '../utils/helpers'
 import { getToolVerification, getVerificationBadgeClass } from '../utils/toolMetadata'
+import { resolvePublicAssetPath } from '../utils/publicAssets.js'
 import { workflows, pitfalls, promptTemplates } from '../data/workflows.js'
 
 const uiStore = useUIStore()
-const toolsStore = useToolsStore()
+const toolsStore = useWorkflowCatalogStore()
 
 const WORKFLOW_EXCLUDE_NAMES = ['手动', '手动测试', 'Git', '自动化测试']
 
