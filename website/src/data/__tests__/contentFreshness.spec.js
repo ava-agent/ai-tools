@@ -612,18 +612,29 @@ describe('content freshness safeguards', () => {
   })
 
   it('keeps every resource card traceable to a dated local asset', () => {
+    const currentResourceIds = new Set(['project-intro-2026'])
+
     for (const resource of resources) {
       expect(resource.date, `${resource.id} date`).toMatch(/^\d{4}-\d{2}$/)
-      expect(resource.verificationStatus, `${resource.id} verificationStatus`).toBe('historical')
-      expect(resource, `${resource.id} has lastVerified field`).toHaveProperty('lastVerified', null)
       expect(resource.assetCheckedAt, `${resource.id} assetCheckedAt`).toMatch(
         /^\d{4}-\d{2}-\d{2}$/
       )
-      expect(resource.freshnessNote, `${resource.id} freshnessNote`).toBe(
-        '历史快照：非实时价格、模型或额度依据'
-      )
       expect(resource.sources?.length, `${resource.id} sources`).toBeGreaterThan(0)
       expect(resource.sources[0], `${resource.id} source path`).toBe(`/${resource.src}`)
+
+      if (currentResourceIds.has(resource.id)) {
+        expect(resource.verificationStatus, `${resource.id} verificationStatus`).toBe('verified')
+        expect(resource.lastVerified, `${resource.id} lastVerified`).toMatch(
+          /^\d{4}-\d{2}-\d{2}$/
+        )
+        expect(resource.freshnessNote, `${resource.id} freshnessNote`).toBe('当前项目导览')
+      } else {
+        expect(resource.verificationStatus, `${resource.id} verificationStatus`).toBe('historical')
+        expect(resource, `${resource.id} has lastVerified field`).toHaveProperty('lastVerified', null)
+        expect(resource.freshnessNote, `${resource.id} freshnessNote`).toBe(
+          '历史快照：非实时价格、模型或额度依据'
+        )
+      }
     }
   })
 

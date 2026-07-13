@@ -55,7 +55,7 @@ describe('HeroSection', () => {
   it('uses auto scrolling when the user prefers reduced motion', async () => {
     const { wrapper, scrollIntoView } = mountHero({ reducedMotion: true })
 
-    await wrapper.get('button').trigger('click')
+    await wrapper.get('[data-testid="hero-primary-action"]').trigger('click')
 
     expect(scrollIntoView).toHaveBeenCalledWith({ behavior: 'auto' })
   })
@@ -63,7 +63,7 @@ describe('HeroSection', () => {
   it('keeps smooth scrolling when reduced motion is not requested', async () => {
     const { wrapper, scrollIntoView } = mountHero({ reducedMotion: false })
 
-    await wrapper.get('button').trigger('click')
+    await wrapper.get('[data-testid="hero-primary-action"]').trigger('click')
 
     expect(scrollIntoView).toHaveBeenCalledWith({ behavior: 'smooth' })
   })
@@ -89,5 +89,13 @@ describe('HeroSection', () => {
     expect(image.attributes('loading')).toBe('eager')
     expect(image.attributes('decoding')).toBe('async')
     expect(image.attributes('fetchpriority')).toBe('high')
+  })
+
+  it('emits an explicit request to play the introduction video', async () => {
+    const { wrapper } = mountHero()
+
+    await wrapper.get('[data-testid="hero-video-action"]').trigger('click')
+
+    expect(wrapper.emitted('play-intro')).toHaveLength(1)
   })
 })

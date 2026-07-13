@@ -72,6 +72,18 @@ describe('Resources', () => {
     expect(wrapper.find(`a[href="${firstPdf.sources[0]}"]`).exists()).toBe(false)
   })
 
+  it('presents the new project introduction as current locally verified media', () => {
+    const wrapper = mountResources()
+    const projectIntro = resources.find(resource => resource.id === 'project-intro-2026')
+    const metadata = wrapper.get('[data-testid="resource-meta-project-intro-2026"]')
+
+    expect(projectIntro.verificationStatus).toBe('verified')
+    expect(projectIntro.lastVerified).toBe('2026-07-13')
+    expect(metadata.text()).toContain('本地核验')
+    expect(metadata.text()).toContain('本地文件核验 2026-07-13')
+    expect(metadata.text()).toContain('当前项目导览')
+  })
+
   it('renders local asset sources as metadata instead of external links', () => {
     const wrapper = mountResources()
     const firstPdf = resources.find(resource => resource.id === firstPdfId)
