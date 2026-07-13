@@ -10,13 +10,15 @@
         aria-label="返回首页"
         class="flex min-h-11 min-w-11 items-center gap-2 flex-shrink-0 -ml-2 px-2"
       >
-        <div
-          class="w-6 h-6 rounded-md flex items-center justify-center text-xs"
-          style="background: linear-gradient(135deg, #2f81f7, #238636)"
+        <img
+          :src="brandMark"
+          alt=""
+          aria-hidden="true"
+          class="h-7 w-7 flex-shrink-0 rounded-md object-contain"
+          width="28"
+          height="28"
         >
-          <Brain class="w-3.5 h-3.5 text-white" />
-        </div>
-        <span class="text-[15px] font-semibold text-white tracking-normal hidden sm:block">AI Tools</span>
+        <span class="hidden text-[15px] font-semibold tracking-normal text-white sm:block">AI 工具全书</span>
       </router-link>
 
       <div class="flex-1" />
@@ -31,7 +33,7 @@
           :key="item.to"
           :to="item.to"
           class="segment"
-          exact-active-class="segment-active"
+          active-class="segment-active"
         >
           {{ item.label }}
         </router-link>
@@ -46,7 +48,7 @@
           v-for="item in secondaryNav"
           :key="item.to"
           :to="item.to"
-          class="hidden min-h-11 items-center rounded-lg px-2 text-xs text-white/45 transition-colors hover:bg-white/[0.04] hover:text-white lg:inline-flex"
+          class="hidden min-h-11 items-center rounded-lg px-2 text-xs text-white/60 transition-colors hover:bg-white/[0.04] hover:text-white lg:inline-flex"
         >
           {{ item.label }}
         </router-link>
@@ -60,7 +62,7 @@
           @click="$router.push('/tools')"
         >
           <Search class="w-3.5 h-3.5 text-white/55" />
-          <span class="text-white/25 hidden sm:inline">搜索</span>
+          <span class="hidden text-white/60 sm:inline">搜索</span>
         </button>
 
         <!-- Guest sign in (desktop) -->
@@ -102,7 +104,7 @@
         <!-- Mobile menu button -->
         <button
           ref="mobileMenuButtonRef"
-          class="md:hidden min-h-11 min-w-11 p-2 rounded-lg text-white/60 hover:text-white hover:bg-white/5 transition-colors cursor-pointer"
+          class="min-h-11 min-w-11 cursor-pointer rounded-lg p-2 text-white/60 transition-colors hover:bg-white/5 hover:text-white lg:hidden"
           :aria-expanded="isMobileMenuVisible"
           aria-controls="mobile-navigation"
           :aria-label="isMobileMenuVisible ? '关闭菜单' : '打开菜单'"
@@ -134,14 +136,15 @@
         id="mobile-navigation"
         ref="mobileNavigationRef"
         aria-label="移动导航"
-        class="md:hidden px-5 pb-4 pt-2 border-t border-white/[0.06]"
+        class="border-t border-white/[0.06] px-5 pb-4 pt-2 lg:hidden"
       >
         <div class="flex flex-col gap-1">
           <router-link
             v-for="item in [...mainNav, ...secondaryNav]"
             :key="item.to"
             :to="item.to"
-            class="flex min-h-11 items-center gap-3 px-3 py-2.5 rounded-xl text-sm text-white/70 hover:text-white hover:bg-white/5 transition-colors"
+            class="flex min-h-11 items-center gap-3 rounded-lg px-3 py-2.5 text-sm text-white/70 transition-colors hover:bg-white/5 hover:text-white"
+            :class="{ 'md:hidden': mainNav.some((navItem) => navItem.to === item.to) }"
             @click="closeMobileMenu"
           >
             <component
@@ -194,7 +197,7 @@
 import { computed, nextTick, onBeforeUnmount, onMounted, ref, watch } from 'vue'
 import { useRouter } from 'vue-router'
 import {
-  Brain,
+  Home,
   Menu,
   X,
   Search,
@@ -221,6 +224,7 @@ const props = defineProps({
 const authStore = useAuthStore()
 const authAvailable = computed(() => props.authAvailable)
 const router = useRouter()
+const brandMark = `${import.meta.env.BASE_URL}brand/ai-tools-mark-2026-64.png`
 const isMobileMenuOpen = ref(false)
 const mobileMenuRoute = ref('')
 const mobileMenuButtonRef = ref(null)
@@ -231,7 +235,7 @@ const isMobileMenuVisible = computed(
 )
 
 const mainNav = [
-  { to: '/', label: '首页', icon: Brain },
+  { to: '/', label: '首页', icon: Home },
   { to: '/tools', label: '全景浏览', icon: LayoutGrid },
   { to: '/comparison', label: '工具对比', icon: GitCompare },
   { to: '/workflows', label: '工作流', icon: Workflow }

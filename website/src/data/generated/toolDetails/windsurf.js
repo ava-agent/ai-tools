@@ -76,6 +76,5 @@ export default {
   ],
   "video": {
     "src": "./videos/windsurf.mp4"
-  },
-  "radarChart": "images/windsurf_radar_chart.png"
+  }
 }

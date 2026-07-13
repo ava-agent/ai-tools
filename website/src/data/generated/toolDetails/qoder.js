@@ -75,6 +75,5 @@ export default {
   ],
   "video": {
     "src": "./videos/qoder.mp4"
-  },
-  "radarChart": "images/qoder_radar_chart.png"
+  }
 }

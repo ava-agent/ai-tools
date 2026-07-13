@@ -75,6 +75,5 @@ export default {
   ],
   "video": {
     "src": "./videos/opencode-cli.mp4"
-  },
-  "radarChart": "images/opencode.png"
+  }
 }

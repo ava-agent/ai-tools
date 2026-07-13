@@ -4,7 +4,7 @@
     v-if="currentLogoUrl"
     :src="currentLogoUrl"
     :alt="toolName"
-    class="inline-flex items-center justify-center rounded-xl object-contain flex-shrink-0 bg-white/10 p-1"
+    class="inline-flex flex-shrink-0 items-center justify-center rounded-lg bg-white/90 object-contain p-1"
     :class="sizeClass"
     referrerpolicy="no-referrer"
     @error="handleImageError"
@@ -28,7 +28,7 @@ const props = defineProps({
   toolId: { type: String, required: true },
   toolName: { type: String, default: '' },
   size: { type: String, default: 'md' },
-  preferImage: { type: Boolean, default: false },
+    preferImage: { type: Boolean, default: true },
 })
 
 const errorCount = ref(0)
@@ -42,20 +42,10 @@ watch(
   }
 )
 
-// Build fallback URL from DuckDuckGo URL by extracting the domain
-const googleFallbackUrl = computed(() => {
-  const ddgUrl = logo.value?.logoUrl
-  if (!ddgUrl) return null
-  const match = ddgUrl.match(/ip3\/(.+)\.ico$/)
-  if (!match) return null
-  return `https://www.google.com/s2/favicons?domain=${match[1]}&sz=128`
-})
-
 const currentLogoUrl = computed(() => {
   if (!props.preferImage) return null
-  if (errorCount.value === 0) return logo.value?.logoUrl || null
-  if (errorCount.value === 1) return googleFallbackUrl.value
-  return null // fall back to initials
+  if (!logo.value?.logoUrl || errorCount.value > 0) return null
+  return `${import.meta.env.BASE_URL}images/tool-logos/${props.toolId}.png`
 })
 
 const handleImageError = () => {

@@ -25,11 +25,57 @@ export const verificationOptions = [
   { id: 'deprecated', label: '已停更' }
 ]
 
-const scenarioMatchers = {
-  'daily-coding': /日常|主力|开发|编码|补全|ide|cli|编辑器/i,
-  'complex-refactor': /复杂|重构|架构|大型代码库|代码库|迁移|影响面|多文件/i,
-  'long-context': /长上下文|上下文|1m|研究|调研|搜索|文档|日志|代码库/i,
-  'visual-generation': /图像|图片|视觉|视频|生成|设计|动画|image|video/i
+const scenarioToolIds = {
+  'daily-coding': new Set([
+    'cursor',
+    'trae',
+    'qoder',
+    'windsurf',
+    'zed',
+    'replit',
+    'kiro',
+    'github-copilot',
+    'verdent',
+    'jetbrains-ai',
+    'claude-code',
+    'codex',
+    'gemini-cli',
+    'qwen-cli',
+    'aider',
+    'cline',
+    'continue',
+    'opencode',
+    'crush'
+  ]),
+  'complex-refactor': new Set([
+    'cursor',
+    'qoder',
+    'windsurf',
+    'github-copilot',
+    'verdent',
+    'claude-code',
+    'codex',
+    'gemini-cli',
+    'aider',
+    'cline',
+    'opencode',
+    'openhands',
+    'devin'
+  ]),
+  'long-context': new Set([
+    'claude',
+    'gemini',
+    'gpt',
+    'kimi',
+    'grok',
+    'claude-code',
+    'codex',
+    'gemini-cli',
+    'notebooklm',
+    'perplexity',
+    'context7'
+  ]),
+  'visual-generation': new Set(['gpt', 'gemini', 'claude'])
 }
 
 export function collectCatalogText(value) {
@@ -83,8 +129,10 @@ export function matchesToolScenario(tool, scenario) {
   if (scenario === 'all') return true
   if (scenario === 'free-stack') return toolHasFreeTier(tool)
   if (Array.isArray(tool.scenarioIds)) return tool.scenarioIds.includes(scenario)
-  const matcher = scenarioMatchers[scenario]
-  return matcher ? matcher.test(getToolSearchText(tool)) : true
+  if (scenario === 'visual-generation') {
+    return tool.category === 'multimodal' || scenarioToolIds[scenario].has(tool.id)
+  }
+  return scenarioToolIds[scenario]?.has(tool.id) || false
 }
 
 export function matchesToolBudget(tool, budget) {

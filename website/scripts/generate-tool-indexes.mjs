@@ -12,6 +12,39 @@ const homeSearchIndex = Object.fromEntries(
   aiToolsData.map((tool) => [tool.id, getToolSearchText(tool)])
 )
 
+const categoryIds = [...new Set(aiToolsData.map((tool) => tool.category))]
+const landingStats = {
+  tools: aiToolsData.length,
+  categories: categoryIds.length,
+  verifiedTools: homeCatalog.filter((tool) => tool.verificationStatus === 'verified').length
+}
+const landingCategorySummary = Object.fromEntries(
+  categoryIds.map((category) => {
+    const categoryTools = aiToolsData.filter((tool) => tool.category === category)
+    return [
+      category,
+      {
+        total: categoryTools.length,
+        featured: categoryTools
+          .filter((tool) => tool.verificationStatus === 'verified')
+          .sort(
+            (a, b) =>
+              (b.personalExperience?.rating || 0) - (a.personalExperience?.rating || 0) ||
+              a.name.localeCompare(b.name, 'zh-CN')
+          )
+          .slice(0, 6)
+          .map((tool) => ({
+            id: tool.id,
+            name: tool.name,
+            bestFor: tool.decisionSummary?.bestFor || tool.bestFor,
+            rating: tool.personalExperience?.rating || 0
+          }))
+      }
+    ]
+  })
+)
+const landingToolNames = Object.fromEntries(aiToolsData.map((tool) => [tool.id, tool.name]))
+
 const publicRoutePaths = [
   '',
   'tools',
@@ -114,6 +147,10 @@ const outputs = [
   {
     path: resolve(projectRoot, 'src/data/generated/homeCatalog.js'),
     content: `// Generated from src/data/tools.js. Run npm run generate:data after catalog edits.\nexport const homeCatalog = ${JSON.stringify(homeCatalog, null, 2)}\n\nexport function loadHomeSearchIndex() {\n  return import('./homeSearchIndex.js').then((module) => module.homeSearchIndex)\n}\n`
+  },
+  {
+    path: resolve(projectRoot, 'src/data/generated/landingCatalog.js'),
+    content: `// Generated from src/data/tools.js. Run npm run generate:data after catalog edits.\nexport const LANDING_STATS = ${JSON.stringify(landingStats, null, 2)}\n\nexport const LANDING_CATEGORY_SUMMARY = ${JSON.stringify(landingCategorySummary, null, 2)}\n\nexport const LANDING_TOOL_NAMES = ${JSON.stringify(landingToolNames, null, 2)}\n`
   },
   {
     path: resolve(projectRoot, 'src/data/generated/homeSearchIndex.js'),

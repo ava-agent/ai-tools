@@ -72,6 +72,5 @@ export default {
   ],
   "video": {
     "src": "./videos/kiro.mp4"
-  },
-  "radarChart": "images/kiro_radar_chart.png"
+  }
 }

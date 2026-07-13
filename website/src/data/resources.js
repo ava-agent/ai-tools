@@ -1,16 +1,21 @@
 // 资源中心数据
 const RESOURCE_ASSET_CHECKED_AT = '2026-07-02'
 const RESOURCE_FRESHNESS_NOTE = '历史快照：非实时价格、模型或额度依据'
+const LEGACY_UI_DEMO_LABEL = '2026-02 旧版界面演示'
 
-export const RESOURCE_HISTORY_NOTICE = '资源中心包含当前项目导览及 2026-02 历史快照；旧资料用于回顾当时的工具生态，价格、模型、额度和产品状态请以当前官方来源为准。'
+export const RESOURCE_HISTORY_NOTICE = `资源中心包含当前项目导览及 2026-02 历史快照；工具视频均为${LEGACY_UI_DEMO_LABEL}，价格、模型、额度和产品状态请以当前官方来源为准。`
 
 function withResourceMetadata(resource) {
+    const isLegacyUiDemo = resource.type === 'video' && resource.id.startsWith('demo-') && resource.date === '2026-02'
+
     return {
         verificationStatus: 'historical',
         lastVerified: null,
         assetCheckedAt: RESOURCE_ASSET_CHECKED_AT,
-        freshnessNote: RESOURCE_FRESHNESS_NOTE,
         ...resource,
+        title: isLegacyUiDemo ? `${resource.title}（${LEGACY_UI_DEMO_LABEL}）` : resource.title,
+        titleEn: isLegacyUiDemo ? `${resource.titleEn} (Legacy UI Demo, 2026-02)` : resource.titleEn,
+        freshnessNote: resource.freshnessNote || RESOURCE_FRESHNESS_NOTE,
         sources: resource.sources?.length ? resource.sources : [`/${resource.src}`]
     }
 }
@@ -42,9 +47,9 @@ export const resources = [
         title: 'Agentic Development 实战',
         titleEn: 'Agentic Development 2026',
         type: 'pdf',
-        description: '从概念到实践，讲解如何利用 AI Agent 驱动的开发模式提升研发效率，包含多个真实项目案例。',
+        description: '从概念到实践，讲解如何利用 AI Agent 驱动的开发模式提升研发效率，收录若干项目案例示例。',
         src: 'pdfs/Agentic_Development_2026.pdf',
-        tags: ['Agentic', '实战', '案例', '最佳实践'],
+        tags: ['Agentic', '实战', '案例', '工作流模板'],
         date: '2026-02'
     },
     // ============= 专题视频 =============
@@ -89,7 +94,7 @@ export const resources = [
         title: 'Cursor 使用演示',
         titleEn: 'Cursor Demo',
         type: 'video',
-        description: 'Cursor IDE 核心功能演示：Composer 模式、AI 代码生成、多文件编辑等实战操作。',
+        description: '2026-02 录制的旧版界面演示；当前工作流使用 Agent/Plan/Ask 术语，界面与功能请以官方版本为准。',
         src: 'videos/cursor.mp4',
         tags: ['Cursor', 'AI IDE', '演示'],
         date: '2026-02'
@@ -99,19 +104,19 @@ export const resources = [
         title: 'Windsurf 使用演示',
         titleEn: 'Windsurf Demo',
         type: 'video',
-        description: 'Windsurf IDE 核心功能演示：Cascade AI 模式、Flow 上下文理解等特色功能。',
+        description: '2026-02 录制的旧版界面演示；当前 Cascade 使用 Plan/Code/Ask 模式，界面与功能请以官方版本为准。',
         src: 'videos/windsurf.mp4',
         tags: ['Windsurf', 'AI IDE', '演示'],
         date: '2026-02'
     },
     {
         id: 'demo-trae',
-        title: 'Trae 使用演示',
-        titleEn: 'Trae Demo',
+        title: 'TRAE 使用演示',
+        titleEn: 'TRAE Demo',
         type: 'video',
-        description: 'Trae IDE 使用演示：Solo Builder/Coder 模式、免费额度、国产模型优化。',
+        description: '2026-02 录制的旧版界面演示；现行术语为 TRAE Work / SOLO Agent，旧界面中的模式名称已合并更新。',
         src: 'videos/trae.mp4',
-        tags: ['Trae', 'AI IDE', '演示', '免费'],
+        tags: ['TRAE', 'AI IDE', '演示'],
         date: '2026-02'
     },
     {
@@ -186,12 +191,12 @@ export const resources = [
     },
     {
         id: 'demo-antigravity',
-        title: 'AntiGravity 使用演示',
-        titleEn: 'AntiGravity Demo',
+        title: 'Antigravity 使用演示',
+        titleEn: 'Antigravity Demo',
         type: 'video',
-        description: 'AntiGravity 多模态工具使用演示。',
+        description: 'Antigravity AI IDE 的 2026-02 旧版界面演示。',
         src: 'videos/antigravity.mp4',
-        tags: ['AntiGravity', '多模态', '演示'],
+        tags: ['Antigravity', 'AI IDE', '演示'],
         date: '2026-02'
     },
     {

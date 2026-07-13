@@ -84,6 +84,25 @@ describe('Resources', () => {
     expect(metadata.text()).toContain('当前项目导览')
   })
 
+  it('labels historical tool videos and uses the reviewed product terminology', () => {
+    const legacyDemos = resources.filter(resource => resource.id.startsWith('demo-'))
+    const cursor = resources.find(resource => resource.id === 'demo-cursor')
+    const windsurf = resources.find(resource => resource.id === 'demo-windsurf')
+    const trae = resources.find(resource => resource.id === 'demo-trae')
+    const antigravity = resources.find(resource => resource.id === 'demo-antigravity')
+    const agenticDevelopment = resources.find(resource => resource.id === 'agentic-development')
+
+    expect(legacyDemos.every(resource => resource.title.includes('2026-02 旧版界面演示'))).toBe(true)
+    expect(cursor.description).toContain('Agent/Plan/Ask')
+    expect(windsurf.description).toContain('Cascade 使用 Plan/Code/Ask')
+    expect(trae.description).toContain('TRAE Work / SOLO Agent')
+    expect(antigravity.title).toContain('Antigravity')
+    expect(antigravity.description).toContain('Antigravity AI IDE')
+    expect(antigravity.tags).toContain('AI IDE')
+    expect(agenticDevelopment.description).toContain('收录若干项目案例示例')
+    expect(agenticDevelopment.description).not.toContain('包含多个真实项目案例')
+  })
+
   it('renders local asset sources as metadata instead of external links', () => {
     const wrapper = mountResources()
     const firstPdf = resources.find(resource => resource.id === firstPdfId)

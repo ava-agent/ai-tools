@@ -26,7 +26,7 @@ function mountHero({ reducedMotion = false } = {}) {
 
   const scrollIntoView = vi.fn()
   const target = document.createElement('div')
-  target.id = 'landscape'
+  target.id = 'scenarios'
   target.scrollIntoView = scrollIntoView
   document.body.appendChild(target)
 
@@ -34,7 +34,7 @@ function mountHero({ reducedMotion = false } = {}) {
     global: {
       plugins: [pinia],
       stubs: {
-        HeroConstellation: { template: '<div aria-hidden="true" />' }
+        RouterLink: { props: ['to'], template: '<a href="#"><slot /></a>' }
       }
     }
   })
@@ -97,5 +97,14 @@ describe('HeroSection', () => {
     await wrapper.get('[data-testid="hero-video-action"]').trigger('click')
 
     expect(wrapper.emitted('play-intro')).toHaveLength(1)
+  })
+
+  it('emits a trimmed search query from the primary search field', async () => {
+    const { wrapper } = mountHero()
+
+    await wrapper.get('#hero-tool-search').setValue('  复杂重构  ')
+    await wrapper.get('form[role="search"]').trigger('submit')
+
+    expect(wrapper.emitted('search')).toEqual([['复杂重构']])
   })
 })

@@ -32,8 +32,9 @@
           aria-label="预算层级"
         >
           <button
-            v-for="tier in budgetTiers"
+            v-for="(tier, index) in budgetTiers"
             :key="tier.id"
+            :ref="el => setBudgetOptionRef(el, index)"
             type="button"
             class="pill cursor-pointer text-center transition-all duration-300 relative overflow-hidden group p-4 w-full min-h-11"
             :class="{
@@ -44,8 +45,10 @@
             :aria-checked="selectedBudgetTier === tier.id"
             :aria-label="`${tier.name}，${tier.budget}，${tier.users}`"
             :data-testid="`pricing-budget-${tier.id}`"
+            :tabindex="getBudgetTabIndex(tier.id, index)"
             role="radio"
             @click="selectBudgetTier(tier.id)"
+            @keydown="handleBudgetKeydown($event, index)"
           >
             <!-- Selected indicator -->
             <div
@@ -104,6 +107,7 @@
           <button
             v-for="(combo, index) in filteredCombos"
             :key="combo.name"
+            :ref="el => setComboOptionRef(el, index)"
             type="button"
             class="glass-card p-4 cursor-pointer transition-all duration-300 relative overflow-hidden group text-left min-h-11"
             :class="{
@@ -116,9 +120,11 @@
             :aria-disabled="combo.matches === false"
             :aria-label="`${combo.name}，预算 ${combo.budget}`"
             :data-testid="`pricing-combo-option-${index}`"
+            :tabindex="getComboTabIndex(combo, index)"
             role="radio"
             :disabled="combo.matches === false"
             @click="selectCombo(combo.name)"
+            @keydown="handleComboKeydown($event, index)"
           >
             <!-- Selected indicator -->
             <div
@@ -482,7 +488,7 @@
 </template>
 
 <script setup>
-import { ref, computed, watch } from 'vue'
+import { ref, computed, nextTick, watch } from 'vue'
 import {
   DollarSign,
   Star,
@@ -508,6 +514,8 @@ const toolsStore = usePricingCatalogStore()
 const selectedBudgetTier = ref(null)
 const selectedCombo = ref(null)
 const pricingCategory = ref('all')
+const budgetOptionRefs = ref([])
+const comboOptionRefs = ref([])
 const MOBILE_PAGE_SIZE = 16
 const mobileVisibleCount = ref(MOBILE_PAGE_SIZE)
 
@@ -631,9 +639,52 @@ function isToolInCombo(tool) {
   return comboToolIds.value.includes(tool.id)
 }
 
-// Selection handlers
-function selectBudgetTier(tierId) {
-  selectedBudgetTier.value = selectedBudgetTier.value === tierId ? null : tierId
+function setBudgetOptionRef(element, index) {
+  if (element) budgetOptionRefs.value[index] = element
+}
+
+function setComboOptionRef(element, index) {
+  if (element) comboOptionRefs.value[index] = element
+}
+
+function getBudgetTabIndex(tierId, index) {
+  if (selectedBudgetTier.value) return selectedBudgetTier.value === tierId ? 0 : -1
+  return index === 0 ? 0 : -1
+}
+
+function getComboTabIndex(combo, index) {
+  if (combo.matches === false) return -1
+  if (selectedCombo.value) return selectedCombo.value === combo.name ? 0 : -1
+  return filteredCombos.value.findIndex(option => option.matches !== false) === index ? 0 : -1
+}
+
+function getRadioTargetIndex(event, currentIndex, enabledIndices) {
+  if (!enabledIndices.length) return null
+  if (event.key === 'Home') return enabledIndices[0]
+  if (event.key === 'End') return enabledIndices[enabledIndices.length - 1]
+
+  const currentPosition = enabledIndices.indexOf(currentIndex)
+  if (event.key === 'ArrowRight' || event.key === 'ArrowDown') {
+    return enabledIndices[(currentPosition + 1 + enabledIndices.length) % enabledIndices.length]
+  }
+  if (event.key === 'ArrowLeft' || event.key === 'ArrowUp') {
+    const previousPosition = currentPosition < 0 ? 0 : currentPosition
+    return enabledIndices[(previousPosition - 1 + enabledIndices.length) % enabledIndices.length]
+  }
+  return null
+}
+
+function moveRadioSelection(event, currentIndex, enabledIndices, optionRefs, selectByIndex) {
+  const targetIndex = getRadioTargetIndex(event, currentIndex, enabledIndices)
+  if (targetIndex === null) return
+
+  event.preventDefault()
+  selectByIndex(targetIndex)
+  nextTick(() => optionRefs.value[targetIndex]?.focus())
+}
+
+function updateBudgetTier(tierId) {
+  selectedBudgetTier.value = tierId
   // Auto-clear combo if it doesn't match the new budget tier
   if (selectedCombo.value && selectedBudgetTier.value) {
     const tiers = comboBudgetMap[selectedCombo.value] || []
@@ -643,8 +694,37 @@ function selectBudgetTier(tierId) {
   }
 }
 
+// Selection handlers
+function selectBudgetTier(tierId) {
+  updateBudgetTier(selectedBudgetTier.value === tierId ? null : tierId)
+}
+
 function selectCombo(comboName) {
   selectedCombo.value = selectedCombo.value === comboName ? null : comboName
+}
+
+function handleBudgetKeydown(event, currentIndex) {
+  moveRadioSelection(
+    event,
+    currentIndex,
+    budgetTiers.map((_, index) => index),
+    budgetOptionRefs,
+    targetIndex => updateBudgetTier(budgetTiers[targetIndex].id)
+  )
+}
+
+function handleComboKeydown(event, currentIndex) {
+  const enabledIndices = filteredCombos.value
+    .map((combo, index) => combo.matches === false ? null : index)
+    .filter(index => index !== null)
+
+  moveRadioSelection(
+    event,
+    currentIndex,
+    enabledIndices,
+    comboOptionRefs,
+    targetIndex => { selectedCombo.value = filteredCombos.value[targetIndex].name }
+  )
 }
 
 function loadMorePricing() {

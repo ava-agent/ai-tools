@@ -158,15 +158,18 @@ const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes,
   scrollBehavior(to, from, savedPosition) {
+    const behavior = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches
+      ? 'auto'
+      : 'smooth'
     if (savedPosition) {
       return savedPosition
     } else if (to.hash) {
       return {
         el: to.hash,
-        behavior: 'smooth'
+        behavior
       }
     } else {
-      return { top: 0, behavior: 'smooth' }
+      return { top: 0, behavior }
     }
   }
 })

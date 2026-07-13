@@ -81,6 +81,5 @@ export default {
   ],
   "video": {
     "src": "./videos/codex-cli.mp4"
-  },
-  "radarChart": "images/codex.png"
+  }
 }

@@ -80,6 +80,5 @@ export default {
   ],
   "video": {
     "src": "./videos/antigravity.mp4"
-  },
-  "radarChart": "images/antigravity_radar_chart.png"
+  }
 }

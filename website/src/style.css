@@ -366,6 +366,18 @@
   }
 
   .text-muted-light {
-    @apply text-white/35;
+    @apply text-white/60;
+  }
+
+  /* Keep small supporting copy readable on the near-black application surface. */
+  .text-white\/25,
+  .text-white\/30,
+  .text-white\/35 {
+    color: rgb(255 255 255 / 0.58);
+  }
+
+  .text-white\/40,
+  .text-white\/45 {
+    color: rgb(255 255 255 / 0.64);
   }
 }

@@ -142,20 +142,10 @@ describe('content freshness safeguards', () => {
   })
 
   it('keeps the lightweight landing summary aligned with the full catalog', () => {
-    const insightCount = aiToolsData.reduce(
-      (sum, tool) =>
-        sum +
-        (tool.personalExperience?.insights ? 1 : 0) +
-        (tool.personalExperience?.pitfalls?.length || 0) +
-        (tool.pros?.length || 0) +
-        (tool.cons?.length || 0),
-      0,
-    )
-
     expect(LANDING_STATS).toEqual({
       tools: aiToolsData.length,
       categories: categories.length,
-      insights: insightCount,
+      verifiedTools: aiToolsData.filter((tool) => tool.verificationStatus === 'verified').length,
     })
 
     for (const category of categories) {

@@ -9,11 +9,10 @@
           class="text-[30px] font-bold text-white sm:text-[34px]"
           style="line-height: 1.1"
         >
-          按场景筛选已核验 AI 工具
+          按场景筛选 AI 工具
         </h1>
         <p class="mt-3 max-w-xl text-sm leading-6 text-slate-300/75">
-          先看结论、价格和风险，再进入详情页核对来源。适合做采购短名单、个人工具栈和团队 AI
-          工作流选型。
+          先看编辑结论、价格和风险，再按核验状态缩小范围并进入详情页检查来源。适合做采购短名单、个人工具栈和团队 AI 工作流选型。
         </p>
       </div>
 

@@ -24,6 +24,7 @@ const sampleTools = [
     verificationStatus: 'verified',
     personalExperience: { rating: 4.8 },
     tags: ['CLI', '长上下文'],
+    scenarioIds: ['complex-refactor'],
   },
   {
     id: 'visual',

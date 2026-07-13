@@ -139,6 +139,59 @@ describe('Pricing', () => {
     }
   })
 
+  it('uses roving focus and arrow-key selection for budget radios', async () => {
+    const { wrapper } = await mountPricing()
+    document.body.appendChild(wrapper.element)
+
+    const freeTier = wrapper.get('[data-testid="pricing-budget-free"]')
+    const lightTier = wrapper.get('[data-testid="pricing-budget-light"]')
+    expect(freeTier.attributes('tabindex')).toBe('0')
+    expect(lightTier.attributes('tabindex')).toBe('-1')
+
+    freeTier.element.focus()
+    await freeTier.trigger('keydown', { key: 'ArrowRight' })
+
+    expect(wrapper.get('[data-testid="pricing-budget-light"]').attributes()).toMatchObject({
+      'aria-checked': 'true',
+      tabindex: '0',
+    })
+    expect(wrapper.get('[data-testid="pricing-budget-free"]').attributes('tabindex')).toBe('-1')
+    expect(document.activeElement).toBe(lightTier.element)
+
+    await lightTier.trigger('keydown', { key: 'End' })
+    const unlimitedTier = wrapper.get('[data-testid="pricing-budget-unlimited"]')
+    expect(unlimitedTier.attributes('aria-checked')).toBe('true')
+    expect(document.activeElement).toBe(unlimitedTier.element)
+
+    wrapper.unmount()
+  })
+
+  it('keeps one enabled combo tabbable and skips disabled radios during keyboard navigation', async () => {
+    const { wrapper } = await mountPricing()
+    document.body.appendChild(wrapper.element)
+
+    await wrapper.get('[data-testid="pricing-budget-light"]').trigger('click')
+    const comboOptions = wrapper.findAll('[data-testid^="pricing-combo-option-"]')
+    const enabledOptions = comboOptions.filter(option => option.attributes('disabled') === undefined)
+    const disabledOptions = comboOptions.filter(option => option.attributes('disabled') !== undefined)
+
+    expect(enabledOptions.filter(option => option.attributes('tabindex') === '0')).toHaveLength(1)
+    for (const option of disabledOptions) {
+      expect(option.attributes('tabindex')).toBe('-1')
+    }
+
+    const firstEnabled = enabledOptions[0]
+    firstEnabled.element.focus()
+    await firstEnabled.trigger('keydown', { key: 'ArrowRight' })
+
+    const selectedOption = wrapper.find('[role="radio"][aria-checked="true"][data-testid^="pricing-combo-option-"]')
+    expect(selectedOption.exists()).toBe(true)
+    expect(selectedOption.attributes('disabled')).toBeUndefined()
+    expect(document.activeElement).toBe(selectedOption.element)
+
+    wrapper.unmount()
+  })
+
   it('renders mobile pricing cards instead of forcing the full desktop table on small screens', async () => {
     const { wrapper } = await mountPricing()
 

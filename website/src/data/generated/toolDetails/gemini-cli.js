@@ -80,6 +80,5 @@ export default {
   ],
   "video": {
     "src": "./videos/gemini-cli.mp4"
-  },
-  "radarChart": "images/geminicli.png"
+  }
 }
