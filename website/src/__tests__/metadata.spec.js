@@ -72,7 +72,8 @@ describe('production metadata', () => {
     const jsonLdBlock = (await readProjectFile('index.html')).match(
       /<script type="application\/ld\+json">([\s\S]*?)<\/script>/
     )?.[1]
-    const jsonLdHash = createHash('sha256').update(jsonLdBlock).digest('base64')
+    const normalizedJsonLd = jsonLdBlock.replace(/\r\n/g, '\n')
+    const jsonLdHash = createHash('sha256').update(normalizedJsonLd).digest('base64')
     expect(csp).toContain(`'sha256-${jsonLdHash}'`)
     expect(csp).toContain("style-src-attr 'unsafe-inline'")
   })

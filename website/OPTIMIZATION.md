@@ -118,7 +118,7 @@ default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; ...
 **优化后**:
 ```
 default-src 'self';
-script-src 'self' 'sha256-gb3xjxXT3M/r/UrCj+BZLvuzRwWiqseed/XsKY98Aw0=';
+script-src 'self' 'sha256-2cLDYdaDDS1QypTGFCZUbOj9MdoegUjVQHnXbYUpUv4=';
 style-src 'self' https://fonts.googleapis.com;
 style-src-attr 'unsafe-inline';
 font-src 'self' https://fonts.gstatic.com;
