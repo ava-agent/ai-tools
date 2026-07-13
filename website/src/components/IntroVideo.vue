@@ -9,7 +9,7 @@
     >
       <div
         ref="dialogRef"
-        class="relative bg-black rounded-2xl overflow-hidden shadow-2xl ring-1 ring-white/10"
+        class="relative w-full max-w-[min(90vw,1440px)] overflow-hidden rounded-lg bg-black shadow-2xl ring-1 ring-white/10"
         role="dialog"
         aria-modal="true"
         aria-labelledby="intro-video-title"
@@ -29,7 +29,10 @@
           autoplay
           muted
           playsinline
-          class="block w-auto h-auto max-w-[90vw] max-h-[90vh] object-contain"
+          :poster="posterSrc"
+          preload="metadata"
+          class="block aspect-video w-full max-h-[90vh] object-contain"
+          @timeupdate="updateProgress"
           @ended="close"
         >
           <source
@@ -47,17 +50,10 @@
           aria-label="关闭介绍视频"
           @click="close"
         >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="20"
-            height="20"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          ><path d="M18 6 6 18" /><path d="m6 6 12 12" /></svg>
+          <X
+            class="h-5 w-5"
+            aria-hidden="true"
+          />
         </button>
 
         <!-- Progress bar -->
@@ -73,7 +69,8 @@
 </template>
 
 <script setup>
-import { nextTick, onMounted, onUnmounted, ref, watch } from 'vue'
+import { nextTick, onUnmounted, ref, watch } from 'vue'
+import { X } from 'lucide-vue-next'
 import { resolvePublicAssetPath } from '../utils/publicAssets.js'
 
 const props = defineProps({
@@ -82,11 +79,11 @@ const props = defineProps({
 
 const emit = defineEmits(['close'])
 const introVideoSrc = resolvePublicAssetPath('hero-network.mp4')
+const posterSrc = resolvePublicAssetPath('images/landing/promo-poster.webp')
 const dialogRef = ref(null)
 const closeButtonRef = ref(null)
 const videoRef = ref(null)
 const progress = ref(0)
-let progressInterval
 let previouslyFocusedElement = null
 
 const focusableSelector = [
@@ -100,6 +97,13 @@ const focusableSelector = [
 
 function close() {
   emit('close')
+}
+
+function updateProgress() {
+  const duration = videoRef.value?.duration
+  progress.value = Number.isFinite(duration) && duration > 0
+    ? (videoRef.value.currentTime / duration) * 100
+    : 0
 }
 
 function getFocusableElements() {
@@ -153,33 +157,25 @@ watch(
   (isOpen) => {
     if (isOpen) {
       previouslyFocusedElement = document.activeElement
-      nextTick(() => closeButtonRef.value?.focus())
+      progress.value = 0
+      nextTick(async () => {
+        closeButtonRef.value?.focus()
+        try {
+          await videoRef.value?.play()
+        } catch {
+          close()
+        }
+      })
       return
     }
 
+    videoRef.value?.pause()
     nextTick(restorePreviousFocus)
   },
   { immediate: true }
 )
 
-onMounted(() => {
-  if (videoRef.value) {
-    videoRef.value.play().catch(() => {
-      // Autoplay blocked by browser policy — close the overlay
-      close()
-    })
-
-    // Update progress
-    progressInterval = setInterval(() => {
-      if (videoRef.value) {
-        progress.value = (videoRef.value.currentTime / videoRef.value.duration) * 100
-      }
-    }, 100)
-  }
-})
-
 onUnmounted(() => {
-  clearInterval(progressInterval)
   restorePreviousFocus()
 })
 </script>

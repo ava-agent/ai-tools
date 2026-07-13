@@ -3,20 +3,22 @@ import { resolve } from 'node:path'
 
 const directory = resolve(process.cwd(), 'public/images/landing')
 const expectedAssets = new Map([
-  ['cat-agent.webp', 384],
-  ['cat-cli.webp', 384],
-  ['cat-ide.webp', 384],
-  ['cat-llm.webp', 384],
-  ['cat-mcp.webp', 384],
-  ['cat-multimodal.webp', 384],
-  ['cat-skill.webp', 384],
-  ['entry-browse.webp', 640],
-  ['entry-compare.webp', 640],
-  ['entry-workflow.webp', 640],
-  ['rec-coding.webp', 384],
-  ['rec-design.webp', 384],
-  ['rec-free.webp', 384],
-  ['rec-refactor.webp', 384],
+  ['cat-agent.webp', { width: 384, height: 384, maxBytes: 48 * 1024 }],
+  ['cat-cli.webp', { width: 384, height: 384, maxBytes: 48 * 1024 }],
+  ['cat-ide.webp', { width: 384, height: 384, maxBytes: 48 * 1024 }],
+  ['cat-llm.webp', { width: 384, height: 384, maxBytes: 48 * 1024 }],
+  ['cat-mcp.webp', { width: 384, height: 384, maxBytes: 48 * 1024 }],
+  ['cat-multimodal.webp', { width: 384, height: 384, maxBytes: 48 * 1024 }],
+  ['cat-skill.webp', { width: 384, height: 384, maxBytes: 48 * 1024 }],
+  ['ecosystem-atlas.webp', { width: 1920, height: 1080, maxBytes: 96 * 1024 }],
+  ['entry-browse.webp', { width: 640, height: 640, maxBytes: 48 * 1024 }],
+  ['entry-compare.webp', { width: 640, height: 640, maxBytes: 48 * 1024 }],
+  ['entry-workflow.webp', { width: 640, height: 640, maxBytes: 48 * 1024 }],
+  ['promo-poster.webp', { width: 1280, height: 720, maxBytes: 48 * 1024 }],
+  ['rec-coding.webp', { width: 384, height: 384, maxBytes: 48 * 1024 }],
+  ['rec-design.webp', { width: 384, height: 384, maxBytes: 48 * 1024 }],
+  ['rec-free.webp', { width: 384, height: 384, maxBytes: 48 * 1024 }],
+  ['rec-refactor.webp', { width: 384, height: 384, maxBytes: 48 * 1024 }],
 ])
 
 function readUint24LE(buffer, offset) {
@@ -73,22 +75,24 @@ if (JSON.stringify(files) !== JSON.stringify(expectedFiles)) {
 }
 
 let totalBytes = 0
-for (const [name, expectedSize] of expectedAssets) {
+for (const [name, constraints] of expectedAssets) {
   const path = resolve(directory, name)
   const [buffer, file] = await Promise.all([readFile(path), stat(path)])
   const { width, height } = readWebpDimensions(buffer)
 
-  if (width !== expectedSize || height !== expectedSize) {
-    throw new Error(`${name} must be ${expectedSize}x${expectedSize}; received ${width}x${height}`)
+  if (width !== constraints.width || height !== constraints.height) {
+    throw new Error(
+      `${name} must be ${constraints.width}x${constraints.height}; received ${width}x${height}`
+    )
   }
-  if (file.size > 48 * 1024) {
-    throw new Error(`${name} exceeds the 48 KiB per-file budget`)
+  if (file.size > constraints.maxBytes) {
+    throw new Error(`${name} exceeds its ${constraints.maxBytes / 1024} KiB per-file budget`)
   }
   totalBytes += file.size
 }
 
-if (totalBytes > 256 * 1024) {
-  throw new Error(`landing artwork exceeds the 256 KiB total budget: ${totalBytes} bytes`)
+if (totalBytes > 384 * 1024) {
+  throw new Error(`landing artwork exceeds the 384 KiB total budget: ${totalBytes} bytes`)
 }
 
 console.log(`Landing assets verified: ${expectedAssets.size} WebP files, ${totalBytes} bytes total.`)

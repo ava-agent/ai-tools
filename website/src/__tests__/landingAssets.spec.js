@@ -14,9 +14,11 @@ describe('landing image assets', () => {
       'cat-mcp.webp',
       'cat-multimodal.webp',
       'cat-skill.webp',
+      'ecosystem-atlas.webp',
       'entry-browse.webp',
       'entry-compare.webp',
       'entry-workflow.webp',
+      'promo-poster.webp',
       'rec-coding.webp',
       'rec-design.webp',
       'rec-free.webp',
@@ -27,6 +29,6 @@ describe('landing image assets', () => {
     ).reduce((sum, file) => sum + file.size, 0)
 
     expect(files).toEqual(expectedFiles)
-    expect(totalBytes).toBeLessThan(256 * 1024)
+    expect(totalBytes).toBeLessThan(384 * 1024)
   })
 })

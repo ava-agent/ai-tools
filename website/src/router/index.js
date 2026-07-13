@@ -119,7 +119,7 @@ const routes = [
     component: () => import('../views/Resources.vue'),
     meta: {
       title: '资源中心 - AI工具全书',
-      description: '历史演示文稿与解析视频，辅助理解当时的 AI 开发工具生态'
+      description: '项目导览、历史演示文稿与解析视频，辅助理解 AI 开发工具生态'
     }
   },
   {

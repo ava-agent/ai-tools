@@ -13,6 +13,7 @@ describe('IntroVideo accessibility', () => {
   beforeEach(() => {
     document.body.innerHTML = '<button id="intro-video-opener">播放介绍视频</button>'
     vi.spyOn(HTMLMediaElement.prototype, 'play').mockResolvedValue()
+    vi.spyOn(HTMLMediaElement.prototype, 'pause').mockImplementation(() => {})
   })
 
   afterEach(() => {
@@ -47,6 +48,8 @@ describe('IntroVideo accessibility', () => {
     expect(dialog.attributes('aria-modal')).toBe('true')
     expect(dialog.attributes('aria-labelledby')).toBe('intro-video-title')
     expect(wrapper.get('video').attributes('aria-labelledby')).toBe('intro-video-title')
+    expect(wrapper.get('video').attributes('poster')).toContain('images/landing/promo-poster.webp')
+    expect(wrapper.get('video').attributes('preload')).toBe('metadata')
     expect(title.text()).toBe('AI 工具全书介绍视频')
     expect(document.activeElement).toBe(closeButton.element)
   })

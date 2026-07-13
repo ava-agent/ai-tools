@@ -2,7 +2,7 @@
 const RESOURCE_ASSET_CHECKED_AT = '2026-07-02'
 const RESOURCE_FRESHNESS_NOTE = '历史快照：非实时价格、模型或额度依据'
 
-export const RESOURCE_HISTORY_NOTICE = '资源中心资料保留为 2026-02 历史快照，用于回顾当时的工具生态与演示内容；价格、模型、额度和产品状态请以当前官方来源为准。'
+export const RESOURCE_HISTORY_NOTICE = '资源中心包含当前项目导览及 2026-02 历史快照；旧资料用于回顾当时的工具生态，价格、模型、额度和产品状态请以当前官方来源为准。'
 
 function withResourceMetadata(resource) {
     return {
@@ -48,6 +48,21 @@ export const resources = [
         date: '2026-02'
     },
     // ============= 专题视频 =============
+    {
+        id: 'project-intro-2026',
+        title: 'AI 工具全书 12 秒导览',
+        titleEn: 'AI Tools Handbook — 12-second Introduction',
+        type: 'video',
+        description: '从 AI IDE、CLI 和模型一路连接到 Agent、MCP 与 Skills，快速理解本站覆盖的工具版图。',
+        src: 'hero-network.mp4',
+        tags: ['项目导览', '生态图谱', '2026'],
+        date: '2026-07',
+        verificationStatus: 'verified',
+        lastVerified: '2026-07-13',
+        assetCheckedAt: '2026-07-13',
+        freshnessNote: '当前项目导览',
+        sources: ['/hero-network.mp4']
+    },
     {
         id: 'ai-coding-tool-map',
         title: 'AI 编程工具地图',
